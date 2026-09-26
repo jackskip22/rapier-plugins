@@ -1,7 +1,7 @@
 {
   "name": "rapier-markdown-kit",
-  "version": "1.1.0",
-  "description": "The Rapier Markdown standard's layout grammar, occupancy model, line planner, Will grammar and picture appendix -- MIT, no Rapier required.",
+  "version": "1.1.1",
+  "description": "Read and write Rapier Markdown without the editor: picture layout, text marks, the line planner, Will markers and the picture appendix. MIT, no dependencies.",
   "author": "Jack Skipworth",
   "license": "MIT",
   "type": "module",

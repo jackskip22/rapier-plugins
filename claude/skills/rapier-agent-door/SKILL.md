@@ -1,6 +1,6 @@
 ---
 name: rapier-agent-door
-description: Edits a document that is open in Rapier through its agent tools, reading by structure and changing exactly the inspected passage under the person's Will and review posture. Use when an agent works on a live Rapier document in-page, over WebMCP, or over MCP.
+description: Edits a document open in Rapier through sixteen tools that read by structure and change exactly the inspected passage, about 1.5 KB of context an edit whatever the document's length, under the person's Will and review. Use when an agent works on a live Rapier document in-page, over WebMCP or over MCP, and for any long document an agent would otherwise read and rewrite whole.
 ---
 
 # The agent door
@@ -28,7 +28,9 @@ and two orders of magnitude less than rewriting it (`docs/briefs/token-saving.md
 5. `document.save`: through the destination the person already chose; the receipt says verified or
    unacknowledged.
 
-`document.compare` opens a whole alternative text for the person to keep or drop by change.
+`rapier.open` shows the editor in a host that renders MCP apps; elsewhere the person opens the document as a
+page (`skills/rapier-html`). `document.compare` opens a whole alternative text for the person to keep or drop by
+change.
 `document.draw` makes or edits a picture from figures or a recipe. `document.reveal` and
 `document.wait_for_user` show a passage and wait for the person's selection or reply where the
 editor supports it. `notes.list` and `notes.read` read the person's notes when Notes is present.

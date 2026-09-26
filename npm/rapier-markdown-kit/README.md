@@ -1,20 +1,33 @@
 # rapier-markdown-kit
 
-Read and write the Rapier Markdown standard -- picture layout, text marks, Will intent markers and
-the picture appendix -- and lay text out around pictures exactly as Rapier does, without taking the
-Rapier editor.
-
-**MIT. No Rapier required. No npm dependencies.** The text layout engine it uses, Pretext, is
-vendored inside the package with its own MIT licence. Nothing from the editor, Draw, the image
-decoders or the apps is in here.
-
-## Install
-
-Node 22 or newer:
+Read and write Rapier Markdown without the editor: picture layout, text marks, the line planner, Will
+markers and the picture appendix. MIT, no dependencies, Node 22 or newer.
 
 ```sh
 npm install rapier-markdown-kit
 ```
+
+```js
+import {parseLayout} from 'rapier-markdown-kit/layout';   // the md-layout comment a picture carries
+import {scanColorMarkers, formatPageBreak} from 'rapier-markdown-kit/marks';   // colour runs and page breaks
+import {flowLines} from 'rapier-markdown-kit/model';      // the line planner: text around pictures
+import {parseWill} from 'rapier-markdown-kit/will';       // Will/1 markers: keep, append, edit
+import {parseAssets} from 'rapier-markdown-kit/assets';   // the picture appendix
+```
+
+**What it does**
+- Parses, validates and writes back the `md-layout:v1` comment that places a picture: width, wrap,
+  position.
+- Lays text out around a picture's shape exactly as Rapier does, given the host's font metrics.
+- Reads and writes colour and page-break marks.
+- Reads Will/1 markers (a separate, optional standard) and says what a region's law allows.
+- Reads the picture appendix, the reference definitions a document's pictures live in, without decoding
+  a picture.
+
+**What it is not**
+- Not the editor, not Draw, not the image decoders. Every convention is plain Markdown or an HTML
+  comment other readers ignore. The text layout engine it uses, Pretext, is vendored with its own MIT
+  licence.
 
 ## What it gives you
 
