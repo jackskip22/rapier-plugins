@@ -1,0 +1,42 @@
+{
+  "name": "rapier-html",
+  "version": "1.1.0",
+  "description": "Rapier with your document inside it: wrap a Markdown file into a single offline HTML page that is the whole Rapier editor, opened anywhere a browser is.",
+  "keywords": [
+    "markdown",
+    "editor",
+    "offline",
+    "single-file",
+    "html",
+    "agent",
+    "mcp",
+    "rapier"
+  ],
+  "author": "Jack Skipworth",
+  "license": "AGPL-3.0-only",
+  "homepage": "https://rapier.website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackskip22/rapier-plugins.git",
+    "directory": "npm/rapier-html"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "rapier-html": "cli.mjs"
+  },
+  "exports": {
+    ".": "./page.mjs"
+  },
+  "files": [
+    "cli.mjs",
+    "page.mjs",
+    "rapier.html",
+    "README.md",
+    "LICENSE",
+    "BUILD.json"
+  ],
+  "sideEffects": false
+}

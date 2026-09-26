@@ -1,0 +1,83 @@
+{
+  "document": "02-width-x-align.md",
+  "measurer": {
+    "font": "normal 400 17.6px/30.8px Geist, system-ui, sans-serif",
+    "letterSpacing": 0,
+    "lineHeight": 30.8,
+    "direction": "ltr",
+    "columnWidth": 354
+  },
+  "anchorText": "This paragraph comes after the picture and is its ordinary anchor whenever nothing else stands in the way, wrapping beside it line by line the way the fixture is built to show plainly.",
+  "anchorFlowed": false,
+  "picture": {
+    "natural": {
+      "width": 60,
+      "height": 40
+    },
+    "occupancy": null,
+    "layout": "<!--md-layout:v1 width=40% x=70%-->",
+    "rect": null
+  },
+  "profileHint": null,
+  "lines": [
+    {
+      "left": 0,
+      "top": 5,
+      "right": 344.89,
+      "bottom": 25
+    },
+    {
+      "left": 0,
+      "top": 35.78,
+      "right": 316.97,
+      "bottom": 55.78
+    },
+    {
+      "left": 0,
+      "top": 66.56,
+      "right": 275.27,
+      "bottom": 86.56
+    },
+    {
+      "left": 0,
+      "top": 97.34,
+      "right": 340.47,
+      "bottom": 117.34
+    },
+    {
+      "left": 0,
+      "top": 128.13,
+      "right": 297.09,
+      "bottom": 148.13
+    }
+  ],
+  "glyphWidths": {
+    "T": 10.747,
+    "h": 11.151,
+    "i": 4.888,
+    "s": 9.166,
+    " ": 5.593,
+    "p": 11.168,
+    "a": 10.781,
+    "r": 7.233,
+    "g": 11.168,
+    "c": 9.673,
+    "o": 10.764,
+    "m": 17.138,
+    "e": 10.824,
+    "f": 6.194,
+    "t": 6.898,
+    "u": 11.151,
+    "n": 11.151,
+    "d": 11.168,
+    "y": 10.412,
+    "w": 14.389,
+    "v": 10.412,
+    "l": 4.888,
+    ",": 5.593,
+    "b": 11.168,
+    "x": 10.412,
+    ".": 5.593
+  },
+  "measurements": {}
+}

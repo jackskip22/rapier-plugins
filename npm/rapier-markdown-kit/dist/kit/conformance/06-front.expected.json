@@ -1,0 +1,122 @@
+{
+  "document": "06-front.md",
+  "measurer": {
+    "font": "normal 400 17.6px/30.8px Geist, system-ui, sans-serif",
+    "letterSpacing": 0,
+    "lineHeight": 30.8,
+    "direction": "ltr",
+    "columnWidth": 354
+  },
+  "anchorText": "This anchor paragraph carries enough ordinary prose that, once it wraps beside the picture at the column width this fixture records, it produces several distinct lines for the conformance runner to compare rather than only one.",
+  "anchorFlowed": false,
+  "picture": {
+    "natural": {
+      "width": 60,
+      "height": 40
+    },
+    "occupancy": null,
+    "layout": "<!--md-layout:v1 width=35% wrap=front x=50%-->",
+    "rect": null
+  },
+  "profileHint": null,
+  "lines": [
+    {
+      "left": 0,
+      "top": 5,
+      "right": 336.25,
+      "bottom": 25
+    },
+    {
+      "left": 0,
+      "top": 35.78,
+      "right": 298.31,
+      "bottom": 55.78
+    },
+    {
+      "left": 0,
+      "top": 66.56,
+      "right": 341.73,
+      "bottom": 86.56
+    },
+    {
+      "left": 0,
+      "top": 97.34,
+      "right": 344.92,
+      "bottom": 117.34
+    },
+    {
+      "left": 0,
+      "top": 128.13,
+      "right": 296.13,
+      "bottom": 148.13
+    },
+    {
+      "left": 0,
+      "top": 158.91,
+      "right": 312.89,
+      "bottom": 178.91
+    },
+    {
+      "left": 0,
+      "top": 189.69,
+      "right": 38.34,
+      "bottom": 209.69
+    }
+  ],
+  "glyphWidths": {
+    "T": 10.747,
+    "h": 11.151,
+    "i": 4.888,
+    "s": 9.166,
+    " ": 5.593,
+    "a": 10.781,
+    "n": 11.151,
+    "c": 9.673,
+    "o": 10.764,
+    "r": 7.233,
+    "p": 11.168,
+    "g": 11.168,
+    "e": 10.824,
+    "u": 11.151,
+    "d": 11.168,
+    "y": 10.412,
+    "t": 6.898,
+    ",": 5.593,
+    "w": 14.389,
+    "b": 11.168,
+    "l": 4.888,
+    "m": 17.138,
+    "f": 6.194,
+    "x": 10.412,
+    "v": 10.412,
+    ".": 5.593
+  },
+  "measurements": {
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000T": 10.747,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000h": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000i": 4.888,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000s": 9.166,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000 ": 5.593,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000a": 10.781,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000n": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000c": 9.673,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000o": 10.764,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000r": 7.233,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000p": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000g": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000e": 10.824,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000u": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000d": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000y": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000t": 6.898,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000,": 5.593,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000w": 14.389,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000b": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000l": 4.888,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000m": 17.138,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000f": 6.194,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000x": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000v": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000.": 5.593
+  }
+}

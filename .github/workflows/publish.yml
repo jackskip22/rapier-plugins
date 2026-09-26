@@ -1,0 +1,35 @@
+name: publish
+on:
+  push:
+    tags:
+      - 'rapier-html-v*'
+      - 'rapier-markdown-kit-v*'
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - name: which package
+        id: which
+        run: |
+          case "${GITHUB_REF_NAME}" in
+            rapier-html-v*) echo "dir=npm/rapier-html" >> "$GITHUB_OUTPUT" ;;
+            rapier-markdown-kit-v*) echo "dir=npm/rapier-markdown-kit" >> "$GITHUB_OUTPUT" ;;
+            *) echo "unknown tag" >&2; exit 1 ;;
+          esac
+      - name: the tag names the package's version
+        working-directory: ${{ steps.which.outputs.dir }}
+        run: test "${GITHUB_REF_NAME#*-v}" = "$(node -p "require('./package.json').version")"
+      - name: publish
+        working-directory: ${{ steps.which.outputs.dir }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public

@@ -1,0 +1,82 @@
+{
+  "document": "01-inline.md",
+  "measurer": {
+    "font": "normal 400 17.6px/30.8px Geist, system-ui, sans-serif",
+    "letterSpacing": 0,
+    "lineHeight": 30.8,
+    "direction": "ltr",
+    "columnWidth": 354
+  },
+  "anchorText": "This paragraph comes before the picture and stays the anchor whenever the block right after the picture cannot be one -- another image paragraph, or a heading -- so the words below keep their own separate life.",
+  "anchorFlowed": false,
+  "picture": null,
+  "profileHint": null,
+  "lines": [
+    {
+      "left": 0,
+      "top": 5,
+      "right": 292.86,
+      "bottom": 25
+    },
+    {
+      "left": 0,
+      "top": 35.78,
+      "right": 345.38,
+      "bottom": 55.78
+    },
+    {
+      "left": 0,
+      "top": 66.56,
+      "right": 342.81,
+      "bottom": 86.56
+    },
+    {
+      "left": 0,
+      "top": 97.34,
+      "right": 339.66,
+      "bottom": 117.34
+    },
+    {
+      "left": 0,
+      "top": 128.13,
+      "right": 329.39,
+      "bottom": 148.13
+    },
+    {
+      "left": 0,
+      "top": 158.91,
+      "right": 204.16,
+      "bottom": 178.91
+    }
+  ],
+  "glyphWidths": {
+    "T": 10.747,
+    "h": 11.151,
+    "i": 4.888,
+    "s": 9.166,
+    " ": 5.593,
+    "p": 11.168,
+    "a": 10.781,
+    "r": 7.233,
+    "g": 11.168,
+    "c": 9.673,
+    "o": 10.764,
+    "m": 17.138,
+    "e": 10.824,
+    "b": 11.168,
+    "f": 6.194,
+    "t": 6.898,
+    "u": 11.151,
+    "n": 11.151,
+    "d": 11.168,
+    "y": 10.412,
+    "w": 14.389,
+    "v": 10.412,
+    "l": 4.888,
+    "k": 10.189,
+    "-": 6.349,
+    ",": 5.593,
+    ".": 5.593
+  },
+  "measurements": {}
+}

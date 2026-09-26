@@ -1,0 +1,229 @@
+{
+  "document": "09-drawing-ring-interior.md",
+  "measurer": {
+    "font": "normal 400 17.6px/30.8px Geist, system-ui, sans-serif",
+    "letterSpacing": 0,
+    "lineHeight": 30.8,
+    "direction": "ltr",
+    "columnWidth": 354
+  },
+  "anchorText": "A ring drawing reserves an outer band and leaves its own inside empty, so this long paragraph of ordinary prose, wrapping beside its silhouette line by line, eventually reaches a band low enough for a line to enter the drawing through its own unfilled centre rather than stopping at its outer edge the way an opaque picture would, which is exactly the fact this fixture exists to show the runner.",
+  "anchorFlowed": true,
+  "picture": {
+    "natural": {
+      "width": 200,
+      "height": 200
+    },
+    "occupancy": null,
+    "layout": "<!--md-layout:v1 width=45% wrap=around x=25%-->",
+    "rect": {
+      "left": 8.84375,
+      "top": 0,
+      "right": 168.140625,
+      "bottom": 159.296875
+    }
+  },
+  "profileHint": {
+    "kind": "bands",
+    "descriptor": "||||0.4375-0.5625|0.3542-0.6458|0.3125-0.6875|0.2708-0.7292|0.25-0.75|0.2292-0.7708|0.2083-0.4375,0.5625-0.7917|0.1875-0.375,0.625-0.8125|0.1667-0.3333,0.6667-0.8333|0.1458-0.3125,0.6875-0.8542|0.1458-0.2917,0.7083-0.8542|0.125-0.2708,0.7292-0.875|0.125-0.25,0.75-0.875|0.1042-0.25,0.75-0.8958|0.1042-0.2292,0.7708-0.8958|0.1042-0.2292,0.7708-0.8958|0.1042-0.2292,0.7708-0.8958|0.0833-0.2083,0.7917-0.9167|0.0833-0.2083,0.7917-0.9167|0.0833-0.2083,0.7917-0.9167|0.0833-0.2083,0.7917-0.9167|0.0833-0.2083,0.7917-0.9167|0.0833-0.2083,0.7917-0.9167|0.1042-0.2292,0.7708-0.8958|0.1042-0.2292,0.7708-0.8958|0.1042-0.2292,0.7708-0.8958|0.1042-0.25,0.75-0.8958|0.125-0.25,0.75-0.875|0.125-0.2708,0.7292-0.875|0.1458-0.2917,0.7083-0.8542|0.1458-0.3125,0.6875-0.8542|0.1667-0.3333,0.6667-0.8333|0.1875-0.375,0.625-0.8125|0.2083-0.4375,0.5625-0.7917|0.2292-0.7708|0.25-0.75|0.2708-0.7292|0.3125-0.6875|0.3542-0.6458|0.4375-0.5625||||",
+    "note": "ring.svg's own alpha: two runs per band through its ring, none in the middle -- the interior hole"
+  },
+  "lines": [
+    {
+      "left": 154.91,
+      "top": 0,
+      "right": 353.98,
+      "bottom": 30.8
+    },
+    {
+      "left": 164.88,
+      "top": 30.8,
+      "right": 354,
+      "bottom": 61.59
+    },
+    {
+      "left": 164.88,
+      "top": 61.59,
+      "right": 354,
+      "bottom": 92.39
+    },
+    {
+      "left": 164.88,
+      "top": 92.39,
+      "right": 354,
+      "bottom": 123.19
+    },
+    {
+      "left": 154.91,
+      "top": 123.19,
+      "right": 353.98,
+      "bottom": 153.98
+    },
+    {
+      "left": 0,
+      "top": 154,
+      "right": 61.91,
+      "bottom": 184.8
+    },
+    {
+      "left": 115.08,
+      "top": 154,
+      "right": 353.98,
+      "bottom": 184.8
+    },
+    {
+      "left": 0,
+      "top": 184.8,
+      "right": 354,
+      "bottom": 215.59
+    },
+    {
+      "left": 0,
+      "top": 215.59,
+      "right": 354,
+      "bottom": 246.39
+    },
+    {
+      "left": 0,
+      "top": 246.39,
+      "right": 354,
+      "bottom": 277.19
+    },
+    {
+      "left": 0,
+      "top": 277.19,
+      "right": 354,
+      "bottom": 307.98
+    },
+    {
+      "left": 0,
+      "top": 308,
+      "right": 354,
+      "bottom": 338.8
+    },
+    {
+      "left": 0,
+      "top": 338.8,
+      "right": 354,
+      "bottom": 369.59
+    },
+    {
+      "left": 0,
+      "top": 369.59,
+      "right": 354,
+      "bottom": 400.39
+    }
+  ],
+  "glyphWidths": {
+    "A": 12.036,
+    " ": 5.593,
+    "r": 7.233,
+    "i": 4.888,
+    "n": 11.151,
+    "g": 11.168,
+    "d": 11.168,
+    "a": 10.781,
+    "w": 14.389,
+    "e": 10.824,
+    "s": 9.166,
+    "v": 10.412,
+    "o": 10.764,
+    "u": 11.151,
+    "t": 6.898,
+    "b": 11.168,
+    "l": 4.888,
+    "m": 17.138,
+    "p": 11.168,
+    "y": 10.412,
+    ",": 5.593,
+    "h": 11.151,
+    "f": 6.194,
+    "c": 9.673,
+    "q": 11.168,
+    "x": 10.412,
+    ".": 5.593
+  },
+  "measurements": {
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000-": 6.349,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000 ": 5.593,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000A": 12.036,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000ring": 34.44,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000r": 7.233,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000i": 4.888,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000n": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000g": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000drawing": 70.779,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000d": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000a": 10.781,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000w": 14.389,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000reserves": 75.297,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000e": 10.824,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000s": 9.166,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000v": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000an": 21.932,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000outer": 46.871,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000o": 10.764,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000u": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000t": 6.898,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000band": 44.268,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000b": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000and": 33.1,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000leaves": 56.896,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000l": 4.888,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000its": 20.953,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000own": 36.304,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000inside": 52.085,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000empty,": 62.033,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000m": 17.138,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000p": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000y": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000,": 5.593,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000so": 19.93,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000this": 32.103,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000h": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000long": 37.971,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000paragraph": 91.465,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000of": 16.958,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000f": 6.194,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000ordinary": 73.322,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000prose,": 54.362,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000wrapping": 81.947,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000beside": 58.039,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000silhouette": 87.453,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000line": 31.751,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000by": 21.58,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000line,": 37.344,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000eventually": 92.23,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000reaches": 69.267,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000c": 9.673,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000low": 30.042,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000enough": 66.209,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000for": 24.191,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000to": 17.662,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000enter": 46.931,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000the": 28.873,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000through": 69.129,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000unfilled": 65.152,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000centre": 56.217,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000rather": 54.121,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000than": 39.981,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000stopping": 76.371,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000at": 17.68,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000edge": 43.984,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000way": 35.583,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000opaque": 65.856,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000q": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000picture": 61.449,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000would,": 57.953,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000which": 51.252,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000is": 14.054,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000exactly": 63.58,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000x": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000fact": 33.547,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000fixture": 57.214,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000exists": 51.046,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000show": 45.471,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000runner.": 62.72,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000.": 5.593
+  }
+}

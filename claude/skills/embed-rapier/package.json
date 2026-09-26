@@ -1,0 +1,35 @@
+{
+  "name": "rapier-embed",
+  "version": "1.1.0",
+  "description": "Put the Rapier editor in your site: one call frames rapier.html?embed=1, connects, loads your document and answers its saves.",
+  "keywords": [
+    "markdown",
+    "editor",
+    "iframe",
+    "embed",
+    "offline",
+    "agent",
+    "rapier"
+  ],
+  "author": "Jack Skipworth",
+  "license": "MIT",
+  "homepage": "https://rapier.website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackskip22/rapier.git",
+    "directory": "skills/embed-rapier"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": "./embed.mjs"
+  },
+  "files": [
+    "embed.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false
+}

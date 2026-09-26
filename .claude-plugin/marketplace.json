@@ -1,0 +1,15 @@
+{
+  "name": "rapier",
+  "owner": {
+    "name": "Jack Skipworth",
+    "url": "https://rapier.website"
+  },
+  "description": "Rapier, the offline Markdown editor, as a Claude plugin: four skills and the MCP door.",
+  "plugins": [
+    {
+      "name": "rapier",
+      "source": "./claude",
+      "description": "Write and edit Markdown with a person in Rapier: skills for Markdown Rapier renders exactly, a page that carries the editor, the embed, and the agent door; the MCP connector for a live shared document."
+    }
+  ]
+}
