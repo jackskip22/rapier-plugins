@@ -21,8 +21,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Files under this licence carry `SPDX-License-Identifier: MIT` in their first lines: the standard's
-grammar and marks (`spec/md-layout.mjs`, `spec/md-marks.mjs`), the layout model and line planner
-(`layout/model.mjs`), the Will grammar (`agent/will.mjs`), the picture appendix reader and writer
+grammar, marks and reference style (`spec/md-layout.mjs`, `spec/md-marks.mjs`, `spec/markdown-style.css`), the layout model and line planner
+(`layout/model.mjs`, `layout/line-plan.mjs`), the Will grammar (`agent/will.mjs`), the picture appendix reader and writer
 (`spec/md-assets.mjs`), the two shared-page reference readers (`tools/read-shared-page.mjs`,
 `tools/read-shared-page.py`), and the host helper `packages/rapier-embed/embed.mjs`. The vendored Pretext (`agent/vendor/pretext`) and micromark carry their
 own MIT notices. Everything else in Rapier is AGPL-3.0-only (see `LICENSE`).

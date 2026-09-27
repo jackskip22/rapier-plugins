@@ -1,5 +1,6 @@
 import {readFile, writeFile} from 'node:fs/promises';
 import {basename, dirname, join} from 'node:path';
+import {returnAddress, returnExpiresAt} from './return-address.mjs';
 
 const START = '<script type="text/markdown" id="rapier-document"';
 const DRAWING_START = '<script type="text/plain" id="rapier-drawing"';
@@ -30,7 +31,11 @@ export function wrap(pageHtml, text, name, options) {
 	const docName = safeName(name, 'document.md');
 	// `view`: the view the page opens on with the document behind it, `draw` or `notes` (docs/page-door.md).
 	if (opts.view != null && !['draw', 'notes'].includes(opts.view)) throw new Error('the view is draw or notes');
-	const block = START + ' data-name="' + docName + '"' + (opts.view ? ' data-view="' + opts.view + '"' : '') + '>' + encodeCarried(text) + END;
+	const address = opts.return == null ? null : returnAddress(opts.return);
+	const expiry = opts.return_expires_at == null ? null : returnExpiresAt(opts.return_expires_at);
+	if (!!address !== !!expiry) throw new Error('a return needs its URL and return_expires_at from document.create_return');
+	const block = START + ' data-name="' + docName + '"' + (opts.view ? ' data-view="' + opts.view + '"' : '') +
+		(address ? ' data-return="' + address + '" data-return-expires-at="' + expiry + '"' : '') + '>' + encodeCarried(text) + END;
 	let carriedBlocks = '';
 	if (opts.drawing != null) {
 		if (typeof opts.drawing !== 'string') throw new Error('the drawing must be SVG text');
@@ -52,13 +57,18 @@ export function wrap(pageHtml, text, name, options) {
 	return titled.slice(0, at + shift) + '\n' + block + carriedBlocks + titled.slice(at + shift);
 }
 export function unwrap(pageHtml) {
-	let html = pageHtml, text = null, name = null, view = null;
+	let html = pageHtml, text = null, name = null, view = null, address = null, expiry = null;
 	const a = pageHtml.indexOf(START);
 	if (a >= 0) {
 		const open = pageHtml.indexOf('>', a), b = pageHtml.indexOf(END, open);
 		if (open < 0 || b < 0) throw new Error('a carried document without its end');
 		name = /data-name="([^"]*)"/.exec(pageHtml.slice(a, open))?.[1] ?? null;
 		view = /data-view="(draw|notes)"/.exec(pageHtml.slice(a, open))?.[1] ?? null;
+		const carriedReturn = /data-return="([^"]*)"/.exec(pageHtml.slice(a, open));
+		if (carriedReturn) address = returnAddress(carriedReturn[1]);
+		const carriedExpiry = /data-return-expires-at="([^"]*)"/.exec(pageHtml.slice(a, open));
+		if (carriedExpiry) expiry = returnExpiresAt(carriedExpiry[1]);
+		if (!!address !== !!expiry) throw new Error('a carried return needs its URL and return_expires_at');
 		text = decodeCarried(pageHtml.slice(open + 1, b));
 		html = pageHtml.slice(0, a) + pageHtml.slice(b + END.length);
 		if (a > 0 && html[a - 1] === '\n') html = html.slice(0, a - 1) + html.slice(a);
@@ -83,20 +93,22 @@ export function unwrap(pageHtml) {
 		html = html.slice(0, e) + html.slice(b + END.length);
 		if (e > 0 && html[e - 1] === '\n') html = html.slice(0, e - 1) + html.slice(e);
 	}
-	return {html, text, name, view, drawing, drawingName, base, baseName};
+	return {html, text, name, view, drawing, drawingName, base, baseName, return: address, return_expires_at: expiry};
 }
 // Unknown options, a bare --drawing or --base and a third name are refused, never dropped.
-const USAGE = 'usage: rapier-html <document.md> [out.html] [--view draw|notes] [--drawing sketch.svg] [--base original.md]\n' +
+const USAGE = 'usage: rapier-html <document.md> [out.html] [--view draw|notes] [--drawing sketch.svg] [--base original.md] [--return <url> --return-expires-at <timestamp>]\n' +
 	'  writes <document>.rapier.html beside the file: Rapier with the document inside it, one file, offline.\n' +
 	'  It never overwrites: an output that already exists, the document itself included, is refused.\n' +
 	'  --view      opens the page on Draw (sketch and paint, the document behind it) or on Notes\n' +
 	'  --drawing   carries an SVG drawing alongside the document, opened on Draw as the page boots\n' +
 	'  --base      carries the text the document was proposed against; the page opens on their diff\n' +
+	'  --return    carries a one-use return URL from document.create_return; Share offers Send back\n' +
+	'  --return-expires-at  carries the same mint\'s expiry; Share offers Save once the return expires\n' +
 	'  --          everything after it is a filename, even one that starts with a dash\n' +
 	'  --help      this text';
 export async function main(argv, pagesDir, {log = console.log} = {}) {
 	const names = [];
-	let drawingPath = null, basePath = null, view = null, onlyNames = false;
+	let drawingPath = null, basePath = null, view = null, address = null, expiry = null, onlyNames = false;
 	for (let i = 0; i < argv.length; i++) {
 		const arg = argv[i];
 		if (onlyNames || !arg.startsWith('-')) names.push(arg);
@@ -109,6 +121,14 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 		else if (arg === '--base') {
 			if (basePath !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--base takes one text file (write a name that starts with a dash as ./-original.md)');
 			basePath = argv[++i];
+		}
+		else if (arg === '--return') {
+			if (address !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--return takes one HTTPS return URL');
+			address = returnAddress(argv[++i]);
+		}
+		else if (arg === '--return-expires-at') {
+			if (expiry !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--return-expires-at takes one ISO timestamp from document.create_return');
+			expiry = returnExpiresAt(argv[++i]);
 		}
 		else if (arg !== '--drawing') throw new Error('unknown option ' + arg + '\n' + USAGE);
 		else if (drawingPath !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--drawing takes one SVG file (write a name that starts with a dash as ./-sketch.svg)');
@@ -124,6 +144,8 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 	if (drawingPath) { wrapOptions.drawing = await readFile(drawingPath, 'utf8'); wrapOptions.drawingName = basename(drawingPath); }
 	if (basePath) { wrapOptions.base = await readFile(basePath, 'utf8'); wrapOptions.baseName = basename(basePath); }
 	if (view) wrapOptions.view = view;
+	if (address) wrapOptions.return = address;
+	if (expiry) wrapOptions.return_expires_at = expiry;
 	// R85b: always a new file; 'wx' refuses any existing path, links included.
 	try { await writeFile(out, wrap(page, text, name, wrapOptions), {flag: 'wx'}); }
 	catch (error) { throw error.code === 'EEXIST' ? new Error(out + ' already exists, and rapier-html never overwrites a file: name a new one') : error; }

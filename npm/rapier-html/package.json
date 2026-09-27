@@ -1,6 +1,6 @@
 {
   "name": "rapier-html",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Rapier, the offline Markdown editor, as one HTML page with your document inside it: write, draw and paint, notes, the diff of a change; no account, nothing fetched.",
   "keywords": [
     "markdown",
@@ -33,6 +33,7 @@
   "files": [
     "cli.mjs",
     "page.mjs",
+    "return-address.mjs",
     "rapier.html",
     "README.md",
     "LICENSE",

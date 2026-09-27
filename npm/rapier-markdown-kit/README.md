@@ -1,7 +1,10 @@
 # rapier-markdown-kit
 
-Read and write Rapier Markdown without the editor: picture layout, text marks, the line planner, Will
-markers and the picture appendix. MIT, no dependencies, Node 22 or newer.
+Read, write and style Self-contained Markdown without the editor: the universal style pack, picture layout,
+text marks, the line planner, Will markers and the picture appendix. MIT, no dependencies, Node 22 or newer.
+
+To hand a person the whole editor around their document as one offline file, run `npx rapier-html notes.md`.
+The same command accepts a drawing or an SVG.
 
 ```sh
 npm install rapier-markdown-kit
@@ -23,6 +26,7 @@ import {parseAssets} from 'rapier-markdown-kit/assets';   // the picture appendi
 - Reads Will/1 markers (a separate, optional standard) and says what a region's law allows.
 - Reads the picture appendix, the reference definitions a document's pictures live in, without decoding
   a picture.
+- Styles rendered Markdown with the same self-contained sheet Rapier and its exported pages use.
 
 **What it is not**
 - Not the editor, not Draw, not the image decoders. Every convention is plain Markdown or an HTML
@@ -38,10 +42,140 @@ import {parseAssets} from 'rapier-markdown-kit/assets';   // the picture appendi
 | `rapier-markdown-kit/model` | Occupancy profiles and the line planner: the wrapping itself. |
 | `rapier-markdown-kit/will` | The Will/1 grammar (a separate, optional standard): the markers around an agent's intent regions. |
 | `rapier-markdown-kit/assets` | The picture appendix: the reference definitions a document's pictures live in. It never decodes a picture. |
+| `rapier-markdown-kit/style.css` | The reference style: type, lists, tables, tasks, pictures and the document's other markup, scoped to `.md-render`. |
 | `rapier-markdown-kit` | All five in one import. |
 
 Every convention here is plain Markdown or an HTML comment that other readers ignore. Laying lines
 out exactly as Rapier does also takes the same font metrics, which the host supplies (below).
+
+## Render with the reference style
+
+Import `rapier-markdown-kit/style.css` in a CSS-aware bundler, or copy that file beside your HTML and
+link it with `<link rel="stylesheet" href="style.css">`. Put rendered content inside
+`<main class="md-render">`. The sheet follows the system theme; `data-md-theme="light"` or `"dark"`
+on that root chooses one. Its `--md-*` properties are defined by the sheet itself. Geist and Geist Mono
+are named font families with system fallbacks; no font or external asset is fetched by the sheet.
+
+This runnable example supplies `markdown-it` as the renderer and the kit as the convention readers.
+Save the following as `render.mjs`, run `npm install rapier-markdown-kit markdown-it@15`, then
+`node render.mjs`. Open `styled.html`; it uses only `style.css` for its document styles. The function
+below belongs to the example, not to the package API.
+
+The example renders trusted Markdown, including its HTML. It demonstrates core Markdown, GFM tables,
+an aligned paragraph, a sized picture, a named text colour and a page break. Tasks,
+footnotes and other extensions use the caller's Markdown plugins; details use ordinary HTML.
+The complete markup contract, including callouts, diagrams, math and image wrapping, is
+[Reference style](https://github.com/jackskip22/rapier/blob/main/docs/markdown-standard.md#reference-style).
+
+<!-- reference-style-example -->
+```js
+import MarkdownIt from 'markdown-it';
+import {parseLayout, formatLayout, imageStyle} from 'rapier-markdown-kit/layout';
+import {TEXT_COLOR_NAMES, formatColorRun, formatPageBreak, parseColorOpen, isColorClose, isPageBreakBlock} from 'rapier-markdown-kit/marks';
+import {installMarkdownImages} from 'rapier-markdown-kit/assets';
+import {readFile, writeFile} from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+
+const md = installMarkdownImages(new MarkdownIt({html: true, linkify: true}));
+md.renderer.rules.table_open = (tokens, index, options, env, renderer) =>
+  '<div class="table-scroll-wrap">\n' + renderer.renderToken(tokens, index, options);
+md.renderer.rules.table_close = (tokens, index, options, env, renderer) =>
+  renderer.renderToken(tokens, index, options) + '</div>\n';
+md.core.ruler.after('inline', 'reference-layout', state => {
+  for (let i = 1; i < state.tokens.length; i++) {
+    const inline = state.tokens[i], owner = state.tokens[i - 1];
+    if (inline.type !== 'inline' || !['paragraph_open', 'heading_open'].includes(owner.type)) continue;
+    const children = inline.children, marker = children.at(-1);
+    const layout = marker?.type === 'html_inline' ? parseLayout(marker.content) : null;
+    if (!layout) continue;
+    children.pop();
+    if (layout.align) owner.attrSet('data-md-align', layout.align);
+    const visible = children.filter(token => token.type !== 'text' || token.content.trim());
+    if (visible.length === 1 && visible[0].type === 'image' && layout.width) {
+      visible[0].attrSet('style', imageStyle(layout));
+      visible[0].attrSet('data-md-image-width', String(layout.width));
+    }
+  }
+});
+md.core.ruler.after('inline', 'reference-colour', state => {
+  for (const inline of state.tokens) {
+    if (inline.type !== 'inline') continue;
+    let open = null, depth = 0;
+    for (const token of inline.children) {
+      if (token.type !== 'html_inline') {
+        depth += token.nesting;
+        if (open && depth < open.depth) open = null;
+        continue;
+      }
+      if (isColorClose(token.content) && open && depth === open.depth) {
+        Object.assign(open.token, {type: 'reference_colour_open', tag: 'span', nesting: 1, content: ''});
+        open.token.attrSet('data-md-color', open.hex);
+        open.token.attrSet('style', '--md-color:' + open.hex);
+        Object.assign(token, {type: 'reference_colour_close', tag: 'span', nesting: -1, content: ''});
+        open = null;
+      } else {
+        const hex = parseColorOpen(token.content);
+        if (hex && !open) open = {token, hex, depth};
+      }
+    }
+  }
+});
+const htmlBlock = md.renderer.rules.html_block;
+md.renderer.rules.html_block = (tokens, index, options, env, renderer) =>
+  isPageBreakBlock(tokens[index].content)
+    ? '<div class="rapier-page-break" data-md-break="page" role="separator" aria-label="Page break"></div>\n'
+    : htmlBlock(tokens, index, options, env, renderer);
+
+export function renderReferenceDocument(source) {
+  return md.render(source);
+}
+
+export const exampleSource = [
+  '# A document everywhere',
+  '',
+  'One paragraph with **weight**, *emphasis*, `inline code` and a [link](https://example.com).',
+  '',
+  '## Lists and tables',
+  '',
+  '1. First numbered item',
+  '2. Second numbered item',
+  '   - A nested bullet',
+  '   - Another nested bullet',
+  '',
+  '| Subject | Detail |',
+  '| --- | --- |',
+  '| Style | Shared by editor and page |',
+  '',
+  '> A quoted paragraph.',
+  '',
+  '### A little code',
+  '',
+  '~~~text',
+  'plain code',
+  '~~~',
+  '',
+  'A centred paragraph.' + formatLayout({align: 'center'}),
+  '',
+  'A ' + formatColorRun(TEXT_COLOR_NAMES.blue, 'blue phrase') + ' keeps its named colour.',
+  '',
+  '![A square](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aDAkAAAAASUVORK5CYII=)' + formatLayout({width: 45, align: 'center'}),
+  '',
+  '<details open><summary>Details</summary><p>A little more to read.</p></details>',
+  '',
+  formatPageBreak(),
+  '',
+  'The next printed page.',
+].join('\n');
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await writeFile('style.css', await readFile(new URL(import.meta.resolve('rapier-markdown-kit/style.css'))));
+  await writeFile('styled.html', '<!doctype html><html lang="en"><meta charset="utf-8">' +
+    '<meta name="viewport" content="width=device-width,initial-scale=1"><title>Shared style</title>' +
+    '<link rel="stylesheet" href="style.css"><main class="md-render">' +
+    renderReferenceDocument(exampleSource) + '</main></html>');
+  console.log('Wrote styled.html and style.css');
+}
+```
 
 ## Example
 
@@ -76,6 +210,10 @@ const plan = flowLines(flow, /* column width */ 300, /* top */ 0, obstacles, /* 
 console.log('lines:', plan.lines.length, 'height:', plan.height); // lines: 4 height: 80
 ```
 
+A heading, which the style pack balances, takes its font size as an eighth argument
+(`flowLines(flow, width, top, obstacles, lineHeight, minSlot, direction, fontSize)`): its lines come out as
+Chromium lays `text-wrap: balance`, and greedy wherever an obstacle narrows a line.
+
 ## What the host supplies
 
 `prepareRun` and `prepareRichInline` measure text the way a browser does: they need a global
@@ -106,10 +244,11 @@ implementation against the same documents; `--tolerance 2` sets the pixel tolera
 
 ## Licence
 
-MIT, the full text in `LICENSE`; every module keeps its own MIT line. Pretext's licence, notice and
+MIT, the full text in `LICENSE`; every module and the stylesheet keep their own MIT line. Pretext's licence, notice and
 pinned source inventory are in `dist/agent/vendor/pretext/`. The Rapier editor is AGPL-3.0-only and
-none of it is in this package. The kit's version is its own and does not follow the editor's.
+none of it is in this package. The kit carries Rapier's release number, written from the one
+value the editor's release reads.
 
 ## Where the modules live
 
-Each module of the standard has one home in the Rapier source (`spec/`, `layout/`, `agent/`), where Rapier itself reads it; `dist/` is that closure copied byte for byte, so an installed copy needs nothing beside it.
+Each module of the standard has one home in the Rapier source (`spec/`, `layout/`, `agent/`), where Rapier itself reads it; `dist/` is that closure copied byte for byte, so an installed copy needs nothing beside it. `style.css` is copied byte for byte from the same `spec/markdown-style.css` that Rapier bundles.

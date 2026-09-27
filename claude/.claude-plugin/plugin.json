@@ -1,11 +1,28 @@
 {
   "name": "rapier",
   "displayName": "Rapier",
-  "version": "1.1.1",
-  "description": "Write and edit Markdown with a person in Rapier: read a document by structure, change exactly the passage you inspected, propose under their review, draw by recipe, hand them the whole editor as one offline page that opens on the document, on Draw or on the diff of a change, or embed it in an app.",
-  "author": {"name": "Jack Skipworth", "url": "https://rapier.website"},
+  "version": "1.1.2+skills.d077eec9220c0d9d2d185227251501667772b7009ea33c4fa65abfcd26def012",
+  "description": "Make a working document the person can keep editing after the chat, improve a Rapier document through narrow reviewable changes, or check and deliver it with exact source. Rapier carries the editor, Markdown, pictures and editable drawings in an offline page with no account, an inspectable diff and an optional return address. Its shared-document tools read by structure and edit inspected passages under the person's Will and review policy. Use when an editable deliverable, an existing Rapier document or an app embedding the editor is wanted. Sentence rewrites, summaries and replies requested only in the conversation stay there.",
+  "author": {
+    "name": "Jack Skipworth",
+    "url": "https://rapier.website"
+  },
   "homepage": "https://rapier.website/agents",
   "repository": "https://github.com/jackskip22/rapier",
   "license": "AGPL-3.0-only",
-  "keywords": ["markdown", "editor", "documents", "writing", "drawing", "notes", "offline", "mcp"]
+  "keywords": [
+    "markdown",
+    "editor",
+    "documents",
+    "writing",
+    "drawing",
+    "diagrams",
+    "notes",
+    "offline",
+    "review",
+    "diff",
+    "embed",
+    "mcp",
+    "self-contained markdown"
+  ]
 }

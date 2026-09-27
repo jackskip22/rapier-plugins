@@ -2,6 +2,7 @@
 import {prepareWithSegments} from '../agent/vendor/pretext/layout.js';
 import {layoutNextRichInlineLineRange, materializeRichInlineLineRange} from '../agent/vendor/pretext/rich-inline.js';
 import {validLayout} from '../spec/md-layout.mjs';
+import {linePlan} from './line-plan.mjs';
 
 const finite = value => typeof value === 'number' && Number.isFinite(value);
 const space = code => code === 32 || code === 9 || code === 10 || code === 13 || code === 12;
@@ -291,33 +292,8 @@ export function slotsForBand(width, obstacles, top, height, minWidth = 40) {
   return slots;
 }
 
-export function flowLines(flow, width, top, obstacles, lineHeight, minWidth, direction = 'ltr') {
-  const lines = [];
-  let cursor = {itemIndex: 0, segmentIndex: 0, graphemeIndex: 0}, y = 0, bottom = 0, rows = 0;
-  for (let step = 0; step < 4096 && rows < 768; step++) {
-    const bands = slotsForBand(width, obstacles, top + y, lineHeight, Math.min(minWidth, width));
-    if (!bands) return null;
-    if (direction === 'rtl') bands.reverse();
-    let advanced = false;
-    for (const band of bands) {
-      const range = layoutNextRichInlineLineRange(flow, band.width, cursor);
-      if (!range) return lines.length ? {lines, height: Math.max(lineHeight, bottom)} : null;
-      if (range.width > width + .5 || range.end.itemIndex === cursor.itemIndex &&
-          range.end.segmentIndex === cursor.segmentIndex && range.end.graphemeIndex === cursor.graphemeIndex) return null;
-      if (range.width > band.width + .5) continue;
-      if (lines.length === 4096) return null;
-      lines.push({...materializeRichInlineLineRange(flow, range), ...band, y});
-      cursor = range.end; advanced = true; bottom = y + lineHeight;
-    }
-    if (advanced) { y += lineHeight; rows++; continue; }
-    let next = Infinity;
-    for (const obstacle of obstacles) if (obstacle.x < width && obstacle.x + obstacle.width > 0 &&
-        obstacle.y < top + y + lineHeight && obstacle.y + obstacle.height > top + y)
-      next = Math.min(next, obstacle.y + obstacle.height - top);
-    if (!Number.isFinite(next) || next <= y) return null;
-    y = next;
-  }
-  return null;
+export function flowLines(flow, width, top, obstacles, lineHeight, minWidth, direction = 'ltr', balance = 0) {
+  return linePlan(flow, width, top, obstacles, lineHeight, minWidth, direction, balance, slotsForBand, layoutNextRichInlineLineRange, materializeRichInlineLineRange);
 }
 
 // ---- The one wrap shape (live: globalThis.RapierImageLayout; export: modules["layout/model.mjs"]) ----
