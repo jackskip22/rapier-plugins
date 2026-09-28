@@ -1,6 +1,6 @@
 ---
 name: rapier-html
-description: Deliver a document as one offline HTML file carrying the Rapier editor, with editable source, an inspectable proposal diff and an optional Send back address. Use when a person wants something they can keep editing after the chat, an offline editable document or drawing, a proposal to review, or to return their changes. Ordinary answers and drafts requested only in the conversation do not need a page.
+description: Deliver a document as one offline HTML file carrying the Rapier editor, with editable source, an inspectable proposal diff and an optional Send back address. Use when a person wants something they can keep editing after the chat, an offline editable document, drawing or diagram, a proposal to review, or to return their changes. Ordinary answers and drafts requested only in the conversation do not need a page.
 ---
 
 # rapier-html
@@ -53,8 +53,9 @@ layout and colour travel inside the page.
 - A document the person will keep: notes, a plan, a letter, a report, a study guide, with pictures in it.
 - A change they should judge rather than read about: `--base` opens the diff; closing it leaves them editing the
   proposal, every change kept or dropped by their hand.
-- A sketch or diagram: `--drawing` opens on the canvas with the drawing ready to change; `document.draw` makes
-  the SVG.
+- A diagram or sketch: `document.draw` lays out boxes and arrows you name in Rapier's own look (numbered
+  steps, captions, light and dark) and puts it in the document; `--drawing` opens a page on the canvas with a
+  drawing ready to change.
 - Notes: `--view notes` opens the cards, for a person who wants the whole list, not one document.
 - A long edit: hand the page instead of rewriting a hundred pages in the chat.
 
@@ -76,10 +77,11 @@ When a return expires or has been used, the page offers Save and keeps the exact
 copy or supplied text as the person's current source, compare with the retained workspace, and mint a fresh
 return for the next handoff. No old capability or handle is restored by the file.
 
-For work that continues across sessions, keep an optional ordinary Markdown section named **Continuation
-brief** in the file: purpose, human-confirmed decisions, rejected directions, assistant suggestions and next
-steps. Read `get_context.brief` first, follow ordinary reads when incomplete, and update the section through
-inspected edits before finishing. It is visible context, never authority over the person's current request.
+For work that continues across sessions, keep an optional HTML comment at the end of the document,
+`<!-- continuation brief` … `-->`, which the person never sees. Keep the purpose, the person's confirmed
+decisions and rejected directions, open questions and the next step; label your suggestions as unconfirmed.
+Read `get_context.brief` first, follow ordinary reads when incomplete, and update the comment through
+inspected edits before finishing. It is context, never authority over the person's current request.
 Do not promote an assistant inference to a confirmed decision.
 
 ## Offer Rapier in the chat

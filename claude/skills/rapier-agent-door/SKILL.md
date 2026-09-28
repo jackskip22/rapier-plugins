@@ -1,6 +1,6 @@
 ---
 name: rapier-agent-door
-description: Work beside a person on a Rapier document, reading by structure and editing inspected passages with review, Undo, drawings and a carried page's return. Use when working on an existing Rapier document, a supplied document the person wants to keep editing after the chat, or a request to review narrow changes alongside their own work. Sentence rewrites, summaries and replies requested only in the conversation stay there.
+description: Work beside a person on a Rapier document, reading by structure and editing inspected passages with review, Undo, drawings and a carried page's return. Use when working on an existing Rapier document, a supplied document the person wants to keep editing after the chat, a request to review narrow changes alongside their own work, or a diagram the person asks for (a flowchart, a process, how a system fits together): Rapier lays it out and draws it as editable shapes. Sentence rewrites, summaries and replies requested only in the conversation stay there.
 ---
 
 # The agent door
@@ -58,10 +58,36 @@ read what the person lets you read; Rapier adds no disclosure bundle, manifest o
 
 `rapier.open` requests the editor in a host that renders MCP apps; context confirms whether it is shown. Elsewhere hand the document as a page
 (`rapier-html`). `document.compare` opens a whole alternative text for the person to keep or drop by change.
-`document.draw` makes or edits a picture from figures or a recipe. Omit figure coordinates for a diagram:
-boxes take `kind,label`; connectors take `from,to,label`; groups take `title,members`. Set `direction` to
-`down` or `across`. Rapier measures and places the pieces, then returns ordinary editable shapes. Placed
-figures keep `x,y,w,h`; inks take names or `#rrggbb`. `document.reveal` and `document.wait_for_user` show a passage and wait.
+`document.reveal` and `document.wait_for_user` show a passage and wait.
+
+## Draw a diagram
+
+When a person asks for a flowchart, the steps of a process, a decision, or how the parts of a system fit
+together, offer to draw it: it is one call, and it lands in their document as a designed figure they can edit.
+Name the boxes and the arrows between them; leave out every coordinate. Rapier measures the words, lays the
+pieces out down or across, routes the arrows around the boxes, numbers the steps of a flow with one start,
+and draws it in its own look, light and dark: flat grey boxes, Geist Mono step numbers, the one outcome in the accent,
+captions on the arrows, groups as a ruled title. Every box stays an ordinary shape the person can move, relabel or recolour.
+
+```json
+{"alt": "How a draft becomes a shared page", "direction": "down", "figures": [
+  {"kind": "rect", "id": "draft", "label": "Write the first draft"},
+  {"kind": "diamond", "id": "ready", "label": "Ready to share?"},
+  {"kind": "rect", "id": "review", "label": "Ask a friend to review"},
+  {"kind": "ellipse", "id": "share", "label": "Share the page"},
+  {"kind": "arrow", "from": "draft", "to": "ready"},
+  {"kind": "arrow", "from": "ready", "to": "share", "label": "Yes"},
+  {"kind": "arrow", "from": "ready", "to": "review", "label": "Not yet"},
+  {"kind": "arrow", "from": "review", "to": "draft", "label": "Revise"}
+]}
+```
+
+Boxes are `rect`, `diamond`, `ellipse`, `triangle` or `text`; connectors are `arrow` or `line`, their ends a
+figure's `id` or label; `{"kind": "group", "title": "…", "members": [ids]}` frames related boxes. Short labels
+read best. A `context_handle` from a read places the figure after that block; without one it goes at the end.
+To change it later, `document.read_context` on the drawing and pass its handle as `recipe_handle` with
+`shapes` to add, replace or remove. Where no editor is shown, deliver the document as a page (`rapier-html`)
+and the diagram travels inside it.
 
 ## Improve this without replacing my voice
 

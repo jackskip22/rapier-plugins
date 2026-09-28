@@ -54,17 +54,16 @@
 	--md-jump-marker-inline-start:-1.18rem;
 	--md-jump-marker-center:1em;
 	--md-diagram-ink:light-dark(#121212,#fafafa);
-	--md-diagram-box:light-dark(#f2f1ef,#1d1d1d);
-	--md-diagram-decision:light-dark(#d5eeea,#0e302c);
+	--md-diagram-box:light-dark(#f0f0f0,#1d1d1d);
 	--md-diagram-accent:light-dark(#12a594,#12a594);
 	--md-diagram-on-accent:light-dark(#000000,#000000);
-	--md-diagram-step:light-dark(#0e8a7c,#12a594);
+	--md-diagram-step:light-dark(#666666,#999999);
 	--md-diagram-stroke:2px;
 	--md-diagram-hairline:1px;
 	--md-diagram-caption-size:10px;
 	--md-diagram-caption-track:.12em;
 	--md-diagram-title-track:.16em;
-	--md-diagram-step-scale:2.5;
+	--md-diagram-step-scale:.8;
 	--md-diagram-node-fill:var(--md-diagram-box);
 	--md-diagram-inner-line:color-mix(in srgb,var(--md-color-text) 12%,var(--md-color-bg));
 	--md-diagram-node-line:color-mix(in srgb,var(--md-color-text) 20%,var(--md-color-bg));
@@ -170,16 +169,15 @@
 }
 /* Rapier's diagram look, one for a figure an agent lays out in Draw and for the drawing Mermaid makes from the
    author's source (Draw writes the same pairs into its SVG; _diagram-cells holds the two copies equal). Swiss
-   editorial after the mid-century magazines: a box is a flat field of one grey with no outline, the words the page's
-   own type in its ink; the one accent is meaning only -- the decision is its pale, the outcome (a round node, where a
-   flow ends) the accent itself under black words. It keeps the corner the source asked for: a stadium, a diamond and
+   editorial after the mid-century magazines: nearly monochrome, a box or a decision a flat field of one grey with no
+   outline, the words the page's own type in its ink; the one accent is spent sparingly, on meaning only -- the outcome
+   (a round node, where a flow ends) under black words. It keeps the corner the source asked for: a stadium, a diamond and
    a parallelogram are what the author wrote; the roundings Mermaid adds to a plain box, an actor, a note and a
    cluster are not, and Rapier's boxes are square. An author's own style or classDef fill and stroke stay above all
    of it (they are materialised inline, and an inline declaration outranks this sheet). */
 :where(.md-render) svg.rapier-diagram .node :is(rect,circle,ellipse,polygon,path){
 	fill:var(--md-diagram-box)!important;stroke:none!important;
 }
-:where(.md-render) svg.rapier-diagram .node polygon{fill:var(--md-diagram-decision)!important}
 :where(.md-render) svg.rapier-diagram[aria-roledescription^="flowchart"] .node:has(>circle) :is(circle,path){fill:var(--md-diagram-accent)!important}
 :where(.md-render) svg.rapier-diagram[aria-roledescription^="flowchart"] .node:has(>circle) :is(text,tspan){fill:var(--md-diagram-on-accent)!important}
 :where(.md-render) svg.rapier-diagram g.classGroup rect,:where(.md-render) svg.rapier-diagram .actor,:where(.md-render) svg.rapier-diagram .labelBox,:where(.md-render) svg.rapier-diagram .activation0,:where(.md-render) svg.rapier-diagram .activation1,:where(.md-render) svg.rapier-diagram .activation2{
@@ -191,8 +189,8 @@
 :where(.md-render) svg.rapier-diagram :is(.cluster-label,.cluster .label) :is(text,tspan){
 	font-family:var(--md-font-mono)!important;font-size:var(--md-diagram-caption-size)!important;text-transform:uppercase;letter-spacing:var(--md-diagram-title-track)!important;
 }
-:where(.md-render) svg.rapier-diagram .nodeLabel,:where(.md-render) svg.rapier-diagram .classTitle,:where(.md-render) svg.rapier-diagram text.actor>tspan{font-weight:var(--md-fw-medium)!important}
-:where(.md-render) svg.rapier-diagram .node :is(text,tspan){font-weight:var(--md-fw-regular)!important}
+:where(.md-render) svg.rapier-diagram .classTitle,:where(.md-render) svg.rapier-diagram text.actor>tspan{font-weight:var(--md-fw-medium)!important}
+:where(.md-render) svg.rapier-diagram :is(.nodeLabel,.node text,.node tspan){font-weight:var(--md-fw-semibold)!important}
 :where(.md-render) svg.rapier-diagram rect.basic,:where(.md-render) svg.rapier-diagram rect.title-state,:where(.md-render) svg.rapier-diagram rect.outer,:where(.md-render) svg.rapier-diagram .actor,:where(.md-render) svg.rapier-diagram .note,:where(.md-render) svg.rapier-diagram .labelBox,:where(.md-render) svg.rapier-diagram .cluster rect,:where(.md-render) svg.rapier-diagram .statediagram-cluster rect{rx:0!important;ry:0!important}
 /* The line between two boxes is mid-ladder and one hairline weight everywhere: it is the road,
    not the destination. A lifeline and a divider are neither -- they are a box's own rule down
