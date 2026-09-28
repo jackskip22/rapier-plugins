@@ -69,6 +69,8 @@ the image; one comment carries its layout. In these schematic examples,
 
 ![System diagram][diagram] <!--md-layout:v1 width=47% wrap=around x=72% rotate=15deg-->
 
+![System diagram][diagram] <!--md-layout:v1 width=47% wrap=behind x=50% opacity=30%-->
+
 Following prose can flow above, beside and below the picture.
 
 [diagram]: data:image/jxl;base64,<payload>
@@ -82,6 +84,7 @@ Following prose can flow above, beside and below the picture.
 | `x` | Decimal percentage from `0%` to `100%` | Image's requested horizontal center within the content box; requires `width` or `wrap`. |
 | `y` | Finite decimal followed by `em`, optionally negative (never below `-50em`; zero is written unsigned and omitted) | Wrapped image's requested top inset within its anchor paragraph, measured in that paragraph's font size; a negative value lifts the picture above the paragraph's first line. |
 | `rotate` | Integer or one-decimal-place decimal followed by `deg`, greater than `-180` and at most `180` | Image's clockwise turn in degrees about its own centre; omitted when `0`. Valid alongside any placement — inline, any `wrap`, or `align` — and on its own. |
+| `opacity` | Whole percentage from `5%` to `100%` | Image's fade: the whole picture is drawn at this opacity over whatever lies beneath it, as a layer's opacity is; omitted at `100%`. The picture's own bytes, and its own transparent parts, never change. Valid alongside any placement and on its own. |
 
 Text uses only `align`. Images have exactly three modes: normal flow with optional
 `width` and either `align` or `x`; wrapped flow with `wrap=around` or `wrap=box` and optional
@@ -90,9 +93,11 @@ with `wrap=behind` or `wrap=front` and the same optional `width`, `x` and `y`, w
 positioned exactly as a wrapped image is but neighboring text ignores it entirely and the image is
 painted under or over the words instead. Normal-flow `x` requires `width`; `y` always requires a
 `wrap` value. `align` cannot coexist with `wrap` or `x`. A normal-flow horizontal position does
-not change the image's source order or reserve floating space beside it. `rotate` is independent
-of every other field and every mode; it never requires or excludes `width`, `wrap`, `x`, `y` or
-`align`.
+not change the image's source order or reserve floating space beside it. `rotate` and `opacity`
+are independent of every other field and every mode; neither requires or excludes `width`, `wrap`,
+`x`, `y` or `align`. A fade never changes the flow: `wrap=around` follows the picture's own
+silhouette at any `opacity`, and a reader that does not know `opacity` treats the whole comment as
+invalid, the standard's ordinary degrade.
 
 An image that cannot turn its own bytes losslessly (any raster, or a foreign SVG the writer did
 not itself compose) carries its turn as `rotate` instead: the picture's reserved space becomes its
@@ -151,7 +156,7 @@ zeroes, except `0`, signs or exponent notation. Horizontal whitespace before
 the close is accepted. `rotate` is the one signed field: an optional leading
 `-`, then the same unsigned digits as the others but at most one decimal
 place, then `deg`; no `+`, no exponent, no `°` sign, and no `-0deg` (zero is
-always unsigned, like `y=0em`).
+always unsigned, like `y=0em`). `opacity` is a whole number with no leading zero, then `%`.
 
 Interpret a marker only when it is the final meaningful inline token of its
 paragraph or heading. For ATX headings it precedes optional closing hashes;
@@ -163,8 +168,8 @@ one link, plus whitespace and its marker.
 Unknown versions or keys, repeated keys, invalid values, invalid attachment
 and multiple layout-family comments in one block are inert and preserved.
 Writers emit one marker, lowercase keys, one ASCII space between fields, and
-key order `align width wrap x y rotate`. Remove insignificant decimal trailing zeroes
-and omit `y=0em` and `rotate=0deg`; remove the marker when no fields remain. Only an intentional edit changes
+key order `align width wrap x y rotate opacity`. Remove insignificant decimal trailing zeroes
+and omit `y=0em`, `rotate=0deg` and `opacity=100%`; remove the marker when no fields remain. Only an intentional edit changes
 source; opening, rendering and viewport resizing never normalize it.
 
 ### Conformance rungs
@@ -173,12 +178,12 @@ A reader's support for this section is one of four rungs. Each is a conformance 
 suggestion: a reader claiming a rung shows exactly what that rung says, no less and no more.
 
 **Rung 0 — any CommonMark reader.** Every layout comment is an ordinary HTML comment; CommonMark
-already shows nothing for one. A picture shows inline, upright, at the reader's own default width.
-`align`, `x`, `y`, `wrap` and `rotate` are all invisible. This rung costs nothing: it is what an
+already shows nothing for one. A picture shows inline, upright and solid, at the reader's own default width.
+`align`, `x`, `y`, `wrap`, `rotate` and `opacity` are all invisible. This rung costs nothing: it is what an
 unaware reader already does.
 
 **Rung 1 — position and size.** `align` sets text alignment. `width` and `x` size and place a
-picture in normal flow (§"For image layout" above). `rotate` alone, with no `wrap`, changes nothing
+picture in normal flow (§"For image layout" above), and `opacity` fades it with CSS `opacity`. `rotate` alone, with no `wrap`, changes nothing
 at this rung beyond upright display — a raster's turn is a layout fact, not a pixel change, so a
 reader that stops here shows it unturned, the same degrade as an unrecognized field.
 
@@ -348,10 +353,13 @@ browser's greedy breaks.
 
 The sheet reads alignment and the rendered picture's size; a layout comment remains source until a
 renderer reads it. Use `parseLayout` from `rapier-markdown-kit/layout` for the marker and `imageStyle`
-for its normal-flow `width` and `x`. `imageStyle` returns a percentage width, automatic height and,
-when `x` is present, the clamped left margin. `data-md-image-width` records the percentage on the
+for its normal-flow `width` and `x` and its fade. `imageStyle` returns a percentage width, automatic height and,
+when `x` is present, the clamped left margin; with `opacity` under `100%`, the CSS `opacity`. `data-md-image-width` records the percentage on the
 image. An Obsidian pixel-width picture uses `data-rapier-image-size` with `--md-image-width:Npx`;
-the sheet constrains it to its container.
+the sheet constrains it to its container. A drawing (an SVG picture) shown at its own size or at full column width carries
+`data-md-drawing` and `--md-drawing-width:Npx`, its own width: the sheet lets it shrink to its
+container only down to 12/14 of that width, where 14 px words are still 12 px, and past that its
+parent scrolls sideways; on paper it fits the page. Explicit pixel sizes and smaller layout widths keep the chosen size.
 
 Rapier's layout projector receives the encoded marker in `data-md-layout` on the paragraph and
 `data-rapier-image-layout` on the picture (`encodeURIComponent(marker)`; the kit's

@@ -32,9 +32,9 @@ GitHub).
 
 **Rung 1 -- position and size (a day's work).** Read `<!--md-layout:v1 …-->` after an image:
 `width=` is the picture's width as a percentage of the column, `x=` its centre, `align=` its
-alignment, `y=` its vertical offset in ems. That is a few lines of CSS on the image element
-(`spec/md-layout.mjs`'s `imageStyle` is the reference, MIT, ten lines). What the reader sees: the
-picture where the author put it, at the size they chose. Nothing else changes.
+alignment, `y=` its vertical offset in ems, `opacity=` its fade. That is a few lines of CSS on the image element
+(`spec/md-layout.mjs`'s `imageStyle` is the reference, MIT, a dozen lines). What the reader sees: the
+picture where the author put it, at the size and the fade they chose. Nothing else changes.
 
 **Rung 2 -- wrapping the ordinary way (a day's work in any HTML-based editor).** `wrap=around`,
 `wrap=box`, `wrap=behind`, `wrap=front` are placements. An HTML-based editor gets all four with CSS it

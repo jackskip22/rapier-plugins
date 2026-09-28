@@ -45,7 +45,7 @@ A centred paragraph. <!--md-layout:v1 align=center-->
 
 Text takes `align` (`left`, `center`, `right`, `justify`). A picture takes `width` with `align` or `x`;
 `wrap=around` or `wrap=box` with `x` and `y` for text flowing beside it; `wrap=behind` or `wrap=front` for a
-picture under or over the words; `rotate=15deg` for a turned photo. A comment that does not parse is ignored
+picture under or over the words; `rotate=15deg` for a turned photo; `opacity=40%` for a faded one. A comment that does not parse is ignored
 whole (Rapier's `document.get_context` counts it under `layout.malformed`).
 
 ## Colour, page breaks, captions

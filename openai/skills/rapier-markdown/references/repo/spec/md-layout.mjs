@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 
 // `rotate`: degrees in (-180, 180], one decimal, omitted when 0; never written for a Rapier drawing (its turn lives in its SVG).
-export const fields = new Set(['align', 'width', 'wrap', 'x', 'y', 'rotate']);
+// `opacity`: a picture's fade, a whole percent from 5 to 100, omitted at 100; the picture's bytes never change.
+export const fields = new Set(['align', 'width', 'wrap', 'x', 'y', 'rotate', 'opacity']);
 export const alignments = new Set(['left', 'center', 'right', 'justify']);
 // `behind`/`front`: out of flow; the paragraph lays out as though the picture were absent.
 export const wraps = new Set(['around', 'box', 'behind', 'front']);
@@ -20,6 +21,7 @@ export function validLayout(value) {
     (!has(value, 'x') || percent(value.x) && (has(value, 'wrap') || has(value, 'width'))) &&
     (!has(value, 'y') || typeof value.y === 'number' && Number.isFinite(value.y) && value.y >= -50 && has(value, 'wrap')) &&
     (!has(value, 'rotate') || oneDecimalDegrees(value.rotate)) &&
+    (!has(value, 'opacity') || Number.isInteger(value.opacity) && value.opacity >= 5 && value.opacity <= 100) &&
     !(has(value, 'align') && (has(value, 'wrap') || has(value, 'x')));
 }
 
@@ -51,6 +53,9 @@ export function parseLayout(comment) {
       const magnitude = Number(number[2] + (number[3] ? '.' + number[3] : ''));
       if (number[1] && magnitude === 0) return null;
       value.rotate = number[1] ? -magnitude : magnitude;
+    } else if (key === 'opacity') {
+      if (!/^[1-9]\d{0,2}%$/.test(raw)) return null;
+      value.opacity = Number(raw.slice(0, -1));
     } else value[key] = raw;
   }
   return validLayout(value) ? value : null;
@@ -64,12 +69,18 @@ export function decodeLayoutAttribute(value) {
 
 export const parseLayoutAttribute = value => parseLayout(decodeLayoutAttribute(value));
 
+// The picture's own CSS: its normal-flow width and x, and its fade.
 export function imageStyle(value) {
-  if (!validLayout(value) || value.width == null) return '';
-  const width = value.width;
-  const left = value.x == null ? '' : ';display:block;margin-left:' +
-    decimal(Number(Math.max(0, Math.min(100 - width, value.x - width / 2)).toFixed(6))) + '%;margin-right:0';
-  return 'width:' + decimal(width) + '%;height:auto' + left;
+  if (!validLayout(value)) return '';
+  const parts = [];
+  if (value.width != null) {
+    const width = value.width;
+    const left = value.x == null ? '' : ';display:block;margin-left:' +
+      decimal(Number(Math.max(0, Math.min(100 - width, value.x - width / 2)).toFixed(6))) + '%;margin-right:0';
+    parts.push('width:' + decimal(width) + '%;height:auto' + left);
+  }
+  if (value.opacity != null && value.opacity < 100) parts.push('opacity:' + decimal(value.opacity / 100));
+  return parts.join(';');
 }
 
 // The one wrap-owner rule (layout/browser.js, layout/interchange.js, editor/share.js): prose after, else before, skipping pictures,
@@ -109,8 +120,9 @@ export function formatLayout(value) {
   if (!validLayout(value)) throw new TypeError('invalid_markdown_layout');
   const pairs = [];
   for (const key of fields) {
-    if (has(value, key) && !(key === 'y' && value.y === 0) && !(key === 'rotate' && value.rotate === 0)) pairs.push(key + '=' +
-      (key === 'width' || key === 'x' ? decimal(value[key]) + '%' : key === 'y' ? decimal(value.y) + 'em' :
+    if (has(value, key) && !(key === 'y' && value.y === 0) && !(key === 'rotate' && value.rotate === 0) &&
+      !(key === 'opacity' && value.opacity === 100)) pairs.push(key + '=' +
+      (key === 'width' || key === 'x' || key === 'opacity' ? decimal(value[key]) + '%' : key === 'y' ? decimal(value.y) + 'em' :
         key === 'rotate' ? decimal(value.rotate) + 'deg' : value[key]));
   }
   return pairs.length ? '<!--md-layout:v1 ' + pairs.join(' ') + '-->' : '';

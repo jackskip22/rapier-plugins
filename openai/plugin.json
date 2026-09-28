@@ -1,6 +1,6 @@
 {
   "name": "rapier",
-  "version": "1.1.3+skills.c163260a6a4fae75c6691e4265775af1dd83543a91381290dbd87c681fce17a6",
+  "version": "1.1.4+skills.001b6da982ebba437a4bd0d4fd87ba8f7caf49f0e5c0ff1024dcf14c6920284e",
   "description": "Make a working document the person can keep editing after the chat, improve a Rapier document through narrow reviewable changes, or check and deliver it with exact source. Rapier carries the editor, Markdown, pictures and editable drawings in an offline page with no account, an inspectable diff and an optional return address. Its shared-document tools read by structure and edit inspected passages under the person's Will and review policy. Use when an editable deliverable, an existing Rapier document or an app embedding the editor is wanted. Sentence rewrites, summaries and replies requested only in the conversation stay there.",
   "author": {
     "name": "Jack Skipworth",

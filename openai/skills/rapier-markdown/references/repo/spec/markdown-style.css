@@ -49,6 +49,7 @@
 	--md-color-dark:var(--md-color);
 	--md-highlight-color:var(--md-color-accent);
 	--md-image-width:100%;
+	--md-drawing-width:0px;
 	--md-task-box:clamp(14px,.92em,24px);
 	--md-jump-gap:.9rem;
 	--md-jump-marker-inline-start:-1.18rem;
@@ -330,10 +331,12 @@
 :where(.md-render) svg.rapier-diagram .grid path{stroke:none!important}
 :where(.md-render) svg.rapier-diagram .grid .tick text{fill:var(--md-diagram-quiet)!important;font-size:var(--md-text-xs)!important}
 :where(.md-render) svg.rapier-diagram .today{stroke:var(--md-diagram-c6)!important}
-/* Paper cannot be scrolled sideways, so on paper a diagram goes back to fitting the page. */
+/* Paper cannot be scrolled sideways, so on paper a diagram, and a wide drawing, go back to fitting the page. */
 @media print{
 	:where(.md-render) .diagram-block{overflow:visible!important}
 	:where(.md-render) svg.rapier-diagram{width:auto!important;max-width:100%!important}
+	.md-render img[data-md-drawing]{min-width:0!important}
+	.md-render :has(>img[data-md-drawing],>a>img[data-md-drawing]){overflow:visible!important}
 }
 :where(.md-render) .diagram-reason {
 	margin: .4em 0 0;
@@ -702,6 +705,12 @@
 	vertical-align:middle;
 }
 .md-render img[data-rapier-image-size]{width:min(var(--md-image-width),100%);height:auto}
+/* A drawing (an SVG picture, as every Draw drawing is) shown at its own size carries that size, and shrinks to the column only
+   while its words stay legible: at 12/14 of it, Draw's default words (14 px) are 12 px, the smallest text a phone reads
+   (measured on a 390 px phone, the lane drawing-dark-wide). There it stops, and its block scrolls sideways, as a wide diagram
+   does; a drawing that fits, or shrinks less than that, is drawn as it always was. */
+.md-render img[data-md-drawing]{min-width:calc(var(--md-drawing-width) * 12 / 14)}
+.md-render :has(>img[data-md-drawing],>a>img[data-md-drawing]){overflow-x:auto}
 .md-render img:is([data-rapier-asset],[data-rapier-image-url]):not([data-rapier-asset-state="ready"]){background:color-mix(in srgb,var(--md-color-text) 5%,transparent)}
 
 .md-render dl{margin:0 0 var(--md-space-4)}
