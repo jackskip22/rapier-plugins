@@ -159,6 +159,7 @@
    The same class reaches rendered blocks and source previews: the owner
    marks each admitted drawing `rapier-diagram`, which remains stable when export namespaces
    local SVG IDs and references. */
+:where(.md-render) svg.rapier-native-flowchart{display:block;margin-inline:auto;height:auto}
 :where(.md-render) svg.rapier-diagram{
 	display:block;margin-inline:auto;height:auto;
 	font-family:var(--md-font-sans)!important;
@@ -334,7 +335,7 @@
 /* Paper cannot be scrolled sideways, so on paper a diagram, and a wide drawing, go back to fitting the page. */
 @media print{
 	:where(.md-render) .diagram-block{overflow:visible!important}
-	:where(.md-render) svg.rapier-diagram{width:auto!important;max-width:100%!important}
+	:where(.md-render) svg.rapier-diagram,:where(.md-render) svg.rapier-native-flowchart{width:auto!important;max-width:100%!important}
 	.md-render img[data-md-drawing]{min-width:0!important}
 	.md-render :has(>img[data-md-drawing],>a>img[data-md-drawing]){overflow:visible!important}
 }

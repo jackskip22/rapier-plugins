@@ -1,7 +1,7 @@
 {
   "name": "rapier",
-  "version": "1.1.4+skills.001b6da982ebba437a4bd0d4fd87ba8f7caf49f0e5c0ff1024dcf14c6920284e",
-  "description": "Make a working document the person can keep editing after the chat, improve a Rapier document through narrow reviewable changes, or check and deliver it with exact source. Rapier carries the editor, Markdown, pictures and editable drawings in an offline page with no account, an inspectable diff and an optional return address. Its shared-document tools read by structure and edit inspected passages under the person's Will and review policy. Use when an editable deliverable, an existing Rapier document or an app embedding the editor is wanted. Sentence rewrites, summaries and replies requested only in the conversation stay there.",
+  "version": "1.1.10+skills.aa804d99581090308bba4a3f4d3087e353ad43d1b9aa03b4f8bafae7f65441f5",
+  "description": "Explain, plan, write and create together on an editable page. Rapier combines prose, diagrams, movable drawings, painting and inspectable revisions so a person can explore an idea, change it and continue with the agent. Use when a visual explanation, substantial draft, plan, spatial sketch or meaningful revision benefits from shared editing, even without naming Rapier. Read current passages or drawing objects, change only what is needed, and preserve the person’s work. Deliver an offline editable page when a lasting file is wanted. Brief answers and chat-only requests stay in the conversation.",
   "author": {
     "name": "Jack Skipworth",
     "url": "https://rapier.website"
@@ -29,8 +29,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Rapier",
-        "shortDescription": "Keep an editable document, review changes, and return your work.",
-        "longDescription": "Make a working document the person can keep editing after the chat, improve a Rapier document through narrow reviewable changes, or check and deliver it with exact source. Rapier carries the editor, Markdown, pictures and editable drawings in an offline page with no account, an inspectable diff and an optional return address. Its shared-document tools read by structure and edit inspected passages under the person's Will and review policy. Use when an editable deliverable, an existing Rapier document or an app embedding the editor is wanted. Sentence rewrites, summaries and replies requested only in the conversation stay there.",
+        "shortDescription": "Explore ideas, draw, write and revise together on an editable page.",
+        "longDescription": "Explain, plan, write and create together on an editable page. Rapier combines prose, diagrams, movable drawings, painting and inspectable revisions so a person can explore an idea, change it and continue with the agent. Use when a visual explanation, substantial draft, plan, spatial sketch or meaningful revision benefits from shared editing, even without naming Rapier. Read current passages or drawing objects, change only what is needed, and preserve the person’s work. Deliver an offline editable page when a lasting file is wanted. Brief answers and chat-only requests stay in the conversation.",
         "developerName": "Jack Skipworth",
         "category": "Productivity",
         "capabilities": [
@@ -38,8 +38,15 @@
           "Write"
         ],
         "websiteURL": "https://rapier.website/agents",
-        "privacyPolicyURL": "https://rapier.website/privacy",
-        "termsOfServiceURL": "https://rapier.website/privacy"
+        "privacyPolicyURL": "https://mcp.rapier.website/privacy.html",
+        "termsOfServiceURL": "https://mcp.rapier.website/privacy.html",
+        "composerIcon": "./assets/icon-64.png",
+        "logo": "./assets/icon-512.png",
+        "defaultPrompt": [
+          "Turn these notes into a document I can keep editing in Rapier.",
+          "Propose a clearer opening in Rapier and let me review the changes.",
+          "Draw an editable diagram of these steps in Rapier."
+        ]
       }
     }
   }

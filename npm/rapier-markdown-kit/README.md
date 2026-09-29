@@ -64,6 +64,7 @@ below belongs to the example, not to the package API.
 The example renders trusted Markdown, including its HTML. It demonstrates core Markdown, GFM tables,
 an aligned paragraph, a sized picture, a named text colour and a page break. Tasks,
 footnotes and other extensions use the caller's Markdown plugins; details use ordinary HTML.
+In a Rapier page, supported Mermaid flowchart fences also draw offline in Rapier's look, so an agent can write a fence or use figures. The kit itself does not render diagrams.
 The complete markup contract, including callouts, diagrams, math and image wrapping, is
 [Reference style](https://github.com/jackskip22/rapier/blob/main/docs/markdown-standard.md#reference-style).
 

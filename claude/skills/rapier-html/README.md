@@ -4,14 +4,14 @@ Rapier, the offline Markdown editor, as one HTML page with your document inside 
 install, nothing fetched to open, edit or save. Node 22 or newer.
 
 ```sh
-npx -- rapier-html notes.md                          # the editor, notes.md inside it, written beside the file
-npx -- rapier-html notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
-npx -- rapier-html notes.md --view notes             # opens on Notes: the document as cards
-npx -- rapier-html notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
-npx -- rapier-html proposal.md --base original.md    # opens on the diff of a proposed change
-npx -- rapier-html notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
-npx -- rapier-html notes.md out.html                 # a named output
-npm install rapier-html                              # as a library: wrap, unwrap
+npx -- rapier-html@1.1.10 notes.md                          # the editor, notes.md inside it, written beside the file
+npx -- rapier-html@1.1.10 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
+npx -- rapier-html@1.1.10 notes.md --view notes             # opens on Notes: the document as cards
+npx -- rapier-html@1.1.10 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
+npx -- rapier-html@1.1.10 proposal.md --base original.md    # opens on the diff of a proposed change
+npx -- rapier-html@1.1.10 notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
+npx -- rapier-html@1.1.10 notes.md out.html                 # a named output
+npm install rapier-html@1.1.10                              # as a library: wrap, unwrap
 ```
 
 The first `--` is for npm, so `--help` reaches the command. It never overwrites a file.
@@ -22,7 +22,7 @@ The first `--` is for npm, so `--help` reaches the command. It never overwrites 
 - Markdown the way it reads: headings, lists, checklists, tables, code, quotes, footnotes, pictures placed
   around text.
 - Find and replace, Undo, a source view of the exact bytes.
-- Math and diagrams on demand, fetched once from a pinned address only when a document asks.
+- Supported Mermaid flowchart fences draw offline in Rapier's look, so an agent can write a fence or use figures; other diagrams and math use optional plugins.
 
 **Draw and paint**
 - Shapes, lines, arrows, text on a canvas that goes into the document as a picture.
