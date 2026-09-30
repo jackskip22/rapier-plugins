@@ -5,15 +5,20 @@ on:
       - 'rapier-html-v*'
       - 'rapier-markdown-kit-v*'
       - 'rapier-embed-v*'
+      - 'rapier-jxl-v*'
   workflow_dispatch:
     inputs:
       package:
+        description: which package (all publishes every package the registry lacks at its version)
         type: choice
         required: true
+        default: all
         options:
+          - all
           - rapier-html
           - rapier-markdown-kit
           - rapier-embed
+          - rapier-jxl
 permissions:
   contents: read
   id-token: write
@@ -27,23 +32,30 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org
-      - name: which package
-        id: which
-        env:
-          CHOSEN: ${{ inputs.package }}
-        run: |
-          case "${CHOSEN:-${GITHUB_REF_NAME}}" in
-            rapier-html|rapier-html-v*) echo "dir=npm/rapier-html" >> "$GITHUB_OUTPUT" ;;
-            rapier-markdown-kit|rapier-markdown-kit-v*) echo "dir=npm/rapier-markdown-kit" >> "$GITHUB_OUTPUT" ;;
-            rapier-embed|rapier-embed-v*) echo "dir=npm/rapier-embed" >> "$GITHUB_OUTPUT" ;;
-            *) echo "unknown package" >&2; exit 1 ;;
-          esac
-      - name: the tag names the package's version
-        if: github.event_name == 'push'
-        working-directory: ${{ steps.which.outputs.dir }}
-        run: test "${GITHUB_REF_NAME#*-v}" = "$(node -p "require('./package.json').version")"
-      - name: publish
-        working-directory: ${{ steps.which.outputs.dir }}
+      - name: publish what the registry lacks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --provenance --access public
+          CHOSEN: ${{ inputs.package }}
+          TAG: ${{ github.event_name == 'push' && github.ref_name || '' }}
+        run: |
+          set -u
+          only="${CHOSEN:-all}"
+          if [ -n "$TAG" ]; then only="${TAG%-v*}"; fi
+          failed=0
+          for dir in npm/rapier-html npm/rapier-markdown-kit npm/rapier-embed npm/rapier-jxl; do
+            name=$(node -p "require('./$dir/package.json').name")
+            version=$(node -p "require('./$dir/package.json').version")
+            if [ "$only" != all ] && [ "$only" != "$name" ]; then continue; fi
+            if [ -n "$TAG" ] && [ "${TAG#*-v}" != "$version" ]; then
+              echo "the tag $TAG names another version than $dir's $version" | tee -a "$GITHUB_STEP_SUMMARY"; failed=1; continue
+            fi
+            if [ -n "$(npm view "$name@$version" version 2>/dev/null)" ]; then
+              echo "- $name@$version is already on the registry: skipped" | tee -a "$GITHUB_STEP_SUMMARY"; continue
+            fi
+            if (cd "$dir" && npm publish --provenance --access public); then
+              echo "- published $name@$version" | tee -a "$GITHUB_STEP_SUMMARY"
+            else
+              echo "- FAILED $name@$version" | tee -a "$GITHUB_STEP_SUMMARY"; failed=1
+            fi
+          done
+          exit $failed
