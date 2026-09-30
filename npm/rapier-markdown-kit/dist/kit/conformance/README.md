@@ -5,7 +5,10 @@ standard](../../docs/markdown-standard.md): inline (no layout comment), width/x/
 with a real alpha silhouette, `wrap=box`, `behind`, `front`, `rotate=` on a plain raster, a foreign
 SVG "drawing" already turned in its own bytes, a ring drawing whose unfilled interior takes a line of
 text, both-sides wrapping around a centred picture, the neighbour search skipping a second, unrelated
-picture, the neighbour search stopping at a heading, and RTL (Arabic) text.
+picture, a heading after a picture, and RTL (Arabic) text.
+
+Headings can anchor images. `12-heading-barrier.expected.json` records an earlier paragraph
+anchor; that historical measurement is not a normative neighbour-selection expectation.
 
 ## What each document's JSON carries
 
