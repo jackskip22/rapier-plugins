@@ -78,12 +78,17 @@ Prints two separate tables (preservation and presentation are different claims):
   either way), **9 CLOSE, 0 DIFFERS**, each CLOSE row's cause named rather than left as "close
   enough": `01-inline`/`02-width-x-align`/`05-behind`/`06-front` have no real trace at all (see
   `measurements` above) so still rest on the character-sum fallback; `03-wrap-around-silhouette`,
-  `09-drawing-ring-interior`, `11-neighbour-skips-image` and `13-rtl-text` run Pretext for real during
-  export (`13-rtl-text` at 100% — every query of its own answered from the real trace) yet still
-  carry a small, constant left-edge delta (5.18px for 03/11/13, 6.63px for 09) that is a
-  picture-obstacle *geometry* fact, not a text one: their `profileHint` is a hand-computed, quantized
-  alpha-band descriptor for a picture Rapier's own export never serializes an occupancy descriptor
-  for, and that descriptor's own precision — not the measurer — is the residual gap. Before this
+  `11-neighbour-skips-image` and `13-rtl-text` run Pretext for real during export (`13-rtl-text` at
+  100% — every query of its own answered from the real trace) yet still carry a small, constant
+  left-edge delta (5.18px) that is a picture-obstacle *geometry* fact, not a text one: their
+  `profileHint` is a hand-computed, quantized alpha-band descriptor for a picture Rapier's own export
+  never serializes an occupancy descriptor for, and that descriptor's own precision — not the
+  measurer — is the residual gap. `09-drawing-ring-interior` plans the recorded 14 lines, but one row
+  differs by a whole slot (115.08px left, 292.09px right): its recorded trace, taken before a word
+  that must break inside itself was given the widest slot of its row, cuts "ordinary" into "ordinar"
+  and "y" in the ring's narrow left slot, where the planner now leaves that slot empty and sets the
+  word whole in the wide one (`layout/line-plan.mjs`). Its `expected.json` still holds the earlier cut;
+  it is regenerated from a browser export, not by hand. Before this
   measurer existed (a per-character glyph-sum with no real trace at all), the same run reported 4
   AGREE / 8 CLOSE / 1 DIFFERS — `13-rtl-text` disagreed by a whole line (7 expected, 8 planned): real
   Arabic shaping (ligatures, diacritic combination) changes a run's total measured width in a way an

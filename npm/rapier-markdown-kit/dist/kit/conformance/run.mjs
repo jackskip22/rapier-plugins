@@ -109,14 +109,16 @@ console.log(`\n${agree}/${rows.length} documents AGREE within ${args.tolerance}p
 console.log(`Measurer: ${measurer.stats.hits} queries answered from Rapier's own real browser trace, ${measurer.stats.misses} fell back to a character-glyph sum (no kerning/shaping).`);
 console.log(`A row's own hits/misses can undercount its real coverage: several fixtures share one identical anchor sentence, and Pretext's own per-process`);
 console.log(`segment cache (agent/vendor/pretext/measurement.js) serves a repeated (font, segment) query straight from that cache without calling`);
-console.log(`measureText again at all -- real data, just not counted against the SECOND document to ask for it. Two named, separate reasons a row still`);
-console.log(`reads CLOSE rather than AGREE, neither of them "close enough": (a) no real trace exists at all for 01-inline/02-width-x-align/05-behind/06-front`);
+console.log(`measureText again at all -- real data, just not counted against the SECOND document to ask for it. Three named, separate reasons a row still`);
+console.log(`reads CLOSE rather than AGREE, none of them "close enough": (a) no real trace exists at all for 01-inline/02-width-x-align/05-behind/06-front`);
 console.log(`-- their picture pushes no flow obstacle, so layout/interchange.js's own prepare() never calls Pretext for this paragraph during export (see`);
-console.log(`measurer.mjs) -- the from-scratch character-sum approximation disagrees with real shaping by a bounded, named amount; (b) 03/09/11/13 DO run`);
+console.log(`measurer.mjs) -- the from-scratch character-sum approximation disagrees with real shaping by a bounded, named amount; (b) 03/11/13 DO run`);
 console.log(`Pretext for real (hits > 0, 13-rtl-text at 100% -- every query answered from the real trace) yet still carry a small, constant left-edge delta`);
-console.log(`(5.18px for 03/11/13, 6.63px for 09, unchanged from before this measurer existed) -- a picture-obstacle geometry fact, not a text one: these`);
+console.log(`(5.18px, unchanged from before this measurer existed) -- a picture-obstacle geometry fact, not a text one: these`);
 console.log(`fixtures' profileHint is a hand-computed, quantized alpha band descriptor for a raster Rapier's own export never serialized an occupancy`);
-console.log(`descriptor for (conformance/README.md, "profileHint"), and that descriptor's own precision -- not this lane's measurer -- is the residual gap.`);
+console.log(`descriptor for (conformance/README.md, "profileHint"), and that descriptor's own precision -- not this lane's measurer -- is the residual gap; (c) 09 plans the recorded 14 lines but one row`);
+console.log(`differs by a whole slot: its recorded trace cuts a word in the ring's narrow left slot, and the planner now gives a word that must break inside itself`);
+console.log(`the widest slot of its row (layout/line-plan.mjs) -- the recorded lines are the earlier planner's.`);
 if (measurer.stats.missedQueries.length) {
 	console.log(`\nFirst ${Math.min(10, measurer.stats.missedQueries.length)} of ${measurer.stats.misses} missed (font, text) queries (fell back to the character sum):`);
 	for (const {font, text} of measurer.stats.missedQueries.slice(0, 10)) console.log(`  ${JSON.stringify(text)}  (${font})`);
