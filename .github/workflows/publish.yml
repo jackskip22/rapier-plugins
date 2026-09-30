@@ -5,7 +5,6 @@ on:
       - 'rapier-html-v*'
       - 'rapier-markdown-kit-v*'
       - 'rapier-embed-v*'
-      - 'rapier-jxl-v*'
   workflow_dispatch:
     inputs:
       package:
@@ -18,7 +17,6 @@ on:
           - rapier-html
           - rapier-markdown-kit
           - rapier-embed
-          - rapier-jxl
 permissions:
   contents: read
   id-token: write
@@ -42,7 +40,7 @@ jobs:
           only="${CHOSEN:-all}"
           if [ -n "$TAG" ]; then only="${TAG%-v*}"; fi
           failed=0
-          for dir in npm/rapier-html npm/rapier-markdown-kit npm/rapier-embed npm/rapier-jxl; do
+          for dir in npm/rapier-html npm/rapier-markdown-kit npm/rapier-embed; do
             name=$(node -p "require('./$dir/package.json').name")
             version=$(node -p "require('./$dir/package.json').version")
             if [ "$only" != all ] && [ "$only" != "$name" ]; then continue; fi
