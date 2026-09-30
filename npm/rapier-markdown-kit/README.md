@@ -18,21 +18,6 @@ import {parseWill} from 'rapier-markdown-kit/will';       // Will/1 markers: kee
 import {parseAssets} from 'rapier-markdown-kit/assets';   // the picture appendix
 ```
 
-**What it does**
-- Parses, validates and writes back the `md-layout:v1` comment that places a picture: width, wrap,
-  position.
-- Lays text out around a picture's shape exactly as Rapier does, given the host's font metrics.
-- Reads and writes colour and page-break marks.
-- Reads Will/1 markers (a separate, optional standard) and says what a region's law allows.
-- Reads the picture appendix, the reference definitions a document's pictures live in, without decoding
-  a picture.
-- Styles rendered Markdown with the same self-contained sheet Rapier and its exported pages use.
-
-**What it is not**
-- Not the editor, not Draw, not the image decoders. Every convention is plain Markdown or an HTML
-  comment other readers ignore. The text layout engine it uses, Pretext, is vendored with its own MIT
-  licence.
-
 ## What it gives you
 
 | Import | What it is |
@@ -45,8 +30,8 @@ import {parseAssets} from 'rapier-markdown-kit/assets';   // the picture appendi
 | `rapier-markdown-kit/style.css` | The reference style: type, lists, tables, tasks, pictures and the document's other markup, scoped to `.md-render`. |
 | `rapier-markdown-kit` | All five in one import. |
 
-Every convention here is plain Markdown or an HTML comment that other readers ignore. Laying lines
-out exactly as Rapier does also takes the same font metrics, which the host supplies (below).
+Every convention is plain Markdown or an HTML comment other readers ignore. Laying lines out as Rapier does takes
+the host's font metrics (below).
 
 ## Render with the reference style
 
@@ -56,17 +41,11 @@ link it with `<link rel="stylesheet" href="style.css">`. Put rendered content in
 on that root chooses one. Its `--md-*` properties are defined by the sheet itself. Geist and Geist Mono
 are named font families with system fallbacks; no font or external asset is fetched by the sheet.
 
-This runnable example supplies `markdown-it` as the renderer and the kit as the convention readers.
-Save the following as `render.mjs`, run `npm install rapier-markdown-kit markdown-it@15`, then
-`node render.mjs`. Open `styled.html`; it uses only `style.css` for its document styles. The function
-below belongs to the example, not to the package API.
-
-The example renders trusted Markdown, including its HTML. It demonstrates core Markdown, GFM tables,
-an aligned paragraph, a sized picture, a named text colour and a page break. Tasks,
-footnotes and other extensions use the caller's Markdown plugins; details use ordinary HTML.
-In a Rapier page, supported Mermaid flowchart fences also draw offline in Rapier's look, so an agent can write a fence or use figures. The kit itself does not render diagrams.
-The complete markup contract, including callouts, diagrams, math and image wrapping, is
-[Reference style](https://github.com/jackskip22/rapier/blob/main/docs/markdown-standard.md#reference-style).
+The example below renders trusted Markdown with `markdown-it` and the kit's readers: run
+`npm install rapier-markdown-kit markdown-it@15`, save it as `render.mjs`, run `node render.mjs` and open
+`styled.html`, which uses only `style.css`. It shows core Markdown, GFM tables, an aligned paragraph, a sized
+picture, a named colour and a page break; tasks, footnotes and diagrams are the caller's plugins. The full markup
+contract is [Reference style](https://github.com/jackskip22/rapier/blob/main/docs/markdown-standard.md#reference-style).
 
 <!-- reference-style-example -->
 ```js
@@ -236,12 +215,11 @@ The appendix parser takes a markdown-it-compatible parser factory from the calle
 node node_modules/rapier-markdown-kit/dist/kit/conformance/run.mjs
 ```
 
-Thirteen small documents, each with the line boxes Rapier's own export produced for it. The runner
-reports two things separately. **Preservation**: every layout comment round-trips exactly (12 of
-the 12 documents that carry one). **Presentation**: how closely the planned lines match (4 agree
-within 2px, 9 are close, none differ); each close row has a named cause, given in the runner's
-output and in `dist/kit/conformance/README.md`. `--impl path/to/module.mjs` runs another
-implementation against the same documents; `--tolerance 2` sets the pixel tolerance.
+Thirteen small documents, each with the line boxes Rapier's own export produced for it. **Preservation**: every
+layout comment round-trips exactly (12 of 12 that carry one). **Presentation**: how closely the planned lines match
+(4 agree within 2px, 9 are close with a named cause, none differ; `dist/kit/conformance/README.md`).
+`--impl path/to/module.mjs` runs another implementation against the same documents; `--tolerance 2` sets the pixel
+tolerance.
 
 ## Licence
 
@@ -252,4 +230,5 @@ value the editor's release reads.
 
 ## Where the modules live
 
-Each module of the standard has one home in the Rapier source (`spec/`, `layout/`, `agent/`), where Rapier itself reads it; `dist/` is that closure copied byte for byte, so an installed copy needs nothing beside it. `style.css` is copied byte for byte from the same `spec/markdown-style.css` that Rapier bundles.
+Each module has one home in the Rapier source (`spec/`, `layout/`, `agent/`), where Rapier itself reads it; `dist/`
+is that closure copied byte for byte, and `style.css` is the same `spec/markdown-style.css` Rapier bundles.
