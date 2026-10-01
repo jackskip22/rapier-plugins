@@ -1,6 +1,6 @@
 {
   "name": "rapier-embed",
-  "version": "1.1.28",
+  "version": "1.1.29",
   "description": "Put the Rapier editor in your site: one call frames rapier.html?embed=1, connects, loads your document and answers its saves.",
   "keywords": [
     "markdown",
