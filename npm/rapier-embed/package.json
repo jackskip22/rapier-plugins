@@ -1,6 +1,6 @@
 {
   "name": "rapier-embed",
-  "version": "1.1.39",
+  "version": "1.1.40",
   "description": "Mount the Rapier document editor or use it as an exact Markdown form field, saving to your own storage.",
   "keywords": [
     "markdown",
