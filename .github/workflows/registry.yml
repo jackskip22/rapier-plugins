@@ -1,0 +1,44 @@
+name: registry
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: is this version in the MCP registry already
+        id: held
+        run: |
+          set -u
+          name=$(node -p "require('./server.json').name")
+          version=$(node -p "require('./server.json').version")
+          code=$(curl -sS -o /dev/null -w '%{http_code}' "https://registry.modelcontextprotocol.io/v0.1/servers/${name//\//%2F}/versions/$version")
+          if [ "$code" = 200 ]; then
+            echo "- $name@$version is already in the MCP registry: skipped" | tee -a "$GITHUB_STEP_SUMMARY"; echo "skip=true" >> "$GITHUB_OUTPUT"
+          elif [ "$code" = 404 ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "- FAILED: the MCP registry answered $code for $name@$version; nothing published" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1
+          fi
+      - name: mcp-publisher, the registry's latest release
+        if: steps.held.outputs.skip != 'true'
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher --version
+      - name: validate and publish server.json (GitHub OIDC; no token, no secret)
+        if: steps.held.outputs.skip != 'true'
+        run: |
+          set -u
+          name=$(node -p "require('./server.json').name")
+          version=$(node -p "require('./server.json').version")
+          ./mcp-publisher validate server.json
+          if ./mcp-publisher login github-oidc && ./mcp-publisher publish server.json; then
+            echo "- published $name@$version to the MCP registry" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- FAILED $name@$version (the name must be io.github.jackskip22/..., the workflow needs id-token: write; \"invalid audience\" means an old mcp-publisher)" | tee -a "$GITHUB_STEP_SUMMARY"; exit 1
+          fi

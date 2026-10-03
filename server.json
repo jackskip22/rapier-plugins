@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.jackskip22/rapier",
+  "title": "Rapier",
+  "description": "Markdown editor in one offline HTML file: the agent edits passages, you keep or drop each change.",
+  "version": "1.1.51",
+  "websiteUrl": "https://rapier.website",
+  "repository": {
+    "url": "https://github.com/jackskip22/rapier-plugins",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://rapier.website/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.rapier.website/mcp"
+    }
+  ]
+}

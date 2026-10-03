@@ -1,7 +1,15 @@
 # rapier-markdown-kit
 
-Read, write and style Self-contained Markdown without the editor: the universal style pack, picture layout,
-text marks, the line planner, Will markers and the picture appendix. MIT, no dependencies, Node 22 or newer.
+Read, write and style Self-contained Markdown in your own code: one `.md` file that carries its pictures, layout
+and colour.
+
+- Everything past CommonMark and GFM is an HTML comment other readers ignore or an ordinary reference
+  definition, so every Markdown app still reads the file.
+- One stylesheet renders the document as the editor and its exported page do.
+- The line planner flows text around a picture's real shape; a conformance suite of thirteen documents runs
+  any implementation against it.
+- Will/1 markers say which regions an agent may edit, only add to, or must keep.
+- MIT, no dependencies, Node 22 or newer.
 
 To hand a person the whole editor around their document as one offline file, run `npx rapier-html notes.md`.
 The same command accepts a drawing or an SVG.
