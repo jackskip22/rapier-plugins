@@ -2,6 +2,7 @@ name: registry
 on:
   push:
     branches: [main]
+    paths-ignore: ['signatures/**']
   workflow_dispatch:
 permissions:
   contents: read
