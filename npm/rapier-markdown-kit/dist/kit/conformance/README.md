@@ -1,7 +1,7 @@
 # The conformance kit
 
 Thirteen small documents, each covering one placement fact from [the Markdown
-standard](../../docs/markdown-standard.md): inline (no layout comment), width/x/align, `wrap=around`
+standard](https://rapier.website/markdown-standard): inline (no layout comment), width/x/align, `wrap=around`
 with a real alpha silhouette, `wrap=box`, `behind`, `front`, `rotate=` on a plain raster, a foreign
 SVG "drawing" already turned in its own bytes, a ring drawing whose unfilled interior takes a line of
 text, both-sides wrapping around a centred picture, the neighbour search skipping a second, unrelated
@@ -75,18 +75,18 @@ Prints two separate tables (preservation and presentation are different claims):
 - **Presentation** — does the planned line count and each line's left/right agree with the recorded
   fact, within `--tolerance` pixels (default 2). This depends entirely on the measurer supplied;
   `run.mjs`'s own default (`measurer.mjs`, R77) replays Rapier's real Pretext trace wherever one was
-  captured, falling back to the character-glyph sum only where none exists. Current result: **4/13
-  AGREE outright** (`04-wrap-box`, `07-rotate-raster`, `10-both-sides`, `12-heading-barrier` — every
+  captured, falling back to the character-glyph sum only where none exists. Current result: **3/13
+  AGREE outright** (`04-wrap-box`, `10-both-sides`, `12-heading-barrier` — every
   one a case where the compared edge is pure obstacle-slot geometry, unaffected by text fidelity
-  either way), **9 CLOSE, 0 DIFFERS**, each CLOSE row's cause named rather than left as "close
+  either way), **10 CLOSE, 0 DIFFERS**, each CLOSE row's cause named rather than left as "close
   enough": `01-inline`/`02-width-x-align`/`05-behind`/`06-front` have no real trace at all (see
   `measurements` above) so still rest on the character-sum fallback; `03-wrap-around-silhouette`,
   `11-neighbour-skips-image` and `13-rtl-text` run Pretext for real during export (`13-rtl-text` at
   100% — every query of its own answered from the real trace) yet still carry a small, constant
-  left-edge delta (5.18px) that is a picture-obstacle *geometry* fact, not a text one: their
+  left-edge delta (9.64px) that is a picture-obstacle *geometry* fact, not a text one: their
   `profileHint` is a hand-computed, quantized alpha-band descriptor for a picture Rapier's own export
   never serializes an occupancy descriptor for, and that descriptor's own precision — not the
-  measurer — is the residual gap. `09-drawing-ring-interior` plans the recorded 14 lines, but one row
+  measurer — is the residual gap. `07-rotate-raster` and `08-drawing-rotation` have right-edge geometry deltas of 4.48px and 5.31px, with no measurer calls. `09-drawing-ring-interior` plans the recorded 14 lines, but one row
   differs by a whole slot (115.08px left, 292.09px right): its recorded trace, taken before a word
   that must break inside itself was given the widest slot of its row, cuts "ordinary" into "ordinar"
   and "y" in the ring's narrow left slot, where the planner now leaves that slot empty and sets the

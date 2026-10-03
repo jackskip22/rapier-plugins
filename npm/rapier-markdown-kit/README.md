@@ -217,7 +217,7 @@ node node_modules/rapier-markdown-kit/dist/kit/conformance/run.mjs
 
 Thirteen small documents, each with the line boxes Rapier's own export produced for it. **Preservation**: every
 layout comment round-trips exactly (12 of 12 that carry one). **Presentation**: how closely the planned lines match
-(4 agree within 2px, 9 are close with a named cause, none differ; `dist/kit/conformance/README.md`).
+(3 agree within 2px, 10 are close with a named cause, none differ; `dist/kit/conformance/README.md`).
 `--impl path/to/module.mjs` runs another implementation against the same documents; `--tolerance 2` sets the pixel
 tolerance.
 

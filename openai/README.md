@@ -4,7 +4,7 @@
 pictures, Notes and the diff of a change, on a phone or any browser, with no server, no account and nothing collected.
 Long documents open and scroll fast. An assistant gets two things.
 
-**A file to hand a person.** `npx rapier-html@1.1.49 notes.md` makes one HTML file that is the whole editor with the
+**A file to hand a person.** `npx rapier-html@1.1.50 notes.md` makes one HTML file that is the whole editor with the
 document inside. They open it with one click, edit, draw and paint in it, review a proposed change as a diff, save it
 and send it back exactly.
 
@@ -54,5 +54,5 @@ new submission, or deploy and Scan Tools again when importing from MCP. Rules:
 
 The skills run in the host's file and tool environment and upload nothing; the declared package command downloads its
 pinned package from npm when needed. The connector sends the document you share with the assistant to the door, which
-keeps it for that workspace and drops it after thirty idle days. No account, no telemetry; the person ends the
+keeps it, with the work on it, in a workspace that expires after thirty idle days. No account, no telemetry; the person ends the
 assistant's access from the editor at any moment. In full: [PRIVACY.md](PRIVACY.md).

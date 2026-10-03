@@ -114,7 +114,7 @@ console.log(`reads CLOSE rather than AGREE, none of them "close enough": (a) no 
 console.log(`-- their picture pushes no flow obstacle, so layout/interchange.js's own prepare() never calls Pretext for this paragraph during export (see`);
 console.log(`measurer.mjs) -- the from-scratch character-sum approximation disagrees with real shaping by a bounded, named amount; (b) 03/11/13 DO run`);
 console.log(`Pretext for real (hits > 0, 13-rtl-text at 100% -- every query answered from the real trace) yet still carry a small, constant left-edge delta`);
-console.log(`(5.18px, unchanged from before this measurer existed) -- a picture-obstacle geometry fact, not a text one: these`);
+console.log(`(9.64px today, a constant from before this measurer existed) -- a picture-obstacle geometry fact, not a text one: these`);
 console.log(`fixtures' profileHint is a hand-computed, quantized alpha band descriptor for a raster Rapier's own export never serialized an occupancy`);
 console.log(`descriptor for (conformance/README.md, "profileHint"), and that descriptor's own precision -- not this lane's measurer -- is the residual gap; (c) 09 plans the recorded 14 lines but one row`);
 console.log(`differs by a whole slot: its recorded trace cuts a word in the ring's narrow left slot, and the planner now gives a word that must break inside itself`);
