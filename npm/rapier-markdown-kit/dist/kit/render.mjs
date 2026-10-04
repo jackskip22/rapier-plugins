@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // The document's renderer. DOM, codecs and host state are explicit inputs.
 function createRenderer(runtime) {
-  const {RAPIER_COLOR_CLOSE, RapierPageReturnAddress, RapierTextCodec, _rapierArtifactHighlight, _rapierArtifactLexerScript, _rapierArtifactMarkLexed, _rapierArtifactPreference, _rapierArtifactStyles, _rapierBlobDataUrl, _rapierBuildInterchangeContext, _rapierDocumentNameIsAdmissible, _rapierDrawReadSVGRecipe, _rapierDrawShapeProfileFor, _rapierFillDiagram, _rapierFormatColorOpen, _rapierLanguageClass, _rapierLineStartOffsets, _rapierMarkdownEnvironment, _rapierPortableHtml, _rapierPrepareInterchangeContext, _rapierProjectPortableRoot, _rapierSourceCharEscaped, _rapierSourceLineSpan, crypto, document, escapeRapierHtmlText, globalThis, rapierConfirm, sanitizeRapierHtml} = runtime;
+  const {RAPIER_COLOR_CLOSE, RapierLedgerCarried, RapierPageReturnAddress, RapierTextCodec, _rapierArtifactHighlight, _rapierArtifactLexerScript, _rapierArtifactMarkLexed, _rapierArtifactPreference, _rapierArtifactStyles, _rapierBlobDataUrl, _rapierBuildInterchangeContext, _rapierDocumentNameIsAdmissible, _rapierLedgerParts, _rapierDrawReadSVGRecipe, _rapierDrawShapeProfileFor, _rapierFillDiagram, _rapierFormatColorOpen, _rapierLanguageClass, _rapierLineStartOffsets, _rapierMarkdownEnvironment, _rapierPortableHtml, _rapierPrepareInterchangeContext, _rapierProjectPortableRoot, _rapierSourceCharEscaped, _rapierSourceLineSpan, crypto, document, escapeRapierHtmlText, globalThis, rapierConfirm, sanitizeRapierHtml} = runtime;
   let md = runtime.md;
   async function render(source, options = {}) {
     if (typeof source !== 'string') throw new TypeError('Document source must be a string');
@@ -404,7 +404,9 @@ async function _rapierSharedSourceCarrier(context, root) {
 		'" data-kind="' + esc(context.metadata.docKind) + '" data-sha256="' + await _rapierSharedSourceHash(forms.resolved) +
 		'"' + (forms.ids.length ? ' data-images="' + forms.ids.join(' ') + '"' : '') +
 		(forms.definitions.length ? ' data-image-definitions="' + forms.definitions.map(encodeURIComponent).join(' ') + '"' : '') + '>\n' +
-		forms.carried + '\n</script>\n';
+		forms.carried + '\n</script>\n' +
+		// The optional edit ledger (W/4): carried only when the host binds its owner; a host without one writes none.
+		(RapierLedgerCarried ? RapierLedgerCarried.writeParts(forms.resolved, _rapierLedgerParts(forms.resolved, context.ledger, context.carried)) : '');
 }
 
 function _rapierSharedResolve(text, ids, images, definitions) {
@@ -460,7 +462,8 @@ async function _rapierReadSharedDocument(text, filename) {
 	if (resolved.broken || source.length > RapierTextCodec.maxDocumentBytes || await _rapierSharedSourceHash(source) !== sha256) return invalid();
 	const bom = source.charCodeAt(0) === 0xFEFF;
 	if (RapierTextCodec.normalizeDocument(source) !== (bom ? source.slice(1) : source)) return invalid();
-	return {source, filename: name, kind, bom};
+	const parts = RapierLedgerCarried ? RapierLedgerCarried.readParts(source, Array.from(template.content.querySelectorAll('#rapier-ledger, #rapier-authorship'))) : {};
+	return {source, filename: name, kind, bom, ...parts};
 }
 
 function _rapierSharedPageFallbackCss() {

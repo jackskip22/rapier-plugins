@@ -1,6 +1,6 @@
 {
   "name": "rapier-html",
-  "version": "1.1.56",
+  "version": "1.1.57",
   "description": "Give a person a document they can read, edit and keep: one command writes one offline HTML file that is the whole Markdown editor with the document inside; draw, paint, review a diff, Send back to the agent.",
   "keywords": [
     "markdown",
@@ -36,16 +36,13 @@
     "node": ">=22"
   },
   "bin": {
-    "rapier-html": "cli.mjs"
+    "rapier-html": "dist/cli.mjs"
   },
   "exports": {
-    ".": "./page.mjs"
+    ".": "./dist/page.mjs"
   },
   "files": [
-    "cli.mjs",
-    "page.mjs",
-    "return-address.mjs",
-    "rapier.html",
+    "dist",
     "README.md",
     "LICENSE",
     "BUILD.json"

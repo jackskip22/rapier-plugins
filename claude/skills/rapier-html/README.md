@@ -14,14 +14,14 @@ editor, offline, with the document inside.
 Node 22 or newer.
 
 ```sh
-npx -- rapier-html@1.1.56 notes.md                          # the editor, notes.md inside it, written beside the file
-npx -- rapier-html@1.1.56 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
-npx -- rapier-html@1.1.56 notes.md --view notes             # opens the Notes library
-npx -- rapier-html@1.1.56 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
-npx -- rapier-html@1.1.56 proposal.md --base original.md    # opens on the diff of a proposed change
-npx -- rapier-html@1.1.56 notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
-npx -- rapier-html@1.1.56 notes.md out.html                 # a named output
-npm install rapier-html@1.1.56                              # as a library: wrap, unwrap
+npx -- rapier-html@1.1.57 notes.md                          # the editor, notes.md inside it, written beside the file
+npx -- rapier-html@1.1.57 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
+npx -- rapier-html@1.1.57 notes.md --view notes             # opens the Notes library
+npx -- rapier-html@1.1.57 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
+npx -- rapier-html@1.1.57 proposal.md --base original.md    # opens on the diff of a proposed change
+npx -- rapier-html@1.1.57 notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
+npx -- rapier-html@1.1.57 notes.md out.html                 # a named output
+npm install rapier-html@1.1.57                              # as a library: wrap, unwrap
 ```
 
 The first `--` is for npm, so `--help` reaches the command. It never overwrites a file.
@@ -92,3 +92,16 @@ fact of the file and written back on Save.
 AGPL-3.0-only (`LICENSE`): the page is the Rapier editor with the notices of the libraries it carries.
 The Markdown standard without the editor is `rapier-markdown-kit` (MIT). Rapier is https://rapier.website.
 `BUILD.json` records the page's size, SHA-256, build time and Node version.
+
+
+## Optional edit history
+
+`wrap(page, text, filename, {ledger, authorship})` accepts the public kit's
+`rapier-ledger/1` and `rapier-authorship/1` objects. `unwrap(page)` returns the
+checked parts beside its text. Neither is on by default. An authorship projection
+contains only attribution of current characters; a full ledger contains deleted
+text too. A wrong-text, malformed, duplicate or inconsistent part throws instead
+of attaching false history. Saved Markdown written with the kit's
+`ledger/carried.writeDocument` is read automatically when wrapping. Rewrapping a
+page without parts drops its previous document's parts. Published npm files carry
+their own staged MIT validator closure; no source checkout is needed.

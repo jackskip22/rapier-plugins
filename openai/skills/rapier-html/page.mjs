@@ -1,3 +1,4 @@
+import {encodeCarried, decodeCarried, writeParts, takeParts, readDocument} from './ledger/carried.mjs';
 import {readFile, writeFile} from 'node:fs/promises';
 import {basename, dirname, join} from 'node:path';
 import {PAGE_SEED, returnAddress, returnExpiresAt} from './return-address.mjs';
@@ -13,14 +14,6 @@ const SEARCH_WORDS = /<!-- RAPIER_SEO_BEGIN -->[\s\S]*?<!-- RAPIER_SEO_END -->\n
 
 // One encoding, exactly reversible (docs/page-door.md, "What a block may hold"): no `<` before `/` or `!`, no CR, no NUL.
 // engine.js _rapierDecodeCarried is its inverse.
-function encodeCarried(text) {
-	return String(text).replace(/[\\\r\0]|<[/!]/g, m =>
-		m === '\\' ? '\\\\' : m === '\r' ? '\\r' : m === '\0' ? '\\0' : m === '</' ? '\\/' : '\\!');
-}
-function decodeCarried(text) {
-	return String(text).replace(/\\([\\/!r0])/g, (_, c) =>
-		c === '\\' ? '\\' : c === 'r' ? '\r' : c === '0' ? '\0' : c === '/' ? '</' : '<!');
-}
 export {encodeCarried, decodeCarried};
 
 const PROPOSED_AT = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z$/;
@@ -33,7 +26,9 @@ function safeName(name, fallback) {
 export function wrap(pageHtml, text, name, options) {
 	if (typeof pageHtml !== 'string' || !pageHtml.includes('</body>')) throw new Error('not a Rapier page: no </body>');
 	if (typeof text !== 'string') throw new Error('the document must be text');
-	const opts = options || {};
+	const saved = readDocument(text);
+	text = saved.text;
+	const opts = {...saved, ...(options || {})};
 	const docName = safeName(name, 'document.md');
 	// `view`: the view the page opens on with the document behind it, `draw` or `notes` (docs/page-door.md).
 	if (opts.view != null && !['draw', 'notes'].includes(opts.view)) throw new Error('the view is draw or notes');
@@ -42,11 +37,11 @@ export function wrap(pageHtml, text, name, options) {
 	if (!!address !== !!expiry) throw new Error('a return needs its URL and return_expires_at from document.create_return');
 	const block = START + ' data-name="' + docName + '"' + (opts.view ? ' data-view="' + opts.view + '"' : '') +
 		(address ? ' data-return="' + address + '" data-return-expires-at="' + expiry + '"' : '') + '>' + encodeCarried(text) + END;
-	let carriedBlocks = '';
+	let carriedBlocks = '\n' + writeParts(text, opts);
 	if (opts.drawing != null) {
 		if (typeof opts.drawing !== 'string') throw new Error('the drawing must be SVG text');
 		const drawingName = safeName(opts.drawingName, 'drawing.svg');
-		carriedBlocks = '\n' + DRAWING_START + ' data-name="' + drawingName + '">' + encodeCarried(opts.drawing) + END;
+		carriedBlocks += '\n' + DRAWING_START + ' data-name="' + drawingName + '">' + encodeCarried(opts.drawing) + END;
 	}
 	if ((opts.by != null || opts.at != null) && opts.base == null) throw new Error('a proposer needs the base it proposes over');
 	if (opts.base != null) {
@@ -113,7 +108,8 @@ export function unwrap(pageHtml) {
 		html = html.slice(0, e) + html.slice(b + END.length);
 		if (e > 0 && html[e - 1] === '\n') html = html.slice(0, e - 1) + html.slice(e);
 	}
-	return {html, text, name, view, drawing, drawingName, base, baseName, by, at, return: address, return_expires_at: expiry};
+	const parts = takeParts(html, text);
+	return {...parts, text, name, view, drawing, drawingName, base, baseName, by, at, return: address, return_expires_at: expiry};
 }
 // Unknown options, a bare --drawing or --base and a third name are refused, never dropped.
 const USAGE = 'usage: rapier-html <document.md> [out.html] [--view draw|notes] [--drawing sketch.svg] [--base original.md [--by <your name>]] [--return <url> --return-expires-at <timestamp>]\n' +

@@ -176,6 +176,8 @@ function mount(target, options = {}) {
   source.searchParams.set('embed', '1');
   const origin = source.origin, sessionId = options.sessionId ?? mint('session'), documentId = options.documentId ?? mint('document');
   if (!identifier(sessionId) || !identifier(documentId)) throw new TypeError('Session and document IDs must be nonempty strings of at most 256 code units');
+  const agentName = options.agentName;
+  if (agentName !== undefined && (typeof agentName !== 'string' || !agentName.trim() || agentName.length > 96 || /[\u0000-\u001f\u007f]/.test(agentName))) throw new TypeError('agentName must be a host-given name of at most 96 characters');
   if (options.theme !== undefined && !themeValue(options.theme)) throw new TypeError('Theme must be light, dark or system');
   if (options.save !== undefined && typeof options.save !== 'function') throw new TypeError('save must be a durable storage callback');
   if (options.assets !== undefined && typeof options.assets !== 'function') throw new TypeError('assets must be a picture storage callback');
@@ -346,7 +348,7 @@ function mount(target, options = {}) {
     port = channel.port1; posted = true;
     port.onmessage = event => onPortMessage(event, channel.port1);
     port.onmessageerror = () => { assetAbort.abort(); rejectPending(new Error('The editor connection was lost')); };
-    try { iframe.contentWindow.postMessage({type: 'rapier-connect', ...ids, capabilities, contract: 1, ...(settings ? {settings} : {}), ...(currentTheme ? {theme: currentTheme} : {})}, origin, [channel.port2]); }
+    try { iframe.contentWindow.postMessage({type: 'rapier-connect', ...ids, capabilities, contract: 1, ...(settings ? {settings} : {}), ...(agentName ? {agent: {name: agentName}} : {}), ...(currentTheme ? {theme: currentTheme} : {})}, origin, [channel.port2]); }
     catch (error) { port.close(); port = null; posted = false; fail(error); }
   }
   function onLoad() {
