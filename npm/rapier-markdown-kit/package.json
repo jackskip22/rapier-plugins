@@ -1,7 +1,7 @@
 {
   "name": "rapier-markdown-kit",
-  "version": "1.1.55",
-  "description": "Read, write and style Self-contained Markdown: the universal stylesheet, picture layout, text marks, picture appendix, line planner and Will/1 markers. MIT, no dependencies.",
+  "version": "1.1.56",
+  "description": "Read, render, write and style Self-contained Markdown: the shared HTML writer, semantic renderer, stylesheet, layout and Will/1. MIT, no npm dependencies.",
   "keywords": [
     "markdown",
     "self-contained",
@@ -45,7 +45,8 @@
     "./will": "./dist/kit/will.mjs",
     "./assets": "./dist/kit/assets.mjs",
     "./style.css": "./style.css",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./render": "./dist/kit/render-entry.mjs"
   },
   "repository": {
     "type": "git",

@@ -4,3 +4,4 @@ export * from './marks.mjs';
 export * from './model.mjs';
 export * from './will.mjs';
 export * from './assets.mjs';
+export * from './render-entry.mjs';

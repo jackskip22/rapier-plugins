@@ -26,6 +26,47 @@ import {parseWill} from 'rapier-markdown-kit/will';       // Will/1 markers: kee
 import {parseAssets} from 'rapier-markdown-kit/assets';   // the picture appendix
 ```
 
+## The shared renderer
+
+`rapier-markdown-kit/render` exports `createRenderer`, `createMarkdownRenderer`,
+`createRenderStyles`, `createRenderSanitizer` and `createPrintRenderer`. These are the
+actual editor/Share owners, not a second Markdown dialect or a lookalike stylesheet.
+Their host dependencies are explicit named properties in each factory's first argument;
+no factory reaches into an editor session to find its document. `style.css` is the exact
+MIT `spec/markdown-style.css`, including the numbered-list, checkbox, callout, table,
+footnote and picture-layout treatment.
+
+```js
+import {createRenderer} from 'rapier-markdown-kit/render';
+
+// host is your bound DOM/codec/Markdown/image/style environment. Its named ports are
+// declared at the top of createRenderer; preparation returns a detached semantic root.
+const writer = createRenderer(host);
+const {html, filename} = await writer.render(source, {filename: 'proposal.md'});
+```
+
+`createMarkdownRenderer(host).render(source, metadata)` returns the semantic HTML.
+The page writer's `render` returns `{html, filename}` asynchronously and preserves the
+original source, including BOM and line endings, in the SHA-256-verified source carrier.
+Every existing lower-level method is also returned for hosts that compose the stages.
+Create a new bound instance when its parser or host state changes; do not share mutable
+DOM objects between document realms.
+
+This is a **DOM-hosted library**, not a bundled headless browser, DOM shim, parser or
+image decoder. Supplying only `{source}` or running it in bare Node without those ports
+is not supported. A host must provide a real DOM and sanitizer, the Rapier grammar,
+portable image preparation, style access and the named codec/layout ports it uses.
+Those dependencies keep their own licences: the MIT grant here does not relicense a
+separately supplied host or vendor. The repository's `editor/render-host.js` binds the
+editor; `server/` provides a complete local host with a pinned Chromium process. Its
+Word exporter and filesystem service are AGPL, not part of this MIT package.
+
+The extraction receipt in the existing `html-export-corpus` row fixes all 226 baseline
+writer pages byte for byte. That corpus supplies a clean DOM and named style/sanitizer
+adapters: it proves serialization and source recovery, not browser appearance or
+sanitizer security. The server's integration cells additionally use a real DOM and
+round-trip the actual HTTP output.
+
 ## What it gives you
 
 | Import | What it is |

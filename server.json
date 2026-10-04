@@ -3,7 +3,7 @@
   "name": "io.github.jackskip22/rapier",
   "title": "Rapier",
   "description": "Markdown editor in one offline HTML file: the agent edits passages, you keep or drop each change.",
-  "version": "1.1.55",
+  "version": "1.1.56",
   "websiteUrl": "https://rapier.website",
   "repository": {
     "url": "https://github.com/jackskip22/rapier-plugins",

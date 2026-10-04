@@ -1,6 +1,6 @@
 {
   "name": "rapier-embed",
-  "version": "1.1.55",
+  "version": "1.1.56",
   "description": "Put a Markdown document editor in your web app as an iframe or an exact Markdown form field, saving to your own storage; agent review events carry no source. Session settings and optional host-stored pictures. MIT, no dependencies.",
   "keywords": [
     "markdown",
