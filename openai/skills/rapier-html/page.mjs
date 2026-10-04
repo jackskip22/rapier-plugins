@@ -23,6 +23,9 @@ function decodeCarried(text) {
 }
 export {encodeCarried, decodeCarried};
 
+const PROPOSED_AT = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z$/;
+const attribute = text => text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const unattribute = text => text.replace(/&(quot|lt|gt|amp);/g, (_, e) => ({quot: '"', lt: '<', gt: '>', amp: '&'})[e]);
 function safeName(name, fallback) {
 	return String(name || fallback).replace(/[\\/\0"<>&]/g, '-').slice(0, 255) || fallback;
 }
@@ -45,9 +48,15 @@ export function wrap(pageHtml, text, name, options) {
 		const drawingName = safeName(opts.drawingName, 'drawing.svg');
 		carriedBlocks = '\n' + DRAWING_START + ' data-name="' + drawingName + '">' + encodeCarried(opts.drawing) + END;
 	}
+	if ((opts.by != null || opts.at != null) && opts.base == null) throw new Error('a proposer needs the base it proposes over');
 	if (opts.base != null) {
 		if (typeof opts.base !== 'string') throw new Error('the base must be text');
-		carriedBlocks += '\n' + BASE_START + ' data-name="' + safeName(opts.baseName, docName) + '">' + encodeCarried(opts.base) + END;
+		// A proposal page (docs/briefs/ledger.md section 3): who proposed it, in the host's own words, and when.
+		const by = opts.by == null ? null : String(opts.by).replace(/[\0-\x1f\x7f]/g, ' ').trim().slice(0, 96);
+		const at = opts.at == null ? null : String(opts.at);
+		if (at != null && !(PROPOSED_AT.test(at) && Number.isFinite(Date.parse(at)))) throw new Error('the time of a proposal is an ISO 8601 UTC timestamp');
+		carriedBlocks += '\n' + BASE_START + ' data-name="' + safeName(opts.baseName, docName) + '"' + (by ? ' data-by="' + attribute(by) + '"' : '') +
+			(at ? ' data-at="' + at + '"' : '') + '>' + encodeCarried(opts.base) + END;
 	}
 	// The agent seed goes after the charset (or <head>), once: a page that already carries it, wrapped again, loses its old one.
 	const unseeded = unwrap(pageHtml).html.replace(SEARCH_WORDS, '').split(PAGE_SEED + '\n').join('');
@@ -91,32 +100,36 @@ export function unwrap(pageHtml) {
 		html = html.slice(0, d) + html.slice(b + END.length);
 		if (d > 0 && html[d - 1] === '\n') html = html.slice(0, d - 1) + html.slice(d);
 	}
-	let base = null, baseName = null;
+	let base = null, baseName = null, by = null, at = null;
 	const e = html.indexOf(BASE_START);
 	if (e >= 0) {
 		const open = html.indexOf('>', e), b = html.indexOf(END, open);
 		if (open < 0 || b < 0) throw new Error('a carried base without its end');
 		baseName = /data-name="([^"]*)"/.exec(html.slice(e, open))?.[1] ?? null;
+		const proposer = /data-by="([^"]*)"/.exec(html.slice(e, open))?.[1];
+		by = proposer == null ? null : unattribute(proposer);
+		at = /data-at="([^"]*)"/.exec(html.slice(e, open))?.[1] ?? null;
 		base = decodeCarried(html.slice(open + 1, b));
 		html = html.slice(0, e) + html.slice(b + END.length);
 		if (e > 0 && html[e - 1] === '\n') html = html.slice(0, e - 1) + html.slice(e);
 	}
-	return {html, text, name, view, drawing, drawingName, base, baseName, return: address, return_expires_at: expiry};
+	return {html, text, name, view, drawing, drawingName, base, baseName, by, at, return: address, return_expires_at: expiry};
 }
 // Unknown options, a bare --drawing or --base and a third name are refused, never dropped.
-const USAGE = 'usage: rapier-html <document.md> [out.html] [--view draw|notes] [--drawing sketch.svg] [--base original.md] [--return <url> --return-expires-at <timestamp>]\n' +
+const USAGE = 'usage: rapier-html <document.md> [out.html] [--view draw|notes] [--drawing sketch.svg] [--base original.md [--by <your name>]] [--return <url> --return-expires-at <timestamp>]\n' +
 	'  writes <document>.rapier.html beside the file: Rapier with the document inside it, one file, offline.\n' +
 	'  It never overwrites: an output that already exists, the document itself included, is refused.\n' +
 	'  --view      opens the page on Draw (sketch and paint, the document behind it) or on Notes\n' +
 	'  --drawing   carries an SVG drawing alongside the document, opened on Draw as the page boots\n' +
 	'  --base      carries the text the document was proposed against; the page opens on their diff\n' +
+	'  --by        with --base: who proposes it, shown on the diff with the time the page was made\n' +
 	'  --return    carries a one-use return URL from document.create_return; Share offers Send back\n' +
 	'  --return-expires-at  carries the same mint\'s expiry; Share offers Save once the return expires\n' +
 	'  --          everything after it is a filename, even one that starts with a dash\n' +
 	'  --help      this text';
 export async function main(argv, pagesDir, {log = console.log} = {}) {
 	const names = [];
-	let drawingPath = null, basePath = null, view = null, address = null, expiry = null, onlyNames = false;
+	let drawingPath = null, basePath = null, by = null, view = null, address = null, expiry = null, onlyNames = false;
 	for (let i = 0; i < argv.length; i++) {
 		const arg = argv[i];
 		if (onlyNames || !arg.startsWith('-')) names.push(arg);
@@ -129,6 +142,10 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 		else if (arg === '--base') {
 			if (basePath !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--base takes one text file (write a name that starts with a dash as ./-original.md)');
 			basePath = argv[++i];
+		}
+		else if (arg === '--by') {
+			if (by !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--by takes one name');
+			by = argv[++i];
 		}
 		else if (arg === '--return') {
 			if (address !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--return takes one HTTPS return URL');
@@ -150,7 +167,9 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 	const out = named || join(dirname(input), name.replace(/\.(md|markdown|txt)$/i, '') + '.rapier.html');
 	const wrapOptions = {};
 	if (drawingPath) { wrapOptions.drawing = await readFile(drawingPath, 'utf8'); wrapOptions.drawingName = basename(drawingPath); }
+	if (by !== null && !basePath) throw new Error('--by names who proposes a change: give the --base it proposes over');
 	if (basePath) { wrapOptions.base = await readFile(basePath, 'utf8'); wrapOptions.baseName = basename(basePath); }
+	if (by !== null) { wrapOptions.by = by; wrapOptions.at = new Date().toISOString(); }
 	if (view) wrapOptions.view = view;
 	if (address) wrapOptions.return = address;
 	if (expiry) wrapOptions.return_expires_at = expiry;

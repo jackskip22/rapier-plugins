@@ -1,5 +1,5 @@
 {
-  "release": "1.1.52",
+  "release": "1.1.54",
   "core": [
     {
       "name": "document.inspect_visual",
@@ -2655,7 +2655,7 @@
               "type": "object",
               "additionalProperties": true
             },
-            "description": "Figures use kind, not type. Example: [{\"kind\":\"rect\",\"id\":\"start\",\"label\":\"Start\"},{\"kind\":\"rect\",\"id\":\"end\",\"label\":\"Finish\"},{\"kind\":\"arrow\",\"from\":\"start\",\"to\":\"end\"}]. Omit x, y, w and h for automatic layout."
+            "description": "Figures use kind, not type. Example: [{\"kind\":\"rect\",\"id\":\"start\",\"label\":\"Start\"},{\"kind\":\"rect\",\"id\":\"end\",\"label\":\"Finish\"},{\"kind\":\"arrow\",\"from\":\"start\",\"to\":\"end\"}]. Omit x, y, w and h for automatic layout. Paint with real brushes: {\"kind\":\"paint\",\"strokes\":[{\"brush\":\"rapier/oil\",\"colour\":\"#2255cc\",\"size\":50,\"points\":[[x,y,pressure],...]}]}; brushes include rapier/oil, rapier/scumble, rapier/watercolour, rapier/marker, rapier/pen; size 0-100; optional load and water 0-1."
           },
           "direction": {
             "type": "string",
@@ -3209,6 +3209,95 @@
           "end": {
             "type": "integer",
             "minimum": 0
+          }
+        },
+        "required": [
+          "outcome"
+        ],
+        "additionalProperties": true
+      }
+    },
+    {
+      "name": "notes.propose",
+      "title": "Propose a note",
+      "description": "Leaves a note in the person's Notes for them to keep or drop: a new note, or with of a change to a listed note. Use it to hand over a finding or a draft.",
+      "effect": "write",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 26214400,
+            "description": "The note's Markdown."
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "A title for a new note."
+          },
+          "of": {
+            "type": "string",
+            "maxLength": 256,
+            "description": "The listed note this changes."
+          },
+          "agent": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "This assistant's display name."
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "cause": {
+            "enum": [
+              "will",
+              "ask",
+              "check",
+              "proposal"
+            ]
+          },
+          "reviewId": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "document": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "The MCP document capability from rapier.open. Keep it private and pass it to later calls."
+          },
+          "documentId": {
+            "type": "string"
+          },
+          "documentRevision": {
+            "type": "integer"
+          },
+          "representation": {
+            "const": "source"
+          },
+          "availability": {
+            "enum": [
+              "available",
+              "unavailable"
+            ]
+          },
+          "file": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 256
           }
         },
         "required": [
@@ -6414,7 +6503,7 @@
               "type": "object",
               "additionalProperties": true
             },
-            "description": "Figures use kind, not type. Example: [{\"kind\":\"rect\",\"id\":\"start\",\"label\":\"Start\"},{\"kind\":\"rect\",\"id\":\"end\",\"label\":\"Finish\"},{\"kind\":\"arrow\",\"from\":\"start\",\"to\":\"end\"}]. Omit x, y, w and h for automatic layout."
+            "description": "Figures use kind, not type. Example: [{\"kind\":\"rect\",\"id\":\"start\",\"label\":\"Start\"},{\"kind\":\"rect\",\"id\":\"end\",\"label\":\"Finish\"},{\"kind\":\"arrow\",\"from\":\"start\",\"to\":\"end\"}]. Omit x, y, w and h for automatic layout. Paint with real brushes: {\"kind\":\"paint\",\"strokes\":[{\"brush\":\"rapier/oil\",\"colour\":\"#2255cc\",\"size\":50,\"points\":[[x,y,pressure],...]}]}; brushes include rapier/oil, rapier/scumble, rapier/watercolour, rapier/marker, rapier/pen; size 0-100; optional load and water 0-1."
           },
           "direction": {
             "type": "string",
@@ -7058,6 +7147,125 @@
       }
     },
     {
+      "name": "notes.propose",
+      "title": "Propose a note",
+      "description": "Leaves a note in the person's Notes for them to keep or drop: a new note, or with of a change to a listed note. Use it to hand over a finding or a draft.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "The MCP document capability from rapier.open. Keep it private and pass it to later calls."
+          },
+          "operation_id": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "A fresh random id for this call (a UUID works). Resend it only to retry this call; the retry replays the recorded result.",
+            "minLength": 22,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 26214400,
+            "description": "The note's Markdown."
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "A title for a new note."
+          },
+          "of": {
+            "type": "string",
+            "maxLength": 256,
+            "description": "The listed note this changes."
+          },
+          "agent": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "This assistant's display name."
+          }
+        },
+        "required": [
+          "document",
+          "operation_id",
+          "text"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "cause": {
+            "enum": [
+              "will",
+              "ask",
+              "check",
+              "proposal"
+            ]
+          },
+          "reviewId": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "document": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "The MCP document capability from rapier.open. Keep it private and pass it to later calls."
+          },
+          "documentId": {
+            "type": "string"
+          },
+          "documentRevision": {
+            "type": "integer"
+          },
+          "representation": {
+            "const": "source"
+          },
+          "availability": {
+            "enum": [
+              "available",
+              "unavailable"
+            ]
+          },
+          "file": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "outcome"
+        ],
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Propose a note",
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "securitySchemes": [
+        {
+          "type": "noauth"
+        }
+      ],
+      "_meta": {
+        "openai/widgetAccessible": true,
+        "openai/toolInvocation/invoking": "Working in Rapier.",
+        "openai/toolInvocation/invoked": "Rapier has replied."
+      }
+    },
+    {
       "name": "rapier.guide",
       "title": "How to use Rapier",
       "description": "Returns Rapier’s instructions and workflow. Call once per conversation when your host supplied no Rapier instructions.",
@@ -7240,13 +7448,13 @@
         "openai/toolInvocation/invoking": "Opening Rapier.",
         "openai/toolInvocation/invoked": "Rapier has replied.",
         "ui": {
-          "resourceUri": "ui://rapier/editor-1.1.52.html",
+          "resourceUri": "ui://rapier/editor-1.1.54.html",
           "visibility": [
             "model",
             "app"
           ]
         },
-        "openai/outputTemplate": "ui://rapier/editor-1.1.52.html",
+        "openai/outputTemplate": "ui://rapier/editor-1.1.54.html",
         "openai/ui": {
           "entrypoints": [
             {
