@@ -23,6 +23,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path-to-signatures: signatures/cla.json
-          path-to-document: https://github.com/jackskip22/rapier/blob/main/CLA.md
+          path-to-document: https://github.com/jackskip22/rapier/blob/main/docs/CLA.md
           branch: main
           allowlist: jackskip22,dependabot[bot],github-actions[bot]
