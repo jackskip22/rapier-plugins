@@ -46,12 +46,16 @@ export function wrap(pageHtml, text, name, options) {
 	if ((opts.by != null || opts.at != null) && opts.base == null) throw new Error('a proposer needs the base it proposes over');
 	if (opts.base != null) {
 		if (typeof opts.base !== 'string') throw new Error('the base must be text');
+		// As with the proposed document, validate saved parts before carrying only their source.
+		// A mismatched history is refused here, never displayed as part of the baseline.
+		const base = readDocument(opts.base).text;
 		// A proposal page (docs/briefs/ledger.md section 3): who proposed it, in the host's own words, and when.
 		const by = opts.by == null ? null : String(opts.by).replace(/[\0-\x1f\x7f]/g, ' ').trim().slice(0, 96);
 		const at = opts.at == null ? null : String(opts.at);
 		if (at != null && !(PROPOSED_AT.test(at) && Number.isFinite(Date.parse(at)))) throw new Error('the time of a proposal is an ISO 8601 UTC timestamp');
-		carriedBlocks += '\n' + BASE_START + ' data-name="' + safeName(opts.baseName, docName) + '"' + (by ? ' data-by="' + attribute(by) + '"' : '') +
-			(at ? ' data-at="' + at + '"' : '') + '>' + encodeCarried(opts.base) + END;
+		// Equal versions are a first draft, not a second carried document.
+		if (base !== text) carriedBlocks += '\n' + BASE_START + ' data-name="' + safeName(opts.baseName, docName) + '"' + (by ? ' data-by="' + attribute(by) + '"' : '') +
+			(at ? ' data-at="' + at + '"' : '') + '>' + encodeCarried(base) + END;
 	}
 	// The agent seed goes after the charset (or <head>), once: a page that already carries it, wrapped again, loses its old one.
 	const unseeded = unwrap(pageHtml).html.replace(SEARCH_WORDS, '').split(PAGE_SEED + '\n').join('');

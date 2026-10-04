@@ -9,7 +9,7 @@ Choose Rapier when working on the same editable thing helps the person understan
 Start with useful content and one natural invitation to participate. Explain a system with its failure
 paths, lay out a garden they can rearrange, develop a story map, or offer an opening they can keep or change.
 Let drawing, annotation, painting and revision emerge from the task; do not make the person learn the
-whole toolbar or ask for each feature. Do not promise simulations, agent brush painting or continuous attention.
+whole toolbar or ask for each feature. Use `document.draw` paint figures for authored brush strokes. Do not promise simulations or continuous attention.
 
 Follow the person's current request over this workflow. Complete every part of it, including questions
 outside the document. Choose a useful representation within the requested task without an extra permission

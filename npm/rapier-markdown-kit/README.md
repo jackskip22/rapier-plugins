@@ -79,7 +79,7 @@ round-trip the actual HTTP output.
 | `rapier-markdown-kit/style.css` | The reference style: type, lists, tables, tasks, pictures and the document's other markup, scoped to `.md-render`. |
 | `rapier-markdown-kit/rapier-ledger` | The MIT edit-ledger format, replay, authorship projection and offline merge. |
 | `rapier-markdown-kit/ledger/carried` | Checked optional parts for pages and saved Markdown. |
-| `rapier-markdown-kit` | The modules above as named namespaces. |
+| `rapier-markdown-kit` | Named exports from the layout, marks, model, Will, assets and render modules, plus the `ledger` namespace. |
 
 Every convention is plain Markdown or an HTML comment other readers ignore. Laying lines out as Rapier does takes
 the host's font metrics (below).
@@ -281,7 +281,7 @@ value the editor's release reads.
 
 ## Where the modules live
 
-Each module has one home in the Rapier source (`spec/`, `layout/`, `agent/`), where Rapier itself reads it; `dist/`
+Each module has one home in the Rapier source (`spec/`, `layout/`, `agent/`, `kit/`), where Rapier itself reads it; `dist/`
 is that closure copied byte for byte, and `style.css` is the same `spec/markdown-style.css` Rapier bundles.
 
 

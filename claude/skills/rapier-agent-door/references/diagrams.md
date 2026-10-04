@@ -82,8 +82,22 @@ For a spatial sketch, coordinates are meaningful. This creates a garden arrangem
 ```
 
 Call this an arrangement, not a scaled plan unless real dimensions are supplied. The person can move
-shapes, relabel, recolour, draw and paint on the canvas. Document tools edit objects and preserve painted
-layers; they do not supply an agent brush-painting command.
+shapes, relabel, recolour, draw and paint on the canvas. Agents can also paint with the same brush engine
+when this host carries Paint. Send a paint figure with a stable id and ordered strokes:
+
+```json
+{"alt":"A blue brush stroke","figures":[{"kind":"paint","id":"wash","strokes":[
+  {"brush":"rapier/oil","colour":"#2255cc","size":30,"load":0.6,"water":0.2,
+   "points":[[20,50,0.7],[60,55,0.7],[100,45,0.7],[140,50,0.7]]}
+]}]}
+```
+
+`points` are drawing coordinates with optional pressure from 0 to 1; `size` is 0 to 100, and `load`
+and `water` are 0 to 1. Brush ids come from the shipped registry, including `rapier/scumble`,
+`rapier/watercolour`, `rapier/pencil`, `rapier/pen` and `rapier/marker`. A paint figure takes at most
+32 strokes, 1,024 points per stroke and 4,096 points in total, within a 2,048-pixel sheet. An eraser or
+blender needs existing pigment in that same layer; an empty resulting picture is refused. Painting
+is not available in a build without Paint. Do not claim a refused call created marks.
 
 ## Change one object
 
@@ -94,10 +108,21 @@ Do not use a source-text handle as a recipe handle or guess IDs from the rendere
 - Change a label by copying the exact shape from the read recipe, changing its `label`, then sending
   `shapes: {replace: [updatedShape]}` with the read handle as `recipe_handle`. A replacement is a complete
   shape, not just `id` and `label`. Preserve geometry, style and bindings.
-- Add or remove with `shapes.add` or `shapes.remove`. Bind connectors to existing IDs. Position additions
+- Add or remove with `shapes.add` or `shapes.remove`. Connectors may name existing IDs or later additions in the same patch; replacements may also name
+  additions. New groups may contain the new automatically laid-out figures. Use `direction` (`down`,
+  `across`, `up`, `back`) for those figures. Position additions
   deliberately; do not relayout the whole drawing for a narrow change.
 - Preserve a disclosed paint raster's `{kept:true}` marker when replacing its shape. Never manufacture
-  pixel bytes or replace a layer because its bytes were redacted in the read.
+  pixel bytes or replace a layer because its bytes were redacted in the read. Keep its `paint` record
+  unchanged too: different replay strokes with retained old pixels are refused. To repaint, replace
+  the inspected layer by a `kind: "paint"` figure with its id and new strokes.
+- Change only the caption with `recipe_handle` and `alt`; no dummy shape operation is needed.
+- For canvas size, paper, lighting, strokes, fonts or other drawing-wide fields, send the complete
+  inspected `recipe` with `recipe_handle`. Keep every unrelated field and paint marker. Do not combine
+  `recipe` with `shapes` or `figures`; an `operations` batch may follow the recipe change.
+
+A whole-recipe or caption edit does not bypass the person's open drawing or Notes fence. While a person
+has the drawing open, only the existing shapes-only patch exception can land; other edits must wait.
 
 Keep the change ID for inspection and Undo. Under ASK a drawing waits for review; read it again after
 approval. If the person changed the image meanwhile, a fresh read establishes the new recipe.

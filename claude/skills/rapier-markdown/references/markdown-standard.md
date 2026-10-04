@@ -451,7 +451,8 @@ The kit’s README has an executable example (the kit is not part of the standar
 and the kit's layout and mark readers interpret the example's trailing layout comments, paired colour
 comments and page-break line. It wraps the result in `.md-render` and loads `style.css` alone.
 Markdown-it and any extension plugins are supplied by the caller; the kit has no npm dependencies
-and no renderer API. Task-list and footnote plugins emit the corresponding classes above; a renderer
+and also exposes the `createRenderer` factory through `rapier-markdown-kit/render`;
+that factory takes its parser and other host ports from the caller. Task-list and footnote plugins emit the corresponding classes above; a renderer
 for callouts, highlights, diagrams or mathematics emits their listed wrappers. A host rendering
 untrusted source applies its own HTML sanitization policy before displaying it.
 

@@ -1,5 +1,5 @@
 {
-  "release": "1.1.58",
+  "release": "1.1.59",
   "core": [
     {
       "name": "document.inspect_visual",
@@ -1384,7 +1384,7 @@
           },
           "case_sensitive": {
             "type": "boolean",
-            "description": "Match case exactly (default: no)."
+            "description": "Text search only: match case exactly (default: no). Omit when kind is given; syntax names are exact."
           },
           "within": {
             "type": "string",
@@ -2638,7 +2638,7 @@
     {
       "name": "document.draw",
       "title": "Draw a picture",
-      "description": "Creates or edits SVG figures for an editable diagram or spatial sketch in the active document. Use native figures for movable objects and document source for Mermaid.",
+      "description": "Creates or edits SVG figures for an editable diagram, spatial sketch or brush painting in the active document. Paint figures accept authored brush strokes. Use native figures for movable objects and document source for Mermaid.",
       "effect": "write",
       "inputSchema": {
         "type": "object",
@@ -2646,7 +2646,7 @@
           "recipe": {
             "type": "object",
             "additionalProperties": true,
-            "description": "A full drawing recipe, as a read returns it."
+            "description": "A full drawing recipe, as a read returns it. With recipe_handle, replaces that inspected drawing, including canvas, paper, strokes and fonts. Keep redacted paint raster markers on their original ids; do not combine with shapes or figures."
           },
           "figures": {
             "type": "array",
@@ -2665,7 +2665,7 @@
               "up",
               "back"
             ],
-            "description": "The direction of an automatic figure layout; down by default."
+            "description": "The direction of automatic figure layout on create or shapes.add; down by default."
           },
           "shapes": {
             "type": "object",
@@ -2872,7 +2872,7 @@
           "alt": {
             "type": "string",
             "maxLength": 240,
-            "description": "The caption, as the person reads it (required on create).",
+            "description": "The caption, as the person reads it (required on create). With recipe_handle it can be edited alone.",
             "minLength": 1
           },
           "label": {
@@ -2972,7 +2972,7 @@
     {
       "name": "notes.list",
       "title": "List notes",
-      "description": "Lists metadata from this host's configured Notes store when choosing notes to read, with Skills first. An absent store returns availability: unavailable.",
+      "description": "Lists metadata from this host's configured Notes store when choosing notes to read, with Skills first. A changed catalogue refuses a continuation with notes_changed; restart the list. An absent store returns availability: unavailable.",
       "effect": "read",
       "inputSchema": {
         "type": "object",
@@ -3091,7 +3091,7 @@
     {
       "name": "notes.read",
       "title": "Read a note",
-      "description": "Reads one listed note's Markdown by file when its contents are needed, with pagination. An absent store or missing note returns found: false.",
+      "description": "Reads one listed note's Markdown by file when its contents are needed, with pagination. A changed note refuses a continuation with notes_changed; restart the read. An absent store or missing note returns found: false.",
       "effect": "read",
       "inputSchema": {
         "type": "object",
@@ -4896,7 +4896,7 @@
           },
           "case_sensitive": {
             "type": "boolean",
-            "description": "Match case exactly (default: no)."
+            "description": "Text search only: match case exactly (default: no). Omit when kind is given; syntax names are exact."
           },
           "within": {
             "type": "string",
@@ -6475,7 +6475,7 @@
     {
       "name": "document.draw",
       "title": "Draw a picture",
-      "description": "Creates or edits SVG figures for an editable diagram or spatial sketch in the active document. Use native figures for movable objects and document source for Mermaid.",
+      "description": "Creates or edits SVG figures for an editable diagram, spatial sketch or brush painting in the active document. Paint figures accept authored brush strokes. Use native figures for movable objects and document source for Mermaid.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -6494,7 +6494,7 @@
           "recipe": {
             "type": "object",
             "additionalProperties": true,
-            "description": "A full drawing recipe, as a read returns it."
+            "description": "A full drawing recipe, as a read returns it. With recipe_handle, replaces that inspected drawing, including canvas, paper, strokes and fonts. Keep redacted paint raster markers on their original ids; do not combine with shapes or figures."
           },
           "figures": {
             "type": "array",
@@ -6513,7 +6513,7 @@
               "up",
               "back"
             ],
-            "description": "The direction of an automatic figure layout; down by default."
+            "description": "The direction of automatic figure layout on create or shapes.add; down by default."
           },
           "shapes": {
             "type": "object",
@@ -6720,7 +6720,7 @@
           "alt": {
             "type": "string",
             "maxLength": 240,
-            "description": "The caption, as the person reads it (required on create).",
+            "description": "The caption, as the person reads it (required on create). With recipe_handle it can be edited alone.",
             "minLength": 1
           },
           "label": {
@@ -6840,7 +6840,7 @@
     {
       "name": "notes.list",
       "title": "List notes",
-      "description": "Lists metadata from this host's configured Notes store when choosing notes to read, with Skills first. An absent store returns availability: unavailable.",
+      "description": "Lists metadata from this host's configured Notes store when choosing notes to read, with Skills first. A changed catalogue refuses a continuation with notes_changed; restart the list. An absent store returns availability: unavailable.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -6990,7 +6990,7 @@
     {
       "name": "notes.read",
       "title": "Read a note",
-      "description": "Reads one listed note's Markdown by file when its contents are needed, with pagination. An absent store or missing note returns found: false.",
+      "description": "Reads one listed note's Markdown by file when its contents are needed, with pagination. A changed note refuses a continuation with notes_changed; restart the read. An absent store or missing note returns found: false.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -7448,13 +7448,13 @@
         "openai/toolInvocation/invoking": "Opening Rapier.",
         "openai/toolInvocation/invoked": "Rapier has replied.",
         "ui": {
-          "resourceUri": "ui://rapier/editor-1.1.58.html",
+          "resourceUri": "ui://rapier/editor-1.1.59.html",
           "visibility": [
             "model",
             "app"
           ]
         },
-        "openai/outputTemplate": "ui://rapier/editor-1.1.58.html",
+        "openai/outputTemplate": "ui://rapier/editor-1.1.59.html",
         "openai/ui": {
           "entrypoints": [
             {

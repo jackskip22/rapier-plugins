@@ -75,7 +75,7 @@ Prints two separate tables (preservation and presentation are different claims):
 - **Presentation** — does the planned line count and each line's left/right agree with the recorded
   fact, within `--tolerance` pixels (default 2). This depends entirely on the measurer supplied;
   `run.mjs`'s own default (`measurer.mjs`, R77) replays Rapier's real Pretext trace wherever one was
-  captured, falling back to the character-glyph sum only where none exists. Current result: **3/13
+  captured, falling back to the character-glyph sum only where none exists. Recorded R77 result (not a current-run receipt): **3/13
   AGREE outright** (`04-wrap-box`, `10-both-sides`, `12-heading-barrier` — every
   one a case where the compared edge is pure obstacle-slot geometry, unaffected by text fidelity
   either way), **10 CLOSE, 0 DIFFERS**, each CLOSE row's cause named rather than left as "close

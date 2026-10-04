@@ -1,6 +1,6 @@
 # Will/1
 
-Will/1 is independent of [Self-contained Markdown](markdown-standard.md). Any Markdown, DOCX or PDF may carry it, with or without Rapier: a person’s instruction for a region, with one law and optional words. The convention is MIT-licensed; implementations keep their own licenses. Rapier's implementation is governed by its [application license](repo/LICENSE).
+Will/1 is independent of [Self-contained Markdown](markdown-standard.md). Any Markdown, DOCX or PDF may carry it, with or without Rapier: a person’s instruction for a region, with one law and optional words. The convention is MIT-licensed; implementations keep their own licenses. Rapier's reference grammar and evaluator (`agent/will.mjs`) are MIT-licensed; the editor that uses them is governed by its [application license](repo/LICENSE).
 
 | Law | Required meaning |
 | --- | --- |
