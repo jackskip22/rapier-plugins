@@ -2,13 +2,16 @@
 
 // `rotate`: degrees in (-180, 180], one decimal, omitted when 0; never written for a Rapier drawing (its turn lives in its SVG).
 // `opacity`: a picture's fade, a whole percent from 5 to 100, omitted at 100; the picture's bytes never change.
+// `lines`: a picture's height in lines of the text beside it, set as a drop cap is (CSS `initial-letter`): its top on the first
+// line's cap height, its foot on the Nth line's baseline, its width from its own aspect. A whole number 1 to 12; never with `width`.
 // `first`/`indent`: a paragraph's first-line indent and its whole-block indent, in levels of one step (2em), a whole number from 1 to 4, omitted when 0; text only.
-export const fields = new Set(['align', 'width', 'wrap', 'x', 'y', 'rotate', 'opacity', 'first', 'indent']);
+export const fields = new Set(['align', 'width', 'lines', 'wrap', 'x', 'y', 'rotate', 'opacity', 'first', 'indent']);
 export const alignments = new Set(['left', 'center', 'right', 'justify']);
 // `behind`/`front`: out of flow; the paragraph lays out as though the picture were absent.
 export const wraps = new Set(['around', 'box', 'behind', 'front']);
 const has = (value, key) => Object.hasOwn(value, key);
 const percent = value => typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 100;
+const lineCount = value => Number.isInteger(value) && value >= 1 && value <= 12;
 const level = value => Number.isInteger(value) && value >= 1 && value <= 4;
 const oneDecimalDegrees = value => typeof value === 'number' && Number.isFinite(value) &&
   value > -180 && value <= 180 && Math.abs(value * 10 - Math.round(value * 10)) < 1e-9;
@@ -19,6 +22,7 @@ export function validLayout(value) {
       Object.keys(value).some(key => !fields.has(key))) return false;
   return (!has(value, 'align') || alignments.has(value.align)) &&
     (!has(value, 'width') || percent(value.width) && value.width > 0) &&
+    (!has(value, 'lines') || lineCount(value.lines) && !has(value, 'width')) &&
     (!has(value, 'wrap') || wraps.has(value.wrap)) &&
     (!has(value, 'x') || percent(value.x) && (has(value, 'wrap') || has(value, 'width'))) &&
     (!has(value, 'y') || typeof value.y === 'number' && Number.isFinite(value.y) && value.y >= -50 && has(value, 'wrap')) &&
@@ -59,6 +63,9 @@ export function parseLayout(comment) {
     } else if (key === 'opacity') {
       if (!/^[1-9]\d{0,2}%$/.test(raw)) return null;
       value.opacity = Number(raw.slice(0, -1));
+    } else if (key === 'lines') {
+      if (!/^[1-9]\d?$/.test(raw)) return null;
+      value.lines = Number(raw);
     } else if (key === 'first' || key === 'indent') {
       if (!/^[1-4]$/.test(raw)) return null;
       value[key] = Number(raw);
@@ -75,7 +82,8 @@ export function decodeLayoutAttribute(value) {
 
 export const parseLayoutAttribute = value => parseLayout(decodeLayoutAttribute(value));
 
-// The picture's own CSS: its normal-flow width and x, and its fade.
+// The picture's own CSS: its normal-flow width and x, its height in lines, and its fade. `1cap` is the cap height of the
+// picture's own text; a renderer that sets the picture beside its anchor measures that paragraph's line and cap instead.
 export function imageStyle(value) {
   if (!validLayout(value)) return '';
   const parts = [];
@@ -85,9 +93,12 @@ export function imageStyle(value) {
       decimal(Number(Math.max(0, Math.min(100 - width, value.x - width / 2)).toFixed(6))) + '%;margin-right:0';
     parts.push('width:' + decimal(width) + '%;height:auto' + left);
   }
+  if (value.lines != null) parts.push('width:auto;max-width:100%;height:' + linesHeightCss(value.lines));
   if (value.opacity != null && value.opacity < 100) parts.push('opacity:' + decimal(value.opacity / 100));
   return parts.join(';');
 }
+
+export const linesHeightCss = lines => lines === 1 ? '1cap' : 'calc(' + (lines - 1) + ' * var(--md-line, 1.6em) + 1cap)';
 
 // Controls remain real DOM nodes while their surrounding text flows. A checkbox, link or
 // disclosure is not a reason to exclude its entire block from picture placement.

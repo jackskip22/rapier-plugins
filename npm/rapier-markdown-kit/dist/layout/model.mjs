@@ -82,10 +82,54 @@ export function mapFragment(run, fragment) {
   return {text: fragment.text, offsets, start: run.offsets[from], end: run.offsets[to]};
 }
 
-export function imageBox(columnWidth, naturalWidth, naturalHeight, layout = {}, defaultWidth = naturalWidth) {
+// The line a picture is measured in (`lines`, spec/md-layout.mjs): the anchor's line box, its type's cap height, and where that
+// cap height stands in the first line box (the half-leading model: the baseline sits half the leading below the box's top plus
+// the ascent). Read from the font as the page lays it out, so a text size or a line spacing moves the picture with the words.
+const fontMetrics = new Map(), measurers = new WeakMap();
+export function lineMetrics(element) {
+  const view = element?.ownerDocument?.defaultView;
+  if (!view) return null;
+  const computed = view.getComputedStyle(element), size = parseFloat(computed.fontSize) || 16;
+  const font = computed.fontStyle + ' ' + computed.fontWeight + ' ' + size + 'px ' + computed.fontFamily;
+  let metrics = fontMetrics.get(font);
+  if (!metrics) {
+    let context = measurers.get(element.ownerDocument);
+    if (!context) measurers.set(element.ownerDocument, context = element.ownerDocument.createElement('canvas').getContext('2d'));
+    if (!context) return null;
+    context.font = font;
+    const capital = context.measureText('H');
+    metrics = {ascent: capital.fontBoundingBoxAscent, descent: capital.fontBoundingBoxDescent, cap: capital.actualBoundingBoxAscent};
+    if (![metrics.ascent, metrics.descent, metrics.cap].every(finite) || !(metrics.cap > 0)) return null;
+    // A face still loading measures as its fallback: keep the answer only once the face is in.
+    if (element.ownerDocument.fonts?.check?.(font) !== false && element.ownerDocument.fonts?.status !== 'loading') fontMetrics.set(font, metrics);
+  }
+  const line = parseFloat(computed.lineHeight) || metrics.ascent + metrics.descent;
+  return {line, cap: metrics.cap, capTop: (line - metrics.ascent - metrics.descent) / 2 + metrics.ascent - metrics.cap};
+}
+
+// `lines` tall: from the first line's cap height to the Nth line's baseline, N - 1 lines and one cap.
+export function linesHeight(lines, metrics) {
+  const height = Number.isInteger(lines) && lines > 0 && metrics && finite(metrics.line) && finite(metrics.cap)
+    ? (lines - 1) * metrics.line + metrics.cap : NaN;
+  return height > 0 ? height : null;
+}
+
+// A picture sized in lines keeps its standoff off the line after its last: below its foot (the Nth baseline) the gap stops
+// at that line's bottom, so exactly N lines stand beside it.
+export function linesSlices(slices, layout, metrics, y, height) {
+  if (layout?.lines == null || !metrics || !(slices?.length)) return slices;
+  const floor = y + height + Math.max(0, metrics.line - metrics.capTop - metrics.cap) - .5;
+  return slices.filter(slice => slice.y < floor).map(slice => slice.y + slice.height > floor ? {...slice, height: floor - slice.y} : slice);
+}
+
+// Where a picture's top stands in its anchor before `y`: a picture sized in lines stands on the first line's cap height.
+export const linesTop = (layout, metrics) => layout?.lines != null && finite(metrics?.capTop) ? metrics.capTop : 0;
+
+export function imageBox(columnWidth, naturalWidth, naturalHeight, layout = {}, defaultWidth = naturalWidth, metrics = null) {
   if (![columnWidth, naturalWidth, naturalHeight, defaultWidth].every(value => finite(value) && value > 0) ||
       !validLayout(layout) || layout.align === 'justify') return null;
-  const requestedWidth = layout.width == null ? defaultWidth : columnWidth * layout.width / 100;
+  const tall = layout.lines == null ? null : linesHeight(layout.lines, metrics);
+  const requestedWidth = tall ? tall * naturalWidth / naturalHeight : layout.width == null ? defaultWidth : columnWidth * layout.width / 100;
   if (!finite(requestedWidth) || requestedWidth <= 0) return null;
   const width = Math.min(columnWidth, requestedWidth), height = width * naturalHeight / naturalWidth;
   const center = layout.x == null ? width / 2 : columnWidth * layout.x / 100;

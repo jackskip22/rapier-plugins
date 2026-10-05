@@ -579,6 +579,10 @@ function _rapierSharedPageLayout(root) {
 				image.style.width = naturalWidth + 'px';
 				image.style.marginLeft = image.style.marginRight = ((bounds.width - naturalWidth) / 2) + 'px';
 			}
+		} else if (layout.lines != null) {
+			// Sized in lines: the float shrinks to the picture, whose height is the lines (spec/md-layout.mjs imageStyle).
+			image.style.width = 'auto';
+			image.style.height = globalThis.RapierMarkdownLayout.linesHeightCss(layout.lines);
 		} else {
 			if (layout.width != null) paragraph.style.width = layout.width + '%';
 			else if (image.getAttribute('width')) paragraph.style.width = image.getAttribute('width') + 'px';
@@ -1308,7 +1312,9 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, pretext) {
 
         let ownerLed = false;
         for (const {element: source, image, layout, width: imageWidth} of anchors.get(element) || []) {
-          const unrotated = geometry.imageBox(width, image.naturalWidth, image.naturalHeight, layout, imageWidth);
+          // A picture sized in lines (`lines`) reads its anchor's line and stands on the first line's cap height, as the live editor.
+          const lines = layout.lines != null ? geometry.lineMetrics(element) : null;
+          const unrotated = geometry.imageBox(width, image.naturalWidth, image.naturalHeight, layout, imageWidth, lines);
           if (!unrotated) { restore(); return; }
           // rasterReserved (layout/model.mjs).
           const rasterRad = (layout.rotate || 0) * Math.PI / 180;
@@ -1319,7 +1325,7 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, pretext) {
           const em = parseFloat(computed.fontSize) || 16;
           const topInset = (parseFloat(computed.paddingTop) || 0) + (parseFloat(computed.borderTopWidth) || 0);
           const height = Math.max(0, bounds.height - topInset - (parseFloat(computed.paddingBottom) || 0) - (parseFloat(computed.borderBottomWidth) || 0));
-          let y = bounds.top - origin + topInset + Math.min(layout.y || 0, height / em) * em;
+          let y = bounds.top - origin + topInset + geometry.linesTop(layout, lines) + Math.min(layout.y || 0, height / em) * em;
           if (!outOfFlow(layout)) {
             for (const obstacle of [...obstacles].sort((left, right) => left.y - right.y)) {
               if (obstacle.x < left + rectangle.width + 10 && obstacle.x + obstacle.width > left - 10 &&
@@ -1327,14 +1333,14 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, pretext) {
                 y = obstacle.y + obstacle.height + 10;
             }
             // R87k: a picture pushed down by an earlier one takes its owner with it. A deliberate `y` stays; only the collision push moves the paragraph.
-            const ownerTop = bounds.top - origin + topInset + Math.min(layout.y || 0, height / em) * em;
+            const ownerTop = bounds.top - origin + topInset + geometry.linesTop(layout, lines) + Math.min(layout.y || 0, height / em) * em;
             // Only the first picture of an owner takes it down.
             if (!ownerLed && y > ownerTop + 0.5) {
               clearTo(element, (bounds.top - origin) + (y - ownerTop), origin, source);
               bounds = box(element);
             }
             ownerLed = true;
-            obstacles.push(...geometry.pictureSlices(profile(image, layout), left, y, rectangle.width, rectangle.height));
+            obstacles.push(...geometry.linesSlices(geometry.pictureSlices(profile(image, layout), left, y, rectangle.width, rectangle.height), layout, lines, y, rectangle.height));
           }
           placed.push({source, image, rectangle, left, y, wrap: layout.wrap,
             visualLeft: left + visualDeltaX, visualTop: y + visualDeltaY, visualWidth: fit.fit.width, visualHeight: fit.fit.height,

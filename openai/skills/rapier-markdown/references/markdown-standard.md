@@ -47,6 +47,8 @@ one comment carries layout. Here `<payload>` means Base64 image bytes.
 
 ![Site photograph][photo] <!--md-layout:v1 width=47% wrap=behind x=50% opacity=30%-->
 
+![W][initial] <!--md-layout:v1 lines=3 wrap=around-->
+
 Following prose can flow above, beside and below the picture.
 
 [photo]: data:image/jxl;base64,<payload>
@@ -56,6 +58,7 @@ Following prose can flow above, beside and below the picture.
 | --- | --- | --- |
 | `align` | `left`, `center`, `right`, `justify` | Paragraph or heading alignment; `justify` is text-only. |
 | `width` | Decimal percentage greater than `0%`, at most `100%` | Image width relative to the content box, preserving aspect ratio. |
+| `lines` | Whole number from `1` to `12` | Image height in lines of the text beside it, set as a drop cap is: its top on the first line's cap height, its foot on the Nth line's baseline (see "The line"); width follows the aspect ratio, capped at the content box. Never with `width`. |
 | `wrap` | `around`, `box`, `behind`, `front` | Neighboring text may flow around the image silhouette (`around`) or its tight, angle-tilted bounding box (`box`); or the image may leave the flow entirely, positioned like a wrapped image but painted under (`behind`) or over (`front`) the words, which lay out as though it were absent. |
 | `x` | Decimal percentage from `0%` to `100%` | Image's requested horizontal center within the content box; requires `width` or `wrap`. |
 | `y` | Finite decimal followed by `em`, optionally negative (never below `-50em`; zero is written unsigned and omitted) | Wrapped image's requested top inset within its anchor paragraph, measured in that paragraph's font size; a negative value lifts the picture above the paragraph's first line. |
@@ -64,8 +67,8 @@ Following prose can flow above, beside and below the picture.
 | `first` | Whole number from `1` to `4` | A paragraph's first-line indent, in steps of `2em`; omitted when `0`. Text only: a paragraph (a heading ignores it), never a picture. |
 | `indent` | Whole number from `1` to `4` | A paragraph's indent from its start edge, in steps of `2em`; omitted when `0`. Text only. |
 
-Text uses only `align`, `first` and `indent`; pictures use neither `first` nor `indent`. Images have exactly three modes: normal flow with optional
-`width` and either `align` or `x`; wrapped flow with `wrap=around` or `wrap=box` and optional
+Text uses only `align`, `first` and `indent`; pictures use neither `first` nor `indent`. A picture is sized by `width` or by `lines`, never both. Images have exactly three modes: normal flow with optional
+`width` (or `lines`) and either `align` or `x`; wrapped flow with `wrap=around` or `wrap=box` and optional
 `width`, `x` and `y`, with text reflow; and out-of-flow placement
 with `wrap=behind` or `wrap=front` and the same optional `width`, `x` and `y`, with text ignoring the image. Normal-flow `x` requires `width`;
 `y` always requires a `wrap` value. `align` cannot coexist with `wrap` or `x`. A normal-flow
@@ -113,7 +116,7 @@ following blocks ignore the image. `behind` paints under words without dimming; 
 
 The marker is one line beginning exactly `<!--md-layout:v1`, with one or more
 unquoted `key=value` fields separated by ASCII spaces or tabs, ending `-->`. Each key
-occurs once. Geometry uses decimal digits, optionally followed by a
+occurs once. `lines` is one or two digits with no leading zero, `1` to `12`, with no sign, decimal point or unit. Geometry uses decimal digits, optionally followed by a
 decimal point and digits, then `%` for `width`/`x` or `em` for `y`; no leading
 zeroes except `0`, plus signs or exponent notation. `y` may begin with `-`, within
 its stated range. Horizontal whitespace before the close is accepted. `rotate` also accepts an optional leading
@@ -134,7 +137,7 @@ and multiple layout-family comments in one block are inert and preserved. A read
 that does not know a field or value treats the whole comment as invalid and shows the
 picture inline and upright, at its own natural size.
 Writers emit one marker, lowercase keys, one ASCII space between fields, and
-key order `align width wrap x y rotate opacity first indent`. Remove insignificant decimal trailing zeroes
+key order `align width lines wrap x y rotate opacity first indent`. Remove insignificant decimal trailing zeroes
 and omit `y=0em`, `rotate=0deg` and `opacity=100%`; remove the marker when no fields remain. Only an intentional edit changes
 source; opening, rendering and viewport resizing never normalize it.
 
@@ -144,11 +147,12 @@ Readers claiming one of the first three rungs must show its stated behavior. Run
 implementation profile.
 
 **Rung 0: any CommonMark reader.** CommonMark hides layout comments as ordinary HTML comments. A picture shows inline, upright and solid, at the reader's own default width.
-`align`, `x`, `y`, `wrap`, `rotate`, `opacity`, `first` and `indent` are all invisible.
+`align`, `x`, `y`, `wrap`, `lines`, `rotate`, `opacity`, `first` and `indent` are all invisible.
 
 **Rung 1: position and size.** `align` sets text alignment. `first` and `indent` set a paragraph's first-line indent and its indent from the
 start edge, each level `2em` (CSS `text-indent` and `margin-inline-start`). `width` and `x` size and place a
-picture in normal flow (see "For image layout" above), and `opacity` fades it with CSS `opacity`. `rotate` alone, without `wrap`, stays upright at this rung: a raster’s turn is layout, not changed
+picture in normal flow (see "For image layout" above), and `opacity` fades it with CSS `opacity`. `lines` sets the
+picture's height to `calc((N - 1) * var(--md-line) + 1cap)` with `width: auto` (see "The line"). `rotate` alone, without `wrap`, stays upright at this rung: a raster’s turn is layout, not changed
 pixels, and degrades like an unrecognized field.
 
 **Rung 2: placement in ordinary CSS.** Each `wrap` value has one conforming rendering:
@@ -173,6 +177,31 @@ agreement with Rapier. Exact lines are not required.
 "The drop-in module") plans lines exactly as Rapier's own live view and styled export do, up to font
 metrics; the module is deterministic given its measurer. This is the only rung that reproduces both-sides wrapping and an interior wrap.
 Exact line breaks are not an independent reader's conformance requirement.
+
+### The line
+
+One length measures the page: the line, `--md-line`, the body's line box (see "Reference style" below). Body text
+sits on it, blocks are spaced in it, front matter's `linestretch` sets it, and a picture can be measured in it.
+
+A picture with `lines=N` is as tall as N lines of its anchor text, set the way a drop cap is (CSS `initial-letter`):
+its top on the first line's cap height, its foot on the Nth line's baseline. Its height is therefore N - 1 lines and
+one cap height, and its width follows its aspect ratio, capped at the content box. With a `wrap`, `y` insets the
+picture from that cap height instead of the block's top, so `lines=5 wrap=around` with no `y` is a five-line initial
+whose words run beside it on exactly five lines. A larger text size, a face with a different cap height or a
+`linestretch` changes the line, and the picture follows it everywhere the document is shown: the editor, the exported
+page, print and Word. In normal flow, the line and cap are the picture's own paragraph's.
+
+```md
+![W][initial] <!--md-layout:v1 lines=5 wrap=around-->
+
+ith a decorative letter the paragraph opens on five lines, at any text size.
+```
+
+A renderer finds the first line's cap height from the anchor's font: with the half-leading model the baseline sits
+`(line - (ascent + descent)) / 2 + ascent` below the line box's top, and the cap height `cap` above the baseline.
+Word, with no lines on its page, takes the body size (10 pt unless `fontsize` says), single spacing as 1.15 of it
+stretched by `linestretch`, and a cap of 0.7 of the size. A resize gesture on a picture sized in lines beside its words
+changes it a whole line at a time; resized anywhere else, it takes a `width` instead.
 
 ## Embedded images
 
@@ -345,7 +374,8 @@ pagestyle: plain
 ```
 
 - `fontsize`: `10pt`, `11pt` or `12pt`. `mainfont`: `sans` (the page's own face), `serif`, `mono` or `system`.
-  `linestretch`: `single`, `one and a half` or `double` (also `1`, `1.5`, `2`).
+  `linestretch`: `single`, `one and a half` or `double` (also `1`, `1.5`, `2`); it sets the line, and everything
+  measured in lines follows it, a picture's `lines` included (see "The line").
 - `papersize`: `letter`, `a4`, `a5` or `legal`. `geometry`: `margin=` a length in `in`, `cm`, `mm` or `pt`.
   `pagestyle`: `plain` (page numbers) or `empty`.
 - `title` and `subtitle`: the window's title, the exported page's `<title>`, Word's document title and subject, the
@@ -401,7 +431,7 @@ Vertical rhythm uses one line, `--md-line` (1.75rem, 1.6 lines of the
 1.1rem body, `--md-text-body`). Body text sits on that line; a heading's
 box is the whole or half lines its size fills (h1 at 2.4 x the body on two lines, h2 and h3 on one and a
 half, h4 to h6 on one); every block ends one line below its last line and a heading half a line below; list
-items are a quarter line apart. Blocks have no top margin; their predecessor supplies the space. A host that sets `--md-line` and `--md-text-body` together rescales the whole rhythm.
+items are a quarter line apart. Blocks have no top margin; their predecessor supplies the space. A host that sets `--md-line` and `--md-text-body` together rescales the whole rhythm, pictures measured in lines with it.
 
 | Content | HTML the renderer supplies |
 | --- | --- |
@@ -429,8 +459,9 @@ items are a quarter line apart. Blocks have no top margin; their predecessor sup
 ### Picture layout and the renderer
 
 The sheet reads alignment and rendered picture size; the renderer reads layout comments. Use `parseLayout` from `rapier-markdown-kit/layout` for the marker and `imageStyle`
-for its normal-flow `width` and `x` and its fade. `imageStyle` returns a percentage width, automatic height and,
-when `x` is present, the clamped left margin; with `opacity` under `100%`, the CSS `opacity`. `data-md-image-width` records the percentage on the
+for its normal-flow `width` and `x`, its `lines` and its fade. `imageStyle` returns a percentage width, automatic height and,
+when `x` is present, the clamped left margin; for `lines`, automatic width and the height in lines (`linesHeightCss`);
+with `opacity` under `100%`, the CSS `opacity`. `data-md-image-width` records the percentage on the
 image. An Obsidian pixel-width picture uses `data-rapier-image-size` with `--md-image-width:Npx`;
 the sheet constrains it to its container. A drawing (an SVG picture) shown at its own size or at full column width carries
 `data-md-drawing` and `--md-drawing-width:Npx`, its own width: the sheet lets it shrink to its
@@ -440,7 +471,7 @@ parent scrolls sideways; on paper it fits the page. Explicit pixel sizes and sma
 Rapier's layout projector receives the encoded marker in `data-md-layout` on the paragraph and
 `data-rapier-image-layout` on the picture (`encodeURIComponent(marker)`; the kit's
 `parseLayoutAttribute` reads it). `data-md-layout-tight` retains the zero block margin of a tight
-list paragraph. `wrap`, `y` and `rotate` are geometry for the renderer to project, not CSS attribute
+list paragraph. `wrap`, `y`, `lines` beside words and `rotate` are geometry for the renderer to project, not CSS attribute
 values the sheet can interpret. The projector owns the derived positions, margins, transforms,
 stacking and line boxes; a rotated image reserves its turned bounds. The style pack needs neither
 a CSS placement renderer nor the kit's line planner to style an ordinary document.

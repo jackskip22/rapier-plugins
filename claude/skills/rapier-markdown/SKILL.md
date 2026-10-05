@@ -14,7 +14,7 @@ know. Nothing is lost when the file travels: no image folder, no zip, no account
 what makes it a better carrier than DOCX: plain text, diffable, readable everywhere, and complete.
 
 The standard is [Self-contained Markdown](references/markdown-standard.md), also at
-https://rapier.website/markdown-standard; the MIT reader and writer is `npm install rapier-markdown-kit@1.1.62`. Rapier renders it exactly and
+https://rapier.website/markdown-standard; the MIT reader and writer is `npm install rapier-markdown-kit@1.1.63`. Rapier renders it exactly and
 writes it back byte for byte; any editor may.
 
 Supported Mermaid flowchart fences also draw offline in Rapier's look, so an agent can write a fence or use figures.
@@ -51,7 +51,8 @@ A centred paragraph. <!--md-layout:v1 align=center-->
 ![Portrait][photo] <!--md-layout:v1 width=40% wrap=around x=72% y=2.4em-->
 ```
 
-Text takes `align` (`left`, `center`, `right`, `justify`). A picture takes `width` with `align` or `x`;
+Text takes `align` (`left`, `center`, `right`, `justify`). A picture takes `width` with `align` or `x`, or
+`lines=N` instead of `width` to stand N lines of text tall (`lines=3 wrap=around` is a drop cap that follows the text size);
 `wrap=around` or `wrap=box` with `x` and `y` for text flowing beside it; `wrap=behind` or `wrap=front` for a
 picture under or over the words; `rotate=15deg` for a turned photo; `opacity=40%` for a faded one. A comment that does not parse is ignored
 whole (Rapier's `document.get_context` counts it under `layout.malformed`).
