@@ -1,6 +1,6 @@
 {
   "name": "rapier-markdown-kit",
-  "version": "1.1.59",
+  "version": "1.1.62",
   "description": "Read, render, write and style Self-contained Markdown, and carry its optional edit ledger: the shared HTML writer, semantic renderer, stylesheet, layout, marks, pictures, Will/1, replay, authorship and offline merge. MIT, no npm dependencies.",
   "keywords": [
     "markdown",

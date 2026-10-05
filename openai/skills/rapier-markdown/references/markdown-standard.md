@@ -245,7 +245,8 @@ We feed punchcards: <!--ink ring red box=1180,140 -20,-15 1220,0 0,170 -1220,0 -
 The opener carries, in this order with one space between: the kind (`under`, `strike`, `ring`, `bracket` or
 `free`), decided once when the stroke was lifted and never re-read from a later layout; optionally the colour,
 exactly as the text-colour opener spells it (a name or a lowercase six-digit hex), red when absent; optionally
-`box=W,H`, the size of the frame the stroke was drawn against (the marked words' box, or the stroke's own for a
+`w=N`, the pen's width counted as Draw counts a nib, an integer from 2 to 24, drawn 0.11 em wide at the default
+of 9 (which is never written: an absent `w` is 9) and in proportion to N otherwise; optionally `box=W,H`, the size of the frame the stroke was drawn against (the marked words' box, or the stroke's own for a
 free mark); optionally `at=X,Y`, the frame's offset from the marked words' box for a `bracket` or `free` mark;
 and the path, its first point absolute in the frame and every later one a move from the point before. Every
 number is an integer in hundredths of an em; a path holds at most 160 points. The closer is `<!--/ink-->`.

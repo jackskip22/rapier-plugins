@@ -11,11 +11,12 @@ const inkReader = () => {
 
 	// Ink (docs/markdown-standard.md, "Ink"; the design docs/briefs/ink.md): a pen stroke that stays with the words it
 	// marks, a paired comment with the colour span's shape. The opener holds the stroke:
-	//   <!--ink KIND [NUMBER] [COLOUR] [box=W,H] [at=X,Y] [PATH]-->words<!--/ink-->
+	//   <!--ink KIND [NUMBER] [COLOUR] [w=N] [box=W,H] [at=X,Y] [PATH]-->words<!--/ink-->
 	// KIND is the stroke's kind, decided once when it was lifted; COLOUR is exactly the colour span's value, red when
 	// absent; box is the frame's size when the stroke was drawn and at the frame's offset from the words' box, both in
-	// hundredths of an em; PATH is the stroke, its first point absolute in the frame and the rest as moves, hundredths of an
-	// em. One spelling: the fields in this order, one space between, integers only. A comment that does not read this way
+	// hundredths of an em; w is the pen's width as Draw counts a nib (2 to 24; 9 is the default and is never written): the stroke is drawn 0.11 em
+	// wide at 9 and in proportion to w otherwise; PATH is the stroke, its first point absolute in the frame and the rest as
+	// moves, hundredths of an em. One spelling: the fields in this order, one space between, integers only. A comment that does not read this way
 	// is ordinary comment text and marks nothing. Ink pairs do not nest in each other. Arrow/end alone take a pairing
 	// number, an end takes no other data; under, strike and arrow may omit a path for a line derived from their words.
 	const INK_KINDS = Object.freeze(['under', 'strike', 'ring', 'bracket', 'free', 'arrow', 'end']);
@@ -23,7 +24,7 @@ const inkReader = () => {
 	const INK_PATH_MAX = 160;
 	const INK_INT_MAX = 999999;
 	const INK_INT = '-?\\d{1,6}';
-	const INK_OPEN_BODY = '(' + INK_KINDS.join('|') + ')(?: ([1-9]\\d{0,5}))?(?: (' + COLOR_VALUE + '))?(?: box=(\\d{1,6}),(\\d{1,6}))?(?: at=(' + INK_INT + '),(' + INK_INT + '))?'
+	const INK_OPEN_BODY = '(' + INK_KINDS.join('|') + ')(?: ([1-9]\\d{0,5}))?(?: (' + COLOR_VALUE + '))?(?: w=([1-9]\\d?))?(?: box=(\\d{1,6}),(\\d{1,6}))?(?: at=(' + INK_INT + '),(' + INK_INT + '))?'
 		+ '(?: (' + INK_INT + ',' + INK_INT + '(?: ' + INK_INT + ',' + INK_INT + ')*))?';
 	const INK_OPEN_PATTERN = '<!--ink ' + INK_OPEN_BODY + '-->';
 
@@ -32,9 +33,11 @@ const inkReader = () => {
 	// INK_OPEN_PATTERN and this function; isInkClose reads INK_CLOSE.
 	function readInkMatch(match) {
 		const linked = match[1] === 'arrow' || match[1] === 'end';
-		if (linked !== (match[2] != null) || (!linked && match[1] !== 'under' && match[1] !== 'strike' && match[8] == null)) return null;
-		if (match[1] === 'end' && match.slice(3, 9).some(value => value != null)) return null;
-		const moves = match[8] == null ? [] : match[8].split(' ').map(pair => pair.split(',').map(Number));
+		if (linked !== (match[2] != null) || (!linked && match[1] !== 'under' && match[1] !== 'strike' && match[9] == null)) return null;
+		if (match[1] === 'end' && match.slice(3, 10).some(value => value != null)) return null;
+		const width = match[4] == null ? null : Number(match[4]);
+		if (width != null && (width < 2 || width > 24 || width === 9)) return null;
+		const moves = match[9] == null ? [] : match[9].split(' ').map(pair => pair.split(',').map(Number));
 		if (moves.length > INK_PATH_MAX) return null;
 		const path = moves.length ? [moves[0]] : [];
 		for (let i = 1; i < moves.length; i++) {
@@ -47,8 +50,9 @@ const inkReader = () => {
 			kind: match[1],
 			...(linked ? { id: Number(match[2]) } : {}),
 			hex: colour == null ? null : (colour.charCodeAt(0) === 0x23 ? colour : TEXT_COLOR_NAMES[colour]),
-			box: match[4] == null ? null : [Number(match[4]), Number(match[5])],
-			at: match[6] == null ? null : [Number(match[6]), Number(match[7])],
+			...(width == null ? {} : { width }),
+			box: match[5] == null ? null : [Number(match[5]), Number(match[6])],
+			at: match[7] == null ? null : [Number(match[7]), Number(match[8])],
 			path,
 		});
 	}
@@ -144,7 +148,7 @@ const inkPair = (value, name, nonNegative = false) => {
 	return pair;
 };
 
-// {kind, id?, hex?, box?, at?, path?} to the opener; the path's points are absolute in the frame and become moves after the
+// {kind, id?, hex?, width?, box?, at?, path?} to the opener; the path's points are absolute in the frame and become moves after the
 // first. Refuses with a TypeError rather than writing a spelling the reader would not read.
 export function formatInkOpen(mark) {
 	if (!mark || typeof mark !== 'object') throw new TypeError('ink: a mark is an object');
@@ -153,7 +157,7 @@ export function formatInkOpen(mark) {
 	if (linked ? !Number.isInteger(mark.id) || mark.id <= 0 || mark.id > INK_INT_MAX : mark.id != null) throw new TypeError('ink: only an arrow or its end has a positive pairing number');
 	const id = linked ? ' ' + mark.id : '';
 	if (mark.kind === 'end') {
-		if (mark.hex != null || mark.box != null || mark.at != null || (mark.path != null && (!Array.isArray(mark.path) || mark.path.length))) throw new TypeError('ink: an arrow end holds only its pairing number');
+		if (mark.hex != null || mark.width != null || mark.box != null || mark.at != null || (mark.path != null && (!Array.isArray(mark.path) || mark.path.length))) throw new TypeError('ink: an arrow end holds only its pairing number');
 		return '<!--ink end' + id + '-->';
 	}
 	let colour = '';
@@ -162,6 +166,8 @@ export function formatInkOpen(mark) {
 		if (!new RegExp('^' + COLOR_VALUE + '$').test(value)) throw new TypeError('ink: the colour is the colour span\'s value');
 		colour = ' ' + value;
 	}
+	if (mark.width != null && (!Number.isInteger(mark.width) || mark.width < 2 || mark.width > 24)) throw new TypeError('ink: the width is an integer from 2 to 24, and 9 is spelled by leaving it out');
+	const width = mark.width == null || mark.width === 9 ? '' : ' w=' + mark.width;
 	const box = mark.box == null ? '' : ' box=' + inkPair(mark.box, 'box', true).join(',');
 	const at = mark.at == null ? '' : ' at=' + inkPair(mark.at, 'at').join(',');
 	const optionalPath = linked || mark.kind === 'under' || mark.kind === 'strike';
@@ -170,7 +176,7 @@ export function formatInkOpen(mark) {
 	const points = path.map(point => inkPair(point, 'path'));
 	const moves = points.length ? [points[0].join(',')] : [];
 	for (let i = 1; i < points.length; i++) moves.push([inkInt(points[i][0] - points[i - 1][0], 'path move'), inkInt(points[i][1] - points[i - 1][1], 'path move')].join(','));
-	return '<!--ink ' + mark.kind + id + colour + box + at + (moves.length ? ' ' + moves.join(' ') : '') + '-->';
+	return '<!--ink ' + mark.kind + id + colour + width + box + at + (moves.length ? ' ' + moves.join(' ') : '') + '-->';
 }
 
 export function formatInkRun(mark, content) {

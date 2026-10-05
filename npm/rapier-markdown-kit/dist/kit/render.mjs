@@ -406,7 +406,8 @@ async function _rapierSharedSourceCarrier(context, root) {
 		(forms.definitions.length ? ' data-image-definitions="' + forms.definitions.map(encodeURIComponent).join(' ') + '"' : '') + '>\n' +
 		forms.carried + '\n</script>\n' +
 		// The optional edit ledger (W/4): carried only when the host binds its owner; a host without one writes none.
-		(RapierLedgerCarried ? RapierLedgerCarried.writeParts(forms.resolved, _rapierLedgerParts(forms.resolved, context.ledger, context.carried)) : '');
+		(RapierLedgerCarried ? RapierLedgerCarried.writeParts(forms.resolved, _rapierLedgerParts(forms.resolved, context.ledger, context.carried)) +
+			RapierLedgerCarried.writeBase(forms.resolved, context.proposalBase) : '');
 }
 
 function _rapierSharedResolve(text, ids, images, definitions) {
@@ -438,7 +439,7 @@ async function _rapierReadSharedDocument(text, filename) {
 	const template = document.createElement('template');
 	template.innerHTML = html;
 	const invalid = () => { throw new Error('The editable source in this web page is incomplete or changed'); };
-	const carriers = template.content.querySelectorAll('script[type="' + _RAPIER_SHARED_SOURCE_TYPE + '"]');
+	const carriers = Array.from(template.content.querySelectorAll('script[type="' + _RAPIER_SHARED_SOURCE_TYPE + '"]')).filter(row => row.id !== 'rapier-base');
 	if (carriers.length !== 1) return invalid();
 	const carrier = carriers[0];
 	const name = carrier.getAttribute('data-filename') || '', kind = carrier.getAttribute('data-kind'), sha256 = carrier.getAttribute('data-sha256') || '';
@@ -463,7 +464,8 @@ async function _rapierReadSharedDocument(text, filename) {
 	const bom = source.charCodeAt(0) === 0xFEFF;
 	if (RapierTextCodec.normalizeDocument(source) !== (bom ? source.slice(1) : source)) return invalid();
 	const parts = RapierLedgerCarried ? RapierLedgerCarried.readParts(source, Array.from(template.content.querySelectorAll('#rapier-ledger, #rapier-authorship'))) : {};
-	return {source, filename: name, kind, bom, ...parts};
+	const proposalBase = RapierLedgerCarried?.readBaseElements(Array.from(template.content.querySelectorAll('#rapier-base'))) || null;
+	return {source, filename: name, kind, bom, ...parts, proposalBase};
 }
 
 function _rapierSharedPageFallbackCss() {
@@ -697,7 +699,7 @@ async function _rapierRequireOfflinePageImages(root) {
 }
 
 async function _rapierBuildSharedPage(captured) {
-	const context = await _rapierPrepareInterchangeContext({kind: 'share'}, captured);
+	const context = await _rapierPrepareInterchangeContext({kind: 'share'}, captured?.proposalText == null ? captured : {...captured, canonical: captured.proposalText});
 	// One owner for every HTML file Rapier writes, including offline-image admission and CSP.
 	// Share adds only the nearest-side no-script float and the long-code treatment.
 	const artifact = await _rapierBuildArtifact({

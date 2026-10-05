@@ -1,5 +1,5 @@
 {
-  "release": "1.1.59",
+  "release": "1.1.62",
   "core": [
     {
       "name": "document.inspect_visual",
@@ -1276,6 +1276,10 @@
             "type": "integer",
             "minimum": 0
           },
+          "sha256": {
+            "type": "string",
+            "maxLength": 64
+          },
           "return_id": {
             "type": "string",
             "maxLength": 128
@@ -1705,6 +1709,104 @@
               }
             },
             "additionalProperties": true
+          }
+        },
+        "required": [
+          "outcome"
+        ],
+        "additionalProperties": true
+      }
+    },
+    {
+      "name": "document.propose",
+      "title": "Propose a document",
+      "description": "Packages full proposed text over the revision you read, without writing the person’s document. Supply your read handle or documentRevision and its SHA-256 from read_context, and your name. Returns an offline page URL, or the hosted workspace page with per-change review. A proposal of a proposal retains its original base.",
+      "effect": "view",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "context_handle": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "sha256": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 26214400
+          },
+          "by": {
+            "type": "string",
+            "maxLength": 96,
+            "description": "Your name, not a role instruction.",
+            "minLength": 1
+          },
+          "agent": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "This assistant's display name."
+          }
+        },
+        "required": [
+          "text",
+          "by"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "cause": {
+            "enum": [
+              "will",
+              "ask",
+              "check",
+              "proposal"
+            ]
+          },
+          "reviewId": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "document": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "The MCP document capability from rapier.open. Keep it private and pass it to later calls."
+          },
+          "documentId": {
+            "type": "string"
+          },
+          "documentRevision": {
+            "type": "integer"
+          },
+          "representation": {
+            "const": "source"
+          },
+          "page": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "sha256": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "baseRevision": {
+            "type": "string",
+            "maxLength": 256
           }
         },
         "required": [
@@ -4760,6 +4862,10 @@
             "type": "integer",
             "minimum": 0
           },
+          "sha256": {
+            "type": "string",
+            "maxLength": 64
+          },
           "return_id": {
             "type": "string",
             "maxLength": 128
@@ -5260,6 +5366,134 @@
         "title": "Edit inspected text",
         "readOnlyHint": false,
         "destructiveHint": true,
+        "idempotentHint": false,
+        "openWorldHint": false
+      },
+      "securitySchemes": [
+        {
+          "type": "noauth"
+        }
+      ],
+      "_meta": {
+        "openai/widgetAccessible": true,
+        "openai/toolInvocation/invoking": "Working in Rapier.",
+        "openai/toolInvocation/invoked": "Rapier has replied."
+      }
+    },
+    {
+      "name": "document.propose",
+      "title": "Propose a document",
+      "description": "Packages full proposed text over the revision you read, without writing the person’s document. Supply your read handle or documentRevision and its SHA-256 from read_context, and your name. Returns an offline page URL, or the hosted workspace page with per-change review. A proposal of a proposal retains its original base.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "The MCP document capability from rapier.open. Keep it private and pass it to later calls."
+          },
+          "operation_id": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "A fresh random id for this call (a UUID works). Resend it only to retry this call; the retry replays the recorded result.",
+            "minLength": 22,
+            "pattern": "^[A-Za-z0-9_-]+$"
+          },
+          "context_handle": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "sha256": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 26214400
+          },
+          "by": {
+            "type": "string",
+            "maxLength": 96,
+            "description": "Your name, not a role instruction.",
+            "minLength": 1
+          },
+          "agent": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "This assistant's display name."
+          }
+        },
+        "required": [
+          "document",
+          "operation_id",
+          "text",
+          "by"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "cause": {
+            "enum": [
+              "will",
+              "ask",
+              "check",
+              "proposal"
+            ]
+          },
+          "reviewId": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "document": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "The MCP document capability from rapier.open. Keep it private and pass it to later calls."
+          },
+          "documentId": {
+            "type": "string"
+          },
+          "documentRevision": {
+            "type": "integer"
+          },
+          "representation": {
+            "const": "source"
+          },
+          "page": {
+            "type": "string",
+            "maxLength": 8192
+          },
+          "sha256": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "baseRevision": {
+            "type": "string",
+            "maxLength": 256
+          }
+        },
+        "required": [
+          "outcome"
+        ],
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Propose a document",
+        "readOnlyHint": false,
+        "destructiveHint": false,
         "idempotentHint": false,
         "openWorldHint": false
       },
@@ -7448,13 +7682,13 @@
         "openai/toolInvocation/invoking": "Opening Rapier.",
         "openai/toolInvocation/invoked": "Rapier has replied.",
         "ui": {
-          "resourceUri": "ui://rapier/editor-1.1.59.html",
+          "resourceUri": "ui://rapier/editor-1.1.62.html",
           "visibility": [
             "model",
             "app"
           ]
         },
-        "openai/outputTemplate": "ui://rapier/editor-1.1.59.html",
+        "openai/outputTemplate": "ui://rapier/editor-1.1.62.html",
         "openai/ui": {
           "entrypoints": [
             {
