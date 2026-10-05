@@ -83,7 +83,7 @@ For a spatial sketch, coordinates are meaningful. This creates a garden arrangem
 
 Call this an arrangement, not a scaled plan unless real dimensions are supplied. The person can move
 shapes, relabel, recolour, draw and paint on the canvas. Agents can also paint with the same brush engine
-when this host carries Paint. Send a paint figure with a stable id and ordered strokes:
+when this host carries Paint. Send a paint figure with a stable id and ordered strokes (`figures` creates a drawing; to paint on a drawing that already exists, or that the person has open, put `{"kind":"paint","strokes":[...]}` in `shapes.add` or `shapes.replace`):
 
 ```json
 {"alt":"A blue brush stroke","figures":[{"kind":"paint","id":"wash","strokes":[
@@ -104,7 +104,8 @@ is not available in a build without Paint. Do not claim a refused call created m
 Read the image occurrence through `document.read_context` for its recipe and a current handle.
 Do not use a source-text handle as a recipe handle or guess IDs from the rendered picture.
 
-- Move an inspected object with `operations: [{"type":"move","ids":["herbs"],"dx":40,"dy":0}]`.
+- Move an inspected object with `operations: [{"type":"move","ids":["herbs"],"dx":40,"dy":0}]`. While the person has that drawing open, send
+  only a `shapes` patch (a move is a `shapes.replace` of the moved shape); `operations` waits until they close it.
 - Change a label by copying the exact shape from the read recipe, changing its `label`, then sending
   `shapes: {replace: [updatedShape]}` with the read handle as `recipe_handle`. A replacement is a complete
   shape, not just `id` and `label`. Preserve geometry, style and bindings.
@@ -124,5 +125,4 @@ Do not use a source-text handle as a recipe handle or guess IDs from the rendere
 A whole-recipe or caption edit does not bypass the person's open drawing or Notes fence. While a person
 has the drawing open, only the existing shapes-only patch exception can land; other edits must wait.
 
-Keep the change ID for inspection and Undo. Under ASK a drawing waits for review; read it again after
-approval. If the person changed the image meanwhile, a fresh read establishes the new recipe.
+Keep the change ID for inspection and Undo. If the person changed the image meanwhile, a fresh read establishes the new recipe.

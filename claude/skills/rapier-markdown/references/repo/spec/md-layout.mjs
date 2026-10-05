@@ -5,7 +5,9 @@
 // `lines`: a picture's height in lines of the text beside it, set as a drop cap is (CSS `initial-letter`): its top on the first
 // line's cap height, its foot on the Nth line's baseline, its width from its own aspect. A whole number 1 to 12; never with `width`.
 // `first`/`indent`: a paragraph's first-line indent and its whole-block indent, in levels of one step (2em), a whole number from 1 to 4, omitted when 0; text only.
-export const fields = new Set(['align', 'width', 'lines', 'wrap', 'x', 'y', 'rotate', 'opacity', 'first', 'indent']);
+// `lock=on`: a picture locked in place (the founder, 5 October): a tap goes to the words, never the picture; a hold takes it
+// to unlock it. Omitted when off.
+export const fields = new Set(['align', 'width', 'lines', 'wrap', 'x', 'y', 'rotate', 'opacity', 'first', 'indent', 'lock']);
 export const alignments = new Set(['left', 'center', 'right', 'justify']);
 // `behind`/`front`: out of flow; the paragraph lays out as though the picture were absent.
 export const wraps = new Set(['around', 'box', 'behind', 'front']);
@@ -29,6 +31,7 @@ export function validLayout(value) {
     (!has(value, 'rotate') || oneDecimalDegrees(value.rotate)) &&
     (!has(value, 'opacity') || Number.isInteger(value.opacity) && value.opacity >= 5 && value.opacity <= 100) &&
     (!has(value, 'first') || level(value.first)) && (!has(value, 'indent') || level(value.indent)) &&
+    (!has(value, 'lock') || value.lock === 'on') &&
     !(has(value, 'align') && (has(value, 'wrap') || has(value, 'x')));
 }
 
@@ -93,7 +96,8 @@ export function imageStyle(value) {
       decimal(Number(Math.max(0, Math.min(100 - width, value.x - width / 2)).toFixed(6))) + '%;margin-right:0';
     parts.push('width:' + decimal(width) + '%;height:auto' + left);
   }
-  if (value.lines != null) parts.push('width:auto;max-width:100%;height:' + linesHeightCss(value.lines));
+  // Wider than the column at its own aspect, it is contained in the N-line box, never stretched.
+  if (value.lines != null) parts.push('width:auto;max-width:100%;height:' + linesHeightCss(value.lines) + ';object-fit:contain');
   if (value.opacity != null && value.opacity < 100) parts.push('opacity:' + decimal(value.opacity / 100));
   return parts.join(';');
 }

@@ -64,6 +64,7 @@ Following prose can flow above, beside and below the picture.
 | `y` | Finite decimal followed by `em`, optionally negative (never below `-50em`; zero is written unsigned and omitted) | Wrapped image's requested top inset within its anchor paragraph, measured in that paragraph's font size; a negative value lifts the picture above the paragraph's first line. |
 | `rotate` | Integer or one-decimal-place decimal followed by `deg`, greater than `-180` and at most `180` | Image's clockwise turn in degrees about its own centre; omitted when `0`. Valid alongside any placement (inline, any `wrap`, or `align`) and on its own. |
 | `opacity` | Whole percentage from `5%` to `100%` | Image's fade: the whole picture is drawn at this opacity over whatever lies beneath it; omitted at `100%`. The picture's own bytes, and its own transparent parts, never change. Valid alongside any placement and on its own. |
+| `lock` | `on` only | The picture is locked in place: in Rapier a tap on it goes to the words around it and never selects it, and a hold takes it so it can be unlocked. Omitted when unlocked. Other renderers ignore it. |
 | `first` | Whole number from `1` to `4` | A paragraph's first-line indent, in steps of `2em`; omitted when `0`. Text only: a paragraph (a heading ignores it), never a picture. |
 | `indent` | Whole number from `1` to `4` | A paragraph's indent from its start edge, in steps of `2em`; omitted when `0`. Text only. |
 
@@ -303,8 +304,11 @@ stored shaft's bends and direction. Its head always points to the `end` words.
 The inline algebra (`formatting-algebra.md` §§2–5) keeps an ink pair inside one enclosing inline
 container. For equal ranges newly written together, highlight encloses ink, ink encloses colour, and
 the ordinary bold, italic, underline and strike marks sit inside them. Existing legal nesting keeps its
-original spelling. A crossing pair is not repaired into nesting. Code and links are barriers: a stroke
-over them marks only the surrounding stretches of words, never their contents or their delimiters.
+original spelling. A crossing pair is not repaired into nesting. Code is a barrier: a stroke over it marks only the
+surrounding stretches of words, never its contents or its delimiters. A link's words are words: the pair stands inside the
+link's text (`[<!--ink under-->the docs<!--/ink-->](https://example.test)`), so the link's shell, destination and title stay
+whole and the line never opens with a comment; a pair never crosses a link's edge. A stroke that no words can hold (a picture,
+a fence, a drawing, the space between blocks) is a `free` mark on the nearest words that can.
 
 Typing inside the span extends that same span without changing the recorded stroke. A paragraph break
 closes it before the break and does not reopen it after; an empty prefix has no mark to keep. A soft or

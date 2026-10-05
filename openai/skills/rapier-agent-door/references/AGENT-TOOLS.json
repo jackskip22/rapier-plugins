@@ -1,5 +1,5 @@
 {
-  "release": "1.1.63",
+  "release": "1.1.64",
   "core": [
     {
       "name": "document.inspect_visual",
@@ -2757,7 +2757,7 @@
               "type": "object",
               "additionalProperties": true
             },
-            "description": "Figures use kind, not type. Example: [{\"kind\":\"rect\",\"id\":\"start\",\"label\":\"Start\"},{\"kind\":\"rect\",\"id\":\"end\",\"label\":\"Finish\"},{\"kind\":\"arrow\",\"from\":\"start\",\"to\":\"end\"}]. Omit x, y, w and h for automatic layout. Paint with real brushes: {\"kind\":\"paint\",\"strokes\":[{\"brush\":\"rapier/oil\",\"colour\":\"#2255cc\",\"size\":50,\"points\":[[x,y,pressure],...]}]}; brushes include rapier/oil, rapier/scumble, rapier/watercolour, rapier/marker, rapier/pen; size 0-100; optional load and water 0-1."
+            "description": "Figures use kind, not type. Example: [{\"kind\":\"rect\",\"id\":\"start\",\"label\":\"Start\"},{\"kind\":\"rect\",\"id\":\"end\",\"label\":\"Finish\"},{\"kind\":\"arrow\",\"from\":\"start\",\"to\":\"end\"}]. Omit x, y, w and h for automatic layout. Figures create a new drawing; on an existing or open drawing, send the same figures in shapes.add or shapes.replace. Paint with real brushes: {\"kind\":\"paint\",\"strokes\":[{\"brush\":\"rapier/oil\",\"colour\":\"#2255cc\",\"size\":50,\"points\":[[x,y,pressure],...]}]}; brushes include rapier/oil, rapier/scumble, rapier/watercolour, rapier/marker, rapier/pen; size 0-100; optional load and water 0-1."
           },
           "direction": {
             "type": "string",
@@ -2811,7 +2811,7 @@
           "operations": {
             "type": "array",
             "maxItems": 64,
-            "description": "Edits to existing shapes by id, applied in order.",
+            "description": "Edits to existing shapes by id, applied in order. While the person has the drawing open, send a shapes patch instead; operations wait until they close it.",
             "items": {
               "type": "object",
               "properties": {
@@ -6737,7 +6737,7 @@
               "type": "object",
               "additionalProperties": true
             },
-            "description": "Figures use kind, not type. Example: [{\"kind\":\"rect\",\"id\":\"start\",\"label\":\"Start\"},{\"kind\":\"rect\",\"id\":\"end\",\"label\":\"Finish\"},{\"kind\":\"arrow\",\"from\":\"start\",\"to\":\"end\"}]. Omit x, y, w and h for automatic layout. Paint with real brushes: {\"kind\":\"paint\",\"strokes\":[{\"brush\":\"rapier/oil\",\"colour\":\"#2255cc\",\"size\":50,\"points\":[[x,y,pressure],...]}]}; brushes include rapier/oil, rapier/scumble, rapier/watercolour, rapier/marker, rapier/pen; size 0-100; optional load and water 0-1."
+            "description": "Figures use kind, not type. Example: [{\"kind\":\"rect\",\"id\":\"start\",\"label\":\"Start\"},{\"kind\":\"rect\",\"id\":\"end\",\"label\":\"Finish\"},{\"kind\":\"arrow\",\"from\":\"start\",\"to\":\"end\"}]. Omit x, y, w and h for automatic layout. Figures create a new drawing; on an existing or open drawing, send the same figures in shapes.add or shapes.replace. Paint with real brushes: {\"kind\":\"paint\",\"strokes\":[{\"brush\":\"rapier/oil\",\"colour\":\"#2255cc\",\"size\":50,\"points\":[[x,y,pressure],...]}]}; brushes include rapier/oil, rapier/scumble, rapier/watercolour, rapier/marker, rapier/pen; size 0-100; optional load and water 0-1."
           },
           "direction": {
             "type": "string",
@@ -6791,7 +6791,7 @@
           "operations": {
             "type": "array",
             "maxItems": 64,
-            "description": "Edits to existing shapes by id, applied in order.",
+            "description": "Edits to existing shapes by id, applied in order. While the person has the drawing open, send a shapes patch instead; operations wait until they close it.",
             "items": {
               "type": "object",
               "properties": {
@@ -7682,13 +7682,13 @@
         "openai/toolInvocation/invoking": "Opening Rapier.",
         "openai/toolInvocation/invoked": "Rapier has replied.",
         "ui": {
-          "resourceUri": "ui://rapier/editor-1.1.63.html",
+          "resourceUri": "ui://rapier/editor-1.1.64.html",
           "visibility": [
             "model",
             "app"
           ]
         },
-        "openai/outputTemplate": "ui://rapier/editor-1.1.63.html",
+        "openai/outputTemplate": "ui://rapier/editor-1.1.64.html",
         "openai/ui": {
           "entrypoints": [
             {

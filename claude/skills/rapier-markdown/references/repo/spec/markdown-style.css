@@ -367,7 +367,7 @@
 .md-render h1,.md-render h2,.md-render h3,.md-render h4,.md-render h5,.md-render h6{
 	font-family:var(--md-font-sans);letter-spacing:-0.01em;
 	line-height:var(--md-line);margin:0 0 calc(var(--md-line) / 2);color:var(--md-heading-color);text-wrap:balance}
-.md-render h1{font-size:calc(var(--md-text-body) * 2.4);line-height:calc(var(--md-line) * 2);font-weight:700}
+.md-render h1{font-size:calc(var(--md-text-body) * 2.7);line-height:calc(var(--md-line) * 2);font-weight:620}
 .md-render h2{font-size:calc(var(--md-text-body) * 1.9);line-height:calc(var(--md-line) * 1.5);font-weight:600}
 .md-render h3{font-size:calc(var(--md-text-body) * 1.5);line-height:calc(var(--md-line) * 1.5);font-weight:600}
 .md-render h4{font-size:calc(var(--md-text-body) * 1.25);font-weight:500}
@@ -577,7 +577,7 @@
 	background:var(--md-color-inset);border:1px solid var(--md-color-border);padding:1px 5px}
 .md-render pre{margin:0 0 var(--md-line);padding:var(--md-space-3) var(--md-space-4);
 	background:var(--md-color-surface-2);border:1px solid var(--md-color-border);overflow-x:auto}
-.md-render pre code{background:none;border:none;padding:0;font-size:0.8125rem;line-height:calc(var(--md-line) * .75)}
+.md-render pre code{background:none;border:none;padding:0;font-size:calc(var(--md-text-body) * 0.7386);line-height:calc(var(--md-line) * .75)}
 .md-render .math-display-wrap{
 	display:block;
 	max-width:100%;
@@ -784,11 +784,18 @@
 .rapier-ink-layer svg{position:absolute;display:block;margin:0;padding:0;overflow:visible}
 .rapier-ink-layer path{fill:light-dark(var(--md-ink),var(--md-ink-dark));stroke:none;opacity:.92}
 @media print{.rapier-ink-layer path{fill:var(--md-ink)}}
-.md-render [data-md-color="#1c7547"]{--md-color-dark:#70c390}
 .md-render [data-md-color="#b32034"]{--md-color-dark:#ff8385}
-.md-render [data-md-color="#175dc4"]{--md-color-dark:#7bafff}
+.md-render [data-md-color="#c2410c"]{--md-color-dark:#fb923c}
 .md-render [data-md-color="#865818"]{--md-color-dark:#d6a367}
+.md-render [data-md-color="#4d7c0f"]{--md-color-dark:#a3cf5c}
+.md-render [data-md-color="#1c7547"]{--md-color-dark:#70c390}
+.md-render [data-md-color="#0f766e"]{--md-color-dark:#5eead4}
+.md-render [data-md-color="#0369a1"]{--md-color-dark:#7dd3fc}
+.md-render [data-md-color="#175dc4"]{--md-color-dark:#7bafff}
+.md-render [data-md-color="#4338ca"]{--md-color-dark:#a5b4fc}
 .md-render [data-md-color="#7924d7"]{--md-color-dark:#ba97ff}
+.md-render [data-md-color="#be185d"]{--md-color-dark:#f9a8d4}
+.md-render [data-md-color="#57606a"]{--md-color-dark:#aab1bb}
 .md-render abbr[title]{text-decoration:underline dotted;text-decoration-color:var(--md-color-text-muted);text-underline-offset:2px;cursor:help}
 .md-render ins{text-decoration:underline;color:var(--md-color-success)}
 /* The document owns its selection accent, including on an exported page. */
