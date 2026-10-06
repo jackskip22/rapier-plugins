@@ -369,7 +369,7 @@ export function serializeAsset(asset) {
   const value = assetTitle(asset.title), title = value ? ' "' + value.replace(/&/g, '&amp;').replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"' : '';
   return '[' + asset.label + ']: ' + asset.url + title;
 }
-// Pure: re-derived at commit against the moved document; appends only at the text's end (docs/kernel.md).
+// Pure: re-derived at commit against the moved document; appends only at the text's end.
 export function appendAssetText(source, asset) {
   if (typeof source !== 'string' || !asset || normalizeLabel(asset.label) !== asset.id) return fail('image_source_invalid');
   const parsed = documentAssets(source), title = assetTitle(asset.title);

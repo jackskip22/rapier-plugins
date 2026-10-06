@@ -45,12 +45,11 @@ function _rapierRecordSplices(entry, ledger) {
 }
 
 // A ledger record as the journal and the Notes return validate it below: plain data, nothing
-// undefined anywhere in it. A live record could carry a row whose type or order was not yet known
-// (a block just inserted, before its first render: `type: undefined`), and the validator refused
-// the whole ledger for that one field -- silently at boot, where a refused ledger is cleared, and on
-// the founder's phone as "Rapier could not be reopened: the document history could not be restored"
-// on every return from Notes (24 September). The copy is made once per record; records are frozen,
-// so it never goes stale.
+// undefined anywhere in it. A live record could carry a row whose type or order is not yet known (a
+// block just inserted, before its first render: `type: undefined`), and the validator would refuse
+// the whole ledger for that one field -- silently at boot, where a refused ledger is cleared, and
+// as "Rapier could not be reopened: the document history could not be restored" on a return from
+// Notes. The copy is made once per record; records are frozen, so it never goes stale.
 const _rapierJournalRecord = (() => {
 	const copies = new WeakMap();
 	return record => {

@@ -9,16 +9,16 @@ const inkReader = () => {
 	const COLOR_NAME_ALT = Object.keys(TEXT_COLOR_NAMES).join('|');
 	const COLOR_VALUE = '(?:#[0-9a-f]{6}|' + COLOR_NAME_ALT + ')';
 
-	// Ink (docs/markdown-standard.md, "Ink"; the design docs/briefs/ink.md): a pen stroke that stays with the words it
-	// marks, a paired comment with the colour span's shape. The opener holds the stroke:
+	// Ink (docs/markdown-standard.md, "Ink"): a pen stroke that stays with the words it marks, a paired comment with the colour span's shape. The
+	// opener holds the stroke:
 	//   <!--ink KIND [NUMBER] [COLOUR] [w=N] [box=W,H] [at=X,Y] [PATH]-->words<!--/ink-->
-	// KIND is the stroke's kind, decided once when it was lifted; COLOUR is exactly the colour span's value, red when
-	// absent; box is the frame's size when the stroke was drawn and at the frame's offset from the words' box, both in
-	// hundredths of an em; w is the pen's width as Draw counts a nib (2 to 24; 9 is the default and is never written): the stroke is drawn 0.11 em
-	// wide at 9 and in proportion to w otherwise; PATH is the stroke, its first point absolute in the frame and the rest as
-	// moves, hundredths of an em. One spelling: the fields in this order, one space between, integers only. A comment that does not read this way
-	// is ordinary comment text and marks nothing. Ink pairs do not nest in each other. Arrow/end alone take a pairing
-	// number, an end takes no other data; under, strike and arrow may omit a path for a line derived from their words.
+	// KIND is the stroke's kind, decided once when it was lifted; COLOUR is exactly the colour span's value, red when absent; box is the frame's
+	// size when the stroke was drawn and at the frame's offset from the words' box, both in hundredths of an em; w is the pen's width as Draw
+	// counts a nib (2 to 24; 9 is the default and is never written): the stroke is drawn 0.11 em wide at 9 and in proportion to w otherwise; PATH
+	// is the stroke, its first point absolute in the frame and the rest as moves, hundredths of an em. One spelling: the fields in this order,
+	// one space between, integers only. A comment that does not read this way is ordinary comment text and marks nothing. Ink pairs do not nest
+	// in each other. Arrow/end alone take a pairing number, an end takes no other data; under, strike and arrow may omit a path for a line
+	// derived from their words.
 	const INK_KINDS = Object.freeze(['under', 'strike', 'ring', 'bracket', 'free', 'arrow', 'end']);
 
 	const INK_PATH_MAX = 160;

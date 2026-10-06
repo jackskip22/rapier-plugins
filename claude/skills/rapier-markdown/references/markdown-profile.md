@@ -49,7 +49,7 @@ A document's raw HTML renders as HTML and presses nothing of Rapier's. Every blo
 
 Rapier's own rendering keeps its `data-*` (a picture's layout, a page break, the remote-picture placeholder with its "Load all remote content" button), and a document's `<a id="anchor">` keeps its anchor. Forms, `<style>`, `<dialog>`, `<template>` and `<iframe>` never render (`RAPIER_SANITIZE_FORBID_TAGS`). A remote `url()` in any style is dropped until the person loads remote content. A heading's own id yields to any id already in the page (`_rapierAssignHeadingSlugs`).
 
-## What other renderers show today (13 September 2026)
+## What other renderers show (checked 13 September 2026)
 
 Claims cite published statements or reproduced public reports. Re-check after relevant product changes.
 

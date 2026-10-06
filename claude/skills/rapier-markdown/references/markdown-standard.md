@@ -8,8 +8,8 @@ reference definitions with Base64 data URLs. Layout uses an optional
 `md-layout:v1` comment. The [Markdown profile](markdown-profile.md) classifies
 Rapier’s other extensions, read syntax and invisible conventions.
 
-The source owns content, reading order and visual intent. The renderer supplies
-typography and responsive geometry. No application, account, service or rendering engine is required.
+The source owns content, reading order and layout. One reference scale (see "The reference scale") sizes the type, the
+lines and every placement, on every surface; the renderer supplies the column. No application, account, service or rendering engine is required.
 
 Three layers, each complete without the next. **The core** is CommonMark and GFM.
 **The conventions** are the layout comment, text colour, page break and picture
@@ -21,7 +21,7 @@ lists, tables, pictures and layouts, colour, highlights, diagrams and math as Ra
 
 ## Measured against the specification
 
-On 18 September 2026 Rapier's parser passed 648 of 652 CommonMark 0.31.2 examples (99.39%) and 650 of 672 GFM examples (96.73%; 17 of the 24 extension-section examples), and the editor's source model round-tripped all 1,324 specification sources byte for byte with no normalization. This is parser output, not a claim of complete CommonMark conformance. The deliberate difference is interactive task-list controls (GFM examples 279 and 280).
+Rapier's parser passes 648 of 652 CommonMark 0.31.2 examples (99.39%) and 650 of 672 GFM examples (96.73%; 17 of the 24 extension-section examples), and the editor's source model round-trips all 1,324 specification sources byte for byte with no normalization. This is parser output, not a claim of complete CommonMark conformance. The deliberate difference is interactive task-list controls (GFM examples 279 and 280).
 
 ## Layout
 
@@ -107,7 +107,7 @@ and heading the image reaches flows around it, and a list, a quote or a
 details block shortens its own lines beside it while staying intact as a
 structure; a table, code, a rule, a figure or mathematics stays whole below or
 beside the image. Fonts, spacing and precise line
-breaks belong to the renderer; collision avoidance may adjust displayed geometry
+breaks follow the reference scale below and the column's width; collision avoidance may adjust displayed geometry
 without rewriting source.
 
 `wrap=behind` and `wrap=front` use wrapped positioning (`x`, `y`, `width`) while the anchor and
@@ -177,7 +177,7 @@ agreement with Rapier. Exact lines are not required.
 **Rung 3: the same lines Rapier shows.** The drop-in module (the `rapier-markdown-kit` package, [standard-adoption](standard-adoption.md),
 "The drop-in module") plans lines exactly as Rapier's own live view and styled export do, up to font
 metrics; the module is deterministic given its measurer. This is the only rung that reproduces both-sides wrapping and an interior wrap.
-Exact line breaks are not an independent reader's conformance requirement.
+A rung-3 reader keeps the reference scale; exact line breaks below rung 3 are a recommendation, not a requirement.
 
 ### The line
 
@@ -200,9 +200,36 @@ ith a decorative letter the paragraph opens on five lines, at any text size.
 
 A renderer finds the first line's cap height from the anchor's font: with the half-leading model the baseline sits
 `(line - (ascent + descent)) / 2 + ascent` below the line box's top, and the cap height `cap` above the baseline.
-Word, with no lines on its page, takes the body size (10 pt unless `fontsize` says), single spacing as 1.15 of it
-stretched by `linestretch`, and a cap of 0.7 of the size. A resize gesture on a picture sized in lines beside its words
+Word takes its body and its line from the reference scale (13.2 pt on 21 pt at M) and a cap of 0.7 of the body. A resize gesture on a picture sized in lines beside its words
 changes it a whole line at a time; resized anywhere else, it takes a `width` instead.
+
+### The reference scale
+
+One unit, `--md-unit`, sizes everything the format and the reference style set. It is 16 CSS px (12 pt) at Rapier's
+default text size, M, on every surface: the editor, the exported page, print, the PDF and Word.
+
+| In units | At M |
+| --- | --- |
+| Body type (`--md-text-body`): 1.1 | 17.6 px, 13.2 pt |
+| The line (`--md-line`): 1.75 | 28 px, 21 pt |
+| `fontsize: Npt`: N / 12 | 12pt is one unit |
+| The standoff from a wrapped picture to a word or to another picture: 0.625 | 10 px |
+| Every other length of the reference style (spacing, indents, list markers, borders that narrow a line) | as `spec/markdown-style.css` states it |
+
+Placement is relative: `width` and `x` are percentages of the column, `y`, `first` and `indent` ems of the anchor's
+type, `lines` lines of the anchor. The column is the renderer's: the screen, the window or the paper's text width.
+
+The rule: **at M, a renderer with the same column width and the same face breaks the same words and stands every picture
+beside the same words.** Rapier's other text sizes, S, L and XL, multiply the unit by 0.818, 1.136 and 1.273. Everything
+grows or shrinks together and the words re-wrap in the same column. A conforming renderer MUST size type, lines,
+spacing and the standoff in the unit, and MUST NOT size any of them in device pixels.
+
+**The measure.** The column fills a narrow screen; on a wide one it stops at a reading measure of 39.6 rem (36 ems of the
+body at M, about 70 characters, 633.6 px) and is centred. The measure does not grow with the step, so a larger step
+re-wraps, as on a phone. Paper's column is its text width. **A narrow column.** No line beside a picture is narrower than
+3.5 ems of its type (`wrapColumnFloor`); where the room is narrower, the words continue below the picture. One document
+holds for every screen: there is no second layout for a phone or a desktop. Across column widths the promise is
+proportional, not identical: the same sizes, the same placements and the same picture against its words.
 
 ## Embedded images
 
@@ -331,7 +358,7 @@ pair in the same transaction.
 
 Other readers show only the words. Rapier draws the stroke over the words it marks
 and re-derives it from their boxes at every layout: as it was drawn while the words lie as they did; one piece
-per line when they wrap. Stripping comments loses the ink, not the words. The design is `briefs/ink.md`; the
+per line when they wrap. Stripping comments loses the ink, not the words. The
 grammar's owner is `spec/md-marks.mjs`, the geometry's `spec/ink.mjs`.
 
 A semantic page span carries `class="rapier-ink-mark"` and `data-rapier-ink` containing the opener's body,
@@ -427,15 +454,15 @@ The root is `.md-render`. With no `data-md-theme`, it follows `prefers-color-sch
 `dark` select a theme explicitly. The sheet defines every custom property it reads, all named
 `--md-*`, on `:root` and `.md-render`; an element may override its own local effect. A host may override those properties after the sheet. Geist and Geist Mono are the named
 faces, with system fallbacks adjusted to their x-height; the host supplies a face if it wants the
-same glyphs. The host owns the page frame and available width; equal font metrics and content width
-are necessary for equal line breaks. Headings balance their lines (`text-wrap: balance`); paragraphs keep the
+same glyphs. A host scales the document by setting `--md-unit` on `.md-render`; equal font metrics, the same unit
+and the same content width are what make equal line breaks. Headings balance their lines (`text-wrap: balance`); paragraphs keep the
 browser's greedy breaks.
 
-Vertical rhythm uses one line, `--md-line` (1.75rem, 1.6 lines of the
-1.1rem body, `--md-text-body`). Body text sits on that line; a heading's
+Vertical rhythm uses one line, `--md-line` (1.75 units, 1.6 lines of the
+1.1-unit body, `--md-text-body`). Body text sits on that line; a heading's
 box is the whole or half lines its size fills (h1 at 2.4 x the body on two lines, h2 and h3 on one and a
 half, h4 to h6 on one); every block ends one line below its last line and a heading half a line below; list
-items are a quarter line apart. Blocks have no top margin; their predecessor supplies the space. A host that sets `--md-line` and `--md-text-body` together rescales the whole rhythm, pictures measured in lines with it.
+items are a quarter line apart. Blocks have no top margin; their predecessor supplies the space. A host that sets `--md-unit` scales type, rhythm and pictures measured in lines together.
 
 | Content | HTML the renderer supplies |
 | --- | --- |
@@ -492,7 +519,7 @@ that factory takes its parser and other host ports from the caller. Task-list an
 for callouts, highlights, diagrams or mathematics emits their listed wrappers. A host rendering
 untrusted source applies its own HTML sanitization policy before displaying it.
 
-Rapier emits these class and attribute names. After 28 September 2026 the remaining `rapier-*` presentation hooks get `md-*` names in one change with their producers and readers.
+Rapier emits these class and attribute names. The remaining `rapier-*` presentation hooks will take `md-*` names in one change with their producers and readers.
 
 ## The document as a web page
 

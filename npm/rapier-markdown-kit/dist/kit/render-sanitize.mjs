@@ -23,6 +23,26 @@ const RAPIER_SANITIZE_OPTIONS = Object.freeze({
 		FORBID_ATTR: RAPIER_SANITIZE_FORBID_ATTR,
 	}),
 });
+
+// Snapshot current math text before a Markdown writer collapses whitespace. The parsed copy
+// stays inert; the writer still admits raw source through its shared math grammar.
+function prepareMathSource(input, DOMParser) {
+	const html = typeof input === 'string';
+	const MARK = 'span[data-rapier-math-source]';
+	if (html ? !/data-rapier-math-source/i.test(input) : typeof input?.cloneNode !== 'function' ||
+		!(input.matches?.(MARK) || input.querySelector?.(MARK))) return input;
+	const root = html ? new DOMParser().parseFromString(
+		'<x-turndown id="turndown-root">' + input + '</x-turndown>', 'text/html').getElementById('turndown-root') : input.cloneNode(true);
+	const nodes = Array.from(root.querySelectorAll(MARK));
+	const sourceRoot = root.nodeName === 'SPAN' && root.hasAttribute('data-rapier-math-source');
+	if (sourceRoot) nodes.push(root);
+	for (const node of nodes) {
+		try { node.setAttribute('data-rapier-math-source', encodeURIComponent(node.textContent || '')); }
+		catch (_) { node.removeAttribute('data-rapier-math-source'); }
+	}
+	return sourceRoot ? root.outerHTML : root;
+}
+
 // The document's renderer. DOM, codecs and host state are explicit inputs.
 function createRenderSanitizer(runtime) {
   const {CSSStyleSheet, DOMPurify, RAPIER_RASTER_DATA_URL_RE, URL, _rapierCssDeclaration, _rapierDropRemoteDeclarations, _rapierRemoteContent, _rapierRuleDescriptorIsRemote, _rapierSanitizeRuntime, _rapierVerifyRasterBytes, document, globalThis, location} = runtime;
@@ -39,15 +59,14 @@ function _rapierInstallSanitizeHooks() {
 			&& _rapierSafeRasterDataUrl(compact);
 		if (!rasterAllowed) data.keepAttr = false;
 	});
-	// Paste and render sanitise: a remote <img src> would fetch the instant its markup lands in the
-	// page, so the src the hook below is about to strip never survives. Move it to a data-* attribute
-	// first (DOMPurify already leaves data-* alone, and the sanitizer's own inert document never
-	// fetches it either), so the picture and its alt text still reach Turndown's rapierImage rule
-	// as a live pasted-page picture and write out `![alt](url)` -- not vanish (task #336) -- and an
-	// <img> in a document's own HTML (a table kept as HTML) is written again with its URL: the raw
-	// profile admits no data-*, so only the three this hook sets on the node it holds back stay. A picture
-	// inside a link is the same node with the same fix: the outer <a> rule reads this img's own
-	// converted markdown as its content.
+	// Paste and render sanitise: a remote <img src> would fetch the instant its markup lands in the page,
+	// so the src the hook below is about to strip never survives. Move it to a data-* attribute first
+	// (DOMPurify already leaves data-* alone, and the sanitizer's own inert document never fetches it
+	// either), so the picture and its alt text still reach Turndown's rapierImage rule as a live
+	// pasted-page picture and write out `![alt](url)` -- not vanish -- and an <img> in a document's own
+	// HTML (a table kept as HTML) is written again with its URL: the raw profile admits no data-*, so
+	// only the three this hook sets on the node it holds back stay. A picture inside a link is the same
+	// node with the same fix: the outer <a> rule reads this img's own converted markdown as its content.
 	DOMPurify.addHook('uponSanitizeElement', node => {
 		if (_rapierRemoteContent.allowed || !/^(?:paste|render|raw)$/.test(_rapierSanitizeRuntime.context)) return;
 		if (!node || node.nodeName !== 'IMG' || node.hasAttribute('data-rapier-remote-src')) return;
@@ -105,9 +124,9 @@ function _rapierInstallSanitizeHooks() {
 			data.forceKeepAttr = true;
 		}
 	});
-	// A link that opens a new tab never hands that tab a window.opener or a Referer: the editor's
-	// own click router already opens with noopener,noreferrer; the sanitized markup that Share and
-	// the standalone export carry gets the same law in its bytes (red-team R65-24).
+	// A link that opens a new tab never hands that tab a window.opener or a Referer: the editor's own
+	// click router already opens with noopener,noreferrer; the sanitized markup that Share and the
+	// standalone export carry gets the same rule in its bytes.
 	DOMPurify.addHook('afterSanitizeAttributes', node => {
 		if (!node || !/^(?:A|AREA)$/i.test(node.nodeName) || !node.hasAttribute('target')) return;
 		if (String(node.getAttribute('target') || '').trim().toLowerCase() !== '_blank') return;
@@ -220,4 +239,4 @@ function _rapierDropRemoteRules(rules, owner) {
 
   return {_rapierInstallSanitizeHooks, sanitizeRapierHtml, escapeRapierHtmlText, _rapierChromeOwnsId, _rapierSafeRasterDataUrl, _rapierCssPresentationIsRemote, _rapierRemoteSubresourceOrigin, _rapierStyleWithoutRemoteUrls, _rapierStylesheetWithoutRemoteUrls, _rapierDropRemoteRules};
 }
-export {RAPIER_SANITIZE_FORBID_TAGS as forbidTags, RAPIER_SANITIZE_FORBID_ATTR as forbidAttributes, createRenderSanitizer, RAPIER_SANITIZE_OPTIONS as options};
+export {RAPIER_SANITIZE_FORBID_TAGS as forbidTags, RAPIER_SANITIZE_FORBID_ATTR as forbidAttributes, createRenderSanitizer, RAPIER_SANITIZE_OPTIONS as options, prepareMathSource};

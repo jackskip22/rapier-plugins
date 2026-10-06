@@ -31,7 +31,7 @@ anchor; that historical measurement is not a normative neighbour-selection expec
   alpha shape of the fixture's own picture, computed independently in Node from how the picture was
   built (see the generation notes at the foot of this file) — not read back from Rapier — since these
   are plain rasters/foreign SVGs and Rapier's export only serializes `data-rapier-occupancy` for its
-  own drawing recipes (`docs/architecture.md`, "Layout and images").
+  own drawing recipes.
 - `lines` — the anchor's own line boxes (`left`/`top`/`right`/`bottom`), relative to its own content
   box, read from Rapier's styled export: from the reflow script's own `<span>` boxes when the
   paragraph is flowed (their `right` is the reserved *slot*'s edge, `x + width` — the script sizes
@@ -40,8 +40,8 @@ anchor; that historical measurement is not a normative neighbour-selection expec
   *is* the glyphs' own tight extent).
 - `glyphWidths` — every character the anchor's text uses, with its own measured width in that exact
   font, from this browser's `measureText`, called in isolation on one character at a time. Always
-  present; the fallback `measurer.mjs` (R77) reaches for when a query is not in `measurements` below.
-- `measurements` (R77) — every `(font, text)` pair Pretext's own `getMeasureContext()` was actually
+  present; the fallback `measurer.mjs` reaches for when a query is not in `measurements` below.
+- `measurements` — every `(font, text)` pair Pretext's own `getMeasureContext()` was actually
   asked to measure while *this fixture's own export* ran its real reflow script, each with the exact
   width the browser gave it — captured from the exported page's own reflow as it ran.
   This is Rapier's own measurement, not a stand-in: a caller replaying the same font and text later
@@ -64,7 +64,7 @@ anchor; that historical measurement is not a normative neighbour-selection expec
 ## Running the comparison
 
 ```sh
-node run.mjs                                   # the kit itself, driven by measurer.mjs (R77)
+node run.mjs                                   # the kit itself, driven by measurer.mjs
 node run.mjs --impl path/to/other-kit/index.mjs --tolerance 4
 ```
 
@@ -74,8 +74,8 @@ Prints two separate tables (preservation and presentation are different claims):
   `parseLayout`/`formatLayout`. No measurer, no font: either exactly right, or a real bug. 12/12.
 - **Presentation** — does the planned line count and each line's left/right agree with the recorded
   fact, within `--tolerance` pixels (default 2). This depends entirely on the measurer supplied;
-  `run.mjs`'s own default (`measurer.mjs`, R77) replays Rapier's real Pretext trace wherever one was
-  captured, falling back to the character-glyph sum only where none exists. Recorded R77 result (not a current-run receipt): **3/13
+  `run.mjs`'s own default (`measurer.mjs`) replays Rapier's real Pretext trace wherever one was
+  captured, falling back to the character-glyph sum only where none exists. Recorded result (not a current-run receipt): **3/13
   AGREE outright** (`04-wrap-box`, `10-both-sides`, `12-heading-barrier` — every
   one a case where the compared edge is pure obstacle-slot geometry, unaffected by text fidelity
   either way), **10 CLOSE, 0 DIFFERS**, each CLOSE row's cause named rather than left as "close

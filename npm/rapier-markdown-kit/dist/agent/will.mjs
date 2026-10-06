@@ -48,7 +48,7 @@ function _rapierWillMarkerOf(content) {
 		if (!intent.length || intent.indexOf('--') >= 0) return near('malformed_marker');
 		if ([...intent].length > _RAPIER_WILL_INTENT_LIMIT) return near('intent_over_bound');
 	}
-	// The words after the colon are document data, never permission (R85b); willGovern alone decides.
+	// The words after the colon are document data, never permission; willGovern alone decides.
 	return { kind: 'open', law: word, intent, content: line };
 }
 

@@ -87,11 +87,9 @@ async function _rapierBuildArtifact(options, providedContext) {
 	// styles and other page resources get no network authority. Following an ordinary link
 	// is the reader's navigation, with no Referer, not a background resource request.
 	const nonce = _rapierArtifactNonce();
-	// The reflow script is written first, because whether it exists decides the policy. A page that
-	// carries no script says so: script-src 'none' refuses every script outright. Declaring a nonce a page has no use for is a widening, small but real -- anything
-	// that could inject markup into the file could read the nonce out of it and be admitted. G3's
-	// return caught this against the R86k fold, which always emitted the directive; the rule here
-	// is tighter than either that fold or G3's own writer, which could not carry a script at all.
+	// The reflow script is written first, because whether it exists decides the policy. A page that carries no script says so: script-src 'none' refuses every
+	// script outright. Declaring a nonce a page has no use for is a widening, small but real -- anything that could inject markup into the file could read the
+	// nonce out of it and be admitted.
 	const layoutScript = !opts.print ? _rapierArtifactLayoutScript(styledRoot, nonce) : '';
 	// The lexer for the page's code, under the same nonce, only when a block earned it: the CPU
 	// spans are the first paint, and where the reader's browser has WebGPU the lexer repaints them.
@@ -101,10 +99,10 @@ async function _rapierBuildArtifact(options, providedContext) {
 		+ '<html lang="en" data-rapier-theme="' + theme + '" data-highlights="' + highlights + '">\n'
 		+ '<head>\n<meta charset="UTF-8">\n' + (carrier ? RapierPageReturnAddress.PAGE_SEED + '\n' : '')
 		+ '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-		// Chrome 154's responsively sized frames (the founder's link, 24 September 2026): a host frame styled
-		// `frame-sizing: content-height` sizes itself to a page that opts in with this meta, so a document
-		// exported from Rapier and carried in someone's page shows whole, with no inner scroll. Any origin may
-		// read the height: the page is the document, published by the person who exported it.
+		// Chrome 154's responsively sized frames: a host frame styled `frame-sizing: content-height` sizes
+		// itself to a page that opts in with this meta, so a document exported from Rapier and carried in
+		// someone's page shows whole, with no inner scroll. Any origin may read the height: the page is the
+		// document, published by the person who exported it.
 		+ '<meta name="responsive-embedded-sizing" content="allow-origins=*">\n'
 		+ '<meta http-equiv="Content-Security-Policy" content="' + _rapierExportedPageCsp(layoutScript || lexerScript || inkScript ? nonce : '', !!opts.print) + '">\n'
 		+ '<meta name="referrer" content="no-referrer">\n'
@@ -145,8 +143,9 @@ function _rapierProjectStyledRoot(semanticRoot, options) {
 		}
 	} else {
 		root.querySelectorAll('pre > code').forEach(code => {
-			_rapierPaintCode(code, _rapierArtifactHighlight(code.textContent || '', _rapierLanguageClass(code)));
-			_rapierArtifactMarkLexed(code, _rapierLanguageClass(code));
+			const lang = _rapierLanguageClass(code) || 'text';
+			_rapierPaintCode(code, _rapierArtifactHighlight(code.textContent || '', lang));
+			_rapierArtifactMarkLexed(code, lang);
 		});
 
 		root.querySelectorAll('table').forEach(table => {
@@ -204,9 +203,8 @@ function _rapierPrefixPortableAnchors(root, baseName) {
 	const scopeOf = element => {
 		// querySelectorAll('*') hands back whatever the host document holds, and not every host gives
 		// each node Element.closest -- the export writer runs against parsed and stubbed documents as
-		// well as a browser's. Without this guard the whole anchor pass threw TypeError and took 107
-		// export corpus cases with it. No scope simply means the pre-R87M behaviour for that node:
-		// its references resolve document-wide, exactly as they did before drawings were scoped.
+		// well as a browser's. Without this guard the whole anchor pass would throw TypeError. No scope
+		// simply means that node's references resolve document-wide, as an unscoped drawing's do.
 		if (typeof element?.closest !== 'function') return null;
 		let svg = element.closest('svg');
 		while (typeof svg?.parentElement?.closest === 'function' && svg.parentElement.closest('svg')) svg = svg.parentElement.closest('svg');
@@ -322,12 +320,12 @@ function _rapierAnnotateExportBoxPolygons(root) {
 		if (!recipe) continue;
 		const view = recipe.view && recipe.view.w > 0 && recipe.view.h > 0 ? recipe.view : { x: 0, y: 0, w: recipe.canvas.w, h: recipe.canvas.h };
 		if (layout.wrap === 'around') {
-			// One occupancy for live view and export (Astra R74 I02): the drawing's own profile --
-			// closed faces reserved, open strokes as ribbons, labels as boxes -- computed from the same
-			// recipe the live view reads, sampled into bands the exported page reads back
-			// (layout/model.mjs parseProfile). Text and paint shapes need rendered pixels for their
-			// glyph silhouettes, so the live editor's own <img> supplies those when it can be found; a
-			// raster or a foreign SVG writes nothing and the export measures alpha, as the live view does.
+			// One occupancy for live view and export: the drawing's own profile -- closed faces reserved,
+			// open strokes as ribbons, labels as boxes -- computed from the same recipe the live view
+			// reads, sampled into bands the exported page reads back (layout/model.mjs parseProfile). Text
+			// and paint shapes need rendered pixels for their glyph silhouettes, so the live editor's own
+			// <img> supplies those when it can be found; a raster or a foreign SVG writes nothing and the
+			// export measures alpha, as the live view does.
 			try {
 				let glyphs = null;
 				if (recipe.shapes.some(shape => shape.recognized === 'text' || shape.recognized === 'paint' || shape.label)) {
@@ -405,7 +403,7 @@ async function _rapierSharedSourceCarrier(context, root) {
 		'"' + (forms.ids.length ? ' data-images="' + forms.ids.join(' ') + '"' : '') +
 		(forms.definitions.length ? ' data-image-definitions="' + forms.definitions.map(encodeURIComponent).join(' ') + '"' : '') + '>\n' +
 		forms.carried + '\n</script>\n' +
-		// The optional edit ledger (W/4): carried only when the host binds its owner; a host without one writes none.
+		// The optional edit ledger: carried only when the host binds its owner; a host without one writes none.
 		(RapierLedgerCarried ? RapierLedgerCarried.writeParts(forms.resolved, _rapierLedgerParts(forms.resolved, context.ledger, context.carried)) +
 			RapierLedgerCarried.writeBase(forms.resolved, context.proposalBase) : '');
 }
@@ -481,7 +479,7 @@ function _rapierShareWrapKind(element) {
 	if (globalThis.RapierMarkdownLayout.wrapTextBlock(element)) return 'prose';
 	const image = element.tagName === 'P' ? element.querySelector('img') : null;
 	if (image && globalThis.RapierImageLayout.imageOnly(element, image)) return 'picture';
-	// An empty paragraph is transparent to the owner search (R75), as in the editor and the export.
+	// An empty paragraph is transparent to the owner search, as in the editor and the export.
 	if (element.tagName === 'P' && !element.textContent.trim() && !image) return 'metadata';
 	return null;
 }
@@ -530,22 +528,21 @@ function _rapierSharedPageLayout(root) {
 			paragraph.style.setProperty('shape-outside', 'inset(' + layout.y + 'em 0 0)');
 		}
 		image.style.margin = '0';
-		// Astra-R75 X03: the reserved box comes from the same rotated-bounds geometry every other
-		// consumer uses (layout/browser.js, layout/interchange.js's `geometry.rotatedBoundsRad`,
-		// layout/model.mjs's one owner), expressed as a percentage of the column the way the
-		// unrotated branch below already is -- never the picture's own pixel dimensions, which
-		// have no relation to a requested percentage width (a 4000px-wide source at width=40%
-		// used to float 1788px wide in a 600px column). Intrinsic width/height supply only the
-		// aspect ratio; a percentage padding-top/bottom resolves against the same containing-block
-		// width CSS already resolves the float's own percentage width against, so one basis serves
-		// both the box and its vertical reservation, and the box stays exactly as wide as the
-		// column at every viewport width. The turned box is centred, horizontally and vertically,
-		// in the reserved (wider, taller) box rather than left-flush inside it, so the space this
-		// paragraph clears for it (the float's own width) is evenly split around the picture on
-		// every side, not just above and below. A missing `width` falls back to the picture's own
-		// natural pixel size in pixels, the same fallback the unrotated branch below uses; without
-		// either width/height attribute the picture still turns, just without the extra
-		// reservation (the same graceful narrowing Share already accepts elsewhere).
+		// The reserved box comes from the same rotated-bounds geometry every other consumer uses
+		// (layout/browser.js, layout/interchange.js's `geometry.rotatedBoundsRad`, layout/model.mjs's
+		// one owner), expressed as a percentage of the column the way the unrotated branch below already
+		// is -- never the picture's own pixel dimensions, which have no relation to a requested
+		// percentage width (a 4000px-wide source at width=40% would float 1788px wide in a 600px
+		// column). Intrinsic width/height supply only the aspect ratio; a percentage padding-top/bottom
+		// resolves against the same containing-block width CSS already resolves the float's own
+		// percentage width against, so one basis serves both the box and its vertical reservation, and
+		// the box stays exactly as wide as the column at every viewport width. The turned box is
+		// centred, horizontally and vertically, in the reserved (wider, taller) box rather than
+		// left-flush inside it, so the space this paragraph clears for it (the float's own width) is
+		// evenly split around the picture on every side, not just above and below. A missing `width`
+		// falls back to the picture's own natural pixel size in pixels, the same fallback the unrotated
+		// branch below uses; without either width/height attribute the picture still turns, just without
+		// the extra reservation (the same graceful narrowing Share already accepts elsewhere).
 		const naturalWidth = Number(image.getAttribute('width')) || 0, naturalHeight = Number(image.getAttribute('height')) || 0;
 		if (layout.rotate && naturalWidth > 0 && naturalHeight > 0) {
 			const rad = layout.rotate * Math.PI / 180, aspect = naturalHeight / naturalWidth;
@@ -589,16 +586,15 @@ function _rapierSharedPageLayout(root) {
 			if (layout.width != null || image.getAttribute('width')) image.style.width = '100%';
 		}
 		if (layout.rotate) { image.style.transform = 'rotate(' + layout.rotate + 'deg)'; image.style.transformOrigin = '50% 50%'; }
-		// Astra-R75 X04: `wrap=around` wraps to the picture's own alpha silhouette the way
-		// standard-adoption.md's rung-2 paragraph already promises -- `shape-outside:url(<the same
-		// picture>)`, which every engine that reads shape-outside re-samples from the referenced
-		// image's own pixels, no script required. A CSS transform does not turn the shape a
-		// `shape-outside` url() samples (it stays the picture's unturned alpha), so a rotated
-		// `around` picture keeps the plain rectangular reservation above instead -- an honest
-		// conservative box rather than a silhouette shaped for the wrong angle. `layout.y` already
-		// owns `shape-outside` for its own inset reservation (below); the two are not combinable
-		// (a float has exactly one `shape-outside` value), so a `y`-offset `around` picture keeps
-		// that inset instead of silhouette wrapping -- a documented, narrow degradation.
+		// `wrap=around` wraps to the picture's own alpha silhouette the way standard-adoption.md's
+		// rung-2 paragraph promises -- `shape-outside:url(<the same picture>)`, which every engine that
+		// reads shape-outside re-samples from the referenced image's own pixels, no script required. A
+		// CSS transform does not turn the shape a `shape-outside` url() samples (it stays the picture's
+		// unturned alpha), so a rotated `around` picture keeps the plain rectangular reservation above
+		// instead -- an honest conservative box rather than a silhouette shaped for the wrong angle.
+		// `layout.y` already owns `shape-outside` for its own inset reservation (below); the two are not
+		// combinable (a float has exactly one `shape-outside` value), so a `y`-offset `around` picture
+		// keeps that inset instead of silhouette wrapping -- a documented, narrow degradation.
 		if (layout.wrap === 'around' && !layout.rotate && !layout.y) {
 			const src = image.getAttribute('src');
 			if (src) {
@@ -610,12 +606,12 @@ function _rapierSharedPageLayout(root) {
 		paragraph.classList.add('rapier-wrap-picture');
 		owner.before(paragraph);
 	}
-	// Astra-R75 X04: `behind`/`front` position the picture exactly where `x`/`y`/`width` say, out
-	// of the words' flow entirely (z-index below or above them) -- the absolutely positioned
-	// picture standard-adoption.md's rung-2 paragraph already promises for these two placements,
-	// no obstacle avoidance, no script. The picture's own paragraph collapses to zero height in
-	// place (the same collapse-in-place anchor layout/interchange.js's own reflow uses for every
-	// positioned kind) so removing the picture from flow costs the surrounding text nothing.
+	// `behind`/`front` position the picture exactly where `x`/`y`/`width` say, out of the words' flow
+	// entirely (z-index below or above them) -- the absolutely positioned picture
+	// standard-adoption.md's rung-2 paragraph promises for these two placements, no obstacle
+	// avoidance, no script. The picture's own paragraph collapses to zero height in place (the same
+	// collapse-in-place anchor layout/interchange.js's own reflow uses for every positioned kind) so
+	// removing the picture from flow costs the surrounding text nothing.
 	const positionedAssignments = [];
 	for (const image of root.querySelectorAll('img[data-rapier-image-layout]')) {
 		const layout = globalThis.RapierMarkdownLayout.parseLayoutAttribute(image.getAttribute('data-rapier-image-layout'));
@@ -644,9 +640,9 @@ function _rapierSharedPageLayout(root) {
 		if (layout.wrap === 'behind') image.style.zIndex = '-1';
 		paragraph.classList.add('rapier-positioned-picture');
 	}
-	// F75-11: a turned picture Share does not otherwise position (inline, which this static page
-	// does not float at all) still turns -- the same picture, painted in place, never upright
-	// just because Share's own float model has nothing else to say about it.
+	// A turned picture Share does not otherwise position (inline, which this static page does not
+	// float at all) still turns -- the same picture, painted in place, never upright just because
+	// Share's own float model has nothing else to say about it.
 	const positioned = new Set([...assignments, ...positionedAssignments].map(row => row.image));
 	for (const image of root.querySelectorAll('img[data-rapier-image-layout]')) {
 		if (positioned.has(image)) continue;
@@ -723,8 +719,8 @@ async function _rapierBuildSharedPage(captured) {
 			_rapierShareCapLongCodeBlocks(root);
 		},
 	}, context);
-	// No cap and no warning (docs/intent.md, picture format law): the page is as large as the
-	// document is. A page over the editor's own 25 MiB open limit still opens in any browser.
+	// No cap and no warning: the page is as large as the document is. A page over the editor's own 25
+	// MiB open limit still opens in any browser.
 	const blob = new Blob([artifact.html], {type: 'text/html;charset=utf-8'});
 	return {blob, filename: context.baseName + '.html'};
 }
@@ -1171,7 +1167,7 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, pretext) {
     return geometry.polygonProfile(corners);
   }
 
-  // F75-11: as the live editor (browser.js).
+  // As the live editor (browser.js).
   function syncInlineRotatedPictures(exclude) {
     for (const image of root.querySelectorAll('img[data-rapier-image-layout]')) {
       if (exclude.has(image) || !image.complete || !image.naturalWidth || !image.naturalHeight) continue;
@@ -1208,7 +1204,7 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, pretext) {
     if (metadata.wrapTextBlock(element)) return 'prose';
     const image = element.tagName === 'P' ? element.querySelector('img') : null;
     if (image && imageOnly(element, image)) return 'picture';
-    // An empty paragraph is transparent to the owner search, as in the editor (R75).
+    // An empty paragraph is transparent to the owner search, as in the editor.
     if (element.tagName === 'P' && !element.textContent.trim() && !image) return 'metadata';
     return null;
   }
@@ -1326,13 +1322,15 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, pretext) {
           const topInset = (parseFloat(computed.paddingTop) || 0) + (parseFloat(computed.borderTopWidth) || 0);
           const height = Math.max(0, bounds.height - topInset - (parseFloat(computed.paddingBottom) || 0) - (parseFloat(computed.borderBottomWidth) || 0));
           let y = bounds.top - origin + topInset + geometry.linesTop(layout, lines) + Math.min(layout.y || 0, height / em) * em;
+          // The standoff and the room between pictures, in the reference scale's pixels, as the live editor.
+          const scale = geometry.frameScale(image), room = 10 * scale;
           if (!outOfFlow(layout)) {
             for (const obstacle of [...obstacles].sort((left, right) => left.y - right.y)) {
-              if (obstacle.x < left + rectangle.width + 10 && obstacle.x + obstacle.width > left - 10 &&
-                  obstacle.y + obstacle.height > y - 10 && obstacle.y < y + rectangle.height + 10)
-                y = obstacle.y + obstacle.height + 10;
+              if (obstacle.x < left + rectangle.width + room && obstacle.x + obstacle.width > left - room &&
+                  obstacle.y + obstacle.height > y - room && obstacle.y < y + rectangle.height + room)
+                y = obstacle.y + obstacle.height + room;
             }
-            // R87k: a picture pushed down by an earlier one takes its owner with it. A deliberate `y` stays; only the collision push moves the paragraph.
+            // A picture pushed down by an earlier one takes its owner with it. A deliberate `y` stays; only the collision push moves the paragraph.
             const ownerTop = bounds.top - origin + topInset + geometry.linesTop(layout, lines) + Math.min(layout.y || 0, height / em) * em;
             // Only the first picture of an owner takes it down.
             if (!ownerLed && y > ownerTop + 0.5) {
@@ -1340,7 +1338,7 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, pretext) {
               bounds = box(element);
             }
             ownerLed = true;
-            obstacles.push(...geometry.linesSlices(geometry.pictureSlices(profile(image, layout), left, y, rectangle.width, rectangle.height), layout, lines, y, rectangle.height));
+            obstacles.push(...geometry.linesSlices(geometry.pictureSlices(profile(image, layout), left, y, rectangle.width, rectangle.height, scale), layout, lines, y, rectangle.height));
           }
           placed.push({source, image, rectangle, left, y, wrap: layout.wrap,
             visualLeft: left + visualDeltaX, visualTop: y + visualDeltaY, visualWidth: fit.fit.width, visualHeight: fit.fit.height,

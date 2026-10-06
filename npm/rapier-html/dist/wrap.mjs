@@ -5,18 +5,18 @@ import {PAGE_SEED, returnAddress, returnExpiresAt} from './return-address.mjs';
 
 const START = '<script type="text/markdown" id="rapier-document"';
 const DRAWING_START = '<script type="text/plain" id="rapier-drawing"';
-// The text the document was proposed against (docs/page-door.md, "2. A change carried"): the page opens on its diff.
+// The text the document was proposed against: the page opens on its diff.
 const END = '</script>';
 // The page's search words (rapier.html's RAPIER_SEO regions: description, canonical address, previews, structured data and the plain guide
 // a crawler reads) are rapier.website's own. A page that carries someone's document never claims that address or that description.
 const SEARCH_WORDS = /<!-- RAPIER_SEO_BEGIN -->[\s\S]*?<!-- RAPIER_SEO_END -->\n?/g;
 
-// One encoding, exactly reversible (docs/page-door.md, "What a block may hold"): no `<` before `/` or `!`, no CR, no NUL.
-// engine.js _rapierDecodeCarried is its inverse.
+// One encoding, exactly reversible: no `<` before `/` or `!`, no CR, no NUL. engine.js _rapierDecodeCarried is its
+// inverse.
 export {encodeCarried, decodeCarried};
 
 function safeName(name, fallback) {
-	return String(name || fallback).replace(/[\\/\0"<>&]/g, '-').slice(0, 255) || fallback;
+	return String(name || fallback).replace(/[\\/\0"<>&]/g, '-').slice(0, 255).replace(/[\uD800-\uDBFF]$/, '') || fallback;
 }
 
 export function wrap(pageHtml, text, name, options) {
@@ -27,7 +27,7 @@ export function wrap(pageHtml, text, name, options) {
 	const previous = unwrap(pageHtml);
 	const opts = {...saved, ...(options || {})};
 	const docName = safeName(name, 'document.md');
-	// `view`: the view the page opens on with the document behind it, `draw` or `notes` (docs/page-door.md).
+	// `view`: the view the page opens on with the document behind it, `draw` or `notes`.
 	if (opts.view != null && !['draw', 'notes'].includes(opts.view)) throw new Error('the view is draw or notes');
 	const address = opts.return == null ? null : returnAddress(opts.return);
 	const expiry = opts.return_expires_at == null ? null : returnExpiresAt(opts.return_expires_at);

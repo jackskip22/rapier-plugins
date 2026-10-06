@@ -2,11 +2,11 @@
 
 // `rotate`: degrees in (-180, 180], one decimal, omitted when 0; never written for a Rapier drawing (its turn lives in its SVG).
 // `opacity`: a picture's fade, a whole percent from 5 to 100, omitted at 100; the picture's bytes never change.
-// `lines`: a picture's height in lines of the text beside it, set as a drop cap is (CSS `initial-letter`): its top on the first
-// line's cap height, its foot on the Nth line's baseline, its width from its own aspect. A whole number 1 to 12; never with `width`.
-// `first`/`indent`: a paragraph's first-line indent and its whole-block indent, in levels of one step (2em), a whole number from 1 to 4, omitted when 0; text only.
-// `lock=on`: a picture locked in place (the founder, 5 October): a tap goes to the words, never the picture; a hold takes it
-// to unlock it. Omitted when off.
+// `lines`: a picture's height in lines of the text beside it, set as a drop cap is (CSS `initial-letter`): its top on the first line's cap height, its foot on the
+// Nth line's baseline, its width from its own aspect. A whole number 1 to 12; never with `width`.
+// `first`/`indent`: a paragraph's first-line indent and its whole-block indent, in levels of one step (2em), a whole number from 1 to 4, omitted when 0; text
+// only.
+// `lock=on`: a picture locked in place: a tap goes to the words, never the picture; a hold takes it to unlock it. Omitted when off.
 export const fields = new Set(['align', 'width', 'lines', 'wrap', 'x', 'y', 'rotate', 'opacity', 'first', 'indent', 'lock']);
 export const alignments = new Set(['left', 'center', 'right', 'justify']);
 // `behind`/`front`: out of flow; the paragraph lays out as though the picture were absent.

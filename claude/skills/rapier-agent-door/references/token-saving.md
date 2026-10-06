@@ -1,7 +1,6 @@
-# The token saving, measured (27 September 2026 UTC)
+# The token saving, measured
 
-The founder: "point 5 about selling the token saving is good with a number, not selling, just stating a fact
-that we save tokens on big documents and give agents great tools." This page is the fact and its number. The
+How much context an agent spends editing a long document through Rapier's agent door, and the number. The
 bench drives Rapier's real agent kernel in Node, exactly as its own tests do, and checks that every way ends with
 the same text.
 
@@ -44,9 +43,3 @@ generated prose with a regular shape; a document full of pictures (bytes inside 
 and patch ways worse still, not the door. No claim is made about model quality or about how many edits an
 agent needs to reach a goal. The bench is rerun and this table refreshed whenever the door's result shapes
 change.
-
-## Where the number goes
-
-Beside the agent's tools where an agent reads them: the `rapier-agent-door` skill (`repo/skills/`) and
-`repo/README.md`'s "For agents" (that file is being rewritten by the agent's-words lane; the sentence goes in at
-its fold). Not in a pitch.

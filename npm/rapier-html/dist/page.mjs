@@ -63,7 +63,7 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 	if (view) wrapOptions.view = view;
 	if (address) wrapOptions.return = address;
 	if (expiry) wrapOptions.return_expires_at = expiry;
-	// R85b: always a new file; 'wx' refuses any existing path, links included.
+	// Always a new file; 'wx' refuses any existing path, links included.
 	try { await writeFile(out, wrap(page, text, name, wrapOptions), {flag: 'wx'}); }
 	catch (error) { throw error.code === 'EEXIST' ? new Error(out + ' already exists, and rapier-html never overwrites a file: name a new one') : error; }
 	log(out + ' (' + name + ', ' + Buffer.byteLength(text) + ' bytes of document' +

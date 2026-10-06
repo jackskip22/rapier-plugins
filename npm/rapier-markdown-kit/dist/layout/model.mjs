@@ -214,7 +214,7 @@ export function polygonProfile(corners) {
   }};
 }
 
-// F75-11: w'=w|cos|+h|sin|, h'=w|sin|+h|cos| (markdown-standard.md). Shared by browser.js, interchange.js and share.js.
+// w'=w|cos|+h|sin|, h'=w|sin|+h|cos| (markdown-standard.md). Shared by browser.js, interchange.js and share.js.
 export function rotatedBoundsRad(width, height, rad) {
   if (!rad) return {width, height};
   return {width: width * Math.abs(Math.cos(rad)) + height * Math.abs(Math.sin(rad)),
@@ -255,7 +255,7 @@ export function rotatedRasterAlpha(baseAlpha, width, height, rad) {
   return bandsProfile(bands);
 }
 
-// One occupancy descriptor (I02): the editor's profile sampled at 48 band centres, shipped as data-rapier-occupancy, read back here.
+// One occupancy descriptor: the editor's profile sampled at 48 band centres, shipped as data-rapier-occupancy, read back here.
 export function bandsProfile(bands) {
   if (!Array.isArray(bands) || !bands.length) return null;
   const at = t => bands[Math.max(0, Math.min(bands.length - 1, Math.floor(t * bands.length)))] || [];
@@ -294,10 +294,20 @@ export function parseProfile(text) {
 // stroke and 10 off a level one; this stands 10 off both, within a step.
 const shoulderSteps = 3, shoulders = Array.from({length: shoulderSteps}, (_, k) => ({from: k / shoulderSteps, to: (k + 1) / shoulderSteps, reach: Math.sqrt(1 - ((k + .5) / shoulderSteps) ** 2)}));
 
-export function pictureSlices(profile, x, y, width, height, gap = 10) {
+// The reference scale at an element (docs/markdown-standard.md, "The reference scale"): its unit, `--md-unit` (a registered
+// length, 16 px at M), over 16. Every length the planner adds of its own (the standoff, a band's height, the room between two
+// pictures) is that many reference pixels times it, so a zoom moves no word against a picture.
+export function frameScale(element) {
+  const view = element?.ownerDocument?.defaultView;
+  const unit = view ? parseFloat(view.getComputedStyle(element).getPropertyValue('--md-unit')) : NaN;
+  return unit > 0 ? unit / 16 : 1;
+}
+
+export function pictureSlices(profile, x, y, width, height, scale = 1) {
+  const gap = 10 * scale;
   if (!profile) return [{x: x - gap, y: y - gap, width: width + gap * 2, height: height + gap * 2}];
-  // A band is at most 6 px high at the shown size, never coarser than the descriptor's 48 nor finer than the profile's 192.
-  const count = Math.max(shapeGrid, Math.min(sliceGridMax, Math.ceil((finite(height) && height > 0 ? height : 0) / slicePixelsPerBand)));
+  // A band is at most 6 reference px high at the shown size, never coarser than the descriptor's 48 nor finer than the profile's 192.
+  const count = Math.max(shapeGrid, Math.min(sliceGridMax, Math.ceil((finite(height) && height > 0 ? height : 0) / (slicePixelsPerBand * scale))));
   let byCount = profileBands.get(profile);
   if (!byCount) profileBands.set(profile, byCount = new Map());
   let bands = byCount.get(count);
@@ -313,12 +323,9 @@ export function pictureSlices(profile, x, y, width, height, gap = 10) {
         return span ? [span] : [];
       }).filter(run => Number.isFinite(run[0]) && Number.isFinite(run[1]) && run[1] > run[0])
         .sort((a, b) => a[0] - b[0]);
-      const merged = [];
-      for (const run of runs) {
-        const last = merged.at(-1);
-        if (last && run[0] <= last[1]) last[1] = Math.max(last[1], run[1]);
-        else merged.push([...run]);
-      }
+      // Words wrap the outer contour: a band reserves from its leftmost ink to its rightmost, so no word lands
+      // inside a hollow outline or between two strokes of one picture.
+      const merged = runs.length ? [[runs[0][0], Math.max(...runs.map(run => run[1]))]] : [];
       const current = new Map();
       for (const [left, right] of merged) {
         const key = left + ':' + right;

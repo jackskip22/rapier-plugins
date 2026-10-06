@@ -6,12 +6,12 @@ function createMarkdownRenderer(runtime) {
   let md = runtime.md;
 function initMarkdownIt() {
 	if (typeof window.markdownit !== 'function') throw new Error('markdownit');
-	if (typeof _rapierMarkdownPreview === 'function') globalThis.rapierRenderPreview = _rapierMarkdownPreview; // Notes' cards read through here (R86i law 3); the Node witnesses that run this function alone have no such neighbour
+	if (typeof _rapierMarkdownPreview === 'function') globalThis.rapierRenderPreview = _rapierMarkdownPreview; // Notes' cards read through here; the Node witnesses that run this function alone have no such neighbour
 
 	md = window.markdownit({
 		...RAPIER_MARKDOWN_SPEC.options,
 		// The first paint is coloured: the CPU reading, synchronously, for every admitted fence.
-		highlight: (code, lang) => _rapierHighlightAdmitted(code) ? _rapierCodeHtml(code, lang) : '',
+		highlight: (code, lang) => lang && _rapierHighlightAdmitted(code) ? _rapierCodeHtml(code, lang) : '',
 	});
 
 	_rapierApplyMarkdownSpec(md, window);
@@ -51,9 +51,9 @@ function initMarkdownIt() {
 		return '<span data-md-color="' + hex + '" style="--md-color:' + hex + ';--md-color-dark:' + dark + '">';
 	};
 	md.renderer.rules.rapier_color_close = () => '</span>';
-	// Ink: the span carries its opener's body (the grammar's inkOpenBody: a sanitizer drops an attribute holding the comment's
-	// close); the ink layer reads it back through the one grammar and draws the stroke over the words' own boxes
-	// (docs/briefs/ink.md §3). The span itself shows nothing.
+	// Ink: the span carries its opener's body (the grammar's inkOpenBody: a sanitizer drops an attribute holding the
+	// comment's close); the ink layer reads it back through the one grammar and draws the stroke over the words' own boxes.
+	// The span itself shows nothing.
 	md.renderer.rules.rapier_ink_open = (tokens, idx) => {
 		const body = String(tokens[idx].attrGet('data-rapier-ink') || '');
 		// The dark-page colour on the span, as the colour span's: an exported page draws its ink with no engine to ask (the
@@ -111,7 +111,7 @@ function initMarkdownIt() {
 		const alt = suffix && semanticAlt.endsWith(suffix) ? semanticAlt.slice(0, -suffix.length) : semanticAlt;
 		const layout = token.meta?.mdLayout?.imageOnly ? token.meta.mdLayout.marker : '';
 		const asset = globalThis.RapierImageAssets.dataImage(src), reference = token.meta?.mdImage?.reference;
-		// A connected host's own asset (W/6); a host without one (the server) supplies no port.
+		// A connected host's own asset; a host without one (the server) supplies no port.
 		if (_rapierEmbedAssetSource?.(src) || asset && (reference || asset.codec === 'image/jxl' || asset.codec === 'image/svg+xml')) return globalThis.RapierEmbeddedImages.imageHtml(
 			reference, alt, title, size, layout, rawAlt, token.meta?.mdImage?.source, src);
 		if (!_rapierRemoteContent.allowed && _rapierRemoteSubresourceOrigin(src)) {
@@ -301,21 +301,22 @@ function initMarkdownIt() {
 		let _mathPromptedOnce = false;
 		const _renderMath = (src, displayMode) => {
 			const marker = displayMode ? '$$' : '$';
+			const source = marker + src + marker, literal = md.utils.escapeHtml(source);
 			const mathProvider = _rapierProviders.math;
 			if (!mathProvider || mathProvider.status !== 'ready' || typeof mathProvider.renderToString !== 'function') {
 				if (!_mathPromptedOnce) {
 					_mathPromptedOnce = true;
 					try { _rapierUiMath.request(); } catch (_) {}
 				}
-				return '<span class="math-placeholder" title="Install the math plug-in in Settings to show this equation.">'
-						 + md.utils.escapeHtml(marker + src + marker) + '</span>';
+				return '<span class="math-placeholder" data-rapier-math-source="" title="Install the math plug-in in Settings to show this equation.">'
+						 + literal + '</span>';
 			}
 			try {
 				const rendered = mathProvider.renderToString(src, { displayMode });
 				return '<span class="math-rendered" data-math-src="'
-						 + encodeURIComponent(marker + src + marker) + '">' + rendered + '</span>';
+						 + encodeURIComponent(source) + '">' + rendered + '</span>';
 			}
-			catch (_) { return md.utils.escapeHtml(marker + src + marker); }
+			catch (_) { return '<span data-rapier-math-source="">' + literal + '</span>'; }
 		};
 		md.renderer.rules.math_inline = (tokens, idx) => _renderMath(tokens[idx].content, false);
 		md.renderer.rules.math_block  = (tokens, idx) => wrapDisplayMath(_renderMath(tokens[idx].content, true)) + '\n';
@@ -675,9 +676,9 @@ function _rapierDisambiguateRenderedAnchors(root) {
 }
 
 function _rapierDecodeHash(hash) {
-	// A document's own address may carry a heading after it (`#d/<id>/<heading>`, task #413): the
-	// heading is the anchor, and an address with no heading names nothing to jump to. A view's
-	// (`#v/draw`, `#v/notes`) names no heading either (docs/agents.md "The address of a document").
+	// A document's own address may carry a heading after it (`#d/<id>/<heading>`): the heading is the
+	// anchor, and an address with no heading names nothing to jump to. A view's (`#v/draw`,
+	// `#v/notes`) names no heading either (docs/agents.md "The address of a document").
 	let raw = String(hash || '').replace(/^#/, '');
 	const own = /^[dnv]\/[^/]*(?:\/(.*))?$/.exec(raw);
 	if (own) raw = own[1] || '';
