@@ -4,7 +4,7 @@
   "path": "dist/rapier.html",
   "bytes": 1927231,
   "sha256": "6767b227a2914fc95939e08872c42edbd029133d060ae75105a2c4c5b184f591",
-  "builtAt": "2026-10-06T11:37:49.473Z",
+  "builtAt": "2026-10-06T12:23:12.813Z",
   "node": "v22.22.2",
   "canonical": true,
   "packing": "zopfli",

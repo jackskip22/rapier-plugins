@@ -47,7 +47,7 @@ jobs:
             if [ -n "$(npm view "$name@$version" version 2>/dev/null)" ]; then
               echo "- $name@$version is already on the registry: skipped" | tee -a "$GITHUB_STEP_SUMMARY"; continue
             fi
-            if (cd "$dir" && npm publish --access public); then
+            if (cd "$dir" && for wait in 0 60 120; do sleep "$wait"; npm publish --access public && exit 0; done; exit 1); then
               echo "- published $name@$version" | tee -a "$GITHUB_STEP_SUMMARY"
             else
               echo "- FAILED $name@$version (is the trusted publisher set on npmjs.com: jackskip22 / rapier-plugins / publish.yml, no environment?)" | tee -a "$GITHUB_STEP_SUMMARY"; failed=1
