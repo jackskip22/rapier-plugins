@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // The document's renderer. DOM, codecs and host state are explicit inputs.
 function createRenderer(runtime) {
-  const {RAPIER_COLOR_CLOSE, RapierLedgerCarried, RapierPageReturnAddress, RapierTextCodec, _rapierArtifactHighlight, _rapierArtifactLexerScript, _rapierArtifactMarkLexed, _rapierArtifactPreference, _rapierArtifactStyles, _rapierBlobDataUrl, _rapierBuildInterchangeContext, _rapierDocumentNameIsAdmissible, _rapierLedgerParts, _rapierDrawReadSVGRecipe, _rapierDrawShapeProfileFor, _rapierFillDiagram, _rapierFormatColorOpen, _rapierLanguageClass, _rapierLineStartOffsets, _rapierMarkdownEnvironment, _rapierPortableHtml, _rapierPrepareInterchangeContext, _rapierProjectPortableRoot, _rapierSourceCharEscaped, _rapierSourceLineSpan, crypto, document, escapeRapierHtmlText, globalThis, rapierConfirm, sanitizeRapierHtml} = runtime;
+  const {RAPIER_COLOR_CLOSE, RapierLedgerCarried, RapierPageReturnAddress, RapierTextCodec, _rapierArtifactHighlight, _rapierArtifactLexerScript, _rapierArtifactMarkLexed, _rapierArtifactPreference, _rapierArtifactStyles, _rapierBlobDataUrl, _rapierBuildInterchangeContext, _rapierDocumentNameIsAdmissible, _rapierLedgerParts, _rapierDrawReadSVGRecipe, _rapierDrawShapeProfileFor, _rapierFillDiagram, _rapierFormatColorOpen, _rapierLanguageClass, _rapierLineStartOffsets, _rapierMarkdownEnvironment, _rapierPortableHtml, _rapierPrepareInterchangeContext, _rapierProjectPortableRoot, _rapierProviders, _rapierSourceCharEscaped, _rapierSourceLineSpan, crypto, document, escapeRapierHtmlText, globalThis, rapierConfirm, sanitizeRapierHtml} = runtime;
   let md = runtime.md;
   async function render(source, options = {}) {
     if (typeof source !== 'string') throw new TypeError('Document source must be a string');
@@ -68,20 +68,18 @@ async function _rapierBuildArtifact(options, providedContext) {
 	// .md-render set and the highlight rules, so a numbered list, a checkbox, a callout and a
 	// table are drawn in an exported page exactly as they are drawn here. The one caller with
 	// rules of its own -- Share, for the no-script float it alone writes -- appends them.
-	// The type faces ride only where they can load. A written page's policy is default-src
-	// 'none' with no font-src, so a data: font in one is fetched by nothing and would be tens of
-	// kilobytes of bytes no reader ever sees; those pages take the reader's own sans matched to
-	// Geist's metrics (_rapierArtifactStyles), which is the one difference between a Rapier
-	// document and its exported page. A print artifact renders inside this page, under this
-	// page's policy, so it keeps the real faces.
-	// The print page carries its faces as data: faces of its own, and a Will's carriers' font among them (the secure-runtime host prints this
-	// page, not the one it was made in). Its policy alone has font-src data:, which reaches no network, whether or not the page has a Will:
-	// with it only for a Will the same document would print in its faces with the Will and in the reader's own without (measured).
+	// Diagram geometry was measured with these exact fonts. Carry the same data fonts into
+	// offline pages; a fallback face would change labels inside fixed renderer geometry.
+	const diagramFonts = !!styledRoot.querySelector('svg.rapier-diagram,svg.rapier-native-flowchart');
+	const includeFonts = !!opts.print || diagramFonts;
+	const zenFontCss = styledRoot.querySelector('svg[aria-roledescription="zenuml"]')
+		? (_rapierProviders?.mermaid?.exportFontCss?.() || '') : '';
 	const willFont = opts.print && opts.willFont ? opts.willFont : null;
 	const settings = _rapierDocumentSettingsOf(context.canonical);
 	const settingsCss = _rapierDocumentSettingsCss(settings);
 	const pageTitle = settings && settings.title ? globalThis.RapierMarkdownSpec.documentTitle(settings) : metadata.filename;
-	const css = _rapierArtifactStyles(theme, !!opts.print, !!opts.print || opts.kind === 'standalone', opts.kind === 'page')
+	const css = _rapierArtifactStyles(theme, includeFonts, !!opts.print || opts.kind === 'standalone', opts.kind === 'page')
+		+ (zenFontCss ? '\n\n' + zenFontCss : '')
 		+ (opts.extraCss ? '\n\n' + opts.extraCss : '')
 		+ (willFont ? '\n\n@font-face{font-family:' + willFont.family + ';src:url(' + await _rapierBlobDataUrl(new Blob([willFont.bytes], { type: 'font/ttf' })) + ') format("truetype")}' : '')
 		+ (settingsCss ? '\n' + settingsCss : '');
@@ -106,7 +104,7 @@ async function _rapierBuildArtifact(options, providedContext) {
 		// someone's page shows whole, with no inner scroll. Any origin may read the height: the page is the
 		// document, published by the person who exported it.
 		+ '<meta name="responsive-embedded-sizing" content="allow-origins=*">\n'
-		+ '<meta http-equiv="Content-Security-Policy" content="' + _rapierExportedPageCsp(layoutScript || lexerScript || inkScript ? nonce : '', !!opts.print) + '">\n'
+		+ '<meta http-equiv="Content-Security-Policy" content="' + _rapierExportedPageCsp(layoutScript || lexerScript || inkScript ? nonce : '', includeFonts) + '">\n'
 		+ '<meta name="referrer" content="no-referrer">\n'
 		+ '<meta name="generator" content="Rapier ' + escapeRapierHtmlText(version) + '">\n'
 		+ '<title>' + escapeRapierHtmlText(pageTitle) + '</title>\n'
