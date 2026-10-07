@@ -32,7 +32,7 @@ async function _rapierBuildArtifact(options, providedContext) {
 
 	// The semantic export root is detached and has never entered the live visibility queue.
 	// Await the same materialization owner before any projection clones or serializes it.
-	for (const diagram of context.semanticRoot.querySelectorAll('.diagram-block[data-diagram-src]')) {
+	for (const diagram of opts.kind === 'page' ? [] : context.semanticRoot.querySelectorAll('.diagram-block[data-diagram-src]')) {
 		await _rapierFillDiagram(diagram, true);
 	}
 
@@ -41,21 +41,23 @@ async function _rapierBuildArtifact(options, providedContext) {
 	const styledRoot = _rapierProjectStyledRoot(context.semanticRoot, {
 		metadata,
 		print: !!opts.print,
+		sourceCode: opts.kind === 'page',
 		baseName: base,
 	});
 	// _rapierProjectStyledRoot already returns the sanitized projection.
 	// Print never emits the layout reflow script (see below), so a print artifact has no use for
 	// this annotation -- skip it there rather than pay the cost for numbers nothing will read.
-	if (!opts.print) _rapierAnnotateExportBoxPolygons(styledRoot);
+	if (!opts.print && opts.kind !== 'page') _rapierAnnotateExportBoxPolygons(styledRoot);
 	// Share adds its nearest-side no-script float and long-code cap here. Offline-image
 	// admission above and the page policy below belong to this common writer, not its callers.
 	if (typeof opts.afterRoot === 'function') opts.afterRoot(styledRoot);
 	const carrier = opts.kind === 'standalone' ? await _rapierSharedSourceCarrier(context, styledRoot) : '';
-	const bodyHtml = styledRoot.innerHTML;
+	const bodyHtml = opts.kind === 'page' ? _rapierPageHtml(styledRoot) : styledRoot.innerHTML;
 	const theme = opts.print
 		? 'light'
+		: opts.kind === 'page' ? 'system'
 		: _rapierArtifactPreference('theme', ['system', 'light', 'dark']);
-	const highlights = _rapierArtifactPreference('highlights', ['accent', 'standard']);
+	const highlights = opts.kind === 'page' ? 'standard' : _rapierArtifactPreference('highlights', ['accent', 'standard']);
 	const versionMeta = document.querySelector('meta[name="rapier-version"]');
 	const version = versionMeta && versionMeta.content ? versionMeta.content.trim() : '0.0.0';
 	const bodyClass = theme === 'light' ? 'light' : '';
@@ -79,7 +81,7 @@ async function _rapierBuildArtifact(options, providedContext) {
 	const settings = _rapierDocumentSettingsOf(context.canonical);
 	const settingsCss = _rapierDocumentSettingsCss(settings);
 	const pageTitle = settings && settings.title ? globalThis.RapierMarkdownSpec.documentTitle(settings) : metadata.filename;
-	const css = _rapierArtifactStyles(theme, !!opts.print, !!opts.print || opts.kind === 'standalone')
+	const css = _rapierArtifactStyles(theme, !!opts.print, !!opts.print || opts.kind === 'standalone', opts.kind === 'page')
 		+ (opts.extraCss ? '\n\n' + opts.extraCss : '')
 		+ (willFont ? '\n\n@font-face{font-family:' + willFont.family + ';src:url(' + await _rapierBlobDataUrl(new Blob([willFont.bytes], { type: 'font/ttf' })) + ') format("truetype")}' : '')
 		+ (settingsCss ? '\n' + settingsCss : '');
@@ -90,11 +92,11 @@ async function _rapierBuildArtifact(options, providedContext) {
 	// The reflow script is written first, because whether it exists decides the policy. A page that carries no script says so: script-src 'none' refuses every
 	// script outright. Declaring a nonce a page has no use for is a widening, small but real -- anything that could inject markup into the file could read the
 	// nonce out of it and be admitted.
-	const layoutScript = !opts.print ? _rapierArtifactLayoutScript(styledRoot, nonce) : '';
+	const layoutScript = !opts.print && opts.kind !== 'page' ? _rapierArtifactLayoutScript(styledRoot, nonce) : '';
 	// The lexer for the page's code, under the same nonce, only when a block earned it: the CPU
 	// spans are the first paint, and where the reader's browser has WebGPU the lexer repaints them.
-	const lexerScript = !opts.print ? _rapierArtifactLexerScript(styledRoot, nonce) : '';
-	const inkScript = !opts.print ? _rapierArtifactInkScript(styledRoot, nonce) : '';
+	const lexerScript = !opts.print && opts.kind !== 'page' ? _rapierArtifactLexerScript(styledRoot, nonce) : '';
+	const inkScript = !opts.print && opts.kind !== 'page' ? _rapierArtifactInkScript(styledRoot, nonce) : '';
 	const page = '<!DOCTYPE html>\n'
 		+ '<html lang="en" data-rapier-theme="' + theme + '" data-highlights="' + highlights + '">\n'
 		+ '<head>\n<meta charset="UTF-8">\n' + (carrier ? RapierPageReturnAddress.PAGE_SEED + '\n' : '')
@@ -116,10 +118,29 @@ async function _rapierBuildArtifact(options, providedContext) {
 		html: page,
 		filename: base + '.html',
 		bodyHtml,
+		css,
 		docClass,
 		metadata,
 		documentTitle: settings && settings.title ? pageTitle : '',
 	};
+}
+
+// Page files have one byte representation across native and inert DOM hosts. Attribute
+// insertion order and a host's optional entity escapes are not document content.
+function _rapierPageHtml(root) {
+	const voidTags = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
+	const children = node => Array.from(node.childNodes || [], write).join('');
+	function write(node) {
+		if (node.nodeType === 3) return escapeRapierHtmlText(node.nodeValue || '');
+		if (node.nodeType !== 1) return '';
+		// This writer emits text/html; the HTML reader restores SVG's camel-cased names.
+		const tag = node.localName.toLowerCase();
+		const attributes = Array.from(node.attributes).sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0)
+			.map(attribute => ' ' + attribute.name + '="' + escapeRapierHtmlText(attribute.value) + '"').join('');
+		const open = '<' + tag + attributes + '>';
+		return voidTags.has(tag) ? open : open + children(node) + '</' + tag + '>';
+	}
+	return children(root);
 }
 
 function _rapierProjectStyledRoot(semanticRoot, options) {
@@ -138,11 +159,12 @@ function _rapierProjectStyledRoot(semanticRoot, options) {
 		if (code) {
 			const lang = _rapierLanguageClass(code) || String(metadata.codeLang || '');
 			code.classList.add('artifact-code');
-			if (metadata.docKind === 'code') { _rapierPaintCode(code, _rapierArtifactHighlight(code.textContent || '', lang)); _rapierArtifactMarkLexed(code, lang); }
+			if (metadata.docKind === 'code' && !opts.sourceCode) { _rapierPaintCode(code, _rapierArtifactHighlight(code.textContent || '', lang)); _rapierArtifactMarkLexed(code, lang); }
 			if (lang) code.classList.add('language-' + String(lang).replace(/[^a-z0-9_-]/gi, ''));
 		}
 	} else {
 		root.querySelectorAll('pre > code').forEach(code => {
+			if (opts.sourceCode) return;
 			const lang = _rapierLanguageClass(code) || 'text';
 			_rapierPaintCode(code, _rapierArtifactHighlight(code.textContent || '', lang));
 			_rapierArtifactMarkLexed(code, lang);
@@ -184,7 +206,7 @@ function _rapierProjectStyledRoot(semanticRoot, options) {
 	_rapierPrefixPortableAnchors(root, opts.baseName || metadata.filename || 'document');
 
 	const clean = document.createElement('div');
-	clean.innerHTML = sanitizeRapierHtml(root.innerHTML, 'export');
+	clean.innerHTML = sanitizeRapierHtml(root.innerHTML, opts.sourceCode ? 'source' : 'export');
 	return clean;
 }
 

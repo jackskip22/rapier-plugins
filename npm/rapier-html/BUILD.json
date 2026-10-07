@@ -1,12 +1,12 @@
 {
   "package": "rapier-html",
-  "version": "1.1.79",
+  "version": "1.1.80",
   "path": "dist/rapier.html",
-  "bytes": 2145035,
-  "sha256": "3f9b35995ccbe03d04fdc62ef91ca82a49e6ab107d1bab5cda7269dfb49a5705",
-  "builtAt": "2026-10-07T16:01:36.966Z",
+  "bytes": 2177823,
+  "sha256": "d378378f05cf51912d3d2749b9e1a7c840df912affa0faf5a11ae110c28a9c70",
+  "builtAt": "2026-10-07T19:19:40.705Z",
   "node": "v22.22.2",
-  "canonical": true,
+  "canonical": false,
   "packing": "zopfli",
   "validation": "a release build; not a browser test"
 }
