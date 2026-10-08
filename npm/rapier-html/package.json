@@ -1,6 +1,6 @@
 {
   "name": "rapier-html",
-  "version": "1.1.82",
+  "version": "1.1.83",
   "description": "Give a person a document they can read, edit and keep: one command writes one offline HTML file that is the whole Markdown editor with the document inside; draw, paint, review a diff, Send back to the agent.",
   "keywords": [
     "markdown",
