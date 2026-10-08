@@ -30,9 +30,8 @@ import {parseAssets} from 'rapier-markdown-kit/assets';   // the picture appendi
 
 `rapier-markdown-kit/render` exports `createRenderer`, `createMarkdownRenderer`,
 `createRenderStyles`, `createRenderSanitizer` and `createPrintRenderer`. These are the
-actual editor/Share owners, not a second Markdown dialect or a lookalike stylesheet.
-Their host dependencies are explicit named properties in each factory's first argument;
-no factory reaches into an editor session to find its document. `style.css` is the exact
+functions used by the editor and exported pages. Each factory takes explicit host dependencies
+in its first argument. `style.css` is the
 MIT `spec/markdown-style.css`, including the numbered-list, checkbox, callout, table,
 footnote and picture-layout treatment.
 
@@ -52,20 +51,15 @@ Every existing lower-level method is also returned for hosts that compose the st
 Create a new bound instance when its parser or host state changes; do not share mutable
 DOM objects between document realms.
 
-This is a **DOM-hosted library**, not a bundled headless browser, DOM shim, parser or
-image decoder. Supplying only `{source}` or running it in bare Node without those ports
-is not supported. A host must provide a real DOM and sanitizer, the Rapier grammar,
+This **DOM-hosted library** requires a DOM and sanitizer, the Rapier grammar,
 portable image preparation, style access and the named codec/layout ports it uses.
 Those dependencies keep their own licences: the MIT grant here does not relicense a
 separately supplied host or vendor. The repository's `editor/render-host.js` binds the
 editor; `server/` provides a complete local host with a pinned Chromium process. Its
 Word exporter and filesystem service are AGPL, not part of this MIT package.
 
-The extraction receipt in the existing `html-export-corpus` row fixes all 226 baseline
-writer pages byte for byte. That corpus supplies a clean DOM and named style/sanitizer
-adapters: it proves serialization and source recovery, not browser appearance or
-sanitizer security. The server's integration cells additionally use a real DOM and
-round-trip the actual HTTP output.
+Serialization tests preserve source bytes through HTML export and recovery. Server integration
+tests also check the exported HTTP response through a browser DOM.
 
 ## What it gives you
 
