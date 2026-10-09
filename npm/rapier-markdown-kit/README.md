@@ -11,8 +11,9 @@ and colour.
 - Will/1 markers say which regions an agent may edit, only add to, or must keep.
 - MIT, no dependencies, Node 22 or newer.
 
-To hand a person the whole editor around their document as one offline file, run `npx rapier-html notes.md`.
-The same command accepts a drawing or an SVG.
+To show documents in your app without writing a renderer, frame the read-only reader with
+`npm install rapier-embed` (`build: 'reader'`). To hand a person the whole editor around their document as one
+offline file, run `npx rapier-html notes.md`.
 
 ```sh
 npm install rapier-markdown-kit
@@ -302,7 +303,7 @@ const together = merge(ledger, reopened.ledger);
 console.assert(together.text === 'Hello');
 ```
 
-## The format at launch
+## The format
 
 `rapier-ledger/1` is a plain JSON object:
 
@@ -334,8 +335,7 @@ actual document. `historyEnvelope` additionally proves the editor's Undo/Redo br
 `chars:fnv-base36:adler-base36` initial root. Each splice advances it with
 `rootAfter(priorRoot, splice)`, matching the source store. A later root is **not**
 a fresh hash of the whole current text. SHA-256 of the exact checkpoint text is
-separate. This distinction preserves the editor's actual format rather than the
-earlier design shorthand. A nonzero start names a retained checkpoint; it does not
+separate. A nonzero start names a retained checkpoint; it does not
 claim to reconstruct discarded events. `complete: false` also permits a stated
 revision gap from the editor's pruning of cancelling navigation pairs; each
 remaining splice must still replay exactly. It is never a claim about missing edits.

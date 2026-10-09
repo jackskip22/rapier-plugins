@@ -1,21 +1,23 @@
 {
   "name": "rapier-embed",
-  "version": "1.1.87",
-  "description": "Put a Markdown document editor in your web app as an iframe or an exact Markdown form field, saving to your own storage; agent review events carry no source. Session settings and optional host-stored pictures. MIT, no dependencies.",
+  "version": "1.1.88",
+  "description": "Embed the Rapier Markdown editor or its lightweight reader (about 190 kB) in your web app. Runs offline from your own copy, saves to your storage, and takes your CSS and fonts. Your app's AI agent edits over WebMCP, under the person's review. MIT, no dependencies.",
   "keywords": [
     "markdown",
-    "editor",
     "markdown-editor",
+    "markdown-reader",
+    "markdown-viewer",
     "embed",
     "iframe",
     "form-field",
     "web-component",
     "custom-element",
-    "document",
-    "offline",
+    "offline-first",
     "self-hosted",
-    "agent",
+    "mobile-first",
+    "ai-agents",
     "webmcp",
+    "mermaid",
     "review",
     "rapier"
   ],
@@ -34,9 +36,14 @@
   "exports": {
     ".": "./embed.mjs"
   },
+  "bin": {
+    "rapier-embed": "./cli.mjs"
+  },
   "files": [
     "embed.mjs",
     "contract.mjs",
+    "cli.mjs",
+    "rapier-plugins.json",
     "README.md",
     "LICENSE"
   ],

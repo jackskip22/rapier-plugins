@@ -3,7 +3,8 @@
 MathJax 4.1.3 and mhchemparser 4.2.1, built as one SVG renderer with every permitted TeX package and glyph range available without further downloads.
 Rapier downloads this optional plug-in when requested and verifies its length and SHA-384 before retaining or executing it. The editor resource served by Rapier's agent door carries the same payload inside it.
 
-File: `mathjax-4.1.3.offline-svg.js` (11948066 bytes). SHA-384: `wDGx1UhqWHiww1a2D8xGpGfoo5DNg2fGlytVMPYeyL2w9kz5HfO+i6h6IxNBnrB+`.
+File: `mathjax-4.1.3.offline-svg.js` (11948066 bytes). SHA-384: `wDGx1UhqWHiww1a2D8xGpGfoo5DNg2fGlytVMPYeyL2w9kz5HfO+i6h6IxNBnrB+`. To serve it from your own origin, put it
+beside `rapier-document.html` or `rapier.html`, or in the reader's `plugins` directory (`npx rapier-embed plugins <directory>`).
 
 The upstream safe handler filters equation links, styles and attributes. External extension and font loading is disabled. Authored TeX remains exact and editable.
 
