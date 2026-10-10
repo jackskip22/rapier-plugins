@@ -1,26 +1,64 @@
 # Rapier math
 
-MathJax 4.1.3 and mhchemparser 4.2.1, built as one SVG renderer with every permitted TeX package and glyph range available without further downloads.
-Rapier downloads this optional plug-in when requested and verifies its length and SHA-384 before retaining or executing it. The editor resource served by Rapier's agent door carries the same payload inside it.
+Rapier's TeX-to-SVG typesetter supports fractions, roots, scripts, limits, matrices, aligned equations, accents,
+operators, Greek, mathematical symbols, text, color, size and spacing commands. SVG paths carry the required glyphs;
+formulas need no font installation or external resource. Every formula retains its TeX as a text alternative.
 
-File: `mathjax-4.1.3.offline-svg.js` (11948066 bytes). SHA-384: `wDGx1UhqWHiww1a2D8xGpGfoo5DNg2fGlytVMPYeyL2w9kz5HfO+i6h6IxNBnrB+`. To serve it from your own origin, put it
-beside `rapier-document.html` or `rapier.html`, or in the reader's `plugins` directory (`npx rapier-embed plugins <directory>`).
+Rapier downloads this optional plugin when a document needs maths, verifies its length and SHA-384, and keeps it
+locally. The agent editor resource carries the same payload. Unsupported commands produce explicit diagnostics.
 
-The upstream safe handler filters equation links, styles and attributes. External extension and font loading is disabled. Authored TeX remains exact and editable.
+File: `rapier-math-1.0.0.js` (806260 bytes; 497752 bytes gzip).
+SHA-384: `nvSdsuI3c2Vb+bio3Y/txLjXbKRbjOL5aYhzM6PLa67c3wFOXZhXsZCGws742vkB`.
+
+To serve it from your own origin, put it beside `rapier-document.html` or `rapier.html`, or in the reader's
+`plugins` directory (`npx rapier-embed plugins <directory>`).
+
+## Render and fit
+
+Load the payload as a classic script. `RapierMath.render(tex, {displayMode: true, maxWidth: 20})` returns
+`svg`, em-based `width`, `height` and `depth`, `lines`, `fitted`, and `errors`.
+`maxWidth` is optional and measured in mathematical ems. Long rows break before relations or binary operators;
+aligned derivations share their relation column. An indivisible oversized group scales uniformly to fit.
+`renderToString(tex, options)` returns only the SVG. Both calls are synchronous and need no DOM.
+
+The SVG's font size matches Latin Modern's x-height to Geist using the fonts' own metrics. Returned dimensions
+remain mathematical ems. For a known screen, pass `screen: {fontSize: 16, pixelRatio: 2, dark: false}`.
+`fontSize` is the surrounding text size in CSS pixels; `pixelRatio` is the device pixel ratio. Both must be
+positive finite numbers, and `dark` must be a boolean. Values that cannot produce a finite device scale return
+an `invalid-screen` diagnostic. This applies screen ink and script compensation without a DOM.
+Omit `screen` for resolution-independent output.
+
+After inserting the SVG, `RapierMath.observe(container)` fits equations to their column and refreshes them on
+column, font and document-theme changes. It returns a cleanup function. `RapierMath.fit(container)` performs one
+synchronous refresh, including before print. Browser fitting snaps marked rules to the device-pixel grid and
+applies optical ink compensation at small screen sizes and on dark paper. Forced colors and increased contrast retain full ink.
+The SVG inherits the document's `currentColor`; explicit TeX colors keep their authored ink.
+
+The root SVG keeps the exact TeX in `aria-label` and `title`. Unsupported or bounded-out input has a visible
+diagnostic and an `errors` entry; malformed XML characters also retain their original UTF-16 code units in
+`data-tex-utf16`. Check `errors` before treating output as a successfully typeset formula.
 
 ## Rebuild
 
-Use Node 22. The source recipe and exact package versions are in `src/`:
+Use Node 22. The complete source is in `src/`; no package installation is required:
 
 ```sh
+node verify.mjs
 cd src
-npm install
-node tools/vendor-math.mjs node_modules
+node tools/build-math.mjs
 ```
 
-The resulting `src/shell/vendor/mathjax-4.1.3.offline-svg.js` has the same bytes as the payload beside this file. `src/shell/math-resources.json` records the package archive integrity, source hashes, font ranges and font permissions. The adapter is MIT; the recipe is AGPL-3.0-only.
+`verify.mjs` checks the payload, source digests and complete licenses, then rebuilds the exact payload.
+The resulting `src/shell/vendor/rapier-math-1.0.0.js` has the same bytes as the payload beside this file.
+`src/shell/math-resources.json` records every source digest and the pinned font source. For font regeneration,
+follow the Python and FontTools setup in `src/math/FONT-SOURCE.md`, then run `python src/math/build-font.py` from
+the package root, or `python math/build-font.py` from `src/`. That source note uses `repo/` paths for the full
+Rapier checkout; this standalone package uses `src/` instead.
 
-## Licences
+## Licenses
 
-`math-NOTICE.txt` carries the complete package and font notices. `math-build-NOTICE.txt` covers the build tool. `math-components.json` is the SPDX 2.3 component record, including the extracted font permissions and the separate build dependency.
-The adapter's complete MIT licence is in `math-adapter-LICENSE.txt`, also carried as `LICENSE-MIT` and `src/LICENSE-MIT`.
+The renderer is MIT; the complete terms are in `LICENSE-MIT` and `math-LICENSE.txt`.
+Latin Modern Math 1.959 outlines and mathematical metrics use the GUST Font License, an instance of the LaTeX
+Project Public License. The exact copyright, GUST grant and LPPL 1.3c terms are retained in
+`math-font-LICENSE.txt` and the payload header. `math-components.json` records the renderer and font as
+SPDX 2.3 components and carries the complete font grant as `LicenseRef-GUST-Font-License`.
