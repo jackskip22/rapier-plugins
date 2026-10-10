@@ -238,7 +238,10 @@ console.log('lines:', plan.lines.length, 'height:', plan.height); // lines: 4 he
 
 A heading, which the style pack balances, takes its font size as an eighth argument
 (`flowLines(flow, width, top, obstacles, lineHeight, minSlot, direction, fontSize)`): its lines come out as
-Chromium lays `text-wrap: balance`, and greedy wherever an obstacle narrows a line.
+Chromium lays `text-wrap: balance`, and greedy wherever an obstacle narrows a line. The block's `text-align` is the ninth
+argument (`'start'` by default). A picture moves a block's words only where its outline meets them: when no line of the
+block, laid and aligned in the whole column as with no picture, meets an obstacle, the plan is that layout (`x` 0, the
+column's width); otherwise every line flows around the obstacles.
 
 ## What the host supplies
 

@@ -1,6 +1,6 @@
 {
   "name": "rapier-embed",
-  "version": "1.1.88",
+  "version": "1.1.89",
   "description": "Embed the Rapier Markdown editor or its lightweight reader (about 190 kB) in your web app. Runs offline from your own copy, saves to your storage, and takes your CSS and fonts. Your app's AI agent edits over WebMCP, under the person's review. MIT, no dependencies.",
   "keywords": [
     "markdown",
