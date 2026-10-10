@@ -1,6 +1,6 @@
 {
   "name": "rapier-html",
-  "version": "1.1.95",
+  "version": "1.1.96",
   "description": "One command turns a Markdown file into one offline HTML file: the whole Rapier editor with the document inside. Opens in any browser, phone or desktop, with no install or account. Write, draw and paint watercolor, then Send back the edits to your AI agent.",
   "keywords": [
     "markdown",

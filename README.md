@@ -38,8 +38,8 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
 
 ## npm packages
 
-- `npm/rapier-html/`: `npx rapier-html@1.1.95 notes.md` writes one offline HTML file: the editor with the document inside.
-- `npm/rapier-embed/`: `npm install rapier-embed@1.1.95` puts the read-only reader or the document editor in your
+- `npm/rapier-html/`: `npx rapier-html@1.1.96 notes.md` writes one offline HTML file: the editor with the document inside.
+- `npm/rapier-embed/`: `npm install rapier-embed@1.1.96` puts the read-only reader or the document editor in your
   site or app, saving to your own storage (MIT).
 - `npm/rapier-markdown-kit/`: read, write and render Self-contained Markdown, one `.md` file with its pictures and
   layout, without the editor (MIT).
@@ -49,7 +49,7 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
 
 Rapier pages download these the first time a document needs them, through
 `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@main/<directory>/<file>`, and verify each by length and SHA-384.
-To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.1.95 plugins <directory>`; see
+To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.1.96 plugins <directory>`; see
 [Plug-ins](npm/rapier-embed/README.md#plug-ins).
 
 - `math/`: TeX maths and chemistry as SVG, with its complete notices and reproducible source recipe.
