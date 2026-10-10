@@ -1,7 +1,8 @@
 # rapier-markdown-kit
 
-Read, write and style Self-contained Markdown in your own code: one `.md` file that carries its pictures, layout
-and colour.
+Read, render and write Self-contained Markdown in browsers and Node: one `.md` file with pictures, editable SVG
+drawings, layout and colour. Build portable documents for people and agents. Will/1 regions mark what an agent
+may edit, append to or preserve. MIT, no dependencies.
 
 - Everything past CommonMark and GFM is an HTML comment other readers ignore or an ordinary reference
   definition, so every Markdown app still reads the file.
@@ -15,6 +16,10 @@ To show documents in your app without writing a renderer, frame the read-only re
 `npm install rapier-embed` (`build: 'reader'`). To hand a person the whole editor around their document as one
 offline file, run `npx rapier-html notes.md`.
 
+In the editor, an agent edits live beside the person or while they are away. Rapier shows its presence and changes;
+the person taps a change to see what was there before and undoes anything. `comparison.present` lets the agent
+deliberately show a diff. The kit supplies the portable source and history those tools use.
+
 ```sh
 npm install rapier-markdown-kit
 ```
@@ -26,6 +31,18 @@ import {flowLines} from 'rapier-markdown-kit/model';      // the line planner: t
 import {parseWill} from 'rapier-markdown-kit/will';       // Will/1 markers: keep, append, edit
 import {parseAssets} from 'rapier-markdown-kit/assets';   // the picture appendix
 ```
+
+## Choose a Rapier workflow
+
+Rapier is a phone-first Markdown editor for notes, diagrams, drawing and watercolor painting. It runs offline
+as one HTML file on Android, Web and Windows.
+
+1. **Work together live.** Connect to `https://mcp.rapier.website/mcp`, then call `rapier.open` to share one document with the person.
+2. **Deliver an offline editor.** Run `npx rapier-html notes.md` to put the document and editor in one HTML file ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
+3. **Embed in your app.** Install [rapier-embed](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-embed); mount the editor or reader, with your app's agent over WebMCP in the editor.
+4. **Keep portable Markdown.** Use [rapier-markdown-kit](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-markdown-kit) for pictures, editable SVG drawings and layout in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will) `keep`, `append` and `edit` regions.
+5. **Encode JPEG XL.** Install [rapier-jxl](https://github.com/jackskip22/rapier-jxl) to encode pixels, photographs and existing JPEGs in JavaScript.
+6. **Host the door.** Run [rapier-server](https://github.com/jackskip22/rapier/tree/main/server) over your own folder or S3-compatible bucket.
 
 ## The shared renderer
 
@@ -42,7 +59,7 @@ import {createRenderer} from 'rapier-markdown-kit/render';
 // host is your bound DOM/codec/Markdown/image/style environment. Its named ports are
 // declared at the top of createRenderer; preparation returns a detached semantic root.
 const writer = createRenderer(host);
-const {html, filename} = await writer.render(source, {filename: 'proposal.md'});
+const {html, filename} = await writer.render(source, {filename: 'report.md'});
 ```
 
 `createMarkdownRenderer(host).render(source, metadata)` returns the semantic HTML.
@@ -55,9 +72,10 @@ DOM objects between document realms.
 This **DOM-hosted library** requires a DOM and sanitizer, the Rapier grammar,
 portable image preparation, style access and the named codec/layout ports it uses.
 Those dependencies keep their own licences: the MIT grant here does not relicense a
-separately supplied host or vendor. The repository's `editor/render-host.js` binds the
-editor; `server/` provides a complete local host with a pinned Chromium process. Its
-Word exporter and filesystem service are AGPL, not part of this MIT package.
+separately supplied host or vendor. The [editor host binding](https://github.com/jackskip22/rapier/blob/main/src/editor/render-host.js)
+lists the renderer's dependencies. [rapier-server](https://github.com/jackskip22/rapier/blob/main/server/README.md)
+provides a complete local host with a pinned Chromium process. Its Word exporter and filesystem service are AGPL,
+not part of this MIT package.
 
 Serialization tests preserve source bytes through HTML export and recovery. Server integration
 tests also check the exported HTTP response through a browser DOM.
@@ -272,8 +290,9 @@ tolerance.
 
 ## Licence
 
-MIT, the full text in `LICENSE`; every module and the stylesheet keep their own MIT line. Pretext's licence, notice and
-pinned source inventory are in `dist/agent/vendor/pretext/`. The Rapier editor is AGPL-3.0-only and
+MIT, the full text in `LICENSE`; Rapier-owned modules and the stylesheet keep their MIT line. Pretext's licence, notice and
+pinned source inventory are in `dist/agent/vendor/pretext/`. The history projection's jsdiff dependency is BSD-3-Clause;
+`dist/agent/diff.mjs` carries its complete upstream copyright, conditions and disclaimer. The Rapier editor is AGPL-3.0-only and
 none of it is in this package. The kit carries Rapier's release number, written from the one
 value the editor's release reads.
 
@@ -294,7 +313,7 @@ import {exportLedger, readLedger, authorship, merge} from 'rapier-markdown-kit/r
 import {writeDocument, readDocument} from 'rapier-markdown-kit/ledger/carried';
 
 const ledger = exportLedger({
-  text: 'Hello', records: [], documentAuthority: 'example-document', complete: true,
+  text: 'Hello', metadata: {filename: 'Hello.md', docKind: 'markdown'}, records: [], documentAuthority: 'example-document', complete: true,
 });
 const saved = writeDocument('Hello', {ledger});
 const reopened = readDocument(saved);
@@ -308,23 +327,40 @@ console.assert(together.text === 'Hello');
 
 ## The format
 
-`rapier-ledger/1` is a plain JSON object:
+`rapier-ledger/2` is a plain JSON object:
 
 ```
-{format, documentAuthority, start: {text, revision, root, sha256}, records,
- head: {revision, root, sha256}, complete, sha256}
-records[]: {transaction, splices: [{pos, removed, inserted}], beforeHash, afterHash}
+{format, documentAuthority, start: {text, revision, root, sha256, metadata}, records,
+ head: {revision, root, sha256, metadata}, complete, sha256}
+records[]: {transaction, splices: [{pos, removed, inserted}], beforeHash, afterHash, metadata?, authored?}
 transaction: {id, documentAuthority, baseRevision, revision, actor: {kind, id},
  transport, operation, requestId, sourceTransactionId, affectedBlockIds,
  parent, reverts, reapplies, createdAt}
 ```
 
-`format` is `rapier-ledger/1`. `start.text` is the exact text before the first
+`format` is `rapier-ledger/2`. `start.text` is the exact text before the first
 retained record. Every outgoing record carries its own splices, including Undo and
 Redo. Offsets and ranges count UTF-16 code units; no boundary may cut a surrogate
 pair. Splices execute in their recorded order. UTF-8 checksums preserve CRLF, tabs,
 NUL and non-ASCII text. The canonical text limit is 25 MiB; each record has at most
-64 splices. The existing record validator remains authoritative for field bounds.
+64 splices. Metadata is {filename, docKind}; a record may carry filename or docKind pairs {before, after}. Metadata-only acts keep equal source roots and an empty splice list. Inverses reference retained act IDs, so later metadata choices survive selective Undo. File handles and save permissions are never portable. The existing record validator remains authoritative for field bounds.
+
+An optional `authored: {basis, source, splices}` preserves an act's original placement
+when concurrent transport changes its physical `record.splices`. `basis` is the sorted,
+minimal frontier of canonical act IDs observed at authoring; its causal closure is
+reconstructed from these same records, including metadata-only acts and inverse
+dependencies. `source` is the SHA-256 of the exact UTF-8 source before the original
+sequential `splices`. An ordinary untransported record omits this field; its retained
+prefix supplies the same evidence. Transport preserves the evidence and the original
+act ID, author, time, turn, label, metadata choices and inverse targets. It neither
+copies the growing prefix into each record nor creates another journal.
+
+Use `readLedger` or `exportLedger` to validate retained history and `merge` or
+`transposeAuthored` to transport it. Validation proves the causal closure, source
+hash and exact original-to-physical placement; field shape or equal final text alone
+is insufficient. Do not attach new authored evidence to an arbitrary physical copy.
+Selective Undo uses this evidence to preserve concurrent insertions at their original
+gaps, even when a replacement split into several physical splices.
 
 `start.sha256` and `head.sha256` hash UTF-8 text. The envelope `sha256` hashes
 canonical JSON of every other envelope field: recursively sorted object keys,
@@ -340,16 +376,17 @@ actual document. `historyEnvelope` additionally proves the editor's Undo/Redo br
 a fresh hash of the whole current text. SHA-256 of the exact checkpoint text is
 separate. A nonzero start names a retained checkpoint; it does not
 claim to reconstruct discarded events. `complete: false` also permits a stated
-revision gap from the editor's pruning of cancelling navigation pairs; each
-remaining splice must still replay exactly. It is never a claim about missing edits.
+revision gap in a partial ledger; each retained splice must still replay exactly. An incomplete ledger never
+claims to reconstruct events it does not contain.
 
-`actor.kind` is `human`, `agent` or `system`. A named agent's `actor.id` is
-`<door>/<host-given name>` (name at most 96 characters, combined id at most 160).
-Without a name, the door stands alone. The name is a **host-supplied claim**, not a
-verified identity. Timestamps are supplied record times, not independently attested.
+`actor.kind` is `human`, `agent` or `system`. Canonical doors mint an opaque provenance
+`actor.id` independent of the private principal and retain a supplied display name
+separately as `actor.name` (host names at most 96 characters). The private principal-to-author
+mapping stays in the existing private owner; neither raw nor hashed access credentials
+belong in portable authorship. The name is a **host-supplied claim**, not a verified identity. Timestamps are supplied record times, not independently attested.
 Checksums detect inconsistency/corruption, **not forgery**: anyone able to rewrite a
 file can rewrite its checksums and labels. Importing a label never grants a live
-principal's read handles, review authority or undo permissions.
+principal's read handles or authenticated document access.
 
 ## Optional carried parts
 
@@ -359,7 +396,7 @@ beside the document's existing carried source:
 | Element | Type and contents | Choice |
 | --- | --- | --- |
 | `#rapier-authorship` | `application/json`, `rapier-authorship/1` | Who wrote what |
-| `#rapier-ledger` | `application/json`, `rapier-ledger/1` | The whole history |
+| `#rapier-ledger` | `application/json`, `rapier-ledger/2` | The whole history |
 
 Each body uses the same reversible `encodeCarried`/`decodeCarried` escape as the
 page's source. `writeParts`, `readParts` and `takeParts` implement it. Duplicate,
@@ -392,10 +429,10 @@ leading BOM as file metadata. Other Markdown readers ignore the comment. Plain
 saves without a choice are unchanged byte for byte. For executable code, use a web
 page to carry metadata rather than appending a Markdown comment to program source.
 
-The existing proposal page's `#rapier-base` is independent: `text/markdown`, with
-`data-revision`, `data-sha256`, `data-by` and `data-at`, carries the proposal's
-baseline. It is **not** reconstructed from an optional ledger, and this module does
-not implement the separate proposal-tool/CLI workflow.
+The comparison page's `#rapier-base` is independent: `text/markdown`, with
+`data-name`, `data-revision`, `data-sha256`, `data-by` and `data-at`, carries an exact
+display reference. It is not reconstructed from the optional ledger and never
+replaces current source. `rapier-html --compare original.md revised.md` packages both texts.
 
 ## Merging copies without a server
 
@@ -414,22 +451,19 @@ unchanged. `review.required` names an unresolved result; a UI must not auto-acce
 it. Rapier offers carried-copy imports from Compare through its existing review,
 checks the live document again at commit, and installs the proven ledger before
 publishing its receipt or opening the durable-save barrier. A rejected or stale
-proposal mutates nothing. A failed install rolls the source and undo window back.
+copy import mutates nothing. A failed install rolls the source and undo window back.
 Copies without a proven common checkpoint are refused by this API.
 
 ## Host integration and retention
 
 The embed helper accepts `agentName`; the checked `rapier-connect` message carries
 `agent: {name}`. WebMCP uses the registration owner's supplied client name. Modern
-MCP uses the request's client metadata, outside tool arguments; a legacy stateless
-request without a supplied name stays unnamed. MCP editor snapshots include the
+MCP uses the request's client metadata, outside tool arguments; a request without a supplied name stays unnamed. MCP editor snapshots include the
 server's retained journal only in editor metadata, not in model-facing tool results.
 The browser proves a replay suffix before preserving remote writers under local
 revision links; missing remote events never become an invented complete history.
 
-Rapier retains its existing 500-record / 4-MiB in-memory window. A carried file can
-outlive that window; reopening may trim it again. The module preserves an explicitly
-incomplete start. Full history includes removed text and can be much larger than
-the current document; it is opt-in for each outgoing file, never a persistent
-preference. Authorship is also opt-in. Neither option implies signatures, identity
-verification, infinite retention, a relay server or automatic synchronization.
+Rapier's live history supports before previews and Undo for individual acts or turns, preserving later edits.
+A carried ledger preserves the history included in that file and explicitly identifies an incomplete start.
+Full history includes removed text and can be much larger than the current document; choose it separately for
+each outgoing file. Authorship is also optional. Neither part verifies identities or synchronizes copies.

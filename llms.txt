@@ -1,0 +1,21 @@
+# Rapier plugins and packages
+
+> Plugins and packages for Rapier: a fast Markdown editor for notes, diagrams, drawing and watercolor painting in one offline HTML file. Android, Web and Windows. Work live with a person over MCP and WebMCP, deliver a file, or embed the editor and reader in your own app.
+
+Connect to `https://mcp.rapier.website/mcp` over streamable HTTP, then call `rapier.open`. Open its `editor_url` for the person. No account or key is required. Call `rapier.guide`, read the current document, then edit only the exact text disclosed. Keep the person's typing and Will; use the returned review and Undo controls.
+
+## Use Rapier
+
+- [1. Work live](https://rapier.website/agents): MCP at `https://mcp.rapier.website/mcp`, then `rapier.open`. Edit, draw, paint, comment, review and export with a person in one document.
+- [2. Hand over an offline document](https://github.com/jackskip22/rapier-plugins/blob/main/npm/rapier-html/README.md): `npx rapier-html notes.md` writes `notes.rapier.html`, with the editor and document inside.
+- [3. Embed the editor or reader](https://github.com/jackskip22/rapier-plugins/blob/main/npm/rapier-embed/README.md): `npm install rapier-embed`. Your app owns storage. The editor's `agent: true` connects your app's own agent over WebMCP; the reader is read-only.
+- [4. Use Self-contained Markdown](https://github.com/jackskip22/rapier-plugins/blob/main/npm/rapier-markdown-kit/README.md): `npm install rapier-markdown-kit`. Pictures, editable drawings and layout travel in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will): `edit`, `append` and `keep` regions.
+- [5. Encode JPEG XL](https://github.com/jackskip22/rapier-jxl): `npm install rapier-jxl`. Encode images anywhere JavaScript runs, with the encoder Rapier uses.
+- [6. Run your own door](https://github.com/jackskip22/rapier/blob/main/server/README.md): `rapier-server` serves your folder or S3-compatible bucket through MCP. Supply Node.js and Chromium; run `rapier-server serve <folder>` with the documented browser settings.
+
+## Reference
+
+- [Plugins and packages](https://github.com/jackskip22/rapier-plugins/blob/main/README.md): installation, npm packages and local plug-in files.
+- [Tool catalog](https://rapier.website/AGENT-TOOLS.json): current tool names, inputs and effects.
+- [MCP registry entry](https://github.com/jackskip22/rapier-plugins/blob/main/server.json): streamable HTTP endpoint and registry metadata.
+- [Rapier](https://github.com/jackskip22/rapier): full app, document editor and reader builds.
