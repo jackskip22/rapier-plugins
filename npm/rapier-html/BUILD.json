@@ -1,0 +1,110 @@
+{
+  "package": "rapier-html",
+  "version": "1.2.3",
+  "path": "dist/rapier.html",
+  "bytes": 5086203,
+  "sha256": "864fe7a94b5c3064653e2a7423449f439c0ab864062ec1644a88dee90c042af6",
+  "builtAt": "2026-10-14T16:53:28.260Z",
+  "node": "v22.23.3",
+  "canonical": true,
+  "packing": "zopfli",
+  "plugins": [
+    {
+      "id": "math",
+      "delivery": "built-in",
+      "kind": "script",
+      "element": "rapier-plugin-math",
+      "bytes": 749536,
+      "packedBytes": 504166,
+      "files": [
+        {
+          "id": "rapier-math",
+          "name": "rapier-math-2.2.0.js",
+          "version": "2.2.0",
+          "bytes": 749536,
+          "sri": "pzYte7azbAoS8XSwIKjFg7mxGOxAxBKo9/IUy07H4j0WoyguAS/zwkR1O6kDXq9S"
+        }
+      ]
+    },
+    {
+      "id": "mermaid",
+      "delivery": "built-in",
+      "kind": "files",
+      "element": "rapier-plugin-mermaid",
+      "bytes": 7384142,
+      "packedBytes": 1563922,
+      "files": [
+        {
+          "id": "rapier-mermaid-core",
+          "name": "mermaid.min.js",
+          "version": "12.1.0",
+          "bytes": 5493176,
+          "sri": "EbBpjO7rlR6eqZEcG7GaPpyk9H9WrMyPWX4d3KvPYltgt8Z8l0z6R56B1qP40pR4"
+        },
+        {
+          "id": "rapier-mermaid-zenuml",
+          "name": "rapier-zenuml-4.5.0-1.js",
+          "version": "4.5.0-1",
+          "bytes": 1890966,
+          "sri": "MVn/Or1nIHTDvy84lSSJAH2Fx1Y7AGoaMfd7hW7i3LJe7M/dau8VDFnF8Q+X0qOl"
+        }
+      ]
+    },
+    {
+      "id": "letters",
+      "delivery": "built-in",
+      "kind": "files",
+      "element": "rapier-plugin-letters",
+      "bytes": 463027,
+      "packedBytes": 204178,
+      "files": [
+        {
+          "id": "rapier-letters-field",
+          "name": "field.json",
+          "version": "VFsCE/7zS6Kkq/EW1/7NfYHVGoVXNUm0pWHdtJmzXwhWgJWBSKhNHuU0ODuGCar0",
+          "bytes": 96902,
+          "sri": "VFsCE/7zS6Kkq/EW1/7NfYHVGoVXNUm0pWHdtJmzXwhWgJWBSKhNHuU0ODuGCar0"
+        },
+        {
+          "id": "rapier-letters-relief",
+          "name": "relief.json",
+          "version": "tQctBake2gu7B/v5/1jC6XFt5smV5uVg7W7GdJXsJZBZ62Zc7crSP3zRkZPgQqgq",
+          "bytes": 95172,
+          "sri": "tQctBake2gu7B/v5/1jC6XFt5smV5uVg7W7GdJXsJZBZ62Zc7crSP3zRkZPgQqgq"
+        },
+        {
+          "id": "rapier-letters-leaf",
+          "name": "leaf.json",
+          "version": "DtSKWtWhiitlNOfjx9o5Jf0FYcpWLw4nmWAjo1eAA3FOvs2OjB2hddHlRCnrtZ7g",
+          "bytes": 134918,
+          "sri": "DtSKWtWhiitlNOfjx9o5Jf0FYcpWLw4nmWAjo1eAA3FOvs2OjB2hddHlRCnrtZ7g"
+        },
+        {
+          "id": "rapier-letters-arabesque",
+          "name": "arabesque.json",
+          "version": "Zx2z2bEpD4VNkIccLejcUY68eqAFraPEN7hqsqkcVqHOKGvsSMqbLLiXXklvZINl",
+          "bytes": 136035,
+          "sri": "Zx2z2bEpD4VNkIccLejcUY68eqAFraPEN7hqsqkcVqHOKGvsSMqbLLiXXklvZINl"
+        }
+      ]
+    },
+    {
+      "id": "font-subset",
+      "delivery": "built-in",
+      "kind": "files",
+      "element": "rapier-plugin-font-subset",
+      "bytes": 1214356,
+      "packedBytes": 453061,
+      "files": [
+        {
+          "id": "rapier-font-subset",
+          "name": "rapier-font-subset-2.js",
+          "version": "2",
+          "bytes": 1214356,
+          "sri": "q4mHA3+u3N3Yt8z1wisCEXQqWNo5UhHZ0nUESid8BGNZz6BtV8dSUlVOvyndc0Tj"
+        }
+      ]
+    }
+  ],
+  "validation": "a release build; not a browser test"
+}

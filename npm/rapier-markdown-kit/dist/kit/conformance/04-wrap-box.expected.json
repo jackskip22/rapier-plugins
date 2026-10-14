@@ -1,0 +1,173 @@
+{
+  "document": "04-wrap-box.md",
+  "measurer": {
+    "font": "normal 400 17.6px/30.8px Geist, system-ui, sans-serif",
+    "letterSpacing": 0,
+    "lineHeight": 30.8,
+    "direction": "ltr",
+    "columnWidth": 354
+  },
+  "anchorText": "This anchor paragraph carries enough ordinary prose that, once it wraps beside the picture at the column width this fixture records, it produces several distinct lines for the conformance runner to compare rather than only one.",
+  "anchorFlowed": true,
+  "picture": {
+    "natural": {
+      "width": 60,
+      "height": 40
+    },
+    "occupancy": null,
+    "layout": "<!--md-layout:v1 width=35% wrap=box x=75%-->",
+    "rect": {
+      "left": 203.546875,
+      "top": 0,
+      "right": 327.4375,
+      "bottom": 82.59375
+    }
+  },
+  "profileHint": null,
+  "lines": [
+    {
+      "left": 0,
+      "top": 0,
+      "right": 193.55,
+      "bottom": 30.8
+    },
+    {
+      "left": 0,
+      "top": 30.8,
+      "right": 193.55,
+      "bottom": 61.59
+    },
+    {
+      "left": 0,
+      "top": 61.59,
+      "right": 193.55,
+      "bottom": 92.39
+    },
+    {
+      "left": 0,
+      "top": 92.39,
+      "right": 193.55,
+      "bottom": 123.19
+    },
+    {
+      "left": 0,
+      "top": 123.19,
+      "right": 354,
+      "bottom": 153.98
+    },
+    {
+      "left": 0,
+      "top": 154,
+      "right": 354,
+      "bottom": 184.8
+    },
+    {
+      "left": 0,
+      "top": 184.8,
+      "right": 354,
+      "bottom": 215.59
+    },
+    {
+      "left": 0,
+      "top": 215.59,
+      "right": 354,
+      "bottom": 246.39
+    },
+    {
+      "left": 0,
+      "top": 246.39,
+      "right": 354,
+      "bottom": 277.19
+    }
+  ],
+  "glyphWidths": {
+    "T": 10.747,
+    "h": 11.151,
+    "i": 4.888,
+    "s": 9.166,
+    " ": 5.593,
+    "a": 10.781,
+    "n": 11.151,
+    "c": 9.673,
+    "o": 10.764,
+    "r": 7.233,
+    "p": 11.168,
+    "g": 11.168,
+    "e": 10.824,
+    "u": 11.151,
+    "d": 11.168,
+    "y": 10.412,
+    "t": 6.898,
+    ",": 5.593,
+    "w": 14.389,
+    "b": 11.168,
+    "l": 4.888,
+    "m": 17.138,
+    "f": 6.194,
+    "x": 10.412,
+    "v": 10.412,
+    ".": 5.593
+  },
+  "measurements": {
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000-": 6.349,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000 ": 5.593,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000This": 35.952,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000T": 10.747,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000h": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000i": 4.888,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000s": 9.166,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000anchor": 60.753,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000a": 10.781,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000n": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000c": 9.673,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000o": 10.764,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000r": 7.233,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000paragraph": 91.465,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000p": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000g": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000carries": 59.49,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000e": 10.824,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000enough": 66.209,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000u": 11.151,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000ordinary": 73.322,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000d": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000y": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000prose": 48.769,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000that,": 41.321,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000t": 6.898,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000,": 5.593,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000once": 42.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000it": 11.786,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000wraps": 52.738,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000w": 14.389,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000beside": 58.039,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000b": 11.168,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000the": 28.873,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000picture": 61.449,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000at": 17.68,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000column": 64.765,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000l": 4.888,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000m": 17.138,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000width": 48.494,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000this": 32.103,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000fixture": 57.214,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000f": 6.194,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000x": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000records,": 70.959,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000produces": 80.761,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000several": 64.13,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000v": 10.412,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000distinct": 64.731,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000lines": 40.917,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000for": 24.191,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000conformance": 115.038,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000runner": 58.743,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000to": 17.662,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000compare": 77.196,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000rather": 54.121,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000than": 39.981,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000only": 37.215,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000one.": 38.332,
+    "normal 400 17.6px Geist, system-ui, sans-serif\u0000.": 5.593
+  }
+}

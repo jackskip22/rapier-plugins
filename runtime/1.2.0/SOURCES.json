@@ -1,0 +1,103 @@
+{
+  "release": "1.2.0",
+  "scope": "Immutable browser runtime resources. Existing plugins, npm packages, servers and submitted artifacts retain their published versions. Math 1.1.1 is included with its exact pinned bytes.",
+  "sourceRepository": "https://github.com/jackskip22/rapier",
+  "sourceCommit": "e0fc28fb07f38d7b7e24b906a6f4a33a5e43c4bc",
+  "sourceDirectory": "src",
+  "node": "22.23.3",
+  "build": {
+    "cwd": "src",
+    "commands": [
+      "RAPIER_PROFILE=document node tools/build.mjs",
+      "RAPIER_PROFILE=reader node tools/build.mjs",
+      "node tools/build.mjs"
+    ],
+    "math": "node tools/build-math.mjs"
+  },
+  "assets": [
+    {
+      "path": "flowchart/rapier-flowchart-1.2.0.js",
+      "bytes": 290590,
+      "gitBlob": "81e3d51d615c39694957e877818b4688a0e8f6d8",
+      "sha256": "a6d0d39042e8d7269e6e07e64d2dd8a5258d945e2fabd75e4a59f7650d06f3b7",
+      "url": "https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@main/flowchart/rapier-flowchart-1.2.0.js",
+      "integrity": "sha384-hu6w1SbizCI318O/bcN7fdayJqX75DbeDc4+r6Flpi/1/llK3sCsDHMT4/0GpWw4",
+      "license": "AGPL-3.0-only",
+      "source": "https://github.com/jackskip22/rapier/tree/e0fc28fb07f38d7b7e24b906a6f4a33a5e43c4bc/src",
+      "licenseFiles": [
+        "AGPL-3.0.txt"
+      ],
+      "publication": "add immutable resource"
+    },
+    {
+      "path": "docx/rapier-docx-1.2.0.js",
+      "bytes": 601688,
+      "gitBlob": "9bcde7ab81c27bb81579bf3bf5b0849aad06405d",
+      "sha256": "500d8d8759a7ee87dbc0f637b7ad13ba5ada728667b06b54d79723432c768e28",
+      "url": "https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@main/docx/rapier-docx-1.2.0.js",
+      "integrity": "sha384-njW6DZEqY3R8ewZpVOf05pkEEnfO2XiJSMELXz1c6bJfGW9VnkIwgK3g+L+nx7OE",
+      "license": "AGPL-3.0-only",
+      "source": "https://github.com/jackskip22/rapier/tree/e0fc28fb07f38d7b7e24b906a6f4a33a5e43c4bc/src",
+      "licenseFiles": [
+        "AGPL-3.0.txt"
+      ],
+      "publication": "add immutable resource"
+    },
+    {
+      "path": "math/rapier-math-1.1.1.js",
+      "bytes": 714051,
+      "gitBlob": "e3ff5778bd1f234e156c9b2e6d3a9304dc775ff1",
+      "sha256": "050f4ebfb7c78beaefb01c9d6aa62192fd03757fc677134850bdb1f090033b81",
+      "url": "https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@main/math/rapier-math-1.1.1.js",
+      "integrity": "sha384-FnVbul5Kp18nd2S1SdMQlMPJtulZiY5ZqrRtJ8APYoP6reF9w0JRjF/qrmH9l9s0",
+      "license": "MIT AND LicenseRef-GUST-Font-License",
+      "source": "https://github.com/jackskip22/rapier/tree/e0fc28fb07f38d7b7e24b906a6f4a33a5e43c4bc/src",
+      "licenseFiles": [
+        "math-LICENSE-MIT.txt",
+        "math-GUST-FONT-LICENSE.txt"
+      ],
+      "publication": "add immutable resource"
+    },
+    {
+      "path": "pdf/rapier-pdf-1.2.0.js",
+      "bytes": 28665,
+      "gitBlob": "605fb54f6ce347cbef778b44cd8bbc139359fd9e",
+      "sha256": "c908c7f1d188e20175cb5d3d2c770c17d946978874b9d539dff85b794ffda904",
+      "url": "https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@main/pdf/rapier-pdf-1.2.0.js",
+      "integrity": "sha384-iKuIYQgjOzaodQ6Nob8YoJd/ldMyIhFKFbPHDXEnr2oX8+jepKpQCpEwDfaPo/1y",
+      "license": "AGPL-3.0-only",
+      "source": "https://github.com/jackskip22/rapier/tree/e0fc28fb07f38d7b7e24b906a6f4a33a5e43c4bc/src",
+      "licenseFiles": [
+        "AGPL-3.0.txt"
+      ],
+      "publication": "add immutable resource"
+    }
+  ],
+  "externalDependencies": {
+    "mermaid": {
+      "version": "mermaid-12.1.0-zenuml-4.5.0-1",
+      "files": [
+        {
+          "name": "core",
+          "version": "12.1.0",
+          "url": "https://cdn.jsdelivr.net/npm/mermaid@12.1.0/dist/mermaid.min.js",
+          "file": "mermaid.min.js",
+          "bytes": 5493176,
+          "sri": "EbBpjO7rlR6eqZEcG7GaPpyk9H9WrMyPWX4d3KvPYltgt8Z8l0z6R56B1qP40pR4"
+        },
+        {
+          "name": "zenuml",
+          "version": "4.5.0-1",
+          "url": "https://cdn.jsdelivr.net/gh/jackskip22/rapier@main/site/plugins/rapier-zenuml-4.5.0-1.js",
+          "file": "plugins/rapier-zenuml-4.5.0-1.js",
+          "bytes": 1890966,
+          "sri": "MVn/Or1nIHTDvy84lSSJAH2Fx1Y7AGoaMfd7hW7i3LJe7M/dau8VDFnF8Q+X0qOl"
+        }
+      ],
+      "sourceDirectory": "src/shell/mermaid",
+      "vendorDirectory": "src/shell/vendor/zenuml",
+      "publication": "Reuse existing byte-identical pinned upstream core and public ZenUML adapter; all historical site resources remain available."
+    }
+  },
+  "notices": "License texts are included beside this manifest. Preserve embedded third-party notices including the MIT Turndown notice in DOCX. Corresponding source, build scripts and Mermaid/ZenUML vendor notices are in the public source tree."
+}

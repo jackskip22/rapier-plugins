@@ -1,0 +1,60 @@
+{
+  "name": "rapier-markdown-kit",
+  "version": "1.2.3",
+  "description": "Read, render and write Self-contained Markdown: one .md file that carries its pictures, drawings and layout, and that any Markdown app can read. HTML renderer, stylesheet, text layout, Will/1 agent permissions, and an edit history with authorship and offline merge. MIT, no dependencies.",
+  "keywords": [
+    "markdown",
+    "self-contained",
+    "commonmark",
+    "gfm",
+    "renderer",
+    "stylesheet",
+    "css",
+    "text-layout",
+    "line-breaking",
+    "images",
+    "svg",
+    "document",
+    "will",
+    "ai-agents",
+    "authorship",
+    "merge",
+    "rapier"
+  ],
+  "author": "Jack Skipworth",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "sideEffects": [
+    "./style.css"
+  ],
+  "dependencies": {},
+  "files": [
+    "dist",
+    "style.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/kit/index.mjs",
+  "exports": {
+    ".": "./dist/kit/index.mjs",
+    "./layout": "./dist/kit/layout.mjs",
+    "./marks": "./dist/kit/marks.mjs",
+    "./model": "./dist/kit/model.mjs",
+    "./typography": "./dist/kit/typography.mjs",
+    "./will": "./dist/kit/will.mjs",
+    "./assets": "./dist/kit/assets.mjs",
+    "./style.css": "./style.css",
+    "./package.json": "./package.json",
+    "./render": "./dist/kit/render-entry.mjs",
+    "./rapier-ledger": "./dist/kit/rapier-ledger.mjs",
+    "./ledger/carried": "./dist/kit/ledger/carried.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackskip22/rapier-plugins.git",
+    "directory": "npm/rapier-markdown-kit"
+  }
+}

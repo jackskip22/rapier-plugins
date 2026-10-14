@@ -1,0 +1,51 @@
+{
+  "name": "rapier-embed",
+  "version": "1.2.3",
+  "description": "Embed the Rapier Markdown editor or its lightweight reader (about 190 kB) in your web app. Runs offline from your own copy, saves to your storage, and takes your CSS and fonts. Your app's AI agent edits directly over WebMCP under the Will. MIT, no dependencies.",
+  "keywords": [
+    "markdown",
+    "markdown-editor",
+    "markdown-reader",
+    "markdown-viewer",
+    "embed",
+    "iframe",
+    "form-field",
+    "web-component",
+    "custom-element",
+    "offline-first",
+    "self-hosted",
+    "mobile-first",
+    "ai-agents",
+    "webmcp",
+    "mermaid",
+    "review",
+    "rapier"
+  ],
+  "author": "Jack Skipworth",
+  "license": "MIT",
+  "homepage": "https://rapier.website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackskip22/rapier-plugins.git",
+    "directory": "npm/rapier-embed"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": "./embed.mjs"
+  },
+  "bin": {
+    "rapier-embed": "./cli.mjs"
+  },
+  "files": [
+    "embed.mjs",
+    "contract.mjs",
+    "cli.mjs",
+    "rapier-plugins.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false
+}

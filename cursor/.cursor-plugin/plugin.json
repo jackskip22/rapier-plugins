@@ -1,0 +1,36 @@
+{
+  "name": "rapier",
+  "version": "1.2.3",
+  "description": "Write and paint with your agent in Rapier, a shared Markdown editor: documents, Notes, editable diagrams, drawing and watercolour painting. Keep the result as Markdown or an editable offline file.",
+  "author": {
+    "name": "Jack Skipworth",
+    "email": "hello@rapier.website"
+  },
+  "homepage": "https://rapier.website/agents",
+  "repository": "https://github.com/jackskip22/rapier-plugins",
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "markdown",
+    "writing",
+    "diagrams",
+    "comparison",
+    "painting",
+    "mcp",
+    "offline"
+  ],
+  "displayName": "Rapier",
+  "publisher": "Jack Skipworth",
+  "category": "productivity",
+  "tags": [
+    "markdown",
+    "writing",
+    "painting",
+    "diagrams",
+    "notes",
+    "mcp"
+  ],
+  "logo": "assets/logo.png",
+  "skills": "./skills",
+  "rules": "./rules/rapier.mdc",
+  "mcpServers": "./mcp.json"
+}

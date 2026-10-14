@@ -1,0 +1,18 @@
+{
+  "name": "rapier",
+  "owner": {
+    "name": "Jack Skipworth",
+    "email": "hello@rapier.website"
+  },
+  "metadata": {
+    "description": "Rapier: write and paint with your agent in a shared Markdown editor.",
+    "version": "1.2.3"
+  },
+  "plugins": [
+    {
+      "name": "rapier",
+      "source": "./cursor",
+      "description": "Write and paint with your agent in Rapier, a shared Markdown editor: documents, Notes, editable diagrams, drawing and watercolour painting. Keep the result as Markdown or an editable offline file."
+    }
+  ]
+}
