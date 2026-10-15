@@ -61,5 +61,7 @@ To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.2.3 plugi
 - `math/`: The pinned app Math renderer, its complete notices and original input identities.
 - `letters/`: Draw's letter sets, ornamental capitals traced from the British Library's book scans (CC0).
 - `flowchart/`, `docx/`, `pdf/`: the reader's own plug-ins, a file each: the flowchart renderer, the Word reader and the PDF reader's page reading.
+  The source for the 1.2.4 flowchart, Word-reader and PDF-reader files, with an offline build that reproduces them, is in
+  [sources/reader-1.2.4](sources/reader-1.2.4/README.reader-plugins.md).
 
 Source: [github.com/jackskip22/rapier](https://github.com/jackskip22/rapier). [Privacy and terms](PRIVACY.md).
