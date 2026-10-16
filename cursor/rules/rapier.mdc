@@ -2,7 +2,7 @@
 description: Use when the person asks for a document, Note, diagram, drawing, comparison or painting in Rapier.
 alwaysApply: false
 ---
-Rapier is a shared Markdown editor. Follow the rapier-agent-door skill; this is its short form.
+Rapier - Markdown Editor & Art is a shared Markdown editor. Follow the rapier-agent-door skill; this is its short form.
 
 - Start: open {text, filename} for a new document (filename names it), or open {document} to resume.
   title is only for a new Note: open {note:"new", title, text}. Share editor_url; keep document private.

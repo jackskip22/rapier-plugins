@@ -1,10 +1,14 @@
-# Rapier for Cursor
+# Rapier - Markdown Editor & Art: Cursor plugin
 
-Write and paint with your agent. [Rapier](https://rapier.website) is a fast Markdown editor for documents, Notes,
-editable diagrams, drawing and watercolour painting. Your agent opens a shared editor in your browser; you both
-work on the same page, and you keep the result as Markdown or as one editable offline HTML file.
+Rapier is a Markdown editor for writing, drawing and painting with your AI assistant. Edit the page yourself, add editable diagrams and illustrations, and keep your work as portable Markdown.
 
-Version 1.2.3. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
+Work together on plans, notes, drafts and visual explanations. Read exact source, make focused revision-checked edits, compare proposed text and undo recorded work while keeping later independent edits. Download Markdown or plain text, or create an editable offline HTML file through supported export tools or the included local helpers. Running local helpers requires Node and npm; an MCP connection alone does not provide a shell.
+
+Painting needs an open full editor. Water requires WebGPU. Word, PDF and rendered-page exports depend on the available editor or renderer. A successful tool call does not by itself prove that the inline editor appeared. Connected Notes require a configured store.
+
+Rapier accesses only the document or configured store you share. It cannot search unshared device files, send email or make purchases. Hosted workspaces expire after 30 idle days; download an independent copy to keep it. The four skills include the published offline helper packages.
+
+Version 1.2.5. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
 ## What it includes
 
@@ -50,7 +54,7 @@ agent reports it committed; then pick up the brush yourself.
   brushes or an editable diagram.
 - Notes use the store you configured on your own device. The hosted workspace cannot read encrypted Notes and
   reports them as locked or unavailable, not empty. Sync runs only when you ask and can replace files.
-- Word, PDF and page exports need an open editor. Hosted workspaces expire after 30 idle days; export links last
+- Word, PDF and rendered-page exports need an available editor or renderer. Hosted workspaces expire after 30 idle days; export links last
   up to 24 hours. Download your work to keep it.
 
 ## Pair another browser

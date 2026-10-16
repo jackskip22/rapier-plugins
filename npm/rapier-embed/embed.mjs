@@ -240,7 +240,7 @@ function createAssetBroker({current, send}) {
 }
 return {FEATURES, LIMITS, ASSET_TYPES, refusal, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker};
 })();
-const BUILDS = Object.freeze({document: 'https://rapier.website/embed/rapier-document.html', reader: 'https://rapier.website/embed/rapier-reader.html'});
+const BUILDS = Object.freeze({document: 'https://rapier.website/embed/rapier.html', reader: 'https://rapier.website/embed/rapier-reader.html'});
 const DEFAULT_SRC = BUILDS.document;
 const revision = value => Number.isSafeInteger(value) && value >= 0 || typeof value === 'string' && value.length > 0 && value.length <= 256;
 const identifier = value => typeof value === 'string' && value.length > 0 && value.length <= 256;
@@ -715,7 +715,7 @@ export class RapierEditor extends (globalThis.HTMLElement || class {}) {
     if (!this._initialized) return;
     if (name === 'disabled') this.formDisabledCallback(this.matches(':disabled'));
     else if (name === 'theme') this._editor?.theme(this.getAttribute('theme') || 'system').catch(error => this._error(error));
-    else if (name === 'src') this.save().then(() => this._replace(this._value)).catch(error => this._error(error));
+    else if (name === 'src') (this._editor?.connected ? this.save() : Promise.resolve()).then(() => this._replace(this._value)).catch(error => this._error(error));
     else this._updateValue();
   }
   get value() { return this._value; }

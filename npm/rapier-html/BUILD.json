@@ -1,10 +1,10 @@
 {
   "package": "rapier-html",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "path": "dist/rapier.html",
-  "bytes": 5086203,
-  "sha256": "864fe7a94b5c3064653e2a7423449f439c0ab864062ec1644a88dee90c042af6",
-  "builtAt": "2026-10-14T16:53:28.260Z",
+  "bytes": 4949290,
+  "sha256": "5e2cbc912f760dd5ffad630f92dcec40151df5d55d0e6c7a2796ef907671d8bc",
+  "builtAt": "2026-10-16T06:38:46.417Z",
   "node": "v22.23.3",
   "canonical": true,
   "packing": "zopfli",
@@ -14,15 +14,15 @@
       "delivery": "built-in",
       "kind": "script",
       "element": "rapier-plugin-math",
-      "bytes": 749536,
-      "packedBytes": 504166,
+      "bytes": 691650,
+      "packedBytes": 438088,
       "files": [
         {
           "id": "rapier-math",
-          "name": "rapier-math-2.2.0.js",
-          "version": "2.2.0",
-          "bytes": 749536,
-          "sri": "pzYte7azbAoS8XSwIKjFg7mxGOxAxBKo9/IUy07H4j0WoyguAS/zwkR1O6kDXq9S"
+          "name": "rapier-math-2.4.0.js",
+          "version": "2.4.0",
+          "bytes": 691650,
+          "sri": "C92x26+pBI4q9FoWypMhBb8CqSGaaPLw8dpYigWiYNsYQRTcPVrFyPVjrhc/Tnwh"
         }
       ]
     },
@@ -31,8 +31,8 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-mermaid",
-      "bytes": 7384142,
-      "packedBytes": 1563922,
+      "bytes": 7389640,
+      "packedBytes": 1526485,
       "files": [
         {
           "id": "rapier-mermaid-core",
@@ -43,10 +43,10 @@
         },
         {
           "id": "rapier-mermaid-zenuml",
-          "name": "rapier-zenuml-4.5.0-1.js",
-          "version": "4.5.0-1",
-          "bytes": 1890966,
-          "sri": "MVn/Or1nIHTDvy84lSSJAH2Fx1Y7AGoaMfd7hW7i3LJe7M/dau8VDFnF8Q+X0qOl"
+          "name": "rapier-zenuml-4.5.0-2.js",
+          "version": "4.5.0-2",
+          "bytes": 1896464,
+          "sri": "8Ptjhh1zNTOvy1dxFHhXgYKfs290DSlpzow5rF9FvP38cohtbsBW381Whym1WI6E"
         }
       ]
     },
@@ -56,7 +56,7 @@
       "kind": "files",
       "element": "rapier-plugin-letters",
       "bytes": 463027,
-      "packedBytes": 204178,
+      "packedBytes": 198962,
       "files": [
         {
           "id": "rapier-letters-field",
@@ -94,7 +94,7 @@
       "kind": "files",
       "element": "rapier-plugin-font-subset",
       "bytes": 1214356,
-      "packedBytes": 453061,
+      "packedBytes": 441192,
       "files": [
         {
           "id": "rapier-font-subset",

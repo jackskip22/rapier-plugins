@@ -5,18 +5,40 @@ import {PAGE_SEED, returnAddress, returnExpiresAt} from './return-address.mjs';
 
 const START = '<script type="text/markdown" id="rapier-document"';
 const DRAWING_START = '<script type="text/plain" id="rapier-drawing"';
-// The text the document was proposed against (docs/page-door.md, "2. A change carried"): the page opens on its diff.
+// The original text is a display reference: the page opens on its diff from the current document.
 const END = '</script>';
 // The page's search words (rapier.html's RAPIER_SEO regions: description, canonical address, previews, structured data and the plain guide
 // a crawler reads) are rapier.website's own. A page that carries someone's document never claims that address or that description.
 const SEARCH_WORDS = /<!-- RAPIER_SEO_BEGIN -->[\s\S]*?<!-- RAPIER_SEO_END -->\n?/g;
+const OFFLINE_POLICY = "default-src 'none'; script-src 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'unsafe-inline'; " +
+	"img-src data: blob:; media-src data: blob:; font-src data: blob:; connect-src 'none'; worker-src blob:; manifest-src 'none'; base-uri 'none'; form-action 'none'";
 
-// One encoding, exactly reversible (docs/page-door.md, "What a block may hold"): no `<` before `/` or `!`, no CR, no NUL.
-// engine.js _rapierDecodeCarried is its inverse.
+// One encoding, exactly reversible: no `<` before `/` or `!`, no CR, no NUL. engine.js _rapierDecodeCarried is its
+// inverse.
 export {encodeCarried, decodeCarried};
 
 function safeName(name, fallback) {
-	return String(name || fallback).replace(/[\\/\0"<>&]/g, '-').slice(0, 255) || fallback;
+	return [...String(name || fallback).replace(/[\\/\0"<>&]/g, '-')].slice(0, 256).join('').replace(/[\uD800-\uDBFF]$/, '') || fallback;
+}
+
+// Only the trusted shell head changes. Carried source and inert application bytes stay exact.
+export function offlineTemplate(pageHtml, address = null) {
+	const end = pageHtml.indexOf('</head>');
+	if (end < 0) throw new Error('not a Rapier page: no </head>');
+	const attribute = (tag, name) => {
+		const match = new RegExp('\\b' + name + '\\s*=\\s*(?:"([^"]*)"|\'([^\']*)\'|([^\\s>]+))', 'i').exec(tag);
+		return match ? match[1] ?? match[2] ?? match[3] : '';
+	};
+	const head = pageHtml.slice(0, end).replace(/<meta\b[^>]*>/gi, tag =>
+		attribute(tag, 'http-equiv').toLowerCase() === 'content-security-policy' ? '' : tag).replace(/<link\b[^>]*>/gi, tag =>
+		attribute(tag, 'rel').toLowerCase().split(/\s+/).some(rel => ['icon', 'apple-touch-icon', 'manifest', 'preconnect', 'dns-prefetch'].includes(rel)) ? '' : tag);
+	const anchor = /<meta charset[^>]*>\n?/i.exec(head) || /<head[^>]*>\n?/.exec(head);
+	if (!anchor) throw new Error('not a Rapier page: no <head>');
+	const at = anchor.index + anchor[0].length;
+	// A minted return is an explicit Send back destination; boot and rendering stay local.
+	const policy = address == null ? OFFLINE_POLICY : OFFLINE_POLICY.replace("connect-src 'none'", 'connect-src ' + new URL(returnAddress(address)).origin);
+	return head.slice(0, at) + '<meta http-equiv="Content-Security-Policy" content="' + policy + '">\n' +
+		head.slice(at) + pageHtml.slice(end);
 }
 
 export function wrap(pageHtml, text, name, options) {
@@ -27,12 +49,13 @@ export function wrap(pageHtml, text, name, options) {
 	const previous = unwrap(pageHtml);
 	const opts = {...saved, ...(options || {})};
 	const docName = safeName(name, 'document.md');
-	// `view`: the view the page opens on with the document behind it, `draw` or `notes` (docs/page-door.md).
+	if (opts.kind != null && !['markdown', 'text', 'code'].includes(opts.kind)) throw new Error('invalid document kind');
+	// `view`: the view the page opens on with the document behind it, `draw` or `notes`.
 	if (opts.view != null && !['draw', 'notes'].includes(opts.view)) throw new Error('the view is draw or notes');
 	const address = opts.return == null ? null : returnAddress(opts.return);
 	const expiry = opts.return_expires_at == null ? null : returnExpiresAt(opts.return_expires_at);
 	if (!!address !== !!expiry) throw new Error('a return needs its URL and return_expires_at from document.create_return');
-	const block = START + ' data-name="' + docName + '"' + (opts.view ? ' data-view="' + opts.view + '"' : '') +
+	const block = START + ' data-name="' + docName + '"' + (opts.kind ? ' data-kind="' + opts.kind + '"' : '') + (opts.view ? ' data-view="' + opts.view + '"' : '') +
 		(address ? ' data-return="' + address + '" data-return-expires-at="' + expiry + '"' : '') + '>' + encodeCarried(text) + END;
 	let carriedBlocks = '\n' + writeParts(text, opts);
 	if (opts.drawing != null) {
@@ -40,8 +63,8 @@ export function wrap(pageHtml, text, name, options) {
 		const drawingName = safeName(opts.drawingName, 'drawing.svg');
 		carriedBlocks += '\n' + DRAWING_START + ' data-name="' + drawingName + '">' + encodeCarried(opts.drawing) + END;
 	}
-	if ((opts.by != null || opts.at != null) && opts.base == null && previous.base == null) throw new Error('a proposer needs the base it proposes over');
-	let baseline = previous.proposalBase;
+	if ((opts.by != null || opts.at != null) && opts.base == null && previous.base == null) throw new Error('comparison attribution needs its original text');
+	let baseline = previous.comparisonBase;
 	if (!baseline && opts.base != null) {
 		if (typeof opts.base === 'object') baseline = readBase(opts.base);
 		else {
@@ -51,16 +74,16 @@ export function wrap(pageHtml, text, name, options) {
 			const carriedBase = /^\s*<!doctype html/i.test(opts.base) ? takeBase(opts.base).base : null;
 			const pageBase = !carriedBase && /^\s*<!doctype html/i.test(opts.base) ? unwrap(opts.base) : null;
 			const source = carriedBase ? {text: carriedBase.text} : pageBase?.text != null ? readDocument(pageBase.text) : readDocument(opts.base);
-			baseline = carriedBase || pageBase?.proposalBase || readBase({text: source.text, sha256: sha256(source.text),
+			baseline = carriedBase || pageBase?.comparisonBase || readBase({text: source.text, sha256: sha256(source.text),
 				revision: source.ledger?.head.root || pageBase?.ledger?.head.root || sha256(source.text), name: safeName(opts.baseName || pageBase?.name, docName),
 				by: opts.by == null ? 'Agent' : String(opts.by).trim(), at: opts.at == null ? new Date().toISOString() : String(opts.at)});
 		}
 	}
-	// Re-proposing retains the original text/hash/revision; the current proposer identifies this proposal.
+	// Rewrapping retains the original text, hash and revision; attribution names this comparison.
 	if (baseline) baseline = readBase({...baseline, ...(opts.by != null ? {by: String(opts.by).trim()} : {}), ...(opts.at != null ? {at: String(opts.at)} : {})});
 	carriedBlocks += '\n' + writeBase(text, baseline);
 	// The agent seed goes after the charset (or <head>), once: a page that already carries it, wrapped again, loses its old one.
-	const unseeded = previous.html.replace(SEARCH_WORDS, '').split(PAGE_SEED + '\n').join('');
+	const unseeded = offlineTemplate(previous.html.replace(SEARCH_WORDS, '').split(PAGE_SEED + '\n').join(''), address);
 	const headTag = /<meta charset[^>]*>\n?/i.exec(unseeded) || /<head[^>]*>\n?/.exec(unseeded);
 	if (!headTag) throw new Error('not a Rapier page: no <head>');
 	const seededAt = headTag.index + headTag[0].length;
@@ -75,12 +98,13 @@ export function wrap(pageHtml, text, name, options) {
 	return titled.slice(0, at + shift) + '\n' + block + carriedBlocks + titled.slice(at + shift);
 }
 export function unwrap(pageHtml) {
-	let html = pageHtml, text = null, name = null, view = null, address = null, expiry = null;
+	let html = pageHtml, text = null, name = null, kind = null, view = null, address = null, expiry = null;
 	const a = pageHtml.indexOf(START);
 	if (a >= 0) {
 		const open = pageHtml.indexOf('>', a), b = pageHtml.indexOf(END, open);
 		if (open < 0 || b < 0) throw new Error('a carried document without its end');
 		name = /data-name="([^"]*)"/.exec(pageHtml.slice(a, open))?.[1] ?? null;
+		kind = /data-kind="(markdown|text|code)"/.exec(pageHtml.slice(a, open))?.[1] ?? null;
 		view = /data-view="(draw|notes)"/.exec(pageHtml.slice(a, open))?.[1] ?? null;
 		const carriedReturn = /data-return="([^"]*)"/.exec(pageHtml.slice(a, open));
 		if (carriedReturn) address = returnAddress(carriedReturn[1]);
@@ -102,7 +126,7 @@ export function unwrap(pageHtml) {
 		if (d > 0 && html[d - 1] === '\n') html = html.slice(0, d - 1) + html.slice(d);
 	}
 	const carriedBase = takeBase(html); html = carriedBase.html;
-	const proposalBase = carriedBase.base;
+	const comparisonBase = carriedBase.base;
 	const parts = takeParts(html, text);
-	return {...parts, text, name, view, drawing, drawingName, proposalBase, base: proposalBase?.text ?? null, baseName: proposalBase?.name ?? null, baseSha256: proposalBase?.sha256 ?? null, baseRevision: proposalBase?.revision ?? null, by: proposalBase?.by ?? null, at: proposalBase?.at ?? null, return: address, return_expires_at: expiry};
+	return {...parts, text, name, kind, view, drawing, drawingName, comparisonBase, base: comparisonBase?.text ?? null, baseName: comparisonBase?.name ?? null, baseSha256: comparisonBase?.sha256 ?? null, baseRevision: comparisonBase?.revision ?? null, by: comparisonBase?.by ?? null, at: comparisonBase?.at ?? null, return: address, return_expires_at: expiry};
 }

@@ -4,15 +4,14 @@ import {basename, dirname, join} from 'node:path';
 import {wrap} from './wrap.mjs';
 import {returnAddress, returnExpiresAt} from './return-address.mjs';
 export {wrap, unwrap, encodeCarried, decodeCarried} from './wrap.mjs';
-// Unknown options, a bare --drawing or --base and a third name are refused, never dropped.
-const USAGE = 'usage: rapier-html <document.md> [out.html] [--view draw|notes] [--drawing sketch.svg] [--base original.md [--by <your name>]] [--return <url> --return-expires-at <timestamp>]\n' +
+// Unknown options, a bare --drawing or --compare and a third name are refused.
+const USAGE = 'usage: rapier-html <document.md> [out.html] [--view draw|notes] [--drawing sketch.svg] [--compare original.md [--by <your name>]] [--return <url> --return-expires-at <timestamp>]\n' +
 	'  writes <document>.rapier.html beside the file: Rapier with the document inside it, one file, offline.\n' +
 	'  It never overwrites: an output that already exists, the document itself included, is refused.\n' +
 	'  --view      opens the page on Draw (sketch and paint, the document behind it) or on Notes\n' +
 	'  --drawing   carries an SVG drawing alongside the document, opened on Draw as the page boots\n' +
-	'  --propose   <base.md> <proposed.md>: carries the original base for per-change review\n' +
-	'  --base      the older spelling of --propose; carries the text the document was proposed against; the page opens on their diff\n' +
-	'  --by        with --base: who proposes it, shown on the diff with the time the page was made\n' +
+	'  --compare   carries the original text; the page opens showing its diff from the current document\n' +
+	'  --by        with --compare: the name shown on the diff with the time the page was made\n' +
 	'  --return    carries a one-use return URL from document.create_return; Share offers Send back\n' +
 	'  --return-expires-at  carries the same mint\'s expiry; Share offers Save once the return expires\n' +
 	'  --          everything after it is a filename, even one that starts with a dash\n' +
@@ -29,8 +28,8 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 			if (view !== null || !['draw', 'notes'].includes(argv[i + 1])) throw new Error('--view takes draw or notes');
 			view = argv[++i];
 		}
-		else if (arg === '--base' || arg === '--propose') {
-			if (basePath !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--base takes one text file (write a name that starts with a dash as ./-original.md)');
+		else if (arg === '--compare') {
+			if (basePath !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--compare takes one text file (write a name that starts with a dash as ./-original.md)');
 			basePath = argv[++i];
 		}
 		else if (arg === '--by') {
@@ -57,13 +56,13 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 	const out = named || join(dirname(input), name.replace(/\.(md|markdown|txt)$/i, '') + '.rapier.html');
 	const wrapOptions = {};
 	if (drawingPath) { wrapOptions.drawing = await readFile(drawingPath, 'utf8'); wrapOptions.drawingName = basename(drawingPath); }
-	if (by !== null && !basePath) throw new Error('--by names who proposes a change: give the --base it proposes over');
+	if (by !== null && !basePath) throw new Error('--by labels a comparison: give its --compare file');
 	if (basePath) { wrapOptions.base = await readFile(basePath, 'utf8'); wrapOptions.baseName = basename(basePath); wrapOptions.at = new Date().toISOString(); }
 	if (by !== null) { wrapOptions.by = by; wrapOptions.at = new Date().toISOString(); }
 	if (view) wrapOptions.view = view;
 	if (address) wrapOptions.return = address;
 	if (expiry) wrapOptions.return_expires_at = expiry;
-	// R85b: always a new file; 'wx' refuses any existing path, links included.
+	// Always a new file; 'wx' refuses any existing path, links included.
 	try { await writeFile(out, wrap(page, text, name, wrapOptions), {flag: 'wx'}); }
 	catch (error) { throw error.code === 'EEXIST' ? new Error(out + ' already exists, and rapier-html never overwrites a file: name a new one') : error; }
 	log(out + ' (' + name + ', ' + Buffer.byteLength(text) + ' bytes of document' +

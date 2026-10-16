@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
-// The one place these literal grammars are written (docs/markdown-standard.md, "Text colour", "Page break").
+// The one owner of inline typography, ink and page breaks.
+import {markdownSourcePositions} from './md-source.mjs';
 
 // The exported page retains this reader alone. The editor uses the same closure, then adds its writers and scans.
 const inkReader = () => {
@@ -9,16 +10,16 @@ const inkReader = () => {
 	const COLOR_NAME_ALT = Object.keys(TEXT_COLOR_NAMES).join('|');
 	const COLOR_VALUE = '(?:#[0-9a-f]{6}|' + COLOR_NAME_ALT + ')';
 
-	// Ink (docs/markdown-standard.md, "Ink"; the design docs/briefs/ink.md): a pen stroke that stays with the words it
-	// marks, a paired comment with the colour span's shape. The opener holds the stroke:
+	// Ink (docs/markdown-standard.md, "Ink"): a pen stroke that stays with the words it marks, a paired comment with the colour span's shape. The
+	// opener holds the stroke:
 	//   <!--ink KIND [NUMBER] [COLOUR] [w=N] [box=W,H] [at=X,Y] [PATH]-->words<!--/ink-->
-	// KIND is the stroke's kind, decided once when it was lifted; COLOUR is exactly the colour span's value, red when
-	// absent; box is the frame's size when the stroke was drawn and at the frame's offset from the words' box, both in
-	// hundredths of an em; w is the pen's width as Draw counts a nib (2 to 24; 9 is the default and is never written): the stroke is drawn 0.11 em
-	// wide at 9 and in proportion to w otherwise; PATH is the stroke, its first point absolute in the frame and the rest as
-	// moves, hundredths of an em. One spelling: the fields in this order, one space between, integers only. A comment that does not read this way
-	// is ordinary comment text and marks nothing. Ink pairs do not nest in each other. Arrow/end alone take a pairing
-	// number, an end takes no other data; under, strike and arrow may omit a path for a line derived from their words.
+	// KIND is the stroke's kind, decided once when it was lifted; COLOUR is exactly the colour span's value, red when absent; box is the frame's
+	// size when the stroke was drawn and at the frame's offset from the words' box, both in hundredths of an em; w is the pen's width as Draw
+	// counts a nib (2 to 24; 9 is the default and is never written): the stroke is drawn 0.11 em wide at 9 and in proportion to w otherwise; PATH
+	// is the stroke, its first point absolute in the frame and the rest as moves, hundredths of an em. One spelling: the fields in this order,
+	// one space between, integers only. A comment that does not read this way is ordinary comment text and marks nothing. Ink pairs nest:
+	// each closer takes the innermost open ink opener. Arrow/end alone take a pairing number, an end takes no other data; under, strike and arrow may omit a path for a line
+	// derived from their words.
 	const INK_KINDS = Object.freeze(['under', 'strike', 'ring', 'bracket', 'free', 'arrow', 'end']);
 
 	const INK_PATH_MAX = 160;
@@ -28,9 +29,6 @@ const inkReader = () => {
 		+ '(?: (' + INK_INT + ',' + INK_INT + '(?: ' + INK_INT + ',' + INK_INT + ')*))?';
 	const INK_OPEN_PATTERN = '<!--ink ' + INK_OPEN_BODY + '-->';
 
-	// Relocated into the parse Worker by .toString() with parseInkOpen and isInkClose (engine.js _buildParseWorkerSource):
-	// reads only its parameter and the planted INK_PATH_MAX, INK_INT_MAX and TEXT_COLOR_NAMES; parseInkOpen reads
-	// INK_OPEN_PATTERN and this function; isInkClose reads INK_CLOSE.
 	function readInkMatch(match) {
 		const linked = match[1] === 'arrow' || match[1] === 'end';
 		if (linked !== (match[2] != null) || (!linked && match[1] !== 'under' && match[1] !== 'strike' && match[9] == null)) return null;
@@ -68,71 +66,248 @@ const inkReader = () => {
 	}
 	return { TEXT_COLOR_NAMES, COLOR_NAME_ALT, COLOR_VALUE, INK_KINDS, INK_PATH_MAX, INK_INT_MAX, INK_OPEN_PATTERN, readInkMatch, parseInkOpen, parseInkBody };
 };
-const { TEXT_COLOR_NAMES, COLOR_NAME_ALT, COLOR_VALUE, INK_KINDS, INK_PATH_MAX, INK_INT_MAX, INK_OPEN_PATTERN, readInkMatch, parseInkOpen, parseInkBody } = inkReader();
+const { TEXT_COLOR_NAMES, COLOR_VALUE, INK_KINDS, INK_PATH_MAX, INK_INT_MAX, INK_OPEN_PATTERN, readInkMatch, parseInkOpen, parseInkBody } = inkReader();
 export { readInkMatch, parseInkOpen, parseInkBody };
 
 const TEXT_COLOR_HEX_TO_NAME = Object.freeze(
 	Object.fromEntries(Object.entries(TEXT_COLOR_NAMES).map(([name, hex]) => [hex, name]))
 );
-const COLOR_CLOSE = '<!--/c-->';
 const PAGE_BREAK_MARKER = '<!--md-break:v1 page-->';
 
-export { TEXT_COLOR_NAMES, TEXT_COLOR_HEX_TO_NAME, COLOR_CLOSE, PAGE_BREAK_MARKER };
-
-export function formatColorOpen(hex) {
-	return '<!--c ' + (TEXT_COLOR_HEX_TO_NAME[hex] || hex) + '-->';
-}
+export { TEXT_COLOR_NAMES, TEXT_COLOR_HEX_TO_NAME, PAGE_BREAK_MARKER };
 
 export function formatColorRun(hex, content) {
-	return formatColorOpen(hex) + content + COLOR_CLOSE;
+	return typography.wrap({color: hex}, content);
 }
 
-// Relocated into the parse Worker by .toString() (engine.js _buildParseWorkerSource): read only parameters, TEXT_COLOR_NAMES and COLOR_CLOSE.
+export const FONT_STACKS = Object.freeze({
+	sans: Object.freeze({stack: 'sans', css: '', word: ''}),
+	serif: Object.freeze({stack: 'serif', css: "Georgia,'Palatino Linotype',Palatino,'Times New Roman',Times,serif", word: 'Georgia'}),
+	mono: Object.freeze({stack: 'mono', css: "ui-monospace,'Courier New',Courier,monospace", word: 'Courier New'}),
+	system: Object.freeze({stack: 'system', css: 'system-ui,sans-serif', word: 'Calibri'}),
+	hand: Object.freeze({stack: 'hand', css: 'cursive', word: 'Segoe Print'}),
+});
 
-// Returns {hex, length in UTF-16 units} or null; not end-anchored.
-export function matchColorOpen(text) {
-	if (typeof text !== 'string') return null;
-	const match = new RegExp('^<!--c (#[0-9a-f]{6}|' + Object.keys(TEXT_COLOR_NAMES).join('|') + ')-->').exec(text);
-	if (!match) return null;
-	const value = match[1];
-	return { hex: value.charCodeAt(0) === 0x23 /* '#' */ ? value : TEXT_COLOR_NAMES[value], length: match[0].length };
+// A family is one font-table name, never a CSS list or an HTML fragment.
+export function normalizeFontFamily(value) {
+	if (typeof value !== 'string') return null;
+	const family = value.trim();
+	return family && family.length <= 256 && family.isWellFormed() && !/[\u0000-\u001f\u007f<>\u2028\u2029]/.test(family) && !family.includes('--') ? family : null;
 }
 
-export function parseColorOpen(comment) {
-	if (typeof comment !== 'string') return null;
-	const match = new RegExp('^<!--c (#[0-9a-f]{6}|' + Object.keys(TEXT_COLOR_NAMES).join('|') + ')-->$').exec(comment);
-	if (!match) return null;
-	const value = match[1];
-	return value.charCodeAt(0) === 0x23 /* '#' */ ? value : TEXT_COLOR_NAMES[value];
+export function fontFamilyCss(value) {
+	const family = normalizeFontFamily(value);
+	if (family == null) return '';
+	const generic = Object.hasOwn(FONT_STACKS, family.toLowerCase()) ? FONT_STACKS[family.toLowerCase()] : null;
+	return generic ? generic.css || "'Geist',system-ui,sans-serif" : '"' + family.replace(/[\\"]/g, '\\$&') + '"';
 }
 
-export function isColorClose(comment) {
-	return comment === COLOR_CLOSE;
+export function formatFontRun(family, content) {
+	return typography.wrap({family}, content);
 }
 
-export function scanColorMarkers(source) {
-	const text = String(source == null ? '' : source);
-	const scan = new RegExp('<!--c (?:(#[0-9a-f]{6})|(' + COLOR_NAME_ALT + '))-->|<!--/c-->', 'g');
-	const markers = [];
-	let match;
-	while ((match = scan.exec(text))) {
-		const hex = match[1] || (match[2] ? TEXT_COLOR_NAMES[match[2]] : null) || null;
-		markers.push({ start: match.index, end: match.index + match[0].length, hex });
+// One typed interpretation for source, DOM and native-file adapters. The worker carries this
+// exact factory and its explicit grammar inputs; no DOM, CSS evaluator or resource loader.
+export function createTypography({normalizeFontFamily, fontFamilyCss, FONT_STACKS}) {
+	const LIMIT = 4096, DEPTH = 64;
+	const generics = {serif: 'serif', 'sans-serif': 'sans', monospace: 'mono', cursive: 'hand',
+		fantasy: 'fantasy', 'system-ui': 'system', 'ui-serif': 'ui-serif', 'ui-sans-serif': 'ui-sans-serif',
+		'ui-monospace': 'ui-monospace', 'ui-rounded': 'ui-rounded', emoji: 'emoji', math: 'math', fangsong: 'fangsong'};
+	const escape = value => String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+	function size(value) {
+		if (typeof value !== 'string' || value.length > 48) return null;
+		const match = /^(\d+(?:\.\d{0,12})?|\.\d{1,12})\s*(pt|px)$/i.exec(value.trim());
+		if (!match) return null;
+		const number = Number(match[1]), unit = match[2].toLowerCase(), points = number * (unit === 'px' ? .75 : 1);
+		if (!(points > 0 && points <= 1638)) return null;
+		const [integer, fraction = ''] = match[1].split('.'), tail = fraction.replace(/0+$/, '');
+		return Object.freeze({css: (integer.replace(/^0+/, '') || '0') + (tail ? '.' + tail : '') + unit,
+			unit, value: number, points, halfPoints: points * 2});
 	}
-	return markers;
+	function color(value) {
+		if (typeof value !== 'string') return null;
+		if (/^#[0-9a-f]{6}$/i.test(value.trim())) return value.trim().toLowerCase();
+		// CSSOM serializes admitted hex to opaque rgb(). Native HTML import uses this same boundary.
+		const rgb = /^rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*1\s*)?\)$/i.exec(value.trim());
+		return rgb && rgb.slice(1).every(channel => Number(channel) <= 255)
+			? '#' + rgb.slice(1).map(channel => Number(channel).toString(16).padStart(2, '0')).join('') : null;
+	}
+	function familyCss(value) {
+		if (typeof value !== 'string' || value.length > 2048) return null;
+		const css = value.trim();
+		const stackKey = text => text.replace(/'/g, '"').replace(/"([\w-]+)"/g, '$1').replace(/\s*,\s*/g, ',');
+		for (const [name] of Object.entries(FONT_STACKS)) if ((!/^["']/.test(css) || css.includes(',')) && stackKey(css) === stackKey(fontFamilyCss(name)))
+			return Object.freeze({name, css: fontFamilyCss(name), custom: false});
+		if (Object.hasOwn(generics, css.toLowerCase())) return Object.freeze({name: generics[css.toLowerCase()], css: css.toLowerCase(), custom: false});
+		let name = css;
+		if (css[0] === '"' || css[0] === "'") {
+			if (css.at(-1) !== css[0]) return null;
+			name = '';
+			for (let at = 1; at < css.length - 1; at++) {
+				if (css[at] === css[0] || /[\r\n\f]/.test(css[at])) return null;
+				if (css[at] !== '\\') { name += css[at]; continue; }
+				const escaped = /^\\(?:([0-9a-f]{1,6})(?:\r\n|[ \t\r\n\f])?|([^\r\n\f]))/i.exec(css.slice(at));
+				if (!escaped || at + escaped[0].length > css.length - 1) return null;
+				const code = escaped[1] ? parseInt(escaped[1], 16) : 0;
+				name += escaped[1] ? code && code <= 0x10ffff && !(code >= 0xd800 && code <= 0xdfff) ? String.fromCodePoint(code) : '\ufffd' : escaped[2];
+				at += escaped[0].length - 1;
+			}
+		} else if (!/^[\p{L}_-][\p{L}\p{N}_ -]*$/u.test(css) || /^(?:inherit|initial|unset|revert|revert-layer)$/i.test(css)) return null;
+		name = normalizeFontFamily(name);
+		// These five names are the existing family-choice aliases, not custom font identities.
+		if (name && Object.hasOwn(FONT_STACKS, name.toLowerCase())) return null;
+		return name ? Object.freeze({name, css: '"' + name.replace(/[\\"]/g, '\\$&') + '"', custom: true}) : null;
+	}
+	function family(value) {
+		if (value && typeof value === 'object') {
+			const parsed = familyCss(value.css);
+			return parsed && parsed.name === value.name && parsed.custom === value.custom ? parsed : null;
+		}
+		const name = normalizeFontFamily(value);
+		return name ? familyCss(fontFamilyCss(name)) : null;
+	}
+	function normalize(value, removals = false) {
+		if (!value || typeof value !== 'object' || Array.isArray(value)) throw new TypeError('Typography requires size, color or family.');
+		const result = {};
+		for (const key of Object.keys(value)) {
+			if (!['size', 'color', 'family'].includes(key)) throw new TypeError('Unknown typography property: ' + key);
+			if (value[key] === null && removals) { result[key] = null; continue; }
+			const parsed = key === 'size' ? size(value[key])?.css : key === 'color' ? color(value[key]) : family(value[key]);
+			if (!parsed) throw new TypeError('Invalid typography ' + key + '.');
+			result[key] = parsed;
+		}
+		return Object.freeze(result);
+	}
+	// Rendering drops unsupported declarations; rich editing admits only wholly owned
+	// spans so unrelated HTML and rejected attributes keep their exact-source editor.
+	function parseStyle(value, editable = false) {
+		if (typeof value !== 'string' || value.length > LIMIT) return editable ? null : Object.freeze({});
+		const parts = []; let quote = '', start = 0;
+		for (let at = 0; at <= value.length; at++) {
+			const ch = value[at];
+			if (quote) { if (ch === '\\') at++; else if (ch === quote) quote = ''; }
+			else if (ch === '"' || ch === "'") quote = ch;
+			else if (ch === ';' || at === value.length) { parts.push(value.slice(start, at)); start = at + 1; }
+		}
+		if (quote || parts.length > 32) return editable ? null : Object.freeze({});
+		const result = {};
+		for (const part of parts) {
+			if (!part.trim()) continue;
+			const colon = part.indexOf(':'); if (colon < 0) { if (editable) return null; continue; }
+			const key = part.slice(0, colon).trim().toLowerCase(), raw = part.slice(colon + 1).trim();
+			const parsed = key === 'font-size' ? size(raw)?.css : key === 'color' ? color(raw) : key === 'font-family' ? familyCss(raw) : null;
+			if (parsed) result[key === 'font-size' ? 'size' : key === 'font-family' ? 'family' : 'color'] = parsed;
+			else if (editable) return null;
+		}
+		return Object.freeze(result);
+	}
+	function style(value) {
+		const held = normalize(value), parts = [];
+		if (held.size) parts.push('font-size:' + held.size);
+		if (held.color) parts.push('color:' + held.color);
+		if (held.family) parts.push('font-family:' + held.family.css);
+		return parts.join(';');
+	}
+	const open = value => { const css = style(value); return css ? '<span style="' + escape(css) + '">' : ''; };
+	const wrap = (value, content) => {
+		const start = open(value);
+		if (!start || !content) return content;
+		// Importers can supply a styled break by itself, or before/after words. Keep
+		// those exact line-edge bytes outside the new span so its opener has words.
+		const prefix = /^(?:[ \t]*(?:\r\n|\r(?!\n)|\n))+/.exec(content)?.[0] || '';
+		let body = content.slice(prefix.length);
+		const suffix = /(?:[ \t]*(?:\r\n|\r(?!\n)|\n))+[ \t]*$/.exec(body)?.[0] || '';
+		body = body.slice(0, body.length - suffix.length);
+		if (!body) return content;
+		// Soft/hard line breaks can belong to one Markdown paragraph. A blank line or
+		// an opener on a line of its own would instead change the block grammar.
+		if (/^\s*\n|\n[ \t]*\n/.test(body.replace(/\r\n?/g, '\n')))
+			throw new TypeError('Typography wraps one inline paragraph at a time.');
+		return prefix + start + body + '</span>' + suffix;
+	};
+	function parseOpen(source, decode = value => value, editable = false) {
+		if (typeof source !== 'string' || source.length > LIMIT + 1024 || !/^<span(?=[\s>])/i.test(source) || !source.endsWith('>') || /\/\s*>$/.test(source)) return null;
+		const attrs = /\s+([^\s=<>/"']+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s=<>`"']+)))?/y;
+		let at = 5, css = null;
+		while (at < source.length - 1) {
+			if (/^\s*>$/.test(source.slice(at))) break;
+			attrs.lastIndex = at; const match = attrs.exec(source);
+			if (!match) return null;
+			at = attrs.lastIndex;
+			if (match[1].toLowerCase() !== 'style') { if (editable) return null; continue; }
+			if (css !== null) return null;
+			css = decode(match[2] ?? match[3] ?? match[4] ?? '');
+		}
+		const facts = parseStyle(css, editable);
+		return facts && Object.keys(facts).length ? facts : null;
+	}
+	function nodeStyle(node) {
+		const result = {...parseStyle(node?.getAttribute?.('style') || '')};
+		const authoredSize = size(node?.getAttribute?.('data-md-size'));
+		const authoredColor = color(node?.getAttribute?.('data-md-color'));
+		const authoredFamily = normalizeFontFamily(node?.getAttribute?.('data-md-font'));
+		if (authoredSize) result.size = authoredSize.css;
+		if (authoredColor) result.color = authoredColor;
+		if (authoredFamily && !result.family) result.family = family(authoredFamily);
+		return Object.freeze(result);
+	}
+	function runs(root) {
+		let text = ''; const paint = [], leaves = [];
+		const visit = (node, inherited, blocked) => {
+			if (node.nodeType === 3) {
+				const value = String(node.nodeValue || '').replace(/\u2060/g, '\n'), start = text.length;
+				text += value;
+				for (let index = 0; index < value.length; index++) paint.push(inherited);
+				if (value) leaves.push({start, end: text.length, blocked});
+				return;
+			}
+			if (node.nodeType !== 1 && node !== root) return;
+			const own = nodeStyle(node), next = {...inherited, ...own};
+			const literal = blocked || /^(?:CODE|PRE|KBD|SAMP|MATH)$/.test(node.tagName) ||
+				node.classList?.contains('math-rendered') || node.classList?.contains('math-placeholder');
+			for (const child of node.childNodes || []) visit(child, next, !!literal);
+		};
+		visit(root, {}, false);
+		return {text, paint, leaves};
+	}
+	function install(md) {
+		if (md.__rapierTypography) return md;
+		md.__rapierTypography = true;
+		md.core.ruler.after('linkify', 'rapier-typography', state => {
+			for (const block of state.tokens) {
+				if (block.type !== 'inline' || !block.children) continue;
+				const stack = []; let depth = 0, overflow = 0;
+				for (const token of block.children) {
+					if (token.type !== 'html_inline') { depth += token.nesting || 0; continue; }
+					const source = token.content, close = /^<\/span\s*>$/i.test(source);
+					if (!close && !/^<span(?=[\s>])/i.test(source)) continue;
+					if (overflow) { overflow += close ? -1 : 1; continue; }
+					if (!close) {
+						if (stack.length === DEPTH) { overflow = 1; continue; }
+						const facts = parseOpen(source, value => md.utils.unescapeAll(value.replace(/\\/g, '\\\\')));
+						stack.push({token, facts, depth, source}); continue;
+					}
+					const held = stack.pop();
+					if (!held || !held.facts || depth !== held.depth) continue;
+					const type = 'typography', opener = held.token;
+					opener.type = 'rapier_' + type + '_open'; opener.tag = 'span'; opener.nesting = 1; opener.content = '';
+					(opener.meta ||= {}).typography = Object.freeze({style: held.facts, open: held.source, close: source});
+					opener.attrSet('style', style(held.facts));
+					if (held.facts.color) opener.attrSet('data-md-color', held.facts.color);
+					if (held.facts.size) opener.attrSet('data-md-size', held.facts.size);
+					if (held.facts.family) opener.attrSet('data-md-font', held.facts.family.name);
+					token.type = 'rapier_' + type + '_close'; token.tag = 'span'; token.nesting = -1; token.content = '';
+					(token.meta ||= {}).typography = opener.meta.typography;
+				}
+			}
+		});
+		return md;
+	}
+	return Object.freeze({size, color, family, familyCss, normalize, parseStyle, style, open, wrap, parseOpen, nodeStyle, runs, install});
 }
 
-export function pairColorMarkers(source) {
-	return pairMarkers(source, 'color');
-}
-
-export function stripColorMarkers(text) {
-	return String(text == null ? '' : text).replace(new RegExp('<!--(?:c ' + COLOR_VALUE + '|/c)-->', 'g'), '');
-}
-
-export function hasColorMarker(text) {
-	return new RegExp('<!--(?:c ' + COLOR_VALUE + '|/c)-->').test(String(text == null ? '' : text));
-}
+export const typography = createTypography({normalizeFontFamily, fontFamilyCss, FONT_STACKS});
+export function typographySourceRanges(source, parser) { return markdownSourcePositions(source, parser).typography; }
 
 const INK_CLOSE = '<!--/ink-->';
 export { INK_KINDS, INK_CLOSE, INK_PATH_MAX, INK_INT_MAX, INK_OPEN_PATTERN };
@@ -195,7 +370,7 @@ export function matchInkOpen(text) {
 // The opener's body is what a rendered span carries (a renderer's sanitizer drops an attribute whose value holds the
 // comment's own close): the opener after `<!--ink ` and before `-->`, so the attribute reads `under red box=… 0,95 …`,
 // and only a body that reads as a mark goes back. Read and write through the same grammar, so an invalid body cannot
-// invent a mark. Relocated into the parse Worker with the three above: reads INK_OPEN_PATTERN and readInkMatch alone.
+// invent a mark.
 export function inkOpenBody(opener) {
 	if (typeof opener !== 'string') return null;
 	const match = new RegExp('^' + INK_OPEN_PATTERN + '$').exec(opener);
@@ -211,6 +386,37 @@ export function isInkClose(comment) {
 
 // Every ink marker in order: {start, end, mark} for an opener (mark null for a closer, and an opener whose path
 // overflows is not a marker at all).
+// Without a prior arrow or adjacent marker bytes, only an edit boundary can empty a span.
+// Read those boundaries through the planned rows before asking the full grammar to retire ink.
+export function mayRetireInk(source, rows) {
+  if (source.contains('<!--ink arrow ') || source.contains('<!--ink end ') || source.contains('--><!--')) return true;
+  let pieces = [{from: 0, length: source.length}], length = source.length;
+  const slice = (start, end) => {
+    const selected = [];
+    let at = 0;
+    for (const piece of pieces) {
+      const low = Math.max(start, at), high = Math.min(end, at + piece.length);
+      if (high > low) selected.push(piece.text === undefined
+        ? {from: piece.from + low - at, length: high - low}
+        : {text: piece.text.slice(low - at, high - at), length: high - low});
+      at += piece.length;
+      if (at >= end) break;
+    }
+    return selected;
+  };
+  const read = (start, end) => slice(start, end).map(piece => piece.text === undefined
+    ? source.readSlice(piece.from, piece.from + piece.length) : piece.text).join('');
+  for (const row of rows) {
+    const end = row.pos + row.removed.length;
+    if (row.pos < 0 || end > length) return true;
+    const local = read(Math.max(0, row.pos - 6), row.pos) + row.inserted + read(end, Math.min(length, end + 6));
+    if (local.includes('--><!--')) return true;
+    pieces = [...slice(0, row.pos), {text: row.inserted, length: row.inserted.length}, ...slice(end, length)];
+    length += row.inserted.length - row.removed.length;
+  }
+  return false;
+}
+
 export function scanInkMarkers(source) {
 	const text = String(source == null ? '' : source);
 	const scan = new RegExp(INK_OPEN_PATTERN + '|' + INK_CLOSE.replace(/[-]/g, '\\-'), 'g');
@@ -264,8 +470,8 @@ export function pairMarkers(source, kind, markers = null) {
 	return { runs, strays, arrows };
 }
 
-// Where a Will marker may stand (docs/will.md, Conversion). A pair inside a fence, a raw block
-// (`<pre>`, `<div>`, a raw table cell) or the opening front matter is text: the line is quoted,
+// Where a Will marker may stand (docs/will.md, Conversion). A pair inside a fence, a raw HTML block
+// (until its blank line) or the opening front matter is text: the line is quoted,
 // and a Word or PDF writer that met it as a marker would govern the wrong region. The same frame
 // as spec/frontmatter.mjs, copied here so this grammar stays inside the MIT kit's closure.
 const WILL_BLOCK_TAGS = new Set('address article aside base basefont blockquote body caption center col colgroup dd details dialog dir div dl dt fieldset figcaption figure footer form frame frameset h1 h2 h3 h4 h5 h6 head header hr html iframe legend li link main menu menuitem nav noframes ol optgroup option p param search section summary table tbody td tfoot th thead title tr track ul'.split(' '));
@@ -403,7 +609,7 @@ function willQuotedWhere(stack) {
 			if (item.tags.includes('pre')) return 'raw-pre';
 			if (item.tags.includes('td') || item.tags.includes('th')) return 'raw-table';
 			if (item.tags.includes('div')) return 'raw-div';
-			return null;
+			return 'raw-html';
 		}
 	}
 	return null;
@@ -416,7 +622,7 @@ function willLeaf(stack) {
 
 // `spans` are [start, end) of marker lines in `source` (the Will reader's own offsets).
 // Returns the first quoted span, {start, end, where}, or null when every span may stand.
-// `where` is `fence`, `raw-pre`, `raw-div`, `raw-table` or `frontmatter`.
+// `where` is `fence`, `raw-pre`, `raw-div`, `raw-table`, `raw-html` (any other raw HTML block) or `frontmatter`.
 export function quotedWillSpan(source, spans) {
 	const text = String(source ?? '');
 	const marks = Array.isArray(spans) ? spans : [];
@@ -483,19 +689,13 @@ export function quotedWillSpan(source, spans) {
 }
 
 function pairSpanMarkers(source, kind, markers = null) {
-	if (kind !== 'ink' && kind !== 'color') throw new TypeError('Unknown paired marker kind');
-	const color = kind === 'color';
+	if (kind !== 'ink') throw new TypeError('Unknown paired marker kind');
 	const runs = [], strays = [], stack = [];
-	for (const marker of markers || (color ? scanColorMarkers(source) : scanInkMarkers(source))) {
-		if (color ? marker.hex !== null : !marker.close) {
-			if (color && stack.length) { strays.push(marker); continue; }
-			stack.push(marker);
-			continue;
-		}
+	for (const marker of markers || scanInkMarkers(source)) {
+		if (!marker.close) { stack.push(marker); continue; }
 		const open = stack.pop();
 		if (!open) { strays.push(marker); continue; }
-		runs.push({ start: open.start, end: marker.end, innerStart: open.end, innerEnd: marker.start,
-			...(color ? { hex: open.hex } : { mark: open.mark }) });
+		runs.push({ start: open.start, end: marker.end, innerStart: open.end, innerEnd: marker.start, mark: open.mark });
 	}
 	strays.push(...stack);
 	runs.sort((a, b) => a.start - b.start);
@@ -576,7 +776,6 @@ export function isPageBreakLine(text) {
 	return typeof text === 'string' && /^<!--md-break:v1 page-->\r?$/.test(text);
 }
 
-// Also relocated by .toString(); reads only its own regex.
 export function isPageBreakBlock(text) {
 	return typeof text === 'string' && /^<!--md-break:v1 page-->\r?\n?$/.test(text);
 }

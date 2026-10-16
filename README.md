@@ -1,8 +1,8 @@
-# Rapier plugins and packages
+# Rapier - Markdown Editor & Art: plugins and packages
 
-Plugins, npm packages and plug-in files for [Rapier](https://rapier.website), a fast Markdown editor for notes,
-diagrams, drawing and watercolor painting in one HTML file. Android, Web and Windows. Phone-first and offline,
-with MCP and WebMCP for live work with agents. Optional encrypted sync uses your own Cloudflare account.
+Plugins, npm packages and plug-in files for [Rapier - Markdown Editor & Art](https://rapier.website).
+Markdown editor for writing, notes, editable diagrams, drawing and painting with your AI assistant.
+Work together through a supported host, deliver an editable offline file, or embed the editor or reader in your app.
 
 ## Start
 
@@ -44,8 +44,8 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
 
 ## npm packages
 
-- `npm/rapier-html/`: `npx rapier-html@1.2.3 notes.md` writes one offline HTML file: the editor with the document inside.
-- `npm/rapier-embed/`: `npm install rapier-embed@1.2.3` puts the read-only reader or the document editor in your
+- `npm/rapier-html/`: `npx rapier-html@1.2.5 notes.md` writes one offline HTML file: the editor with the document inside.
+- `npm/rapier-embed/`: `npm install rapier-embed@1.2.5` puts the read-only reader or the document editor in your
   site or app, saving to your own storage (MIT).
 - `npm/rapier-markdown-kit/`: read, write and render Self-contained Markdown, one `.md` file with its pictures and
   layout, without the editor (MIT).
@@ -54,14 +54,12 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
 ## Plug-in files
 
 Rapier pages download these the first time a document needs them, through
-`https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.3/<directory>/<file>` (each release's own tag), and verify each by length and SHA-384.
-To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.2.3 plugins <directory>`; see
+`https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.5/<directory>/<file>` (each release's own tag), and verify each by length and SHA-384.
+To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.2.5 plugins <directory>`; see
 [Plug-ins](npm/rapier-embed/README.md#plug-ins).
 
 - `math/`: The pinned app Math renderer, its complete notices and original input identities.
 - `letters/`: Draw's letter sets, ornamental capitals traced from the British Library's book scans (CC0).
 - `flowchart/`, `docx/`, `pdf/`: the reader's own plug-ins, a file each: the flowchart renderer, the Word reader and the PDF reader's page reading.
-  The source for the 1.2.4 flowchart, Word-reader and PDF-reader files, with an offline build that reproduces them, is in
-  [sources/reader-1.2.4](sources/reader-1.2.4/README.reader-plugins.md).
 
 Source: [github.com/jackskip22/rapier](https://github.com/jackskip22/rapier). [Privacy and terms](PRIVACY.md).

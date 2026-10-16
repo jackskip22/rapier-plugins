@@ -623,7 +623,9 @@ the authorship projection recomputed from the ledger must agree exactly.
 text. Runs are `[start, end, actorKind, actorId, at]`, in order, nonoverlapping and
 covering every current character. A start without earlier authorship is attributed
 to `system/unattributed`, time zero. Insertions take the inserting record's actor
-and time; deleted runs disappear. Thus the projection contains **no removed text**.
+and time, except text an Undo or Redo puts back: a splice inserting exactly the text
+that a splice of the referenced act removed keeps the runs that text had. Deleted
+runs disappear. Thus the projection contains **no removed text**.
 An authorship-only import becomes a clearly incomplete insertion ledger; future
 attribution is again derived from that one ledger, never a mutable blame database.
 
@@ -669,9 +671,19 @@ editor's restore reader can replay the result. Both merge orders yield the same
 text for independently edited nonoverlapping ranges; their ordered ledgers need
 not be identical. Full and conflict receipts make repeated imports idempotent.
 
-Overlaps fall back to the existing text three-way merge. Unresolved alternatives
-are carried in the existing `note-conflict:v1` envelope, never silently selected.
-Different Will `keep` regions require conflict review even when one copy was
+An identical replacement converges with both original acts retained and one physical
+splice. The format identifier stays `rapier-ledger/2`. That unchanged identifier is not
+backward compatibility with an older reader. There is no `rapier-ledger/3`, no
+compatibility reader, and no migration. An older reader rejects the empty physical
+witness with `ledger_invalid` and does not mutate the ledger. Mixed-version sync throws
+`notes_history_unavailable` (`the note and its canonical history cannot be proved`).
+The older participant's store snapshot and remote object count stay unchanged. That
+throw is not a per-note `held` or `caughtUp` result. The same format string is not
+interoperability, and the ledger is not rewritten into the older shape. Reactivating
+any author of that replacement checks the shared text again; undoing that author
+withdraws it once no author remains. A different overlap returns `text_overlap_unpreserved` and the caller's exact
+ledger, including the text merge's alternatives for review, and does not mint a synthetic
+act. Different Will `keep` regions require conflict review even when one copy was
 unchanged. `review.required` names an unresolved result; a UI must not auto-accept
 it. Rapier offers carried-copy imports from Compare through its existing review,
 checks the live document again at commit, and installs the proven ledger before

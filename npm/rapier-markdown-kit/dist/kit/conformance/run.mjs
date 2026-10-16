@@ -108,7 +108,7 @@ console.log(`A row's own hits/misses can undercount its real coverage: several f
 console.log(`segment cache (agent/vendor/pretext/measurement.js) serves a repeated (font, segment) query straight from that cache without calling`);
 console.log(`measureText again at all -- real data, just not counted against the SECOND document to ask for it. Two named, separate reasons a row still`);
 console.log(`reads CLOSE rather than AGREE, none of them "close enough": (a) no real trace exists at all for 01-inline/02-width-x-align/05-behind/06-front`);
-console.log(`-- their picture pushes no flow obstacle, so layout/interchange.js's own prepare() never calls Pretext for this paragraph during export (see`);
+console.log(`-- their picture pushes no flow obstacle, so kit/render.mjs's exported projector's prepare() never calls Pretext for this paragraph during export (see`);
 console.log(`measurer.mjs) -- the from-scratch character-sum approximation disagrees with real shaping by a bounded, named amount; (b) 03/11/13 DO run`);
 console.log(`Pretext for real (hits > 0, 13-rtl-text at 100% -- every query answered from the real trace) yet still carry a small, constant left-edge delta`);
 console.log(`(9.64px today, a constant from before this measurer existed) -- a picture-obstacle geometry fact, not a text one: these`);

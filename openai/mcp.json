@@ -3,7 +3,7 @@
   "mcpServers": {
     "rapier": {
       "type": "streamable-http",
-      "url": "https://mcp.rapier.website/mcp"
+      "url": "https://mcp.rapier.website/openai/mcp"
     }
   }
 }

@@ -14,7 +14,7 @@ Any law may carry intent: untrusted, region-scoped data, never permission, tool 
 
 The person remains free to author the document and its Will. A host declares authoring and working paths; a working path cannot author, remove or move markers, even by rewriting identical bytes. A Will-aware interface makes effective regions, laws and intent available to the person. Ordinary rendering hides the carrier.
 
-The standard's repository is [jackskip22/will](https://github.com/jackskip22/will): `README.md`, `will.mjs` (the reference reader and evaluator, one file, no dependencies), `vectors.json` (the normative vectors) and LICENSE, with one workflow that runs the vectors. `will.mjs` answers every vector. Rapier's own host is `agent/will.mjs`, with the same grammar.
+The standard's repository is [jackskip22/will](https://github.com/jackskip22/will): `README.md` (the whole standard), `will.mjs` (the reference reader and evaluator, one file, no dependencies), `vectors.json` (the normative vectors), `action.yml` (a pull request check that refuses a change to a `keep` region) and `LICENSE`, with one workflow that runs the vectors. `will.mjs` answers every vector. Rapier's own host is `agent/will.mjs`, with the same grammar.
 
 ## Marker grammar
 
@@ -56,6 +56,6 @@ A PDF reader takes a marker's ASCII frame and law from any text layer, and its i
 
 Will-aware conversion preserves equivalent Will, explicitly reports **WILL LOST**, or refuses. It never silently drops a marker or invents a stricter region to conceal a mapping failure. Reflow of extracted marker units is itself conversion. Unaware software makes no preservation promise.
 
-Rapier supports Markdown enforcement and DOCX hidden-marker conversion. Complete HTML exports preserve the exact original source. Its PDF carries every marker as invisible text: a line of exactly the Markdown's bytes on its own baseline between the visible lines it stood between, in an embedded font whose glyphs enclose no area, because the browser's PDF writer cannot set text mode 3. A marker a PDF cannot hold stops the export with **WILL LOST**; the PDF carries no recoverable Markdown. There is no Google Docs adapter.
+Rapier supports Markdown enforcement and DOCX hidden-marker conversion. Complete HTML exports preserve the exact original source. Its host Print/PDF path carries every marker as invisible text: a line of exactly the Markdown's bytes on its own baseline between the visible lines it stood between, in an embedded font whose glyphs enclose no area, because the browser's PDF writer cannot set text mode 3. A marker a PDF cannot hold stops the export with **WILL LOST**; the host-printed PDF carries no recoverable Markdown. The connector PDF exporter also places searchable text and the Will carriers on its rendered pages, and attaches the exact Markdown as an associated source file. This attachment preserves source independently of a reader’s ability to enforce page regions. There is no Google Docs adapter.
 
 Unresolved: plain-text-layer readers cannot distinguish visible quoted markers (code blocks, raw HTML) from carried markers. Rapier’s Word and PDF exports refuse the whole document if it quotes a marker, with **WILL LOST**: remove the quotation or export HTML to keep exact source. Refusal remains until the binding excludes visible text and readers honour that rule.

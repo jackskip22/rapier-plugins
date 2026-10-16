@@ -1,58 +1,18 @@
-# Rapier, the OpenAI plugin
+# Rapier for ChatGPT
 
-[Rapier](https://rapier.website) is a very fast Markdown editor in one offline HTML file: writing, drawing, painting,
-pictures, Notes and the diff of a change, on a phone or any browser, with no server, no account and nothing collected.
-Long documents open and scroll fast. An assistant gets two things.
+Replacement candidate for review. The endpoint update, hosted guidance and inline-editor checks are pending. This directory does not establish approval or publication of this version.
 
-**A file to hand a person.** `npx rapier-html@1.1.65 notes.md` makes one HTML file that is the whole editor with the
-document inside. They open it with one click, edit, draw and paint in it, review a proposed change as a diff, save it
-and send it back exactly.
+This package uses https://mcp.rapier.website/openai/mcp with 21 focused tools backed by Rapier's shared core.
+It includes four complete skills and the published offline helper versions recorded in SKILLS.json.
 
-**An editor to work in beside them.** Through the MCP door (`https://mcp.rapier.website/mcp`, no account) an assistant reads a document
-by structure and changes the passage or drawing object it inspected; the person sees each change land, keeps or drops
-it, and can undo an agent's change without losing their own. Diagrams are drawn by recipe: name the boxes and arrows,
-and Rapier places and routes them.
+Open a shared document, read exact source, edit at its revision, compare when requested and export an independent file.
+Check editor presence and actual delivery receipts. Painting needs a visible full editor; Water also needs WebGPU.
+Notes require a configured store. This connector does not expose pairing, preferences, device file picking or playback.
 
-Portable comment threads attach to passages, pictures and drawing objects. An explicit Ask action sends a
-request; ordinary comments remain document content. Visual inspection returns the current rendered region
-when an editor is present, while exact source reads establish edit authority. Use those together to move
-between a codebase, its diagram, a human-edited sketch and screenshot annotations.
+The server's shared authoring guides may describe browser tools. The packaged skills map those examples to this
+connection's schemas. The offline/embed helper references retain their own API and are not additional MCP tools.
 
-In ChatGPT, open Markdown/text attachments through the file entrypoint, save supported writable files against their host revision, or keep a new library copy. The sidebar home offers New, Open and previously opened files. A workspace save and a file save have distinct receipts.
+Read PRIVACY.md for data handling. Hosted workspaces expire after 30 idle days.
 
-The documents are Self-contained Markdown, an open convention on CommonMark: pictures, layout, colour, page breaks and
-editable SVG drawings travel inside one `.md` file every Markdown app can read.
-
-## The four skills
-
-| Skill | Use it when |
-|---|---|
-| `rapier-html` | the person wants a document they can keep editing, or a page with a diff to review |
-| `rapier-agent-door` | an explanation, plan, creative sketch or revision benefits from working on the same editable page |
-| `rapier-markdown` | a portable Markdown document needs pictures, layout or source-preserving delivery |
-| `embed-rapier` | a site or app wants the editor inside it, with its own storage |
-
-## Install
-
-Install this portable package from its marketplace. For public submission, choose **With MCP**, submit the HTTPS endpoint above, and upload all four complete skill folders into the same draft.
-
-Each skill carries its own references and helpers. The `rapier-html` npm package supplies the editor for `npx`;
-`SKILLS.json` records the staged package versions. Node 22 and npm depend on the host; an MCP connection does not
-promise a shell.
-
-## Snapshot and submission
-
-`SKILLS.json` names this skill snapshot, its file digest and the worker source digest it was staged with. The worker's
-`serverInfo.version` is `<release>+worker.<id>` when Cloudflare supplies its version metadata, otherwise the release
-alone; read it through MCP or `/health` and record it beside the submitted snapshot. The source digest is build
-identity, not proof of a deployment. OpenAI imports skills as a submission-time snapshot: upload changed skills with a
-new submission, or deploy and Scan Tools again when importing from MCP. Rules:
-[portable package](https://developers.openai.com/plugins/build/plugins), [skills](https://developers.openai.com/plugins/build/skills),
-[With MCP submission](https://developers.openai.com/plugins/guides/submit-claude-plugin).
-
-## What it sends
-
-The skills run in the host's file and tool environment and upload nothing; the declared package command downloads its
-pinned package from npm when needed. The connector sends the document you share with the assistant to the door, which
-keeps it, with the work on it, in a workspace that expires after thirty idle days. No account, no telemetry; the person ends the
-assistant's access from the editor at any moment. In full: [PRIVACY.md](PRIVACY.md).
+Package validation is separate from server deployment, portal endpoint-update acceptance and host interaction tests.
+The existing demo recording shows the earlier release; it does not verify this update.

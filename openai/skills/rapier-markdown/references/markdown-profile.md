@@ -1,6 +1,6 @@
 # Rapier Markdown profile
 
-[The standard](markdown-standard.md) adds invisible comment conventions to CommonMark. This profile lists Rapier’s other syntax and its treatment. Anyone may read and write these conventions; none breaks another Markdown app.
+[The standard](markdown-standard.md) builds on CommonMark with inline HTML typography, optional comments and ordinary references. This profile lists each syntax and its actual fallback. Readers choose which HTML, styles, extensions and resources they support; Markdown syntax alone does not guarantee identical output.
 
 Rapier parses and renders every syntax below. Exact round-trip means byte for byte through an unrelated edit.
 
@@ -16,40 +16,50 @@ Rapier parses and renders every syntax below. Exact round-trip means byte for by
 | --- | --- | --- | --- | --- | --- |
 | Task lists `- [ ]`/`- [x]` | established extension (GFM) | Checklist command, tap to toggle | yes | yes | literal `[ ]`/`[x]` text |
 | Pipe tables | established extension (GFM) | Insert Table, cell editing | yes | yes | pipes/dashes as plain text |
-| Strikethrough `~~x~~` | established extension (GFM) | Toolbar S | yes | yes | literal `~~` |
-| Underline `++x++` | reappropriated extension (markdown-it-ins) | Toolbar U | yes | yes | shown as insertion by readers with the extension, literal `++` elsewhere |
+| Strikethrough `~~x~~`, `~x~` | established extension (GFM: a matching pair of one or two tildes) | Toolbar S (writes `~~`) | yes | yes | literal tildes |
+| Extended autolinks: `https://…`, `www.…`, email, `mailto:` and `xmpp:` | established extension (GFM); bare domains and FTP are also read | Typed address | yes | verbatim | plain text in core CommonMark |
+| Opening `---` front matter | established extension (Pandoc/Quarto and note formats) | Document settings and note metadata | yes | verbatim | thematic breaks and ordinary Markdown in a reader without front matter |
+| Underline `<u>x</u>` | CommonMark inline HTML | Toolbar U | yes | yes | underlined text in readers that show HTML; plain words where HTML is stripped |
+| Underline `++x++` | read syntax (markdown-it-ins) | never authored; imported notes keep it | yes | verbatim | literal `++` in GitHub, Obsidian, VS Code and Pandoc |
 | Footnotes `[^1]` | established extension (PHP Markdown Extra) | Insert Footnote | yes | yes | literal `[^1]`, list as plain text |
-| Highlight `==x==`, `==🟢x==` | established extension (Bear) | Highlight picker (5 colours + default) | yes, byte for byte | yes | literal `==` and circle-emoji characters |
-| Subscript `~x~`, superscript `^x^` | established extension (MultiMarkdown/Pandoc) | typed in source; no command writes them | yes | yes, when present | literal `~`/`^` around text |
+| Highlight `==x==` | established extension (Obsidian, Bear, Typora, iA Writer, Pandoc `+mark`) | Highlight picker, default | yes, byte for byte | yes | literal `==` |
+| Coloured highlight `<mark style="background-color:#35c57a">x</mark>` | CommonMark inline HTML; the picker's five colours (green `#35c57a`, red `#f05a62`, blue `#4f91f7`, yellow `#e6b91e`, purple `#9b6dea`) read as theme-aware swatches | Highlight picker (5 colours) | yes | yes | a coloured highlight in readers that show HTML styles; a plain highlight where styles are stripped |
+| Bear's coloured highlight `==🟢x==` | read syntax (Bear) | never authored; imported notes keep it | yes | verbatim | literal `==` and the circle emoji (Obsidian and Pandoc `+mark` show a highlight with the emoji) |
+| Superscript `^x^` | read syntax (MultiMarkdown/Pandoc) | never authored | yes | verbatim | literal `^` around text |
 | Raw `<sup>x</sup>` and `<sub>x</sub>` | established HTML | Superscript/Subscript commands; Ctrl/Cmd + period/comma | yes | ordinary HTML tags | raised/lowered text in readers that allow these HTML tags |
-| Bear underline `~x~` | read syntax (Bear); collides with subscript `~x~` | never authored; Rapier's underline is `++x++`, and no command writes tilde-delimited subscript | yes; bytes kept, never rewritten to `++x++` | verbatim | Bear shows underline. Rapier feeds `~x~` to markdown-it-sub: unspaced `~deadline~` renders as `<sub>deadline</sub>`; spaced `~underlined phrase~` fails the plugin's no-whitespace rule and the tildes stay literal. |
+| Bear underline `~x~` | read syntax (Bear); GFM reads `~x~` as strikethrough | never authored | yes; bytes kept, never rewritten | verbatim | Bear shows underline; Rapier and GitHub show strikethrough |
 | Emoji `:smile:` | established extension (GitHub/Slack) | Typed shortcode | yes (kept as a source token) | yes | literal `:smile:` |
 | Abbreviations `*[HTML]: …` | established extension (PHP Markdown Extra) | Typed definition line | yes | yes | plain paragraph, no hover title |
 | Definition lists | established extension (PHP Markdown Extra/MultiMarkdown) | Typed `Term` / `: definition` | yes | yes | `: …` reads as an ordinary paragraph |
 | Math `$x$`, `$$x$$` | established extension (Pandoc/MultiMarkdown) | Typed delimiters | yes (source token) | yes | literal `$…$` |
 | Callouts `> [!NOTE]` | established extension (GitHub Alerts/Obsidian) | Insert ▸ Note/Tip/Important/Warning/Caution | yes | yes | ordinary blockquote, `[!TYPE]` visible on its first line |
-| Colour comments `<!--c green-->…<!--/c-->` | authored convention (`spec/md-marks.mjs`, [standard](markdown-standard.md)) | Text-colour picker | yes | yes | words shown plain; a run opening a paragraph can be swallowed as an HTML block, losing only that line's inline Markdown |
+| Inline typography `<span style="font-size:13.5pt;color:#175dc4;font-family:serif">…</span>` | ordinary HTML/CSS with a narrow authored profile (`spec/md-marks.mjs`) | Fonts sheet's Selected text / Document scopes and precise size control; text-colour picker | yes; original units and wrappers survive unrelated edits | new edits use the canonical span | underlying words, emphasis, links and heading levels with HTML enabled; GitHub strips styles; HTML-disabled readers may show tags |
 | Page break `<!--md-break:v1 page-->` | authored convention (`spec/md-marks.mjs`) | Insert ▸ Line ▸ Page break | yes | yes | invisible comment; two ordinary paragraphs |
 | Table captions `Table: …` | established convention (Pandoc's caption line) | Typed as an ordinary paragraph after a table | yes; bytes never change | yes, unchanged | plain paragraph under the table |
 | Will markers `<!-- will/1 … -->` | authored convention ([Will/1](will.md)) | Will menu (Intent / Add only / Lock) | yes, byte for byte enforced | yes | invisible comments; governed content reads as ordinary text |
 | Layout comments `<!--md-layout:v1 …-->` | authored convention ([layout grammar](markdown-standard.md)) | Drag/resize/align, image tools | yes; insignificant zeros normalized only on an intentional edit | yes | invisible comment; natural flow and alignment |
-| Obsidian width `![alt\|320](…)` | read syntax (Obsidian) | never introduced; a resize updates the pipe number in place | yes; a resize changes only the number | verbatim, with the number Rapier last set | Obsidian keeps showing its own width |
+| Obsidian width `![alt\|320](…)` | read syntax (Obsidian) | never introduced; a resize updates the pipe number in place | yes; a resize changes only the number | verbatim, with the number Rapier last set | Obsidian keeps showing its own width. Rapier reads an unescaped final `\|N` with N from 10 to 9999, drops it from the shown description, and shows the picture N px wide within 32 to 2400 px; a layout `width` wins. |
 | Images as reference definitions with data URLs | CommonMark | Insert picture, paste, Draw | yes | yes | a CommonMark reader that allows `data:` picture sources shows the picture (GitHub's renderer drops them); JPEG XL needs a reader that decodes it |
 | Pandoc/Quarto export forms | export-only rewrite | Copy sheet's "export for pandoc/quarto" toggle, off by default | n/a; the file is never touched | never; copy-only | not applicable; Pandoc and Quarto read their own forms natively |
 
-Pandoc/Quarto export forms are write-only: Rapier never reads `[x]{style="color:…"}` back as colour.
+Pandoc/Quarto export forms are explicit copied-source projections: Rapier does not read their attributes as typography.
+Combined size/colour/family becomes one bracketed span; Pandoc HTML retains those CSS attributes, while native DOCX
+and ordinary LaTeX require an explicit target mapping. **Copy markdown without typography** removes recognized
+wrappers while preserving Markdown semantics and literal examples. Neither choice changes the working document.
 
 ## What a document's own HTML may do
 
-A document's raw HTML renders as HTML and presses nothing of Rapier's. Every block goes through the sanitizer's `raw` profile (`sanitizeRapierHtml` in `editor/engine.js`, the render profile without `data-*`, applied by the `html_block` renderer rule) and every inline tag through the same law on CommonMark's own tag grammar (`html_inline`). Three things are refused:
+A document's raw HTML renders as HTML and presses nothing of Rapier's. The renderer admits complete tags through CommonMark's inline HTML grammar, removes editor-control attributes, then sanitizes the complete document without independently closing each raw fragment. An unrecognized or unfinished tag opener stays literal. This safety policy also applies inside raw HTML blocks: it prevents HTML error recovery from turning malformed source into editor controls. The parser still retains CommonMark's original raw-block tokens and the file keeps every byte. Three kinds of attributes are refused:
 
 - any `data-*` attribute (Rapier's handlers read `data-action`, `data-plugin`, `data-notes-act` and `data-rapier-remote-allow` as their own controls);
 - `for` on a label;
 - any `id` the shell's own markup owns.
 
-Rapier's own rendering keeps its `data-*` (a picture's layout, a page break, the remote-picture placeholder with its "Load all remote content" button), and a document's `<a id="anchor">` keeps its anchor. Forms, `<style>`, `<dialog>`, `<template>` and `<iframe>` never render (`RAPIER_SANITIZE_FORBID_TAGS`). A remote `url()` in any style is dropped until the person loads remote content. A heading's own id yields to any id already in the page (`_rapierAssignHeadingSlugs`).
+GFM's [disallowed raw HTML rule](https://github.github.com/gfm/#disallowed-raw-html-extension-) escapes the opening angle bracket of `title`, `textarea`, `style`, `xmp`, `iframe`, `noembed`, `noframes`, `script` and `plaintext` tags, including closing tags, without changing their source. These tag spellings remain visible text and cannot absorb the rest of the document as raw text. Code examples remain code. Rapier uses CommonMark 0.31.2's HTML-comment grammar, which differs from the older grammar in GFM 0.29.
 
-## What other renderers show today (13 September 2026)
+Rapier's own rendering keeps its `data-*` (a picture's layout, a page break, the remote-picture placeholder with its "Load all remote content" button), and a document's `<a id="anchor">` keeps its anchor. Forms, `<style>`, `<dialog>`, `<template>` and `<iframe>` never become active document elements (`RAPIER_SANITIZE_FORBID_TAGS`). Canonical typography and raw span styles admit only validated size, colour and family; expressions, URLs, unknown properties and authored data hooks grant no typography authority. Other raw-HTML styles keep their existing remote-content gate. A heading's own id yields to any id already in the page (`_rapierAssignHeadingSlugs`).
+
+## What other renderers show (checked 13 September 2026)
 
 Claims cite published statements or reproduced public reports. Re-check after relevant product changes.
 
@@ -68,21 +78,38 @@ Claims cite published statements or reproduced public reports. Re-check after re
 
 ## CommonMark oracle
 
-The release run checks Rapier’s differences from CommonMark against this profile: small documents are parsed with Rapier (markdown-it, `applyMarkdownSpec` and math) and with vendored [micromark](https://github.com/micromark/micromark) 4.0.2 plus `micromark-extension-gfm` 3.0.0 (tables, task lists, strikethrough, autolink literals, footnotes, tagfilter), and compared by block fingerprint (normalized type and start line, not HTML). Every disagreement must be a profile row that is not core CommonMark. Blocks that overlap CommonMark must agree, and with GFM loaded the GFM rows (pipe tables, task lists, strikethrough, GitHub footnotes) agree; the remaining disagreements are Rapier's non-GFM extensions (definition lists). Rapier conventions that change block type (`<!--c …-->` against an HTML block, the page-break marker against `html_block`) are classified from the same table. micromark is a Node-only check tool, not bundled into `rapier.html`.
+The release run checks Rapier’s differences from CommonMark against this profile: small documents are parsed with Rapier (markdown-it, `applyMarkdownSpec` and math) and with vendored [micromark](https://github.com/micromark/micromark) 4.0.2 plus `micromark-extension-gfm` 3.0.0 (tables, task lists, strikethrough, autolink literals, footnotes, tagfilter), and compared by block fingerprint (normalized type and start line, not HTML). Every disagreement must be a profile row that is not core CommonMark. Blocks that overlap CommonMark must agree, and with GFM loaded the GFM rows (pipe tables, task lists, strikethrough, GitHub footnotes) agree; the remaining disagreements are Rapier's non-GFM extensions (definition lists). Rapier conventions that change block type (an ink opener against an HTML block, the page-break marker against `html_block`) are classified from the same table. micromark is a Node-only check tool, not bundled into `rapier.html`.
 
 ## DOCX export (`interchange/docx.mjs` `writeDocx`)
 
 A JPEG XL picture arrives as the portable picture the export already made of it (PNG, or JPEG for an opaque photograph when smaller). WebP and SVG pictures and drawings are rasterised to PNG in the package. Drawings use PNG, not EMF. Math is TeX source with its `$`/`$$` delimiters: Word shows the source, and Rapier re-import recovers the math. Export `.docx` uses `writeDocx` through `_rapierConvertPortableHtmlToDocx`. No plug-in.
 
-Headings 1–6, bold, italic, underline, strikethrough, links, coloured runs, highlights, nested ordered and bullet lists, task lists (`[ ]`/`[x]` prefixes), tables with `Table:` captions, page breaks (`w:br w:type="page"`) and math TeX source round-trip through `writeDocx` and `readDocx`. Exceptions:
+Headings 1–6, bold, italic, underline, strikethrough, links, sized/coloured/font-family runs, highlights, nested ordered and bullet lists, task lists (`[ ]`/`[x]` prefixes), tables with `Table:` captions, page breaks (`w:br w:type="page"`) and math TeX source round-trip through `writeDocx` and `readDocx`. Exceptions:
 
 | Syntax | Status | Authored via | Exact round-trip | Save emits | Degrades to |
 | --- | --- | --- | --- | --- | --- |
-| Callouts `> [!NOTE]` | established extension (GitHub Alerts/Obsidian) | Insert ▸ Note/Tip/Important/Warning/Caution | no, through DOCX | n/a; export | a labelled one-cell Word table with `[!TYPE]` in bold; re-import is a pipe table, not a GitHub alert |
-| Drawings (SVG recipe) | CommonMark SVG image | Draw | no, through DOCX | n/a; export | PNG raster in `word/media` (`DOCX_EXPORT.drawingCodec = png`); re-import is a JPEG XL picture, not an editable drawing |
+| Callouts `> [!NOTE]` … `[!INFO]` | established extension (GitHub Alerts/Obsidian) | Insert ▸ Note/Tip/Important/Warning/Caution | yes, kind and words | n/a; export | a one-cell Word table with a coloured rule and the bold label; re-import is the same callout |
+| Definition lists `Term` / `: Definition` | established extension (PHP Markdown Extra) | typing | yes, one paragraph per definition | n/a; export | a term paragraph and indented definition paragraphs in the styles *Rapier Definition Term* and *Rapier Definition*; a definition of several paragraphs re-imports as one definition per paragraph, separated by a blank line |
+| Disclosures `<details>` | HTML block | typing | no | n/a; export | the summary as a bold paragraph and the body after it, always open; re-import is those paragraphs |
+| Nested quotes `> >` | CommonMark | typing | no, one level | n/a; export | every level is a Word *Quote* paragraph with the same rule; re-import is one-level quotes, one per paragraph |
+| Internal links `[text](#heading)` | CommonMark | Insert link | no, through DOCX | n/a; export | a Word bookmark link; re-import is the link text, with the warning "Internal document links became plain text." |
+| Drawings (SVG recipe) | CommonMark SVG image | Draw | no, through DOCX | n/a; export | SVG picture with a PNG preview (`DOCX_EXPORT.drawingCodec = svg`) |
 | JPEG XL picture bytes | CommonMark data URL | Insert picture | no, codec bytes | n/a; export | PNG, or JPEG for an opaque photograph when smaller; re-import re-encodes JPEG XL |
 | Footnote labels `[^1]` | established extension (PHP Markdown Extra) | Insert Footnote | no, labels only | n/a; export | note text kept; import assigns `docx-fn-N` labels |
-| Image `wrap`/`x`/`y` | authored convention (`spec/md-layout.mjs`) | Drag/resize | no, through DOCX | n/a; export | inline DrawingML with `wp:extent` from `width`; Rapier's silhouette wrap is not a Word wrap |
+| Image `wrap`/`x`/`y` | authored convention (`spec/md-layout.mjs`) | Drag/resize | no, through DOCX | n/a; export | floating DrawingML (`wp:anchor`); re-import is a normal-flow picture, with the warning "Floating pictures became normal-flow images in source order." |
+| `caps=small` | authored convention (`spec/md-layout.mjs`) | Typography | no | n/a; export | re-import drops `caps=small` |
+| Abbreviations `*[HTML]:`, link and picture titles, `<small>` | established extension / CommonMark | typing | no | n/a; export | the words without the title or the smaller size |
+
+Comments keep their ranges in Word: the export anchors each comment on the words the Word text kept, also when callouts,
+definition lists, disclosures or diagrams change the text around them. Every link scheme the editor keeps (`http`,
+`https`, `ftp`, `ftps`, `mailto`, `tel`, `callto`, `sms`, `xmpp`, `matrix`) survives Word in both directions.
+
+Typography is native run data: size uses `w:sz` and `w:szCs`, colour uses RGB, family uses the existing font table.
+The nearest half-point is used, with positive ties rounded upward and results outside 1–3276 half-points refused.
+A small heading keeps its heading style and outline level. The unchanged DOCX source carrier preserves the exact
+original size/unit and all Markdown; native import reports the represented size in `pt`. The styled print/PDF path
+uses authored run sizes at the default reference unit, independent of the editor's viewing step. These mappings do
+not promise identical glyphs or line breaks across browser and Word applications.
 
 The `docx-corpus` retained row also covers non-breaking and narrow non-breaking spaces, interior
 BOM characters and native tabs; repeated header rows, horizontal and vertical spans, multiple
@@ -106,3 +133,13 @@ while content and paragraph boundaries stay intact.
 Picture bytes are checked exact through the importer's callback and the writer, and converted bytes are checked
 to reach ordinary HTML tables. That check does not prove the browser's codec conversion, Word's rendering or a
 phone's display; the JPEG XL conversion policy is the codec-byte exception above.
+
+## PDF import (`interchange/pdf-reader.mjs` `readPdf`)
+
+A Rapier PDF carries its exact source as an attachment, and import restores it byte for byte. A PDF without a readable
+attachment (another app's PDF, or a Rapier PDF a viewer has since saved, which appends an incremental update) is read
+from its text layer and page geometry. Will markers in that text come back as exact Will markers; a marker inside a
+table or note, or in a page-image import, is reported as WILL LOST. What the text layer does not carry is not
+recovered: ordered-list numbers and task boxes (drawn by the page, not written as text), equations' `$` delimiters,
+blockquotes and callouts (plain paragraphs), internal links, and comments (never written to the PDF). Pictures come
+back from the page drawing; a page's blank background raster is skipped.

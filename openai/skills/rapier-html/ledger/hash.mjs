@@ -1,12 +1,20 @@
 // SPDX-License-Identifier: MIT
 // The editor's path-dependent root, plus synchronous SHA-256 for file readers (including offline wrappers).
 export function textRoot(text) {
-  let fnv = 0x811c9dc5, a = 1, b = 0;
-  for (let i = 0; i < text.length; i++) {
-    const c = text.charCodeAt(i);
-    fnv = Math.imul(fnv ^ c, 16777619); a = (a + c) % 65521; b = (b + a) % 65521;
+  return textRootParts([text]);
+}
+// The same UTF-16 root over shared source pieces, without joining a historical body.
+export function textRootParts(parts) {
+  let fnv = 0x811c9dc5, a = 1, b = 0, length = 0;
+  for (const text of parts) {
+    length += text.length;
+    for (let i = 0; i < text.length;) {
+      const end = Math.min(text.length, i + 4096);
+      for (; i < end; i++) { const c = text.charCodeAt(i); fnv = Math.imul(fnv ^ c, 16777619); a += c; b += a; }
+      a %= 65521; b %= 65521;
+    }
   }
-  return text.length + ':' + (fnv >>> 0).toString(36) + ':' + (((b << 16) | a) >>> 0).toString(36);
+  return length + ':' + (fnv >>> 0).toString(36) + ':' + (((b << 16) | a) >>> 0).toString(36);
 }
 export function rootAfter(root, row) {
   return textRoot(String(root || '') + ':' + row.pos + ':' + textRoot(row.removed) + ':' + textRoot(row.inserted));
@@ -22,26 +30,91 @@ const K = new Uint32Array([
   0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2,
 ]);
 const rotate = (x, n) => (x >>> n) | (x << (32 - n));
-export function sha256(text) {
-  const bytes = new TextEncoder().encode(text);
-  const padded = new Uint8Array(Math.ceil((bytes.length + 9) / 64) * 64);
-  padded.set(bytes); padded[bytes.length] = 0x80;
-  const data = new DataView(padded.buffer), bits = bytes.length * 8;
-  data.setUint32(padded.length - 8, Math.floor(bits / 0x100000000)); data.setUint32(padded.length - 4, bits >>> 0);
-  const h = new Uint32Array([0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19]), w = new Uint32Array(64);
-  for (let offset = 0; offset < padded.length; offset += 64) {
-    for (let i = 0; i < 16; i++) w[i] = data.getUint32(offset + i * 4);
+// One bounded SHA-256 compression state for file bytes and encoded source text.
+export function sha256State() {
+  const h = new Uint32Array([0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19]);
+  const w = new Uint32Array(64), block = new Uint8Array(64);
+  let used = 0, bytes = 0, finished = false;
+  const compress = (input, offset) => {
+    for (let i = 0; i < 16; i++) {
+      const at = offset + i * 4;
+      w[i] = (input[at] << 24) | (input[at + 1] << 16) | (input[at + 2] << 8) | input[at + 3];
+    }
     for (let i = 16; i < 64; i++) {
       const x = w[i - 15], y = w[i - 2];
       w[i] = w[i - 16] + (rotate(x, 7) ^ rotate(x, 18) ^ (x >>> 3)) + w[i - 7] + (rotate(y, 17) ^ rotate(y, 19) ^ (y >>> 10));
     }
-    let [a,b,c,d,e,f,g,k] = h;
+    let a=h[0], b=h[1], c=h[2], d=h[3], e=h[4], f=h[5], g=h[6], k=h[7];
     for (let i = 0; i < 64; i++) {
       const t1 = (k + (rotate(e, 6) ^ rotate(e, 11) ^ rotate(e, 25)) + ((e & f) ^ (~e & g)) + K[i] + w[i]) >>> 0;
       const t2 = ((rotate(a, 2) ^ rotate(a, 13) ^ rotate(a, 22)) + ((a & b) ^ (a & c) ^ (b & c))) >>> 0;
       k = g; g = f; f = e; e = (d + t1) >>> 0; d = c; c = b; b = a; a = (t1 + t2) >>> 0;
     }
-    for (const [i, value] of [a,b,c,d,e,f,g,k].entries()) h[i] += value;
-  }
-  return [...h].map(x => x.toString(16).padStart(8, '0')).join('');
+    h[0]+=a; h[1]+=b; h[2]+=c; h[3]+=d; h[4]+=e; h[5]+=f; h[6]+=g; h[7]+=k;
+  };
+  const feed = (input, size) => {
+    bytes += size;
+    let at = 0;
+    if (used) {
+      const take = Math.min(64 - used, size);
+      block.set(input.subarray(0, take), used); used += take; at = take;
+      if (used === 64) { compress(block, 0); used = 0; }
+    }
+    for (; at + 64 <= size; at += 64) compress(input, at);
+    if (at < size) { block.set(input.subarray(at, size), 0); used = size - at; }
+  };
+  return {
+    update(input) {
+      if (finished || !(input instanceof Uint8Array)) throw new TypeError('SHA-256 needs bytes before finish');
+      if (!Number.isSafeInteger(bytes + input.length)) throw new Error('SHA-256 input length is not exact');
+      feed(input, input.length);
+    },
+    finish() {
+      if (finished) throw new Error('SHA-256 is already finished');
+      finished = true;
+      block[used++] = 0x80; block.fill(0, used);
+      if (used > 56) { compress(block, 0); block.fill(0); }
+      const view = new DataView(block.buffer);
+      view.setUint32(56, Math.floor(bytes / 0x20000000)); view.setUint32(60, (bytes * 8) >>> 0);
+      compress(block, 0);
+      return Array.from(h, x => x.toString(16).padStart(8, '0')).join('');
+    },
+    get bytes() { return bytes; },
+  };
 }
+// UTF-16 chunks share that byte state. Retain a trailing high surrogate so a
+// caller can split a character between updates without changing its UTF-8 digest.
+export function createSHA256() {
+  const hash = sha256State(), encoded = new Uint8Array(65536), encoder = new TextEncoder();
+  let high = '', finished = false;
+  const write = text => {
+    for (let at = 0; at < text.length;) {
+      // Bound both the substring and byte allocation; encodeInto never cuts a scalar.
+      let end = Math.min(text.length, at + 32768);
+      if (end < text.length && (text.charCodeAt(end - 1) & 0xfc00) === 0xd800 && (text.charCodeAt(end) & 0xfc00) === 0xdc00) end--;
+      const part = encoder.encodeInto(text.slice(at, end), encoded);
+      hash.update(encoded.subarray(0, part.written)); at += part.read;
+    }
+  };
+  return {
+    update(value) {
+      if (finished) throw new Error('SHA-256 is finished');
+      let text = high + String(value === undefined ? '' : value); high = '';
+      if (text.length && (text.charCodeAt(text.length - 1) & 0xfc00) === 0xd800) { high = text.slice(-1); text = text.slice(0, -1); }
+      write(text); return this;
+    },
+    digest() {
+      if (finished) throw new Error('SHA-256 is finished');
+      if (high) { write(high); high = ''; }
+      finished = true;
+      return hash.finish();
+    },
+    get bytes() { return hash.bytes; },
+  };
+}
+export function sha256Parts(parts) {
+  const hash = createSHA256();
+  for (const part of parts) hash.update(part);
+  return hash.digest();
+}
+export function sha256(text) { return createSHA256().update(text).digest(); }
