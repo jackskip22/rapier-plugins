@@ -8,7 +8,7 @@ Painting needs an open full editor. Water requires WebGPU. Word, PDF and rendere
 
 Rapier accesses only the document or configured store you share. It cannot search unshared device files, send email or make purchases. Hosted workspaces expire after 30 idle days; download an independent copy to keep it. The four skills include the published offline helper packages.
 
-Version 1.2.6. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
+Version 1.2.7. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
 ## What it includes
 
