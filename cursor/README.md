@@ -8,7 +8,7 @@ Painting needs an open full editor. Water requires WebGPU. Word, PDF and rendere
 
 Rapier accesses only the document or configured store you share. It cannot search unshared device files, send email or make purchases. Hosted workspaces expire after 30 idle days; download an independent copy to keep it. The four skills include the published offline helper packages.
 
-Version 1.2.5. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
+Version 1.2.6. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
 ## What it includes
 
@@ -41,7 +41,7 @@ directory. An installed marketplace copy with the same name takes precedence. No
 - Revise: "Fix only the typos in section 2 and show me exactly what changed." Then: "Undo that."
 - Notes: "Find my Note about the garden and add today's list." (Needs your own Notes store; see below.)
 - Draw: "Turn this signup flow into a diagram: enter email, verify, create profile, welcome."
-- Paint: "Paint a small watercolour sunset over the sea in Rapier and leave room for me to add a boat."
+- Paint: "Paint a small watercolor sunset over the sea in Rapier and leave room for me to add a boat."
 - Keep: "Give me this document as one offline HTML file I can keep editing."
 
 Open the editor link the agent returns and keep it visible while it paints. Painting is finished only when the
@@ -78,5 +78,5 @@ Install one Rapier package in each client.
 ## Privacy, terms and support
 
 The agent sends only the document you share to the hosted workspace. No analytics or advertising.
-Read [Privacy and terms](PRIVACY.md) (also at https://rapier.website/privacy). Licence: AGPL-3.0-only.
+Read [Privacy and terms](PRIVACY.md) (also at https://rapier.website/privacy). License: AGPL-3.0-only.
 Questions and problems: https://github.com/jackskip22/rapier-plugins/issues or hello@rapier.website. More for agents: [agent guide](https://rapier.website/agents).

@@ -423,7 +423,7 @@ function mount(target, options = {}) {
   function cancelOpen(code = 'open_cancelled') {
     const row = openPending;
     if (!row || row.abort.signal.aborted) return;
-    row.answer = {type: 'open-nack', payload: {code, reason: 'File opening was cancelled.'}};
+    row.answer = {type: 'open-nack', payload: {code, reason: 'File opening was canceled.'}};
     row.abort.abort();
   }
   function answerOpen(message, channel) {

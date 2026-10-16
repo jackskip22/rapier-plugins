@@ -5,7 +5,7 @@ alwaysApply: false
 Rapier - Markdown Editor & Art is a shared Markdown editor. Follow the rapier-agent-door skill; this is its short form.
 
 - Start: open {text, filename} for a new document (filename names it), or open {document} to resume.
-  title is only for a new Note: open {note:"new", title, text}. Share editor_url; keep document private.
+  title is only for a new Note: open {document, note:"new", title, text}. Share editor_url; keep document private.
 - Change: read the exact passage and revision first, then edit with that revision. Each old or after must be
   unique in its scope. On conflict, read current context and decide afresh; the person's typing wins.
 - Keep the returned act id string for show {target:"comparison"} or undo.
@@ -13,7 +13,7 @@ Rapier - Markdown Editor & Art is a shared Markdown editor. Follow the rapier-ag
   needs the editor open; Water needs WebGPU. Pending is not done: poll read {state:true} until committed.
 - Pair: when the browser shows a four-letter code, call show {document, target:"pair", code} within a minute;
   the person then presses Allow. Other show targets need no pairing.
-- Notes: read {search} in the person's configured store; locked or unavailable is not empty. Sync only when asked:
+- Notes: read {document, search} in the person's configured store; locked or unavailable is not empty. Sync only when asked:
   export {document, to:"sync"}; it can replace files, so report changed files.
 - Keep: export the requested format and check its receipt; html carries the offline editor.
 - rapier-html makes an offline editable file, rapier-markdown portable source, embed-rapier an app embed.

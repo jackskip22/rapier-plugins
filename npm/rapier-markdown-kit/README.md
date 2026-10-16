@@ -4,7 +4,7 @@ Read, render and write Self-contained Markdown in browsers and Node: one `.md` f
 drawings, layout and precise inline typography. Build portable documents for people and agents. Will/1 regions mark what an agent
 may edit, append to or preserve. MIT, no dependencies.
 
-- Typography uses ordinary inline HTML spans with validated size, colour and family. Comments and references
+- Typography uses ordinary inline HTML spans with validated size, color and family. Comments and references
   carry other optional facts; each reader chooses its HTML, style, extension and resource support.
 - One stylesheet renders the document as the editor and its exported page do.
 - The line planner flows text around a picture's real shape; a conformance suite of thirteen documents runs
@@ -93,7 +93,7 @@ DOM objects between document realms.
 
 This **DOM-hosted library** requires a DOM and sanitizer, the Rapier grammar,
 portable image preparation, style access and the named codec/layout ports it uses.
-Those dependencies keep their own licences: the MIT grant here does not relicense a
+Those dependencies keep their own licenses: the MIT grant here does not relicense a
 separately supplied host or vendor. The [editor host binding](https://github.com/jackskip22/rapier/blob/main/src/editor/render-host.js)
 lists the renderer's dependencies. [rapier-server](https://github.com/jackskip22/rapier/blob/main/server/README.md)
 provides a complete local host with a pinned Chromium process. Its Word exporter and filesystem service are AGPL,
@@ -118,7 +118,7 @@ Browser hosts additionally check the exact captured container with an uninstalle
 Without `FontFace`, only the host validator's admission is established; it does not establish
 browser container support. The HTML font helpers do not bundle the application's font importer,
 container codecs or subsetter. Rapier binds its existing materializer and shared importer at `editor/render-host.js` through
-`editor/export-fonts.mjs`; those implementations retain their application licence.
+`editor/export-fonts.mjs`; those implementations retain their application license.
 An embedded family named Geist or Geist Mono remains custom data and takes precedence over the
 factory family. Custom fonts have no optional factory size limit.
 
@@ -140,7 +140,7 @@ family name share the host's font namespace. Print retains its existing factory 
 | Import | What it is |
 | --- | --- |
 | `rapier-markdown-kit/layout` | The `md-layout:v1` comment a picture carries: parse it, validate it, write it back. |
-| `rapier-markdown-kit/marks` | Unified typography values, span writer and parser installer; preserved colour/font comments, ink and page breaks. |
+| `rapier-markdown-kit/marks` | Unified typography values, span writer and parser installer; preserved color/font comments, ink and page breaks. |
 | `rapier-markdown-kit/model` | Occupancy profiles and the line planner: the wrapping itself. |
 | `rapier-markdown-kit/typography` | Source-preserving paragraph refinement through `createTypography()`. |
 | `rapier-markdown-kit/will` | The Will/1 grammar (a separate, optional standard): the markers around an agent's intent regions. |
@@ -244,11 +244,11 @@ font-data authority, including a name that collides with a factory face.
 inline span; split block selections and keep their `#`, list markers and separators outside. `typography.parseStyle`
 returns only admitted facts. `typography.install(md)` installs that interpretation on the caller's markdown-it
 parser, and `typographySourceRanges(source, md)` reports original UTF-16 wrapper ranges through that parser.
-These calls neither mutate the source nor load resources. The installer also reads already-authored colour and
+These calls neither mutate the source nor load resources. The installer also reads already-authored color and
 font comments into the same facts; an ordinary open/save must preserve their bytes, not rewrite them as spans.
 
 Sizes accept positive decimal `pt`/`px`, at most 12 fractional digits, up to 1638pt/2184px; 96px = 72pt. New values
-use lowercase units and omit insignificant zeros. Colours become lowercase six-digit RGB hex; opaque integer
+use lowercase units and omit insignificant zeros. Colors become lowercase six-digit RGB hex; opaque integer
 RGB CSSOM values are also read. Families are one validated name, an unquoted CSS generic, or an existing preset
 stack. `sans`, `serif`, `mono`, `system`, `hand` are reserved choice aliases, not quoted custom identities. Styles
 are bounded to 4096 characters, 32 declarations and 64 paired levels. Invalid declarations and unknown properties
@@ -271,7 +271,7 @@ unit, independent of editor zoom. No mapping claims identical glyphs or line bre
 See the original [typography guidance](https://github.com/jackskip22/rapier/blob/main/docs/markdown-standard.md#inline-typography),
 [CommonMark raw HTML](https://spec.commonmark.org/0.31.2/#raw-html), [CSS absolute units](https://www.w3.org/TR/css-values-4/#absolute-lengths),
 [Pandoc spans](https://pandoc.org/MANUAL.html#extension-bracketed_spans) and [Quarto spans](https://quarto.org/docs/authoring/markdown-basics.html#divs-and-spans).
-Those specifications retain their own licences.
+Those specifications retain their own licenses.
 
 ## Render with the reference style
 
@@ -351,9 +351,9 @@ export const exampleSource = [
   'plain code',
   '~~~',
   '',
-  'A centred paragraph.' + formatLayout({align: 'center'}),
+  'A centered paragraph.' + formatLayout({align: 'center'}),
   '',
-  'A ' + formatColorRun(TEXT_COLOR_NAMES.blue, 'blue phrase') + ' keeps its colour.',
+  'A ' + formatColorRun(TEXT_COLOR_NAMES.blue, 'blue phrase') + ' keeps its color.',
   '',
   'And ' + typography.wrap({size: '13.5pt', color: '#175dc4', family: 'serif'}, '**precise words**') + ' keep their emphasis.',
   '',
@@ -499,11 +499,11 @@ Its historical line counts are not a current-engine or font-shaping acceptance g
 `--impl path/to/module.mjs` runs another implementation against the same documents; `--tolerance 2` sets the pixel
 tolerance.
 
-## Licence
+## License
 
-MIT, the full text in `LICENSE`; Rapier-owned modules and the stylesheet keep their MIT line. Pretext's complete licence,
+MIT, the full text in `LICENSE`; Rapier-owned modules and the stylesheet keep their MIT line. Pretext's complete license,
 notice and pinned source inventory are in `dist/agent/vendor/pretext/`. The selected upstream is unreleased main
-`bac1774c0f8b7a92e44b9da43b6d5443d55d0d9b`, despite its package version `0.0.9`. Its upstream licence includes
+`bac1774c0f8b7a92e44b9da43b6d5443d55d0d9b`, despite its package version `0.0.9`. Its upstream license includes
 Chromium/WebKit BSD, Unicode and ICU notices for derived code and generated data; those notices travel with the kit
 and the exported wrapping runtime. The history projection uses the MIT diff core;
 its full grant is in `dist/packages/rapier-diff/LICENSE`. The Rapier editor is AGPL-3.0-only and
