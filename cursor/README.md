@@ -1,21 +1,40 @@
 # Rapier - Markdown Editor & Art: Cursor plugin
 
-Rapier is a Markdown editor for writing, drawing and painting with your AI assistant. Edit the page yourself, add editable diagrams and illustrations, and keep your work as portable Markdown.
+Rapier is a Markdown editor with art built in. With this plugin your agent writes and revises a document with you on
+one page you both edit, draws diagrams whose boxes you move by hand, and paints watercolors that spread, mix and dry.
+Keep the result as Markdown, or as one offline HTML file that is the whole editor with your document inside.
 
-Work together on plans, notes, drafts and visual explanations. Read exact source, make focused revision-checked edits, compare proposed text and undo recorded work while keeping later independent edits. Download Markdown or plain text, or create an editable offline HTML file through supported export tools or the included local helpers. Running local helpers requires Node and npm; an MCP connection alone does not provide a shell.
+Version 1.2.9. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
-Painting needs an open full editor. Water requires WebGPU. Word, PDF and rendered-page exports depend on the available editor or renderer. A successful tool call does not by itself prove that the inline editor appeared. Connected Notes require a configured store.
+## Write together
 
-Rapier accesses only the document or configured store you share. It cannot search unshared device files, send email or make purchases. Hosted workspaces expire after 30 idle days; download an independent copy to keep it. The four skills include the published offline helper packages.
+Ask: "Create a project plan in Rapier with a diagram whose boxes I can move."
 
-Version 1.2.8. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
+The agent opens a document and gives you its link. Open it, and you both edit the same page. The agent reads the exact
+passage before each edit, so it never writes over your typing, and each change it makes is marked. Drag a box in the
+diagram or rewrite a line, and the agent reads your change back. Say "Undo that" to reverse the agent's change while
+keeping yours. Then: "Give me this as one offline HTML file I can keep editing."
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/write-390-dark.png"><img src="assets/write-390-light.png" width="300" alt="Rapier on a phone: the agent has added a diagram and rewritten a line in the person's plan; its notice says Finished, 1 change, with Undo"></picture> <picture><source media="(prefers-color-scheme: dark)" srcset="assets/diagram-390-dark.png"><img src="assets/diagram-390-light.png" width="300" alt="Rapier's Draw on a phone: the person drags the last box of the diagram and the arrow follows"></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/write-1280-dark.png"><img src="assets/write-1280-light.png" width="640" alt="Rapier on a computer: the same plan, with the agent's notice beside the page"></picture>
+
+## Paint together
+
+Ask: "Paint a small watercolor sunset over the sea in Rapier and leave room for me to add a boat."
+
+Keep the editor link open while it paints: painting runs in your open editor, and watercolor needs WebGPU. The
+painting is finished when the agent reports it committed; then pick up the brush yourself. Without WebGPU the agent
+offers regular brushes or an editable diagram.
+
+Every picture here was made in Rapier: the agent's words and diagram, and the person's moves in Draw.
 
 ## What it includes
 
 | Component | Purpose |
 |---|---|
 | MCP server `rapier` | Six tools: `open`, `read`, `edit`, `undo`, `show`, `export` |
-| Rule `rapier.mdc` | The short workflow, selected when you ask for a Rapier document, drawing or painting |
+| Rule `rapier.mdc` | When to reach for Rapier, and the short workflow |
 | Skill `rapier-agent-door` | Work together live: documents, Notes, diagrams, drawing, painting, Water, pairing |
 | Skill `rapier-html` | An editable offline HTML file, or a page that shows a deliberate comparison |
 | Skill `rapier-markdown` | Portable Markdown that keeps pictures, drawings and layout in one `.md` file |
@@ -37,15 +56,12 @@ directory. An installed marketplace copy with the same name takes precedence. No
 
 ## Try it
 
-- Document: "Create a project plan in Rapier with a diagram whose boxes I can move."
-- Revise: "Fix only the typos in section 2 and show me exactly what changed." Then: "Undo that."
-- Notes: "Find my Note about the garden and add today's list." (Needs your own Notes store; see below.)
-- Draw: "Turn this signup flow into a diagram: enter email, verify, create profile, welcome."
-- Paint: "Paint a small watercolor sunset over the sea in Rapier and leave room for me to add a boat."
-- Keep: "Give me this document as one offline HTML file I can keep editing."
-
-Open the editor link the agent returns and keep it visible while it paints. Painting is finished only when the
-agent reports it committed; then pick up the brush yourself.
+- "Write my blog post in Rapier with the images embedded so I can keep editing it, then export it as HTML."
+- "Make a Mermaid diagram of how our company's data flows, put our report underneath for me to check, then give me a PDF to print for the meeting."
+- "Make my document more concise and better structured, and show me each change so I can compare it and undo any one of them."
+- "Draw a flowchart of our new plan with boxes I can move around."
+- "Paint the first layer of a watercolor garden, then we'll take turns."
+- "Turn this Markdown report into a Rapier HTML file my friend can read and edit offline, with no Markdown app installed."
 
 ## Requirements and limits
 
@@ -56,6 +72,8 @@ agent reports it committed; then pick up the brush yourself.
   reports them as locked or unavailable, not empty. Sync runs only when you ask and can replace files.
 - Word, PDF and rendered-page exports need an available editor or renderer. Hosted workspaces expire after 30 idle days; export links last
   up to 24 hours. Download your work to keep it.
+- The rapier-html and rapier-markdown skills' local helpers need Node and npm; with the MCP server alone, the agent
+  exports the file instead.
 
 ## Pair another browser
 
@@ -77,6 +95,8 @@ Install one Rapier package in each client.
 
 ## Privacy, terms and support
 
-The agent sends only the document you share to the hosted workspace. No analytics or advertising.
+The agent sends only the document you share to the hosted workspace. Rapier reaches only that document or the Notes
+store you connect; it cannot search other files on your computer, send email or make purchases. No analytics or
+advertising.
 Read [Privacy and terms](PRIVACY.md) (also at https://rapier.website/privacy). License: AGPL-3.0-only.
 Questions and problems: https://github.com/jackskip22/rapier-plugins/issues or hello@rapier.website. More for agents: [agent guide](https://rapier.website/agents).

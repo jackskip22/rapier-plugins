@@ -1,10 +1,10 @@
 {
   "package": "rapier-html",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "path": "dist/rapier.html",
-  "bytes": 5936307,
-  "sha256": "93e8ba922a0df18a75196a1a87971ac80d61b5a4a06630512abb25c94a23ff3f",
-  "builtAt": "2026-10-17T01:08:23.274Z",
+  "bytes": 6025685,
+  "sha256": "8ea5bfa5b5cbeba8312b6df5305162224ed00e38cdcf5e780e89839f9410a91c",
+  "builtAt": "2026-10-17T20:46:16.744Z",
   "node": "v22.23.3",
   "canonical": true,
   "packing": "zopfli",
@@ -14,15 +14,15 @@
       "delivery": "built-in",
       "kind": "script",
       "element": "rapier-plugin-math",
-      "bytes": 695410,
-      "packedBytes": 439180,
+      "bytes": 733943,
+      "packedBytes": 449582,
       "files": [
         {
           "id": "rapier-math",
-          "name": "rapier-math-2.5.0.js",
-          "version": "2.5.0",
-          "bytes": 695410,
-          "sri": "VDN0hcZbJ7LFS7fJjiUV/8THDfLxUWNfbGZQkggQptiaw4JaNAjZOmyK0kDRLNN3"
+          "name": "rapier-math-2.6.1.js",
+          "version": "2.6.1",
+          "bytes": 733943,
+          "sri": "c6Y4kudfuc16Hkmvfgr0MpdQcJs1jU4qbsKu2tUSduVuQdwLQ/38rR0GmQMatLsS"
         }
       ]
     },
