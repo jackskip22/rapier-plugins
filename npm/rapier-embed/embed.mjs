@@ -240,8 +240,8 @@ function createAssetBroker({current, send}) {
 }
 return {FEATURES, LIMITS, ASSET_TYPES, refusal, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker};
 })();
-const BUILDS = Object.freeze({document: 'https://rapier.website/embed/rapier.html', reader: 'https://rapier.website/embed/rapier-reader.html'});
-const DEFAULT_SRC = BUILDS.document;
+const BUILDS = Object.freeze({full: 'https://rapier.website/embed/rapier.html', reader: 'https://rapier.website/embed/rapier-reader.html'});
+const DEFAULT_SRC = BUILDS.full;
 const revision = value => Number.isSafeInteger(value) && value >= 0 || typeof value === 'string' && value.length > 0 && value.length <= 256;
 const identifier = value => typeof value === 'string' && value.length > 0 && value.length <= 256;
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -273,12 +273,13 @@ function readerStyle(value) {
 function mount(target, options = {}) {
   const document = target?.ownerDocument;
   if (!document) throw new TypeError('Mount needs an iframe or a container element');
-  const build = options.build ?? 'document';
-  if (!Object.hasOwn(BUILDS, build)) throw new TypeError('build must be document or reader');
+  const build = options.build === undefined || options.build === 'document' ? 'full' : options.build;
+  if (!Object.hasOwn(BUILDS, build)) throw new TypeError('build must be full or reader');
   const reader = build === 'reader';
   if (reader && ['save', 'compare', 'onClose', 'agent', 'agentName', 'assets'].some(key => options[key] !== undefined && options[key] !== false))
     throw new TypeError('The reader takes load, onState, theme, settings, style and plugins');
   if (!reader && options.style !== undefined) throw new TypeError('style restyles the reader build');
+  if (options.style !== undefined && options.load === undefined) throw new TypeError('Reader styling requires load');
   if (options.plugins !== undefined && (typeof options.plugins !== 'string' || !options.plugins || options.plugins.length > 2048 || /[\u0000-\u001f\u007f]/.test(options.plugins)))
     throw new TypeError('plugins is the address of the directory that holds the plug-in files');
   let currentStyle = options.style === undefined ? undefined : readerStyle(options.style);
@@ -604,6 +605,7 @@ function mount(target, options = {}) {
     },
     async style(value) {
       if (!reader) throw new TypeError('style restyles the reader build');
+      if (!capabilities.includes('open')) throw new TypeError('Reader styling requires load');
       currentStyle = readerStyle(value); await boot; return send('style', currentStyle, undefined, true);
     },
     disconnect() {

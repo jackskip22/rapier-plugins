@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {main} from './page.mjs';

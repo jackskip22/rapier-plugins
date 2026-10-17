@@ -1,6 +1,6 @@
 {
   "name": "rapier-markdown-kit",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Read, render and write Self-contained Markdown: one .md file that carries its pictures, drawings and layout, and that any Markdown app can read. HTML renderer, stylesheet, text layout, Will/1 agent permissions, and an edit history with authorship and offline merge. MIT, no dependencies.",
   "keywords": [
     "markdown",
@@ -40,17 +40,34 @@
   "main": "./dist/kit/index.mjs",
   "exports": {
     ".": "./dist/kit/index.mjs",
+    "./markdown-it": {
+      "types": "./dist/kit/markdown-it.d.mts",
+      "default": "./dist/kit/markdown-it.mjs"
+    },
     "./layout": "./dist/kit/layout.mjs",
     "./marks": "./dist/kit/marks.mjs",
     "./model": "./dist/kit/model.mjs",
     "./typography": "./dist/kit/typography.mjs",
-    "./will": "./dist/kit/will.mjs",
+    "./will": {
+      "types": "./dist/kit/will.d.mts",
+      "default": "./dist/kit/will.mjs"
+    },
     "./assets": "./dist/kit/assets.mjs",
     "./style.css": "./style.css",
     "./package.json": "./package.json",
     "./render": "./dist/kit/render-entry.mjs",
-    "./rapier-ledger": "./dist/kit/rapier-ledger.mjs",
-    "./ledger/carried": "./dist/kit/ledger/carried.mjs"
+    "./rapier-ledger": {
+      "types": "./dist/kit/ledger.d.mts",
+      "default": "./dist/kit/ledger.mjs"
+    },
+    "./pdf": {
+      "types": "./dist/kit/pdf-source.d.mts",
+      "default": "./dist/kit/pdf-source.mjs"
+    },
+    "./ledger/carried": {
+      "types": "./dist/kit/ledger/carried.d.mts",
+      "default": "./dist/kit/ledger/carried.mjs"
+    }
   },
   "repository": {
     "type": "git",

@@ -24,6 +24,28 @@ deliberately show a diff. The kit supplies the portable source and history those
 npm install rapier-markdown-kit
 ```
 
+Render a document with [markdown-it](https://github.com/markdown-it/markdown-it), then style it with
+`rapier-markdown-kit/style.css` inside `<main class="md-render">`:
+
+```js
+import MarkdownIt from 'markdown-it';
+import {rapierMarkdown} from 'rapier-markdown-kit/markdown-it';
+
+const html = new MarkdownIt({html: true}).use(rapierMarkdown).render('# Plan\n\nShips **Friday**.\n');
+```
+
+Keep a document's history with authorship, and merge two offline copies:
+
+```js
+import {openLedger, replaceLedgerText, merge, authorship} from 'rapier-markdown-kit/rapier-ledger';
+
+const base = openLedger('Draft\n');
+const edited = replaceLedgerText(base, 'Draft, revised\n', {actor: {kind: 'human', id: 'ana'}});
+console.log(merge(edited, base).text, authorship(edited).runs);
+```
+
+TypeScript declarations ship for `markdown-it`, `will`, `rapier-ledger`, `ledger/carried` and `pdf`.
+
 ```js
 import {parseLayout} from 'rapier-markdown-kit/layout';   // the md-layout comment a picture carries
 import {typography, formatPageBreak} from 'rapier-markdown-kit/marks';   // inline typography and page breaks
@@ -45,6 +67,9 @@ as one HTML file on Android, Web and Windows.
 6. **Host the door.** Run [rapier-server](https://github.com/jackskip22/rapier/tree/main/server) over your own folder or S3-compatible bucket.
 
 ## The shared renderer
+
+To render Markdown in your own app, use `rapier-markdown-kit/markdown-it` (above). The render factories below are the
+editor's own seam: each needs a `host` that supplies its DOM, Markdown, picture, style and font ports.
 
 `rapier-markdown-kit/render` exports `createRenderer`, `createMarkdownRenderer`,
 `createRenderStyles`, `createRenderSanitizer` and `createPrintRenderer`, plus the explicit font helpers
@@ -139,6 +164,7 @@ family name share the host's font namespace. Print retains its existing factory 
 
 | Import | What it is |
 | --- | --- |
+| `rapier-markdown-kit/markdown-it` | `md.use(rapierMarkdown)`: the reference style's markup in markdown-it, in one line. |
 | `rapier-markdown-kit/layout` | The `md-layout:v1` comment a picture carries: parse it, validate it, write it back. |
 | `rapier-markdown-kit/marks` | Unified typography values, span writer and parser installer; preserved color/font comments, ink and page breaks. |
 | `rapier-markdown-kit/model` | Occupancy profiles and the line planner: the wrapping itself. |
@@ -146,7 +172,8 @@ family name share the host's font namespace. Print retains its existing factory 
 | `rapier-markdown-kit/will` | The Will/1 grammar (a separate, optional standard): the markers around an agent's intent regions. |
 | `rapier-markdown-kit/assets` | The picture appendix: the reference definitions a document's pictures live in. It never decodes a picture. |
 | `rapier-markdown-kit/style.css` | The reference style: type, lists, tables, tasks, pictures and the document's other markup, scoped to `.md-render`. |
-| `rapier-markdown-kit/rapier-ledger` | The MIT edit-ledger format, replay, authorship projection and offline merge. |
+| `rapier-markdown-kit/rapier-ledger` | The MIT edit ledger: `openLedger`, replay, authorship, selective Undo, offline `merge`, three-way `mergeText`, and the carried parts. |
+| `rapier-markdown-kit/pdf` | `attachPdfSource`: attach the exact source to a PDF without rewriting its pages; `readPdfPageCount`. |
 | `rapier-markdown-kit/ledger/carried` | Checked optional parts for pages and saved Markdown. |
 | `rapier-markdown-kit` | Named exports from the layout, marks, model, typography, Will, assets and render modules, plus the `ledger` namespace. |
 
@@ -290,38 +317,13 @@ contract is [Reference style](https://github.com/jackskip22/rapier/blob/main/doc
 <!-- reference-style-example -->
 ```js
 import MarkdownIt from 'markdown-it';
-import {parseLayout, formatLayout, imageStyle} from 'rapier-markdown-kit/layout';
-import {TEXT_COLOR_NAMES, typography, formatColorRun, formatPageBreak, isPageBreakBlock} from 'rapier-markdown-kit/marks';
-import {installMarkdownImages} from 'rapier-markdown-kit/assets';
+import {rapierMarkdown} from 'rapier-markdown-kit/markdown-it';
+import {formatLayout} from 'rapier-markdown-kit/layout';
+import {TEXT_COLOR_NAMES, typography, formatColorRun, formatPageBreak} from 'rapier-markdown-kit/marks';
 import {readFile, writeFile} from 'node:fs/promises';
 import {pathToFileURL} from 'node:url';
 
-const md = typography.install(installMarkdownImages(new MarkdownIt({html: true, linkify: true})));
-md.renderer.rules.table_open = (tokens, index, options, env, renderer) =>
-  '<div class="table-scroll-wrap">\n' + renderer.renderToken(tokens, index, options);
-md.renderer.rules.table_close = (tokens, index, options, env, renderer) =>
-  renderer.renderToken(tokens, index, options) + '</div>\n';
-md.core.ruler.after('inline', 'reference-layout', state => {
-  for (let i = 1; i < state.tokens.length; i++) {
-    const inline = state.tokens[i], owner = state.tokens[i - 1];
-    if (inline.type !== 'inline' || !['paragraph_open', 'heading_open'].includes(owner.type)) continue;
-    const children = inline.children, marker = children.at(-1);
-    const layout = marker?.type === 'html_inline' ? parseLayout(marker.content) : null;
-    if (!layout) continue;
-    children.pop();
-    if (layout.align) owner.attrSet('data-md-align', layout.align);
-    const visible = children.filter(token => token.type !== 'text' || token.content.trim());
-    if (visible.length === 1 && visible[0].type === 'image' && layout.width) {
-      visible[0].attrSet('style', imageStyle(layout));
-      visible[0].attrSet('data-md-image-width', String(layout.width));
-    }
-  }
-});
-const htmlBlock = md.renderer.rules.html_block;
-md.renderer.rules.html_block = (tokens, index, options, env, renderer) =>
-  isPageBreakBlock(tokens[index].content)
-    ? '<div class="rapier-page-break" data-md-break="page" role="separator" aria-label="Page break"></div>\n'
-    : htmlBlock(tokens, index, options, env, renderer);
+const md = new MarkdownIt({html: true, linkify: true}).use(rapierMarkdown);
 
 export function renderReferenceDocument(source) {
   return md.render(source);

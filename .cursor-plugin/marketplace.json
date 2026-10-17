@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Markdown editor with art built in. Write and revise documents and notes with your AI assistant on one editable page, build diagrams you can move, and paint with watercolors that spread, mix and dry. See each change and undo it. Painting needs an open Rapier editor. No Rapier account.",
-    "version": "1.2.7"
+    "version": "1.2.8"
   },
   "plugins": [
     {

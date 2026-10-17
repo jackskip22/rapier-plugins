@@ -2,10 +2,10 @@
   "spdxVersion": "SPDX-2.3",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "name": "rapier-math-2.4.0",
-  "documentNamespace": "https://rapier.website/spdx/rapier-math-2.4.0-7ba0adec291f761ffc1a6169830ee12630e4bfedaca1019d0b19de9ca6232aec",
+  "name": "rapier-math-2.5.0",
+  "documentNamespace": "https://rapier.website/spdx/rapier-math-2.5.0-16b84df8ba9ad1df581ddd73ab357c0da93720ee719e8399ecfff75b92cbb016",
   "creationInfo": {
-    "created": "2026-10-16T19:38:46.299Z",
+    "created": "2026-10-17T01:08:23.274Z",
     "creators": [
       "Tool: rapier-math-components",
       "Organization: rapier.website"
@@ -15,17 +15,17 @@
     {
       "name": "rapier-math",
       "SPDXID": "SPDXRef-rapier-math",
-      "versionInfo": "2.4.0",
-      "downloadLocation": "https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.7/math/rapier-math-2.4.0.js",
+      "versionInfo": "2.5.0",
+      "downloadLocation": "https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.8/math/rapier-math-2.5.0.js",
       "filesAnalyzed": false,
       "licenseConcluded": "MIT AND LicenseRef-GUST-Font-License",
       "licenseDeclared": "MIT AND LicenseRef-GUST-Font-License",
       "copyrightText": "NOASSERTION",
-      "sourceInfo": "Original build inputs: math-resources.json (SHA-256 a0291e71057e0cb1c91a774e43cccebb03664303428a52e809f1f572bd8d11d2). Current source is independent of this pinned payload.",
+      "sourceInfo": "Original build inputs: math-resources.json (SHA-256 bab1738a1ff78479d99a50321304d235d17d8caae09d41eaae8324f7a1fc183b). Current source is independent of this pinned payload.",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "7ba0adec291f761ffc1a6169830ee12630e4bfedaca1019d0b19de9ca6232aec"
+          "checksumValue": "16b84df8ba9ad1df581ddd73ab357c0da93720ee719e8399ecfff75b92cbb016"
         }
       ]
     },

@@ -4,6 +4,13 @@ import {basename, dirname, join} from 'node:path';
 import {wrap, carry, portableNeeds} from './wrap.mjs';
 import {returnAddress, returnExpiresAt} from './return-address.mjs';
 export {wrap, unwrap, carry, portableNeeds, encodeCarried, decodeCarried} from './wrap.mjs';
+
+let carried = null;
+const carriedPage = () => carried ??= readFile(new URL('./rapier.html', import.meta.url), 'utf8');
+export async function writePage(text, name = 'document.md', {include, ...options} = {}) {
+	const carries = include ?? [...(options.view === 'draw' || options.drawing != null ? ['drawing'] : []), ...portableNeeds(String(text), {base: options.base})];
+	return wrap(carry(await carriedPage(), carries), text, name, options);
+}
 const USAGE = 'usage: rapier-html <document.md> [out.html] [--include draw,math,mermaid] [--view draw] [--drawing sketch.svg] [--compare original.md [--by <your name>]] [--return <url> --return-expires-at <timestamp>]\n' +
 	'  writes <document>.rapier.html beside the file: Rapier with the document inside it, one file, offline.\n' +
 	'  It never overwrites: an output that already exists, the document itself included, is refused.\n' +
