@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // rapier-html: Markdown to one offline HTML file that carries its exact source, and back.
-export type Part = 'drawing' | 'math' | 'mermaid';
+export type Part = 'drawing' | 'layout' | 'math' | 'mermaid';
 export type DocKind = 'markdown' | 'text' | 'code';
 export interface WrapOptions {
   kind?: DocKind;
