@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // SPDX-License-Identifier: MIT
 import {resolve} from 'node:path';
 import {dirname} from 'node:path';

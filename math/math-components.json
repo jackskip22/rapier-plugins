@@ -5,7 +5,7 @@
   "name": "rapier-math-2.6.1",
   "documentNamespace": "https://rapier.website/spdx/rapier-math-2.6.1-c73ca97be7803c0bd369d4ac3e97a87ead5b1498204c7b88da0ab8938d3581c2",
   "creationInfo": {
-    "created": "2026-10-17T23:39:21.560Z",
+    "created": "2026-10-18T01:39:57.785Z",
     "creators": [
       "Tool: rapier-math-components",
       "Organization: rapier.website"
@@ -16,7 +16,7 @@
       "name": "rapier-math",
       "SPDXID": "SPDXRef-rapier-math",
       "versionInfo": "2.6.1",
-      "downloadLocation": "https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.10/math/rapier-math-2.6.1.js",
+      "downloadLocation": "https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.11/math/rapier-math-2.6.1.js",
       "filesAnalyzed": false,
       "licenseConcluded": "MIT AND LicenseRef-GUST-Font-License",
       "licenseDeclared": "MIT AND LicenseRef-GUST-Font-License",

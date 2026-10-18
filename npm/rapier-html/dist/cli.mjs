@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // SPDX-License-Identifier: MIT
 import {dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
