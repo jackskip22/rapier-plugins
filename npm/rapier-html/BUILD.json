@@ -1,10 +1,10 @@
 {
   "package": "rapier-html",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "path": "dist/rapier.html",
-  "bytes": 6025685,
-  "sha256": "8ea5bfa5b5cbeba8312b6df5305162224ed00e38cdcf5e780e89839f9410a91c",
-  "builtAt": "2026-10-17T20:46:16.744Z",
+  "bytes": 6411018,
+  "sha256": "a4242b472151df3aa58cc9436a0edd6f5b07a8fae48b4b2ce71187214420f753",
+  "builtAt": "2026-10-17T23:39:21.560Z",
   "node": "v22.23.3",
   "canonical": true,
   "packing": "zopfli",
@@ -55,8 +55,8 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-letters",
-      "bytes": 463027,
-      "packedBytes": 198962,
+      "bytes": 1301524,
+      "packedBytes": 537564,
       "files": [
         {
           "id": "rapier-letters-field",
@@ -85,6 +85,48 @@
           "version": "Zx2z2bEpD4VNkIccLejcUY68eqAFraPEN7hqsqkcVqHOKGvsSMqbLLiXXklvZINl",
           "bytes": 136035,
           "sri": "Zx2z2bEpD4VNkIccLejcUY68eqAFraPEN7hqsqkcVqHOKGvsSMqbLLiXXklvZINl"
+        },
+        {
+          "id": "rapier-letters-silhouette",
+          "name": "silhouette.json",
+          "version": "Q3xiaZCG/VzF5fncbMgvaVB5VOvM0OSyi7SY+kzlRlgtsXRkwe5e7tryx+YcXAuJ",
+          "bytes": 152868,
+          "sri": "Q3xiaZCG/VzF5fncbMgvaVB5VOvM0OSyi7SY+kzlRlgtsXRkwe5e7tryx+YcXAuJ"
+        },
+        {
+          "id": "rapier-letters-gothic",
+          "name": "gothic.json",
+          "version": "1Z4TVWlUCBFMbokiOOv0bH+kpv5URb0ZXcKViavW4AzXAPHJHYUwptkpbtewmRHu",
+          "bytes": 133989,
+          "sri": "1Z4TVWlUCBFMbokiOOv0bH+kpv5URb0ZXcKViavW4AzXAPHJHYUwptkpbtewmRHu"
+        },
+        {
+          "id": "rapier-letters-sugar",
+          "name": "sugar.json",
+          "version": "pKFipDD9EjCMjWgTouGXD9Qb67Ce6egwEm7+I/jRB0ceWcoXWJqMFVld8aDjrTto",
+          "bytes": 98129,
+          "sri": "pKFipDD9EjCMjWgTouGXD9Qb67Ce6egwEm7+I/jRB0ceWcoXWJqMFVld8aDjrTto"
+        },
+        {
+          "id": "rapier-letters-illuminated-1490",
+          "name": "illuminated-1490.json",
+          "version": "E5TSBSWxu2lpB3U64cdo/tbGRvboirHs3oNmGQzxo9/Ve9cKR7WKWLfp5zRXdNvZ",
+          "bytes": 150768,
+          "sri": "E5TSBSWxu2lpB3U64cdo/tbGRvboirHs3oNmGQzxo9/Ve9cKR7WKWLfp5zRXdNvZ"
+        },
+        {
+          "id": "rapier-letters-tuscan-1845",
+          "name": "tuscan-1845.json",
+          "version": "ixYKmOumpE7HzAHVR/DtAaKIXNbjpcGIP//P1LRHVRNPNSHXG8ILc1N3Ut/4XVkz",
+          "bytes": 148902,
+          "sri": "ixYKmOumpE7HzAHVR/DtAaKIXNbjpcGIP//P1LRHVRNPNSHXG8ILc1N3Ut/4XVkz"
+        },
+        {
+          "id": "rapier-letters-renaissance-alphabet",
+          "name": "renaissance-alphabet.json",
+          "version": "pN1dqeJTJ1fnj+e3ELPDDl8R27n5NnYGW3B4XJFIFtiN4ip5yQr2BXUU7yhXLOAa",
+          "bytes": 153841,
+          "sri": "pN1dqeJTJ1fnj+e3ELPDDl8R27n5NnYGW3B4XJFIFtiN4ip5yQr2BXUU7yhXLOAa"
         }
       ]
     },
