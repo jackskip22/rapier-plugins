@@ -1,0 +1,22 @@
+# Packs the plates as a one-day download for the team's sessions that cannot read binary files directly.
+name: plates
+on:
+  push:
+    branches: [letter-plates]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  plates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: letter-plates
+          path: |
+            plates
+            README.md
+          retention-days: 1
+          if-no-files-found: error
