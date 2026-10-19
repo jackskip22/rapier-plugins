@@ -5,6 +5,8 @@ export interface DocumentParts { ledger?: LedgerEnvelope | null; authorship?: Au
 export interface ReadParts { text: string; ledger: LedgerEnvelope | null; authorship: AuthorshipEnvelope | null; }
 /** The text with its parts appended as one EOF comment; the text alone when there are none. */
 export function writeDocument(text: string, parts?: DocumentParts): string;
+/** The verified EOF comment without copying the source; empty when there are no carried parts. */
+export function documentTrailer(text: string, parts?: DocumentParts): string;
 /** Splits a saved file into its exact text and verified parts; throws on a damaged or mismatched comment. */
 export function readDocument(source: string): ReadParts;
 export function writeParts(text: string, parts?: DocumentParts): string;
