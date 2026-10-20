@@ -2,11 +2,11 @@
 
 > Markdown editor for writing, notes, editable diagrams, drawing and painting with your AI assistant. Plugins and packages for shared editing, portable files and embedding the editor or reader in your app.
 
-Connect to `https://mcp.rapier.website/door/mcp` over streamable HTTP, then call `open`. Open its `editor_url` for the person. No account or key is required. Read `rapier://guide` and the current document, then edit only the exact text disclosed. Keep the person's typing and Will; use the returned review and Undo controls.
+Connect to `https://mcp.rapier.website/mcp` over streamable HTTP, then call `open`. Open its `editor_url` for the person. No account or key is required. Read `rapier://guide` and the current document, then edit only the exact text disclosed. Keep the person's typing and Will; use the returned review and Undo controls.
 
 ## Use Rapier
 
-- [1. Work live](https://rapier.website/agents): MCP at `https://mcp.rapier.website/door/mcp`, then `open`. Edit, draw, paint, comment, review and export with a person in one document.
+- [1. Work live](https://rapier.website/agents): MCP at `https://mcp.rapier.website/mcp`, then `open`. Edit, draw, paint, comment, review and export with a person in one document.
 - [2. Hand over an offline document](https://github.com/jackskip22/rapier-plugins/blob/main/npm/rapier-html/README.md): `npx rapier-html notes.md` writes `notes.rapier.html`, with the editor and document inside.
 - [3. Embed the editor or reader](https://github.com/jackskip22/rapier-plugins/blob/main/npm/rapier-embed/README.md): `npm install rapier-embed`. Your app owns storage. The editor's `agent: true` connects your app's own agent over WebMCP; the reader is read-only.
 - [4. Use Self-contained Markdown](https://github.com/jackskip22/rapier-plugins/blob/main/npm/rapier-markdown-kit/README.md): `npm install rapier-markdown-kit`. Pictures, editable drawings and layout travel in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will): `edit`, `append` and `keep` regions.

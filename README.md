@@ -6,7 +6,7 @@ Work together through a supported host, deliver an editable offline file, or emb
 
 ## Start
 
-1. **Work live with a person.** Connect an MCP client to `https://mcp.rapier.website/door/mcp` over streamable HTTP, then
+1. **Work live with a person.** Connect an MCP client to `https://mcp.rapier.website/mcp` over streamable HTTP, then
    call `open`. Open the returned `editor_url` for the person. Read `rapier://guide` for editing, drawing,
    painting, comments, review and export. No account or key is required.
 2. **Hand over an offline document.** `npx rapier-html notes.md` writes `notes.rapier.html`: the editor and its
@@ -40,14 +40,14 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
   Install one Rapier package in each client.
 - `claude/`: the Claude plugin: four skills and the MCP door.
   `claude plugin marketplace add jackskip22/rapier-plugins && claude plugin install rapier@rapier`
-- `openai/`: the OpenAI package: its separately retained skills and remote MCP endpoint.
-- The door, `https://mcp.rapier.website/door/mcp`, is in the [MCP registry](https://registry.modelcontextprotocol.io) as
+- `openai/`: the OpenAI package: the same four skills and remote MCP endpoint.
+- The door, `https://mcp.rapier.website/mcp`, is in the [MCP registry](https://registry.modelcontextprotocol.io) as
   `io.github.jackskip22/rapier` (`server.json`). Any MCP client connects to it with no account or key.
 
 ## npm packages
 
-- `npm/rapier-html/`: `npx rapier-html@1.2.17 notes.md` writes one offline HTML file: the editor with the document inside.
-- `npm/rapier-embed/`: `npm install rapier-embed@1.2.17` puts the read-only reader or the document editor in your
+- `npm/rapier-html/`: `npx rapier-html@1.2.18 notes.md` writes one offline HTML file: the editor with the document inside.
+- `npm/rapier-embed/`: `npm install rapier-embed@1.2.18` puts the read-only reader or the document editor in your
   site or app, saving to your own storage (MIT).
 - `npm/rapier-markdown-kit/`: read, write and render Self-contained Markdown, one `.md` file with its pictures and
   layout, without the editor (MIT).
@@ -56,14 +56,14 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
 ## Plug-in files
 
 Rapier pages download these the first time a document needs them, through
-`https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.17/<directory>/<file>` (each release's own tag), and verify each by length and SHA-384.
-To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.2.17 plugins <directory>`; see
+`https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.18/<directory>/<file>` (each release's own tag), and verify each by length and SHA-384.
+To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.2.18 plugins <directory>`; see
 [Plug-ins](npm/rapier-embed/README.md#plug-ins).
 
 - `math/`: The pinned app Math renderer, its complete notices and original input identities.
 - `letters/`: Draw's letter sets, ornamental capitals traced from the British Library's book scans (CC0).
 - `templates/` and `elements/`: Starters' page borders and the Elements sheet's ornaments, traced from the ornament book (CC0), a file each.
 - `flowchart/`, `docx/`, `pdf/`: the reader's own plug-ins, a file each: the flowchart renderer, the Word reader and the PDF reader's page reading.
-- `sources/reader-1.2.17/`: the source of those three plug-ins, which builds them offline (its `README.reader-plugins.md`).
+- `sources/reader-1.2.18/`: the source of those three plug-ins, which builds them offline (its `README.reader-plugins.md`).
 
 Source: [github.com/jackskip22/rapier](https://github.com/jackskip22/rapier). [Privacy and terms](PRIVACY.md).
