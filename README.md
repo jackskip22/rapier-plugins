@@ -6,7 +6,7 @@ Work together through a supported host, deliver an editable offline file, or emb
 
 ## Start
 
-1. **Work live with a person.** Connect an MCP client to `https://mcp.rapier.website/mcp` over streamable HTTP, then
+1. **Work live with a person.** Connect an MCP client to `https://mcp.rapier.website/door/mcp` over streamable HTTP, then
    call `open`. Open the returned `editor_url` for the person. Read `rapier://guide` for editing, drawing,
    painting, comments, review and export. No account or key is required.
 2. **Hand over an offline document.** `npx rapier-html notes.md` writes `notes.rapier.html`: the editor and its
@@ -40,8 +40,8 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
   Install one Rapier package in each client.
 - `claude/`: the Claude plugin: four skills and the MCP door.
   `claude plugin marketplace add jackskip22/rapier-plugins && claude plugin install rapier@rapier`
-- `openai/`: the OpenAI package: the same four skills and remote MCP endpoint.
-- The door, `https://mcp.rapier.website/mcp`, is in the [MCP registry](https://registry.modelcontextprotocol.io) as
+- `openai/`: the OpenAI package: its separately retained skills and remote MCP endpoint.
+- The door, `https://mcp.rapier.website/door/mcp`, is in the [MCP registry](https://registry.modelcontextprotocol.io) as
   `io.github.jackskip22/rapier` (`server.json`). Any MCP client connects to it with no account or key.
 
 ## npm packages

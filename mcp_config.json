@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "rapier": {
-      "serverUrl": "https://mcp.rapier.website/mcp"
+      "serverUrl": "https://mcp.rapier.website/door/mcp"
     }
   }
 }

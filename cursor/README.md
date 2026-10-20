@@ -4,7 +4,7 @@ Rapier is a Markdown editor with art built in. With this plugin your agent write
 one page you both edit, draws diagrams whose boxes you move by hand, and paints watercolors that spread, mix and dry.
 Keep the result as Markdown, or as one offline HTML file that is the whole editor with your document inside.
 
-Version 1.2.18. MCP server: `https://mcp.rapier.website/mcp`. No Rapier account, key or sign-in is needed.
+Version 1.2.19. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
 ## Write together
 
@@ -83,7 +83,7 @@ If the editor link shows a four-letter code, tell the agent the code within a mi
 ## Other hosts
 
 In a host that accepts a custom MCP server, add one named rapier at
-https://mcp.rapier.website/mcp. A custom server supplies the six tools and the server's instructions, not these skills or
+https://mcp.rapier.website/door/mcp. A custom server supplies the six tools and the server's instructions, not these skills or
 the rule. Other Agent Plugins clients use the repository root's `plugin.json`, `mcp.json` and `skills/`.
 Install one Rapier package in each client.
 
