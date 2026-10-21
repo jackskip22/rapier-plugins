@@ -2,12 +2,14 @@
 import {parseLayout, imageStyle} from './layout.mjs';
 import {typography, isPageBreakBlock} from './marks.mjs';
 import {installMarkdownImages} from './assets.mjs';
+import {tuneMarkdownEngine} from '../spec/md-engine.mjs';
 
 const PAGE_BREAK = '<div class="rapier-page-break" data-md-break="page" role="separator" aria-label="Page break"></div>\n';
 
 export function rapierMarkdown(md) {
   if (md.__rapierMarkdownInstalled) return md;
   md.__rapierMarkdownInstalled = true;
+  tuneMarkdownEngine(md);
   typography.install(installMarkdownImages(md));
   md.renderer.rules.table_open = (tokens, index, options, env, renderer) =>
     '<div class="table-scroll-wrap">\n' + renderer.renderToken(tokens, index, options);
@@ -15,10 +17,13 @@ export function rapierMarkdown(md) {
     renderer.renderToken(tokens, index, options) + '</div>\n';
   md.core.ruler.after('inline', 'rapier-layout', state => {
     for (let i = 1; i < state.tokens.length; i++) {
-      const inline = state.tokens[i], owner = state.tokens[i - 1];
-      if (inline.type !== 'inline' || !['paragraph_open', 'heading_open'].includes(owner.type)) continue;
-      const children = inline.children, marker = children.at(-1);
-      const layout = marker?.type === 'html_inline' ? parseLayout(marker.content) : null;
+      const inline = state.tokens[i];
+      if (inline.type !== 'inline') continue;
+      const children = inline.children, marker = children[children.length - 1];
+      if (marker?.type !== 'html_inline') continue;
+      const owner = state.tokens[i - 1];
+      if (owner.type !== 'paragraph_open' && owner.type !== 'heading_open') continue;
+      const layout = parseLayout(marker.content);
       if (!layout) continue;
       children.pop();
       if (layout.align) owner.attrSet('data-md-align', layout.align);

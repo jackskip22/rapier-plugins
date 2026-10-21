@@ -1,6 +1,6 @@
 {
   "name": "rapier-markdown-kit",
-  "version": "1.2.20",
+  "version": "1.2.21",
   "description": "Read, render and write Self-contained Markdown: one .md file that carries its pictures, drawings and layout, and that any Markdown app can read. HTML renderer, stylesheet, text layout, Will/1 agent permissions, and an edit history with authorship and offline merge. MIT, no dependencies.",
   "keywords": [
     "markdown",
@@ -43,6 +43,10 @@
     "./markdown-it": {
       "types": "./dist/kit/markdown-it.d.mts",
       "default": "./dist/kit/markdown-it.mjs"
+    },
+    "./parsed": {
+      "types": "./dist/kit/parsed.d.mts",
+      "default": "./dist/kit/parsed.mjs"
     },
     "./layout": "./dist/kit/layout.mjs",
     "./marks": "./dist/kit/marks.mjs",

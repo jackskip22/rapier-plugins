@@ -44,7 +44,7 @@ const edited = replaceLedgerText(base, 'Draft, revised\n', {actor: {kind: 'human
 console.log(merge(edited, base).text, authorship(edited).runs);
 ```
 
-TypeScript declarations ship for `markdown-it`, `will`, `rapier-ledger`, `ledger/carried` and `pdf`.
+TypeScript declarations ship for `markdown-it`, `parsed`, `will`, `rapier-ledger`, `ledger/carried` and `pdf`.
 
 ```js
 import {parseLayout} from 'rapier-markdown-kit/layout';   // the md-layout comment a picture carries
@@ -165,6 +165,7 @@ family name share the host's font namespace. Print retains its existing factory 
 | Import | What it is |
 | --- | --- |
 | `rapier-markdown-kit/markdown-it` | `md.use(rapierMarkdown)`: the reference style's markup in markdown-it, in one line. |
+| `rapier-markdown-kit/parsed` | A frozen, serializable view of completed Markdown tokens, bound to source, revision and grammar. |
 | `rapier-markdown-kit/layout` | The `md-layout:v1` comment a picture carries: parse it, validate it, write it back. |
 | `rapier-markdown-kit/marks` | Unified typography values, span writer and parser installer; preserved color/font comments, ink and page breaks. |
 | `rapier-markdown-kit/model` | Occupancy profiles and the line planner: the wrapping itself. |
@@ -179,6 +180,51 @@ family name share the host's font namespace. Print retains its existing factory 
 
 The canonical inline form is ordinary HTML inside Markdown. CSS support varies; the host's font metrics still
 determine line layout (below).
+
+## Read a parsed document
+
+`projectMarkdown` copies the tokens from your completed parse into JSON data. Pass the exact source and revision
+captured for that parse, and a grammar identity that includes its parser, plugins and options. The function does not
+parse again. Project before renderer hooks mutate the tokens; the resulting snapshot is detached from those later
+changes. Import this optional subpath only where you need it; the package's main entry does not import it.
+
+```js
+import MarkdownIt from 'markdown-it';
+import {rapierMarkdown} from 'rapier-markdown-kit/markdown-it';
+import {projectMarkdown, projectionMatches} from 'rapier-markdown-kit/parsed';
+
+const source = '# Plan\n\nShips **Friday**.\n';
+const revision = 7;
+const options = {html: true};
+const grammar = {id: 'my-app-markdown-1', options, plugins: ['rapierMarkdown']};
+const md = new MarkdownIt(options).use(rapierMarkdown);
+const env = {};
+const tokens = md.parse(source, env); // The same tokens can feed your renderer.
+const parsed = projectMarkdown({source, revision, grammar, tokens, env, complete: true});
+const json = JSON.stringify(parsed);
+console.log(projectionMatches(parsed, {source, revision, grammar})); // true
+```
+
+Change the grammar identity when its implementation changes. Grammar options must be JSON data; describe a custom
+rule or renderer by its identity, not by a function. If your parse excludes opening front matter, pass `bodyOffset`
+from that split and keep `source` as the full original document. Token line maps must remain relative to the parsed body.
+
+The source binding uses SHA-256 over its UTF-16LE code units, including BOM, original line endings and isolated
+surrogates. `span` ranges are half-open UTF-16 offsets into that source. A span with `scope: 'lines'` covers the token's
+source lines, including container prefixes and the final line ending. Inline delimiters and generated tokens without
+recorded ranges have `span: null`; `coverage` and `omissions` report these missing ranges. Never infer an exact inline
+edit boundary from a containing line span.
+
+Recorded `meta.mdLayoutSource` positions are translated from the parser's normalized body into the same original
+UTF-16 source coordinates and labeled `unit: 'utf16'`. Their marker text and any reason for an unmapped target remain
+with the layout record. Other JSON metadata retains the grammar's values; internal probe identities are not exported.
+
+The projection includes canonical token content, attributes, JSON metadata and reference, abbreviation and footnote
+definitions. It omits original source gaps, interpreted front matter, rendered HTML and geometry, decoded pictures,
+final heading IDs, and evaluated Will permissions. Non-JSON token metadata becomes `null` with a counted omission.
+Token strings remain document data for your existing renderer and sanitizer. `projectionMatches` checks currentness;
+it does not authenticate a projection received from another party or authorize an edit. Source transactions, Will,
+Undo and Save stay with their existing owners.
 
 ## Refined paragraphs
 
