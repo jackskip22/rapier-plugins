@@ -6,6 +6,8 @@ export interface WrapOptions {
   kind?: DocKind;
   /** The view the page opens on, with the document behind it. */
   view?: 'draw' | 'notes';
+  /** Opening appearance; the reader can change it without changing their saved preference on open. */
+  theme?: 'light' | 'dark';
   /** An SVG drawing carried beside the document, opened on Draw. */
   drawing?: string;
   drawingName?: string;
@@ -28,6 +30,7 @@ export interface Unwrapped {
   name: string | null;
   kind: DocKind | null;
   view: 'draw' | 'notes' | null;
+  theme: 'light' | 'dark' | null;
   drawing: string | null;
   drawingName: string | null;
   base: string | null;
