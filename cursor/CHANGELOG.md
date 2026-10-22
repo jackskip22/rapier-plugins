@@ -1,7 +1,7 @@
 # Changelog
 
-## 1.2.24
+## 1.2.25
 
-- Rapier MCP server at `https://mcp.rapier.website/door/mcp`, with the rule and four skills from snapshot `1.2.24+skills.816a37e68871f3d7d6a5de564c8c7675f0c5119f0e18b5ed167a33ba4e1ee5c8`.
+- Rapier MCP server at `https://mcp.rapier.website/door/mcp`, with the rule and four skills from snapshot `1.2.25+skills.c8f97bcbba07f80183f6812cb7ce80fea97fa3608532815a4232b14224478075`.
 - Guidance: `filename` names ordinary documents and `title` only a new Note; pairing uses `show {target:"pair"}`;
   Notes sync is `export {to:"sync"}`; hosts without resources read guides with `read {document, guide}`.
