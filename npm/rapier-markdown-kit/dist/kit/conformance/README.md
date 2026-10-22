@@ -1,7 +1,7 @@
 # The conformance kit
 
 Thirteen small documents, each covering one placement fact from [the Markdown
-standard](https://rapier.website/markdown-standard): inline (no layout comment), width/x/align, `wrap=around`
+standard](https://github.com/jackskip22/rapier/blob/main/docs/markdown-standard.md): inline (no layout comment), width/x/align, `wrap=around`
 with a real alpha silhouette, `wrap=box`, `behind`, `front`, `rotate=` on a plain raster, a foreign
 SVG "drawing" already turned in its own bytes, a ring drawing whose unfilled interior takes a line of
 text, both-sides wrapping around a centred picture, the neighbour search skipping a second, unrelated
