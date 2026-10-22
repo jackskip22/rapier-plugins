@@ -1,10 +1,10 @@
 {
   "package": "rapier-html",
-  "version": "1.2.29",
+  "version": "1.2.30",
   "path": "dist/rapier.html",
-  "bytes": 5750910,
-  "sha256": "145e190ad4ff1560a02b9ea11eca94f409c480d8b415c39b8c4e0dba1776637c",
-  "builtAt": "2026-10-22T10:45:27.388Z",
+  "bytes": 5756027,
+  "sha256": "016ce52c748ca1ae35efa374419da2e9dd8b226a9b046a7b04e1a7f049ea4959",
+  "builtAt": "2026-10-22T15:00:19.460Z",
   "node": "v22.23.3",
   "canonical": true,
   "packing": "zopfli",
@@ -65,8 +65,8 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-letters",
-      "bytes": 1308205,
-      "packedBytes": 540421,
+      "bytes": 1308148,
+      "packedBytes": 540491,
       "files": [
         {
           "id": "rapier-letters-field",
@@ -134,9 +134,9 @@
         {
           "id": "rapier-letters-renaissance-alphabet",
           "name": "renaissance-alphabet.json",
-          "version": "cNMp2eJEq7UR77fdqjCA5ScHPLteWMcDVCbDphe6qUdZixGING928388gCnW7SRp",
-          "bytes": 153858,
-          "sri": "cNMp2eJEq7UR77fdqjCA5ScHPLteWMcDVCbDphe6qUdZixGING928388gCnW7SRp"
+          "version": "uC1wBOUEyddvcYKtZFm1ZJkmjcRD/3zQeYqJ3F6Dt1I2GcvcIDkf1dusUzCwCpBE",
+          "bytes": 153801,
+          "sri": "uC1wBOUEyddvcYKtZFm1ZJkmjcRD/3zQeYqJ3F6Dt1I2GcvcIDkf1dusUzCwCpBE"
         }
       ]
     },

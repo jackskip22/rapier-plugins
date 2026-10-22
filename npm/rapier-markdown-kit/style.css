@@ -335,8 +335,10 @@
 	   depend on it would go wrong quietly. */
 	color: inherit;
 	position: relative;
-	left: calc(-1 * var(--md-space-5) - 16px);
-	margin: -16px calc(var(--md-space-1) - 16px) -16px 0;
+	/* The 48px target overhangs the drawn box by 16px on every side; the overhangs take no room in the line, so the words
+	   stand where they stood beside the box before the target grew (the left overhang in the line pushed them 16px on). */
+	left: calc(-1 * var(--md-space-5));
+	margin: -16px calc(var(--md-space-1) - 16px) -16px -16px;
 	width: 48px; height: 48px;
 	font: inherit;
 	-webkit-appearance: none; appearance: none;
