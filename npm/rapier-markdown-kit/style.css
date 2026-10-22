@@ -326,6 +326,23 @@
 	position: relative;
 }
 
+/* The line that holds the box hangs: its later lines start under the first line's words, not under the box. The box takes
+   16px and a space of the first line (the 48px target less its overhangs), which the hang gives back. */
+.md-render .task-list-item > p:has(> input[type="checkbox"]:first-child),
+.md-render .task-list-item:has(> input[type="checkbox"]:first-child) {
+	/* The space the source keeps between the box and the words (`- [ ] words`), so the later lines meet the words. */
+	--md-task-space: .24em;
+	padding-inline-start: calc(16px + var(--md-space-1) + var(--md-task-space));
+	text-indent: calc(-16px - var(--md-space-1) - var(--md-task-space));
+}
+/* The hang is the line's alone: nothing inside it (a formula, a code chip) or after it takes the indent, and a tight item's
+   later blocks (a nested list, a paragraph) keep their own place. */
+.md-render .task-list-item > p:has(> input[type="checkbox"]:first-child) *,
+.md-render .task-list-item:has(> input[type="checkbox"]:first-child) * { text-indent: 0; }
+.md-render .task-list-item:has(> input[type="checkbox"]:first-child) > :is(p, ul, ol, pre, blockquote, table, div, dl, details, figure, hr) {
+	margin-inline-start: calc(-16px - var(--md-space-1) - var(--md-task-space));
+}
+
 .md-render .task-list-item input[type="checkbox"] {
 	--md-task-box: clamp(14px, .92em, 24px);
 	/* A form control does not inherit color on its own; the shell's own app sheet gives it one

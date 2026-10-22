@@ -164,7 +164,7 @@ family name share the host's font namespace. Print retains its existing factory 
 
 | Import | What it is |
 | --- | --- |
-| `rapier-markdown-kit/markdown-it` | `md.use(rapierMarkdown)`: the reference style's markup in markdown-it, in one line. |
+| `rapier-markdown-kit/markdown-it` | `md.use(rapierMarkdown)`: the reference style's markup in markdown-it, in one line, with rung 1 of `md-layout:v1` (align, indents, list markers, picture width, lines and opacity, paragraph typography). |
 | `rapier-markdown-kit/parsed` | A frozen, serializable view of completed Markdown tokens, bound to source, revision and grammar. |
 | `rapier-markdown-kit/layout` | The `md-layout:v1` comment a picture carries: parse it, validate it, write it back. |
 | `rapier-markdown-kit/marks` | Unified typography values, span writer and parser installer; preserved color/font comments, ink and page breaks. |

@@ -1,0 +1,23 @@
+{
+  "version": "pele-1.6.0-zenuml-4.5.0-3",
+  "files": [
+    {
+      "name": "core",
+      "version": "1.6.0",
+      "url": "https://cdn.jsdelivr.net/gh/jackskip22/rapier@v1.2.32/site/plugins/pele-1.6.0.js",
+      "file": "plugins/pele-1.6.0.js",
+      "bytes": 677968,
+      "sri": "wvZ8yi9fl1G4U3tYTRguH7dHJxCgl7Rgu/Bb+sz+ip80toql8Bc0N2aLeJCCtUMS",
+      "path": "shell/vendor/pele/pele-1.6.0.js"
+    },
+    {
+      "name": "zenuml",
+      "version": "4.5.0-3",
+      "url": "https://cdn.jsdelivr.net/gh/jackskip22/rapier@v1.2.32/site/plugins/rapier-zenuml-4.5.0-3.js",
+      "file": "plugins/rapier-zenuml-4.5.0-3.js",
+      "path": "shell/vendor/zenuml/rapier-zenuml-4.5.0-3.js",
+      "bytes": 1888111,
+      "sri": "/JAYBQPgTaslQtUck91RnxcqXI8V8T0iYa+dRwc9StJhd0MPJGLTOCLj9aNDRHDG"
+    }
+  ]
+}

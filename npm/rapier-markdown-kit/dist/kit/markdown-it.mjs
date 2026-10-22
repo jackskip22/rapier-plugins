@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-import {parseLayout, imageStyle} from './layout.mjs';
+import {parseLayout, imageStyle, textStyle} from './layout.mjs';
 import {typography, isPageBreakBlock} from './marks.mjs';
 import {installMarkdownImages} from './assets.mjs';
 import {tuneMarkdownEngine} from '../spec/md-engine.mjs';
@@ -26,11 +26,25 @@ export function rapierMarkdown(md) {
       const layout = parseLayout(marker.content);
       if (!layout) continue;
       children.pop();
-      if (layout.align) owner.attrSet('data-md-align', layout.align);
+      if (layout.align && (layout.align !== 'justify' || owner.type === 'paragraph_open')) owner.attrSet('data-md-align', layout.align);
       const visible = children.filter(token => token.type !== 'text' || token.content.trim());
-      if (visible.length === 1 && visible[0].type === 'image' && layout.width) {
-        visible[0].attrSet('style', imageStyle(layout));
-        visible[0].attrSet('data-md-image-width', String(layout.width));
+      const picture = visible.length === 1 && visible[0].type === 'image' ? visible[0]
+        : visible.length === 3 && visible[0].type === 'link_open' && visible[1].type === 'image' && visible[2].type === 'link_close' ? visible[1] : null;
+      if (picture) {
+        if (layout.width != null || layout.lines != null || layout.opacity != null) {
+          const style = imageStyle(layout);
+          if (style) picture.attrSet('style', style);
+          if (layout.width != null) picture.attrSet('data-md-image-width', String(layout.width));
+        }
+        continue;
+      }
+      for (const key of ['first', 'indent', 'before', 'after', 'lines', 'hyphens', 'caps', 'hanging']) if (layout[key]) owner.attrSet('data-md-' + key, String(layout[key]));
+      const style = [textStyle(layout), layout.lines != null ? '--md-drop-lines:' + layout.lines : ''].filter(Boolean).join(';');
+      if (style) owner.attrSet('style', style);
+      const item = state.tokens[i - 2];
+      if (layout.marker && item?.type === 'list_item_open') {
+        item.attrSet('data-md-marker', String(layout.marker));
+        item.attrSet('style', (item.attrGet('style') ? item.attrGet('style') + ';' : '') + textStyle({marker: layout.marker}));
       }
     }
   });
