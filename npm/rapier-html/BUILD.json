@@ -1,10 +1,10 @@
 {
   "package": "rapier-html",
-  "version": "1.2.25",
+  "version": "1.2.27",
   "path": "dist/rapier.html",
-  "bytes": 5744456,
-  "sha256": "86d56836a90eeba3b0f7395fef222748027152bc5c211bf9a486ce0e2dfe1de8",
-  "builtAt": "2026-10-22T02:19:32.177Z",
+  "bytes": 5751019,
+  "sha256": "dff7fcd47e51e7d92f0fababc799fd4c2b69325e9db35c66b24230b952b643b8",
+  "builtAt": "2026-10-22T07:04:08.123Z",
   "node": "v22.23.3",
   "canonical": true,
   "packing": "zopfli",
@@ -31,15 +31,15 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-mermaid",
-      "bytes": 682005,
-      "packedBytes": 225116,
+      "bytes": 677968,
+      "packedBytes": 224584,
       "files": [
         {
           "id": "rapier-mermaid-core",
           "name": "pele-1.6.0.js",
           "version": "1.6.0",
-          "bytes": 682005,
-          "sri": "4lHoXtKDt+x/E+htiTc83bpFWyREQzJCMudNQHirqKiCTW7Mx790I/5Q7criNZ1G"
+          "bytes": 677968,
+          "sri": "wvZ8yi9fl1G4U3tYTRguH7dHJxCgl7Rgu/Bb+sz+ip80toql8Bc0N2aLeJCCtUMS"
         }
       ]
     },
@@ -48,15 +48,15 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-mermaid-zenuml",
-      "bytes": 1890429,
-      "packedBytes": 251583,
+      "bytes": 1888111,
+      "packedBytes": 251401,
       "files": [
         {
           "id": "rapier-mermaid-zenuml",
           "name": "rapier-zenuml-4.5.0-3.js",
           "version": "4.5.0-3",
-          "bytes": 1890429,
-          "sri": "0tZDV6uy2r9boZwCWcBSrF+Mku7c14LvwAewLbraLrR+tvinNck31H8xsLCa5k6y"
+          "bytes": 1888111,
+          "sri": "/JAYBQPgTaslQtUck91RnxcqXI8V8T0iYa+dRwc9StJhd0MPJGLTOCLj9aNDRHDG"
         }
       ]
     },
@@ -145,15 +145,15 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-font-subset",
-      "bytes": 1214770,
-      "packedBytes": 441535,
+      "bytes": 1214779,
+      "packedBytes": 441276,
       "files": [
         {
           "id": "rapier-font-subset",
           "name": "rapier-font-subset-3.js",
           "version": "3",
-          "bytes": 1214770,
-          "sri": "gOi4uP0F7r23fF2YH3Rvb3NisqOzz8H2T1qAFknqbSKZVeOzRykk7vDc5NEnqVm+"
+          "bytes": 1214779,
+          "sri": "iAjccOClLDb549FPCJnflzsNIlLa4G4N/SRm/GnIvhcUyQd0COW2672AA2Mldcnz"
         }
       ]
     }
