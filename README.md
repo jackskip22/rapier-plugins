@@ -46,8 +46,8 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
 
 ## npm packages
 
-- `npm/rapier-html/`: `npx rapier-html@1.2.28 notes.md` writes one offline HTML file: the editor with the document inside.
-- `npm/rapier-embed/`: `npm install rapier-embed@1.2.28` puts the read-only reader or the document editor in your
+- `npm/rapier-html/`: `npx rapier-html@1.2.29 notes.md` writes one offline HTML file: the editor with the document inside.
+- `npm/rapier-embed/`: `npm install rapier-embed@1.2.29` puts the read-only reader or the document editor in your
   site or app, saving to your own storage (MIT).
 - `npm/rapier-markdown-kit/`: read, write and render Self-contained Markdown, one `.md` file with its pictures and
   layout, without the editor (MIT).
@@ -56,14 +56,14 @@ The [agent guide](https://rapier.website/agents) lists the tools and their input
 ## Plug-in files
 
 Rapier pages download these the first time a document needs them, through
-`https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.28/<directory>/<file>` (each release's own tag), and verify each by length and SHA-384.
-To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.2.28 plugins <directory>`; see
+`https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@v1.2.29/<directory>/<file>` (each release's own tag), and verify each by length and SHA-384.
+To keep the reader's plug-ins in your own app, run `npx rapier-embed@1.2.29 plugins <directory>`; see
 [Plug-ins](npm/rapier-embed/README.md#plug-ins).
 
 - `math/`: The pinned app Math renderer, its complete notices and original input identities.
 - `letters/`: Draw's letter sets, ornamental capitals traced from the British Library's book scans (CC0).
 - `templates/` and `elements/`: Starters' page borders and the Elements sheet's ornaments, traced from the ornament book (CC0), a file each.
 - `flowchart/`, `docx/`, `pdf/`: the reader's own plug-ins, a file each: the flowchart renderer, the Word reader and the PDF reader's page reading.
-- `sources/reader-1.2.28/`: the source of those three plug-ins, which builds them offline (its `README.reader-plugins.md`).
+- `sources/reader-1.2.29/`: the source of those three plug-ins, which builds them offline (its `README.reader-plugins.md`).
 
 Source: [github.com/jackskip22/rapier](https://github.com/jackskip22/rapier). [Privacy and terms](PRIVACY.md).
