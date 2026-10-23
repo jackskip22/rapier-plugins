@@ -9,16 +9,13 @@ may edit, append to or preserve. MIT, no dependencies.
 - One stylesheet renders the document as the editor and its exported page do.
 - The line planner flows text around a picture's real shape; a conformance suite of thirteen documents runs
   any implementation against it.
-- Will/1 markers say which regions an agent may edit, only add to, or must keep.
-- MIT, no dependencies, Node 22 or newer.
+- Node 22 or newer.
 
 To show documents in your app without writing a renderer, frame the read-only reader with
 `npm install rapier-embed` (`build: 'reader'`). To hand a person the whole editor around their document as one
 offline file, run `npx rapier-html notes.md`.
 
-In the editor, an agent edits live beside the person or while they are away. Rapier shows its presence and changes;
-the person taps a change to see what was there before and undoes anything. `show {target:"comparison"}` lets the agent
-deliberately show a diff. The kit supplies the portable source and history those tools use.
+The kit supplies the portable source and history Rapier's agent tools use.
 
 ```sh
 npm install rapier-markdown-kit
@@ -550,8 +547,8 @@ tolerance.
 ## License
 
 MIT, the full text in `LICENSE`; Rapier-owned modules and the stylesheet keep their MIT line. Pretext's complete license,
-notice and pinned source inventory are in `dist/agent/vendor/pretext/`. The selected upstream is unreleased main
-`bac1774c0f8b7a92e44b9da43b6d5443d55d0d9b`, despite its package version `0.0.9`. Its upstream license includes
+notice and pinned source inventory are in `dist/agent/vendor/pretext/`. The selected upstream is main
+`0d102a5cd933611e86a7e60bda7b4baa5995c6b0`: Pretext 1.0.0 plus the commits of main through pull request #525. Its upstream license includes
 Chromium/WebKit BSD, Unicode and ICU notices for derived code and generated data; those notices travel with the kit
 and the exported wrapping runtime. The history projection uses the MIT diff core;
 its full grant is in `dist/packages/rapier-diff/LICENSE`. The Rapier editor is AGPL-3.0-only and
