@@ -550,8 +550,8 @@ tolerance.
 ## License
 
 MIT, the full text in `LICENSE`; Rapier-owned modules and the stylesheet keep their MIT line. Pretext's complete license,
-notice and pinned source inventory are in `dist/agent/vendor/pretext/`. The selected upstream is unreleased main
-`bac1774c0f8b7a92e44b9da43b6d5443d55d0d9b`, despite its package version `0.0.9`. Its upstream license includes
+notice and pinned source inventory are in `dist/agent/vendor/pretext/`. The selected upstream is main
+`0d102a5cd933611e86a7e60bda7b4baa5995c6b0`: Pretext 1.0.0 plus the commits of main through pull request #525. Its upstream license includes
 Chromium/WebKit BSD, Unicode and ICU notices for derived code and generated data; those notices travel with the kit
 and the exported wrapping runtime. The history projection uses the MIT diff core;
 its full grant is in `dist/packages/rapier-diff/LICENSE`. The Rapier editor is AGPL-3.0-only and
