@@ -43,3 +43,6 @@ export function bytesHash(bytes: BufferSource): Promise<string>;
 export function externalImage(raw: string, asset: {label: string; title?: string}, url: string | null | undefined): string;
 /** The editor page's picture exchange; used by the page itself. */
 export function createAssetBroker(ports: Record<string, unknown>): unknown;
+/** The host's picture base: returns a function that turns a relative picture address into an address under `baseUrl` (or null), with
+ * `vouched`, the addresses it produced. Null when no base is given; throws `invalid_base_url` for anything but an absolute https address. Used by the page itself. */
+export function pictureBase(value: string | null | undefined): (((src: string) => string | null) & {vouched: Set<string>}) | null;

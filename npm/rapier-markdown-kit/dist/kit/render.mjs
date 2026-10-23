@@ -274,7 +274,7 @@ function* _rapierProjectStyledRootSteps(semanticRoot, options) {
 	for (const token of root.querySelectorAll('.rapier-source-token--softbreak')) { yield;
 		if (token.getAttribute('data-rapier-source') !== '%0A') token.replaceWith(...token.childNodes);
 		else if (token.previousSibling?.classList?.contains('callout__label')) token.remove();
-		else token.replaceWith(root.ownerDocument.createTextNode(' '));
+		else token.replaceWith(root.ownerDocument.createTextNode(token.closest('pre') ? '\n' : ' '));
 	}
 	const metadata = opts.metadata || {};
 
@@ -1741,7 +1741,7 @@ function _rapierArtifactLayoutScript(root, nonce = '', {pictures = true} = {}) {
     throw new Error('Offline typography requires the complete retained MIT layout factories');
   const modules = _rapierArtifactFactoryModules(dependencies, 'layout');
   const script = '/* Rapier export layout: SPDX-License-Identifier: MIT */\n' +
-    '/* Pretext bac1774c0f8b7a92e44b9da43b6d5443d55d0d9b (Unreleased)\n' + dependencies.license + '\n*/\n' +
+    '/* Pretext 1.0.0 + main 0d102a5cd933611e86a7e60bda7b4baa5995c6b0\n' + dependencies.license + '\n*/\n' +
     '(() => {\nconst modules = Object.create(null);\n' + modules +
     (wrapping ? '\n(' + _rapierProjectArtifactLayout.toString() +
     ')(document.querySelector("main.rapier-page"), modules["spec/md-layout.mjs"], modules["layout/model.mjs"], modules["layout/preparation.mjs"]);\n' : '') +

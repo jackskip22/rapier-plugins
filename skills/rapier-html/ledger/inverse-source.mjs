@@ -262,7 +262,8 @@ export function projectInverseSource(prepared, selected, projectedEffects, optio
 					const start = boundary(row.pos), end = boundary(row.pos + row.removed.length);
 					let at = start.last, count = Math.max(0, end.first - at);
 					if (!row.removed.length) {
-						const marker = pieces.slice(start.first, start.last).findIndex(item => item.mark?.inserted.length);
+						const next = pieces[start.last];
+						const marker = pieces.slice(start.first, start.last).findIndex(item => item.mark?.inserted.length && next && owns(next, item.mark));
 						at = marker < 0 ? start.last : start.first + marker; count = 0;
 					}
 					const removed = pieces.slice(at, at + count);

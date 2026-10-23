@@ -513,12 +513,14 @@ export function retireDeletedImageDefinitions(before, after, splices, factory) {
         !remaining.includes('[' + row.id) && !now.html.includes(row.id) && !now.html.includes(row.url.toUpperCase());
     });
     return retired.sort((a, b) => b.start - a.start).map(row => {
-      const gap = /(?:\r\n\r\n|\n\n|\r\r)$/.exec(after.slice(Math.max(0, row.start - 4), row.start));
+      const gap = /(?:\r\n|\r(?!\n)|(?<!\r)\n){2}$/.exec(after.slice(Math.max(0, row.start - 5), row.start));
       let tail = after.slice(row.end);
       const last = /^(?:\r\n|\n|\r)?$/.test(tail);
       for (const other of retired) if (other.start >= row.end) tail = tail.replace(other.source, '');
       const whole = gap && !/\S/.test(tail) && row.start - gap[0].length > markdownBodyOffset(after);
-      return whole ? {pos: row.start - gap[0].length, removed: gap[0] + row.source + (last ? after.slice(row.end) : ''), inserted: ''} : {pos: row.start, removed: row.source, inserted: ''};
+      if (whole) return {pos: row.start - gap[0].length, removed: gap[0] + row.source + (last ? after.slice(row.end) : ''), inserted: ''};
+      const between = gap && /^(?:\r\n|\r(?!\n)|(?<!\r)\n){2}/.test(tail) && row.start - gap[0].length >= markdownBodyOffset(after);
+      return between ? {pos: row.start - gap[0].length, removed: gap[0] + row.source, inserted: ''} : {pos: row.start, removed: row.source, inserted: ''};
     });
   } catch (_) { return []; }
 }
