@@ -3,7 +3,7 @@ import {collectPdfVectors} from './pdf-vectors.mjs';
 import {collectPdfGlyphs} from './pdf-glyphs.mjs';
 import {pdfFontSources, waitForFonts} from './export-fonts.mjs';
 import {apply as applyTypography} from '../layout/typography.mjs';
-import {documentLanguage, pageSizeOf} from '../spec/document-settings.mjs';
+import {documentLanguage, pageSizeOf, paperForLanguage} from '../spec/document-settings.mjs';
 import {applyPrintCapitals} from './print-capitals.mjs';
 import {stripOneTerminator as _rapierWillStripOneTerminator} from '../agent/will.mjs';
 import {quotedWillSpan} from '../spec/md-marks.mjs';
@@ -220,7 +220,7 @@ async function _rapierWritePrintPdf({root, css, fontCss = '', canonical, bom = f
 		if (current?.() === false) refuse('document_changed');
 	};
 	if (!root?.ownerDocument || typeof capture !== 'function') refuse('pdf_render_unavailable');
-	const paper = settings?.papersize || (templatePage ? pageSizeOf(settings) : {width: 11906, height: 16838});
+	const paper = settings?.papersize || (templatePage ? pageSizeOf(settings) : paperForLanguage(root.ownerDocument.defaultView?.navigator?.language));
 	const width = paper.width / 20, height = paper.height / 20;
 	const margins = Object.fromEntries(['top', 'right', 'bottom', 'left'].map(side =>
 		[side, settings?.geometry ? settings.geometry[side] / 20 : (side === 'top' ? 12 : 14) * 72 / 25.4]));
@@ -841,7 +841,7 @@ async function writeRasterPdf({pages, textPages, linkPages = [], vectorPages = [
 					const characters = fallbackCharacters(part, run.carrier); if (!characters.length) continue;
 					const {slots, count} = _rapierPrintSlots(part.text, part.rtl);
 					const advance = part.width * .75 / count;
-					const baseline = decimal(height - margins.top - (part.y + part.height * .8) * .75);
+					const baseline = decimal(height - margins.top - (part.baseline ?? part.y + part.height * .8) * .75);
 					for (let letter = 0; letter < characters.length; letter++) {
 						const size = Math.max(.1, advance * 2 * [...characters[letter].replace(/\n/g, '')].length), scaleY = Math.max(.1, part.height * .75) / size;
 						const value = (codes.get(characters[letter]) || codes.get(characters[letter].codePointAt(0))).toString(16).padStart(4, '0');

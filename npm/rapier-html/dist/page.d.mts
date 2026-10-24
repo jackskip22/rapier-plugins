@@ -8,6 +8,8 @@ export interface WrapOptions {
   view?: 'draw' | 'notes';
   /** Opening appearance; the reader can change it without changing their saved preference on open. */
   theme?: 'light' | 'dark';
+  /** HTML of the document's words for a reader that runs no scripts; omitted, the file carries the Markdown as written. Inserted as given: it must be sanitized HTML, never script. */
+  readable?: string;
   /** An SVG drawing carried beside the document, opened on Draw. */
   drawing?: string;
   drawingName?: string;

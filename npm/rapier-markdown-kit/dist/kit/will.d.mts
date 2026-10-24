@@ -40,3 +40,6 @@ export function willMarkerOf(line: string): WillMarker | null;
 export function terminatorWidth(last: number, prior: number): number;
 /** The text without one trailing line terminator. */
 export function stripOneTerminator(text: string): string;
+/** Judges sequential UTF-16 source splices, including the resulting marker identities and protected text. */
+export function evaluateWill(beforeText: string, splices: {pos: number; removed: string; inserted: string}[]):
+  {outcome: 'applied'} | {outcome: 'invalid' | 'refused'; reason: string; rule: string; law?: WillLaw; region?: number};
