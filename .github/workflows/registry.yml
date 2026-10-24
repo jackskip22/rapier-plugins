@@ -1,7 +1,7 @@
 name: registry
 on:
   push:
-    branches: [main]
+    branches: [registry-ready]
     paths-ignore: ['signatures/**']
   workflow_dispatch:
 permissions:

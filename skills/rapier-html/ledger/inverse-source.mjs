@@ -10,7 +10,7 @@ const historyBoundary = (source, at) => Number.isSafeInteger(at) && at >= 0 && !
 	!(at > 0 && at < source.length && (source.charCodeAt(at - 1) & 0xFC00) === 0xD800 &&
 	(source.charCodeAt(at) & 0xFC00) === 0xDC00);
 
-function minimalHistorySplice(before, after, pos = 0) {
+export function minimalHistorySplice(before, after, pos = 0) {
 	let first = 0, a = before.length, b = after.length;
 	while (first < a && first < b && before[first] === after[first]) first++;
 	if (!historyBoundary(before, first) || !historyBoundary(after, first)) first--;
@@ -262,7 +262,11 @@ export function projectInverseSource(prepared, selected, projectedEffects, optio
 					const start = boundary(row.pos), end = boundary(row.pos + row.removed.length);
 					let at = start.last, count = Math.max(0, end.first - at);
 					if (!row.removed.length) {
-						const marker = pieces.slice(start.first, start.last).findIndex(item => item.mark?.inserted.length);
+						const run = pieces.slice(start.first, start.last), next = pieces[start.last];
+						let before = start.first - 1; while (before >= 0 && !pieces[before].text) before--;
+						const leftAct = before >= 0 ? byId.get(pieces[before].owner)?.actId : undefined;
+						const sameAct = leftAct !== undefined && run.some(item => item.mark?.actId === leftAct);
+						const marker = run.findIndex(item => item.mark?.inserted.length && (next && owns(next, item.mark) || !sameAct));
 						at = marker < 0 ? start.last : start.first + marker; count = 0;
 					}
 					const removed = pieces.slice(at, at + count);

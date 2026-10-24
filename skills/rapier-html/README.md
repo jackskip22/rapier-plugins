@@ -1,15 +1,24 @@
 # rapier-html
 
-Turn Markdown into one offline HTML file that contains the full Rapier editor. It opens in any browser, on a phone or
-computer, with no account. People read, edit, draw and paint; agents hand over documents, show what changed and get
-the edited copy back. Start with `npx rapier-html@1.2.33 notes.md`.
+Turn Markdown into one offline HTML file that contains the full Rapier editor.
 
-Use it for a plan to rearrange, a guide to annotate, a draft to keep writing, or a revision to review. The file works
-without any hosted workspace.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jackskip22/rapier-plugins/main/assets/write-390-dark.png">
+  <img src="https://raw.githubusercontent.com/jackskip22/rapier-plugins/main/assets/write-390-light.png" alt="The Rapier editor on a phone: a launch plan with an agent's change marked" width="320">
+</picture>
+
+Try it: `npx rapier-html@1.2.40 notes.md`, then open `notes.rapier.html` in any browser.
+Install: `npm install rapier-html@1.2.40`.
+
+It opens on a phone or computer, with no account. People read, edit, draw and paint; agents hand over documents, show
+what changed and get the edited copy back.
+
+The file needs no hosted workspace.
 
 - The page writes, saves Markdown, exports Word, PDF and a web page, and prints. It needs no account and fetches
   nothing to open, edit or save. It is the base editor (about 1.7 MB) with the plug-ins the document displays with
   (Math, Mermaid, and page layout for a template page); `--include draw` adds drawing and painting. Notes never travel.
+- Where scripts don't run (a mail preview, a strict viewer), the file shows the document's words.
 - `--return` adds a one-use Send back address from the agent door.
 - `--view draw` opens on Draw. `--compare original.md` opens the edit with its diff; `--by <name>` attributes it.
 - `writePage(text, name)` makes the page in one call; `unwrap` gives the document back, exactly.
@@ -17,14 +26,14 @@ without any hosted workspace.
 Needs Node 22 or newer.
 
 ```sh
-npx -- rapier-html@1.2.33 notes.md                          # the editor, notes.md inside it, written beside the file
-npx -- rapier-html@1.2.33 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
-npx -- rapier-html@1.2.33 notes.md --include draw,math     # carries Draw and Math (default: what the document needs)
-npx -- rapier-html@1.2.33 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
-npx -- rapier-html@1.2.33 revised.md --compare original.md # opens showing what changed
-npx -- rapier-html@1.2.33 notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
-npx -- rapier-html@1.2.33 notes.md out.html                 # a named output
-npm install rapier-html@1.2.33                              # as a library: writePage, unwrap
+npx -- rapier-html@1.2.40 notes.md                          # the editor, notes.md inside it, written beside the file
+npx -- rapier-html@1.2.40 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
+npx -- rapier-html@1.2.40 notes.md --include draw,math     # carries Draw and Math (default: what the document needs)
+npx -- rapier-html@1.2.40 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
+npx -- rapier-html@1.2.40 revised.md --compare original.md # opens showing what changed
+npx -- rapier-html@1.2.40 notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
+npx -- rapier-html@1.2.40 notes.md out.html                 # a named output
+npm install rapier-html@1.2.40                              # as a library: writePage, unwrap
 ```
 
 The first `--` is for npm, so `--help` reaches the command. It never overwrites a file.
