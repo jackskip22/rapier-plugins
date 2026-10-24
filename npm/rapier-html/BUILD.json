@@ -1,10 +1,10 @@
 {
   "package": "rapier-html",
-  "version": "1.2.33",
+  "version": "1.2.39",
   "path": "dist/rapier.html",
-  "bytes": 5764398,
-  "sha256": "5f1d5fc07e6d302c33f0ac297ea2b21e179d5b458353e108a5da7f83fd04e889",
-  "builtAt": "2026-10-22T21:58:20.465Z",
+  "bytes": 5922005,
+  "sha256": "d676249dfc58d852945342dee28ab2eb3600b584c3610fb9ab0c4ac531bec064",
+  "builtAt": "2026-10-24T02:57:36.017Z",
   "node": "v22.23.3",
   "canonical": true,
   "packing": "zopfli",
@@ -49,7 +49,7 @@
       "kind": "files",
       "element": "rapier-plugin-mermaid-zenuml",
       "bytes": 1888111,
-      "packedBytes": 251401,
+      "packedBytes": 249770,
       "files": [
         {
           "id": "rapier-mermaid-zenuml",

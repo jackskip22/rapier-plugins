@@ -237,3 +237,19 @@ export function createAssetBroker({current, send}) {
   function lookup(url) { scope(); return retained.get(url)?.asset || null; }
   return Object.freeze({request, answer, cancel, lookup});
 }
+
+export function pictureBase(value) {
+  if (value === undefined || value === null) return null;
+  let base;
+  try {
+    if (typeof value !== 'string' || !value || value.length > 4096 || /[\s\u0000-\u001f\u007f<>\\]/u.test(value)) throw 0;
+    base = new URL(value);
+    if (base.username || base.password || !(base.protocol === 'https:' || base.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname))) throw 0;
+  } catch (_) { throw refusal('invalid_base_url', 'baseUrl is an absolute https address, or http on localhost.'); }
+  const vouched = new Set();
+  return Object.assign(src => {
+    const text = String(src || '').trim();
+    if (!text || /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(text)) return null;
+    try { const href = new URL(text, base).href; vouched.add(href); return href; } catch (_) { return null; }
+  }, {vouched});
+}

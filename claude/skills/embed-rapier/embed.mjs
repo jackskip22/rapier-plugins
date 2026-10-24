@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-const {FEATURES, LIMITS, ASSET_TYPES, refusal, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker} = (() => {
+const {FEATURES, LIMITS, ASSET_TYPES, refusal, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker, pictureBase} = (() => {
 const FEATURES = Object.freeze(['draw', 'paint', 'notes', 'readAloud', 'share', 'find']);
 const LIMITS = Object.freeze({documentBytes: 64 * 1024 * 1024, pictureBytes: 16 * 1024 * 1024});
 const ASSET_TYPES = Object.freeze(['image/png', 'image/jpeg', 'image/webp', 'image/gif', 'image/jxl', 'image/svg+xml']);
@@ -238,22 +238,53 @@ function createAssetBroker({current, send}) {
   function lookup(url) { scope(); return retained.get(url)?.asset || null; }
   return Object.freeze({request, answer, cancel, lookup});
 }
-return {FEATURES, LIMITS, ASSET_TYPES, refusal, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker};
+
+function pictureBase(value) {
+  if (value === undefined || value === null) return null;
+  let base;
+  try {
+    if (typeof value !== 'string' || !value || value.length > 4096 || /[\s\u0000-\u001f\u007f<>\\]/u.test(value)) throw 0;
+    base = new URL(value);
+    if (base.username || base.password || !(base.protocol === 'https:' || base.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname))) throw 0;
+  } catch (_) { throw refusal('invalid_base_url', 'baseUrl is an absolute https address, or http on localhost.'); }
+  const vouched = new Set();
+  return Object.assign(src => {
+    const text = String(src || '').trim();
+    if (!text || /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(text)) return null;
+    try { const href = new URL(text, base).href; vouched.add(href); return href; } catch (_) { return null; }
+  }, {vouched});
+}
+return {FEATURES, LIMITS, ASSET_TYPES, refusal, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker, pictureBase};
 })();
 const BUILDS = Object.freeze({full: 'https://rapier.website/embed/rapier.html', reader: 'https://rapier.website/embed/rapier-reader.html'});
+const PACKAGE_VERSION = '1.2.39';
+const OPTIONS = ['build', 'src', 'plugins', 'approvePlugins', 'sessionId', 'documentId', 'agent', 'agentName', 'theme', 'save', 'assets', 'openFile', 'load',
+  'onState', 'compare', 'onClose', 'settings', 'style', 'title', 'onError', 'timeout'];
+const READER_FEATURES = ['find', 'readAloud', 'share'];
 const DEFAULT_SRC = BUILDS.full;
 const revision = value => Number.isSafeInteger(value) && value >= 0 || typeof value === 'string' && value.length > 0 && value.length <= 256;
 const identifier = value => typeof value === 'string' && value.length > 0 && value.length <= 256;
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const themeValue = value => ['light', 'dark', 'system'].includes(value);
 const mint = prefix => prefix + '-' + (globalThis.crypto?.randomUUID?.() || Math.random().toString(36).slice(2));
+const autoLive = new Map();
+const fnv = text => { let h = 0x811c9dc5; for (let i = 0; i < text.length; i++) { h ^= text.charCodeAt(i); h = Math.imul(h, 0x01000193); } return (h >>> 0).toString(36); };
+function autoIdentity(options) {
+  const load = options.load;
+  if (!options.save || !load || typeof load !== 'object' || typeof load.content !== 'string') return null;
+  const base = fnv(location.origin + location.pathname) + '-' + fnv(String(load.filename ?? '') + '|' + load.content.length + '|' + load.content.slice(0, 2048));
+  let at = 0;
+  while (autoLive.get(base + '-' + at)?.()) at++;
+  return base + '-' + at;
+}
 function deferred() {
   let resolve, reject;
   const promise = new Promise((yes, no) => { resolve = yes; reject = no; });
   promise.catch(() => {});
   return {promise, resolve, reject};
 }
-const refused = payload => Object.assign(new Error(payload?.reason || payload?.code || 'The editor refused the request'), {code: payload?.code, payload});
+const refused = payload => Object.assign(new Error(payload?.reason || payload?.code || 'The editor refused the request'), {code: payload?.code, payload},
+  revision(payload?.currentRevision) ? {currentRevision: payload.currentRevision} : {});
 
 function conflict(currentRevision) {
   if (!revision(currentRevision)) throw new TypeError('A conflict needs the current revision');
@@ -270,23 +301,43 @@ function readerStyle(value) {
   return {...(value.css !== undefined ? {css: value.css} : {}), ...(value.fonts !== undefined ? {fonts: value.fonts.map(row => ({...row}))} : {})};
 }
 
+const HOSTED_ORIGIN = new URL(BUILDS.full).origin;
+function framingProblem(host, source, sandbox, noun) {
+  const here = host.location, local = ['localhost', '127.0.0.1', '[::1]'].includes(here.hostname);
+  if (here.protocol !== 'https:' && here.protocol !== 'http:')
+    return {code: 'host_scheme_unsupported', reason: 'The ' + noun + ' cannot be framed by a ' + here.protocol + ' page: it needs an https page, or http on localhost. Serve your app over one of those.'};
+  if (source.origin === HOSTED_ORIGIN && here.protocol === 'http:' && !local)
+    return {code: 'host_not_secure', reason: 'The hosted ' + noun + ' can be framed by https pages and by http on localhost only. Serve your app over https, or serve a copy of the page yourself and set src.'};
+  if (source.origin === HOSTED_ORIGIN && host.crossOriginIsolated === true)
+    return {code: 'host_cross_origin_isolated', reason: 'This page is cross-origin isolated (COEP), which blocks the hosted ' + noun + '. Serve a copy of the page yourself with the Cross-Origin-Embedder-Policy and Cross-Origin-Resource-Policy headers and set src, or drop COEP.'};
+  if (sandbox) for (const token of ['allow-scripts', 'allow-same-origin']) if (!sandbox.contains(token))
+    return {code: 'sandbox_token_missing', reason: 'The iframe you passed has a sandbox without ' + token + ', which the ' + noun + ' needs. Add the token, or pass a container and let mount create the iframe.'};
+  return null;
+}
+
 function mount(target, options = {}) {
   const document = target?.ownerDocument;
   if (!document) throw new TypeError('Mount needs an iframe or a container element');
+  const unknown = Object.keys(options).filter(key => !OPTIONS.includes(key));
+  if (unknown.length) throw Object.assign(new TypeError('Unknown option: ' + unknown.join(', ') + '. Mount takes ' + OPTIONS.join(', ')), {code: 'option_unknown'});
   const build = options.build === undefined || options.build === 'document' ? 'full' : options.build;
   if (!Object.hasOwn(BUILDS, build)) throw new TypeError('build must be full or reader');
-  const reader = build === 'reader';
+  const reader = build === 'reader', noun = reader ? 'reader' : 'editor';
   if (reader && ['save', 'compare', 'onClose', 'agent', 'agentName', 'assets'].some(key => options[key] !== undefined && options[key] !== false))
     throw new TypeError('The reader takes load, onState, theme, settings, style and plugins');
   if (!reader && options.style !== undefined) throw new TypeError('style restyles the reader build');
   if (options.style !== undefined && options.load === undefined) throw new TypeError('Reader styling requires load');
   if (options.plugins !== undefined && (typeof options.plugins !== 'string' || !options.plugins || options.plugins.length > 2048 || /[\u0000-\u001f\u007f]/.test(options.plugins)))
     throw new TypeError('plugins is the address of the directory that holds the plug-in files');
+  if (options.approvePlugins !== undefined && typeof options.approvePlugins !== 'boolean') throw new TypeError('approvePlugins is true or false');
   let currentStyle = options.style === undefined ? undefined : readerStyle(options.style);
   const host = document.defaultView, iframe = target.tagName === 'IFRAME' ? target : document.createElement('iframe');
   const source = new URL(options.src || BUILDS[build], host.location.href);
   if (source.username || source.password || !(source.protocol === 'https:' || source.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(source.hostname)))
     throw new TypeError('The editor needs HTTPS, or HTTP on localhost');
+  const page = source.pathname.split('/').pop();
+  if (reader ? page === 'rapier.html' : page === 'rapier-reader.html')
+    throw Object.assign(new TypeError('build ' + build + ' cannot frame ' + page + '; set build: \'' + (reader ? 'full' : 'reader') + '\' or src to ' + (reader ? 'rapier-reader.html' : 'rapier.html')), {code: 'build_mismatch'});
   source.searchParams.set('embed', '1');
   if (options.plugins !== undefined) {
     let directory;
@@ -297,7 +348,9 @@ function mount(target, options = {}) {
       throw new TypeError('plugins must be on ' + source.origin + ', the origin of the page it configures: the page reads plug-ins only from its own origin. Serve the page and its plug-ins together (set src), or leave plugins out');
     source.searchParams.set('plugins', directory.href);
   }
-  const origin = source.origin, sessionId = options.sessionId ?? mint('session'), documentId = options.documentId ?? mint('document');
+  if (options.approvePlugins === true) source.searchParams.set('approvePlugins', '1');
+  const origin = source.origin, auto = options.sessionId === undefined && options.documentId === undefined ? autoIdentity(options) : null;
+  const sessionId = options.sessionId ?? (auto ? 'page-' + auto : mint('session')), documentId = options.documentId ?? (auto ? 'doc-' + auto : mint('document'));
   if (!identifier(sessionId) || !identifier(documentId)) throw new TypeError('Session and document IDs must be nonempty strings of at most 256 code units');
   const agentName = options.agentName;
   if (agentName !== undefined && (typeof agentName !== 'string' || !agentName.trim() || agentName.length > 96 || /[\u0000-\u001f\u007f]/.test(agentName))) throw new TypeError('agentName must be a host-given name of at most 96 characters');
@@ -305,7 +358,11 @@ function mount(target, options = {}) {
   if (options.save !== undefined && typeof options.save !== 'function') throw new TypeError('save must be a durable storage callback');
   if (options.assets !== undefined && typeof options.assets !== 'function') throw new TypeError('assets must be a picture storage callback');
   if (options.openFile !== undefined && typeof options.openFile !== 'function') throw new TypeError('openFile must choose a File or null');
+  if (options.timeout !== undefined && !(Number.isSafeInteger(options.timeout) && options.timeout > 0)) throw new TypeError('timeout is a whole number of milliseconds');
+  const bootTimeout = options.timeout ?? 15000;
   const settings = snapshotSettings(options.settings), policy = normalizeSettings(settings), storeAsset = options.assets;
+  const unread = reader ? (settings?.features || []).filter(name => !READER_FEATURES.includes(name)) : [];
+  if (unread.length) throw Object.assign(new TypeError('The reader has no ' + unread.join(', ') + '; its features are ' + READER_FEATURES.join(', ')), {code: 'settings_feature_unavailable'});
   const assetAnswers = new Map();
   let assetPending = '', assetAbort = new AbortController();
   const chooseFile = options.openFile || (({signal}) => pickDeviceFile(document, signal)), openAnswers = new Map();
@@ -319,7 +376,8 @@ function mount(target, options = {}) {
     throw new TypeError('Agent access needs both load and save');
   const ids = {sessionId, documentId}, answers = new Map(), waiting = new Map(), listeners = new Map();
   let port = null, posted = false, connected = false, ended = false, sawLoad = false, seq = 0, activeSave = null, activeClose = null;
-  let currentTheme = options.theme, lastSaved = null, readOnly = false, connectedWait = deferred(), boot;
+  let currentTheme = options.theme, lastSaved = null, readOnly = false, connectedWait = deferred(), boot, bootTimer = 0, frameFacts = {};
+  let held = null;
   const ready = deferred();
   const emit = (type, value) => { for (const fn of listeners.get(type) || []) fn(value); };
   const fail = error => { emit('error', error); options.onError?.(error); };
@@ -328,7 +386,7 @@ function mount(target, options = {}) {
     waiting.clear(); activeSave?.reject(error); activeSave = null; activeClose?.reject(error); activeClose = null;
   };
   function send(type, payload, baseRevision, quiet = false) {
-    if (ended || !connected || !port) return Promise.reject(new Error('The editor connection has ended or is not connected'));
+    if (ended || !connected || !port) return Promise.reject(new Error('The ' + noun + ' connection has ended or is not connected'));
     if (type === 'load') cancelOpen('open_stale');
     const requestId = 'host-' + ++seq;
     const message = {type, ...ids, requestId, ...(baseRevision !== undefined ? {baseRevision} : {}), ...(payload !== undefined ? {payload} : {})};
@@ -339,6 +397,7 @@ function mount(target, options = {}) {
     return pending.promise;
   }
   function requestCapture() {
+    if (activeSave) activeSave.commandId = 'host-' + (seq + 1);
     send('save', undefined, undefined, true).catch(error => { activeSave?.reject(error); activeSave = null; });
   }
   async function answerSave(message, channel) {
@@ -379,7 +438,7 @@ function mount(target, options = {}) {
     if (ended || channel !== port) return;
     channel.postMessage(reply);
     if (reply.type === 'save-ack') {
-      lastSaved = reply.payload;
+      lastSaved = reply.payload; held = {revision: reply.payload.revision, content: payload.content, filename: payload.filename};
       if (activeSave) activeSave.acknowledged = true;
     } else if (activeSave) { activeSave.reject(refused(reply.payload)); activeSave = null; }
   }
@@ -495,7 +554,9 @@ function mount(target, options = {}) {
     }
     if (type === 'connected') {
       if (connected) return;
-      connected = true; connectedWait.resolve(); emit('connected', payload); return;
+      clearTimeout(bootTimer);
+      connected = true; frameFacts = {version: typeof payload.appVersion === 'string' ? payload.appVersion : null, contract: payload.contract ?? null};
+      connectedWait.resolve(); emit('connected', payload); return;
     }
     if (!connected) return;
     if (type === 'open-request' || type === 'open-cancel') { answerOpen(message, channel); return; }
@@ -505,6 +566,10 @@ function mount(target, options = {}) {
       if (!['loaded', 'dirty', 'saving', 'closing', 'readOnly'].every(key => typeof payload[key] === 'boolean')
         || Object.keys(payload).some(key => !['loaded', 'dirty', 'saving', 'closing', 'readOnly', 'filename', 'docKind'].includes(key))) return;
       readOnly = payload.readOnly; emit('state', payload); options.onState?.(payload);
+      if (activeSave && !activeSave.acknowledged && activeSave.commandId && message.requestId === activeSave.commandId && payload.loaded && !payload.dirty && !payload.saving && revision(message.baseRevision)) {
+        activeSave.resolve({revision: message.baseRevision}); activeSave = null;
+        return;
+      }
       if (activeSave?.acknowledged && !payload.saving && message.baseRevision === lastSaved?.revision) {
         if (payload.dirty) { activeSave.acknowledged = false; requestCapture(); }
         else { activeSave.resolve(lastSaved); activeSave = null; }
@@ -530,7 +595,9 @@ function mount(target, options = {}) {
     }
     if (pending && ['load-ack', 'load-nack', 'compare-ack', 'compare-nack'].includes(type)) {
       waiting.delete(requestId);
-      if (type === 'load-ack') readOnly = payload.readOnly === true;
+      if (type === 'load-ack') {
+        readOnly = payload.readOnly === true;
+      }
       if (type.endsWith('-nack')) pending.reject(refused(payload)); else pending.resolve(payload);
     }
   }
@@ -541,6 +608,7 @@ function mount(target, options = {}) {
         const value = typeof options.load === 'function' ? await options.load() : options.load;
         if (!record(value) || typeof value.content !== 'string' || !revision(value.revision)) throw new TypeError('load needs content and its revision');
         await send('load', value, null);
+        held = {revision: value.revision, content: value.content, filename: value.filename};
       }
       ready.resolve(handle);
     });
@@ -553,24 +621,42 @@ function mount(target, options = {}) {
     port.onmessage = event => onPortMessage(event, channel.port1);
     port.onmessageerror = () => {
       if (channel.port1 !== port || ended) return;
-      cancelOpen('open_disconnected'); assetAbort.abort(); rejectPending(new Error('The editor connection was lost'));
+      cancelOpen('open_disconnected'); assetAbort.abort(); rejectPending(new Error('The ' + noun + ' connection was lost'));
     };
     try { iframe.contentWindow.postMessage({type: 'rapier-connect', ...ids, capabilities, contract: 1, ...(settings ? {settings} : {}), ...(agentName ? {agent: {name: agentName}} : {}), ...(currentTheme ? {theme: currentTheme} : {})}, origin, [channel.port2]); }
     catch (error) { port.close(); port = null; posted = false; fail(error); }
   }
+  function bootFailed(code, reason) {
+    clearTimeout(bootTimer);
+    if (connected || ended) return;
+    connectedWait.reject(refusal(code, reason));
+  }
+  const connectTimeoutReason = () => 'The ' + noun + ' did not connect within ' + bootTimeout / 1000 + ' seconds. A page that does not allow this parent (frame-ancestors) is blocked and never connects; the hosted pages allow https, localhost and 127.0.0.1 parents.';
   function onLoad() {
     if (sawLoad && posted) {
       cancelOpen('open_disconnected');
-      rejectPending(new Error('The editor reconnected')); port?.close();
+      rejectPending(new Error('The ' + noun + ' reconnected')); port?.close();
       assetAbort.abort(refusal('asset_disconnected')); assetAbort = new AbortController();
       connected = false; posted = false; readOnly = false; connectedWait = deferred(); prepareBoot();
     }
     sawLoad = true;
+    clearTimeout(bootTimer);
+    if (!connected) bootTimer = setTimeout(() => bootFailed('connect_timeout', connectTimeoutReason()), bootTimeout);
     connect();
+  }
+  function focusBeside(forward) {
+    const order = forward ? host.Node.DOCUMENT_POSITION_FOLLOWING : host.Node.DOCUMENT_POSITION_PRECEDING;
+    const controls = [...document.querySelectorAll('a[href],button,input,select,textarea,iframe,summary,[tabindex],[contenteditable=""],[contenteditable="true"]')]
+      .filter(element => element !== iframe && element.tabIndex >= 0 && !element.disabled && !element.closest('[inert]') && element.getClientRects().length &&
+        iframe.compareDocumentPosition(element) & order);
+    const next = forward ? controls[0] : controls.at(-1);
+    if (next) next.focus(); else iframe.blur();
   }
   function onWindowMessage(event) {
     if (event.source !== iframe.contentWindow || event.origin !== origin) return;
     if (event.data?.type === 'rapier-ready') connect();
+    else if (event.data?.type === 'rapier-boot-failed') bootFailed('boot_failed', 'The ' + noun + ' could not start');
+    else if (event.data?.type === 'rapier-focus-leave' && connected) focusBeside(event.data.backward !== true);
     else if (event.data?.type === 'close-ready' && event.data.sessionId === sessionId && event.data.documentId === documentId && options.onClose) {
       activeClose?.resolve(event.data.payload); activeClose = null; emit('closed', event.data.payload);
     }
@@ -578,17 +664,30 @@ function mount(target, options = {}) {
   const handle = Object.freeze({
     iframe, ready: ready.promise,
     get connected() { return connected && !ended; },
-    async load(content, {filename, revision: version, readOnly, title} = {}) {
+    get version() { return frameFacts.version ?? null; },
+    get contract() { return frameFacts.contract ?? null; },
+    async load(content, options = {}) {
+      if (record(content)) { options = content; content = options.content; }
+      if (typeof content !== 'string') throw Object.assign(new TypeError('load needs the document text as a string'), {code: 'invalid_payload'});
+      let {filename, revision: version, readOnly, title, baseUrl} = options;
       cancelOpen('open_stale');
       await boot;
-      return send('load', {content, revision: version, ...(filename !== undefined ? {filename} : {}), ...(readOnly !== undefined ? {readOnly} : {}), ...(title !== undefined ? {title} : {})}, null);
+      if (version === undefined) version = typeof held?.revision === 'number' ? held.revision + 1 : 1;
+      const sameDocument = held && (filename === undefined || held.filename === undefined || filename === held.filename);
+      if (sameDocument && typeof version === 'number' && typeof held.revision === 'number' && version < held.revision)
+        throw Object.assign(new Error('Revision ' + version + ' is older than the frame\'s ' + held.revision), {code: 'revision_stale', currentRevision: held.revision});
+      if (sameDocument && version === held.revision && held.content !== null && content !== held.content)
+        throw Object.assign(new Error('Revision ' + version + ' already names other content'), {code: 'revision_conflict', currentRevision: held.revision});
+      const loaded = await send('load', {content, revision: version, ...(filename !== undefined ? {filename} : {}), ...(readOnly !== undefined ? {readOnly} : {}), ...(title !== undefined ? {title} : {}), ...(baseUrl !== undefined ? {baseUrl} : {})}, null);
+      held = {revision: version, content, filename};
+      return loaded;
     },
     async save() {
       await boot;
       if (!options.save) throw new Error('No save callback was granted');
-      if (ended) throw new Error('The editor connection has ended');
+      if (ended) throw new Error('The ' + noun + ' connection has ended');
       if (readOnly) throw new Error('The document is read-only');
-      if (!activeSave) activeSave = {...deferred(), acknowledged: false};
+      if (!activeSave) activeSave = {...deferred(), acknowledged: false, commandId: ''};
       const promise = activeSave.promise;
       requestCapture(); return promise;
     },
@@ -611,10 +710,10 @@ function mount(target, options = {}) {
     disconnect() {
       if (ended) return;
       if (connected) send('disconnect', undefined, undefined, true).catch(() => {});
-      ended = true; connected = false;
+      ended = true; connected = false; clearTimeout(bootTimer);
       cancelOpen('open_disconnected'); openAnswers.clear();
       assetAbort.abort(refusal('asset_disconnected')); assetAnswers.clear();
-      const error = new Error('The editor connection has ended');
+      const error = new Error('The ' + noun + ' connection has ended');
       rejectPending(error); connectedWait.reject(error); ready.reject(error);
       host.removeEventListener('message', onWindowMessage); iframe.removeEventListener('load', onLoad);
       port?.close(); port = null; listeners.clear();
@@ -626,17 +725,26 @@ function mount(target, options = {}) {
       return () => listeners.get(type)?.delete(fn);
     },
   });
+  if (auto) autoLive.set(auto, () => iframe.isConnected && !ended);
   prepareBoot();
   iframe.setAttribute('title', options.title || (reader ? 'Markdown reader' : 'Markdown editor'));
   iframe.setAttribute('allow', options.agent ? 'clipboard-write; tools' : 'clipboard-write');
-  iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-downloads');
+  const ownSandbox = iframe === target && iframe.hasAttribute('sandbox');
+  if (!ownSandbox) iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-downloads');
+  const blocked = framingProblem(host, source, ownSandbox ? iframe.sandbox : null, noun);
+  if (blocked) {
+    if (iframe !== target) target.append(iframe);
+    queueMicrotask(() => bootFailed(blocked.code, blocked.reason));
+    return handle;
+  }
   host.addEventListener('message', onWindowMessage); iframe.addEventListener('load', onLoad);
   iframe.src = source.href;
   if (iframe !== target) target.append(iframe);
+  bootTimer = setTimeout(() => bootFailed('connect_timeout', connectTimeoutReason()), bootTimeout);
   return handle;
 }
 
-export const Rapier = Object.freeze({mount, conflict});
+export const Rapier = Object.freeze({mount, conflict, version: PACKAGE_VERSION, contract: 1});
 
 const forms = new WeakMap();
 function joinForm(field, form) {
@@ -645,8 +753,8 @@ function joinForm(field, form) {
   if (!group) {
     group = {fields: new Set(), pending: false, releasing: false};
     group.submit = async event => {
-      if (group.releasing) return;
-      event.preventDefault();
+      if (event.target !== form || group.releasing) return;
+      event.preventDefault(); event.stopImmediatePropagation();
       if (group.pending) return;
       group.pending = true;
       const submitter = event.submitter;
@@ -662,12 +770,12 @@ function joinForm(field, form) {
       } catch (error) { if (current()) for (const {field} of captured) field._error(error); }
       finally { group.pending = false; group.releasing = false; }
     };
-    form.addEventListener('submit', group.submit, true); forms.set(form, group);
+    group.view = form.ownerDocument.defaultView; group.view.addEventListener('submit', group.submit, true); forms.set(form, group);
   }
   group.fields.add(field);
   return () => {
     group.fields.delete(field);
-    if (!group.fields.size) { form.removeEventListener('submit', group.submit, true); forms.delete(form); }
+    if (!group.fields.size) { group.view.removeEventListener('submit', group.submit, true); forms.delete(form); }
   };
 }
 
