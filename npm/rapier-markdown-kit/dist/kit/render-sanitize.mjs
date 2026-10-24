@@ -52,7 +52,7 @@ const DIAGRAM_LABEL_CSS = new Set(('color fill stroke background-color font-fami
 const DOCUMENT_STYLE_PROPERTIES = new Set([...DIAGRAM_LABEL_CSS, ...('background display visibility opacity '
 	+ 'border border-top border-right border-bottom border-left border-color border-style border-width border-collapse border-spacing '
 	+ 'border-top-color border-right-color border-bottom-color border-left-color border-top-width border-right-width border-bottom-width border-left-width '
-	+ 'table-layout caption-side empty-cells list-style-type list-style-position direction unicode-bidi '
+	+ 'table-layout caption-side empty-cells list-style-type list-style-position direction unicode-bidi hyphens '
 	+ 'stroke-width stroke-opacity stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit '
 	+ 'fill-opacity fill-rule clip-rule clip-path filter stop-color stop-opacity text-anchor dominant-baseline alignment-baseline '
 	+ 'paint-order vector-effect shape-rendering color-interpolation color-interpolation-filters').split(' ')]);

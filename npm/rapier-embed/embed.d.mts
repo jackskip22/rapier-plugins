@@ -59,7 +59,7 @@ export interface MountOptions {
   approvePlugins?: boolean;
   /** The iframe's accessible title. */
   title?: string;
-  /** Milliseconds a loaded frame has to connect before `ready` rejects with `connect_timeout`; default 15000. */
+  /** Milliseconds after the frame loads that it has to connect before `ready` rejects with `connect_timeout`; default 15000. A frame that never loads rejects with `load_timeout` after 120 seconds. */
   timeout?: number;
   onError?(error: Refusal | Error): void;
 }
@@ -83,7 +83,7 @@ export interface MountedEditor {
   /** Shows another document. `revision` is optional here: omitted, the helper uses one above the last revision it saw, or 1.
    * Rejects with `revision_stale` for a revision older than the frame's and `revision_conflict` for the same revision with
    * other content (both for the same filename only: another filename is another document), with `unsaved_changes` while
-   * the person has unsaved edits, `draft_retained` while unsaved edits from another revision are kept, and
+   * the person has unsaved edits, `document_open_elsewhere` when another editor has the same ids open, `draft_retained` while unsaved edits from another revision are kept, and
    * `document_unshowable` when the reader cannot show the document. */
   load(content: string, options?: {revision?: Revision; filename?: string; readOnly?: boolean; title?: string; baseUrl?: string}): Promise<LoadResult>;
   /** The same, with the record `mount` takes: `load({content, revision, filename})`. */

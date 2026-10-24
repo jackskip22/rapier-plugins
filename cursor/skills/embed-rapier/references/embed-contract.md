@@ -9,7 +9,7 @@ editor owns its document history and before views.
 
 ## 1. Two origins, one parent, one channel
 
-The parent frames a served page with `?embed=1`: no origin is declared in the URL or in the handshake. The editor embed is the full page with its parts inline, `https://rapier.website/embed/rapier.html`; the read-only reader is `https://rapier.website/embed/rapier-reader.html` (section 2.4). Each release's own copies stay at its tag, `https://cdn.jsdelivr.net/gh/jackskip22/rapier@v<version>/site/embed/`, to download and self-host. A self-hosted copy speaks the same protocol. The frame binds to the origin of the first valid `rapier-connect` from its parent and holds it for the session; a later connect from any other origin is ignored.
+The parent frames a served page with `?embed=1`: no origin is declared in the URL or in the handshake. The editor embed is the full page with its parts inline, `https://rapier.website/embed/rapier.html`; the read-only reader is `https://rapier.website/embed/rapier-reader.html` (section 2.4). Each release's own copies stay at its tag, `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v<version>/embed/`, to download and self-host. A self-hosted copy speaks the same protocol. The frame binds to the origin of the first valid `rapier-connect` from its parent and holds it for the session; a later connect from any other origin is ignored.
 
 That origin must be HTTPS, or HTTP only for `localhost`, `127.0.0.1` and `[::1]` development. A port is part of an origin. `null` and opaque origins are refused. This admits a window, not a person.
 

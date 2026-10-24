@@ -32,6 +32,8 @@ function historyHunks(row) {
 }
 
 
+const differentActors = (a, b) => !!a && !!b && (a.kind !== b.kind || a.id !== b.id);
+
 export function projectInverseSource(prepared, selected, projectedEffects, options = {}) {
 	const records = prepared.records || prepared.rows.map(({record, splices}) => record.splices === splices ? record : {...record, splices});
 	if (!options.origins && !records.some(record => !prepared.effects.references.get(record.transaction.id)?.length &&
@@ -40,6 +42,7 @@ export function projectInverseSource(prepared, selected, projectedEffects, optio
 	try {
 		let pieces = prepared.initialSource ? [{text: prepared.initialSource, owner: null, lineage: []}] : [];
 		const all = [], byId = new Map(), byAct = new Map(), processed = [], keptInverseAncestors = new Set();
+		const actorOf = new Map(records.map(record => [record.transaction.id, record.transaction.actor]));
 		const recordsForCover = prepared.records || prepared.rows.map(({record, splices}) => record.splices === splices ? record : {...record, splices});
 		const coverGroups = new Map();
 		let coverOrigins = null;
@@ -280,6 +283,12 @@ export function projectInverseSource(prepared, selected, projectedEffects, optio
 					const id = tx.id + '#' + rowIndex + ':' + index;
 					const lineage = new Set([id]);
 					for (const piece of removed) for (const parent of piece.lineage || piece.mark?.lineage || []) lineage.add(parent);
+					if (!row.removed.length && !count && at > 0 && /[\p{L}\p{N}\p{M}]/u.test(row.inserted)) {
+						const left = pieces[at - 1], right = pieces[at];
+						const inner = left?.text && right?.text && left.owner === right.owner ? byId.get(left.owner) : null;
+						if (inner && inner.actId !== tx.id && inner.removed && differentActors(actorOf.get(inner.actId), tx.actor) && /[\p{L}\p{N}\p{M}]$/u.test(left.text) && /^[\p{L}\p{N}\p{M}]/u.test(right.text))
+							for (const parent of [inner.id, ...(left.lineage || [])]) lineage.add(parent);
+					}
 					const hunk = {id, actId: tx.id, removed: row.removed, inserted: row.inserted, before: removed, derived,
 						chosen, kept: selected.has(tx.id) && !chosen, lineage: [...lineage], supersededBy: new Set(), active: true,
 						...(coverIdsFor(tx.id) ? {coverIds: coverIdsFor(tx.id)} : {})};

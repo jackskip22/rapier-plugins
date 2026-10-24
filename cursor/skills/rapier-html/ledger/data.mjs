@@ -44,11 +44,13 @@ function* quoted(text, whole = true) {
   }
   yield '"';
 }
-function* dataParts(value, depth, active, sorted) {
+function* dataParts(value, depth, active, sorted, known = null) {
   if (typeof value === 'string') { yield* quoted(value); return; }
   if (value === null || typeof value === 'boolean' || typeof value === 'number' && Number.isFinite(value) && !Object.is(value, -0)) {
     yield JSON.stringify(value); return;
   }
+  const text = known?.(value, depth);
+  if (text !== undefined) { yield text; return; }
   const {array, descriptors, keys} = fields(value, depth, active, sorted);
   active.add(value);
   yield array ? '[' : '{';
@@ -56,14 +58,65 @@ function* dataParts(value, depth, active, sorted) {
     if (i) yield ',';
     const key = keys[i];
     if (!array) { yield* quoted(key, false); yield ':'; }
-    yield* dataParts(descriptors[key].value, depth + 1, active, sorted);
+    yield* dataParts(descriptors[key].value, depth + 1, active, sorted, known);
   }
   yield array ? ']' : '}';
   active.delete(value);
 }
 export function canonicalParts(value, depth = 0, active = new Set()) { return dataParts(value, depth, active, true); }
 export function jsonParts(value) { return dataParts(value, 0, new Set(), false); }
+export function jsonPartsKnown(value, known) { return dataParts(value, 0, new Set(), false, known); }
+export function jsonTextAt(value, depth) { return Array.from(dataParts(value, depth, new Set(), false)).join(''); }
 export function canonicalJSON(value, depth = 0, active = new Set()) { return Array.from(canonicalParts(value, depth, active)).join(''); }
+const ownedRows = new WeakSet(), rowCanonical = new Map();
+let rowCanonicalChars = 0;
+const ROW_CANONICAL_LIMIT = 32 * 1024 * 1024;
+function freezeData(value) {
+  if (!value || typeof value !== 'object' || ownedRows.has(value) || ownedLedgers.has(value)) return value;
+  for (const key of Object.keys(value)) freezeData(value[key]);
+  return Object.freeze(value);
+}
+export function ownRow(row) { if (!ownedRows.has(row)) { freezeData(row); ownedRows.add(row); } return row; }
+const ownedLedgers = new WeakSet();
+export function ownLedger(ledger) {
+  if (ledger && typeof ledger === 'object' && !ownedLedgers.has(ledger)) { freezeData(ledger); ownedLedgers.add(ledger); }
+  return ledger;
+}
+export function isOwnedLedger(ledger) { return !!ledger && ownedLedgers.has(ledger); }
+const rowText = new WeakMap();
+function canonicalRow(row, depth) {
+  if (!ownedRows.has(row)) return canonicalJSON(row, depth);
+  const own = rowText.get(row);
+  if (own?.depth === depth) return own.json;
+  const json = keyedRow(row, depth);
+  rowText.set(row, {depth, json});
+  return json;
+}
+function keyedRow(row, depth) {
+  const id = typeof row.transaction?.id === 'string' ? row.transaction.id : null, seen = JSON.stringify(row);
+  const hit = id === null ? null : rowCanonical.get(id);
+  if (hit && hit.depth === depth && hit.seen.includes(seen)) return hit.json;
+  const json = canonicalJSON(row, depth);
+  if (id !== null && 2 * seen.length + json.length <= ROW_CANONICAL_LIMIT / 4) {
+    const size = entry => entry.seen.reduce((sum, text) => sum + text.length, entry.json.length);
+    const seenAlso = hit && hit.depth === depth && hit.json === json ? [hit.seen.at(-1), seen] : [seen];
+    if (hit) { rowCanonical.delete(id); rowCanonicalChars -= size(hit); }
+    const entry = {depth, seen: seenAlso, json};
+    rowCanonical.set(id, entry); rowCanonicalChars += size(entry);
+    for (const [key, value] of rowCanonical) {
+      if (rowCanonicalChars <= ROW_CANONICAL_LIMIT) break;
+      rowCanonical.delete(key); rowCanonicalChars -= size(value);
+    }
+  }
+  return json;
+}
+export function* canonicalRowsParts(rows, depth = 0) {
+  const {array, keys} = fields(rows, depth, new Set());
+  if (!array) { yield* canonicalParts(rows, depth); return; }
+  yield '[';
+  for (let i = 0; i < keys.length; i++) { if (i) yield ','; yield canonicalRow(rows[keys[i]], depth + 1); }
+  yield ']';
+}
 export function exactKeys(value, keys) {
   return value && typeof value === 'object' && !Array.isArray(value) && Object.keys(value).length === keys.length && keys.every(key => Object.hasOwn(value, key));
 }

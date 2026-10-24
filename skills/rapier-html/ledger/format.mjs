@@ -4,7 +4,7 @@ import {pictureHistorySplices} from './history.mjs';
 import {HistorySource} from './source.mjs';
 import {authoredHistory} from './transport.mjs';
 import {textRoot, rootAfter, sha256, sha256PartsAsync, createSHA256} from './hash.mjs';
-import {canonicalJSON, canonicalParts, plainData, documentText, utf8Length, exactKeys, nonnegative, fault} from './data.mjs';
+import {canonicalJSON, canonicalParts, canonicalRowsParts, ownRow, ownLedger, isOwnedLedger, plainData, documentText, utf8Length, exactKeys, nonnegative, fault} from './data.mjs';
 import {diff} from './diff/diff.mjs';
 import {minimalHistorySplice} from './inverse-source.mjs';
 import {evaluateWill} from './will.mjs';
@@ -27,32 +27,47 @@ function* checkedRecords(ledger, prepared) {
   }
   if (ledger.head.revision !== revision || ledger.head.root !== root) throw fault('history does not describe this document');
 }
+function* envelopeParts(envelope) {
+  const keys = Object.keys(envelope).sort();
+  yield '{';
+  for (let i = 0; i < keys.length; i++) {
+    if (i) yield ',';
+    yield JSON.stringify(keys[i]); yield ':';
+    yield* keys[i] === 'records' ? canonicalRowsParts(envelope.records, 1) : canonicalParts(envelope[keys[i]], 1, new Set());
+  }
+  yield '}';
+}
 const proofs = new WeakMap();
+function ownedRows(ledger) {
+  if (ledger && Array.isArray(ledger.records)) for (const row of ledger.records) if (row && typeof row === 'object') ownRow(row);
+  return ledger;
+}
 function copiedLedger(input, proof) {
-  if (!proof || !input || typeof input !== 'object') return plainData(input);
+  if (!proof || !input || typeof input !== 'object') return ownedRows(plainData(input));
   const fields = Object.getOwnPropertyDescriptors(input), start = fields.start;
-  if (!start || !Object.hasOwn(start, 'value') || !start.value || typeof start.value !== 'object') return plainData(input);
+  if (!start || !Object.hasOwn(start, 'value') || !start.value || typeof start.value !== 'object') return ownedRows(plainData(input));
   const parts = Object.getOwnPropertyDescriptors(start.value), text = parts.text;
-  if (!text || !Object.hasOwn(text, 'value') || text.value !== proof.startText) return plainData(input);
+  if (!text || !Object.hasOwn(text, 'value') || text.value !== proof.startText) return ownedRows(plainData(input));
   const shell = Object.create(Object.getPrototypeOf(input), {...fields, start: {...start,
     value: Object.create(Object.getPrototypeOf(start.value), {...parts, text: {...text, value: ''}})}});
-  const ledger = plainData(shell);
+  const ledger = ownedRows(plainData(shell));
   ledger.start.text = proof.startText;
   return ledger;
 }
 function ledgerAdmission(input) {
   const held = input && typeof input === 'object' ? proofs.get(input) : undefined;
+  if (held && isOwnedLedger(input)) return {ledger: input, shell: held.shell, proof: held};
   const ledger = copiedLedger(input, held);
   if (!exactKeys(ledger, ['format','documentAuthority','start','records','head','complete','sha256']) || ledger.format !== 'rapier-ledger/2' ||
       typeof ledger.documentAuthority !== 'string' || !ledger.documentAuthority || ledger.documentAuthority.length > 256 ||
       typeof ledger.complete !== 'boolean' || !Array.isArray(ledger.records) ||
       !exactKeys(ledger.start, ['text','revision','root','sha256','metadata']) || !exactKeys(ledger.head, ['revision','root','sha256','metadata'])) throw fault('unsupported or invalid envelope');
-  const shell = canonicalJSON({...ledger, start: {...ledger.start, text: ''}});
+  const shell = Array.from(envelopeParts({...ledger, start: {...ledger.start, text: ''}})).join('');
   const proof = held?.shell === shell && held.startText === ledger.start.text ? held : null;
   return {ledger, shell, proof};
 }
 function ledgerResult(ledger, proof, expectedText, expectedMetadata) {
-  proofs.set(ledger, proof);
+  proofs.set(ledger, proof); ownLedger(ledger);
   const {text, metadata, root, revision, prepared, source} = proof;
   if (expectedMetadata !== undefined && (!_rapierValidMetadata(expectedMetadata) || canonicalJSON(metadata) !== canonicalJSON(expectedMetadata)))
     throw fault('metadata does not describe this document');
@@ -67,7 +82,7 @@ function readLedgerState(input, expectedText, expectedMetadata) {
 }
 function* proveLedger(ledger, native = false) {
   const {sha256: claimed, ...payload} = ledger;
-  if (claimed !== (yield* checksum(canonicalParts(payload), native))) throw fault('envelope checksum differs');
+  if (claimed !== (yield* checksum(envelopeParts(payload), native))) throw fault('envelope checksum differs');
   let text = ledger.start.text, root = ledger.start.root, revision = ledger.start.revision;
   const startFacts = yield* sourceFacts(text, native);
   if (!_rapierValidMetadata(ledger.start.metadata) || !_rapierValidMetadata(ledger.head.metadata)) throw fault('invalid document metadata');
@@ -151,6 +166,10 @@ function* sourceFacts(text, native = false) {
   return {utf8Bytes: bytes, sha256: digest, contentRoot: text.length + ':' +
     (fnv >>> 0).toString(36) + ':' + (((b << 16) | a) >>> 0).toString(36)};
 }
+const expandedRows = new WeakMap();
+const sameSplices = (a, b) => a === b || a.length === b.length &&
+  a.every((row, i) => row.pos === b[i].pos && row.removed === b[i].removed && row.inserted === b[i].inserted);
+const sameEffect = (a, b) => a === b || !!a && !!b && canonicalJSON(a) === canonicalJSON(b);
 function* produceLedger({text, metadata, records, documentAuthority, revision, root, complete = false, earlier = records} = {}, native = false) {
   if (!_rapierValidMetadata(metadata)) throw fault('document metadata required');
   metadata = {...metadata};
@@ -162,10 +181,13 @@ function* produceLedger({text, metadata, records, documentAuthority, revision, r
   const expanded = [];
   for (const {record, splices: rows, metadata: effect} of prepared.rows) {
     if (!rows || effect === undefined) throw fault('navigation target was not retained');
-    expanded.push({transaction: plainData(record.transaction), splices: rows.map(row => ({pos: row.pos, removed: row.removed, inserted: row.inserted})),
+    const held = expandedRows.get(record);
+    if (held && sameSplices(held.rows, rows) && sameEffect(held.effect, effect)) { expanded.push(held.row); yield; continue; }
+    expanded.push(ownRow({transaction: plainData(record.transaction), splices: rows.map(row => ({pos: row.pos, removed: row.removed, inserted: row.inserted})),
       beforeHash: record.beforeHash, afterHash: record.afterHash, ...(Object.hasOwn(record, 'authored') ? {authored: plainData(record.authored)} : {}), ...(effect ? {metadata: plainData(effect)} : {}),
       ...(record.changeSet && Object.hasOwn(record.changeSet, 'label') ? {changeSet: {label: typeof record.changeSet.label === 'string' ? record.changeSet.label : plainData(record.changeSet.label)}} : {}),
-      ...(record.derivedCommentIndex == null ? {} : {derivedCommentIndex: typeof record.derivedCommentIndex === 'string' ? record.derivedCommentIndex : plainData(record.derivedCommentIndex)})});
+      ...(record.derivedCommentIndex == null ? {} : {derivedCommentIndex: typeof record.derivedCommentIndex === 'string' ? record.derivedCommentIndex : plainData(record.derivedCommentIndex)})}));
+    expandedRows.set(record, {row: expanded.at(-1), rows, effect});
     yield;
   }
   const headBytes = bytes;
@@ -199,8 +221,9 @@ function* produceLedger({text, metadata, records, documentAuthority, revision, r
   }
   const replayedMetadata = prepared.replayMetadata(startMetadata);
   if (!replayedMetadata || canonicalJSON(replayedMetadata) !== canonicalJSON(metadata)) throw fault('metadata does not describe this document');
-  const ledger = {...payload, sha256: yield* checksum(canonicalParts(payload), native)};
-  proofs.set(ledger, {shell: canonicalJSON({...ledger, start: {...ledger.start, text: ''}}), startText,
+  const ledger = {...payload, sha256: yield* checksum(envelopeParts(payload), native)};
+  ownLedger(ledger);
+  proofs.set(ledger, {shell: Array.from(envelopeParts({...ledger, start: {...ledger.start, text: ''}})).join(''), startText,
     text, metadata: {...metadata}, root, revision, prepared: _rapierPrepareHistoryRecords(ledger.records),
     source: new HistorySource(text)});
   return {ledger, contentRoot, utf8Bytes: headBytes};

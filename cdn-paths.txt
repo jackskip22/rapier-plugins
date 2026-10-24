@@ -1,0 +1,14 @@
+plugins/
+parts/
+embed/
+math/
+flowchart/
+pdf/
+pdfjs-dist-
+docx/
+runtime/
+elements/
+templates/
+lettersets/
+letters/
+assets/

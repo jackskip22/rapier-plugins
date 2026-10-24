@@ -76,7 +76,7 @@ function _rapierValidAuthored(origin) {
 		!/[\uD800-\uDFFF]/u.test(row.removed) && !/[\uD800-\uDFFF]/u.test(row.inserted));
 }
 
-function _rapierRecordIndex(records) {
+function _rapierRecordIndex(records, shared = false) {
 	const byId = new Map(), splices = new Map(), metadata = new Map();
 	for (const record of records) {
 		const id = record?.transaction?.id;
@@ -100,9 +100,12 @@ function _rapierRecordIndex(records) {
 		}
 		cache.set(current, value);
 		for (let i = path.length - 1; i >= 0; i--) {
-			if (path[i].transaction.reverts && value != null) value = effects
-				? Object.fromEntries(Object.entries(value).map(([key, pair]) => [key, {before: pair.after, after: pair.before}]))
-				: value.slice().reverse().map(row => ({pos: row.pos, removed: row.inserted, inserted: row.removed}));
+			if (path[i].transaction.reverts && value != null) {
+				value = effects
+					? Object.fromEntries(Object.entries(value).map(([key, pair]) => [key, {before: pair.after, after: pair.before}]))
+					: value.slice().reverse().map(row => ({pos: row.pos, removed: row.inserted, inserted: row.removed}));
+				if (shared) { for (const row of Object.values(value)) Object.freeze(row); Object.freeze(value); }
+			}
 			cache.set(path[i], value);
 		}
 		return value;
@@ -110,10 +113,27 @@ function _rapierRecordIndex(records) {
 	return {byId, splices: record => resolve(record, false), metadata: record => resolve(record, true)};
 }
 
+const _rapierLedgerIndexes = new WeakMap();
+function _rapierLedgerIndex(ledger) {
+	const records = ledger || [];
+	if (!Array.isArray(records)) return _rapierRecordIndex(records);
+	const held = _rapierLedgerIndexes.get(records);
+	if (held && held.records.length === records.length && held.records.at(-1) === records.at(-1) &&
+		(held.checked || held.records.every((record, at) => record === records[at]))) {
+		if (!held.checked) { held.checked = true; queueMicrotask(() => { held.checked = false; }); }
+		return held.index;
+	}
+	if (!records.every(record => record && typeof record === 'object' && Object.isFrozen(record) && Object.isFrozen(record.transaction ?? {})))
+		return _rapierRecordIndex(records);
+	const index = _rapierRecordIndex(records, true);
+	_rapierLedgerIndexes.set(records, {records: records.slice(), index});
+	return index;
+}
+
 function _rapierRecordSplices(entry, ledger) {
 	try {
 		if (entry && Array.isArray(entry.splices)) return entry.splices;
-		return _rapierRecordIndex(ledger || []).splices(entry);
+		return _rapierLedgerIndex(ledger).splices(entry);
 	} catch (_) { return null; }
 }
 
@@ -163,7 +183,7 @@ function _rapierRecordMetadata(entry, ledger) {
 	try {
 		if (Object.hasOwn(entry, 'metadata')) return _rapierValidMetadataEffect(entry.metadata) ? entry.metadata : undefined;
 		if (Array.isArray(entry.splices)) return null;
-		return _rapierRecordIndex(ledger || []).metadata(entry);
+		return _rapierLedgerIndex(ledger).metadata(entry);
 	} catch (_) { return undefined; }
 }
 
@@ -507,9 +527,10 @@ const _rapierPrepareHistoryRecords = (() => {
 
 const _rapierJournalRecord = (() => {
 	const copies = new WeakMap();
+	const fixed = value => { if (value && typeof value === 'object') { for (const key of Object.keys(value)) fixed(value[key]); Object.freeze(value); } return value; };
 	return record => {
 		let copy = copies.get(record);
-		if (!copy) { copy = JSON.parse(JSON.stringify(record)); copies.set(record, copy); }
+		if (!copy) { copy = fixed(JSON.parse(JSON.stringify(record))); copies.set(record, copy); }
 		return copy;
 	};
 })();
