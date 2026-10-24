@@ -391,6 +391,14 @@
 	-webkit-mask: var(--md-glyph-task-box) center / 100% 100% no-repeat;
 	mask: var(--md-glyph-task-box) center / 100% 100% no-repeat;
 }
+/* The box is a background through a mask, and two modes drop backgrounds: forced colors (Windows High Contrast) paints them as the page,
+   and print without "background graphics" leaves them out, so the boxes vanished. In those two the same mask is painted in the system's
+   text color and printed as drawn; nowhere else does anything change. */
+.md-render .task-list-item input[type="checkbox"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+@media (forced-colors: active) {
+	.md-render .task-list-item input[type="checkbox"] { forced-color-adjust: none; }
+	.md-render .task-list-item input[type="checkbox"]::before,.md-render .task-list-item input[type="checkbox"]:checked::after { background: CanvasText; }
+}
 .md-render .task-list-item input[type="checkbox"]:checked::before {
 	-webkit-mask-image: var(--md-glyph-task-open);
 	mask-image: var(--md-glyph-task-open);

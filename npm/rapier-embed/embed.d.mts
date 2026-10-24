@@ -59,7 +59,7 @@ export interface MountOptions {
   approvePlugins?: boolean;
   /** The iframe's accessible title. */
   title?: string;
-  /** Milliseconds a loaded frame has to connect before `ready` rejects with `connect_timeout`; default 15000. */
+  /** Milliseconds after the frame loads that it has to connect before `ready` rejects with `connect_timeout`; default 15000. A frame that never loads rejects with `load_timeout` after 120 seconds. */
   timeout?: number;
   onError?(error: Refusal | Error): void;
 }

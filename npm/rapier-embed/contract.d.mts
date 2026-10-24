@@ -11,6 +11,8 @@ export const ASSET_TYPES: readonly AssetType[];
 /** Every refusal is an Error with a code. */
 export interface Refusal extends Error { code: string; }
 export function refusal(code: string, reason?: string): Refusal;
+/** A refusal of any error type (TypeError for a bad option) with its code. */
+export function coded<T extends ErrorConstructor>(code: string, Type: T, message: string): InstanceType<T> & {code: string};
 /** A session's settings. Absent features mean everything the build has; an empty list means none. */
 export interface Settings {
   features?: Feature[];

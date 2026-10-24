@@ -19,7 +19,8 @@ Rapier - Markdown Editor & Art is a shared Markdown editor. Follow the rapier-ag
   phone taps the diagram once first); tell them so. Painting
   needs the editor open; Water needs WebGPU. Give each painting edit an operation_id; while it answers pending,
   repeat that exact edit with the same operation_id until it is applied or refused. After one Water refusal or
-  material_request_expired, use the Paint brushes instead and say why.
+  material_request_expired, read the current revision first and keep a painting that already committed; otherwise
+  use the Paint brushes instead and say why.
 - Pair: when the browser shows a four-letter code, call show {document, target:"pair", code} within a minute;
   the person then presses Allow. Other show targets need no pairing.
 - Notes: read {document, search} in the person's configured store; locked or unavailable is not empty. Sync only when asked:
