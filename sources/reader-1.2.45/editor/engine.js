@@ -7150,6 +7150,7 @@ function _rapierFinishEditBlur(editDiv, expectedBlockId = null) {
 	if (!context || context.editDiv !== editDiv) return;
 	if (expectedBlockId != null && context.block.id !== expectedBlockId) return;
 	if (_rapierEditingOwnsFocus(editDiv)) { editDiv._rapierBlurStreakStart = null; return; }
+	_rapierSettleInput({place: false});
 	if (rapier.composition.block) {
 		editDiv._pendingBlurCommit = true;
 		return;
@@ -8753,11 +8754,12 @@ function _leaveOtherEditingBlocks(exceptWrapper, options = null) {
 	const block = rapier.document.blocks.find(candidate => candidate.id === id);
 	const readDiv = tracked.querySelector('.block-read');
 	const editDiv = tracked.querySelector('.block-edit');
+	_rapierSettleInput({place: false});
 	const ownsFocus = !!(editDiv &&
 		(document.activeElement === editDiv || editDiv.contains(document.activeElement)));
 	if (ownsFocus) editDiv._rapierSkipBlurCommit = true;
 	if (block && readDiv && editDiv) {
-		if (leaveBlockEdit(block, tracked, readDiv, editDiv, options) === false) {
+		if (leaveBlockEdit(block, tracked, readDiv, editDiv, {...(options || {}), reuseSurface: true}) === false) {
 			if (ownsFocus) editDiv._rapierSkipBlurCommit = false;
 			return false;
 		}
@@ -9533,7 +9535,7 @@ function leaveBlockEdit(block, wrapper, readDiv, editDiv, options = null) {
 		_clearActiveBlock(block && block.id);
 		return;
 	}
-	if (typeof _selectionTouchesWrapper === 'function' &&
+	if (!options?.reuseSurface && typeof _selectionTouchesWrapper === 'function' &&
 			_selectionTouchesWrapper(wrapper, false)) {
 		_deferredLeaveBlockEdit(block, wrapper, readDiv, editDiv);
 		return;
@@ -10739,11 +10741,13 @@ function _rapierLeaveEdgeParagraph() {
 }
 
 function rapierUndo(context) {
+	_rapierSettleInput();
 	if (!context && _rapierLive.active()) return _rapierLive.undo(null, false, rapier.view.sharedEditDiv?._rapierTypingBreakAt || 0);
 	return context ? _rapierTraverseHistory(false, context) : _rapierTraverseBurst(false);
 }
 
 function rapierRedo(context) {
+	_rapierSettleInput();
 	if (!context && _rapierLive.active()) return _rapierLive.redo();
 	return context ? _rapierTraverseHistory(true, context) : _rapierTraverseBurst(true);
 }
@@ -22848,6 +22852,7 @@ function _rapierFirstDocumentInstalled(tries = 0) {
 }
 
 function rapierSave(options = {}) {
+	_rapierSettleInput();
 	_rapierCloseTypingStep();
 	if (globalThis.RAPIER_APPS_HOST === true) return Promise.resolve(globalThis.RapierMcpApp?.saveCurrent(options) || false)
 		.catch(error => { showToast('Couldn’t save.', 'error', null, error); return false; });
@@ -26353,12 +26358,51 @@ function _rapierCommitOpenComposition() {
 	else if (caret[0].isConnected && caret[2].isConnected) selection.setBaseAndExtent(...caret);
 }
 
+function _rapierSettleCaretSpot() {
+	const open = _activeBlockEditContext();
+	const selection = window.getSelection && window.getSelection();
+	if (open && selection?.rangeCount && selection.isCollapsed && open.editDiv.contains(selection.anchorNode)) {
+		return {blockId: open.block.id, offset: _charOffsetForRangePoint(open.editDiv, selection.anchorNode, selection.anchorOffset)};
+	}
+	const edit = _rapierToolbarRuntime.editDiv;
+	const range = !_rapierToolbarRangeStale() && _rapierToolbarRuntime.range;
+	if (edit?.isConnected && range?.startContainer?.isConnected && edit.contains(range.startContainer)) {
+		const blockId = Number(edit.closest('.block-wrapper')?.dataset.blockId);
+		if (Number.isFinite(blockId)) return {blockId, offset: _charOffsetForRangePoint(edit, range.startContainer, range.startOffset)};
+	}
+	return null;
+}
+
+function _rapierSettleInput(options) {
+	if (_rapierMutationBarrierActive()) return false;
+	const spot = _rapierSettleCaretSpot();
+	const host = _editorHostEl();
+	if (spot && host) host._rapierSettledCaret = spot;
+	if (rapier.composition.block || rapier.composition.source) _rapierCommitOpenComposition();
+	if (rapier.composition.block) {
+		const open = _activeBlockEditContext();
+		if (open) {
+			rapier.composition.block = false;
+			_rapierCheckpointEdit(open.editDiv);
+		}
+	}
+	_rapierCheckpointPendingTyping();
+	if (options?.place === false || rapier.view.mode === 'source') return true;
+	const active = document.activeElement;
+	if (active && active !== document.body && !active.closest?.('#editor-blocks')) return true;
+	_rapierRestoreToolbarSelection();
+	if (_activeBlockEditContext()) return true;
+	const remembered = host?._rapierSettledCaret;
+	if (remembered) _enterBlockEditAtOffset(remembered.blockId, remembered.offset || 0);
+	return true;
+}
+
 function _rapierDepartureFlush(event) {
 	if (event?.type === 'rapier:checkpoint-requested') {
 		clearTimeout(rapier.autosave.debounceTimer);
 		_writeRestoreCursor();
 	}
-	_rapierCommitOpenComposition();
+	_rapierSettleInput();
 	if (_rapierEmbed.active && _rapierEmbed.loaded && !rapierHolds('host') && !_rapierEmbedDiscarded()) {
 		try {
 			if (_rapierIsDirty()) {
@@ -27065,9 +27109,11 @@ function _rapierEnsureImageUi() {
 		bar.innerHTML =
 			'<button type="button" class="rapier-image-tools__btn" data-image-act="view" aria-label="view image">' +
 				'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></button>' +
-			'<button type="button" class="rapier-image-tools__btn" data-image-act="smaller" aria-label="make image smaller">−</button>' +
+			'<button type="button" class="rapier-image-tools__btn" data-image-act="smaller" aria-label="make image smaller">' +
+				'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></button>' +
 			'<button type="button" class="rapier-image-tools__btn rapier-image-tools__size" data-image-act="size" aria-label="set image width">AUTO</button>' +
-			'<button type="button" class="rapier-image-tools__btn" data-image-act="larger" aria-label="make image larger">+</button>' +
+			'<button type="button" class="rapier-image-tools__btn" data-image-act="larger" aria-label="make image larger">' +
+				'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>' +
 			'<button type="button" class="rapier-image-tools__btn" data-image-act="edit" aria-label="image description and format" title="Image description and format">' +
 				'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + _RAPIER_COMMAND_ICONS.type + '</svg></button>' +
 			'<button type="button" class="rapier-image-tools__btn rapier-image-tools__draw" data-image-act="draw" aria-label="edit drawing" hidden></button>' +
@@ -27715,6 +27761,7 @@ async function _rapierPasteRasterImage(file, target = {}) {
             } finally { processing.signal?.removeEventListener('abort', abort); }
         },
         async onOk(values, normalized) {
+            _rapierSettleInput();
             if (!_rapierMutationStampIsCurrent(stamp) || _rapierUserMutationBlocked()) {
                 if (nativeIntake?.purpose === 'clipboard') await retireOriginal(true);
                 if (typeof target.deliver === 'function') target.deliver(null);
@@ -27846,6 +27893,7 @@ async function _rapierPasteVectorImage(file, target = {}) {
             return prepared;
         },
         async onOk(values, normalized) {
+            _rapierSettleInput();
             if (!_rapierMutationStampIsCurrent(stamp) || _rapierUserMutationBlocked()) {
                 await retire(true);
                 if (typeof target.deliver === 'function') target.deliver(null);
@@ -28006,6 +28054,7 @@ function _rapierImageInsertionTarget() {
 }
 function rapierInsertImage() {
     if (_rapierUserMutationBlocked()) return;
+    _rapierSettleInput();
     _rapierChooseRasterFile(_rapierImageInsertionTarget());
 }
 
@@ -33312,6 +33361,7 @@ function _rapierCommandList() {
 function rapierRunCommand(commandId, event = null) {
 	const command = _rapierCommandList().find(candidate => candidate.id === String(commandId || ''));
 	if (!command) return false;
+	_rapierSettleInput();
 	const paletteWasOpen = !!_rapierCommandRuntime.palette;
 	if (command.group === 'document' && !/^document\.(?:source-view|shortcuts|spacing|protection)$/.test(command.id) &&
 			_rapierNotesPart?.state?.captureToken) {
@@ -34862,6 +34912,7 @@ function _rapierEmbedHandleMessage(event, port, generation) {
 		return;
 	}
 	if (data.type === 'disconnect') {
+		_rapierSettleInput({place: false});
 		_rapierEmbed.fileOpen?.cancel('open_disconnected', false);
 		_rapierEmbed.assets?.cancel('asset_disconnected');
 		try { port.close(); } catch (_) {}
@@ -35094,6 +35145,7 @@ async function _rapierEmbedEndWord() {
 
 async function rapierEmbedSave(options) {
 	options = options || {};
+	_rapierSettleInput();
 	if (options.signal && typeof options.signal.throwIfAborted === 'function') {
 		options.signal.throwIfAborted();
 	}
@@ -35292,6 +35344,7 @@ async function rapierEmbedCopyRecovery() {
 }
 
 async function rapierDownload() {
+	_rapierSettleInput();
 	const requested = _rapierMutationStamp(), readOnly = rapier.access.readOnly;
 	const ownsRequested = () => _rapierMutationStampSharesDocument(requested) &&
 		requested.loadToken === Number(rapier.identity.loadToken || 0) && readOnly === rapier.access.readOnly;
@@ -42415,7 +42468,10 @@ function _rapierSyncSingleLineHighlight() {
 	}, { capture: true });
 	ta.addEventListener('compositionstart', _handleCompositionStart);
 	ta.addEventListener('compositionend', _handleCompositionEnd);
-	ta.addEventListener('blur', _commitSourceCompositionOnBlur);
+	ta.addEventListener('blur', () => {
+		_commitSourceCompositionOnBlur();
+		_rapierSettleInput({place: false});
+	});
 
 	let _tabReleasesFocus = false;
 
@@ -49398,6 +49454,16 @@ function _rapierUiMount() {
 		}
 	};
 	document.addEventListener('click', runAction);
+	document.addEventListener('pointerdown', event => {
+		const control = event.target instanceof Element ? event.target.closest('[data-action],[data-act]') : null;
+		if (!control) return;
+		const action = control.dataset.action || '';
+		const embedChoice = control.dataset.act === 'ok' && !!control.closest('#rapier-field-dialog');
+		if (!(action === 'command' || action === 'undo' || action === 'redo' || action === 'save-document' ||
+				action === 'save-as-document' || action === 'pick-style' || action === 'pick-divider' ||
+				action === 'pick-highlight' || action === 'pick-color' || action === 'list-depth' || embedChoice)) return;
+		_rapierSettleInput();
+	}, true);
 	document.getElementById('about-name').addEventListener('click', _rapierUiReviewTapper());
 	document.getElementById('about-review').addEventListener('click', _rapierUiReviewRedeem);
 
