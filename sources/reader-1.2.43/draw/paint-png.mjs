@@ -40,6 +40,26 @@ export function createPaintPNGCodec() {
 		return png(px, new Uint8Array(await new Response(stream).arrayBuffer()));
 	}
 	async function compressed(px) { return url(await compressedBytes(px)); }
+	function restoreRow(row, current, previous, channels) {
+		const filter = row[0], size = current.length;
+		if (filter === 0 || !previous && filter === 2) { current.set(row.subarray(1)); return; }
+		if (filter === 1 || !previous && filter === 4) {
+			current.set(row.subarray(1, channels + 1));
+			for (let x = channels; x < size; x++) current[x] = (row[x + 1] + current[x - channels]) & 255;
+		} else if (filter === 2) {
+			for (let x = 0; x < size; x++) current[x] = (row[x + 1] + previous[x]) & 255;
+		} else if (filter === 3) {
+			for (let x = 0; x < channels; x++) current[x] = (row[x + 1] + ((previous?.[x] || 0) >> 1)) & 255;
+			for (let x = channels; x < size; x++) current[x] = (row[x + 1] + ((current[x - channels] + (previous?.[x] || 0)) >> 1)) & 255;
+		} else {
+			for (let x = 0; x < channels; x++) current[x] = (row[x + 1] + previous[x]) & 255;
+			for (let x = channels; x < size; x++) {
+				const a = current[x - channels], b = previous[x], c = previous[x - channels], p = a + b - c;
+				const da = Math.abs(p - a), db = Math.abs(p - b), dc = Math.abs(p - c);
+				current[x] = (row[x + 1] + (da <= db && da <= dc ? a : db <= dc ? b : c)) & 255;
+			}
+		}
+	}
 	async function decode(raster, expected = null) {
 		if (typeof raster === 'string' && !raster.startsWith('data:image/png;base64,')) return null;
 		let bytes = raster;
@@ -73,7 +93,6 @@ export function createPaintPNGCodec() {
 		if (expected) {
 			const stride = width * 4, row = new Uint8Array(stride + 1);
 			let previous = new Uint8Array(stride), current = new Uint8Array(stride), used = 0, y = 0;
-			const paeth = (a, b, c) => { const p = a + b - c, x = Math.abs(p - a), v = Math.abs(p - b), z = Math.abs(p - c); return x <= v && x <= z ? a : v <= z ? b : c; };
 			try {
 				if (colour !== 6 || width !== expected.width || height !== expected.height || expected.data.length !== stride * height) return false;
 				for (;;) {
@@ -82,11 +101,8 @@ export function createPaintPNGCodec() {
 						const n = Math.min(row.length - used, value.length - at); row.set(value.subarray(at, at + n), used); used += n; at += n;
 						if (used !== row.length) continue;
 						if (y >= height || row[0] > 4) return false;
-						for (let x = 0; x < stride; x++) {
-							const a = x >= 4 ? current[x - 4] : 0, b = previous[x], c = x >= 4 ? previous[x - 4] : 0, f = row[0];
-							current[x] = row[x + 1] + (f === 0 ? 0 : f === 1 ? a : f === 2 ? b : f === 3 ? (a + b) >> 1 : paeth(a, b, c));
-							if (current[x] !== expected.data[y * stride + x]) return false;
-						}
+						restoreRow(row, current, y ? previous : null, 4);
+						for (let x = 0; x < stride; x++) if (current[x] !== expected.data[y * stride + x]) return false;
 						[previous, current] = [current, previous]; used = 0; y++;
 					}
 				}
@@ -95,7 +111,6 @@ export function createPaintPNGCodec() {
 		}
 		const stride = width * channels, data = new Uint8ClampedArray(stride * height);
 		const row = new Uint8Array(stride + 1); let used = 0, y = 0;
-		const paeth = (a,b,c) => { const p = a+b-c, x = Math.abs(p-a), y = Math.abs(p-b), z = Math.abs(p-c); return x <= y && x <= z ? a : y <= z ? b : c; };
 		try {
 			for (;;) {
 				const {done, value} = await reader.read(); if (done) break;
@@ -104,7 +119,8 @@ export function createPaintPNGCodec() {
 					if (used !== row.length) continue;
 					if (y >= height) throw new Error('Invalid painting PNG size');
 					const filter = row[0]; if (filter > 4) throw new Error('Invalid painting PNG filter');
-					for (let x = 0; x < stride; x++) { const at = y * stride + x, a = x >= channels ? data[at - channels] : 0, b = y ? data[at - stride] : 0, c = y && x >= channels ? data[at - stride - channels] : 0; data[at] = (row[x + 1] + (filter === 0 ? 0 : filter === 1 ? a : filter === 2 ? b : filter === 3 ? (a+b) >> 1 : paeth(a,b,c))) & 255; }
+					const at = y * stride;
+					restoreRow(row, data.subarray(at, at + stride), y ? data.subarray(at - stride, at) : null, channels);
 					y++; used = 0;
 				}
 			}

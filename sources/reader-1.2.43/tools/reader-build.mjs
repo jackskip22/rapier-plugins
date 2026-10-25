@@ -193,7 +193,7 @@ export async function buildReader({root = here, unchecked = [], toolchainCanonic
 	const loaderSource = await read('shell/plugin-loader.js');
 	const pluginParts = (await read('shell/bundle-io.js')) + '\n' + readerPluginLoader(fillMermaidResources(loaderSource), built);
 
-	const pools = [await platformUnits(), await sharedUnits('editor/pop.js'), await sharedUnits('editor/sheet-gesture.js'), await sharedUnits('editor/plugins.js'),
+	const pools = [await platformUnits(), await sharedUnits('editor/pop.js'), await sharedUnits('editor/sheet-gesture.js'), await sharedUnits('editor/pinch-zoom.js'), await sharedUnits('editor/plugins.js'),
 		await sharedUnits('editor/compare-block.js'), await renderWorkUnits(), await engineUnits(),
 		await sharedUnits('editor/plan-exact.js')];
 	const kit = {}, exports = await kitExports();
@@ -218,7 +218,7 @@ export async function buildReader({root = here, unchecked = [], toolchainCanonic
 	}
 	report.unresolved = linked.unresolved.filter(name => !BROWSER.has(name));
 	const PROVIDED = ['DOMPurify', 'IDBKeyRange', 'URIError', 'RapierImageAssets', 'RapierPictureMarks', 'RapierPluginLoader', 'RapierUnpack', 'modules'];
-	const GUARDED = ['_rapierDrawReadSVGRecipe', '_rapierDrawShapeProfileFor', 'RapierBundledPlugins', 'RapierLexer', 'RapierParts'];
+	const GUARDED = ['_rapierDocumentPart', '_rapierDrawReadSVGRecipe', '_rapierDrawShapeProfileFor', 'RapierBundledPlugins', 'RapierLexer', 'RapierParts'];
 	const UNREACHED = ['RapierLedgerCarried'];
 	const known = new Set([...PROVIDED, ...GUARDED, ...UNREACHED]);
 	const missing = report.unresolved.filter(name => !known.has(name));

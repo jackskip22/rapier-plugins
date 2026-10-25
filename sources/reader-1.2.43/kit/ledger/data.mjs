@@ -110,11 +110,15 @@ function keyedRow(row, depth) {
   }
   return json;
 }
+const plainRowArrays = new WeakSet();
 export function* canonicalRowsParts(rows, depth = 0) {
-  const {array, keys} = fields(rows, depth, new Set());
-  if (!array) { yield* canonicalParts(rows, depth); return; }
+  if (!(depth <= 64 && plainRowArrays.has(rows))) {
+    const {array} = fields(rows, depth, new Set());
+    if (!array) { yield* canonicalParts(rows, depth); return; }
+    if (Object.isFrozen(rows) && depth <= 64) plainRowArrays.add(rows);
+  }
   yield '[';
-  for (let i = 0; i < keys.length; i++) { if (i) yield ','; yield canonicalRow(rows[keys[i]], depth + 1); }
+  for (let i = 0; i < rows.length; i++) { if (i) yield ','; yield canonicalRow(rows[i], depth + 1); }
   yield ']';
 }
 export function exactKeys(value, keys) {

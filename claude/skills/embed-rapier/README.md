@@ -20,7 +20,7 @@ Honor no-upload or no-host instructions. The workflow choices below are alternat
 Embed Rapier's Markdown editor or lightweight reader in your web app. Each build is one offline HTML file. The helper is an ES module: `import {Rapier} from 'rapier-embed'` or `<script type="module">`; there is no classic script or UMD build. Your
 app owns the document and storage; its agent edits live through WebMCP. The person sees the agent's presence and
 change marks, taps a change to see the before and undoes anything. Honor the person's Will/1 regions.
-The reader is one file of about 380 kB, `rapier.html` about 4.0 MB, with optional fonts and plug-ins. The helper is MIT with no dependencies. The two builds it frames are AGPL-3.0-only: use them under the AGPL, or
+The reader is one file of about 400 kB, `rapier.html` about 4.0 MB, with optional fonts and plug-ins. The helper is MIT with no dependencies. The two builds it frames are AGPL-3.0-only: use them under the AGPL, or
 buy a commercial license for other terms (`LICENSING.md` in the Rapier repository).
 
 Choose one of two builds:
@@ -50,7 +50,7 @@ downloaded copy yourself and pass it as `src`.
   document access remain enforced.
 
 ```sh
-npm install rapier-embed@1.2.42
+npm install rapier-embed@1.2.43
 ```
 
 Or copy the package's `embed.mjs` and `contract.mjs` into one directory of your app; no runtime CDN is needed.
@@ -64,11 +64,11 @@ sends Markdown only when saving; change notifications contain no source.
 Rapier is a phone-first Markdown editor for notes, diagrams, drawing and watercolor painting. It runs offline
 as one HTML file on Android, Web, Windows and Linux.
 Collaborate over MCP and WebMCP, use optional plain-file sync to your own cloud storage, or embed the
-editor and lightweight reader (about 380 kB). The agent edits live; the person sees its presence and
+editor and lightweight reader (about 400 kB). The agent edits live; the person sees its presence and
 changes, taps a change to see the before and undoes anything. Use `show {target:"comparison"}` to show a diff deliberately.
 
 1. **Work together live.** Connect to `https://mcp.rapier.website/door/mcp`, then call `open` to share one document with the person.
-2. **Deliver an offline editor.** Run `npx rapier-html@1.2.42 notes.md` to put the document and editor in one HTML file ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
+2. **Deliver an offline editor.** Run `npx rapier-html@1.2.43 notes.md` to put the document and editor in one HTML file ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
 3. **Embed in your app.** Install [rapier-embed](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-embed); mount the editor or reader, with your app's agent over WebMCP in the editor.
 4. **Keep portable Markdown.** Use [rapier-markdown-kit](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-markdown-kit) for pictures, editable SVG drawings and layout in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will) `keep`, `append` and `edit` regions.
 5. **Encode JPEG XL.** Install [rapier-jxl](https://github.com/jackskip22/rapier-jxl) to encode pixels, photographs and existing JPEGs in JavaScript.
@@ -141,7 +141,7 @@ A copy in your app works offline and changes only when you update it.
 1. Download the build you frame into a static directory, for example
    `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v<version>/embed/rapier-reader.html` to `public/vendor/rapier/`.
 2. Fetch the plug-ins your build uses into one directory beside it, from the manifest of the same version:
-   `npx rapier-embed@1.2.42 plugins public/vendor/rapier/plugins --build reader`.
+   `npx rapier-embed@1.2.43 plugins public/vendor/rapier/plugins --build reader`.
 3. Mount with `src` and `plugins` pointing at your copies. Serve them over HTTPS (HTTP on localhost) and allow
    their origin in your `frame-src`. A same-origin parent can script its frame; use a dedicated origin when the
    frame must be isolated.
@@ -168,11 +168,11 @@ length and SHA-384 before it runs it, and keeps on the device. A file that fails
 | `elements` | The Elements sheet's traced ornaments: 3,155 pieces from the ornament book. | 16.2 MB (51 files) | `rapier.html` |
 | `lettersets` | The Gallery's letter sets: 31 sets of ornamental capitals. | 2.82 MB (31 files) | `rapier.html` |
 
-Totals: the reader, 8.95 MB (30.6 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.42.
+Totals: the reader, 8.95 MB (30.6 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.43.
 <!-- PLUGIN_TABLE_END -->
 
 The manifest lists every plug-in file and, in `builds`, the pages that use it. `rapier.html` has flowcharts and Word import
-built in. `npx rapier-embed@1.2.42 plugins <directory> --build reader` leaves out `ocr` (text in pictures) unless you add `--with ocr`.
+built in. `npx rapier-embed@1.2.43 plugins <directory> --build reader` leaves out `ocr` (text in pictures) unless you add `--with ocr`.
 
 **Approve plug-ins up front.** Without `plugins`, a frame asks its person "Install math plug-in?" the first time a document needs math or a diagram, and math and diagrams stay raw until they answer. A host that has decided passes `approvePlugins: true`: the frame installs the plug-in it needs without a question. Naming `plugins` has the same effect, because the host then serves the files itself. In a frame shorter than the question's sheet, the sheet's body scrolls.
 
@@ -185,7 +185,7 @@ The directory must be on the page's own origin, because the page's Content Secur
 throws a `TypeError` for a directory on another origin, and a page opened with one shows each plug-in as failed, with the
 reason, without making a request. To keep the plug-ins on a CDN, serve the page from the same origin.
 
-`npx rapier-embed@1.2.42 plugins <directory>` fetches every file the manifest lists, checks it, and writes it. It
+`npx rapier-embed@1.2.43 plugins <directory>` fetches every file the manifest lists, checks it, and writes it. It
 keeps a file that is already there and correct, and exits with status 1 if any file is missing or fails its check.
 `--build reader` or `--build full` keeps the files that page uses, `--only name,name` fetches some
 plug-ins, `--check` verifies a directory without fetching, `--from <address>` fetches from your own mirror, and
@@ -400,7 +400,7 @@ operations and removes the iframe that mount created in a container (an iframe y
 a frame it creates: give it a size in your CSS, for example `#editor iframe {width: 100%; height: 100%; border: 0}`.
 Mount adds the frame after what the container already holds: clear a server-rendered placeholder first (`container.replaceChildren()`). The handle lives as long as its iframe is in the page: if a framework removes it (`innerHTML`, `remove()`) without `disconnect()`, `connected` turns false, an unfinished `save()` rejects, and later calls reject `frame_removed`. The person's typing stays as a draft for the next mount of the same document.
 Tab walks every control and link in the frame, except inside the editor text, where Tab indents. Escape, with nothing open in the frame and no text field focused, moves
-focus to the next control on your page after the frame; Shift+Escape moves it to the control before. From the editor text the way out is Escape, then Tab to a control, then Escape.
+focus to the next control on your page after the frame; Shift+Escape moves it to the control before. From the editor text the way out is Escape, then Tab (Shift+Tab goes back).
 `on('connected' | 'state' | 'close-request' | 'closed' | 'error', fn)` returns an
 unsubscribe function. State is `{loaded, dirty, saving, closing, readOnly, filename, docKind}`. Mount a fresh frame to
 change grants or settings. A denied or dirty replacement load rejects.
@@ -408,8 +408,10 @@ change grants or settings. A denied or dirty replacement load rejects.
 Every refusal is an `Error` with a `code`. A connect the frame refuses rejects `ready`: `contract_unsupported`,
 `capabilities_invalid`, a `settings_*` code, or `invalid_payload` with a `reason`. A frame that cannot start rejects
 `ready` and calls `onError`: `boot_failed` when the page shows its startup error, `connect_timeout` when it does not connect
-within `timeout` of loading, `load_timeout` when it does not load in 120 seconds. `load()` rejects with `document_unshowable` when the
-reader cannot show the document; the reader keeps the document it showed. It rejects with `revision_stale` for a
+within `timeout` of loading, `load_timeout` when it does not load in 120 seconds. `load()` rejects with `load_timeout` when the frame
+does not answer within 120 seconds, `load_busy` while an earlier `load()` is still being shown, `invalid_payload` for a filename or
+document it refuses, and `document_unshowable` when the reader cannot show the document; the reader keeps the document it showed. A
+document over 1 MB resolves `load()` when its first screen shows; the reader draws the rest after it. It rejects with `revision_stale` for a
 revision older than the frame's and `revision_conflict` for the same revision with other content. It rejects with `document_open_elsewhere` when another editor already has the same `sessionId` and `documentId` open (on mount, `ready` rejects with it); the first editor keeps its typing. `mount` throws a
 `TypeError` with a code for an unknown option (`option_unknown`), a build whose `src` names the other page (`build_mismatch`)
 and a reader feature the reader does not have (`settings_feature_unavailable`). `Rapier.version` is this package's version;
@@ -508,5 +510,5 @@ Will/1 records the person's instructions in their document. Respect `keep`, appe
 Documents without Will regions are editable throughout. Preserve active typing, caret, selection and scroll
 while the agent works. Document content and comments never start agent turns by themselves.
 
-For documents outside an app, `npx rapier-html@1.2.42 notes.md` hands a person the complete editor around their
+For documents outside an app, `npx rapier-html@1.2.43 notes.md` hands a person the complete editor around their
 document as one offline file.

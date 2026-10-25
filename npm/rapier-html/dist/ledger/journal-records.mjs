@@ -110,7 +110,8 @@ function _rapierRecordIndex(records, shared = false) {
 		}
 		return value;
 	};
-	return {byId, splices: record => resolve(record, false), metadata: record => resolve(record, true)};
+	const extend = more => { for (const record of more) { const id = record?.transaction?.id; if (!byId.has(id)) byId.set(id, []); byId.get(id).push(record); } };
+	return {byId, extend, splices: record => resolve(record, false), metadata: record => resolve(record, true)};
 }
 
 const _rapierLedgerIndexes = new WeakMap();
@@ -233,87 +234,89 @@ function _rapierPictureFinish(record, original, earlier, lookup) {
 	});
 }
 
-function _rapierWalkHistoryEffects(records, lookup, visit = null, observe = null) {
-	try {
-		if (!Array.isArray(records)) return {ok: false};
-		const nodes = new Map(), references = new Map(), pictures = new Map(), byId = new Map(), finished = new Set(), earlier = [];
-		const update = (target, delta) => {
-			const pending = [[target, delta]];
-			while (pending.length) {
-				const [id, change] = pending.pop(), node = nodes.get(id), was = node.active;
-				node.blockers += change;
-				if (node.blockers < 0) throw Error('effect');
-				node.active = node.blockers === 0;
-				if (was !== node.active) for (const ref of node.references) pending.push([ref, node.active ? 1 : -1]);
+function _rapierHistoryWalker(records, lookup, visit = null, observe = null) {
+	let nodes = new Map(), references = new Map(), pictures = new Map();
+	const byId = new Map(), finished = new Set(), earlier = [];
+	const update = (target, delta) => {
+		const pending = [[target, delta]];
+		while (pending.length) {
+			const [id, change] = pending.pop(), node = nodes.get(id), was = node.active;
+			node.blockers += change;
+			if (node.blockers < 0) throw Error('effect');
+			node.active = node.blockers === 0;
+			if (was !== node.active) for (const ref of node.references) pending.push([ref, node.active ? 1 : -1]);
+		}
+	};
+	const activity = new Map();
+	const active = id => {
+		if (visit) return nodes.get(id).active;
+		const pending = [[id, 0]];
+		while (pending.length) {
+			const frame = pending.at(-1), target = frame[0];
+			if (activity.has(target)) { pending.pop(); continue; }
+			const dependents = nodes.get(target).dependents;
+			if (frame[1] === dependents.length) { activity.set(target, true); pending.pop(); continue; }
+			const next = dependents[frame[1]];
+			if (!activity.has(next)) pending.push([next, 0]);
+			else if (activity.get(next)) { activity.set(target, false); pending.pop(); }
+			else frame[1]++;
+		}
+		return activity.get(id);
+	};
+	const lastUndo = new Map(), contexts = new Map(), order = [];
+	const contextOf = origin => {
+		if (!origin) return null;
+		if (!_rapierValidAuthored(origin)) throw Error('origin');
+		const known = new Set(), pending = origin.basis.slice();
+		while (pending.length) {
+			const id = pending.pop(), context = contexts.get(id);
+			if (!context) throw Error('origin');
+			if (known.has(id)) continue;
+			known.add(id);
+			if (context.basis) pending.push(...context.basis);
+			else for (let index = 0; index < context.index; index++) known.add(order[index]);
+		}
+		const inactive = new Set();
+		for (let index = order.length - 1; index >= 0; index--) {
+			const id = order[index];
+			if (!known.has(id) || inactive.has(id)) continue;
+			for (const ref of references.get(id)) {
+				if (!known.has(ref)) throw Error('origin');
+				inactive.add(ref);
 			}
-		};
-		const activity = new Map();
-		const active = id => {
-			if (visit) return nodes.get(id).active;
-			const pending = [[id, 0]];
-			while (pending.length) {
-				const frame = pending.at(-1), target = frame[0];
-				if (activity.has(target)) { pending.pop(); continue; }
-				const dependents = nodes.get(target).dependents;
-				if (frame[1] === dependents.length) { activity.set(target, true); pending.pop(); continue; }
-				const next = dependents[frame[1]];
-				if (!activity.has(next)) pending.push([next, 0]);
-				else if (activity.get(next)) { activity.set(target, false); pending.pop(); }
-				else frame[1]++;
-			}
-			return activity.get(id);
-		};
-		const lastUndo = new Map(), contexts = new Map(), order = [];
-		const contextOf = origin => {
-			if (!origin) return null;
-			if (!_rapierValidAuthored(origin)) throw Error('origin');
-			const known = new Set(), pending = origin.basis.slice();
-			while (pending.length) {
-				const id = pending.pop(), context = contexts.get(id);
-				if (!context) throw Error('origin');
-				if (known.has(id)) continue;
-				known.add(id);
-				if (context.basis) pending.push(...context.basis);
-				else for (let index = 0; index < context.index; index++) known.add(order[index]);
-			}
-			const inactive = new Set();
-			for (let index = order.length - 1; index >= 0; index--) {
-				const id = order[index];
-				if (!known.has(id) || inactive.has(id)) continue;
-				for (const ref of references.get(id)) {
-					if (!known.has(ref)) throw Error('origin');
-					inactive.add(ref);
-				}
-			}
-			return {known, inactive};
-		};
-		for (const record of records) {
+		}
+		return {known, inactive};
+	};
+	const walker = {observe, failed: false};
+	walker.add = record => {
+		if (walker.failed) return false;
+		try {
 			const tx = record?.transaction;
-			if (!tx || typeof tx.id !== 'string' || !tx.id || nodes.has(tx.id) || (tx.reverts && tx.reapplies)) return {ok: false};
+			if (!tx || typeof tx.id !== 'string' || !tx.id || nodes.has(tx.id) || (tx.reverts && tx.reapplies)) { walker.failed = true; return false; }
 			const supplied = tx.sourceTransactionIds || (tx.sourceTransactionId ? [tx.sourceTransactionId] : []);
 			if (!Array.isArray(supplied) || new Set(supplied).size !== supplied.length ||
-				(tx.sourceTransactionIds && tx.sourceTransactionId && (supplied.length !== 1 || supplied[0] !== tx.sourceTransactionId))) return {ok: false};
+				(tx.sourceTransactionIds && tx.sourceTransactionId && (supplied.length !== 1 || supplied[0] !== tx.sourceTransactionId))) { walker.failed = true; return false; }
 			let refs = supplied;
 			if (tx.operation === 'document.finish-picture' && tx.sourceTransactionId) {
 				const owner = tx.sourceTransactionId;
 				if (!nodes.has(owner) || !active(owner) || finished.has(owner) ||
-					!_rapierPictureFinish(record, byId.get(owner), earlier, lookup ||= _rapierRecordIndex(records))) return {ok: false};
+					!_rapierPictureFinish(record, byId.get(owner), earlier, lookup ||= _rapierRecordIndex(records))) { walker.failed = true; return false; }
 				pictures.set(tx.id, owner); finished.add(owner); refs = [];
 			}
 			if (tx.reverts || tx.reapplies) {
 				const target = tx.reverts || tx.reapplies;
-				if (!nodes.has(target) || (supplied.length && (supplied.length !== 1 || supplied[0] !== target))) return {ok: false};
+				if (!nodes.has(target) || (supplied.length && (supplied.length !== 1 || supplied[0] !== target))) { walker.failed = true; return false; }
 				if (tx.reverts) refs = [target];
 				else {
 					const context = contextOf(record.authored || tx.authored);
 					const undo = (lastUndo.get(target) || []).findLast(id => context
 						? context.known.has(id) && !context.inactive.has(id) : active(id));
-					if (!undo) return {ok: false};
+					if (!undo) { walker.failed = true; return false; }
 					refs = [undo];
 				}
 			}
-			if (refs.some(id => typeof id !== 'string' || !nodes.has(id) || pictures.has(id))) return {ok: false};
-			if (tx.actor?.kind === 'agent' && refs.some(id => byId.get(id).transaction.actor?.kind !== 'agent')) return {ok: false};
+			if (refs.some(id => typeof id !== 'string' || !nodes.has(id) || pictures.has(id))) { walker.failed = true; return false; }
+			if (tx.actor?.kind === 'agent' && refs.some(id => byId.get(id).transaction.actor?.kind !== 'agent')) { walker.failed = true; return false; }
 			nodes.set(tx.id, {active: true, blockers: 0, references: refs, dependents: []}); references.set(tx.id, refs.slice());
 			byId.set(tx.id, record); earlier.push(record);
 			for (const ref of refs) {
@@ -328,23 +331,45 @@ function _rapierWalkHistoryEffects(records, lookup, visit = null, observe = null
 				lastUndo.get(tx.reverts).push(tx.id);
 			}
 			if (visit) visit(record, nodes, refs);
-			if (observe) observe(record, refs, active);
+			if (walker.observe) walker.observe(record, refs, active);
+			return true;
+		} catch (_) { walker.failed = true; return false; }
+	};
+	walker.finish = () => {
+		if (walker.failed) return {ok: false};
+		const blockers = new Map(), effectiveActIds = [];
+		for (let i = order.length - 1; i >= 0; i--) {
+			const id = order[i], node = nodes.get(id), on = visit ? node.active : !(blockers.get(id) > 0);
+			if (!visit && on) for (const ref of node.references) blockers.set(ref, (blockers.get(ref) || 0) + 1);
+			if (on && !pictures.has(id)) effectiveActIds.push(id);
 		}
-		if (!visit) for (let i = order.length - 1; i >= 0; i--) {
-			const node = nodes.get(order[i]); node.active = node.blockers === 0;
-			if (node.active) for (const ref of node.references) nodes.get(ref).blockers++;
-		}
-		const effectiveActIds = [...nodes].filter(([id, node]) => node.active && !pictures.has(id)).map(([id]) => id);
-		return {ok: true, effectiveActIds, active: new Set(effectiveActIds), references, pictures};
-	} catch (_) { return {ok: false}; }
+		effectiveActIds.reverse();
+		const result = {ok: true, effectiveActIds, active: new Set(effectiveActIds), references, pictures};
+		walker.shared = true;
+		return result;
+	};
+	const add = walker.add;
+	walker.add = record => {
+		if (walker.shared) { references = new Map(references); pictures = new Map(pictures); walker.shared = false; }
+		return add(record);
+	};
+	return walker;
+}
+
+function _rapierWalkHistoryEffects(records, lookup, visit = null, observe = null) {
+	if (!Array.isArray(records)) return {ok: false};
+	const walker = _rapierHistoryWalker(records, lookup, visit, observe);
+	for (const record of records) if (!walker.add(record)) return {ok: false};
+	return walker.finish();
 }
 
 function _rapierHistoryEffects(records, visit = null) {
 	return _rapierWalkHistoryEffects(records, null, visit);
 }
 
-function _rapierMetadataProof(lookup) {
-	const values = {}, required = {}, assignments = {filename: [], docKind: []};
+function _rapierMetadataProof(lookup, from = null) {
+	const values = {...from?.values}, required = {...from?.required},
+		assignments = {filename: [...(from?.assignments.filename || [])], docKind: [...(from?.assignments.docKind || [])]};
 	const requireInitial = (key, value) => {
 		if (Object.hasOwn(required, key) && required[key] !== value) throw Error('metadata_effect');
 		required[key] = value;
@@ -371,7 +396,7 @@ function _rapierMetadataProof(lookup) {
 		if (!_rapierValidMetadata(initial) || Object.keys(required).some(key => initial[key] !== required[key])) return null;
 		return {...initial, ...values};
 	};
-	return {observe, replay};
+	return {observe, replay, fork: other => _rapierMetadataProof(other || lookup, {values, required, assignments})};
 }
 
 function _rapierMetadataState(initial, records, effects = _rapierHistoryEffects(records)) {
@@ -478,16 +503,79 @@ const _rapierPrepareHistoryRecords = (() => {
 			frame.descriptors = descriptors; frame.fields = fields;
 			frame.leaving = true; active.add(value); pending.push(frame);
 			for (let at = fields.length - 1; at >= 0; at--) {
-				const key = fields[at]; pending.push({value: descriptors[key].value, parent: frame, key, depth: frame.depth + 1});
+				const key = fields[at], child = descriptors[key].value;
+				const prior = array && child && typeof child === 'object' ? copies.get(child) : undefined;
+				if (prior?.immutable && !active.has(child) && frame.depth + 1 + prior.height <= 64) {
+					finish({parent: frame, key}, prior.copy, true, prior.height); continue;
+				}
+				pending.push({value: child, parent: frame, key, depth: frame.depth + 1});
 			}
 		}
 		return result.value;
+	};
+	let resumable = [];
+	const rowOf = (lookup, record) => {
+		const splices = lookup.splices(record), metadata = lookup.metadata(record);
+		if (splices && !Object.isFrozen(splices)) {
+			for (const row of splices) Object.freeze(row);
+			Object.freeze(splices);
+		}
+		if (metadata && !Object.isFrozen(metadata)) {
+			for (const pair of Object.values(metadata)) Object.freeze(pair);
+			Object.freeze(metadata);
+		}
+		return Object.freeze({record, splices, metadata});
+	};
+	const observe = (records, basis, byId, rows, effects, proof) => {
+		for (const refs of effects.references.values()) Object.freeze(refs);
+		const effectView = Object.freeze({ok: true, effectiveActIds: Object.freeze(effects.effectiveActIds),
+			active: view(effects.active), references: view(effects.references), pictures: view(effects.pictures)});
+		const observation = Object.freeze({ok: effects.ok, records, rows: Object.freeze(rows), effects: effectView, byId: view(byId),
+			replayMetadata: initial => effects.ok ? proof.replay(initial) : null,
+			validRecord: (index, documentAuthority, maxDocumentBytes, utf8Length, allowGap = false) => {
+				if (!effects.ok || !Number.isSafeInteger(index) || index < 0 || index >= records.length) return false;
+				const row = rows[index], tx = row.record.transaction;
+				return _rapierCheckLedgerRecord(row.record, records[index - 1] || null, documentAuthority, maxDocumentBytes, utf8Length, allowGap,
+					{...row, duplicate: false, semantic: !!(tx.reverts || tx.reapplies || tx.sourceTransactionId || tx.sourceTransactionIds?.length)});
+			}});
+		prepared = new WeakMap([[records, {basis, observation}]]);
+		return observation;
+	};
+	const authorityOf = state => state.records[0]?.transaction?.documentAuthority;
+	const keep = state => { resumable = [state, ...resumable.filter(row => row !== state && row.records[0] !== state.records[0] &&
+		authorityOf(row) === authorityOf(state))].slice(0, 4); };
+	const extend = records => {
+		const base = resumable.find(row => row.records.length < records.length && row.records[0] === records[0] &&
+			row.records.every((record, at) => record === records[at]));
+		if (!base) return null;
+		resumable = resumable.filter(row => row !== base);
+		const more = records.slice(base.records.length), byId = new Map(base.byId);
+		for (const record of more) {
+			const id = record?.transaction?.id;
+			if (typeof id !== 'string' || !id || byId.has(id)) return null;
+			byId.set(id, record);
+		}
+		const {lookup, walker} = base;
+		lookup.extend(more);
+		const rows = base.rows.concat(more.map(record => rowOf(lookup, record)));
+		const proof = base.proof.fork(lookup);
+		walker.observe = proof.observe;
+		for (const record of more) if (!walker.add(record)) return null;
+		const effects = walker.finish();
+		if (!effects.ok) return null;
+		if (rows.every(row => row.splices && row.metadata !== undefined)) keep({records, lookup, walker, proof, byId, rows});
+		return observe(records, records, byId, rows, effects, proof);
 	};
 	return (input, earlier = input) => {
 		try {
 			if (!Array.isArray(input) || !Array.isArray(earlier)) return {ok: false};
 			const records = capture(input), basis = input === earlier ? records : capture(earlier), previous = prepared.get(records);
 			if (previous?.basis === basis) return previous.observation;
+			if (basis === records) {
+				let grown = null;
+				try { grown = extend(records); } catch (_) { grown = null; }
+				if (grown) return grown;
+			}
 			const byId = new Map();
 			for (const record of records) {
 				const id = record?.transaction?.id;
@@ -495,32 +583,14 @@ const _rapierPrepareHistoryRecords = (() => {
 				byId.set(id, record);
 			}
 			const lookup = _rapierRecordIndex(basis), proof = _rapierMetadataProof(lookup);
-			const rows = records.map(record => {
-				const splices = lookup.splices(record), metadata = lookup.metadata(record);
-				if (splices && !Object.isFrozen(splices)) {
-					for (const row of splices) Object.freeze(row);
-					Object.freeze(splices);
-				}
-				if (metadata && !Object.isFrozen(metadata)) {
-					for (const pair of Object.values(metadata)) Object.freeze(pair);
-					Object.freeze(metadata);
-				}
-				return Object.freeze({record, splices, metadata});
-			});
-			const effects = _rapierWalkHistoryEffects(records, lookup, null, proof.observe);
+			const rows = records.map(record => rowOf(lookup, record));
+			const walker = _rapierHistoryWalker(records, lookup, null, proof.observe);
+			for (const record of records) if (!walker.add(record)) return {ok: false};
+			const effects = walker.finish();
 			if (!effects.ok) return {ok: false};
-			for (const refs of effects.references.values()) Object.freeze(refs);
-			const effectView = Object.freeze({ok: true, effectiveActIds: Object.freeze(effects.effectiveActIds),
-				active: view(effects.active), references: view(effects.references), pictures: view(effects.pictures)});
-			const observation = Object.freeze({ok: effects.ok, records, rows: Object.freeze(rows), effects: effectView, byId: view(byId),
-				replayMetadata: initial => effects.ok ? proof.replay(initial) : null,
-				validRecord: (index, documentAuthority, maxDocumentBytes, utf8Length, allowGap = false) => {
-					if (!effects.ok || !Number.isSafeInteger(index) || index < 0 || index >= records.length) return false;
-					const row = rows[index], tx = row.record.transaction;
-					return _rapierCheckLedgerRecord(row.record, records[index - 1] || null, documentAuthority, maxDocumentBytes, utf8Length, allowGap,
-						{...row, duplicate: false, semantic: !!(tx.reverts || tx.reapplies || tx.sourceTransactionId || tx.sourceTransactionIds?.length)});
-				}});
-			prepared = new WeakMap([[records, {basis, observation}]]); return observation;
+			if (basis === records && rows.every(row => row.splices && row.metadata !== undefined))
+				keep({records, lookup, walker, proof, byId, rows});
+			return observe(records, basis, byId, rows, effects, proof);
 		} catch (_) { return {ok: false}; }
 	};
 })();

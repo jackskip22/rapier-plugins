@@ -289,15 +289,21 @@ function* _rapierProjectStyledRootSteps(semanticRoot, options) {
 		if (code) {
 			const lang = _rapierLanguageClass(code) || String(metadata.codeLang || '');
 			code.classList.add('artifact-code');
-			if (metadata.docKind === 'code') _rapierPaintCode(code, _rapierArtifactHighlight(code.textContent || '', lang));
+			if (metadata.docKind === 'code') {
+				const colored = _rapierArtifactHighlight(code.textContent || '', lang);
+				_rapierPaintCode(code, opts.sanitized ? sanitizeRapierHtml(colored, 'export') : colored);
+			}
 			if (lang) code.classList.add('language-' + String(lang).replace(/[^a-z0-9_-]/gi, ''));
 		}
 	} else {
+		let codeLeft = opts.codeBudget >= 0 ? opts.codeBudget : Infinity;
 		for (const code of root.querySelectorAll('pre > code')) { yield;
 			if (code.parentElement?.classList.contains('diagram-source') &&
 					code.closest('.diagram-block')?.getAttribute('data-diagram-state') === 'ready') continue;
 			const lang = _rapierLanguageClass(code) || 'text';
-			_rapierPaintCode(code, _rapierArtifactHighlight(code.textContent || '', lang));
+			if ((codeLeft -= code.textContent.length) < 0) { code.replaceChildren(document.createTextNode(code.textContent)); continue; }
+			const colored = _rapierArtifactHighlight(code.textContent || '', lang);
+			_rapierPaintCode(code, opts.sanitized ? sanitizeRapierHtml(colored, 'export') : colored);
 		}
 
 		for (const table of root.querySelectorAll('table')) { yield;
@@ -336,6 +342,13 @@ function* _rapierProjectStyledRootSteps(semanticRoot, options) {
 
 	yield* _rapierPrefixPortableAnchorsSteps(root, opts.baseName || metadata.filename || 'document');
 
+	if (opts.sanitized) {
+		for (const cache of root.querySelectorAll('.diagram-cache')) {
+			yield;
+			cache.innerHTML = sanitizeRapierHtml(cache.innerHTML, 'export');
+		}
+		return root;
+	}
 	return yield* cleanTree(root, sanitizeRapierHtml, 'export');
 }
 

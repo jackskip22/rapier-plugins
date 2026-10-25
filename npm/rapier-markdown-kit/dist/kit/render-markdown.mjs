@@ -55,18 +55,23 @@ function createMarkdownRenderer(runtime) {
   window?.addEventListener?.('rapier:original-file-ready', scheduleWikiEmbeds);
   const wikiMode = options => options.wikiEmbedding ? 'links' : options.wikiLinks !== undefined ? options.wikiLinks
     : globalThis.RapierOriginalFolderCore?.currentOriginal?.() ? 'label' : false;
+let codeLeft = Infinity;
 function initMarkdownIt() {
 	if (typeof window.markdownit !== 'function') throw new Error('markdownit');
 	if (typeof _rapierMarkdownPreview === 'function') globalThis.rapierRenderPreview = _rapierMarkdownPreview;
 
 	md = window.markdownit({
 		...RAPIER_MARKDOWN_SPEC.options,
-		highlight: (code, lang) => lang && _rapierHighlightAdmitted(code) ? _rapierCodeHtml(code, lang) : '',
+		highlight: (code, lang) => lang && _rapierHighlightAdmitted(code) && (codeLeft -= code.length) >= 0 ? _rapierCodeHtml(code, lang) : '',
 	});
 
 	_rapierApplyMarkdownSpec(md, window);
 	globalThis.RapierImageAssets.installMarkdownImages(md);
 	_rapierInstallSemanticProbe(md);
+	md.core.ruler.after('block', 'rapier_part_decorations', state => {
+		if (state.env.rapierPartDecorations && !/[<$\\]/.test(state.src) && !state.src.includes('^['))
+			state.tokens = _rapierPartDecorationGroups(state.tokens).flat();
+	});
 	_rapierInstallMarkdownMath(md, RAPIER_MARKDOWN_SPEC.rules.mathBlock);
 
 	const markOpenDefault = md.renderer.rules.mark_open ||
@@ -138,7 +143,7 @@ function initMarkdownIt() {
 				'" data-rapier-image-source="' + esc(encodeURIComponent(token.content)) + '">' + esc(label) + '</span>';
 		}
 		const note = embed && !env.rapierWikiEmbedding;
-		if (note) scheduleWikiEmbeds();
+		if (note && !env.rapierPassive) scheduleWikiEmbeds();
 		return '<span class="rapier-source-token rapier-source-token--wiki' + (note ? '-embed' : '') +
 			'" data-rapier-source="' + esc(encodeURIComponent(token.content)) + '" data-rapier-visible="' + esc(encodeURIComponent(label)) +
 			'"><a href="' + esc(href) + '">' + esc(label) + '</a></span>';
@@ -371,12 +376,12 @@ function initMarkdownIt() {
 			const mathProvider = env.rapierProviders === false ? null : _rapierProviders.math;
 			const mathNeeded = provider?.requiresMath?.(src) === true;
 			const mathReady = !mathNeeded || mathProvider?.status === 'ready';
-			if (!mathReady && !mathProvider?.request?.() && env.rapierProviders !== false && !_mathPromptedOnce) {
+			if (!mathReady && !env.rapierPassive && !mathProvider?.request?.() && env.rapierProviders !== false && !_mathPromptedOnce) {
 				_mathPromptedOnce = true;
 				try { _rapierUiMath.request(); } catch (_) {}
 			}
 			const ready = diagramReady && mathReady;
-			if (!diagramReady && !provider?.request?.() && env.rapierProviders !== false && !_diagramPromptedOnce) {
+			if (!diagramReady && !env.rapierPassive && !provider?.request?.() && env.rapierProviders !== false && !_diagramPromptedOnce) {
 				_diagramPromptedOnce = true;
 				try { _rapierUiDiagram.request(); } catch (_) {}
 			}
@@ -420,7 +425,7 @@ function initMarkdownIt() {
 			if (env.rapierPage) return sourceHtml;
 			const mathProvider = env.rapierProviders === false ? null : _rapierProviders.math;
 			if (!mathProvider || mathProvider.status !== 'ready' || typeof mathProvider.renderToString !== 'function') {
-				if (!mathProvider?.request?.() && env.rapierProviders !== false && !_mathPromptedOnce) {
+				if (!env.rapierPassive && !mathProvider?.request?.() && env.rapierProviders !== false && !_mathPromptedOnce) {
 					_mathPromptedOnce = true;
 					try { _rapierUiMath.request(); } catch (_) {}
 				}
@@ -476,13 +481,15 @@ function _rapierRenderSemanticRoot(canonical, metadata, options = {}) {
 	}
 
 	const markdown = _rapierSplitOpeningFrontmatter(canonical).body;
-	const env = {rapierImagePresentation: options.imagePresentation === true, ...(options.page ? {rapierPage: true} : {}), ...(options.providers === false ? {rapierProviders: false} : {})};
+	const env = {rapierImagePresentation: options.imagePresentation === true, rapierPassive: options.passive === true, ...(options.page ? {rapierPage: true} : {}), ...(options.providers === false ? {rapierProviders: false} : {})};
 	if (options.wikiEmbedding) env.rapierWikiEmbedding = true;
 	const wikiLinks = wikiMode(options);
 	if (wikiLinks) env.rapierWikiLinks = wikiLinks;
 	if (options.mathEquations) env.rapierMathEquations = options.mathEquations;
 	const nesting = md && options.maxNesting > 0 ? options.maxNesting : 0;
 	let cutAt = -1, rendered;
+	codeLeft = options.codeBudget >= 0 ? options.codeBudget : Infinity;
+	try {
 	if (nesting || md && options.closeDetails) {
 		const saved = md.options.maxNesting;
 		if (nesting) md.options.maxNesting = nesting;
@@ -494,6 +501,7 @@ function _rapierRenderSemanticRoot(canonical, metadata, options = {}) {
 	} else rendered = md
 		? md.render(markdown, env)
 		: '<pre><code>' + escapeRapierHtmlText(markdown) + '</code></pre>';
+	} finally { codeLeft = Infinity; }
 	if (md && env.footnotes && Array.isArray(env.footnotes.list) && env.footnotes.list.length) {
 		const labels = env.footnotes.list.map((item, index) =>
 			String(item && item.label || ('inline-' + (index + 1))));
@@ -503,14 +511,14 @@ function _rapierRenderSemanticRoot(canonical, metadata, options = {}) {
 	if (cutAt >= 0) _rapierAppendNestingCut(root, markdown, cutAt);
 	_rapierApplyBlockDirection(root);
 
-	_rapierAssignHeadingSlugs(root, RAPIER_RENDERED_HEADING_SELECTOR, false);
+	_rapierAssignHeadingSlugs(root, RAPIER_RENDERED_HEADING_SELECTOR, false, options.carry?.slugs, options.carry?.headingIds);
 	_rapierDisambiguateRenderedAnchors(root);
 
 	root.querySelectorAll('pre > code').forEach(_rapierNormalizeCodeElement);
-	_rapierMarkTableCaptions(root);
+	_rapierMarkTableCaptions(root, options.carry);
 	_rapierMarkFigureCaptions(root);
 	_rapierMarkListContinuations(_rapierChildElements(root));
-	_rapierDecorateJumpLists(root);
+	_rapierDecorateJumpLists(root, options.carry);
 	return root;
 }
 
@@ -543,12 +551,13 @@ async function _rapierRenderSemanticRootAsync(canonical, metadata, options = {})
 	let {tokens, env} = parsed, labels = env.footnotes?.list?.map((item, index) => String(item?.label || ('inline-' + (index + 1))));
 	const cutAt = nesting ? _rapierNestingCutAt(tokens, nesting) : -1;
 	tokens = _rapierCloseOpenDetails(tokens);
-	env = {...env, rapierImagePresentation: options.imagePresentation === true};
+	env = {...env, rapierImagePresentation: options.imagePresentation === true, rapierPassive: options.passive === true};
 	await pause(work, .3);
 	const inert = document.createElement('template').content.ownerDocument;
 	const root = inert.createElement('div'), part = inert.createElement('div'), boundary = htmlBoundary();
 	root.setAttribute('data-rapier-semantic-root', 'true');
 	let html = '', began = performance.now(), complete = false;
+	codeLeft = options.codeBudget >= 0 ? options.codeBudget : Infinity;
 	const append = () => {
 		if (md.renderer.rapierTransformHtml) html = md.renderer.rapierTransformHtml(html);
 		if (labels?.length) html = _relabelFootnoteHtml(html, labels);
@@ -571,22 +580,70 @@ async function _rapierRenderSemanticRootAsync(canonical, metadata, options = {})
 		if (html) append();
 		if (cutAt >= 0) _rapierAppendNestingCut(root, markdown, cutAt);
 		parsed = tokens = env = labels = null;
-		await finishAsync(_rapierSemanticDecorations(root), work);
+		await finishAsync(_rapierSemanticDecorations(root, options.carry), work);
 		await pause(work, .6);
 		complete = true;
 		return root;
-	} finally { if (!complete) { root.replaceChildren(); part.replaceChildren(); } }
+	} finally { codeLeft = Infinity; if (!complete) { root.replaceChildren(); part.replaceChildren(); } }
 }
 
-function* _rapierSemanticDecorations(root) {
+function _rapierPartDecorationGroups(tokens) {
+	const groups = [];
+	for (let at = 0; at < tokens.length; at++) {
+		const first = tokens[at];
+		if (first.type !== 'heading_open' && first.type !== 'table_open') continue;
+		const close = first.type === 'heading_open' ? 'heading_close' : 'table_close';
+		let end = at + 1;
+		while (end < tokens.length && !(tokens[end].type === close && tokens[end].level === first.level)) end++;
+		end++;
+		if (first.type === 'table_open' && tokens[end]?.type === 'paragraph_open' && tokens[end].level === first.level) {
+			while (end < tokens.length && !(tokens[end].type === 'paragraph_close' && tokens[end].level === first.level)) end++;
+			end++;
+		}
+		groups.push(tokens.slice(at, end));
+		at = end - 1;
+	}
+	return groups;
+}
+
+function _rapierReadPartDecorations(canonical, metadata, options = {}) {
+	const carry = options.carry || {slugs: Object.create(null), captions: 0, continued: true}, captionStart = carry.captions || 0;
+	const markdown = _rapierSplitOpeningFrontmatter(canonical).body, env = {rapierImagePresentation: options.imagePresentation === true, rapierPassive: true, rapierPartDecorations: true,
+		...(options.page ? {rapierPage: true} : {}), ...(options.providers === false ? {rapierProviders: false} : {})};
+	if (options.wikiEmbedding) env.rapierWikiEmbedding = true;
+	const wikiLinks = wikiMode(options);
+	if (wikiLinks) env.rapierWikiLinks = wikiLinks;
+	if (options.mathEquations) env.rapierMathEquations = options.mathEquations;
+	const saved = md.options.maxNesting;
+	let tokens;
+	try {
+		if (options.maxNesting > 0) md.options.maxNesting = options.maxNesting;
+		tokens = md.parse(markdown, env);
+	} finally { md.options.maxNesting = saved; }
+	if (tokens.some(token => token.type === 'html_block' || token.type === 'math_block' || token.type.startsWith('footnote_') ||
+			token.type === 'inline' && token.children?.some(child => child.type === 'html_inline' || child.type === 'math_inline' || child.type.startsWith('footnote_')))) {
+		const root = _rapierRenderSemanticRoot(canonical, metadata, {...options, carry, codeBudget: 0, passive: true});
+		return Object.freeze({headingIds: Object.freeze([...root.querySelectorAll(RAPIER_RENDERED_HEADING_SELECTOR)].map(heading => heading.id)), captionStart});
+	}
+	const html = [];
+	for (const group of _rapierPartDecorationGroups(tokens)) html.push('<div>', md.renderer.render(group, md.options, env), '</div>');
+	const root = document.createElement('template').content.ownerDocument.createElement('div');
+	root.innerHTML = sanitizeRapierHtml(html.join(''), 'export');
+	_rapierAssignHeadingSlugs(root, RAPIER_RENDERED_HEADING_SELECTOR, false, carry.slugs);
+	const headingIds = Object.freeze([...root.querySelectorAll(RAPIER_RENDERED_HEADING_SELECTOR)].map(heading => heading.id));
+	_rapierMarkTableCaptions(root, carry);
+	return Object.freeze({headingIds, captionStart});
+}
+
+function* _rapierSemanticDecorations(root, carry = null) {
 	yield* _rapierApplyBlockDirectionSteps(root); yield;
-	yield* _rapierAssignHeadingSlugsSteps(root, RAPIER_RENDERED_HEADING_SELECTOR, false); yield;
+	yield* _rapierAssignHeadingSlugsSteps(root, RAPIER_RENDERED_HEADING_SELECTOR, false, carry?.slugs, carry?.headingIds); yield;
 	yield* _rapierDisambiguateRenderedAnchorsSteps(root); yield;
 	for (const code of root.querySelectorAll('pre > code')) { _rapierNormalizeCodeElement(code); yield; }
-	yield* _rapierMarkTableCaptionsSteps(root); yield;
+	yield* _rapierMarkTableCaptionsSteps(root, carry); yield;
 	yield* _rapierMarkFigureCaptionsSteps(root); yield;
 	yield* _rapierMarkListContinuationsSteps(_rapierChildElements(root)); yield;
-	yield* _rapierDecorateJumpListsSteps(root); yield;
+	yield* _rapierDecorateJumpListsSteps(root, carry); yield;
 }
 
 function _rapierInstallSemanticProbe(instance) {
@@ -931,17 +988,23 @@ function _rapierFirstStrongDir(text) {
 
 const _RAPIER_DIR_BLOCKS = 'p,h1,h2,h3,h4,h5,h6,li,blockquote,ul,ol,dt,dd,td,th';
 
-function _rapierAssignHeadingSlugs(root, selector, reserveExisting) { return finish(_rapierAssignHeadingSlugsSteps(root, selector, reserveExisting)); }
+function _rapierAssignHeadingSlugs(root, selector, reserveExisting, taken, assigned) { return finish(_rapierAssignHeadingSlugsSteps(root, selector, reserveExisting, taken, assigned)); }
 
-function* _rapierAssignHeadingSlugsSteps(root, selector = RAPIER_RENDERED_HEADING_SELECTOR, reserveExisting = true) {
+function* _rapierAssignHeadingSlugsSteps(root, selector = RAPIER_RENDERED_HEADING_SELECTOR, reserveExisting = true, taken = null, assigned = null) {
 	if (!root || !root.querySelectorAll) return;
-	const used = Object.create(null);
+	const used = taken || Object.create(null);
 	const headings = _rapierDormantHeadings(root, selector, true);
+	if (assigned && assigned.length !== headings.length) {
+		try { console.warn('[rapier-reader] Part heading facts do not match its rendered headings; assigning ordinary heading IDs.'); } catch (_) {}
+		assigned = null;
+	}
 	const headingSet = new Set(headings);
 	if (reserveExisting) for (const element of _rapierDormantHeadings(root.isConnected ? document : root, '[id]', true)) { yield;
 		if (!headingSet.has(element) && element.id) used[element.id] = 0;
 	}
+	let index = 0;
 	for (const heading of headings) { yield;
+		if (assigned) { heading.id = assigned[index++]; continue; }
 		const base = _rapierHeadingSlugBase(heading.textContent);
 		const owned = typeof _rapierChromeOwnsId === 'function' && _rapierChromeOwnsId(base);
 		heading.id = _rapierNextHeadingSlug(owned ? 'heading-' + base : base, used);
@@ -1042,9 +1105,9 @@ function _rapierDecodeHash(hash) {
 	catch (_) { return raw; }
 }
 
-function _rapierDecorateJumpLists(root) { return finish(_rapierDecorateJumpListsSteps(root)); }
+function _rapierDecorateJumpLists(root, carry) { return finish(_rapierDecorateJumpListsSteps(root, carry)); }
 
-function* _rapierDecorateJumpListsSteps(root) {
+function* _rapierDecorateJumpListsSteps(root, carry = null) {
 	for (const list of root.querySelectorAll('ul')) { yield;
 		if (list.closest('li')) continue;
 		const items = Array.from(list.children).filter(item => item.tagName === 'LI');
@@ -1067,7 +1130,7 @@ function* _rapierDecorateJumpListsSteps(root) {
 		}
 	}
 
-	const first = root.firstElementChild, only = first && !first.nextElementSibling ? first : null;
+	const first = root.firstElementChild, only = !carry && first && !first.nextElementSibling ? first : null;
 	if (only && only.tagName === 'P' && /^(?:jump\s+to|contents|table\s+of\s+contents):?$/i.test(String(only.textContent || '').trim())) {
 		only.classList.add('rapier-jump-label-candidate');
 	}
@@ -1109,11 +1172,11 @@ function* _rapierMarkListContinuationsSteps(blocks, mark = (element, name) => el
 	}
 }
 
-function _rapierMarkTableCaptions(root) { return finish(_rapierMarkTableCaptionsSteps(root)); }
+function _rapierMarkTableCaptions(root, carry) { return finish(_rapierMarkTableCaptionsSteps(root, carry)); }
 
-function* _rapierMarkTableCaptionsSteps(root) {
+function* _rapierMarkTableCaptionsSteps(root, carry = null) {
 	const used = new Set(Array.from(root.querySelectorAll('[id]'), element => element.id));
-	let ordinal = 0;
+	let ordinal = carry?.captions || 0;
 	for (const table of root.querySelectorAll('table')) { yield;
 		const sibling = table.nextElementSibling;
 		if (!sibling || sibling.tagName !== 'P') continue;
@@ -1126,6 +1189,7 @@ function* _rapierMarkTableCaptionsSteps(root) {
 		const existing = (table.getAttribute('aria-describedby') || '').trim();
 		table.setAttribute('aria-describedby', existing ? existing + ' ' + id : id);
 	}
+	if (carry) carry.captions = ordinal;
 }
 
 
@@ -1829,7 +1893,7 @@ function renderWithMathML(source, metadata = {}) {
 	return {html, equations};
 }
 
-  return {renderWithMathML, _rapierClipboardPayloadAsync, _rapierPlainTextFileAsync, _rapierCloneRootAsync, _rapierPortablePlainTextAsync, _rapierHeldPicturesAsWordsAsync, _rapierRenderSemanticRootAsync, _rapierProjectPortableRootAsync, _rapierPortableHtmlAsync, _rapierCalloutInfo, _rapierRemoveCalloutMarker, _rapierMathSource, _rapierFlattenPortableDetails, _rapierProjectPortableRoot, _rapierPortableHtml, _rapierNormalizeInlineText, _rapierPortableInlineText, _rapierPortableListText, _rapierPortableTableText, _rapierPortablePlainText, _rapierPlainTextFile, _rapierHeldPicturesAsWords, _rapierSourceTokenValue, _rapierResolveSoftBreakTokens, _rapierInertParse, _rapierUnwrapElement, _rapierBidiStrong, render: (source, metadata = {}) => { if (!md) initMarkdownIt(); return _rapierRenderSemanticRoot(source, metadata).innerHTML; }, initMarkdownIt, _rapierRenderSemanticRoot, _rapierInstallSemanticProbe, _rapierApplyImageGeometry, _rapierImageAltSize, _rapierImageAltSourceParts, _rapierImageAltText, _rapierImageSizeAttributes, _rapierRawHtmlFragment, _rapierApplyBlockDirection, _rapierFirstStrongDir, _rapierAssignHeadingSlugs, _rapierDisambiguateRenderedAnchors, _rapierDecodeHash, _rapierDecorateJumpLists, _rapierMarkFigureCaptions, _rapierMarkListContinuations, _rapierMarkTableCaptions, _rapierNormalizeCodeElement, _rapierLanguageClass, _relabelFootnoteHtml, _footnoteIdFromLabel, wrapDisplayMath, parser: () => md};
+  return {_rapierReadPartDecorations, renderWithMathML, _rapierClipboardPayloadAsync, _rapierPlainTextFileAsync, _rapierCloneRootAsync, _rapierPortablePlainTextAsync, _rapierHeldPicturesAsWordsAsync, _rapierRenderSemanticRootAsync, _rapierProjectPortableRootAsync, _rapierPortableHtmlAsync, _rapierCalloutInfo, _rapierRemoveCalloutMarker, _rapierMathSource, _rapierFlattenPortableDetails, _rapierProjectPortableRoot, _rapierPortableHtml, _rapierNormalizeInlineText, _rapierPortableInlineText, _rapierPortableListText, _rapierPortableTableText, _rapierPortablePlainText, _rapierPlainTextFile, _rapierHeldPicturesAsWords, _rapierSourceTokenValue, _rapierResolveSoftBreakTokens, _rapierInertParse, _rapierUnwrapElement, _rapierBidiStrong, render: (source, metadata = {}) => { if (!md) initMarkdownIt(); return _rapierRenderSemanticRoot(source, metadata).innerHTML; }, initMarkdownIt, _rapierRenderSemanticRoot, _rapierInstallSemanticProbe, _rapierApplyImageGeometry, _rapierImageAltSize, _rapierImageAltSourceParts, _rapierImageAltText, _rapierImageSizeAttributes, _rapierRawHtmlFragment, _rapierApplyBlockDirection, _rapierFirstStrongDir, _rapierAssignHeadingSlugs, _rapierDisambiguateRenderedAnchors, _rapierDecodeHash, _rapierDecorateJumpLists, _rapierMarkFigureCaptions, _rapierMarkListContinuations, _rapierMarkTableCaptions, _rapierNormalizeCodeElement, _rapierLanguageClass, _relabelFootnoteHtml, _footnoteIdFromLabel, wrapDisplayMath, parser: () => md};
 }
 export {RAPIER_TABLE_CAPTION_PREFIX_RE as tableCaptionPrefix, RAPIER_PORTABLE_HIGHLIGHT_HEX as portableHighlightHex, _RAPIER_RTL_SCRIPT as rtlScripts, createMarkdownRenderer};
 

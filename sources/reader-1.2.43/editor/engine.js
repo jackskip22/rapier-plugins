@@ -12766,7 +12766,7 @@ function _rapierJournalTextAt(revision) {
 }
 
 function _rapierJournalUtf8Length(text) {
-	return _rapierSourceEncoder.encode(text).length;
+	return globalThis.RapierSourceStore.utf8Length(text);
 }
 
 function _rapierJournalEntryBytes(entry) {
@@ -18893,7 +18893,7 @@ function rapierSetMode(mode, options = null) {
 					scrollTop: at ? undefined : 0});
 				rapier.view.pendingSourceAnchor = null;
 				if (!folded && _rapierSourceNeedsWindow(store)) {
-					_rapierHeavyWindowMountFromString(store, at, at, {preserveAssets: true, ...(at ? {} : {scrollTop: 0})});
+					_rapierHeavyWindowMountFromString(store, at, at, {preserveAssets: true, ...(at ? {} : {scrollTop: 0, scrollLeft: 0})});
 				} else if (!folded) {
 					_rapierHeavyWindowReset();
 					srcTA.value = _rapierNormalizeSourceNewlines(store.read());
@@ -22524,6 +22524,10 @@ async function _rapierPerformSaveWork(options) {
 				fn: () => rapierSave({ forceSaveAs: true, ...(file ? {suggestedName: _rapierCopyName(metadata.saveName)} : {}) }), outlive: 'save-failed'});
 			return settle('failed', false);
 		}
+		if (options.quiet !== true && error?.code === 'disk_full') {
+			showToast('The disk is full.', 'error', {label: 'Save as', fn: () => rapierSave({ forceSaveAs: true }), outlive: 'save-failed'});
+			return settle('failed', false);
+		}
 		if (options.quiet !== true) {
 			showToast(error && error.code === 'external_file_changed'
 				? 'File changed elsewhere. Use Save As.'
@@ -24638,7 +24642,7 @@ async function _rapierPersistDownloadDraft(persistence, generation, documentRevi
 	const record = _rapierDownloadDraftRecord(persistence, generation, documentRevision);
 	const ledger = _rapierRecoveryLedger(record, undefined, RapierLedger);
 	if (!ledger) return false;
-	record.historyDigest = globalThis.RapierRecoveryWorker.recoveryHistoryDigest(RapierLedger.historyEnvelope(ledger));
+	record.historyDigest = await globalThis.RapierRecoveryWorker.recoveryHistoryDigestAsync(RapierLedger.historyEnvelope(ledger));
 	const stored = globalThis.RapierRecoveryWorker.recoveryRecord(record, record.canonicalText, null, ledger);
 	try {
 		const db = await openRapierDB();
@@ -25606,6 +25610,7 @@ function _rapierBeginBootRecovery(context) {
 }
 
 function _rapierOfferUnreadRecovery() {
+	if (rapierHolds('other-window')) return;
 	_rapierPersistenceRuntime.heldWarnedGeneration = Number(rapier.revision.generation || 0);
 	if ([...document.querySelectorAll('#toast-root .toast[data-rapier-backup-warning]')].some(shown =>
 			shown._rapierLife?.state && !['running', 'closed'].includes(shown._rapierLife.state.phase))) return;
@@ -30582,6 +30587,7 @@ function _rapierWithWysiwygSelection(work) {
 	}
 }
 function _rapierWysiwygRenderWindowNow(centerIndex, approachViewports) {
+	if (rapier.view.mode === 'source') return;
 	const host = document.getElementById('editor-blocks');
 	const count = _rapierWysiwygLedger.order.length;
 	if (!host || !count) return;
@@ -30591,13 +30597,6 @@ function _rapierWysiwygRenderWindowNow(centerIndex, approachViewports) {
 	const groupSleeping = _rapierWysiwygLedger.selectionOutside || !selection?.anchorNode ||
 		selection.isCollapsed && selection.anchorNode !== host &&
 		!(selection.anchorNode.nodeType === 1 ? selection.anchorNode : selection.anchorNode.parentElement)?.closest('.block-sleep-group');
-	if (rapier.view.mode === 'source') {
-		if (count <= 150) return;
-		for (const wrapper of Array.from(_rapierWysiwygLedger.materialized))
-			_rapierWysiwygSleep(_rapierWysiwygLedger.entries.get(String(wrapper.dataset.blockId)), held);
-		_rapierWysiwygLedger.window = null;
-		return;
-	}
 	if (!host.classList.contains('editor-area--virtualized')) {
 		for (let index = 0; index < count; index++) {
 			const entry = entryAt(index);
@@ -30610,6 +30609,12 @@ function _rapierWysiwygRenderWindowNow(centerIndex, approachViewports) {
 	const explicit = Number.isSafeInteger(centerIndex);
 	const revealing = !!rapier.view.editorViewport?.reveal;
 	const viewport = explicit || revealing ? null : _rapierEditorReadingPoint(null, false);
+	const origin = viewport && rapier.view.editorViewport;
+	const keepOrigin = origin && viewport.source === false && origin.source === false &&
+		viewport.token === origin.token && viewport.authority === origin.authority &&
+		origin.blockId == null && origin.offset == null && !origin.imageGesture &&
+		origin.scrollTop === 0 && origin.scrollLeft === 0 && _rapierWysiwygLedger.selectionOutside &&
+		!host.dataset.rapierImageGesture && host.scrollTop === 0 && host.scrollLeft === 0;
 	const view = Math.max(240, host.clientHeight);
 	const reach = explicit && _rapierWysiwygLedger.dragging ? 0 : view * approachViewports;
 	const previous = _rapierWysiwygLedger.window;
@@ -30685,7 +30690,12 @@ function _rapierWysiwygRenderWindowNow(centerIndex, approachViewports) {
 		});
 	}
 	if (groupSleeping) _rapierGroupSleepingBlocks(host, first, last, held);
-	_rapierRestoreEditorViewport(viewport);
+	if (keepOrigin && rapier.view.editorViewport === origin && origin.token === rapier.view.restoreToken &&
+		origin.authority === rapier.identity.authority && rapier.view.mode !== 'source' &&
+		rapier.document.docKind === 'markdown' && !rapier.compare?.active && !host.dataset.rapierImageGesture &&
+		!_rapierWysiwygLedger.dragging) {
+		globalThis.RapierImageFlow?.pinSettled?.();
+	} else _rapierRestoreEditorViewport(viewport);
 }
 
 let _rapierApproachFrame = 0;
@@ -33999,8 +34009,8 @@ async function _rapierEmbedLoadRun(data, respond) {
 	}
 	let admittedContent;
 	try { admittedContent = RapierTextCodec.normalizeProtocol(payload.content); }
-	catch (_) {
-		respond('load-nack', {code: 'invalid_payload', reason: 'invalid document payload'});
+	catch (error) {
+		respond('load-nack', {code: 'invalid_payload', reason: /plain UTF-8/.test(error?.message) ? 'the document holds a NUL or a lone surrogate, which plain text cannot' : 'invalid document payload'});
 		return;
 	}
 
@@ -34631,6 +34641,15 @@ function _rapierEmbedEscapeLeaves() {
 		leave = false;
 		window.parent.postMessage({type: 'rapier-focus-leave', backward: event.shiftKey}, _rapierEmbed.hostOrigin || '*');
 	});
+	let armed = false;
+	addEventListener('keydown', event => {
+		const wasArmed = armed; armed = false;
+		if (event.key === 'Tab' && wasArmed && !event.ctrlKey && !event.altKey && !event.metaKey && _rapierEmbed.connected && !_rapierDialogRuntime.open.size) {
+			event.preventDefault(); event.stopPropagation();
+			window.parent.postMessage({type: 'rapier-focus-leave', backward: event.shiftKey}, _rapierEmbed.hostOrigin || '*');
+		} else if (event.key === 'Escape' && !event.repeat && !event.isComposing && document.activeElement?.isContentEditable) armed = true;
+	}, true);
+	addEventListener('pointerdown', () => { armed = false; }, true);
 }
 function _rapierEmbedStart() {
 	if (!_rapierEmbed.active) return;
@@ -35781,7 +35800,7 @@ async function _rapierReloadAfterWriterPromotion(why = 'The other Rapier ' + _ra
 	_rapierWriterRuntime.promotionReloading = true;
 	const release = _rapierWriterRuntime.release;
 	const stamp = _rapierMutationStamp();
-	const persistence = _rapierPersistenceRuntime.chain;
+	let persistence = _rapierPersistenceRuntime.chain;
 	const lostFlush = _rapierWriterRuntime.lostFlush;
 	let reloading = false;
 	const safe = () => {
@@ -35801,7 +35820,7 @@ async function _rapierReloadAfterWriterPromotion(why = 'The other Rapier ' + _ra
 		if (!safe()) return false;
 		const flushed = (await Promise.all([lostFlush || true, persistence]))[0] === true;
 		if (!safe() || !flushed && !explicit) return false;
-		if (!flushed) {
+		if (!flushed || explicit && (_rapierIsDirty() || rapier.autosave.dirty.size)) {
 			const captured = await _rapierWithSettledExternalDocument(() => {
 				if (!_rapierMutationStampIsCurrent(stamp)) return null;
 				const snapshot = _rapierRecoveryBeforeUntouchedEdge(_rapierCreatePersistenceSnapshot());
@@ -35812,6 +35831,7 @@ async function _rapierReloadAfterWriterPromotion(why = 'The other Rapier ' + _ra
 				showToast('Couldn’t keep these words. Save them, then try again.', 'error');
 				return false;
 			}
+			persistence = _rapierPersistenceRuntime.chain;
 			if (!safe()) return false;
 		}
 		showToast('Reloading the latest draft…', 'success', null, why);
@@ -37349,6 +37369,8 @@ function _rapierHandleEnterStep(opts) {
 	const codeEl = startEl && startEl.closest && startEl.closest('pre');
 	if (!opts.softBreak && codeEl && editDiv.contains(codeEl) && !wrapper.classList.contains('block-wrapper--source-edit') && range.collapsed &&
 			_rapierLeaveCodeAtEnd(editDiv, wrapper, block, codeEl, range)) return true;
+	if (!opts.softBreak && wrapper.classList.contains('block-wrapper--source-edit') && range.collapsed &&
+			_rapierCaretAfterClosingFence(editDiv, range) && _rapierMakeEdgeParagraph(block, true)) return true;
 	if (wrapper.classList.contains('block-wrapper--source-edit') || (codeEl && editDiv.contains(codeEl))) {
 		_insertRawNewline(editDiv, range);
 		return true;
@@ -38591,6 +38613,13 @@ document.addEventListener('keydown', e => {
 	if (e.isComposing || rapier.composition.block) return;
 	if (_rapierHandleMathIslandKeydown(e)) e.preventDefault();
 }, true);
+
+function _rapierCaretAfterClosingFence(editDiv, range) {
+	const text = String(editDiv.textContent || '').replace(/\s+$/, ''), lines = text.split('\n');
+	const open = /^ {0,3}(`{3,}|~{3,})/.exec(lines[0]), close = /^ {0,3}(`{3,}|~{3,})[ \t]*$/.exec(lines[lines.length - 1]);
+	if (lines.length < 2 || !open || !close || close[1][0] !== open[1][0] || close[1].length < open[1].length) return false;
+	try { return _charOffsetForRangePoint(editDiv, range.startContainer, range.startOffset) >= text.length; } catch (_) { return false; }
+}
 
 function _rapierLeaveCodeAtEnd(editDiv, wrapper, block, codeEl, range) {
 	const code = codeEl.querySelector('code') || codeEl;
@@ -45850,7 +45879,7 @@ function _rapierUiRequestSourceView(options = null) {
 				rapier.view.mode === mode && _rapierMutationStampIsCurrent(captured.stamp) && current()});
 			await task.yield(0);
 			await globalThis.RapierSourceAssets.prepare(captured.canonical,
-				{signal: task.signal, onProgress: fraction => task.set(.95 * fraction), yield: task.yield});
+				{signal: task.signal, onProgress: fraction => task.set(.95 * fraction), yield: task.yield, store: rapier.document.source});
 			await task.yield(1);
 			rapierCaptureWysiwygScrollAnchor();
 			return rapierSetMode('source', {announce: false}) !== false;
@@ -45881,7 +45910,7 @@ async function _rapierUiRequestWysiwygView() {
 	_rapierUiViewTransition.busy = true;
 	renderViewToggle();
 	try {
-		const caret = refs.sourceTextarea.selectionEnd;
+		const caret = _rapierHeavyRuntime.selection(refs.sourceTextarea).end;
 		const committed = await rapierCommitMarkdownSource(refs.sourceTextarea.value);
 		if (token !== _rapierUiViewTransition.token || rapier.view.mode !== 'source') return false;
 		if (!committed) return false;
@@ -46764,7 +46793,17 @@ function renderEmbedFailure() {
 	refs.embedFailureCloseAnyway.hidden =
 		!(purpose === 'close' || purpose === 'close-save' || purpose === 'close-conflict'
 			|| (purpose === 'save-late' && !!_rapierEmbed.pendingSave?.closeAfter));
-	if (failure.open) openDialog(refs.embedFailureOverlay, { panel: '.settings-panel' });
+	if (failure.open && (purpose === 'save' || purpose === 'save-late')) {
+		const overlay = refs.embedFailureOverlay;
+		_rapierUiRaise(overlay);
+		if (!overlay._rapierOutsideTap) {
+			let fromBackdrop = false;
+			overlay._rapierOutsideTap = true;
+			overlay.addEventListener('pointerdown', event => { fromBackdrop = event.target === overlay; });
+			overlay.addEventListener('click', event => { if (event.target === overlay && fromBackdrop) { fromBackdrop = false; rapierEmbedDismissFailure(); } });
+		}
+	}
+	else if (failure.open) openDialog(refs.embedFailureOverlay, { panel: '.settings-panel' });
 	else closeDialog(refs.embedFailureOverlay);
 }
 
@@ -48212,12 +48251,16 @@ async function _rapierUiUninstallWindows() {
 
 function _rapierUiSwitchView(control, view) {
 	if (control.closest('.theme-switcher') && control.hasAttribute('data-active')) view = view === 'source' ? 'wysiwyg' : 'source';
-	const hideFirst = view === 'source' && rapier.document.docKind === 'markdown' && rapier.view.mode !== 'source' &&
-		rapier.document.source.length < _RAPIER_HW_WHOLE_CHARS;
-	if (!hideFirst && _rapierUiDialogIsOpen(_rapierUi.refs.settingsOverlay)) _rapierUiSetSettingsOpen(false);
+	const overlay = _rapierUi.refs.settingsOverlay, dialog = _rapierDialogRuntime.open.get(overlay);
+	const closeSettings = () => {
+		if (_rapierUiDialogIsOpen(overlay) && _rapierDialogRuntime.open.get(overlay) === dialog) _rapierUiSetSettingsOpen(false);
+	};
 	const switched = view === 'source' ? _rapierUiRequestSourceView() : _rapierUiRequestWysiwygView();
-	if (hideFirst && _rapierUiDialogIsOpen(_rapierUi.refs.settingsOverlay)) _rapierUiSetSettingsOpen(false);
-	void Promise.resolve(switched).then(done => { if (done !== false) requestAnimationFrame(() => _rapierUiFocusView(view)); });
+	if (view !== 'source' || typeof switched?.then !== 'function') closeSettings();
+	void Promise.resolve(switched).then(done => {
+		if (view === 'source') closeSettings();
+		if (done !== false) requestAnimationFrame(() => _rapierUiFocusView(view));
+	});
 	return switched;
 }
 

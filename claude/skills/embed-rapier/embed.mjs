@@ -258,7 +258,7 @@ function pictureBase(value) {
 return {FEATURES, LIMITS, ASSET_TYPES, refusal, coded, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker, pictureBase};
 })();
 const BUILDS = Object.freeze({full: 'https://rapier.website/embed/rapier.html', reader: 'https://rapier.website/embed/rapier-reader.html'});
-const PACKAGE_VERSION = '1.2.42';
+const PACKAGE_VERSION = '1.2.43';
 const OPTIONS = ['build', 'src', 'plugins', 'approvePlugins', 'sessionId', 'documentId', 'agent', 'agentName', 'theme', 'save', 'assets', 'openFile', 'load',
   'onState', 'compare', 'onClose', 'settings', 'style', 'title', 'onError', 'timeout'];
 const READER_FEATURES = ['find', 'readAloud', 'share'];
@@ -284,7 +284,7 @@ function deferred() {
   promise.catch(() => {});
   return {promise, resolve, reject};
 }
-const refused = payload => Object.assign(new Error(payload?.reason || payload?.code || 'The editor refused the request'), {code: payload?.code ?? 'refused', payload},
+const refused = payload => Object.assign(new Error(payload?.reason || payload?.code || 'The editor refused the request'), {code: payload?.code ?? 'refused', payload, ...(typeof payload?.reason === 'string' ? {reason: payload.reason} : {})},
   revision(payload?.currentRevision) ? {currentRevision: payload.currentRevision} : {});
 
 function conflict(currentRevision) {
@@ -398,7 +398,7 @@ function mount(target, options = {}) {
     for (const job of waiting.values()) job.reject(error);
     waiting.clear(); activeSave?.reject(error); activeSave = null; activeClose?.reject(error); activeClose = null;
   };
-  function send(type, payload, baseRevision, quiet = false) {
+  function send(type, payload, baseRevision, quiet = false, deadline = 0) {
     if (ended || !connected || !port) return Promise.reject(endError || coded('disconnected', Error, 'The ' + noun + ' connection has ended or is not connected'));
     if (type === 'load') cancelOpen('open_stale');
     const requestId = 'host-' + ++seq;
@@ -407,6 +407,10 @@ function mount(target, options = {}) {
     if (!quiet) waiting.set(requestId, pending);
     try { port.postMessage(message); if (quiet) pending.resolve(); }
     catch (error) { waiting.delete(requestId); pending.reject(error); }
+    if (deadline > 0 && !quiet) {
+      const timer = setTimeout(() => { if (waiting.delete(requestId)) pending.reject(coded(type + '_timeout', Error, 'The ' + noun + ' did not answer within ' + deadline / 1000 + ' seconds')); }, deadline);
+      pending.promise.then(() => clearTimeout(timer), () => clearTimeout(timer));
+    }
     return pending.promise;
   }
   function requestCapture() {
@@ -706,7 +710,7 @@ function mount(target, options = {}) {
         throw Object.assign(new Error('Revision ' + version + ' is older than the frame\'s ' + held.revision), {code: 'revision_stale', currentRevision: held.revision});
       if (sameDocument && version === held.revision && held.content !== null && content !== held.content)
         throw Object.assign(new Error('Revision ' + version + ' already names other content'), {code: 'revision_conflict', currentRevision: held.revision});
-      const loaded = await send('load', {content, revision: version, ...(filename !== undefined ? {filename} : {}), ...(readOnly !== undefined ? {readOnly} : {}), ...(title !== undefined ? {title} : {}), ...(baseUrl !== undefined ? {baseUrl} : {})}, null);
+      const loaded = await send('load', {content, revision: version, ...(filename !== undefined ? {filename} : {}), ...(readOnly !== undefined ? {readOnly} : {}), ...(title !== undefined ? {title} : {}), ...(baseUrl !== undefined ? {baseUrl} : {})}, null, false, loadTimeout);
       held = {revision: version, content, filename};
       return loaded;
     },

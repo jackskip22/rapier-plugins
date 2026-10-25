@@ -10,10 +10,10 @@ import {minimalHistorySplice} from './inverse-source.mjs';
 import {evaluateWill} from './will.mjs';
 export {textRoot, rootAfter};
 const rootShape = value => typeof value === 'string' && /^\d+:[a-z0-9]+:[a-z0-9]+$/.test(value);
-function* checkedRecords(ledger, prepared) {
+function* checkedRecords(ledger, prepared, from = null) {
   if (!prepared.ok || ledger.records.length !== prepared.records.length) throw fault('record chain differs');
-  let root = ledger.start.root, revision = ledger.start.revision;
-  for (let index = 0; index < prepared.records.length; index++) {
+  let root = from ? from.root : ledger.start.root, revision = from ? from.revision : ledger.start.revision;
+  for (let index = from ? from.index : 0; index < prepared.records.length; index++) {
     const record = ledger.records[index];
     if (!Array.isArray(record.splices) || !prepared.validRecord(index,
         ledger.documentAuthority, 64 * 1024 * 1024, utf8Length, !ledger.complete) ||
@@ -170,6 +170,7 @@ const expandedRows = new WeakMap();
 const sameSplices = (a, b) => a === b || a.length === b.length &&
   a.every((row, i) => row.pos === b[i].pos && row.removed === b[i].removed && row.inserted === b[i].inserted);
 const sameEffect = (a, b) => a === b || !!a && !!b && canonicalJSON(a) === canonicalJSON(b);
+let recentLedgers = [];
 function* produceLedger({text, metadata, records, documentAuthority, revision, root, complete = false, earlier = records} = {}, native = false) {
   if (!_rapierValidMetadata(metadata)) throw fault('document metadata required');
   metadata = {...metadata};
@@ -191,16 +192,30 @@ function* produceLedger({text, metadata, records, documentAuthority, revision, r
     yield;
   }
   const headBytes = bytes;
+  let base = recentLedgers.find(row => row.rows.length <= expanded.length && row.rows.every((value, at) => value === expanded[at]));
   let startSource = new HistorySource(text), startMetadata = {...metadata};
-  for (let i = expanded.length - 1; i >= 0; i--) {
+  for (let i = expanded.length - 1; i >= (base ? base.rows.length : 0); i--) {
     startSource = startSource.apply(expanded[i].splices, true);
-    startMetadata = _rapierTransformMetadata(startMetadata, expanded[i].metadata, true);
+    if (expanded[i].metadata) startMetadata = _rapierTransformMetadata(startMetadata, expanded[i].metadata, true);
     if (startSource === null || !startMetadata) throw fault('history does not reverse from this document');
     for (const row of expanded[i].splices) bytes += utf8Length(row.removed) - utf8Length(row.inserted);
     if (bytes > 64 * 1024 * 1024) throw fault('document exceeds the editor text limit');
     yield;
   }
-  const startText = startSource.slice();
+  if (base && (bytes !== base.headBytes || startSource.length !== base.headText.length || !startSource.matches(0, base.headText) ||
+      canonicalJSON(startMetadata) !== base.headMetadata)) {
+    base = null; bytes = headBytes; startSource = new HistorySource(text); startMetadata = {...metadata};
+    for (let i = expanded.length - 1; i >= 0; i--) {
+      startSource = startSource.apply(expanded[i].splices, true);
+      if (expanded[i].metadata) startMetadata = _rapierTransformMetadata(startMetadata, expanded[i].metadata, true);
+      if (startSource === null || !startMetadata) throw fault('history does not reverse from this document');
+      for (const row of expanded[i].splices) bytes += utf8Length(row.removed) - utf8Length(row.inserted);
+      if (bytes > 64 * 1024 * 1024) throw fault('document exceeds the editor text limit');
+      yield;
+    }
+  }
+  if (base) { startMetadata = {...base.startMetadata}; bytes = base.startBytes; }
+  const startText = base ? base.startText : startSource.slice();
   const unchangedText = expanded.every(row => !row.splices.length);
   const contentRoot = headFacts.contentRoot;
   revision ??= expanded.at(-1)?.transaction.revision ?? 0;
@@ -209,19 +224,24 @@ function* produceLedger({text, metadata, records, documentAuthority, revision, r
   const startRevision = expanded[0]?.transaction.baseRevision ?? revision, startRoot = expanded[0]?.beforeHash ?? root;
   if (typeof documentAuthority !== 'string' || !documentAuthority || documentAuthority.length > 256) throw fault('unsupported or invalid envelope');
   if (!nonnegative(startRevision) || !rootShape(startRoot)) throw fault('invalid start');
-  const startFacts = unchangedText ? headFacts : yield* sourceFacts(startText, native);
+  const startFacts = unchangedText ? headFacts : base ? base.startFacts : yield* sourceFacts(startText, native);
   if (startRevision === 0 && startRoot !== startFacts.contentRoot) throw fault('invalid start');
   const headSHA = headFacts.sha256, startSHA = startFacts.sha256;
   const payload = {format: 'rapier-ledger/2', documentAuthority,
     start: {text: startText, revision: startRevision, root: startRoot, sha256: startSHA, metadata: startMetadata},
     records: expanded, head: {revision, root, sha256: headSHA, metadata: {...metadata}}, complete: complete === true && startRevision === 0 && expanded.every((row, i) => !i || row.transaction.baseRevision === expanded[i - 1].transaction.revision)};
-  for (const _record of checkedRecords(payload, prepared)) yield;
+  const from = base && base.documentAuthority === documentAuthority && base.complete === payload.complete &&
+    base.startRoot === startRoot && base.startRevision === startRevision ? {index: base.rows.length, root: base.chainRoot, revision: base.chainRevision} : null;
+  for (const _record of checkedRecords(payload, prepared, from)) yield;
   if (expanded.some(row => Object.hasOwn(row, 'authored'))) {
     try { authoredHistory(startText, expanded); } catch (_) { throw fault('authored origin differs'); }
   }
   const replayedMetadata = prepared.replayMetadata(startMetadata);
   if (!replayedMetadata || canonicalJSON(replayedMetadata) !== canonicalJSON(metadata)) throw fault('metadata does not describe this document');
   const ledger = {...payload, sha256: yield* checksum(envelopeParts(payload), native)};
+  recentLedgers = [{rows: expanded, headText: text, headMetadata: canonicalJSON(metadata), headBytes, startText, startMetadata: {...startMetadata},
+    startFacts, startBytes: bytes, documentAuthority, complete: payload.complete, startRoot, startRevision, chainRoot: payload.head.root,
+    chainRevision: payload.head.revision}, ...recentLedgers.filter(row => row.rows[0] !== expanded[0] && row.documentAuthority === documentAuthority)].slice(0, 4);
   ownLedger(ledger);
   proofs.set(ledger, {shell: Array.from(envelopeParts({...ledger, start: {...ledger.start, text: ''}})).join(''), startText,
     text, metadata: {...metadata}, root, revision, prepared: _rapierPrepareHistoryRecords(ledger.records),
@@ -273,7 +293,7 @@ function historyNavigation(ledger, text, metadata, prepared, source) {
   let traversed = source, traversedMetadata = {...metadata};
   for (let i = cursor - 1; i >= 0; i--) {
     traversed = step(traversed, branch[i], false);
-    traversedMetadata = _rapierTransformMetadata(traversedMetadata, byId.get(branch[i]).metadata, true);
+    if (byId.get(branch[i]).metadata) traversedMetadata = _rapierTransformMetadata(traversedMetadata, byId.get(branch[i]).metadata, true);
     if (traversed === null || !traversedMetadata) throw fault('undo branch does not reverse');
   }
   if (ledger.complete) {
@@ -284,7 +304,7 @@ function historyNavigation(ledger, text, metadata, prepared, source) {
   traversed = source; traversedMetadata = {...metadata};
   for (let i = cursor; i < branch.length; i++) {
     traversed = step(traversed, branch[i], true);
-    traversedMetadata = _rapierTransformMetadata(traversedMetadata, byId.get(branch[i]).metadata);
+    if (byId.get(branch[i]).metadata) traversedMetadata = _rapierTransformMetadata(traversedMetadata, byId.get(branch[i]).metadata);
     if (traversed === null || !traversedMetadata) throw fault('redo branch does not replay');
   }
   if (ledger.complete && pictures.size) {

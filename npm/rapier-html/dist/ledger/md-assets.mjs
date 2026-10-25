@@ -100,7 +100,7 @@ export function* blockWindows(source, bodyOffset, parser, env, keepNul = false) 
     return end < body.length ? sourceOffset(end + 1) : undefined;
   }});
   let lines = 0;
-  for (let at = 0; at < body.length; at++) if (body.charCodeAt(at) === 10) lines++;
+  for (let at = body.indexOf('\n'); at !== -1; at = body.indexOf('\n', at + 1)) lines++;
   if (lines <= BLOCK_WINDOW) {
     state = new parser.block.State(body, parser, env, tokens);
     state.rapierSourceSlice = (from, to) => source.slice(sourceOffset(from), sourceOffset(to));
@@ -179,8 +179,7 @@ export function* blockWindows(source, bodyOffset, parser, env, keepNul = false) 
   }
 }
 
-const PERCENT_PAYLOAD = Array.from({length: 128}, (_, code) => code >= 48 && code <= 57 || code >= 65 && code <= 90 ||
-  code >= 97 && code <= 122 || '-._~:/?@+$,;='.includes(String.fromCharCode(code)));
+const INVALID_PERCENT_PAYLOAD = /[^A-Za-z0-9._~:\/?@+$,;=%-]/;
 const isHexUnit = code => code >= 48 && code <= 57 || code >= 65 && code <= 70 || code >= 97 && code <= 102;
 let lastScan = null;
 export function dataImage(url) {
@@ -197,13 +196,11 @@ function scanDataImage(url) {
     ...(prepared.encoding ? {encoding: prepared.encoding} : {})};
   if (/^data:image\/svg\+xml,/i.test(url)) {
     const payloadStart = 19;
-    let byteLength = 0;
-    for (let at = payloadStart; at < url.length; at++, byteLength++) {
-      const code = url.charCodeAt(at);
-      if (code === 37) {
-        if (!isHexUnit(url.charCodeAt(at + 1)) || !isHexUnit(url.charCodeAt(at + 2))) return null;
-        at += 2;
-      } else if (!(code < 128 && PERCENT_PAYLOAD[code])) return null;
+    if (INVALID_PERCENT_PAYLOAD.test(url)) return null;
+    let byteLength = url.length - payloadStart;
+    for (let at = url.indexOf('%', payloadStart); at !== -1; at = url.indexOf('%', at + 3)) {
+      if (!isHexUnit(url.charCodeAt(at + 1)) || !isHexUnit(url.charCodeAt(at + 2))) return null;
+      byteLength -= 2;
     }
     return byteLength && byteLength <= IMAGE_LIMITS.bytes
       ? {codec: 'image/svg+xml', byteLength, payloadStart, encoding: 'percent'} : null;
