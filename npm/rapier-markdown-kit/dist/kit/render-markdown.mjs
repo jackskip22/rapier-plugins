@@ -459,8 +459,213 @@ function initMarkdownIt() {
 	globalThis.RapierImageAssets.configureParser(md, _rapierSplitOpeningFrontmatter);
 	const render = md.renderer.render;
 	md.renderer.render = function (tokens, options, env) {
-		return render.call(this, _rapierCloseOpenDetails(tokens), options, env);
+		return render.call(this, _rapierHideForeignParagraphs(_rapierCloseOpenDetails(tokens)), options, env);
 	};
+}
+
+function _rapierHtmlTagStack(html, stack = []) {
+	if (!html) return stack;
+	const swallow = _rapierHtmlTagStack.swallow || (_rapierHtmlTagStack.swallow = new Set('select template textarea title style xmp plaintext noscript iframe noembed noframes script svg math'.split(' ')));
+	const rawTags = _rapierHtmlTagStack.raw || (_rapierHtmlTagStack.raw = new Set('script style textarea title xmp iframe noembed noframes noscript plaintext'.split(' ')));
+	let i = 0;
+	while (i < html.length) {
+		const top = stack.at(-1);
+		if (top && top.raw) {
+			const closer = new RegExp('</' + top.name + '(?=[\\t\\n\\f\\r />])', 'ig');
+			closer.lastIndex = i;
+			const found = closer.exec(html);
+			if (!found) break;
+			i = found.index;
+		}
+		const open = html.indexOf('<', i);
+		if (open < 0) break;
+		if (html.startsWith('<!--', open)) {
+			const end = html.indexOf('-->', open + 4);
+			if (end < 0) break;
+			i = end + 3;
+			continue;
+		}
+		if (html.startsWith('<!', open) || html.startsWith('<?', open)) {
+			const end = html.indexOf('>', open + 2);
+			i = end < 0 ? html.length : end + 1;
+			continue;
+		}
+		const match = /^<\/?([A-Za-z][A-Za-z0-9:-]*)/.exec(html.slice(open));
+		if (!match) { i = open + 1; continue; }
+		const name = match[1].toLowerCase();
+		let end = open + match[0].length, quote = '';
+		for (; end < html.length; end++) {
+			const character = html[end];
+			if (quote) { if (character === quote) quote = ''; }
+			else if (character === '"' || character === "'") quote = character;
+			else if (character === '>') break;
+		}
+		if (end >= html.length) break;
+		if (html[open + 1] === '/') {
+			let at = stack.length - 1;
+			while (at >= 0 && stack[at].name !== name && !swallow.has(stack[at].name)) at--;
+			if (at >= 0 && stack[at].name === name) stack.length = at;
+		} else stack.push({name, at: open, tagEnd: end + 1, raw: rawTags.has(name)});
+		i = end + 1;
+	}
+	return stack;
+}
+function _rapierForeignOpen(stack) {
+	for (let index = 0; index < stack.length; index++) {
+		const name = stack[index].name;
+		if (name === 'svg' || name === 'math') return true;
+	}
+	return false;
+}
+function _rapierSealBlockHtml(html) {
+	if (!html || html.indexOf('<') < 0) return html;
+	const stack = _rapierHtmlTagStack(html);
+	const swallow = _rapierHtmlTagStack.swallow;
+	const foreign = _rapierSealBlockHtml.foreign || (_rapierSealBlockHtml.foreign = new Set(['svg', 'math']));
+	const cut = stack.find(frame => swallow.has(frame.name) && (frame.raw || foreign.has(frame.name)));
+	if (cut) {
+		const wrappers = stack.filter(frame => frame.at < cut.at);
+		return html.slice(0, cut.at) + _rapierSealBlockTail(html.slice(cut.at), wrappers);
+	}
+	const stale = stack.filter(frame => swallow.has(frame.name));
+	if (!stale.length) return html;
+	let out = html;
+	for (const frame of stale.sort((left, right) => right.at - left.at))
+		out = out.slice(0, frame.at) + escapeRapierHtmlText(out.slice(frame.at, frame.tagEnd)) + out.slice(frame.tagEnd);
+	return out;
+}
+
+function _rapierSealBlockTail(tail, wrappers) {
+	const open = wrappers.map(frame => frame.name);
+	let out = '', i = 0;
+	while (i < tail.length) {
+		const at = tail.indexOf('<', i);
+		if (at < 0) { out += escapeRapierHtmlText(tail.slice(i)); break; }
+		out += escapeRapierHtmlText(tail.slice(i, at));
+		const match = /^<\/([A-Za-z][A-Za-z0-9:-]*)\s*>/.exec(tail.slice(at));
+		if (match && open.at(-1) === match[1].toLowerCase()) {
+			out += match[0];
+			open.pop();
+			i = at + match[0].length;
+			continue;
+		}
+		out += escapeRapierHtmlText(tail[at]);
+		i = at + 1;
+	}
+	return out;
+}
+
+function _rapierRenderTokenHtml(tokens, index, env) {
+	const token = tokens[index], rule = md.renderer.rules[token.type];
+	return token.type === 'inline' ? md.renderer.renderInline(token.children, md.options, env)
+		: rule ? rule(tokens, index, md.options, env, md.renderer) : md.renderer.renderToken(tokens, index, md.options);
+}
+
+function _rapierTokenBlocks(tokens) {
+	const blocks = [];
+	let start = 0, depth = 0;
+	for (let index = 0; index < tokens.length; index++) {
+		depth += tokens[index].nesting || 0;
+		if (depth <= 0) { blocks.push([start, index + 1]); start = index + 1; depth = 0; }
+	}
+	if (start < tokens.length) blocks.push([start, tokens.length]);
+	return blocks;
+}
+function _rapierScanHtmlBlocks(tokens, start, end, stack) {
+	for (let index = start; index < end; index++) {
+		if (tokens[index].type === 'html_block') _rapierHtmlTagStack(tokens[index].content || '', stack);
+	}
+	return stack;
+}
+function _rapierForeignSealRanges(tokens) {
+	const blocks = _rapierTokenBlocks(tokens);
+	const ranges = [];
+	const scanLater = ([start, end], frames) => {
+		if (tokens[start].type !== 'paragraph_open') return _rapierScanHtmlBlocks(tokens, start, end, frames);
+		for (const child of tokens[start + 1] && tokens[start + 1].children || [])
+			if (child.type === 'html_inline') _rapierHtmlTagStack(child.content || '', frames);
+		return frames;
+	};
+	for (let index = 0; index < blocks.length; index++) {
+		const stack = _rapierScanHtmlBlocks(tokens, blocks[index][0], blocks[index][1], []);
+		if (!_rapierForeignOpen(stack)) { ranges.push(blocks[index]); continue; }
+		const frames = stack.map(frame => ({name: frame.name, raw: frame.raw}));
+		let joined = -1;
+		for (let later = index + 1; later < blocks.length && later <= index + 512; later++) {
+			scanLater(blocks[later], frames);
+			if (!_rapierForeignOpen(frames)) { joined = later; break; }
+		}
+		if (joined < 0) { ranges.push(blocks[index]); continue; }
+		const range = [blocks[index][0], blocks[joined][1]];
+		for (let later = index + 1; later <= joined; later++) {
+			const [start, end] = blocks[later];
+			if (tokens[start].type === 'paragraph_open' && tokens[end - 1].type === 'paragraph_close' &&
+				(tokens[start + 1] && tokens[start + 1].children || []).some(child => child.type === 'html_inline'))
+				(range.hide || (range.hide = new Set())).add(start).add(end - 1);
+		}
+		ranges.push(range);
+		index = joined;
+	}
+	return ranges;
+}
+function _rapierHideForeignParagraphs(tokens) {
+	let out = tokens;
+	for (const range of _rapierForeignSealRanges(tokens)) {
+		if (!range.hide) continue;
+		if (out === tokens) out = tokens.slice();
+		for (const index of range.hide) out[index] = Object.assign(Object.create(Object.getPrototypeOf(tokens[index])), tokens[index], {hidden: true});
+	}
+	return out;
+}
+function _rapierMergeForeignBlocks(blocks, source, parser) {
+	const text = String(source || '');
+	const out = [];
+	const inline = new Map();
+	const scanLater = (row, frames) => {
+		if (!row) return frames;
+		if (row.type === 'html_block') return _rapierHtmlTagStack(String(row.raw || ''), frames);
+		if (row.type !== 'paragraph' || String(row.raw || '').indexOf('<') < 0) return frames;
+		let children = inline.get(row);
+		if (!children) {
+			if (!parser && !md) initMarkdownIt();
+			const parsed = (parser || md).parseInline(String(row.raw || ''), {});
+			children = parsed[0] && parsed[0].children || [];
+			inline.set(row, children);
+		}
+		for (const child of children) if (child.type === 'html_inline') _rapierHtmlTagStack(child.content || '', frames);
+		return frames;
+	};
+	let index = 0;
+	while (index < blocks.length) {
+		const block = blocks[index];
+		const stack = [];
+		if (block && block.type === 'html_block') _rapierHtmlTagStack(String(block.raw || ''), stack);
+		if (!_rapierForeignOpen(stack)) { out.push(block); index++; continue; }
+		const frames = stack.map(frame => ({name: frame.name, raw: frame.raw}));
+		let joined = -1;
+		for (let later = index + 1; later < blocks.length && later <= index + 512; later++) {
+			scanLater(blocks[later], frames);
+			if (!_rapierForeignOpen(frames)) { joined = later; break; }
+		}
+		if (joined < 0) { out.push(block); index++; continue; }
+		const start = Number(block._sourceStart), end = Number(blocks[joined]._sourceEnd);
+		const raw = Number.isFinite(start) && Number.isFinite(end) && start >= 0 && end >= start && end <= text.length
+			? text.slice(start, end)
+			: blocks.slice(index, joined + 1).map(row => String(row && row.raw || '')).join('\n\n');
+		out.push({...block, raw, _sourceEnd: Number.isFinite(end) ? end : block._sourceEnd, rendered: null});
+		index = joined + 1;
+	}
+	out._rapierFacts = Array.isArray(blocks && blocks._rapierFacts) ? blocks._rapierFacts.slice() : [];
+	return out;
+}
+function _rapierRenderSealedHtml(tokens, env) {
+	let html = '';
+	for (const range of _rapierForeignSealRanges(tokens)) {
+		let block = '';
+		for (let index = range[0]; index < range[1]; index++) block += range.hide && range.hide.has(index) ? (tokens[index].nesting < 0 ? '\n' : '') : _rapierRenderTokenHtml(tokens, index, env);
+		html += _rapierSealBlockHtml(block);
+	}
+	return html;
 }
 
 function _rapierRenderSemanticRoot(canonical, metadata, options = {}) {
@@ -487,20 +692,21 @@ function _rapierRenderSemanticRoot(canonical, metadata, options = {}) {
 	if (wikiLinks) env.rapierWikiLinks = wikiLinks;
 	if (options.mathEquations) env.rapierMathEquations = options.mathEquations;
 	const nesting = md && options.maxNesting > 0 ? options.maxNesting : 0;
-	let cutAt = -1, rendered;
+	let cutAt = -1, rendered = '';
 	codeLeft = options.codeBudget >= 0 ? options.codeBudget : Infinity;
 	try {
-	if (nesting || md && options.closeDetails) {
+	if (!md) rendered = '<pre><code>' + escapeRapierHtmlText(markdown) + '</code></pre>';
+	else {
 		const saved = md.options.maxNesting;
 		if (nesting) md.options.maxNesting = nesting;
 		try {
-			const tokens = md.parse(markdown, env);
+			let tokens = md.parse(markdown, env);
 			if (nesting) cutAt = _rapierNestingCutAt(tokens, nesting);
-			rendered = md.renderer.render(options.closeDetails ? _rapierCloseOpenDetails(tokens) : tokens, md.options, env);
+			tokens = _rapierCloseOpenDetails(tokens);
+			rendered = _rapierRenderSealedHtml(tokens, env);
+			if (md.renderer.rapierTransformHtml) rendered = md.renderer.rapierTransformHtml(rendered);
 		} finally { md.options.maxNesting = saved; }
-	} else rendered = md
-		? md.render(markdown, env)
-		: '<pre><code>' + escapeRapierHtmlText(markdown) + '</code></pre>';
+	}
 	} finally { codeLeft = Infinity; }
 	if (md && env.footnotes && Array.isArray(env.footnotes.list) && env.footnotes.list.length) {
 		const labels = env.footnotes.list.map((item, index) =>
@@ -565,17 +771,22 @@ async function _rapierRenderSemanticRootAsync(canonical, metadata, options = {})
 		while (part.firstChild) root.appendChild(part.firstChild);
 		html = '';
 	};
+	const finishBlock = block => {
+		const sealed = _rapierSealBlockHtml(block);
+		html += sealed;
+		if (boundary(sealed) && html.length >= 16384) append();
+	};
 	try {
-		for (let index = 0; index < tokens.length; index++) {
-			const token = tokens[index], rule = md.renderer.rules[token.type];
-			let rendered = token.type === 'inline' ? md.renderer.renderInline(token.children, md.options, env)
-				: rule ? rule(tokens, index, md.options, env, md.renderer) : md.renderer.renderToken(tokens, index, md.options);
-			html += rendered;
-			if (boundary(rendered) && html.length >= 16384) append();
-			if (performance.now() - began >= 8) {
-				await pause(work, .3 + .2 * (index + 1) / tokens.length);
-				began = performance.now();
+		for (const range of _rapierForeignSealRanges(tokens)) {
+			let block = '';
+			for (let index = range[0]; index < range[1]; index++) {
+				block += range.hide && range.hide.has(index) ? (tokens[index].nesting < 0 ? '\n' : '') : _rapierRenderTokenHtml(tokens, index, env);
+				if (performance.now() - began >= 8) {
+					await pause(work, .3 + .2 * (index + 1) / tokens.length);
+					began = performance.now();
+				}
 			}
+			finishBlock(block);
 		}
 		if (html) append();
 		if (cutAt >= 0) _rapierAppendNestingCut(root, markdown, cutAt);
@@ -1893,7 +2104,7 @@ function renderWithMathML(source, metadata = {}) {
 	return {html, equations};
 }
 
-  return {_rapierReadPartDecorations, renderWithMathML, _rapierClipboardPayloadAsync, _rapierPlainTextFileAsync, _rapierCloneRootAsync, _rapierPortablePlainTextAsync, _rapierHeldPicturesAsWordsAsync, _rapierRenderSemanticRootAsync, _rapierProjectPortableRootAsync, _rapierPortableHtmlAsync, _rapierCalloutInfo, _rapierRemoveCalloutMarker, _rapierMathSource, _rapierFlattenPortableDetails, _rapierProjectPortableRoot, _rapierPortableHtml, _rapierNormalizeInlineText, _rapierPortableInlineText, _rapierPortableListText, _rapierPortableTableText, _rapierPortablePlainText, _rapierPlainTextFile, _rapierHeldPicturesAsWords, _rapierSourceTokenValue, _rapierResolveSoftBreakTokens, _rapierInertParse, _rapierUnwrapElement, _rapierBidiStrong, render: (source, metadata = {}) => { if (!md) initMarkdownIt(); return _rapierRenderSemanticRoot(source, metadata).innerHTML; }, initMarkdownIt, _rapierRenderSemanticRoot, _rapierInstallSemanticProbe, _rapierApplyImageGeometry, _rapierImageAltSize, _rapierImageAltSourceParts, _rapierImageAltText, _rapierImageSizeAttributes, _rapierRawHtmlFragment, _rapierApplyBlockDirection, _rapierFirstStrongDir, _rapierAssignHeadingSlugs, _rapierDisambiguateRenderedAnchors, _rapierDecodeHash, _rapierDecorateJumpLists, _rapierMarkFigureCaptions, _rapierMarkListContinuations, _rapierMarkTableCaptions, _rapierNormalizeCodeElement, _rapierLanguageClass, _relabelFootnoteHtml, _footnoteIdFromLabel, wrapDisplayMath, parser: () => md};
+  return {_rapierReadPartDecorations, renderWithMathML, _rapierClipboardPayloadAsync, _rapierPlainTextFileAsync, _rapierCloneRootAsync, _rapierPortablePlainTextAsync, _rapierHeldPicturesAsWordsAsync, _rapierRenderSemanticRootAsync, _rapierProjectPortableRootAsync, _rapierPortableHtmlAsync, _rapierCalloutInfo, _rapierRemoveCalloutMarker, _rapierMathSource, _rapierFlattenPortableDetails, _rapierProjectPortableRoot, _rapierPortableHtml, _rapierNormalizeInlineText, _rapierPortableInlineText, _rapierPortableListText, _rapierPortableTableText, _rapierPortablePlainText, _rapierPlainTextFile, _rapierHeldPicturesAsWords, _rapierSourceTokenValue, _rapierResolveSoftBreakTokens, _rapierInertParse, _rapierUnwrapElement, _rapierBidiStrong, _rapierSealBlockHtml, _rapierMergeForeignBlocks, render: (source, metadata = {}) => { if (!md) initMarkdownIt(); return _rapierRenderSemanticRoot(source, metadata).innerHTML; }, initMarkdownIt, _rapierRenderSemanticRoot, _rapierInstallSemanticProbe, _rapierApplyImageGeometry, _rapierImageAltSize, _rapierImageAltSourceParts, _rapierImageAltText, _rapierImageSizeAttributes, _rapierRawHtmlFragment, _rapierApplyBlockDirection, _rapierFirstStrongDir, _rapierAssignHeadingSlugs, _rapierDisambiguateRenderedAnchors, _rapierDecodeHash, _rapierDecorateJumpLists, _rapierMarkFigureCaptions, _rapierMarkListContinuations, _rapierMarkTableCaptions, _rapierNormalizeCodeElement, _rapierLanguageClass, _relabelFootnoteHtml, _footnoteIdFromLabel, wrapDisplayMath, parser: () => md};
 }
 export {RAPIER_TABLE_CAPTION_PREFIX_RE as tableCaptionPrefix, RAPIER_PORTABLE_HIGHLIGHT_HEX as portableHighlightHex, _RAPIER_RTL_SCRIPT as rtlScripts, createMarkdownRenderer};
 

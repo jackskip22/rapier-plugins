@@ -1427,7 +1427,7 @@ export async function readDocx(blob, {embedImage, checkCurrent, signal, onProgre
         const position = child(drawing, 'wp', 'positionH'), value = child(position, 'wp', 'align')?.textContent;
         if (['left','center','right'].includes(value)) align = value;
         const vertical = child(drawing, 'wp', 'positionV'), square = child(drawing, 'wp', 'wrapSquare');
-        if (square) wrap = 'box';
+        if (square) wrap = square.getAttribute('wrapText') === 'largest' ? 'beside' : 'box';
         else if (['wrapTight', 'wrapThrough'].some(name => child(drawing, 'wp', name))) wrap = 'around';
         else if (child(drawing, 'wp', 'wrapNone')) wrap = ['1', 'true', 'on'].includes(drawing.getAttribute('behindDoc')) ? 'behind' : 'front';
         else warn('Floating pictures became normal-flow images in source order.');
@@ -4986,7 +4986,7 @@ async function buildDocx(input, {convertImage, rewriteDocument, canonical, compa
     const floating = layout?.wrap;
     const left = Math.round(Math.max(0, Math.min(availableWidth - cx, availableWidth * (layout?.x ?? 0) / 100 - cx / 2)));
     const top = Math.round((layout?.y || 0) * emPoints * 12700);
-    const distance = ['around', 'box'].includes(floating) ? wrapDistances(availableWidth, left, cx) : {left: 91440, right: 91440};
+    const distance = ['around', 'beside', 'box'].includes(floating) ? wrapDistances(availableWidth, left, cx) : {left: 91440, right: 91440};
     const placement = cap ? '<wp:anchor distT="0" distB="0" distL="0" distR="50800" simplePos="0" relativeHeight="0" behindDoc="0" locked="0" layoutInCell="1" allowOverlap="0">' +
       '<wp:simplePos x="0" y="0"/><wp:positionH relativeFrom="character"><wp:posOffset>0</wp:posOffset></wp:positionH>' +
       '<wp:positionV relativeFrom="line"><wp:posOffset>' + Math.round(cap.top || 0) + '</wp:posOffset></wp:positionV>' : floating ? '<wp:anchor distT="0" distB="0" distL="' + distance.left + '" distR="' + distance.right + '" simplePos="0" relativeHeight="' + pr +
@@ -4995,7 +4995,7 @@ async function buildDocx(input, {convertImage, rewriteDocument, canonical, compa
       '<wp:positionV relativeFrom="paragraph"><wp:posOffset>' + top + '</wp:posOffset></wp:positionV>' :
       '<wp:inline distT="0" distB="0" distL="0" distR="0">';
     const wrapping = cap ? '<wp:wrapSquare wrapText="right"/>' : !floating ? '' : ['behind', 'front'].includes(floating) ? '<wp:wrapNone/>' :
-      floating === 'box' ? '<wp:wrapSquare wrapText="bothSides"/>' : '<wp:wrapTight wrapText="bothSides"><wp:wrapPolygon edited="0"><wp:start x="0" y="0"/>' +
+      floating === 'box' ? '<wp:wrapSquare wrapText="bothSides"/>' : floating === 'beside' ? '<wp:wrapSquare wrapText="largest"/>' : '<wp:wrapTight wrapText="bothSides"><wp:wrapPolygon edited="0"><wp:start x="0" y="0"/>' +
         '<wp:lineTo x="0" y="21600"/><wp:lineTo x="21600" y="21600"/><wp:lineTo x="21600" y="0"/><wp:lineTo x="0" y="0"/></wp:wrapPolygon></wp:wrapTight>';
     return '<w:r>' + (baseline ? '<w:rPr><w:position w:val="' + Math.round(baseline * 2) + '"/></w:rPr>' : '') + '<w:drawing>' + placement +
       '<wp:extent cx="' + cx + '" cy="' + cy + '"/><wp:effectExtent l="0" t="0" r="0" b="0"/>' +
@@ -5232,7 +5232,7 @@ async function buildDocx(input, {convertImage, rewriteDocument, canonical, compa
         groups.at(-1).block = next;
         index++; emitted++; continue;
       }
-      if (block.caption && ['around', 'box'].includes(block.layout?.wrap)) {
+      if (block.caption && ['around', 'beside', 'box'].includes(block.layout?.wrap)) {
         const {cx} = pictureSize(asset, block.layout, width), cellWidth = Math.max(1, Math.round(cx / 635));
         const left = Math.round(Math.max(0, Math.min(width - cx, width * (block.layout.x ?? 0) / 100 - cx / 2)) / 635);
         const top = Math.round((block.layout.y || 0) * emPoints * 20);

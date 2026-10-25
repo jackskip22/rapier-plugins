@@ -1,6 +1,6 @@
 {
   "schema": "rapier-reader-plugin-source/1",
-  "version": "1.2.43",
+  "version": "1.2.44",
   "sources": [
     {
       "path": "LICENSE",
@@ -452,10 +452,10 @@
     },
     {
       "path": "editor/engine.js",
-      "bytes": 2454364,
-      "sha256": "7ec9989a319c216e24bf09b9aaace68ba67614907f576d9040ae9a1b0c36ba22",
-      "sha384": "57cbdf2147862da968cd10aa3073661771c37b1d025c77656e7e589d19c668f832fb63bc025c445cbd9e62e3e50de111",
-      "gitBlob": "23b81eed43698ab3b7a5ce3e0c0b3d9e25d3dbd6"
+      "bytes": 2492774,
+      "sha256": "b549028eb4d2de0ce7bf52800e6cf24839c6830c6f5c271e357470415242aba0",
+      "sha384": "3afdcc89a18100a98164ab6fc3203ec3d85194b024fab6e50c5b2c4ab1c6bf7b75d2a7adda84cb33893392f988211f83",
+      "gitBlob": "4d63a5a3934678a8ba367bbbf874b2c0938b1dc4"
     },
     {
       "path": "editor/source-facts.mjs",
@@ -543,17 +543,17 @@
     },
     {
       "path": "interchange/docx.mjs",
-      "bytes": 394610,
-      "sha256": "fefc474be8c4017b13145c41be865d88d96726d3389b40790c88a8cad1d97f51",
-      "sha384": "4baf8d7f2063c250b5791c464836ea7c188708cdeeed7e2ad2523058d123e8a77233483c21e92144ced13a985656bee9",
-      "gitBlob": "36d4963a7389ffb9ef4116eb3cc85b8cb22aee92"
+      "bytes": 394753,
+      "sha256": "a97e463e4c29f97830acd8490384c347548267be899f0ae0cb01f510132e596c",
+      "sha384": "9f22e0830dde1f9682ddbd10c68937458d6bff5c1e98a5550a0f281b52bc2aed2ef0e42c93be1cbe6d1e512a8ff88cbf",
+      "gitBlob": "a3d7bed7b3651942076cd11e3e482d2ab84075d5"
     },
     {
       "path": "interchange/pdf-plugin.js",
       "bytes": 15020,
-      "sha256": "688e0a058cea017c1800a8d32e92caf8bc9dac79081eca2d200a1a7a893e518b",
-      "sha384": "843e77210095ac4e07fd5634336790860412bcd0496f605edd1b805a1b8cad9138e71491ca382308e6a7348df199c11a",
-      "gitBlob": "b591d785541aa21884efedc3d65d763d8bb7982c"
+      "sha256": "0552b536bd4435f517f6d13ef02f51d903b4c9deb137599655bf11a97582ba94",
+      "sha384": "640aa51ae1be2e4d0332b2b8837f2cce83ee4c030f774b5842de57a53226b66bbd7bc5b5e05315f8e995e2f756eb916f",
+      "gitBlob": "f0c5ba50857f7a7998c54c672608a75872361ee5"
     },
     {
       "path": "interchange/pdf-resources.mjs",
@@ -789,9 +789,9 @@
     {
       "path": "shell/font-subset-resources.json",
       "bytes": 442,
-      "sha256": "cba9c5ce8581f361bea7e67de97f7ae5f78d7e0bb9e5fe8c66c285e55c4fc616",
-      "sha384": "a488e563546043a05f39baaf9249e9656375ad0215d3e12fbe50c3c353f8dcea300642410f9abe19029d900ff89e896a",
-      "gitBlob": "027ef1274d74fc611c9648417be59e1219839dfb"
+      "sha256": "f29b6289f39ac339ac93e27c30f95be2b13c0d590e90b2f6aaf1ddcebb5e50da",
+      "sha384": "d0e150aab0f1d74a0d883433ca9e16f03d6b597d25fc807c5ee102191b78613302c5fb081658c31efa392e3779789685",
+      "gitBlob": "80f6b2b0f00d9c6acf20c9de5b288a1749220ce5"
     },
     {
       "path": "shell/fonts/Geist.original.woff2",
@@ -838,9 +838,9 @@
     {
       "path": "shell/mermaid-resources.json",
       "bytes": 865,
-      "sha256": "f4999fe2275a28370e30784882139416121b384e4188da59127ebf11f69a056c",
-      "sha384": "abcd48e7243023cbc620a0693613b6d082d0b28423ad5fe71435b46d0170535e7dcbd384f5727cc25786cfb0710c9c37",
-      "gitBlob": "26c833c6fd2d141cd9c80eebafabdf02fa1dd521"
+      "sha256": "683603e8d07bf3087dcf63004e131743cfa33458ec8b740d6b4c3e4c2b8539a3",
+      "sha384": "8fd7bd72cbd6d0be809fd4c8e1cdb20e5ab8dc3c7a9043d47a326823172ff154acc4f77fff1d153687e00dfba0e623ad",
+      "gitBlob": "a2df9f525cc0da66f034bcc3499ba2e12f91d78b"
     },
     {
       "path": "shell/vendor/PROVENANCE.json",
@@ -907,10 +907,10 @@
     },
     {
       "path": "spec/md-layout.mjs",
-      "bytes": 12636,
-      "sha256": "5e92d014bc5a6f1e80710583526d40e698ee75a829c696b74e07532fe990d9da",
-      "sha384": "19cd5fe3b1777183551638c914aff1145a7ecf1076e872e4ad78afc3433398918e7b1ddf0178378d0842062eee6b725d",
-      "gitBlob": "65a12e9d5b956eed55fccc01e02ab5e7d5ff55ae"
+      "bytes": 12646,
+      "sha256": "079152913daf38298217c05923a74f39c1a47d6b0b003fca82a301bc408d320b",
+      "sha384": "83946ba76b63a2a6c038081c480b7aeed1ad552967039a96bed7b191d02a1ddb8cb03aec1533dc143149f4b799f1d84a",
+      "gitBlob": "4daf8f9a73c62f46259db292b0bc6d15bc533f05"
     },
     {
       "path": "spec/md-marks.mjs",
@@ -1033,10 +1033,10 @@
     },
     {
       "path": "tools/reader-build.mjs",
-      "bytes": 27949,
-      "sha256": "9cf5a153a0a1b14b186480437398fd11c98bbaefd6b69052b1205ace44ff29f4",
-      "sha384": "a3170ca2c865220626c31ec07d4a8232b41223701870227cac2800856fecbc00b51b6c4ca8642f1d26a31d4561d48614",
-      "gitBlob": "e0000e71713cb8ab6ce0fea5d6f2e59da62c0aed"
+      "bytes": 27965,
+      "sha256": "07e22054be25f9fe673e2bdaa3c3e1d312b90d816e561fdff4e88f4332b65462",
+      "sha384": "b6cc005a59a71dc483ee72a554b14722f512782734976e7e6916ce1d007ab64140113b987bbc9586da239db009068bf9",
+      "gitBlob": "4f545bda492f4f028370d11f184bfedfd40dbd88"
     },
     {
       "path": "tools/reader-css.mjs",
@@ -1188,29 +1188,29 @@
     {
       "path": "version.mjs",
       "bytes": 220,
-      "sha256": "66e1cf0e52b791b707841f4932d6e305e140f6977a507d061c66a77b3c55498b",
-      "sha384": "096031303f070cf93ba92c3a75c7b3ad0f852ca9b92865fe1a5da1a444ced73f2b7303a198b0ceaab59bbc5da1104015",
-      "gitBlob": "f1da3d75fc16744ddeff81a09e9cdb0a8bf0a68c"
+      "sha256": "1962684b868554df2beef75bd724ff22d47c93349507bd6a38e32716338a1268",
+      "sha384": "9c11157be29ed0c18d6bbf78fcf835a9fbf08d0e968e106423923b73123558c8526e9625731bd12f984450392cfeac94",
+      "gitBlob": "5bc9cced169ff537be9a934fe1a854467eeb3953"
     }
   ],
   "outputs": {
-    "rapier-docx-1.2.43.js": {
-      "bytes": 614201,
-      "sha256": "b4d458f73201d9540cb58d9bef41aa323e3d5ce4334f2321165dad551551b7a2",
-      "sha384": "042c4be38c053f2c7263d48bc7c371b9c055ce4e0793829e30479e15f243a880d1815a77da86cf30d87a8ff1bf831401",
-      "gitBlob": "31df00510efe712d1762bdb2abb3becfbc9b2151"
+    "rapier-docx-1.2.44.js": {
+      "bytes": 614258,
+      "sha256": "0cd33872e3284a373de9daad23fd48a54d0436c679c2db1c29cbfe9c13b4be93",
+      "sha384": "d275a7b96095fc2adfde40562086afc0c655d31f850d30af42ae55617c1ebc7eb144717eb1e9514df4e104fb8e16f8b0",
+      "gitBlob": "e20c307c13e5f0a669330e84da4db926f2280c17"
     },
-    "rapier-flowchart-1.2.43.js": {
+    "rapier-flowchart-1.2.44.js": {
       "bytes": 326570,
       "sha256": "5005ba9bcb025b7a480102d1b014b15544239df2351e283ac9b976f0908a805c",
       "sha384": "066bdc84cdddfb467d9e05ab1dee0e01beed257515c33d9c276c5d9ec62087a23e07d3f6774f05cda3c7d80ee23b5986",
       "gitBlob": "aee36e064303bc3838e63826aee2fc5a38ddb049"
     },
-    "rapier-pdf-1.2.43.js": {
+    "rapier-pdf-1.2.44.js": {
       "bytes": 39942,
-      "sha256": "fcabbb42bfaf2366aed0c54f4ecd4045650c5dc2c287bb3b4011d377921162d0",
-      "sha384": "cb707818359ac2f4b670c5358e24823fe102a170d8224da4943dbae27df85cb55ff5019f99f7a503c7c2aff9d652d6b8",
-      "gitBlob": "a209e53e1167924db92a7a1bc4e0bd00c92e2239"
+      "sha256": "6ee6c1d8c54004cebd5d61ee89665c2580120765eec9cbc5afca92d21ccf95f2",
+      "sha384": "ec1bee07f60bba509e2dbcd8ebed492611ffd07255b06460874916d730cccda5f772e3606b31b5548b7427e99b99eab0",
+      "gitBlob": "5a91ee803cc25fbb59c094969bd1b7d208d668f3"
     }
   }
 }

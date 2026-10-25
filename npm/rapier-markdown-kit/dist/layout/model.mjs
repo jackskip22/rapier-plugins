@@ -309,6 +309,19 @@ export function pictureSlices(profile, x, y, width, height, scale = 1) {
   return slices;
 }
 
+export function besideSlices(slices, columnLeft, columnRight, pictureLeft, pictureWidth) {
+  if (!Array.isArray(slices) || !(columnRight > columnLeft) || !(pictureWidth > 0) || !finite(pictureLeft)) return slices;
+  const blockLeft = pictureLeft + pictureWidth / 2 <= (columnLeft + columnRight) / 2;
+  return slices.map(slice => {
+    if (!slice || !finite(slice.x) || !finite(slice.width)) return slice;
+    if (blockLeft) {
+      const right = slice.x + slice.width;
+      return {...slice, x: columnLeft, width: Math.max(0, right - columnLeft)};
+    }
+    return {...slice, width: Math.max(0, columnRight - slice.x)};
+  });
+}
+
 export {slotSequence, columnsFilled};
 export function slotsForBand(width, obstacles, top, height, minWidth = 40) {
   if (!finite(width) || width <= 0 || !finite(top) || !finite(height) || height <= 0 ||

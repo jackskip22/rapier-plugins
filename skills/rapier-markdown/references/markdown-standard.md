@@ -102,12 +102,13 @@ Following prose can flow above, beside and below the picture.
   never both.
 - Images have exactly three modes:
   1. Normal flow, with optional `width` (or `lines`) and either `align` or `x`.
-  2. Wrapped flow, with `wrap=around` or `wrap=box` and optional `width`, `x` and `y`; text reflows.
+  2. Wrapped flow, with `wrap=around`, `wrap=beside` or `wrap=box` and optional `width`, `x` and `y`; text reflows.
   3. Out of flow, with `wrap=behind` or `wrap=front` and the same optional `width`, `x` and `y`; text ignores the image.
 - Normal-flow `x` needs `width`. `y` always needs `wrap`. `align` can't be used with `wrap` or `x`. A normal-flow
   horizontal position doesn't change source order or reserve floating space beside the image.
 - `rotate` and `opacity` are independent of every other field and mode; neither needs or excludes `width`, `wrap`, `x`,
-  `y` or `align`. A fade never changes the flow: `wrap=around` follows the picture's own silhouette at any `opacity`.
+  `y` or `align`. A fade never changes the flow: `wrap=around` follows the picture's own silhouette at any `opacity`,
+  and `wrap=beside` stays on one side of the rectangle.
 
 A raster or foreign SVG the writer didn't compose carries its turn as `rotate`, so its bytes stay lossless. Its
 reserved space becomes its turned bounding box, `w·|cos|+h·|sin|` wide and `w·|sin|+h·|cos|` tall for a `w`×`h` picture
@@ -216,6 +217,7 @@ upright and solid, at the reader's default width. `align`, `x`, `y`, `wrap`, `li
 | `wrap` | Conforming CSS |
 | --- | --- |
 | `around` | `float: left` when `x` is absent or below 50%, otherwise `float: right`, with `shape-outside: url(<the picture>)` and a `shape-image-threshold` near the standard's 10% alpha cutoff; text wraps to the picture's silhouette. |
+| `beside` | The same float with no `shape-outside`: text sits on one side of the rectangle. |
 | `box` | The same float with no `shape-outside`: text wraps to the plain rectangle. |
 | `behind` | The picture positioned (`x`, `y`, `width`) with `z-index` below the text; the anchor paragraph and everything after it lay out exactly as if it were absent. |
 | `front` | The same positioning, with `z-index` above the text. |
@@ -224,7 +226,7 @@ A `rotate`d picture is turned for display with a CSS `transform`. A transform is
 feeds back into layout or into what `shape-outside` samples (CSS Transforms; CSS Shapes, "relation to box model and
 float behavior"). Turning the picture but leaving its `shape-outside` or float rectangle unturned doesn't conform. A
 conforming rung-2 reader computes the *turned* shape and supplies it directly: `shape-outside: polygon(...)` from the
-rotated bounding box's corners (the size given above), or, for `wrap=box`, the same turned rectangle as a plain float
+rotated bounding box's corners (the size given above), or, for `wrap=box` and `wrap=beside`, the same turned rectangle as a plain float
 with no shape. Rung 2 doesn't give words on both sides of one picture, words inside a picture's unfilled interior, or
 line-exact agreement with Rapier. Exact lines are not required.
 

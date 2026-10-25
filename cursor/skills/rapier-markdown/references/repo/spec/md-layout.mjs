@@ -3,7 +3,7 @@
 export const fields = new Set(['align', 'width', 'lines', 'wrap', 'x', 'y', 'rotate', 'opacity', 'first', 'indent', 'marker', 'lock', 'hyphens', 'caps', 'hanging', 'before', 'after', 'line']);
 export const SPACING_FIELDS = Object.freeze(['before', 'after', 'line']);
 export const alignments = new Set(['left', 'center', 'right', 'justify']);
-export const wraps = new Set(['around', 'box', 'behind', 'front']);
+export const wraps = new Set(['around', 'beside', 'box', 'behind', 'front']);
 const has = (value, key) => Object.hasOwn(value, key);
 const percent = value => typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 100;
 const lineCount = value => Number.isInteger(value) && value >= 1 && value <= 12;

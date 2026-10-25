@@ -45,7 +45,7 @@ const MODULES = {
 };
 const READ_ALL = new Set(['RapierOcr']);
 const PLANNER_EXPORTS = {
-	RapierImageLayout: ['alphaProfile', 'boxClearance', 'edgeLines', 'edgeMarks', 'flowLines', 'frameScale', 'imageBox', 'imageOnly', 'lineMetrics', 'linesSlices', 'linesTop', 'mapFragment', 'parseProfile', 'pictureSlices', 'polygonProfile', 'rasterReserved', 'rasterTiltProfile', 'rotatedBoundsRad', 'rotatedRasterAlpha', 'serializeProfile', 'wrapShape'],
+	RapierImageLayout: ['alphaProfile', 'besideSlices', 'boxClearance', 'edgeLines', 'edgeMarks', 'flowLines', 'frameScale', 'imageBox', 'imageOnly', 'lineMetrics', 'linesSlices', 'linesTop', 'mapFragment', 'parseProfile', 'pictureSlices', 'polygonProfile', 'rasterReserved', 'rasterTiltProfile', 'rotatedBoundsRad', 'rotatedRasterAlpha', 'serializeProfile', 'wrapShape'],
 	RapierMdLayoutSpec: ['formatLayout', 'objectHeight', 'parseLayout', 'parseLayoutAttribute', 'wrapColumnFloor', 'wrapNeighbour', 'wrapTextBlock'],
 	RapierTextPreparation: ['captureFontAuthority', 'createPreparationScope', 'fontReady', 'invalidateRichMetrics', 'paragraphItems', 'prepareRichParagraph', 'supportsRichStyle'],
 };

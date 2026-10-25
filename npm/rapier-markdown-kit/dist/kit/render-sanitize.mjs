@@ -69,7 +69,8 @@ function cleanDocumentStyle(tag, value, context, classes = '') {
 		const property = part.slice(0, colon).trim().toLowerCase(), body = part.slice(colon + 1).trim();
 		const diagramProperty = diagram && /^--(?:_[a-z0-9_-]+|pele-[a-z0-9-]+)$/.test(property);
 		if (!DOCUMENT_STYLE_PROPERTIES.has(property) && !/^--md-[a-z0-9-]+$/.test(property) && !diagramProperty && !(diagram && property === 'font')) return;
-		if (!body || /[\\\u0000-\u0008\u000b\u000e-\u001f{}@]|\/\*|\*\//.test(body)) return;
+		if (!body || /[\u0000-\u0008\u000b\u000e-\u001f{}@]|\/\*|\*\//.test(body) ||
+			/["'\\]/.test(body.replace(/"(?:[^"\\\n\r\f]|\\["\\])*"|'(?:[^'\\\n\r\f]|\\['\\])*'/g, ''))) return;
 		const withoutLocal = body.replace(/\burl\(\s*(['"]?)#[a-z0-9_.:-]+\1\s*\)/gi, '');
 		if (/(?:url|image|image-set|-webkit-image-set|element|paint|attr|expression)\s*\(/i.test(withoutLocal)) return;
 		kept.push(part.trim());
@@ -304,6 +305,31 @@ function _rapierInstallSanitizeHooks() {
 		if (level) node.setAttribute('data-rapier-word-level', String(level));
 		else if (node.nodeName === 'SPAN' && wordListIsMarker(style)) node.setAttribute('data-rapier-word-marker', '1');
 	});
+	DOMPurify.addHook('uponSanitizeElement', node => {
+		if (_rapierSanitizeRuntime.context !== 'paste' || !node || node.nodeName !== 'TABLE') return;
+		node.removeAttribute('data-rapier-paste-word-header');
+		try {
+			const own = (node.getAttribute('style') || '') + ' ' + (node.getAttribute('class') || '');
+			const word = /mso-yfti-|MsoTable/i.test(own) || !!node.querySelector('[style*="mso-"],[class*="Mso"]');
+			if (!word || node.tHead || node.querySelector('th')) return;
+			const row = Array.from(node.querySelectorAll('tr')).find(candidate => candidate.closest('table') === node);
+			if (!row) return;
+			const cells = Array.from(row.children).filter(cell => cell.nodeName === 'TD' || cell.nodeName === 'TH');
+			if (!cells.length) return;
+			let bold = false;
+			for (const cell of cells) {
+				const walker = node.ownerDocument.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+				for (let text = walker.nextNode(); text; text = walker.nextNode()) {
+					if (!/\S/.test(text.nodeValue || '')) continue;
+					const parent = text.parentElement;
+					const style = parent?.getAttribute?.('style') || '';
+					if (!(parent && (parent.closest('b,strong') || /font-weight\s*:\s*(?:bold|[6-9]00|1000)\b/i.test(style)))) return;
+					bold = true;
+				}
+			}
+			if (bold) node.setAttribute('data-rapier-paste-word-header', '');
+		} catch (_) {}
+	});
 }
 
 function _rapierInstallDocumentSanitizeHooks() {
@@ -414,9 +440,17 @@ function sanitize(value, context, fragment) {
 	if (purifyConfigured.get(DOMPurify) !== options) { DOMPurify.setConfig(options); purifyConfigured.set(DOMPurify, options); }
 	const previous = _rapierSanitizeRuntime.context;
 	_rapierSanitizeRuntime.context = selected;
+	ensureScratchParseHook();
+	const scratch = [];
+	const outerSink = scratchSink;
+	scratchSink = scratch;
+	let result;
 	try {
-		return DOMPurify.sanitize(value == null ? '' : String(value));
+		result = DOMPurify.sanitize(value == null ? '' : String(value));
+		return result;
 	} finally {
+		scratchSink = outerSink;
+		releaseScratchMedia(scratch, result);
 		if (labels) {
 			DOMPurify.removeHook('uponSanitizeElement', diagramLabelElement);
 			DOMPurify.removeHook('uponSanitizeAttribute', diagramLabelAttribute);
@@ -424,6 +458,37 @@ function sanitize(value, context, fragment) {
 		}
 		_rapierSanitizeRuntime.context = previous;
 	}
+}
+
+let scratchSink = null;
+function ensureScratchParseHook() {
+	if (typeof DOMParser !== 'function' || DOMParser.prototype.parseFromString._rapierScratch) return;
+	const original = DOMParser.prototype.parseFromString;
+	function wrapped(source, type) {
+		const doc = original.call(this, source, type);
+		scratchSink?.push(doc);
+		return doc;
+	}
+	wrapped._rapierScratch = true;
+	DOMParser.prototype.parseFromString = wrapped;
+}
+
+function releaseScratchMedia(docs, result) {
+	const kept = result && typeof result === 'object' ? result.nodeType === 9 ? result : result.ownerDocument : null;
+	for (const doc of docs) {
+		if (!doc || doc === kept || !doc.querySelectorAll) continue;
+		for (const el of [...doc.querySelectorAll('video, audio')]) releaseMediaElement(el);
+	}
+}
+function releaseMediaElement(el) {
+	if (!el || (el.nodeName !== 'VIDEO' && el.nodeName !== 'AUDIO')) return;
+	try {
+		el.pause();
+		el.removeAttribute('src');
+		for (const source of el.querySelectorAll('source')) source.removeAttribute('src');
+		el.load();
+	} catch (_) {}
+	el.remove();
 }
 
 function escapeRapierHtmlText(value) {

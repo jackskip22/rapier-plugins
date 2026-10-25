@@ -725,7 +725,7 @@ function* _rapierSharedPageLayoutSteps(root) {
 	for (const image of root.querySelectorAll('img[data-rapier-image-layout]')) {
 		yield;
 		const layout = globalThis.RapierMarkdownLayout.parseLayoutAttribute(image.getAttribute('data-rapier-image-layout'));
-		if (layout?.wrap !== 'around' && layout?.wrap !== 'box') continue;
+		if (layout?.wrap !== 'around' && layout?.wrap !== 'beside' && layout?.wrap !== 'box') continue;
 		const paragraph = _rapierSharePictureParagraph(image);
 		if (!paragraph) continue;
 		const owner = globalThis.RapierMarkdownLayout.wrapNeighbour(paragraph, _rapierShareWrapKind);
@@ -1458,6 +1458,8 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, preparation) {
     if (layout.wrap === 'box') {
       value = boxProfile(image);
       if (!value && rotateRad) value = geometry.rasterTiltProfile(image.naturalWidth, image.naturalHeight, rotateRad);
+    } else if (layout.wrap === 'beside') {
+      value = rotateRad ? geometry.rasterTiltProfile(image.naturalWidth, image.naturalHeight, rotateRad) : null;
     } else {
       const occupancy = typeof geometry.parseProfile === 'function' && geometry.parseProfile(image.getAttribute('data-rapier-occupancy'));
       value = occupancy || geometry.alphaProfile(image);
@@ -1481,7 +1483,7 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, preparation) {
     for (const image of root.querySelectorAll('img[data-rapier-image-layout]')) {
       if (exclude.has(image) || !image.complete || !image.naturalWidth || !image.naturalHeight) continue;
       const layout = metadata.parseLayoutAttribute(image.getAttribute('data-rapier-image-layout'));
-      if (!layout?.rotate || ['around', 'box', 'behind', 'front'].includes(layout.wrap)) continue;
+      if (!layout?.rotate || ['around', 'beside', 'box', 'behind', 'front'].includes(layout.wrap)) continue;
       const width = image.offsetWidth, height = image.offsetHeight;
       if (!(width > 0 && height > 0)) continue;
       const paragraph = image.closest('p');
@@ -1619,7 +1621,7 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, preparation) {
       const origin = box(root).top, obstacles = [], anchors = new Map(), wrapped = new Set(), placed = [], positionedImages = new Set();
       for (const element of children) {
         const layout = metadata.parseLayoutAttribute(element.getAttribute('data-md-layout'));
-        const image = ['around', 'box', 'behind', 'front'].includes(layout?.wrap) && element.tagName === 'P'
+        const image = ['around', 'beside', 'box', 'behind', 'front'].includes(layout?.wrap) && element.tagName === 'P'
           ? element.querySelector('img[data-rapier-image-layout]') : null;
         if (!image?.complete || !image.naturalWidth || !image.naturalHeight || !imageOnly(element, image)) continue;
 
@@ -1665,7 +1667,9 @@ function _rapierProjectArtifactLayout(root, metadata, geometry, preparation) {
                   obstacle.y + obstacle.height > y - room && obstacle.y < y + rectangle.height + room)
                 y = obstacle.y + obstacle.height + room;
             }
-            obstacles.push(...geometry.linesSlices(geometry.pictureSlices(profile(image, layout), left, y, rectangle.width, rectangle.height, scale), layout, lines, y, rectangle.height));
+            let slices = geometry.pictureSlices(profile(image, layout), left, y, rectangle.width, rectangle.height, scale);
+            if (layout.wrap === 'beside') slices = geometry.besideSlices(slices, bounds.left + inset, bounds.left + inset + width, left, rectangle.width);
+            obstacles.push(...geometry.linesSlices(slices, layout, lines, y, rectangle.height));
           }
           placed.push({source, image, rectangle, left, y, wrap: layout.wrap,
             visualLeft: left + visualDeltaX, visualTop: y + visualDeltaY, visualWidth: fit.fit.width, visualHeight: fit.fit.height,
@@ -1746,7 +1750,7 @@ function _rapierArtifactLayoutScript(root, nonce = '', {pictures = true} = {}) {
   const dependencies = globalThis.RapierArtifactLayoutDependencies;
   const layoutOf = element => globalThis.RapierMarkdownLayout.parseLayoutAttribute(element.getAttribute('data-md-layout'));
   const pictureLayoutOf = image => globalThis.RapierMarkdownLayout.parseLayoutAttribute(image.getAttribute('data-rapier-image-layout'));
-  const wrapping = pictures && ([...root.querySelectorAll('p[data-md-layout]')].some(element => ['around', 'box', 'behind', 'front'].includes(layoutOf(element)?.wrap)) ||
+  const wrapping = pictures && ([...root.querySelectorAll('p[data-md-layout]')].some(element => ['around', 'beside', 'box', 'behind', 'front'].includes(layoutOf(element)?.wrap)) ||
        [...root.querySelectorAll('img[data-rapier-image-layout]')].some(image => pictureLayoutOf(image)?.rotate));
   const typography = _rapierArtifactTypographyScript(root);
   if (!wrapping && !typography) return '';
