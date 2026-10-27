@@ -9,6 +9,7 @@ const cached = [];
 let preparedDefinitions = [];
 let configured = null, splitSource = null;
 export function configureParser(parser, split) { configured = parser; splitSource = split; cached.length = 0; preparedDefinitions = []; }
+export const configuredMarkdownParser = () => configured;
 function fail(reason) { throw new Error(reason); }
 export const normalizeLabel = label => String(label).trim().replace(/\s+/g, ' ').toLowerCase().toUpperCase();
 export const assetTitle = value => String(value || '').replace(/[\r\n]/g, ' ').replace(/\0/g, '\ufffd');

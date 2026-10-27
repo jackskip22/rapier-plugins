@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-import {readLedger, exportLedger, textRoot, rootAfter} from './format.mjs';
-import {_rapierTransformSplices, _rapierHistoryEffects} from './journal-records.mjs';
-import {projectInverseSource} from './inverse-source.mjs';
-import {sha256} from './hash.mjs';
-import {plainData, documentText, nonnegative, exactKeys, fault} from './data.mjs';
+import {readLedger, exportLedger, textRoot, rootAfter} from "./format.mjs";
+import {_rapierTransformSplices, _rapierHistoryEffects} from "./journal-records.mjs";
+import {projectInverseSource} from "./inverse-source.mjs";
+import {sha256} from "./hash.mjs";
+import {plainData, documentText, nonnegative, exactKeys, fault} from "./data.mjs";
 function coalesce(runs) {
   const out = [];
   for (const run of runs) {

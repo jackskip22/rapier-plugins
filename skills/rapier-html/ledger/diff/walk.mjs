@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-import {words, letter, within, prev, next} from './tokens.mjs';
+import {words, letter, within, prev, next} from "./tokens.mjs";
 
 export function walker(c) {
   const {before, after, spend, safe, budget, raw, chars, code, segmenter, tokens, matches} = c;

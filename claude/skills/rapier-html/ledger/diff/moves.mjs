@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-import {separate, phrases} from './concerns.mjs';
+import {separate, phrases} from "./concerns.mjs";
 
 export function moves(c) {
   const {before, after, spend, safe, budget, raw, code, tokens, matches, walk, structures, pa, pb, la, aliases} = c;

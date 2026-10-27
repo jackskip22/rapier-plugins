@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Pure text and markdown-it tokens: no DOM, no byte decoding, no globalThis.Rapier* (MIT kit; decoders stay in images/assets.mjs).
-import {isWordSidecarBlock} from './word-sidecar.mjs';
-import {sourceFacts, sourceView, sourceEdit} from './source.mjs';
+import {isWordSidecarBlock} from "./word-sidecar.mjs";
+import {sourceFacts, sourceView, sourceEdit} from "./source.mjs";
 
 export const IMAGE_LIMITS = Object.freeze({bytes: 16 * 1024 * 1024, sourceChars: 64 * 1024 * 1024, dimension: 16384, pixels: 24000000, assets: 1024});
 const parsers = new WeakMap();
@@ -9,6 +9,7 @@ const cached = [];
 let preparedDefinitions = [];
 let configured = null, splitSource = null;
 export function configureParser(parser, split) { configured = parser; splitSource = split; cached.length = 0; preparedDefinitions = []; }
+export const configuredMarkdownParser = () => configured;
 function fail(reason) { throw new Error(reason); }
 export const normalizeLabel = label => String(label).trim().replace(/\s+/g, ' ').toLowerCase().toUpperCase();
 export const assetTitle = value => String(value || '').replace(/[\r\n]/g, ' ').replace(/\0/g, '\ufffd');

@@ -258,7 +258,7 @@ function pictureBase(value) {
 return {FEATURES, LIMITS, ASSET_TYPES, refusal, coded, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker, pictureBase};
 })();
 const BUILDS = Object.freeze({full: 'https://rapier.website/embed/rapier.html', reader: 'https://rapier.website/embed/rapier-reader.html'});
-const PACKAGE_VERSION = '1.2.45';
+const PACKAGE_VERSION = '1.2.46';
 const OPTIONS = ['build', 'src', 'plugins', 'approvePlugins', 'sessionId', 'documentId', 'agent', 'agentName', 'theme', 'save', 'assets', 'openFile', 'load',
   'onState', 'compare', 'onClose', 'settings', 'style', 'title', 'onError', 'timeout'];
 const READER_FEATURES = ['find', 'readAloud', 'share'];
@@ -268,14 +268,15 @@ const identifier = value => typeof value === 'string' && value.length > 0 && val
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const themeValue = value => ['light', 'dark', 'system'].includes(value);
 const mint = prefix => prefix + '-' + (globalThis.crypto?.randomUUID?.() || Math.random().toString(36).slice(2));
-const autoLive = new Map(), slotLive = new Map();
+const slotLive = new Map();
 const fnv = text => { let h = 0x811c9dc5; for (let i = 0; i < text.length; i++) { h ^= text.charCodeAt(i); h = Math.imul(h, 0x01000193); } return (h >>> 0).toString(36); };
-function autoIdentity(options) {
+function autoIdentity(options, location, fieldId) {
   const load = options.load;
   if (!options.save || !load || typeof load !== 'object' || typeof load.content !== 'string') return null;
   const base = fnv(location.origin + location.pathname) + '-' + fnv(String(load.filename ?? '') + '|' + load.content.length + '|' + load.content.slice(0, 2048));
+  if (fieldId) return base + '-field-' + fnv(fieldId);
   let at = 0;
-  while (autoLive.get(base + '-' + at)?.()) at++;
+  while (slotLive.get(JSON.stringify(['page-' + base + '-' + at, 'doc-' + base + '-' + at]))?.()) at++;
   return base + '-' + at;
 }
 function deferred() {
@@ -361,8 +362,9 @@ function mount(target, options = {}) {
     source.searchParams.set('plugins', directory.href);
   }
   if (options.approvePlugins === true) source.searchParams.set('approvePlugins', '1');
-  const origin = source.origin, auto = options.sessionId === undefined && options.documentId === undefined ? autoIdentity(options) : null;
-  const askedSession = options.sessionId ?? (auto ? 'page-' + auto : mint('session')), askedDocument = options.documentId ?? (auto ? 'doc-' + auto : mint('document'));
+  const origin = source.origin, auto = options.sessionId === undefined && options.documentId === undefined ? autoIdentity(options, host.location) : null;
+  const pageSession = options.documentId !== undefined && options.save ? 'page-' + fnv(host.location.origin + host.location.pathname) : null;
+  const askedSession = options.sessionId ?? (auto ? 'page-' + auto : pageSession ?? mint('session')), askedDocument = options.documentId ?? (auto ? 'doc-' + auto : mint('document'));
   if (!identifier(askedSession) || !identifier(askedDocument)) throw coded('invalid_id', TypeError, 'Session and document IDs must be nonempty strings of at most 256 code units');
   const sessionId = askedSession, documentId = askedDocument, pairKey = JSON.stringify([sessionId, documentId]), openElsewhere = !!slotLive.get(pairKey)?.();
   const agentName = options.agentName;
@@ -377,7 +379,7 @@ function mount(target, options = {}) {
   const unread = reader ? (settings?.features || []).filter(name => !READER_FEATURES.includes(name)) : [];
   if (unread.length) throw Object.assign(new TypeError('The reader has no ' + unread.join(', ') + '; its features are ' + READER_FEATURES.join(', ')), {code: 'settings_feature_unavailable'});
   const assetAnswers = new Map();
-  let assetPending = '', assetAbort = new AbortController();
+  let assetPending = null, assetAbort = new AbortController();
   const chooseFile = options.openFile || (({signal}) => pickDeviceFile(document, signal)), openAnswers = new Map();
   let openPending = null;
   const capabilities = [
@@ -388,8 +390,9 @@ function mount(target, options = {}) {
   if (options.agent && (!capabilities.includes('open') || !capabilities.includes('read')))
     throw coded('invalid_option', TypeError, 'Agent access needs both load and save');
   const ids = {sessionId, documentId}, answers = new Map(), waiting = new Map(), listeners = new Map();
-  let watcher = null, port = null, posted = false, connected = false, ended = false, endError = null, sawLoad = false, seq = 0, activeSave = null, activeClose = null;
-  let currentTheme = options.theme, lastSaved = null, readOnly = false, connectedWait = deferred(), boot, bootTimer = 0, loadTimer = 0, timedOut = false, frameFacts = {};
+  let watcher = null, port = null, posted = false, connected = false, ended = false, terminal = false, endError = null, sawLoad = false, seq = 0, activeSave = null, activeClose = null;
+  let currentTheme = options.theme, lastSaved = null, readOnly = false, connectedWait = deferred(), boot, bootAttempt, bootTimer = 0, loadTimer = 0, timedOut = false, frameFacts = {};
+  const initialLoad = record(options.load) ? {...options.load} : options.load;
   let held = null;
   const ready = deferred();
   const emit = (type, value) => { for (const fn of listeners.get(type) || []) fn(value); };
@@ -414,8 +417,9 @@ function mount(target, options = {}) {
     return pending.promise;
   }
   function requestCapture() {
-    if (activeSave) activeSave.commandId = 'host-' + (seq + 1);
-    send('save', undefined, undefined, true).catch(error => { activeSave?.reject(error); activeSave = null; });
+    const capture = activeSave;
+    if (capture) capture.commandId = 'host-' + (seq + 1);
+    send('save', undefined, undefined, true).catch(error => { if (activeSave === capture) { capture?.reject(error); activeSave = null; } });
   }
   async function answerSave(message, channel) {
     const {requestId, baseRevision, payload} = message;
@@ -439,6 +443,7 @@ function mount(target, options = {}) {
     if (!answers.has(requestId)) {
       const job = Promise.resolve().then(async () => {
         try {
+          if (ended || channel !== port) throw coded('disconnected', Error, 'The ' + noun + ' connection has ended');
           const result = await options.save({...payload, requestId, baseRevision});
           if (!revision(result?.revision) || result.revision === baseRevision || typeof result.revision === 'number' && typeof baseRevision === 'number' && result.revision <= baseRevision)
             throw coded('save_not_advancing', TypeError, 'save must return an advancing durable revision');
@@ -455,7 +460,7 @@ function mount(target, options = {}) {
     if (ended || channel !== port) return;
     channel.postMessage(reply);
     if (reply.type === 'save-ack') {
-      lastSaved = reply.payload; held = {revision: reply.payload.revision, content: payload.content, filename: payload.filename};
+      lastSaved = reply.payload; held = {...held, revision: reply.payload.revision, content: payload.content, filename: payload.filename};
       if (activeSave) activeSave.acknowledged = true;
     } else if (activeSave) { activeSave.reject(refused(reply.payload)); activeSave = null; }
   }
@@ -477,7 +482,7 @@ function mount(target, options = {}) {
         if (assetPending) throw refusal('asset_busy');
         if (assetAnswers.size >= 48) assetAnswers.delete(assetAnswers.keys().next().value);
         const signal = assetAbort.signal;
-        row = {signature, job: null}; assetAnswers.set(requestId, row); assetPending = requestId;
+        row = {signature, job: null}; assetAnswers.set(requestId, row); assetPending = row;
         row.job = Promise.resolve().then(async () => {
           try {
             if (await bytesHash(bytes) !== payload.bytesSha256) throw refusal('asset_hash_mismatch');
@@ -488,7 +493,7 @@ function mount(target, options = {}) {
           } catch (error) {
             return {type: 'asset-nack', payload: {code: typeof error?.code === 'string' && error.code.length > 0 && error.code.length <= 64 ? error.code : 'asset_failed',
               reason: String(error?.message || error).slice(0, 500)}};
-          } finally { if (assetPending === requestId) assetPending = ''; }
+          } finally { if (assetPending === row) assetPending = null; }
         });
       } else if (await bytesHash(bytes) !== payload.bytesSha256) throw refusal('asset_hash_mismatch');
       const answer = await row.job;
@@ -500,6 +505,7 @@ function mount(target, options = {}) {
   function cancelOpen(code = 'open_cancelled') {
     const row = openPending;
     if (!row || row.abort.signal.aborted) return;
+    openPending = null;
     row.answer = {type: 'open-nack', payload: {code, reason: 'File opening was canceled.'}};
     row.abort.abort();
   }
@@ -567,7 +573,8 @@ function mount(target, options = {}) {
       || !(message.requestId === null || identifier(message.requestId)) || !(message.baseRevision == null || revision(message.baseRevision))) return;
     const {type, payload, requestId} = message, pending = waiting.get(requestId);
     if (type === 'protocol-error' && !connected) {
-      const error = refused(payload); connectedWait.reject(error); ready.reject(error); fail(error); return;
+      clearTimeout(bootTimer); clearTimeout(loadTimer);
+      connectedWait.reject(refused(payload)); return;
     }
     if (type === 'connected') {
       if (connected) return;
@@ -578,8 +585,8 @@ function mount(target, options = {}) {
     }
     if (!connected) return;
     if (type === 'open-request' || type === 'open-cancel') { answerOpen(message, channel); return; }
-    if (type === 'asset-request') { answerAsset(message, channel).catch(fail); return; }
-    if (type === 'save-request') { answerSave(message, channel).catch(fail); return; }
+    if (type === 'asset-request') { answerAsset(message, channel).catch(error => { if (!ended && channel === port) fail(error); }); return; }
+    if (type === 'save-request') { answerSave(message, channel).catch(error => { if (!ended && channel === port) fail(error); }); return; }
     if (type === 'document-state' && capabilities.includes('changes')) {
       if (!['loaded', 'dirty', 'saving', 'closing', 'readOnly'].every(key => typeof payload[key] === 'boolean')
         || Object.keys(payload).some(key => !['loaded', 'dirty', 'saving', 'closing', 'readOnly', 'filename', 'docKind'].includes(key))) return;
@@ -595,12 +602,15 @@ function mount(target, options = {}) {
       return;
     }
     if (type === 'close-request' && options.onClose) {
-      Promise.resolve().then(() => options.onClose({dirty: !!payload.dirty})).then(decision => {
+      Promise.resolve().then(() => {
+        if (ended || channel !== port) throw coded('disconnected', Error, 'The ' + noun + ' connection has ended');
+        return options.onClose({dirty: !!payload.dirty});
+      }).then(decision => {
         if (!['save', 'discard', 'cancel'].includes(decision)) throw coded('invalid_option', TypeError, 'Close needs save, discard or cancel');
         if (channel !== port || ended) return;
         channel.postMessage({type: 'close-decision', ...ids, requestId, baseRevision: message.baseRevision, payload: {decision}});
         if (decision === 'cancel') { activeClose?.resolve({cancelled: true}); activeClose = null; }
-      }).catch(error => { activeClose?.reject(error); activeClose = null; fail(error); });
+      }).catch(error => { if (channel !== port || ended) return; activeClose?.reject(error); activeClose = null; fail(error); });
       emit('close-request', payload); return;
     }
     if (type === 'close-ready' && options.onClose) { activeClose?.resolve(payload); activeClose = null; emit('closed', payload); return; }
@@ -620,17 +630,40 @@ function mount(target, options = {}) {
     }
   }
   function prepareBoot() {
-    boot = connectedWait.promise.then(async () => {
+    bootAttempt?.cancel(coded('disconnected', Error, 'The ' + noun + ' reconnected'));
+    const attempt = {...deferred(), stopped: false, recovered: false, timer: 0};
+    attempt.cancel = error => { attempt.stopped = true; clearTimeout(attempt.timer); attempt.reject(error); };
+    bootAttempt = attempt; boot = attempt.promise;
+    const current = () => bootAttempt === attempt && !attempt.stopped && !ended;
+    connectedWait.promise.then(async () => {
+      if (!current()) return;
+      attempt.timer = setTimeout(() => {
+        if (!current()) return;
+        const error = coded('load_timeout', Error, 'The ' + noun + ' did not finish its first document within ' + loadTimeout / 1000 + ' seconds');
+        attempt.cancel(error); rejectPending(error);
+      }, loadTimeout);
       if (currentStyle) await send('style', currentStyle, undefined, true);
-      if (options.load !== undefined) {
-        const value = typeof options.load === 'function' ? await options.load() : options.load;
-        if (!record(value) || typeof value.content !== 'string' || !revision(value.revision)) throw coded('invalid_load', TypeError, 'load needs content and its revision');
-        await send('load', value, null);
-        held = {revision: value.revision, content: value.content, filename: value.filename};
+      if (initialLoad !== undefined) {
+        const input = typeof initialLoad === 'function' ? await initialLoad() : held || initialLoad;
+        if (!current()) return;
+        if (!record(input) || typeof input.content !== 'string' || !revision(input.revision)) throw coded('invalid_load', TypeError, 'load needs content and its revision');
+        const value = {...input};
+        await send('load', value, null, false, loadTimeout);
+        if (!current()) return;
+        held = value;
       }
+      if (!current()) return;
+      clearTimeout(attempt.timer); attempt.resolve();
       ready.resolve(handle);
-    });
-    boot.catch(error => { ready.reject(error); if (!ended) fail(error); });
+    }).catch(error => { if (current()) attempt.cancel(error); });
+    boot.catch(error => { if (bootAttempt === attempt && !ended) { ready.reject(error); fail(error); } });
+  }
+  async function whenBooted(retryLoad = false) {
+    const attempt = bootAttempt;
+    try { await attempt.promise; }
+    catch (error) { if ((!retryLoad && !attempt.recovered) || ended || !connected || attempt !== bootAttempt) throw error; }
+    if (ended || attempt !== bootAttempt) throw endError || coded('disconnected', Error, 'The ' + noun + ' connection has ended');
+    return attempt;
   }
   function connect() {
     if (posted || ended) return;
@@ -639,7 +672,8 @@ function mount(target, options = {}) {
     port.onmessage = event => onPortMessage(event, channel.port1);
     port.onmessageerror = () => {
       if (channel.port1 !== port || ended) return;
-      cancelOpen('open_disconnected'); assetAbort.abort(); rejectPending(coded('disconnected', Error, 'The ' + noun + ' connection was lost'));
+      const error = coded('disconnected', Error, 'The ' + noun + ' connection was lost');
+      end(true, error); fail(error);
     };
     try { iframe.contentWindow.postMessage({type: 'rapier-connect', ...ids, capabilities, contract: 1, ...(settings ? {settings} : {}), ...(agentName ? {agent: {name: agentName}} : {}), ...(currentTheme ? {theme: currentTheme} : {})}, origin, [channel.port2]); }
     catch (error) { port.close(); port = null; posted = false; fail(error); }
@@ -652,11 +686,24 @@ function mount(target, options = {}) {
   }
   const connectTimeoutReason = () => 'The ' + noun + ' page loaded but did not answer within ' + bootTimeout / 1000 + ' seconds. The address may not be a Rapier page (a missing file loads an error page), the page may not allow this parent (frame-ancestors or X-Frame-Options), or the device may be too slow; a slow device that answers later still connects.';
   function onLoad() {
+    if (terminal) return;
+    if (ended) {
+      if (!iframe.isConnected) return;
+      if (slotLive.get(pairKey)?.()) {
+        endError = coded('document_open_elsewhere', Error, 'Another editor already has this document open');
+        fail(endError); return;
+      }
+      ended = false; endError = null; connected = false; posted = false; readOnly = false; sawLoad = false; timedOut = false;
+      assetAbort = new AbortController(); connectedWait = deferred(); prepareBoot();
+      host.addEventListener('message', onWindowMessage);
+      slotLive.set(pairKey, live); watch();
+    }
     if (sawLoad && posted) {
       cancelOpen('open_disconnected');
-      rejectPending(coded('disconnected', Error, 'The ' + noun + ' reconnected')); port?.close();
-      assetAbort.abort(refusal('asset_disconnected')); assetAbort = new AbortController();
-      connected = false; posted = false; readOnly = false; connectedWait = deferred(); prepareBoot();
+      const error = coded('disconnected', Error, 'The ' + noun + ' reconnected');
+      bootAttempt.cancel(error); rejectPending(error); port?.close(); port = null;
+      assetAbort.abort(refusal('asset_disconnected')); assetPending = null; assetAbort = new AbortController();
+      connected = false; posted = false; readOnly = false; timedOut = false; connectedWait = deferred(); prepareBoot();
     }
     sawLoad = true;
     clearTimeout(bootTimer); clearTimeout(loadTimer);
@@ -664,27 +711,43 @@ function mount(target, options = {}) {
     connect();
   }
   function focusBeside(forward) {
-    const order = forward ? host.Node.DOCUMENT_POSITION_FOLLOWING : host.Node.DOCUMENT_POSITION_PRECEDING;
-    const controls = [...document.querySelectorAll('a[href],button,input,select,textarea,iframe,summary,[tabindex],[contenteditable=""],[contenteditable="true"]')]
-      .filter(element => element !== iframe && element.tabIndex >= 0 && !element.disabled && !element.closest('[inert]') && element.getClientRects().length &&
-        iframe.compareDocumentPosition(element) & order);
-    const next = forward ? controls[0] : controls.at(-1);
+    const flat = [], around = new Set();
+    const parent = node => node.assignedSlot || node.parentNode || node.host;
+    const walk = element => {
+      flat.push(element);
+      const assigned = element.localName === 'slot' ? element.assignedElements({flatten: true}) : [];
+      for (const child of assigned.length ? assigned : (element.shadowRoot || element).children) walk(child);
+    };
+    for (const child of document.children) walk(child);
+    for (let node = iframe; node; node = parent(node)) around.add(node);
+    const available = element => {
+      if (around.has(element) || element.tabIndex < 0 || !element.matches('a[href],button,input,select,textarea,iframe,summary,[tabindex],[contenteditable=""],[contenteditable="true"]') ||
+          element.matches(':disabled') || !element.getClientRects().length || ['hidden', 'collapse'].includes(host.getComputedStyle(element).visibility)) return false;
+      for (let node = element; node; node = parent(node))
+        if (node.nodeType === 1 && (node.matches('[hidden],[inert]') || node.localName.includes('-') && node.hasAttribute('disabled'))) return false;
+      return true;
+    };
+    const at = flat.indexOf(iframe), side = forward ? flat.slice(at + 1) : flat.slice(0, at).reverse();
+    const next = at < 0 ? null : side.find(available);
     if (next) next.focus(); else iframe.blur();
   }
-  function end(removed) {
-    if (ended) return;
-    if (connected && !removed) send('disconnect', undefined, undefined, true).catch(() => {});
-    ended = true; connected = false; clearTimeout(bootTimer); clearTimeout(loadTimer); watcher?.disconnect();
+  function end(removed, error) {
+    if (terminal || ended && removed) return;
+    if (connected && (!removed || error)) send('disconnect', undefined, undefined, true).catch(() => {});
+    terminal = !removed; ended = true; connected = false; clearTimeout(bootTimer); clearTimeout(loadTimer); watcher?.disconnect(); watcher = null;
     cancelOpen('open_disconnected'); openAnswers.clear();
-    assetAbort.abort(refusal('asset_disconnected')); assetAnswers.clear();
-    const error = removed ? coded('frame_removed', Error, 'The ' + noun + ' was removed from the page') : coded('disconnected', Error, 'The ' + noun + ' connection has ended');
-    if (removed) endError = error;
-    rejectPending(error); connectedWait.reject(error); ready.reject(error);
-    host.removeEventListener('message', onWindowMessage); iframe.removeEventListener('load', onLoad);
-    port?.close(); port = null; listeners.clear();
+    assetAbort.abort(refusal('asset_disconnected')); assetPending = null; assetAnswers.clear();
+    error ??= removed ? coded('frame_removed', Error, 'The ' + noun + ' was removed from the page') : coded('disconnected', Error, 'The ' + noun + ' connection has ended');
+    endError = error;
+    bootAttempt.cancel(error); rejectPending(error); connectedWait.reject(error); ready.reject(error);
+    host.removeEventListener('message', onWindowMessage);
+    if (!removed) { iframe.removeEventListener('load', onLoad); listeners.clear(); answers.clear(); }
+    port?.close(); port = null;
+    if (slotLive.get(pairKey) === live) slotLive.delete(pairKey);
     if (!removed && iframe !== target) iframe.remove();
   }
   function onWindowMessage(event) {
+    if (ended) return;
     if (event.source !== iframe.contentWindow || event.origin !== origin) return;
     if (event.data?.type === 'rapier-ready') connect();
     else if (event.data?.type === 'rapier-boot-failed') bootFailed('boot_failed', 'The ' + noun + ' could not start');
@@ -703,19 +766,21 @@ function mount(target, options = {}) {
       if (typeof content !== 'string') throw Object.assign(new TypeError('load needs the document text as a string'), {code: 'invalid_payload'});
       let {filename, revision: version, readOnly, title, baseUrl} = options;
       cancelOpen('open_stale');
-      await boot;
+      const attempt = await whenBooted(true);
       if (version === undefined) version = typeof held?.revision === 'number' ? held.revision + 1 : 1;
       const sameDocument = held && (filename === undefined || held.filename === undefined || filename === held.filename);
       if (sameDocument && typeof version === 'number' && typeof held.revision === 'number' && version < held.revision)
         throw Object.assign(new Error('Revision ' + version + ' is older than the frame\'s ' + held.revision), {code: 'revision_stale', currentRevision: held.revision});
       if (sameDocument && version === held.revision && held.content !== null && content !== held.content)
         throw Object.assign(new Error('Revision ' + version + ' already names other content'), {code: 'revision_conflict', currentRevision: held.revision});
-      const loaded = await send('load', {content, revision: version, ...(filename !== undefined ? {filename} : {}), ...(readOnly !== undefined ? {readOnly} : {}), ...(title !== undefined ? {title} : {}), ...(baseUrl !== undefined ? {baseUrl} : {})}, null, false, loadTimeout);
-      held = {revision: version, content, filename};
+      const value = {content, revision: version, ...(filename !== undefined ? {filename} : {}), ...(readOnly !== undefined ? {readOnly} : {}), ...(title !== undefined ? {title} : {}), ...(baseUrl !== undefined ? {baseUrl} : {})};
+      const loaded = await send('load', value, null, false, loadTimeout);
+      if (attempt !== bootAttempt || ended) throw endError || coded('disconnected', Error, 'The ' + noun + ' reconnected');
+      held = value; attempt.recovered = true;
       return loaded;
     },
     async save() {
-      await boot;
+      await whenBooted();
       if (ended) throw endError || coded('disconnected', Error, 'The ' + noun + ' connection has ended');
       if (!options.save) throw coded('save_unavailable', Error, 'No save callback was granted');
       if (readOnly) throw coded('read_only', Error, 'The document is read-only');
@@ -723,24 +788,27 @@ function mount(target, options = {}) {
       const promise = activeSave.promise;
       requestCapture(); return promise;
     },
-    async compare(content, {filename} = {}) { await boot; return send('compare', {content, ...(filename !== undefined ? {filename} : {})}); },
+    async compare(content, {filename} = {}) { await whenBooted(); return send('compare', {content, ...(filename !== undefined ? {filename} : {})}); },
     async close() {
-      await boot;
+      await whenBooted();
       if (ended) throw endError || coded('disconnected', Error, 'The ' + noun + ' connection has ended');
       if (!options.onClose) throw coded('close_unavailable', Error, 'No close callback was granted');
-      if (!activeClose) { activeClose = deferred(); send('close', undefined, undefined, true).catch(error => { activeClose?.reject(error); activeClose = null; }); }
+      if (!activeClose) {
+        const closing = activeClose = deferred();
+        send('close', undefined, undefined, true).catch(error => { if (activeClose === closing) { closing.reject(error); activeClose = null; } });
+      }
       return activeClose.promise;
     },
     async theme(value) {
       if (!themeValue(value)) throw coded('invalid_theme', TypeError, 'Theme must be light, dark or system');
       currentTheme = value;
-      try { await boot; return await send('theme', {theme: value}, undefined, true); } catch (error) { if (error?.code === 'disconnected') return; throw error; }
+      try { await whenBooted(); return await send('theme', {theme: value}, undefined, true); } catch (error) { if (error?.code === 'disconnected') return; throw error; }
     },
     async style(value) {
       if (!reader) throw coded('style_unavailable', TypeError, 'style restyles the reader build');
       if (!capabilities.includes('open')) throw coded('load_required', TypeError, 'Reader styling requires load');
       currentStyle = readerStyle(value);
-      try { await boot; return await send('style', currentStyle, undefined, true); } catch (error) { if (error?.code === 'disconnected') return; throw error; }
+      try { await whenBooted(); return await send('style', currentStyle, undefined, true); } catch (error) { if (error?.code === 'disconnected') return; throw error; }
     },
     disconnect() { end(false); },
     on(type, fn) {
@@ -749,18 +817,18 @@ function mount(target, options = {}) {
       return () => listeners.get(type)?.delete(fn);
     },
   });
-  if (auto) autoLive.set(auto, () => iframe.isConnected && !ended);
-  if (!openElsewhere) slotLive.set(pairKey, () => iframe.isConnected && !ended);
+  const live = () => iframe.isConnected && !ended;
+  if (!openElsewhere) slotLive.set(pairKey, live);
   prepareBoot();
+  if (openElsewhere) {
+    queueMicrotask(() => bootFailed('document_open_elsewhere', 'Another editor on this page already has this document open (the same sessionId and documentId). Give each editor its own documentId.'));
+    return handle;
+  }
   if (iframe !== target) { iframe.setAttribute('width', '100%'); iframe.setAttribute('height', '100%'); iframe.setAttribute('frameborder', '0'); }
   iframe.setAttribute('title', options.title || (reader ? 'Markdown reader' : 'Markdown editor'));
   iframe.setAttribute('allow', options.agent ? 'clipboard-write; tools' : 'clipboard-write');
   const ownSandbox = iframe === target && iframe.hasAttribute('sandbox');
   if (!ownSandbox) iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-downloads');
-  if (openElsewhere) {
-    queueMicrotask(() => bootFailed('document_open_elsewhere', 'Another editor on this page already has this document open (the same sessionId and documentId). Give each editor its own documentId.'));
-    return handle;
-  }
   const blocked = framingProblem(host, source, ownSandbox ? iframe.sandbox : null, noun);
   if (blocked) {
     if (iframe !== target) target.append(iframe);
@@ -770,13 +838,26 @@ function mount(target, options = {}) {
   host.addEventListener('message', onWindowMessage); iframe.addEventListener('load', onLoad);
   iframe.src = source.href;
   if (iframe !== target) target.append(iframe);
-  if (host.MutationObserver) {
+  function watch() {
+    if (!host.MutationObserver) return;
+    watcher?.disconnect();
     let attached = iframe.isConnected;
-    watcher = new host.MutationObserver(() => { if (iframe.isConnected) attached = true; else if (attached) end(true); });
+    watcher = new host.MutationObserver(() => {
+      if (!iframe.isConnected) { if (attached) end(true); return; }
+      attached = true;
+      observeRoots();
+    });
+    const observeRoots = () => {
+      for (let node = iframe; node;) {
+        const root = node.getRootNode();
+        if (root !== host.document && root.nodeType === 11) watcher.observe(root, {childList: true, subtree: true});
+        node = root.host;
+      }
+    };
     watcher.observe(host.document, {childList: true, subtree: true});
-    const root = iframe.getRootNode();
-    if (root !== host.document && root.nodeType === 11) watcher.observe(root, {childList: true, subtree: true});
+    observeRoots();
   }
+  watch();
   loadTimer = setTimeout(() => bootFailed('load_timeout', 'The ' + noun + ' did not finish loading within ' + loadTimeout / 1000 + ' seconds. Check the address and the network.'), loadTimeout);
   return handle;
 }
@@ -855,14 +936,24 @@ export class RapierEditor extends (globalThis.HTMLElement || class {}) {
     queueMicrotask(() => {
       if (this.isConnected) return;
       this._leaveForm?.(); this._leaveForm = null; this._media?.removeEventListener('change', this._onMedia);
-      this._editor?.disconnect(); this._editor = null; this._mount.replaceChildren();
+      const editor = this._editor;
+      this._generation++; this._editor = null; this._sync = Promise.resolve();
+      editor?.disconnect(); this._mount.replaceChildren();
     });
   }
   attributeChangedCallback(name) {
     if (!this._initialized) return;
     if (name === 'disabled') this.formDisabledCallback(this.matches(':disabled'));
-    else if (name === 'theme') this._editor?.theme(this.getAttribute('theme') || 'system').catch(error => this._error(error));
-    else if (name === 'src') (this._editor?.connected ? this.save() : Promise.resolve()).then(() => this._replace(this._value)).catch(error => this._error(error));
+    else if (name === 'theme') {
+      const editor = this._editor;
+      editor?.theme(this.getAttribute('theme') || 'system').catch(error => { if (this._editor === editor) this._error(error); });
+    }
+    else if (name === 'src') {
+      const editor = this._editor, generation = this._generation, src = this.getAttribute('src');
+      const current = () => this._editor === editor && this._generation === generation && this.getAttribute('src') === src;
+      (editor?.connected ? this.save() : Promise.resolve()).then(() => { if (current()) this._remount(); })
+        .catch(error => { if (current()) this._error(error); });
+    }
     else this._updateValue();
   }
   get value() { return this._value; }
@@ -911,26 +1002,42 @@ export class RapierEditor extends (globalThis.HTMLElement || class {}) {
     this._internals.setValidity(error ? (this._customValidity ? {customError: true} : {valueMissing: true}) : {}, error, this._preview);
   }
   _replace(value) {
-    this._value = value; this._dirty = false; this._revision = 0; this._generation++;
-    this._editor?.disconnect(); this._editor = null; this._mount.replaceChildren(); this._updateValue();
+    this._value = value; this._dirty = false; this._revision = 0;
+    this._ids = {sessionId: mint('field'), documentId: mint('field')};
+    this._remount();
+  }
+  _remount() {
+    const editor = this._editor;
+    this._generation++; this._editor = null; this._sync = Promise.resolve();
+    editor?.disconnect(); this._mount.replaceChildren(); this._updateValue();
     if (this._initialized && this.isConnected && this._panel.open) this._start();
   }
   _start() {
     if (this._editor) return;
+    const load = {content: this._value, filename: this._filename(), revision: this._revision, readOnly: this._disabled};
+    if (!this._ids) {
+      const here = this.ownerDocument.defaultView.location;
+      const auto = autoIdentity({load, save: true}, here, this.id);
+      this._ids = {sessionId: 'page-' + auto, documentId: 'doc-' + auto};
+    }
     const generation = this._generation;
-    this._editor = Rapier.mount(this._mount, {
+    let editor;
+    const current = () => this._generation === generation && this._editor === editor;
+    editor = Rapier.mount(this._mount, {...this._ids,
       src: this.getAttribute('src') || DEFAULT_SRC, theme: this.getAttribute('theme') || 'system',
-      load: {content: this._value, filename: this._filename(), revision: this._revision, readOnly: this._disabled},
+      load,
       save: ({content, baseRevision}) => {
-        if (this._generation !== generation) throw coded('field_replaced', Error, 'The form field was replaced');
+        if (!current()) throw coded('field_replaced', Error, 'The form field was replaced');
         if (baseRevision !== this._revision) throw conflict(this._revision);
         this._value = content; this._revision++; this._dirty = false; this._updateValue();
+        const revision = this._revision;
         this.dispatchEvent(new Event('change', {bubbles: true, composed: true}));
-        return {revision: this._revision};
+        return {revision};
       },
-      onState: state => { this._dirty = state.dirty; this._updateValue(); },
-      onError: error => this._error(error),
+      onState: state => { if (current()) { this._dirty = state.dirty; this._updateValue(); } },
+      onError: error => { if (current()) this._error(error); },
     });
+    this._editor = editor;
     this._mount.inert = this._disabled;
   }
   _layout() {
@@ -946,13 +1053,18 @@ export class RapierEditor extends (globalThis.HTMLElement || class {}) {
     this._start(); this._editor.iframe.focus(options);
   }
   async save() {
+    const generation = this._generation;
     await this._sync;
+    if (generation !== this._generation) throw coded('field_replaced', Error, 'The form field was replaced');
     if (this._editor && !this._disabled) await this._editor.save();
+    if (generation !== this._generation) throw coded('field_replaced', Error, 'The form field was replaced');
     return this._value;
   }
   async _finish() {
-    try { await this.save(); this._panel.close(); this._preview.focus(); }
-    catch (error) { this._error(error); }
+    const generation = this._generation, authority = this._formAuthority, narrow = this._narrow;
+    const current = () => this._generation === generation && this._formAuthority === authority && this._narrow === narrow && this.isConnected;
+    try { await this.save(); if (current()) { this._panel.close(); if (!this._disabled) this._preview.focus(); } }
+    catch (error) { if (current()) this._error(error); }
   }
   _error(error) { this.dispatchEvent(new CustomEvent('error', {detail: error, bubbles: true, composed: true})); }
 }

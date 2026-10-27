@@ -170,6 +170,7 @@ const expandedRows = new WeakMap();
 const sameSplices = (a, b) => a === b || a.length === b.length &&
   a.every((row, i) => row.pos === b[i].pos && row.removed === b[i].removed && row.inserted === b[i].inserted);
 const sameEffect = (a, b) => a === b || !!a && !!b && canonicalJSON(a) === canonicalJSON(b);
+const RECENT_TEXT_LIMIT = 1 << 19;
 let recentLedgers = [];
 function* produceLedger({text, metadata, records, documentAuthority, revision, root, complete = false, earlier = records} = {}, native = false) {
   if (!_rapierValidMetadata(metadata)) throw fault('document metadata required');
@@ -239,9 +240,10 @@ function* produceLedger({text, metadata, records, documentAuthority, revision, r
   const replayedMetadata = prepared.replayMetadata(startMetadata);
   if (!replayedMetadata || canonicalJSON(replayedMetadata) !== canonicalJSON(metadata)) throw fault('metadata does not describe this document');
   const ledger = {...payload, sha256: yield* checksum(envelopeParts(payload), native)};
-  recentLedgers = [{rows: expanded, headText: text, headMetadata: canonicalJSON(metadata), headBytes, startText, startMetadata: {...startMetadata},
-    startFacts, startBytes: bytes, documentAuthority, complete: payload.complete, startRoot, startRevision, chainRoot: payload.head.root,
-    chainRevision: payload.head.revision}, ...recentLedgers.filter(row => row.rows[0] !== expanded[0] && row.documentAuthority === documentAuthority)].slice(0, 4);
+  const others = recentLedgers.filter(row => row.rows[0] !== expanded[0] && row.documentAuthority === documentAuthority);
+  recentLedgers = text.length + startText.length > RECENT_TEXT_LIMIT ? [] : [{rows: expanded, headText: text, headMetadata: canonicalJSON(metadata),
+    headBytes, startText, startMetadata: {...startMetadata}, startFacts, startBytes: bytes, documentAuthority, complete: payload.complete,
+    startRoot, startRevision, chainRoot: payload.head.root, chainRevision: payload.head.revision}, ...others].slice(0, 4);
   ownLedger(ledger);
   proofs.set(ledger, {shell: Array.from(envelopeParts({...ledger, start: {...ledger.start, text: ''}})).join(''), startText,
     text, metadata: {...metadata}, root, revision, prepared: _rapierPrepareHistoryRecords(ledger.records),

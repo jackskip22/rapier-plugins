@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
-import {frontMatterFrame, frontMatterLine} from './frontmatter.mjs';
-import {normalizeFontFamily, fontFamilyCss, FONT_STACKS} from './md-marks.mjs';
+import {frontMatterFrame, frontMatterLine} from "./frontmatter.mjs";
+import {normalizeFontFamily, fontFamilyCss, FONT_STACKS} from "./md-marks.mjs";
 
 const NUMBER = /^(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/i;
 export const DOCUMENT_LEADING = 1.75 / 1.1;

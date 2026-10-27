@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
-import {_rapierTransformSplices, _rapierValidAuthored} from './journal-records.mjs';
-import {sha256} from './hash.mjs';
+import {_rapierTransformSplices, _rapierValidAuthored} from "./journal-records.mjs";
+import {sha256} from "./hash.mjs";
 
 function authoredFrontier(records, visit = null) {
   const dependencies = new Map(), frontier = new Set();

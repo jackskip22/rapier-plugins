@@ -7,8 +7,8 @@ Turn Markdown into one offline HTML file that contains the full Rapier editor.
   <img src="https://raw.githubusercontent.com/jackskip22/rapier-plugins/main/assets/write-390-light.png" alt="The Rapier editor on a phone: a launch plan with an agent's change marked" width="320">
 </picture>
 
-Try it: `npx rapier-html@1.2.45 notes.md`, then open `notes.rapier.html` in any browser.
-Install: `npm install rapier-html@1.2.45`.
+Try it: `npx rapier-html@1.2.46 notes.md`, then open `notes.rapier.html` in any browser.
+Install: `npm install rapier-html@1.2.46`.
 
 It opens on a phone or computer, with no account. People read, edit, draw and paint; agents hand over documents, show
 what changed and get the edited copy back.
@@ -26,14 +26,14 @@ The file needs no hosted workspace.
 Needs Node 22 or newer.
 
 ```sh
-npx -- rapier-html@1.2.45 notes.md                          # the editor, notes.md inside it, written beside the file
-npx -- rapier-html@1.2.45 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
-npx -- rapier-html@1.2.45 notes.md --include draw,math     # carries Draw and Math (default: what the document needs)
-npx -- rapier-html@1.2.45 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
-npx -- rapier-html@1.2.45 revised.md --compare original.md # opens showing what changed
-npx -- rapier-html@1.2.45 notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
-npx -- rapier-html@1.2.45 notes.md out.html                 # a named output
-npm install rapier-html@1.2.45                              # as a library: writePage, unwrap
+npx -- rapier-html@1.2.46 notes.md                          # the editor, notes.md inside it, written beside the file
+npx -- rapier-html@1.2.46 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
+npx -- rapier-html@1.2.46 notes.md --include draw,math     # carries Draw and Math (default: what the document needs)
+npx -- rapier-html@1.2.46 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
+npx -- rapier-html@1.2.46 revised.md --compare original.md # opens showing what changed
+npx -- rapier-html@1.2.46 notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
+npx -- rapier-html@1.2.46 notes.md out.html                 # a named output
+npm install rapier-html@1.2.46                              # as a library: writePage, unwrap
 ```
 
 The first `--` is for npm, so `--help` reaches the command. It never overwrites a file.
@@ -117,7 +117,7 @@ objects, and `unwrap(page)` returns the checked parts beside the text. Both are 
   history.
 - Markdown saved with the kit's `ledger/carried.writeDocument` is read automatically when wrapping. Rewrapping a page
   without parts drops the old parts.
-- The published package carries its own MIT validator; no source checkout is needed.
+- The published package carries the portable MIT validator and canonical Markdown parser support, with the parser vendors' original MIT, ISC and BSD-2-Clause notices. Accepted comment history reopens without a source checkout or a parser supplied by the caller.
 
 ## License
 

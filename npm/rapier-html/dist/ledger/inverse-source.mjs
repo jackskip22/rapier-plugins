@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-import {_rapierTransformSplices, _rapierHistoryEffects} from './journal-records.mjs';
-import {HistorySource} from './source.mjs';
-import {authoredPlacements} from './authored-origin.mjs';
-import {canonicalJSON} from './data.mjs';
-import {diff} from './diff/index.mjs';
+import {_rapierTransformSplices, _rapierHistoryEffects} from "./journal-records.mjs";
+import {HistorySource} from "./source.mjs";
+import {authoredPlacements} from "./authored-origin.mjs";
+import {canonicalJSON} from "./data.mjs";
+import {diff} from "./diff/index.mjs";
 
 const historyFailure = reason => ({ok: false, reason});
 const historyBoundary = (source, at) => Number.isSafeInteger(at) && at >= 0 && !Object.is(at, -0) && at <= source.length &&

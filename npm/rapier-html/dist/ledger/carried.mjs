@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
-import {readLedger} from './format.mjs';
-import {sha256} from './hash.mjs';
-import {authorship as projectAuthorship, readAuthorship} from './authorship.mjs';
-import {canonicalJSON, fault} from './data.mjs';
+import {readLedger} from "./format.mjs";
+import {sha256} from "./hash.mjs";
+import {authorship as projectAuthorship, readAuthorship} from "./authorship.mjs";
+import {canonicalJSON, fault} from "./data.mjs";
 export function encodeCarried(text) {
   return String(text).replace(/[\\\r\0]|<[/!]/g, m => m === '\\' ? '\\\\' : m === '\r' ? '\\r' : m === '\0' ? '\\0' : m === '</' ? '\\/' : '\\!');
 }
@@ -57,8 +57,8 @@ export function writeDocument(text, options) {
   return text + documentTrailer(text, options);
 }
 function unfinishedTrailer(source) {
+  if (!source.includes(OPEN)) return false;
   const at = source.lastIndexOf(OPEN);
-  if (at < 0) return false;
   let fence = null;
   for (const line of source.slice(0, at).split('\n')) {
     const found = /^ {0,3}(`{3,}|~{3,})/.exec(line);

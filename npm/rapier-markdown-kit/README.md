@@ -27,7 +27,7 @@ offline file, run `npx rapier-html notes.md`.
 The kit supplies the portable source and history Rapier's agent tools use.
 
 ```sh
-npm install rapier-markdown-kit
+npm install rapier-markdown-kit markdown-it@15
 ```
 
 Render a document with [markdown-it](https://github.com/markdown-it/markdown-it), then style it with
@@ -50,7 +50,7 @@ const edited = replaceLedgerText(base, 'Draft, revised\n', {actor: {kind: 'human
 console.log(merge(edited, base).text, authorship(edited).runs);
 ```
 
-TypeScript declarations ship for `markdown-it`, `parsed`, `will`, `rapier-ledger`, `ledger/carried` and `pdf`.
+TypeScript declarations ship for the root and every JavaScript subpath. NodeNext and bundler resolution use the same public exports. DOM host APIs use TypeScript’s `DOM` library; pure history and Will consumers can import their own subpaths. The Markdown rendering examples install `markdown-it` explicitly; the kit itself has no npm dependencies.
 
 ```js
 import {parseLayout} from 'rapier-markdown-kit/layout';   // the md-layout comment a picture carries
@@ -133,6 +133,112 @@ not part of this MIT package.
 Serialization tests preserve source bytes through HTML export and recovery. Server integration
 tests also check the exported HTTP response through a browser DOM.
 
+### A complete prose host
+
+For a small browser integration, save the following as `prose-host.mjs` and bundle it with your application. Install its explicit host dependencies with `npm install markdown-it@15.0.3 dompurify@3.4.16`. This host handles prose, headings, lists, tables and fenced code. It refuses front matter, media and diagram providers that it does not supply; the factories’ larger host contracts remain available in their declarations.
+
+<details>
+<summary>Browser host source</summary>
+
+```js
+// SPDX-License-Identifier: MIT
+// A small browser host. Rendering and carrier algorithms come from the installed kit.
+import MarkdownIt from 'markdown-it';
+import createDOMPurify from 'dompurify';
+import {rapierMarkdown} from 'rapier-markdown-kit/markdown-it';
+import {createMarkdownRenderer, createRenderer, createRenderSanitizer, createRenderStyles, createPrintRenderer} from 'rapier-markdown-kit/render';
+import {parseWill} from 'rapier-markdown-kit/will';
+
+export function createProseHost({contentCss, validateFont, materializeDocumentFonts, parseAsync} = {}) {
+  const md = new MarkdownIt({html: true}).use(rapierMarkdown);
+  const purify = createDOMPurify(window);
+  const state = {context: 'render'};
+  const remote = {allowed: false};
+  const reject = feature => { throw Object.assign(new Error('This example host does not provide ' + feature), {code: 'host_capability_unavailable'}); };
+  // This example has no front-matter settings or media/provider resolver. Refuse
+  // those capabilities before creating an artifact, instead of silently dropping them.
+  const admitSource = source => {
+    if (/^(?:\uFEFF)?---(?:\r\n|\r|\n)/.test(source)) reject('front-matter settings');
+    if (/!\[|<(?:img|video|audio|iframe|svg)\b/i.test(source)) reject('media resources');
+    if (/^\s*```(?:mermaid|math)\b/m.test(source)) reject('diagram/math providers');
+    return source;
+  };
+  const cssHasResource = value => /(?:url|image-set|image|paint)\s*\(|@import/i.test(value);
+  const sanitizer = createRenderSanitizer({
+    CSSStyleSheet, DOMPurify: purify, URL, document, globalThis, location,
+    RAPIER_RASTER_DATA_URL_RE: /^data:image\/(png|jpeg|gif|webp|jxl|svg\+xml);base64,([a-z0-9+/=]+)$/i,
+    _rapierSanitizeRuntime: state, _rapierRemoteContent: remote,
+    _rapierCssDeclaration: () => document.createElement('span').style,
+    _rapierDropRemoteDeclarations: style => {
+      let removed = false;
+      for (const property of [...style]) if (cssHasResource(style.getPropertyValue(property))) {
+        style.removeProperty(property); removed = true;
+      }
+      return removed;
+    },
+    _rapierRuleDescriptorIsRemote: rule => cssHasResource(rule.cssText),
+  });
+  sanitizer._rapierInstallDocumentSanitizeHooks();
+  const styles = createRenderStyles({
+    _rapierArtifactAccent: () => '#2673c9',
+    _rapierStyleText: id => {
+      if (id === 'rapier-content-style') return contentCss;
+      // The host uses system fonts and plain escaped code, with no extra sheets.
+      if (id === 'rapier-font-style' || id === 'rapier-highlight-style') return '';
+      return reject('stylesheet ' + id);
+    },
+  });
+  let writer;
+  const headingsIn = (root, selector) => {
+    const result = [...root.querySelectorAll(selector)];
+    for (const template of root.querySelectorAll('template')) result.push(...headingsIn(template.content, selector));
+    return result;
+  };
+  const markdown = createMarkdownRenderer({
+    md, parseAsync, Node, document, window, globalThis,
+    ...sanitizer,
+    RAPIER_RENDERED_HEADING_SELECTOR: 'h1,h2,h3,h4,h5,h6',
+    _rapierRemoteContent: remote, _rapierProviders: {},
+    _rapierRenderedAnchorOriginalIds: new WeakMap(),
+    _rapierDormantHeadings: headingsIn,
+    // Anchor spelling is the host's policy. The renderer owns assignment and collisions.
+    _rapierHeadingSlugBase: text => 'section-' + text.normalize('NFC').toLowerCase().replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, ''),
+    _rapierNextHeadingSlug: (base, used) => {
+      let key = base, n = 1;
+      while (Object.hasOwn(used, key)) key = base + '-' + ++n;
+      used[key] = 0;
+      return key;
+    },
+    _rapierSplitOpeningFrontmatter: source => ({body: admitSource(source)}),
+    _rapierPrefixPortableAnchors: (...args) => writer._rapierPrefixPortableAnchors(...args),
+  });
+  writer = createRenderer({
+    md, Node, document, crypto, globalThis, ...sanitizer, ...styles,
+    // BOM is file metadata. Preserve every other source code unit, including EOLs.
+    RapierTextCodec: {maxDocumentBytes: 8 * 1024 * 1024, normalizeDocument: source => admitSource(source.charCodeAt(0) === 0xfeff ? source.slice(1) : source)},
+    // This independent page has no Rapier application return address or edit ledger.
+    RapierPageReturnAddress: {PAGE_SEED: ''},
+    _rapierArtifactPreference: (name, allowed) => ({theme: 'light', highlights: 'standard', invertImageAlpha: 'false'})[name] || allowed[0],
+    _rapierArtifactHighlight: source => sanitizer.escapeRapierHtmlText(source),
+    _rapierLanguageClass: code => [...code.classList].find(name => name.startsWith('language-'))?.slice(9) || '',
+    _rapierDocumentNameIsAdmissible: name => typeof name === 'string' && !!name && !/[\\/\u0000-\u001f\u007f]/.test(name),
+    _rapierPrepareInterchangeContext: async (_options, captured) => ({...captured,
+      semanticRoot: await markdown._rapierRenderSemanticRootAsync(captured.canonical, captured.metadata)}),
+    _rapierProjectPortableRoot: (...args) => markdown._rapierProjectPortableRoot(...args),
+    _rapierPortableHtml: (...args) => markdown._rapierPortableHtml(...args),
+    validateFont, materializeDocumentFonts,
+  });
+  const print = createPrintRenderer({Node, crypto, document, globalThis, _rapierWillParse: parseWill});
+  return {md, markdown, writer, print, sanitizer, styles, purify};
+}
+```
+
+</details>
+
+Use your bundler or static server to load the installed `style.css` text as `contentCss`, then call `createProseHost({contentCss})`. Its `markdown.render(source, {docKind: 'markdown'})` produces a fragment; `await writer.render(source, {filename: 'report.md'})` produces a complete offline page carrying the exact source. Keep one bound host per document realm: the Markdown factory registers an original-file listener and currently has no disposal method. The font and print operations have their own cleanup contracts.
+
+The example is MIT. The host dependencies keep their licenses: markdown-it is MIT, and DOMPurify is Apache-2.0 OR MPL-2.0. Neither is an implicit dependency of the kit.
+
 ### Fonts in exported HTML
 
 Settings HTML and Share pages use the same offline font policy. The writer reads custom font
@@ -182,7 +288,7 @@ family name share the host's font namespace. Print retains its existing factory 
 | `rapier-markdown-kit/rapier-ledger` | The MIT edit ledger: `openLedger`, replay, authorship, selective Undo, offline `merge`, three-way `mergeText`, and the carried parts. |
 | `rapier-markdown-kit/pdf` | `attachPdfSource`: attach the exact source to a PDF without rewriting its pages; `readPdfPageCount`. |
 | `rapier-markdown-kit/ledger/carried` | Checked optional parts for pages and saved Markdown. |
-| `rapier-markdown-kit` | Named exports from the layout, marks, model, typography, Will, assets and render modules, plus the `ledger` namespace. |
+| `rapier-markdown-kit` | Named exports from layout, marks, model, Will, assets and render, plus the `ledger` namespace. Import `createTypography` from `/typography`; the root does not export that ambiguous name. |
 
 The canonical inline form is ordinary HTML inside Markdown. CSS support varies; the host's font metrics still
 determine line layout (below).
@@ -259,22 +365,32 @@ prefix. It never adds a source hyphen. Explicit authored `hyphenate-character` s
 measured punctuation extends only into available unclipped margins, by at most half an em. Refinement adds no
 letter tracking; authored supported letter spacing remains part of its shaping contract.
 
+Here `root` is your rendered document element in a browser. Keep the event handlers and scheduled work with that element’s lifetime.
+
 ```js
 import {createTypography} from 'rapier-markdown-kit/typography';
 
 const refinement = createTypography();
 await document.fonts.ready;
+let active = true, frame = 0;
 function update() {
-  if (refinement.apply(root).pending) requestAnimationFrame(update);
+  cancelAnimationFrame(frame); frame = 0;
+  if (active && refinement.apply(root).pending) frame = requestAnimationFrame(update);
 }
 update();
-for (const event of ['copy', 'cut']) document.addEventListener(event, () => {
-  if (refinement.clearSelection(root)) requestAnimationFrame(update);
-}, true);
+function afterClipboard() {
+  if (active && refinement.clearSelection(root)) {
+    cancelAnimationFrame(frame); frame = requestAnimationFrame(update);
+  }
+}
+for (const event of ['copy', 'cut']) document.addEventListener(event, afterClipboard, true);
 // On a width change, call update() again. Source/style/font changes are revalidated.
 // Before native editing or consuming this disposable DOM projection:
 refinement.clear(root);
 // When retiring the root:
+active = false;
+cancelAnimationFrame(frame);
+for (const event of ['copy', 'cut']) document.removeEventListener(event, afterClipboard, true);
 refinement.retire(root);
 ```
 
@@ -537,8 +653,11 @@ retain native wrapping. Fonts and codecs remain explicit host capabilities as de
 one, read the saved descriptor with `parseProfile`, or sample the picture with your own image
 library. `polygonProfile` and `rasterTiltProfile` are plain geometry.
 
-The appendix parser takes a markdown-it-compatible parser factory from the caller
-(`parseAssets(source, factory)`, or once through `configureParser`); no parser is bundled.
+The appendix API accepts a markdown-it-compatible parser factory from the caller
+(`parseAssets(source, factory)`, or once through `configureParser`). Comment-aware edit history
+also carries Rapier's pinned Markdown parser and canonical configuration. A fresh synchronous
+ledger reader initializes that parser when needed, so accepted comment history can reopen in a
+worker or standalone package. A parser already configured by the host is reused.
 
 ## Conformance
 
@@ -559,7 +678,9 @@ MIT, the full text in `LICENSE`; Rapier-owned modules and the stylesheet keep th
 notice and pinned source inventory are in `dist/agent/vendor/pretext/`. The selected upstream is main
 `0d102a5cd933611e86a7e60bda7b4baa5995c6b0`: Pretext 1.0.0 plus the commits of main through pull request #525. Its upstream license includes
 Chromium/WebKit BSD, Unicode and ICU notices for derived code and generated data; those notices travel with the kit
-and the exported wrapping runtime. The history projection uses the MIT diff core;
+and the exported wrapping runtime. The pinned Markdown parser and its plugins retain their original MIT, ISC and BSD-2-Clause notices in
+`dist/agent/vendor/NOTICE.txt` and `dist/agent/vendor/markdown-licenses/`; the package adds no npm dependencies.
+The history projection uses the MIT diff core;
 its full grant is in `dist/packages/rapier-diff/LICENSE`. The Rapier editor is AGPL-3.0-only and
 none of it is in this package. The kit carries Rapier's release number, written from the one
 value the editor's release reads.

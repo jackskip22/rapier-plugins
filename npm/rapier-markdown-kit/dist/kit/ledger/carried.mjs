@@ -57,8 +57,8 @@ export function writeDocument(text, options) {
   return text + documentTrailer(text, options);
 }
 function unfinishedTrailer(source) {
+  if (!source.includes(OPEN)) return false;
   const at = source.lastIndexOf(OPEN);
-  if (at < 0) return false;
   let fence = null;
   for (const line of source.slice(0, at).split('\n')) {
     const found = /^ {0,3}(`{3,}|~{3,})/.exec(line);

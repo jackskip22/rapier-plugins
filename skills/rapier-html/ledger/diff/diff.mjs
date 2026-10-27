@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-import {observe} from './structure.mjs';
-import {boundaries, tokenizer, wordSegmenter} from './tokens.mjs';
-import {matcher} from './matching.mjs';
-import {walker} from './walk.mjs';
-import {moves} from './moves.mjs';
-import {separate, concerns} from './concerns.mjs';
+import {observe} from "./structure.mjs";
+import {boundaries, tokenizer, wordSegmenter} from "./tokens.mjs";
+import {matcher} from "./matching.mjs";
+import {walker} from "./walk.mjs";
+import {moves} from "./moves.mjs";
+import {separate, concerns} from "./concerns.mjs";
 
 export function diff(before, after, options = {}) {
   if (before === after) return {edits: [], changes: []};

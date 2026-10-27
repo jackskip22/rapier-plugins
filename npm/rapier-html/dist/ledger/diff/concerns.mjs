@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-import {letter, within, prev, next} from './tokens.mjs';
+import {letter, within, prev, next} from "./tokens.mjs";
 
 export function separate(c, endA = c.before.length, endB = c.after.length) {
   const {before, after, safe, raw, spend} = c;

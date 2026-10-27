@@ -2,19 +2,11 @@
 import {markdownParser, installMarkdownImages, normalizeLabel} from './md-assets.mjs';
 import {splitOpeningFrontmatter} from './frontmatter.mjs';
 import {readDocumentSettings, documentFont} from './document-settings.mjs';
-import {normalizeFontFamily, fontFamilyCss, FONT_STACKS, typography} from './md-marks.mjs';
+import {normalizeFontFamily, fontFamilyCss, FONT_STACKS, typography, fontDataUrl} from './md-marks.mjs';
+export {fontDataUrl};
 
 export const CSS_GENERIC_FONT_FAMILIES = Object.freeze(['serif', 'sans-serif', 'monospace', 'cursive', 'fantasy', 'system-ui',
   'ui-serif', 'ui-sans-serif', 'ui-monospace', 'ui-rounded', 'emoji', 'math', 'fangsong', 'initial', 'revert', 'revert-layer']);
-
-export function fontDataUrl(url) {
-	if (typeof url !== 'string') return null;
-	const match = /^data:font\/(woff2|woff|ttf|otf);base64,([A-Za-z0-9+/]+={0,2})$/i.exec(url);
-	if (!match || match[2].length % 4) return null;
-	const padding = match[2].endsWith('==') ? 2 : match[2].endsWith('=') ? 1 : 0;
-	const byteLength = match[2].length / 4 * 3 - padding;
-	return byteLength >= 12 ? {format: match[1].toLowerCase(), byteLength, data: match[2]} : null;
-}
 
 function parserFor(parser) {
 	const md = installMarkdownImages(markdownParser(parser));

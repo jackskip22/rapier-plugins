@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-import {splitOpeningFrontmatter} from './frontmatter.mjs';
+import {splitOpeningFrontmatter} from "./frontmatter.mjs";
 
 export function markdownSourcePositions(source, parser) {
   if (typeof source !== 'string' || !parser) throw new TypeError('Source positions require text and its Markdown parser');

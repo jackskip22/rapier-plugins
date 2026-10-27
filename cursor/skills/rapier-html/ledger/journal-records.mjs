@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-import {fields, scalar, plainPrototype} from './data.mjs';
-import {transformText} from './source.mjs';
-import {dataImage} from './md-assets.mjs';
+import {fields, scalar, plainPrototype} from "./data.mjs";
+import {transformText} from "./source.mjs";
+import {dataImage} from "./md-assets.mjs";
 
 const _RAPIER_TRANSACTION_ACTOR_LIMIT = 160;
 const _RAPIER_TRANSACTION_OPERATION_LIMIT = 96;

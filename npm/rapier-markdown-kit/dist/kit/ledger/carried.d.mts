@@ -10,13 +10,19 @@ export function documentTrailer(text: string, parts?: DocumentParts): string;
 /** Splits a saved file into its exact text and verified parts; throws on a damaged or mismatched comment. */
 export function readDocument(source: string): ReadParts;
 export function writeParts(text: string, parts?: DocumentParts): string;
-export function readParts(text: string, elements: unknown): {ledger: LedgerEnvelope | null; authorship: AuthorshipEnvelope | null};
+/** Inert browser script elements or equivalent parsed records; no DOM dependency. */
+export interface CarriedElement { id: string; type: string; textContent: string | null; tagName?: string; }
+export function readParts(text: string, elements: Iterable<CarriedElement>): {ledger: LedgerEnvelope | null; authorship: AuthorshipEnvelope | null};
 export function validateParts(text: string, parts?: DocumentParts): {ledger: LedgerEnvelope | null; authorship: AuthorshipEnvelope | null};
-export function takeParts(html: string, text?: string): {html: string; ledger: LedgerEnvelope | null; authorship: AuthorshipEnvelope | null};
+export function takeParts(html: string, text?: string | null): {html: string; ledger: LedgerEnvelope | null; authorship: AuthorshipEnvelope | null};
 export function encodeCarried(text: string): string;
 export function decodeCarried(text: string): string;
-export interface ComparisonBase { text: string; sha256: string; revision: string; name: string; by: string; at: string; }
-export function readBase(value: Partial<ComparisonBase>): ComparisonBase;
-export function writeBase(text: string, value: Partial<ComparisonBase>): string;
-export function readBaseElements(elements: unknown): ComparisonBase | null;
+export interface ComparisonBase { text: string; sha256: string; revision: string; name: string; by: string; at: string; fonts?: string; }
+export function readBase(value: ComparisonBase): ComparisonBase;
+export function writeBase(text: string, value?: ComparisonBase | null): string;
+export interface ComparisonBaseElement extends CarriedElement {
+  getAttribute?: (name: string) => string | null;
+  name?: string; sha256?: string; revision?: string; by?: string; at?: string; fonts?: string;
+}
+export function readBaseElements(elements: Iterable<ComparisonBaseElement>): ComparisonBase | null;
 export function takeBase(html: string): {html: string; base: ComparisonBase | null};

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "rapier",
-  "version": "1.2.45",
+  "version": "1.2.46",
   "description": "Rapier is a Markdown editor and art studio you share with your agent. Write documents together on one live page, draw diagrams you can drag, and paint watercolors that blend and dry. Every agent change is marked and undoable. Keep it as Markdown, Word, PDF or one offline HTML file. Free, no account.",
   "author": {
     "name": "Jack Skipworth",

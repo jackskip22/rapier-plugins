@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-import {diff} from './diff.mjs';
-import {observe} from './structure.mjs';
-import {boundaries, words, wordSegmenter} from './tokens.mjs';
+import {diff} from "./diff.mjs";
+import {observe} from "./structure.mjs";
+import {boundaries, words, wordSegmenter} from "./tokens.mjs";
 
 export function merge(base, mine, theirs, options = {}) {
   if (mine === theirs || base === theirs || base === mine) return {text: base === mine ? theirs : mine, conflicts: []};

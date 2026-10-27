@@ -1,6 +1,15 @@
 // SPDX-License-Identifier: MIT
 import {markdownSourcePositions} from './md-source.mjs';
 
+export function fontDataUrl(url) {
+	if (typeof url !== 'string') return null;
+	const match = /^data:font\/(woff2|woff|ttf|otf);base64,([A-Za-z0-9+/]+={0,2})$/i.exec(url);
+	if (!match || match[2].length % 4) return null;
+	const padding = match[2].endsWith('==') ? 2 : match[2].endsWith('=') ? 1 : 0;
+	const byteLength = match[2].length / 4 * 3 - padding;
+	return byteLength >= 12 ? {format: match[1].toLowerCase(), byteLength, data: match[2]} : null;
+}
+
 const inkReader = () => {
 	// SPDX-License-Identifier: MIT
 	const TEXT_COLOR_NAMES = Object.freeze({ green: '#1c7547', red: '#b32034', blue: '#175dc4', gold: '#865818', purple: '#7924d7' });

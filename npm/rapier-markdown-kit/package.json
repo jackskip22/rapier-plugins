@@ -1,6 +1,6 @@
 {
   "name": "rapier-markdown-kit",
-  "version": "1.2.45",
+  "version": "1.2.46",
   "description": "Read, render and write Self-contained Markdown: one .md file that carries its pictures, drawings and layout, and that any Markdown app can read. HTML renderer, stylesheet, text layout, Will/1 agent permissions, and an edit history with authorship and offline merge. MIT, no dependencies.",
   "keywords": [
     "markdown",
@@ -39,7 +39,10 @@
   ],
   "main": "./dist/kit/index.mjs",
   "exports": {
-    ".": "./dist/kit/index.mjs",
+    ".": {
+      "types": "./dist/kit/index.d.mts",
+      "default": "./dist/kit/index.mjs"
+    },
     "./markdown-it": {
       "types": "./dist/kit/markdown-it.d.mts",
       "default": "./dist/kit/markdown-it.mjs"
@@ -48,18 +51,36 @@
       "types": "./dist/kit/parsed.d.mts",
       "default": "./dist/kit/parsed.mjs"
     },
-    "./layout": "./dist/kit/layout.mjs",
-    "./marks": "./dist/kit/marks.mjs",
-    "./model": "./dist/kit/model.mjs",
-    "./typography": "./dist/kit/typography.mjs",
+    "./layout": {
+      "types": "./dist/kit/layout.d.mts",
+      "default": "./dist/kit/layout.mjs"
+    },
+    "./marks": {
+      "types": "./dist/kit/marks.d.mts",
+      "default": "./dist/kit/marks.mjs"
+    },
+    "./model": {
+      "types": "./dist/kit/model.d.mts",
+      "default": "./dist/kit/model.mjs"
+    },
+    "./typography": {
+      "types": "./dist/kit/typography.d.mts",
+      "default": "./dist/kit/typography.mjs"
+    },
     "./will": {
       "types": "./dist/kit/will.d.mts",
       "default": "./dist/kit/will.mjs"
     },
-    "./assets": "./dist/kit/assets.mjs",
+    "./assets": {
+      "types": "./dist/kit/assets.d.mts",
+      "default": "./dist/kit/assets.mjs"
+    },
     "./style.css": "./style.css",
     "./package.json": "./package.json",
-    "./render": "./dist/kit/render-entry.mjs",
+    "./render": {
+      "types": "./dist/kit/render-entry.d.mts",
+      "default": "./dist/kit/render-entry.mjs"
+    },
     "./rapier-ledger": {
       "types": "./dist/kit/ledger.d.mts",
       "default": "./dist/kit/ledger.mjs"
@@ -73,6 +94,7 @@
       "default": "./dist/kit/ledger/carried.mjs"
     }
   },
+  "types": "./dist/kit/index.d.mts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jackskip22/rapier-plugins.git",

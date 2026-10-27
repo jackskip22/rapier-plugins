@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-import {_rapierTransformSplices, _rapierValidMetadata, _rapierTransformMetadata, _rapierMetadataDelta, _rapierHistoryEffects, _rapierMetadataState, _rapierPrepareHistoryRecords} from './journal-records.mjs';
-import {projectInverseSource} from './inverse-source.mjs';
-import {sourceView, HistorySource} from './source.mjs';
-import {textRootParts, rootAfter} from './hash.mjs';
-import {authoredHistory, authoredPlacements} from './transport.mjs';
-import {plainData, canonicalJSON} from './data.mjs';
-import {evaluateWill} from './will.mjs';
+import {_rapierTransformSplices, _rapierValidMetadata, _rapierTransformMetadata, _rapierMetadataDelta, _rapierHistoryEffects, _rapierMetadataState, _rapierPrepareHistoryRecords} from "./journal-records.mjs";
+import {projectInverseSource} from "./inverse-source.mjs";
+import {sourceView, HistorySource} from "./source.mjs";
+import {textRootParts, rootAfter} from "./hash.mjs";
+import {authoredHistory, authoredPlacements} from "./transport.mjs";
+import {plainData, canonicalJSON} from "./data.mjs";
+import {evaluateWill} from "./will.mjs";
 
 const historyFailure = reason => ({ok: false, reason});
 const historyInteger = value => Number.isSafeInteger(value) && value >= 0 && !Object.is(value, -0);

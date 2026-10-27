@@ -1,10 +1,10 @@
 {
   "package": "rapier-html",
-  "version": "1.2.45",
+  "version": "1.2.46",
   "path": "dist/rapier.html",
-  "bytes": 5843562,
-  "sha256": "4377466b87c89fcfbd71dd6c8de0f73fc72de2f7e2529c89b0004828ce6855c4",
-  "builtAt": "2026-10-25T17:51:41.653Z",
+  "bytes": 5934524,
+  "sha256": "f517fef79e14aa898b4bfaf519c679032f6df7538128892e6374280cb9511432",
+  "builtAt": "2026-10-27T10:37:55.443Z",
   "node": "v22.23.4",
   "canonical": true,
   "packing": "zopfli",
@@ -31,15 +31,15 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-mermaid",
-      "bytes": 720263,
-      "packedBytes": 240280,
+      "bytes": 722820,
+      "packedBytes": 241155,
       "files": [
         {
           "id": "rapier-mermaid-core",
-          "name": "pele-1.9.0-native-1.js",
-          "version": "1.9.0-native-1",
-          "bytes": 720263,
-          "sri": "zPE63bYrlp1ZqlwxePk6pclPq6VoxZ7o769Lz109vEo8OEPtvOl1GPrMDj0OhtVB"
+          "name": "pele-1.9.0-native-2.js",
+          "version": "1.9.0-native-2",
+          "bytes": 722820,
+          "sri": "vPm/+HAI9fOqGc1GFl8wFvzMcZjXMhIUXWSdd2qAAVW6fBqjmK6Np6MVprxE8DFK"
         }
       ]
     },
@@ -48,15 +48,15 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-mermaid-zenuml",
-      "bytes": 420431,
-      "packedBytes": 110835,
+      "bytes": 421169,
+      "packedBytes": 111122,
       "files": [
         {
           "id": "rapier-mermaid-zenuml",
-          "name": "rapier-zenuml-svg-4.5.0-1.js",
-          "version": "4.5.0-svg-1",
-          "bytes": 420431,
-          "sri": "Dma7QZLWfZx3gWM0ie8JpjR4KwOXqndKcIJywkdxJ2shsdw/gDRFByjGlUv+eNoQ"
+          "name": "rapier-zenuml-svg-4.5.0-2.js",
+          "version": "4.5.0-svg-2",
+          "bytes": 421169,
+          "sri": "g5vdITVAGyvxD4BJdaFJjNZKvlTUXxXlJkqeFyfXREsJVsopr/iH4DC8gPhuEjDK"
         }
       ]
     },

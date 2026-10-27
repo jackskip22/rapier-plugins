@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: MIT
-import {_rapierTransformSplices, _rapierValidAuthored, _rapierHistoryEffects} from './journal-records.mjs';
-import {projectInverseSource} from './inverse-source.mjs';
-import {authoredBasis, authoredPlacement, authoredPlacements} from './authored-origin.mjs';
-import {sha256} from './hash.mjs';
-import {canonicalJSON} from './data.mjs';
+import {_rapierTransformSplices, _rapierValidAuthored, _rapierHistoryEffects} from "./journal-records.mjs";
+import {projectInverseSource} from "./inverse-source.mjs";
+import {authoredBasis, authoredPlacement, authoredPlacements} from "./authored-origin.mjs";
+import {sha256} from "./hash.mjs";
+import {canonicalJSON} from "./data.mjs";
+import {parseComments, commentSplices, derivedCommentEdits} from "./md-comments.mjs";
 
 const whole = text => typeof text === 'string' && !/[\uD800-\uDFFF]/u.test(text);
 function admitted(rows) {
@@ -59,7 +60,65 @@ function applyBatch(text, rows) {
   return {text: after, splices: exact};
 }
 
-export function transposeRecord(base, splices, id, records) {
+export function transposeRecord(base, splices, id, records, derivedCommentIndex) {
+  const comments = transposeCommentRecord(base, splices, id, records, derivedCommentIndex);
+  return comments || transposeTextRecord(base, splices, id, records);
+}
+
+function commentRecordProof(source, splices, index) {
+  if (typeof source !== 'string' || !source.includes('<!-- md-comments:') ||
+      !Array.isArray(splices) || !Number.isSafeInteger(index) || index !== splices.length - 1) return null;
+  try {
+    const parsed = parseComments(source), proof = derivedCommentEdits(source, splices);
+    if (!parsed.record || parsed.reason || !parsed.current || !proof || proof.edits.length !== index ||
+        canonicalJSON(proof.edits) !== canonicalJSON(splices.slice(0, index))) return null;
+    let start = parsed.record.start;
+    for (const row of proof.edits) {
+      if (row.pos >= start || row.pos + row.removed.length > start) return null;
+      start += row.inserted.length - row.removed.length;
+    }
+    const derived = commentSplices(source, proof.edits);
+    if (derived.length !== 1 || canonicalJSON(derived[0]) !== canonicalJSON(splices[index])) return null;
+    return {parsed, edits: proof.edits, text: _rapierTransformSplices(source, splices)};
+  } catch (_) { return null; }
+}
+
+function transposeCommentRecord(base, splices, id, records, derivedCommentIndex) {
+  if (!Array.isArray(records) || !records.length) return null;
+  const local = commentRecordProof(base, splices, derivedCommentIndex);
+  if (!local) return null;
+  const bodyRecords = []; let current = base;
+  for (const record of records) {
+    const proof = commentRecordProof(current, record.splices, record.derivedCommentIndex);
+    if (!proof) return null;
+    bodyRecords.push({...record, splices: proof.edits}); current = proof.text;
+  }
+  const moved = transposeTextRecord(local.parsed.body, local.edits, id, bodyRecords);
+  const derive = (source, rows) => {
+    const parsed = parseComments(source); let start = parsed.record?.start;
+    if (!parsed.record || parsed.reason || !parsed.current) throw new RangeError('canonical_act_rebase_conflict');
+    for (const row of rows) {
+      if (row.pos >= start || row.pos + row.removed.length > start) throw new RangeError('canonical_act_rebase_conflict');
+      start += row.inserted.length - row.removed.length;
+    }
+    const footer = commentSplices(source, rows), splices = [...rows, ...footer];
+    const text = _rapierTransformSplices(source, splices), after = text === null ? null : parseComments(text);
+    if (!after?.record || after.reason || !after.current) throw new RangeError('canonical_act_rebase_conflict');
+    return {text, splices, footer};
+  };
+  const accepted = derive(current, moved.splices);
+  let reciprocal = local.text;
+  const against = moved.against.map(record => {
+    const value = derive(reciprocal, record.splices); reciprocal = value.text;
+    return {...record, splices: value.splices};
+  });
+  if (reciprocal !== accepted.text || parseComments(accepted.text).body !== moved.text)
+    throw new RangeError('canonical_transport_invalid');
+  return {text: accepted.text, splices: accepted.splices, against,
+    sourceIndices: [...moved.sourceIndices, ...accepted.footer.map(() => derivedCommentIndex)]};
+}
+
+function transposeTextRecord(base, splices, id, records) {
   if (typeof base !== 'string' || !Array.isArray(splices) || typeof id !== 'string' || !Array.isArray(records))
     throw new RangeError('canonical_transport_invalid');
   let source = base, current = base;
@@ -305,7 +364,7 @@ function authoredReplay(base, records, append = null) {
           throw new RangeError('canonical_origin_invalid');
         const accepted = projectInverse(text, aligned.records, id);
         moved = {text: accepted.after, splices: accepted.splices};
-      } else moved = transposeRecord(basis.text, origin.splices, id, crossed);
+      } else moved = transposeRecord(basis.text, origin.splices, id, crossed, original.derivedCommentIndex);
       if (_rapierTransformSplices(text, moved.splices) !== moved.text) throw new RangeError('canonical_origin_invalid');
       placed.push({...original, splices: moved.splices}); text = moved.text; ids.add(id);
       if (original.derivedCommentIndex != null) sourceIndices.set(id, moved.sourceIndices);

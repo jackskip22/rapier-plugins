@@ -28,12 +28,14 @@ export interface MountOptions {
   build?: Build;
   /** Your copy of the page; omitted, the hosted current build. HTTPS, or HTTP on localhost. */
   src?: string;
+  /** Draft identity. With save and documentId, an omitted sessionId is stable for the host's origin and path. */
   sessionId?: string;
+  /** With neither ID, save and a load record use automatic draft identity; otherwise missing IDs are generated. */
   documentId?: string;
-  /** Grants `open`. */
+  /** Grants `open`. A record is snapshotted; a loader is called again on each connection. */
   load?: LoadRecord | (() => Promise<LoadRecord>);
   /** Grants `read` and `changes`. Return the new revision only after durable storage; throw Rapier.conflict(current) on a conflict. */
-  save?(request: SaveRequest): Promise<{revision: Revision}>;
+  save?(request: SaveRequest): {revision: Revision} | Promise<{revision: Revision}>;
   /** Grants `changes`. */
   onState?(state: DocumentState): void;
   /** Grants `compare`. */
@@ -59,7 +61,9 @@ export interface MountOptions {
   approvePlugins?: boolean;
   /** The iframe's accessible title. */
   title?: string;
-  /** Milliseconds after the frame loads that it has to connect before `ready` rejects with `connect_timeout`; default 15000. A frame that never loads rejects with `load_timeout` after 120 seconds. */
+  /** Milliseconds after the frame loads that it has to connect before `ready` rejects with `connect_timeout`; default 15000.
+   * The page download and, after connection, the first loader plus load acknowledgment each have a 120-second bound
+   * (or this timeout if greater). Expiry rejects with `load_timeout`. */
   timeout?: number;
   onError?(error: Refusal | Error): void;
 }
@@ -74,7 +78,9 @@ export interface EditorEvents {
 
 export interface MountedEditor {
   readonly iframe: HTMLIFrameElement;
-  /** Resolves with this handle once the frame accepts the grants; rejects with a Refusal (`boot_failed`, `connect_timeout`, ...). */
+  /** Resolves after connection and the initial load, when supplied; rejects with a Refusal (`boot_failed`, `connect_timeout`, ...).
+   * This promise is not replaced on reconnect. Once rejected, it stays rejected even if a late connection or a later load succeeds.
+   * Observe `connected` and use the handle to retry. */
   readonly ready: Promise<MountedEditor>;
   readonly connected: boolean;
   /** The frame's Rapier version and contract, once connected; null before. */
@@ -94,6 +100,8 @@ export interface MountedEditor {
   close(): Promise<CloseResult>;
   theme(value: Theme): Promise<void>;
   style(value: ReaderStyle): Promise<void>;
+  /** Ends this handle permanently, even while detached. Rejects pending work and removes a helper-created iframe.
+   * An iframe supplied by the host remains. This does not save or discard the document. */
   disconnect(): void;
   /** Returns an unsubscribe function. */
   on<K extends keyof EditorEvents>(type: K, listener: (value: EditorEvents[K]) => void): () => void;
@@ -127,8 +135,8 @@ export class RapierEditor extends HTMLElement {
   checkValidity(): boolean;
   reportValidity(): boolean;
   setCustomValidity(message: string): void;
-  /** Captures the editor's latest source into value. */
-  save(): Promise<{revision: number} | void>;
+  /** Captures the editor's latest source into value and resolves that exact string. Field memory is not a durable server save. */
+  save(): Promise<string>;
 }
 /** Defines <rapier-editor> once; returns the class. */
 export function defineRapierEditor(registry?: CustomElementRegistry): typeof RapierEditor;

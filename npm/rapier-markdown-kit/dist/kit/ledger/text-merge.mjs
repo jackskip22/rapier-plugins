@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MIT
 import {parseWill, stripOneTerminator} from '../../agent/will.mjs';
+import {diff} from '../../packages/rapier-diff/index.mjs';
+import {transposeRecord} from './transport.mjs';
+import {parseComments, commentSplices, derivedCommentEdits} from '../../spec/md-comments.mjs';
 
 export function willMergeConflict(base, ours, theirs) {
 	const snapshot = text => {
@@ -450,6 +453,32 @@ function textRefineGroup({before, av, bv}, options) {
 	}
 	return textRefineLevel(before, av, bv, options, 'word');
 }
+function mergeDerivedComments(base, ours, theirs, options) {
+  if (!base.includes('<!-- md-comments:')) return null;
+  try {
+    const parsed = [base, ours, theirs].map(parseComments);
+    if (parsed.some(value => !value.record || value.reason || !value.current)) return null;
+    const edits = [ours, theirs].map(text => {
+      const changed = diff(base, text, {_unit: 'char'}).edits;
+      if (changed.length > 64 || changed.some(row => row.coarse)) return null;
+      const rows = changed.map(row => ({pos: row.before[0], removed: base.slice(...row.before),
+        inserted: text.slice(...row.after)})).reverse();
+      const proof = derivedCommentEdits(base, rows);
+      if (!proof) return null;
+      const footer = commentSplices(base, proof.edits);
+      return footer.length === 1 ? {splices: [...proof.edits, ...footer], derivedCommentIndex: proof.edits.length} : null;
+    });
+    if (edits.some(value => !value)) return null;
+    const body = mergeText(...parsed.map(value => value.body), options);
+    if (!body.clean) return null;
+    const [oursId, theirsId] = textDeviceOptions(options);
+    const moved = transposeRecord(base, edits[1].splices, theirsId,
+      [{...edits[0], transaction: {id: oursId}}], edits[1].derivedCommentIndex);
+    if (parseComments(moved.text).body !== body.text) return null;
+    return {text: moved.text, clean: true, conflicts: []};
+  } catch (_) { return null; }
+}
+
 export function mergeText(base, ours, theirs, options = {}) {
 	canonicalNote(ours); canonicalNote(theirs); if (base !== null) canonicalNote(base);
 	const unchanged = value => ({text: value, clean: !value.includes(TEXT_CONFLICT), conflicts: value.includes(TEXT_CONFLICT) ? [{kind: 'existing-conflict', advisory: true}] : []});
@@ -457,6 +486,10 @@ export function mergeText(base, ours, theirs, options = {}) {
 	const willConflict = willMergeConflict(base, ours, theirs);
 	if (!willConflict && base === ours) return unchanged(theirs);
 	if (!willConflict && base === theirs) return unchanged(ours);
+	if (!willConflict && base !== null) {
+		const commented = mergeDerivedComments(base, ours, theirs, options);
+		if (commented) return commented;
+	}
 	const conflicts = []; let text = '', a, b;
 	const conflict = (before, a, b, kind) => {
 		const ab = inspectTextConflicts(a), bb = inspectTextConflicts(b);

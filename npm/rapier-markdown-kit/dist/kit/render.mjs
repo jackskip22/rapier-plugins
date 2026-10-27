@@ -49,8 +49,7 @@ async function _rapierBuildArtifact(options, providedContext) {
 	const opts = options || {};
 	const context = providedContext || _rapierBuildInterchangeContext(opts);
 	const preference = _rapierArtifactPreference('theme', ['system', 'light', 'dark']);
-	const theme = opts.print ? 'light' : preference === 'system'
-		? (globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : preference;
+	const theme = opts.print ? 'light' : preference;
 	const metadata = context.metadata;
 	const base = context.baseName;
 	const work = context.work || opts.work;
@@ -113,8 +112,8 @@ async function _rapierBuildArtifact(options, providedContext) {
 	const styledRoot = work ? await _rapierProjectStyledRootAsync(context.semanticRoot, styledOptions)
 		: _rapierProjectStyledRoot(context.semanticRoot, styledOptions);
 	styledRoot.setAttribute('lang', language);
-	const darkPaper = theme === 'dark' && _rapierArtifactPreference('invertImageAlpha', ['true', 'false']) !== 'false';
-	const templatePage = _rapierTemplatePage(context.canonical, settings, styledRoot, darkPaper);
+	const paperTheme = _rapierArtifactPreference('invertImageAlpha', ['true', 'false']) !== 'false' ? theme : 'light';
+	const templatePage = _rapierTemplatePage(context.canonical, settings, styledRoot, paperTheme);
 	if (completePage && typeof _rapierFinalizeExportCode === 'function') await _rapierFinalizeExportCode(styledRoot);
 	if (!opts.print) _rapierAnnotateExportBoxPolygons(styledRoot);
 	if (completePage || opts.print) {
@@ -204,7 +203,7 @@ async function _rapierBuildArtifact(options, providedContext) {
 	};
 }
 
-function _rapierTemplatePage(canonical, settings, root, darkPaper = false) {
+function _rapierTemplatePage(canonical, settings, root, paperTheme = 'light') {
 	if (!isTemplatePage(canonical)) return null;
 	const paper = pageSizeOf(settings);
 	let url = '';
@@ -219,9 +218,11 @@ function _rapierTemplatePage(canonical, settings, root, darkPaper = false) {
 	const margins = ['top', 'right', 'bottom', 'left'].map(side => (settings?.geometry?.[side] ?? 1440) / 15);
 	const padding = margins.map(value => value + 'px').join(' ');
 	const ground = 'background:var(--rapier-template-border) 0 0/100% 100% no-repeat';
-	const shown = darkPaper && globalThis.RapierImageAssets.dataImage(url)?.codec === 'image/svg+xml' ? _rapierDarkPaperSvgUrl(url, '#fafafa') : url;
+	const shown = paperTheme !== 'light' && globalThis.RapierImageAssets.dataImage(url)?.codec === 'image/svg+xml' ? _rapierDarkPaperSvgUrl(url, '#fafafa') : url;
+	const screenInk = shown !== url ? '@media screen' + (paperTheme === 'system' ? ' and (prefers-color-scheme:dark)' : '')
+		+ '{:root{--rapier-template-border:url("' + shown + '")}}\n' : '';
 	const css = ':root{--rapier-template-border:url("' + url + '")}\n'
-		+ '@media screen{' + (shown !== url ? ':root{--rapier-template-border:url("' + shown + '")}' : '') + '.rapier-template-border{display:none}body{background:var(--md-color-inset)}.rapier-page{box-sizing:border-box;width:min(100%,' + width + 'px);min-height:' + height + 'px;margin:0 auto;padding:' + padding
+		+ screenInk + '@media screen{.rapier-template-border{display:none}body{background:var(--md-color-inset)}.rapier-page{box-sizing:border-box;width:min(100%,' + width + 'px);min-height:' + height + 'px;margin:0 auto;padding:' + padding
 		+ ';background:var(--rapier-template-border) 0 0/100% ' + height + 'px repeat-y,var(--md-color-bg);color:var(--md-color-text)}}\n'
 		+ '@media screen and (max-width:' + width + 'px){.rapier-page{min-height:auto;aspect-ratio:' + width + '/' + height + ';padding:'
 		+ margins.map(value => 'min(' + value + 'px,' + Number((value / width * 100).toFixed(4)) + '%)').join(' ') + ';background-size:100% auto,auto}}\n'

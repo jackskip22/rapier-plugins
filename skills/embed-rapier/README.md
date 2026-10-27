@@ -44,13 +44,13 @@ downloaded copy yourself and pass it as `src`.
 - The reader changes nothing. Restyle it with CSS custom properties and your own fonts; keep it and its plug-ins
   on your own origin.
 - Editor saves are revision-checked: a conflict keeps the person's source in the editor.
-- `<rapier-editor>` is a form field whose value is the exact saved Markdown, pictures and line endings included.
+- `<rapier-editor>` is a form field whose value is the exact captured Markdown, pictures and line endings included.
 - With `agent: true`, your app's agent works beside the person or while they are away. Rapier shows what changed;
   `show {target:"comparison"}` lets the agent display a diff deliberately. Currentness, source scope and authenticated
   document access remain enforced.
 
 ```sh
-npm install rapier-embed@1.2.45
+npm install rapier-embed@1.2.46
 ```
 
 Or copy the package's `embed.mjs` and `contract.mjs` into one directory of your app; no runtime CDN is needed.
@@ -68,7 +68,7 @@ editor and lightweight reader (about 400 kB). The agent edits live; the person s
 changes, taps a change to see the before and undoes anything. Use `show {target:"comparison"}` to show a diff deliberately.
 
 1. **Work together live.** Connect to `https://mcp.rapier.website/door/mcp`, then call `open` to share one document with the person.
-2. **Deliver an offline editor.** Run `npx rapier-html@1.2.45 notes.md` to put the document and editor in one HTML file ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
+2. **Deliver an offline editor.** Run `npx rapier-html@1.2.46 notes.md` to put the document and editor in one HTML file ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
 3. **Embed in your app.** Install [rapier-embed](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-embed); mount the editor or reader, with your app's agent over WebMCP in the editor.
 4. **Keep portable Markdown.** Use [rapier-markdown-kit](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-markdown-kit) for pictures, editable SVG drawings and layout in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will) `keep`, `append` and `edit` regions.
 5. **Encode JPEG XL.** Install [rapier-jxl](https://github.com/jackskip22/rapier-jxl) to encode pixels, photographs and existing JPEGs in JavaScript.
@@ -118,11 +118,11 @@ The frame needs the host page to be an `https` page, or `http` on `localhost`. `
 | The browser is offline | `offline` | The hosted copies cannot be fetched. Mount again when the network is back, or serve a copy and set `src`. |
 | Your own `<iframe sandbox>` without `allow-scripts` or `allow-same-origin` | `sandbox_token_missing` | `mount` never widens a sandbox you wrote. Add the token, or pass a container and let `mount` create the iframe (it sets `allow-scripts allow-same-origin allow-downloads`). |
 
-A frame that loads but never connects rejects `ready` and calls `onError` with `connect_timeout` once `timeout` (15 seconds) has passed since the frame's load event, so a slow download is not counted. A frame that never finishes loading rejects with `load_timeout` after 120 seconds. A frame that connects after `connect_timeout` still gets its document and its handle works (`connected` is true and the `connected` event fires); `ready` has already rejected, so wait for the event instead. A host whose own `frame-src` (or `default-src`) does not list the frame's origin blocks it the same way; the browser console names the policy. A page that does not allow your parent is the usual cause: the hosted pages send `frame-ancestors https: http://localhost:* http://127.0.0.1:*`, so a parent on `file://`, a custom scheme or plain http on a LAN address is blocked and never connects (`mount` names the first three at once, above). A copy you serve sets its own `frame-ancestors` (an HTTP response header; a `<meta>` tag cannot set it); list your parent's origin there. A plain `<iframe src=".../rapier.html">` with no helper opens an empty document when the parent shares the page's origin. From another origin it stays closed and says why. With `?embed=1` and no helper connected, the reader says "No document is loaded."
+A frame that loads but never connects rejects `ready` and calls `onError` with `connect_timeout` once `timeout` (15 seconds by default) has passed since the frame's load event, so a slow download is not counted. A frame that never finishes loading rejects with `load_timeout` after 120 seconds by default. After connection, the first host loader and the frame's load acknowledgment together have the same 120-second bound; later `load()` calls use that acknowledgment bound too. A `timeout` greater than 120,000 milliseconds raises those load bounds. A late connection can still become live and load the document: `connected` becomes true and its event fires, but an already rejected `ready` stays rejected. After a first-load failure, a connected handle can retry with `load()`; old loader results cannot replace the accepted retry. A host whose own `frame-src` (or `default-src`) does not list the frame's origin blocks it the same way; the browser console names the policy. A page that does not allow your parent is the usual cause: the hosted pages send `frame-ancestors https: http://localhost:* http://127.0.0.1:*`, so a parent on `file://`, a custom scheme or plain http on a LAN address is blocked and never connects (`mount` names the first three at once, above). A copy you serve sets its own `frame-ancestors` (an HTTP response header; a `<meta>` tag cannot set it); list your parent's origin there. A plain `<iframe src=".../rapier.html">` with no helper opens an empty document when the parent shares the page's origin. From another origin it stays closed and says why. With `?embed=1` and no helper connected, the reader says "No document is loaded."
 
 ### Keep typing when the tab closes
 
-A reload, a route change and an unmount keep the person's typing for the next mount of the same document (see below). Closing the tab does not: its session storage goes with it. Ask the browser to confirm while something is unsaved:
+Draft recovery needs the same identity, saved revision and content in the same tab (see Draft identity below). Closing the tab ends its session storage. Ask the browser to confirm while something is unsaved:
 
 ```js
 let dirty = false;
@@ -136,17 +136,20 @@ The reader on its own page opens a document at an address on its own origin: `ht
 
 ## Keep Rapier in your codebase
 
-A copy in your app works offline and changes only when you update it.
+Keep the helper, page and plug-in manifest on one version. For version 1.2.45:
 
-1. Download the build you frame into a static directory, for example
-   `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v<version>/embed/rapier-reader.html` to `public/vendor/rapier/`.
-2. Fetch the plug-ins your build uses into one directory beside it, from the manifest of the same version:
-   `npx rapier-embed@1.2.45 plugins public/vendor/rapier/plugins --build reader`.
-3. Mount with `src` and `plugins` pointing at your copies. Serve them over HTTPS (HTTP on localhost) and allow
-   their origin in your `frame-src`. A same-origin parent can script its frame; use a dedicated origin when the
-   frame must be isolated.
+1. Install the helper: `npm install rapier-embed@1.2.46`.
+2. Create `public/vendor/rapier/` and download the reader:
+   `curl --fail -L -o public/vendor/rapier/rapier-reader.html https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.45/embed/rapier-reader.html`.
+3. Fetch its plug-ins from the same version's manifest:
+   `npx rapier-embed@1.2.46 plugins public/vendor/rapier/plugins --build reader`. This command does not fetch the page.
+4. Use the complete mount in Show a document above, with `src`, `plugins` and `load`. Serve the files over HTTPS
+   (HTTP on localhost) and allow their origin in your `frame-src`. Give the container a height. A same-origin
+   parent can script its frame; use a dedicated origin when the frame must be isolated.
 
-To update, replace the page and its plug-ins with those of the new version together.
+For the editor, download `rapier.html` from the same tag and use `--build full`. To update, replace the helper,
+page and plug-ins together. Serving your own files avoids a runtime CDN dependency; offline navigation still
+needs the host to make those files available.
 
 ## Plug-ins
 
@@ -157,7 +160,7 @@ length and SHA-384 before it runs it, and keeps on the device. A file that fails
 | Plug-in | Adds | Size | Pages |
 | --- | --- | --- | --- |
 | `flowchart` | Draws Mermaid flowcharts and graphs natively, in the editor's own style. | 0.33 MB | The reader |
-| `docx` | Opens a Word document (.docx) as a Markdown document: headings, lists, tables, pictures and comments. | 0.61 MB | The reader |
+| `docx` | Opens a Word document (.docx) as a Markdown document: headings, lists, tables, pictures and comments. | 0.76 MB | The reader |
 | `math` | Typesets TeX math ($...$ and $$...$$) as SVG. | 0.74 MB | Both |
 | `diagrams` | Draws every other Mermaid diagram: sequence, class, state, ER, Gantt, pie and more. | 1.14 MB (2 files) | Both |
 | `pdf` | Opens a PDF as a Markdown document: its text layer, or each page as a picture. Fetches the pdf.js files itself. | 6.13 MB (198 files) | Both |
@@ -168,11 +171,11 @@ length and SHA-384 before it runs it, and keeps on the device. A file that fails
 | `elements` | The Elements sheet's traced ornaments: 3,155 pieces from the ornament book. | 16.2 MB (51 files) | `rapier.html` |
 | `lettersets` | The Gallery's letter sets: 31 sets of ornamental capitals. | 2.82 MB (31 files) | `rapier.html` |
 
-Totals: the reader, 8.95 MB (30.6 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.45.
+Totals: the reader, 9.10 MB (30.8 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.46.
 <!-- PLUGIN_TABLE_END -->
 
 The manifest lists every plug-in file and, in `builds`, the pages that use it. `rapier.html` has flowcharts and Word import
-built in. `npx rapier-embed@1.2.45 plugins <directory> --build reader` leaves out `ocr` (text in pictures) unless you add `--with ocr`.
+built in. `npx rapier-embed@1.2.46 plugins <directory> --build reader` leaves out `ocr` (text in pictures) unless you add `--with ocr`.
 
 **Approve plug-ins up front.** Without `plugins`, a frame asks its person "Install math plug-in?" the first time a document needs math or a diagram, and math and diagrams stay raw until they answer. A host that has decided passes `approvePlugins: true`: the frame installs the plug-in it needs without a question. Naming `plugins` has the same effect, because the host then serves the files itself. In a frame shorter than the question's sheet, the sheet's body scrolls.
 
@@ -185,7 +188,7 @@ The directory must be on the page's own origin, because the page's Content Secur
 throws a `TypeError` for a directory on another origin, and a page opened with one shows each plug-in as failed, with the
 reason, without making a request. To keep the plug-ins on a CDN, serve the page from the same origin.
 
-`npx rapier-embed@1.2.45 plugins <directory>` fetches every file the manifest lists, checks it, and writes it. It
+`npx rapier-embed@1.2.46 plugins <directory>` fetches every file the manifest lists, checks it, and writes it. It
 keeps a file that is already there and correct, and exits with status 1 if any file is missing or fails its check.
 `--build reader` or `--build full` keeps the files that page uses, `--only name,name` fetches some
 plug-ins, `--check` verifies a directory without fetching, `--from <address>` fetches from your own mirror, and
@@ -302,14 +305,15 @@ Mount takes a container or an iframe and owns its navigation, title and clipboar
 navigation, and accepts readiness only from that iframe's window and exact origin. HTTPS is required, except HTTP
 on localhost.
 
-`load` is a record or an async callback returning `{content, revision, filename?, readOnly?, title?, baseUrl?}`. The `save`
-callback receives `{content, filename, docKind, codeLang, requestId, baseRevision}` and returns `{revision}` only
-after durable storage. A repeated request ID shares the first write and repeats its first answer, even while that
-write is pending. A repeated ID with different source, metadata or base revision is refused as
+`load` is a record or an async callback returning `{content, revision, filename?, readOnly?, title?, baseUrl?}`.
+Mount snapshots a record; a callback is called again after each connection to request the host's current record.
+The `save` callback receives `{content, filename, docKind, codeLang, requestId, baseRevision}` and returns
+`{revision}` directly or through a promise, only after durable storage confirms the write. A repeated request ID
+shares the first write and repeats its first answer, even while that write is pending. A repeated ID with different source, metadata or base revision is refused as
 `save_request_conflict`. Source must fit the session's UTF-8 document byte limit before it reaches your callback.
 Oversized source is `document_too_large`; ill-formed Unicode and malformed metadata are `save_payload_invalid`.
 The helper holds answers for its lifetime; your store must also deduplicate IDs across host
-reloads. Keep stable session and document IDs when you intend to recover a session; omitted IDs are generated.
+reloads. Choose the draft identity described below when you intend to recover a session.
 
 Switch documents with `editor.load(content, {revision, filename})` or `editor.load({content, revision, filename})`. `revision` is optional in `load()`: left out, the helper uses one above the last revision it saw, or 1. `mount`'s `load` needs it. A load always shows and saves the document you gave it. It is refused by code while the person has unsaved edits (`unsaved_changes`; call `save()` first), and for the same filename with a revision older than the frame's (`revision_stale`) or with the same revision and other content (`revision_conflict`). Another filename is another document with its own revisions.
 
@@ -379,6 +383,7 @@ apply the old insertion to the replacement document. Asset failures do not rejec
 | --- | --- |
 | `build` | `'full'` (default; `rapier.html`, also named `'document'`) or `'reader'` |
 | `src` | Your copy of the page; omitted, the hosted current build |
+| `sessionId`, `documentId` | The fixed draft identity for this handle; see Draft identity below |
 | `load` | Grants `open` |
 | `save` | Grants `read`, plus `changes` to observe save completion |
 | `onState(state)` | Grants `changes` |
@@ -394,11 +399,37 @@ apply the old insertion to the replacement document. Asset failures do not rejec
 | `timeout` | Milliseconds after the frame loads that it has to connect before `ready` rejects with `connect_timeout`; default 15000 |
 
 The handle has `iframe`, `ready` (a promise) and `connected`. `load(content, {revision, filename?, readOnly?,
-title?})`, `save()`, `compare(content, {filename?})` and `close()` use their grants. `theme(value)` changes the
-host theme; `style({css, fonts})` restyles the reader; `disconnect()` ends the connection, rejects unfinished
-operations and removes the iframe that mount created in a container (an iframe you passed stays). Mount does not size
-a frame it creates: give it a size in your CSS, for example `#editor iframe {width: 100%; height: 100%; border: 0}`.
-Mount adds the frame after what the container already holds: clear a server-rendered placeholder first (`container.replaceChildren()`). The handle lives as long as its iframe is in the page: if a framework removes it (`innerHTML`, `remove()`) without `disconnect()`, `connected` turns false, an unfinished `save()` rejects, and later calls reject `frame_removed`. The person's typing stays as a draft for the next mount of the same document.
+title?, baseUrl?})`, `save()`, `compare(content, {filename?})` and `close()` use their grants. `theme(value)` changes
+the host theme; `style({css, fonts})` restyles the reader. `ready` resolves after connection and the initial load,
+when supplied. The `connected` event identifies a live connection; it does not mean that the document has loaded.
+The original `ready` promise is not replaced on reconnect.
+
+A created iframe has 100% width and height and no border; your CSS can override those attributes. Give its
+container a height. Mount adds the frame after what the container already holds: clear a server-rendered
+placeholder first (`container.replaceChildren()`).
+
+### Lifecycle
+
+| Transition | What happens |
+| --- | --- |
+| Mount | Fix the IDs, grants and settings before navigation. Snapshot an initial load record, or call its loader after connection. |
+| Accepted load | Keep the complete record: content, revision, filename, readOnly, title and baseUrl. A refused load leaves the last accepted record intact. |
+| Confirmed Save | Keep the identity, update the saved content and revision, and wait for the frame to hold no newer edits before `save()` resolves. |
+| Iframe navigation or reload | Reject old pending operations. Replay the last accepted record, updated by confirmed saves, when `load` was an object; call a function loader again for the current record. |
+| Port error | Retire the connection and reject pending calls with `disconnected`. Recovery waits for a later iframe load. |
+| Move within one task | Keep the connection if the iframe is attached when removal is observed. |
+| Observed removal | Set `connected` to false, reject pending calls with `frame_removed` and release the active ID pair. The handle keeps its recovery state and iframe load listener. |
+| Reinsert the same iframe | Reconnect that handle if it was not explicitly disconnected and the ID pair is free. If another writer owns the pair, refuse with `document_open_elsewhere`. Retired operations do not resume. |
+| `disconnect()` | End the handle permanently, even while detached; reject unfinished operations and release ports, listeners, observers and timers. Remove an iframe mount created; leave an iframe you supplied. A new mount gets a new handle. |
+
+Removal, reconnect and `disconnect()` do not save or discard the document. There is no autosave on unmount. A
+late callback from an old connection cannot acknowledge work on its replacement; storage it already performed
+remains your application's responsibility. A matching draft can be recovered as described below.
+
+An editor iframe you supplied keeps its loaded document and its claim after disconnection. Another frame with
+the same ID pair remains refused while that document is open. Remove or navigate the supplied iframe before
+another frame opens the pair. Ending the transport does not discard the retained unsaved words.
+
 Tab walks every control and link in the frame, except inside the editor text, where Tab indents. Escape, with nothing open in the frame and no text field focused, moves
 focus to the next control on your page after the frame; Shift+Escape moves it to the control before. From the editor text the way out is Escape, then Tab (Shift+Tab goes back).
 `on('connected' | 'state' | 'close-request' | 'closed' | 'error', fn)` returns an
@@ -408,10 +439,11 @@ change grants or settings. A denied or dirty replacement load rejects.
 Every refusal is an `Error` with a `code`. A connect the frame refuses rejects `ready`: `contract_unsupported`,
 `capabilities_invalid`, a `settings_*` code, or `invalid_payload` with a `reason`. A frame that cannot start rejects
 `ready` and calls `onError`: `boot_failed` when the page shows its startup error, `connect_timeout` when it does not connect
-within `timeout` of loading, `load_timeout` when it does not load in 120 seconds. `load()` rejects with `load_timeout` when the frame
-does not answer within 120 seconds, `load_busy` while an earlier `load()` is still being shown, `invalid_payload` for a filename or
-document it refuses, and `document_unshowable` when the reader cannot show the document; the reader keeps the document it showed. A
-document over 1 MB resolves `load()` when its first screen shows; the reader draws the rest after it. It rejects with `revision_stale` for a
+within `timeout` of loading, or `load_timeout` when the page or first document exceeds its load bound. `load()`
+rejects with `load_timeout` when the frame does not answer within that bound, `load_busy` while an earlier load is
+still being shown, `invalid_payload` for malformed input, `invalid_filename` or `invalid_base_url` for those
+fields, `load_failed` when the frame cannot finish loading, and `document_unshowable` when the reader cannot
+show the document; the reader keeps the document it showed. A document over 1 MB resolves `load()` when its first screen shows; the reader draws the rest after it. It rejects with `revision_stale` for a
 revision older than the frame's and `revision_conflict` for the same revision with other content. It rejects with `document_open_elsewhere` when another editor already has the same `sessionId` and `documentId` open (on mount, `ready` rejects with it); the first editor keeps its typing. `mount` throws a
 `TypeError` with a code for an unknown option (`option_unknown`), a build whose `src` names the other page (`build_mismatch`)
 and a reader feature the reader does not have (`settings_feature_unavailable`). `Rapier.version` is this package's version;
@@ -424,7 +456,24 @@ frame could not capture; the person is told why). `close()` resolves with the fr
 `{saved: true}` or `{discarded: true}` after your answer, `{forced: true}` when the person closes without your
 answer, or `{cancelled: true}` when you answer `cancel`.
 
-Pass your own `sessionId` and `documentId` to choose which mount finds which draft. A second live mount of the same pair on a page is refused before its frame loads: its `ready` rejects `document_open_elsewhere`, and the first keeps the document. Unmount the first (or `disconnect()`) before mounting the pair again. Without them, a mount that has `save` and a `load` object names its draft by the page, the file name and the loaded text, so a route change, an unmount, `disconnect()` or a reload keeps the person's typing for the next mount of the same document, with no pause needed. `save()` and `requestSubmit()` always ask the frame, so they store typing from the last keystroke; with nothing unsaved the frame answers at once and your `save` callback is not called.
+### Draft identity
+
+| Mount options | Identity |
+| --- | --- |
+| Both `sessionId` and `documentId` | The exact pair you supply. |
+| `documentId` and `save`, with no `sessionId` | Your document ID and a stable session derived from the host's origin and path. |
+| Neither ID, with `save` and a `load` object | An automatic pair derived from the host page, filename, loaded text and an available matching-document slot. |
+| Other omitted IDs | Generated IDs; provide your own stable pair for recovery across new mounts. |
+
+The chosen IDs stay fixed for the handle. Changing filename changes the document's revision rules, not those
+IDs. A second live mount of the same pair on a page is refused before its frame loads: `ready` rejects with
+`document_open_elsewhere`, and the first keeps its document. Retire the first frame's document before another
+frame acquires that pair; disconnect removes a helper-created frame, while a supplied frame needs removal or
+navigation. Recovery after a route change, unmount or reload needs the same IDs, saved revision
+and content in the same tab. Form replacements have the further limit described below.
+
+`save()` and `requestSubmit()` ask the frame to capture its current text. With nothing unsaved, the frame answers
+at once and the save callback is not called.
 
 The frame keeps the person's unsaved work only for the document you loaded: a draft in that tab's session storage,
 which a load of the same revision and content reopens and your `discard` answer retires. A load of another document drops a draft with no unsaved edits. It never reads, offers or writes the
@@ -452,9 +501,10 @@ Write here.</textarea>
 </script>
 ```
 
-The textarea works without script. After upgrade, `element.value` is the exact saved Markdown; `change` fires on
-saves. Submit captures the edited source first, then continues native form validation and submission with its
-submitter. Use `requestSubmit()` for scripted submissions; `form.submit()` bypasses submit events and cannot
+The textarea works without script. After upgrade, `element.value` is the exact captured Markdown;
+`await element.save()` captures the current source and returns that string. `change` fires when captured text
+updates the field. Submit captures the edited source first, then continues native form validation and
+submission with its submitter. Use `requestSubmit()` for scripted submissions; `form.submit()` bypasses submit events and cannot
 capture pending edits.
 
 The successful field is a `text/markdown` file part named `body`: read its uploaded bytes on the server, or
@@ -462,9 +512,23 @@ The successful field is a `text/markdown` file part named `body`: read its uploa
 exactly; native text parts normalize line endings. The restoration state and `value` remain strings. Pictures
 already live in the Markdown, so use `multipart/form-data`.
 
-Reset restores the initial text; browser state restoration restores the saved string. `required`, `disabled`,
-labels, focus and native validity methods work as a field's do. Disabling first keeps any pending edits, then
-makes the editor read-only and excludes the field from submission. A phone opens its text preview in a
+Reset restores the initial text. Assigning `value` selects that exact string; when the browser supplies a string
+for form state restoration, the field restores it exactly. Each replacement retires pending field work and
+selects fresh draft IDs held in the element's memory. A late capture cannot overwrite the replacement or resume
+an old form submission.
+
+On its first mount, a field with a DOM `id` derives its identity from the host page, initial filename and text,
+and that ID. A field without an ID uses the automatic matching-document slot rule. Both kinds keep their chosen
+IDs across removal and reinsertion of the same element. The fresh IDs selected by Reset, value assignment or
+state restoration are also kept across that same-element remount, so typing after the replacement can recover.
+
+A full host-page reload creates a new element and loses the replacement's in-memory IDs. The host or browser
+must restore its replacement value. Recreating the original automatic identity can reopen a pre-Reset draft;
+it cannot find later typing kept under the replacement's generated IDs. The helper does not erase that earlier
+session-storage draft or persist the replacement identity in another store.
+
+`required`, `disabled`, labels, focus and native validity methods work as a field's do. Disabling first keeps
+any pending edits, then makes the editor read-only and excludes the field from submission. A phone opens its text preview in a
 full-screen editor; a wide screen edits inline. Resizing keeps the same editor session. Listen for `error` to
 report a refused capture without submitting stale text. Form saves hold the source in the field until
 submission; they are not durable server saves.
@@ -510,5 +574,5 @@ Will/1 records the person's instructions in their document. Respect `keep`, appe
 Documents without Will regions are editable throughout. Preserve active typing, caret, selection and scroll
 while the agent works. Document content and comments never start agent turns by themselves.
 
-For documents outside an app, `npx rapier-html@1.2.45 notes.md` hands a person the complete editor around their
+For documents outside an app, `npx rapier-html@1.2.46 notes.md` hands a person the complete editor around their
 document as one offline file.
