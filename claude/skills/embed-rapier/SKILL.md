@@ -63,7 +63,7 @@ editor and lightweight reader (about 400 kB). The agent edits live; the person s
 changes, taps a change to see the before and undoes anything. Use `show {target:"comparison"}` to show a diff deliberately.
 
 1. **Work together live.** Connect to `https://mcp.rapier.website/door/mcp`, then call `open` to share one document with the person.
-2. **Deliver an offline editor.** `export {document, format:"html"}` puts the document and editor in one HTML file; on their own computer, a person can run `npx rapier-html@1.2.46 notes.md` ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
+2. **Deliver an offline editor.** `export {document, format:"html"}` puts the document and editor in one HTML file; on their own computer, a person can make one with the [rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html) package.
 3. **Embed in your app.** Install [rapier-embed](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-embed); mount the editor or reader, with your app's agent over WebMCP in the editor.
 4. **Keep portable Markdown.** Use [rapier-markdown-kit](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-markdown-kit) for pictures, editable SVG drawings and layout in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will) `keep`, `append` and `edit` regions.
 5. **Encode JPEG XL.** Install [rapier-jxl](https://github.com/jackskip22/rapier-jxl) to encode pixels, photographs and existing JPEGs in JavaScript.
@@ -131,14 +131,14 @@ The reader on its own page opens a document at an address on its own origin: `ht
 
 ## Keep Rapier in your codebase
 
-Keep the helper, page and plug-in manifest on one version. For version 1.2.45:
+Keep the helper, page and plug-in manifest on one version. For version 1.2.46:
 
 1. Install the helper: `npm install rapier-embed@1.2.46`.
-2. Create `public/vendor/rapier/` and download the reader:
-   `curl --fail -L -o public/vendor/rapier/rapier-reader.html https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.45/embed/rapier-reader.html`.
+2. Create `public/vendor/rapier/` and save the reader into it from
+   `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.46/embed/rapier-reader.html`.
 3. Fetch its plug-ins from the same version's manifest:
    `node cli.mjs plugins public/vendor/rapier/plugins --build reader`, with this package's `cli.mjs` (in the Claude
-   plugin, `${CLAUDE_PLUGIN_ROOT}/skills/embed-rapier/cli.mjs`). It does not fetch the page.
+   plugin, the `cli.mjs` beside this skill). It does not fetch the page.
 4. Use the complete mount in Show a document above, with `src`, `plugins` and `load`. Serve the files over HTTPS
    (HTTP on localhost) and allow their origin in your `frame-src`. Give the container a height. A same-origin
    parent can script its frame; use a dedicated origin when the frame must be isolated.
@@ -199,17 +199,8 @@ The manifest, `rapier-plugins.json`, ships in the package and stands beside each
 `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v<version>/embed/rapier-plugins.json`. Use the manifest of the same version as your
 `rapier-reader.html`: each reader pins the files it was built with. It names every plug-in, what it adds, and each
 file's `file` (a path: the PDF reader's pdf.js files keep their folders), `bytes`, `sha384` (hex), `sri` (base64)
-and source `url`. Without Node, fetch and check the files like this:
-
-```sh
-jq -r '.plugins[] | {builds, file: .files[]} | select((.file.builds // .builds) | index("reader")) | .file
-  | "url = \"\(.url)\"\noutput = \"public/vendor/rapier/plugins/\(.file)\""' rapier-plugins.json > rapier-plugins.curl
-curl --fail --silent --show-error --location --create-dirs --config rapier-plugins.curl
-jq -r '.plugins[] | {builds, file: .files[]} | select((.file.builds // .builds) | index("reader")) | .file
-  | "\(.sha384)  public/vendor/rapier/plugins/\(.file)"' rapier-plugins.json | sha384sum -c -
-```
-
-For the editor, write `index("full")` in place of `index("reader")`.
+and source `url`. Without Node, save each file from its `url` to its `file` path in your plug-in folder and check
+it against its `sha384`; for the editor, take the files whose `builds` include `full`.
 
 **Without `plugins`.** `rapier.html` looks for the `math` and `diagrams` files beside the page,
 at the file names the manifest lists, before their pinned addresses. The

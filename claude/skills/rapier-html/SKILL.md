@@ -68,8 +68,7 @@ Through the connector, `export` delivers the file and its receipt names what it 
 - A page that opens showing what changed: `show {target:"comparison", text}` with the original, then
   `export {document, format:"html", compare_id}`.
 
-The helper installed with this skill, `cli.mjs` in this skill's folder (in Claude Code,
-`${CLAUDE_PLUGIN_ROOT}/skills/rapier-html/cli.mjs`), needs Node 22 and downloads nothing. It puts a document into a
+The helper installed with this skill, `cli.mjs` in this skill's folder, needs Node 22 and downloads nothing. It puts a document into a
 Rapier page you already have: one `export` delivered or one the person gave you.
 
 ```sh

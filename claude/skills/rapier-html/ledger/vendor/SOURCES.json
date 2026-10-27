@@ -206,8 +206,8 @@
     },
     {
       "path": "markdown-plugins.mjs",
-      "bytes": 45729,
-      "sha256": "f75b9457d91917010027ab18d4d60c31c0428bc102c6797a640159a209cea047"
+      "bytes": 45734,
+      "sha256": "0a935c55fb20f684271d32f37819d0811ca0772c2e9cd4b1822aab2507525555"
     },
     {
       "path": "markdown-runtime.mjs",

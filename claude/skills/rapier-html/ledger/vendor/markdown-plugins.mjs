@@ -128,7 +128,7 @@ function startsWithTodoMarkdown(token) {
     function render_footnote_anchor_name(tokens, idx, options, env ) {
     const n = Number(tokens[idx].meta.id + 1).toString();
     let prefix = "";
-    if (typeof env.docId === "string") prefix = `-${env.docId}-`;
+    if (typeof env.docId === "string") prefix = "-" + env.docId + "-";
     return prefix + n;
   }
   function render_footnote_caption(tokens, idx ) {
