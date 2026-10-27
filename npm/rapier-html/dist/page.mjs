@@ -11,7 +11,7 @@ export async function writePage(text, name = 'document.md', {include, ...options
 	const carries = include ?? [...(options.view === 'draw' || options.drawing != null ? ['drawing'] : []), ...portableNeeds(String(text), {base: options.base})];
 	return wrap(carry(await carriedPage(), carries), text, name, options);
 }
-const USAGE = 'usage: rapier-html <document.md> [out.html] [--include draw,layout,math,mermaid] [--view draw] [--drawing sketch.svg] [--compare original.md [--by <your name>]] [--return <url> --return-expires-at <timestamp>]\n' +
+const USAGE = 'usage: rapier-html <document.md> [out.html] [--include draw,layout,math,mermaid] [--view draw] [--drawing sketch.svg] [--compare original.md [--by <your name>]] [--return <url> --return-expires-at <timestamp>] [--editor <page.html>]\n' +
 	'  writes <document>.rapier.html beside the file: Rapier with the document inside it, one file, offline.\n' +
 	'  It never overwrites: an output that already exists, the document itself included, is refused.\n' +
 	'  --include   what the file carries beyond the base editor: draw (drawing and painting), layout (a template page), math,\n' +
@@ -23,13 +23,15 @@ const USAGE = 'usage: rapier-html <document.md> [out.html] [--include draw,layou
 	'  --by        with --compare: the name shown on the diff with the time the page was made\n' +
 	'  --return    carries a one-use return URL from show {target:"return"}; Share offers Send back\n' +
 	'  --return-expires-at  carries the same mint\'s expiry; Share offers Save once the return expires\n' +
+	'  --editor    the editor page to use: any Rapier .html page, such as one export {format:"html"} delivered; the\n' +
+	'              page this package carries by default\n' +
 	'  --          everything after it is a filename, even one that starts with a dash\n' +
 	'  --help      this text';
 const text = async path => { try { return new TextDecoder('utf-8', {fatal: true, ignoreBOM: true}).decode(await readFile(path)); } catch (error) { throw error.code === 'ERR_ENCODING_INVALID_ENCODED_DATA' ? new Error(path + ' is not valid UTF-8') : error; } };
 
 export async function main(argv, pagesDir, {log = console.log} = {}) {
 	const names = [];
-	let drawingPath = null, basePath = null, by = null, view = null, address = null, expiry = null, include = null, onlyNames = false;
+	let editorPath = null, drawingPath = null, basePath = null, by = null, view = null, address = null, expiry = null, include = null, onlyNames = false;
 	for (let i = 0; i < argv.length; i++) {
 		const arg = argv[i];
 		if (onlyNames || !arg.startsWith('-')) names.push(arg);
@@ -57,6 +59,10 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 			if (address !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--return takes one HTTPS return URL');
 			address = returnAddress(argv[++i]);
 		}
+		else if (arg === '--editor') {
+			if (editorPath !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--editor takes one Rapier .html page');
+			editorPath = argv[++i];
+		}
 		else if (arg === '--return-expires-at') {
 			if (expiry !== null || !argv[i + 1] || argv[i + 1].startsWith('-')) throw new Error('--return-expires-at takes one ISO timestamp from show {target:"return"}');
 			expiry = returnExpiresAt(argv[++i]);
@@ -68,7 +74,9 @@ export async function main(argv, pagesDir, {log = console.log} = {}) {
 	if (names.length < 1 || names.length > 2) throw new Error(USAGE);
 	const [input, named] = names;
 	const source = await text(input);
-	const page = await readFile(join(pagesDir, 'rapier.html'), 'utf8');
+	const page = await readFile(editorPath ?? join(pagesDir, 'rapier.html'), 'utf8').catch(error => {
+		throw error.code === 'ENOENT' && editorPath === null ? new Error('no editor page beside this helper: pass --editor <a Rapier .html page>') : error;
+	});
 	const name = basename(input);
 	const out = named || join(dirname(input), name.replace(/\.(md|markdown|txt)$/i, '') + '.rapier.html');
 	const wrapOptions = {};
