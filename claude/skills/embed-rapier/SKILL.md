@@ -63,7 +63,7 @@ editor and lightweight reader (about 400 kB). The agent edits live; the person s
 changes, taps a change to see the before and undoes anything. Use `show {target:"comparison"}` to show a diff deliberately.
 
 1. **Work together live.** Connect to `https://mcp.rapier.website/door/mcp`, then call `open` to share one document with the person.
-2. **Deliver an offline editor.** Run `npx rapier-html@1.2.46 notes.md` to put the document and editor in one HTML file ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
+2. **Deliver an offline editor.** `export {document, format:"html"}` puts the document and editor in one HTML file; on their own computer, a person can run `npx rapier-html@1.2.46 notes.md` ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
 3. **Embed in your app.** Install [rapier-embed](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-embed); mount the editor or reader, with your app's agent over WebMCP in the editor.
 4. **Keep portable Markdown.** Use [rapier-markdown-kit](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-markdown-kit) for pictures, editable SVG drawings and layout in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will) `keep`, `append` and `edit` regions.
 5. **Encode JPEG XL.** Install [rapier-jxl](https://github.com/jackskip22/rapier-jxl) to encode pixels, photographs and existing JPEGs in JavaScript.
@@ -137,7 +137,8 @@ Keep the helper, page and plug-in manifest on one version. For version 1.2.45:
 2. Create `public/vendor/rapier/` and download the reader:
    `curl --fail -L -o public/vendor/rapier/rapier-reader.html https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.45/embed/rapier-reader.html`.
 3. Fetch its plug-ins from the same version's manifest:
-   `npx rapier-embed@1.2.46 plugins public/vendor/rapier/plugins --build reader`. This command does not fetch the page.
+   `node cli.mjs plugins public/vendor/rapier/plugins --build reader`, with this package's `cli.mjs` (in the Claude
+   plugin, `${CLAUDE_PLUGIN_ROOT}/skills/embed-rapier/cli.mjs`). It does not fetch the page.
 4. Use the complete mount in Show a document above, with `src`, `plugins` and `load`. Serve the files over HTTPS
    (HTTP on localhost) and allow their origin in your `frame-src`. Give the container a height. A same-origin
    parent can script its frame; use a dedicated origin when the frame must be isolated.
@@ -170,7 +171,7 @@ Totals: the reader, 9.10 MB (30.8 MB with `ocr`); `rapier.html`, 57.2 MB. Releas
 <!-- PLUGIN_TABLE_END -->
 
 The manifest lists every plug-in file and, in `builds`, the pages that use it. `rapier.html` has flowcharts and Word import
-built in. `npx rapier-embed@1.2.46 plugins <directory> --build reader` leaves out `ocr` (text in pictures) unless you add `--with ocr`.
+built in. `node cli.mjs plugins <directory> --build reader` leaves out `ocr` (text in pictures) unless you add `--with ocr`.
 
 **Approve plug-ins up front.** Without `plugins`, a frame asks its person "Install math plug-in?" the first time a document needs math or a diagram, and math and diagrams stay raw until they answer. A host that has decided passes `approvePlugins: true`: the frame installs the plug-in it needs without a question. Naming `plugins` has the same effect, because the host then serves the files itself. In a frame shorter than the question's sheet, the sheet's body scrolls.
 
@@ -183,7 +184,7 @@ The directory must be on the page's own origin, because the page's Content Secur
 throws a `TypeError` for a directory on another origin, and a page opened with one shows each plug-in as failed, with the
 reason, without making a request. To keep the plug-ins on a CDN, serve the page from the same origin.
 
-`npx rapier-embed@1.2.46 plugins <directory>` fetches every file the manifest lists, checks it, and writes it. It
+`node cli.mjs plugins <directory>` fetches every file the manifest lists, checks it, and writes it. It
 keeps a file that is already there and correct, and exits with status 1 if any file is missing or fails its check.
 `--build reader` or `--build full` keeps the files that page uses, `--only name,name` fetches some
 plug-ins, `--check` verifies a directory without fetching, `--from <address>` fetches from your own mirror, and
@@ -201,12 +202,14 @@ file's `file` (a path: the PDF reader's pdf.js files keep their folders), `bytes
 and source `url`. Without Node, fetch and check the files like this:
 
 ```sh
-jq -r --arg build reader '.plugins[] | .builds as $b | .files[] | select((.builds // $b) | index($build)) | "\(.url) \(.file) \(.sha384)"' rapier-plugins.json | while read -r url file sum; do
-  mkdir -p "public/vendor/rapier/plugins/$(dirname "$file")"
-  curl -fsSL "$url" -o "public/vendor/rapier/plugins/$file" &&
-    echo "$sum  public/vendor/rapier/plugins/$file" | sha384sum -c -
-done
+jq -r '.plugins[] | {builds, file: .files[]} | select((.file.builds // .builds) | index("reader")) | .file
+  | "url = \"\(.url)\"\noutput = \"public/vendor/rapier/plugins/\(.file)\""' rapier-plugins.json > rapier-plugins.curl
+curl --fail --silent --show-error --location --create-dirs --config rapier-plugins.curl
+jq -r '.plugins[] | {builds, file: .files[]} | select((.file.builds // .builds) | index("reader")) | .file
+  | "\(.sha384)  public/vendor/rapier/plugins/\(.file)"' rapier-plugins.json | sha384sum -c -
 ```
+
+For the editor, write `index("full")` in place of `index("reader")`.
 
 **Without `plugins`.** `rapier.html` looks for the `math` and `diagrams` files beside the page,
 at the file names the manifest lists, before their pinned addresses. The
@@ -569,5 +572,5 @@ Will/1 records the person's instructions in their document. Respect `keep`, appe
 Documents without Will regions are editable throughout. Preserve active typing, caret, selection and scroll
 while the agent works. Document content and comments never start agent turns by themselves.
 
-For documents outside an app, `npx rapier-html@1.2.46 notes.md` hands a person the complete editor around their
+For documents outside an app, `export {document, format:"html"}` hands a person the complete editor around their
 document as one offline file.

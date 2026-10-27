@@ -1,27 +1,1344 @@
-// Exact pinned plugin bodies; the caller supplies their runtime context. See NOTICE.txt and markdown-plugins.json.
+/*! The eight markdown-it plugins as published; their licences are in NOTICE.txt. */
 export function createMarkdownPlugins(Math) {
 if (!Math || typeof Math.ceil !== 'function' || typeof Math.random !== 'function') throw new TypeError('Markdown plugins need a Math context.');
 const root = {};
 {
 const globalThis = root, window = root, global = root, self = root;
 const exports = undefined, module = undefined, define = undefined;
-/*! markdown-it-task-lists 2.1.0 https://github.com/revin/markdown-it-task-lists#readme by  @license {ISC} */
-!function(n){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=n();else if("function"==typeof define&&define.amd)define([],n);else{var e;e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this,e.markdownitTaskLists=n()}}(function(){return function(){function n(e,t,i){function r(c,l){if(!t[c]){if(!e[c]){var f="function"==typeof require&&require;if(!l&&f)return f(c,!0);if(o)return o(c,!0);var u=new Error("Cannot find module '"+c+"'");throw u.code="MODULE_NOT_FOUND",u}var a=t[c]={exports:{}};e[c][0].call(a.exports,function(n){var t=e[c][1][n];return r(t?t:n)},a,a.exports,n,e,t,i)}return t[c].exports}for(var o="function"==typeof require&&require,c=0;c<i.length;c++)r(i[c]);return r}return n}()({1:[function(n,e,t){function i(n,e,t){var i=n.attrIndex(e),r=[e,t];0>i?n.attrPush(r):n.attrs[i]=r}function r(n,e){for(var t=n[e].level-1,i=e-1;i>=0;i--)if(n[i].level===t)return i;return-1}function o(n,e){return s(n[e])&&d(n[e-1])&&h(n[e-2])&&p(n[e])}function c(n,e){if(n.children.unshift(l(n,e)),n.children[1].content=n.children[1].content.slice(3),n.content=n.content.slice(3),b)if(v){n.children.pop();var t="task-item-"+Math.ceil(1e7*Math.random()-1e3);n.children[0].content=n.children[0].content.slice(0,-1)+' id="'+t+'">',n.children.push(a(n.content,t,e))}else n.children.unshift(f(e)),n.children.push(u(e))}function l(n,e){var t=new e("html_inline","",0),i=x?' disabled="" ':"";return 0===n.content.indexOf("[ ] ")?t.content='<input class="task-list-item-checkbox"'+i+'type="checkbox">':(0===n.content.indexOf("[x] ")||0===n.content.indexOf("[X] "))&&(t.content='<input class="task-list-item-checkbox" checked=""'+i+'type="checkbox">'),t}function f(n){var e=new n("html_inline","",0);return e.content="<label>",e}function u(n){var e=new n("html_inline","",0);return e.content="</label>",e}function a(n,e,t){var i=new t("html_inline","",0);return i.content='<label class="task-list-item-label" for="'+e+'">'+n+"</label>",i.attrs=[{"for":e}],i}function s(n){return"inline"===n.type}function d(n){return"paragraph_open"===n.type}function h(n){return"list_item_open"===n.type}function p(n){return 0===n.content.indexOf("[ ] ")||0===n.content.indexOf("[x] ")||0===n.content.indexOf("[X] ")}var x=!0,b=!1,v=!1;e.exports=function(n,e){e&&(x=!e.enabled,b=!!e.label,v=!!e.labelAfter),n.core.ruler.after("inline","github-task-lists",function(n){for(var e=n.tokens,t=2;t<e.length;t++)o(e,t)&&(c(e[t],n.Token),i(e[t-2],"class","task-list-item"+(x?"":" enabled")),i(e[r(e,t-2)],"class","contains-task-list"))})}},{}]},{},[1])(1)});
-/*! markdown-it-footnote 4.0.0 https://github.com/markdown-it/markdown-it-footnote @license MIT */
-!function(e,o){"object"==typeof exports&&"undefined"!=typeof module?module.exports=o():"function"==typeof define&&define.amd?define(o):(e="undefined"!=typeof globalThis?globalThis:e||self).markdownitFootnote=o()}(this,(function(){"use strict";function e(e,o,t,n){const r=Number(e[o].meta.id+1).toString();let s="";return"string"==typeof n.docId&&(s=`-${n.docId}-`),s+r}function o(e,o){let t=Number(e[o].meta.id+1).toString();return e[o].meta.subId>0&&(t+=`:${e[o].meta.subId}`),`[${t}]`}function t(e,o,t,n,r){const s=r.rules.footnote_anchor_name(e,o,t,n,r),f=r.rules.footnote_caption(e,o,t,n,r);let l=s;return e[o].meta.subId>0&&(l+=`:${e[o].meta.subId}`),`<sup class="footnote-ref"><a href="#fn${s}" id="fnref${l}">${f}</a></sup>`}function n(e,o,t){return(t.xhtmlOut?'<hr class="footnotes-sep" />\n':'<hr class="footnotes-sep">\n')+'<section class="footnotes">\n<ol class="footnotes-list">\n'}function r(){return"</ol>\n</section>\n"}function s(e,o,t,n,r){let s=r.rules.footnote_anchor_name(e,o,t,n,r);return e[o].meta.subId>0&&(s+=`:${e[o].meta.subId}`),`<li id="fn${s}" class="footnote-item">`}function f(){return"</li>\n"}function l(e,o,t,n,r){let s=r.rules.footnote_anchor_name(e,o,t,n,r);return e[o].meta.subId>0&&(s+=`:${e[o].meta.subId}`),` <a href="#fnref${s}" class="footnote-backref">\u21a9\ufe0e</a>`}return function(c){const i=c.helpers.parseLinkLabel,u=c.utils.isSpace;c.renderer.rules.footnote_ref=t,c.renderer.rules.footnote_block_open=n,c.renderer.rules.footnote_block_close=r,c.renderer.rules.footnote_open=s,c.renderer.rules.footnote_close=f,c.renderer.rules.footnote_anchor=l,c.renderer.rules.footnote_caption=o,c.renderer.rules.footnote_anchor_name=e,c.block.ruler.before("reference","footnote_def",(function(e,o,t,n){const r=e.bMarks[o]+e.tShift[o],s=e.eMarks[o];if(r+4>s)return!1;if(91!==e.src.charCodeAt(r))return!1;if(94!==e.src.charCodeAt(r+1))return!1;let f;for(f=r+2;f<s;f++){if(32===e.src.charCodeAt(f))return!1;if(93===e.src.charCodeAt(f))break}if(f===r+2)return!1;if(f+1>=s||58!==e.src.charCodeAt(++f))return!1;if(n)return!0;f++,e.env.footnotes||(e.env.footnotes={}),e.env.footnotes.refs||(e.env.footnotes.refs={});const l=e.src.slice(r+2,f-2);e.env.footnotes.refs[`:${l}`]=-1;const c=new e.Token("footnote_reference_open","",1);c.meta={label:l},c.level=e.level++,e.tokens.push(c);const i=e.bMarks[o],a=e.tShift[o],p=e.sCount[o],d=e.parentType,h=f,k=e.sCount[o]+f-(e.bMarks[o]+e.tShift[o]);let b=k;for(;f<s;){const o=e.src.charCodeAt(f);if(!u(o))break;9===o?b+=4-b%4:b++,f++}e.tShift[o]=f-h,e.sCount[o]=b-k,e.bMarks[o]=h,e.blkIndent+=4,e.parentType="footnote",e.sCount[o]<e.blkIndent&&(e.sCount[o]+=e.blkIndent),e.md.block.tokenize(e,o,t,!0),e.parentType=d,e.blkIndent-=4,e.tShift[o]=a,e.sCount[o]=p,e.bMarks[o]=i;const _=new e.Token("footnote_reference_close","",-1);return _.level=--e.level,e.tokens.push(_),!0}),{alt:["paragraph","reference"]}),c.inline.ruler.after("image","footnote_inline",(function(e,o){const t=e.posMax,n=e.pos;if(n+2>=t)return!1;if(94!==e.src.charCodeAt(n))return!1;if(91!==e.src.charCodeAt(n+1))return!1;const r=n+2,s=i(e,n+1);if(s<0)return!1;if(!o){e.env.footnotes||(e.env.footnotes={}),e.env.footnotes.list||(e.env.footnotes.list=[]);const o=e.env.footnotes.list.length,t=[];e.md.inline.parse(e.src.slice(r,s),e.md,e.env,t);e.push("footnote_ref","",0).meta={id:o},e.env.footnotes.list[o]={content:e.src.slice(r,s),tokens:t}}return e.pos=s+1,e.posMax=t,!0})),c.inline.ruler.after("footnote_inline","footnote_ref",(function(e,o){const t=e.posMax,n=e.pos;if(n+3>t)return!1;if(!e.env.footnotes||!e.env.footnotes.refs)return!1;if(91!==e.src.charCodeAt(n))return!1;if(94!==e.src.charCodeAt(n+1))return!1;let r;for(r=n+2;r<t;r++){if(32===e.src.charCodeAt(r))return!1;if(10===e.src.charCodeAt(r))return!1;if(93===e.src.charCodeAt(r))break}if(r===n+2)return!1;if(r>=t)return!1;r++;const s=e.src.slice(n+2,r-1);if(void 0===e.env.footnotes.refs[`:${s}`])return!1;if(!o){let o;e.env.footnotes.list||(e.env.footnotes.list=[]),e.env.footnotes.refs[`:${s}`]<0?(o=e.env.footnotes.list.length,e.env.footnotes.list[o]={label:s,count:0},e.env.footnotes.refs[`:${s}`]=o):o=e.env.footnotes.refs[`:${s}`];const t=e.env.footnotes.list[o].count;e.env.footnotes.list[o].count++;e.push("footnote_ref","",0).meta={id:o,subId:t,label:s}}return e.pos=r,e.posMax=t,!0})),c.core.ruler.after("inline","footnote_tail",(function(e){let o,t,n,r=!1;const s={};if(!e.env.footnotes)return;if(e.tokens=e.tokens.filter((function(e){return"footnote_reference_open"===e.type?(r=!0,t=[],n=e.meta.label,!1):"footnote_reference_close"===e.type?(r=!1,s[":"+n]=t,!1):(r&&t.push(e),!r)})),!e.env.footnotes.list)return;const f=e.env.footnotes.list;e.tokens.push(new e.Token("footnote_block_open","",1));for(let t=0,n=f.length;t<n;t++){const n=new e.Token("footnote_open","",1);if(n.meta={id:t,label:f[t].label},e.tokens.push(n),f[t].tokens){o=[];const n=new e.Token("paragraph_open","p",1);n.block=!0,o.push(n);const r=new e.Token("inline","",0);r.children=f[t].tokens,r.content=f[t].content,o.push(r);const s=new e.Token("paragraph_close","p",-1);s.block=!0,o.push(s)}else f[t].label&&(o=s[`:${f[t].label}`]);let r;o&&(e.tokens=e.tokens.concat(o)),r="paragraph_close"===e.tokens[e.tokens.length-1].type?e.tokens.pop():null;const l=f[t].count>0?f[t].count:1;for(let o=0;o<l;o++){const n=new e.Token("footnote_anchor","",0);n.meta={id:t,subId:o,label:f[t].label},e.tokens.push(n)}r&&e.tokens.push(r),e.tokens.push(new e.Token("footnote_close","",-1))}e.tokens.push(new e.Token("footnote_block_close","",-1))}))}}));
-/*! markdown-it-mark 4.0.0 https://github.com/markdown-it/markdown-it-mark @license MIT */
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e="undefined"!=typeof globalThis?globalThis:e||self).markdownitMark=n()}(this,(function(){"use strict";return function(e){function n(e,n){const t=[],o=n.length;for(let s=0;s<o;s++){const o=n[s];if(61!==o.marker)continue;if(-1===o.end)continue;const r=n[o.end],i=e.tokens[o.token];i.type="mark_open",i.tag="mark",i.nesting=1,i.markup="==",i.content="";const c=e.tokens[r.token];c.type="mark_close",c.tag="mark",c.nesting=-1,c.markup="==",c.content="","text"===e.tokens[r.token-1].type&&"="===e.tokens[r.token-1].content&&t.push(r.token-1)}for(;t.length;){const n=t.pop();let o=n+1;for(;o<e.tokens.length&&"mark_close"===e.tokens[o].type;)o++;if(o--,n!==o){const t=e.tokens[o];e.tokens[o]=e.tokens[n],e.tokens[n]=t}}}e.inline.ruler.before("emphasis","mark",(function(e,n){const t=e.pos,o=e.src.charCodeAt(t);if(n)return!1;if(61!==o)return!1;const s=e.scanDelims(e.pos,!0);let r=s.length;const i=String.fromCharCode(o);if(r<2)return!1;if(r%2){e.push("text","",0).content=i,r--}for(let n=0;n<r;n+=2){e.push("text","",0).content=i+i,(s.can_open||s.can_close)&&e.delimiters.push({marker:o,length:0,jump:n/2,token:e.tokens.length-1,end:-1,open:s.can_open,close:s.can_close})}return e.pos+=s.length,!0})),e.inline.ruler2.before("emphasis","mark",(function(e){let t;const o=e.tokens_meta,s=(e.tokens_meta||[]).length;for(n(e,e.delimiters),t=0;t<s;t++)o[t]&&o[t].delimiters&&n(e,o[t].delimiters)}))}}));
-/*! markdown-it-sup 2.0.0 https://github.com/markdown-it/markdown-it-sup @license MIT */
-!function(e,s){"object"==typeof exports&&"undefined"!=typeof module?module.exports=s():"function"==typeof define&&define.amd?define(s):(e="undefined"!=typeof globalThis?globalThis:e||self).markdownitSup=s()}(this,(function(){"use strict";const e=/\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/g;function s(s,o){const n=s.posMax,p=s.pos;if(94!==s.src.charCodeAt(p))return!1;if(o)return!1;if(p+2>=n)return!1;s.pos=p+1;let t=!1;for(;s.pos<n;){if(94===s.src.charCodeAt(s.pos)){t=!0;break}s.md.inline.skipToken(s)}if(!t||p+1===s.pos)return s.pos=p,!1;const r=s.src.slice(p+1,s.pos);if(r.match(/(^|[^\\])(\\\\)*\s/))return s.pos=p,!1;s.posMax=s.pos,s.pos=p+1;s.push("sup_open","sup",1).markup="^";s.push("text","",0).content=r.replace(e,"$1");return s.push("sup_close","sup",-1).markup="^",s.pos=s.posMax+1,s.posMax=n,!0}return function(e){e.inline.ruler.after("emphasis","sup",s)}}));
-/*! markdown-it-emoji 3.1.0 https://github.com/[object Object] @license MIT */
-!function(e,s){"object"==typeof exports&&"undefined"!=typeof module?module.exports=s():"function"==typeof define&&define.amd?define(s):(e="undefined"!=typeof globalThis?globalThis:e||self).markdownitEmoji=s()}(this,function(){"use strict";var e={grinning:"\ud83d\ude00",smiley:"\ud83d\ude03",smile:"\ud83d\ude04",grin:"\ud83d\ude01",laughing:"\ud83d\ude06",satisfied:"\ud83d\ude06",sweat_smile:"\ud83d\ude05",joy:"\ud83d\ude02",wink:"\ud83d\ude09",blush:"\ud83d\ude0a",innocent:"\ud83d\ude07",heart_eyes:"\ud83d\ude0d",kissing_heart:"\ud83d\ude18",kissing:"\ud83d\ude17",kissing_closed_eyes:"\ud83d\ude1a",kissing_smiling_eyes:"\ud83d\ude19",yum:"\ud83d\ude0b",stuck_out_tongue:"\ud83d\ude1b",stuck_out_tongue_winking_eye:"\ud83d\ude1c",stuck_out_tongue_closed_eyes:"\ud83d\ude1d",neutral_face:"\ud83d\ude10",expressionless:"\ud83d\ude11",no_mouth:"\ud83d\ude36",smirk:"\ud83d\ude0f",unamused:"\ud83d\ude12",relieved:"\ud83d\ude0c",pensive:"\ud83d\ude14",sleepy:"\ud83d\ude2a",sleeping:"\ud83d\ude34",mask:"\ud83d\ude37",dizzy_face:"\ud83d\ude35",sunglasses:"\ud83d\ude0e",confused:"\ud83d\ude15",worried:"\ud83d\ude1f",open_mouth:"\ud83d\ude2e",hushed:"\ud83d\ude2f",astonished:"\ud83d\ude32",flushed:"\ud83d\ude33",frowning:"\ud83d\ude26",anguished:"\ud83d\ude27",fearful:"\ud83d\ude28",cold_sweat:"\ud83d\ude30",disappointed_relieved:"\ud83d\ude25",cry:"\ud83d\ude22",sob:"\ud83d\ude2d",scream:"\ud83d\ude31",confounded:"\ud83d\ude16",persevere:"\ud83d\ude23",disappointed:"\ud83d\ude1e",sweat:"\ud83d\ude13",weary:"\ud83d\ude29",tired_face:"\ud83d\ude2b",rage:"\ud83d\ude21",pout:"\ud83d\ude21",angry:"\ud83d\ude20",smiling_imp:"\ud83d\ude08",smiley_cat:"\ud83d\ude3a",smile_cat:"\ud83d\ude38",joy_cat:"\ud83d\ude39",heart_eyes_cat:"\ud83d\ude3b",smirk_cat:"\ud83d\ude3c",kissing_cat:"\ud83d\ude3d",scream_cat:"\ud83d\ude40",crying_cat_face:"\ud83d\ude3f",pouting_cat:"\ud83d\ude3e",heart:"\u2764\ufe0f",hand:"\u270b",raised_hand:"\u270b",v:"\u270c\ufe0f",point_up:"\u261d\ufe0f",fist_raised:"\u270a",fist:"\u270a",monkey_face:"\ud83d\udc35",cat:"\ud83d\udc31",cow:"\ud83d\udc2e",mouse:"\ud83d\udc2d",coffee:"\u2615",hotsprings:"\u2668\ufe0f",anchor:"\u2693",airplane:"\u2708\ufe0f",hourglass:"\u231b",watch:"\u231a",sunny:"\u2600\ufe0f",star:"\u2b50",cloud:"\u2601\ufe0f",umbrella:"\u2614",zap:"\u26a1",snowflake:"\u2744\ufe0f",sparkles:"\u2728",black_joker:"\ud83c\udccf",mahjong:"\ud83c\udc04",phone:"\u260e\ufe0f",telephone:"\u260e\ufe0f",envelope:"\u2709\ufe0f",pencil2:"\u270f\ufe0f",black_nib:"\u2712\ufe0f",scissors:"\u2702\ufe0f",wheelchair:"\u267f",warning:"\u26a0\ufe0f",aries:"\u2648",taurus:"\u2649",gemini:"\u264a",cancer:"\u264b",leo:"\u264c",virgo:"\u264d",libra:"\u264e",scorpius:"\u264f",sagittarius:"\u2650",capricorn:"\u2651",aquarius:"\u2652",pisces:"\u2653",heavy_multiplication_x:"\u2716\ufe0f",heavy_plus_sign:"\u2795",heavy_minus_sign:"\u2796",heavy_division_sign:"\u2797",bangbang:"\u203c\ufe0f",interrobang:"\u2049\ufe0f",question:"\u2753",grey_question:"\u2754",grey_exclamation:"\u2755",exclamation:"\u2757",heavy_exclamation_mark:"\u2757",wavy_dash:"\u3030\ufe0f",recycle:"\u267b\ufe0f",white_check_mark:"\u2705",ballot_box_with_check:"\u2611\ufe0f",heavy_check_mark:"\u2714\ufe0f",x:"\u274c",negative_squared_cross_mark:"\u274e",curly_loop:"\u27b0",loop:"\u27bf",part_alternation_mark:"\u303d\ufe0f",eight_spoked_asterisk:"\u2733\ufe0f",eight_pointed_black_star:"\u2734\ufe0f",sparkle:"\u2747\ufe0f",copyright:"\xa9\ufe0f",registered:"\xae\ufe0f",tm:"\u2122\ufe0f",information_source:"\u2139\ufe0f",m:"\u24c2\ufe0f",black_circle:"\u26ab",white_circle:"\u26aa",black_large_square:"\u2b1b",white_large_square:"\u2b1c",black_medium_square:"\u25fc\ufe0f",white_medium_square:"\u25fb\ufe0f",black_medium_small_square:"\u25fe",white_medium_small_square:"\u25fd",black_small_square:"\u25aa\ufe0f",white_small_square:"\u25ab\ufe0f"},s={angry:[">:(",">:-("],blush:[':")',':-")'],broken_heart:["</3","<\\3"],confused:[":/",":-/"],cry:[":'(",":'-(",":,(",":,-("],frowning:[":(",":-("],heart:["<3"],imp:["]:(","]:-("],innocent:["o:)","O:)","o:-)","O:-)","0:)","0:-)"],joy:[":')",":'-)",":,)",":,-)",":'D",":'-D",":,D",":,-D"],kissing:[":*",":-*"],laughing:["x-)","X-)"],neutral_face:[":|",":-|"],open_mouth:[":o",":-o",":O",":-O"],rage:[":@",":-@"],smile:[":D",":-D"],smiley:[":)",":-)"],smiling_imp:["]:)","]:-)"],sob:[":,'(",":,'-(",";(",";-("],stuck_out_tongue:[":P",":-P"],sunglasses:["8-)","B-)"],sweat:[",:(",",:-("],sweat_smile:[",:)",",:-)"],unamused:[":s",":-S",":z",":-Z",":$",":-$"],wink:[";)",";-)"]};function t(e,s){return e[s].content}function n(e,s){const n=function(e){let s=e.defs;e.enabled.length&&(s=Object.keys(s).reduce((t,n)=>(e.enabled.indexOf(n)>=0&&(t[n]=s[n]),t),{}));const t=Object.keys(e.shortcuts).reduce((t,n)=>s[n]?Array.isArray(e.shortcuts[n])?(e.shortcuts[n].forEach(e=>{t[e]=n}),t):(t[e.shortcuts[n]]=n,t):t,{}),n=Object.keys(s);let i;i=0===n.length?"^$":n.map(e=>`:${e}:`).concat(Object.keys(t)).sort().reverse().map(e=>e.replace(/[.?*+^$[\]\\(){}|-]/g,"\\$&")).join("|");const a=RegExp(i),o=RegExp(i,"g");return{defs:s,shortcuts:t,scanRE:a,replaceRE:o}}(Object.assign({},{defs:{},shortcuts:{},enabled:[]},s||{}));e.renderer.rules.emoji=t,e.core.ruler.after("linkify","emoji",function(e,s,t,n,i){const a=e.utils.arrayReplaceAt,o=e.utils.lib.ucmicro,r=new RegExp([o.Z.source,o.P.source,o.Cc.source].join("|"));function c(e,n,a){let o=0;const c=[];if(e.replace(i,function(n,i,l){let u;if(Object.prototype.hasOwnProperty.call(t,n)){if(u=t[n],i>0&&!r.test(l[i-1]))return;if(i+n.length<l.length&&!r.test(l[i+n.length]))return}else u=n.slice(1,-1);if(i>o){const s=new a("text","",0);s.content=e.slice(o,i),c.push(s)}const _=new a("emoji","",0);_.markup=u,_.content=s[u],c.push(_),o=i+n.length}),o<e.length){const s=new a("text","",0);s.content=e.slice(o),c.push(s)}return c}return function(e){let s;const t=e.tokens;let i=0;for(let o=0,r=t.length;o<r;o++){if("inline"!==t[o].type)continue;let r=t[o].children;for(let l=r.length-1;l>=0;l--)s=r[l],"link_open"!==s.type&&"link_close"!==s.type||"auto"===s.info&&(i-=s.nesting),"text"===s.type&&0===i&&n.test(s.content)&&(t[o].children=r=a(r,l,c(s.content,s.level,e.Token)))}}}(e,n.defs,n.shortcuts,n.scanRE,n.replaceRE))}return function(t,i){const a={defs:e,shortcuts:s,enabled:[]};n(t,Object.assign({},a,i||{}))}});
-/*! markdown-it-abbr 2.0.0 https://github.com/markdown-it/markdown-it-abbr @license MIT */
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e="undefined"!=typeof globalThis?globalThis:e||self).markdownitAbbr=n()}(this,(function(){"use strict";return function(e){const n=e.utils.escapeRE,t=e.utils.arrayReplaceAt,r=" \r\n$+<=>^`|~",i=e.utils.lib.ucmicro.P.source,o=e.utils.lib.ucmicro.Z.source;e.block.ruler.before("reference","abbr_def",(function(e,n,t,r){let i,o=e.bMarks[n]+e.tShift[n];const s=e.eMarks[n];if(o+2>=s)return!1;if(42!==e.src.charCodeAt(o++))return!1;if(91!==e.src.charCodeAt(o++))return!1;const c=o;for(;o<s;o++){const n=e.src.charCodeAt(o);if(91===n)return!1;if(93===n){i=o;break}92===n&&o++}if(i<0||58!==e.src.charCodeAt(i+1))return!1;if(r)return!0;const l=e.src.slice(c,i).replace(/\\(.)/g,"$1"),a=e.src.slice(i+2,s).trim();return 0!==l.length&&(0!==a.length&&(e.env.abbreviations||(e.env.abbreviations={}),void 0===e.env.abbreviations[":"+l]&&(e.env.abbreviations[":"+l]=a),e.line=n+1,!0))}),{alt:["paragraph","reference"]}),e.core.ruler.after("linkify","abbr_replace",(function(e){const s=e.tokens;if(!e.env.abbreviations)return;const c=new RegExp("(?:"+Object.keys(e.env.abbreviations).map((function(e){return e.substr(1)})).sort((function(e,n){return n.length-e.length})).map(n).join("|")+")"),l="(^|"+i+"|"+o+"|["+r.split("").map(n).join("")+"])("+Object.keys(e.env.abbreviations).map((function(e){return e.substr(1)})).sort((function(e,n){return n.length-e.length})).map(n).join("|")+")($|"+i+"|"+o+"|["+r.split("").map(n).join("")+"])",a=new RegExp(l,"g");for(let n=0,r=s.length;n<r;n++){if("inline"!==s[n].type)continue;let r=s[n].children;for(let i=r.length-1;i>=0;i--){const o=r[i];if("text"!==o.type)continue;let l=0;const u=o.content;a.lastIndex=0;const f=[];if(!c.test(u))continue;let b;for(;b=a.exec(u);){if(b.index>0||b[1].length>0){const n=new e.Token("text","",0);n.content=u.slice(l,b.index+b[1].length),f.push(n)}const n=new e.Token("abbr_open","abbr",1);n.attrs=[["title",e.env.abbreviations[":"+b[2]]]],f.push(n);const t=new e.Token("text","",0);t.content=b[2],f.push(t);const r=new e.Token("abbr_close","abbr",-1);f.push(r),a.lastIndex-=b[3].length,l=a.lastIndex}if(f.length){if(l<u.length){const n=new e.Token("text","",0);n.content=u.slice(l),f.push(n)}s[n].children=r=t(r,i,f)}}}}))}}));
-/*! markdown-it-ins 4.0.0 https://github.com/markdown-it/markdown-it-ins @license MIT */
-!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):(e="undefined"!=typeof globalThis?globalThis:e||self).markdownitIns=n()}(this,(function(){"use strict";return function(e){function n(e,n){let t;const o=[],s=n.length;for(let i=0;i<s;i++){const s=n[i];if(43!==s.marker)continue;if(-1===s.end)continue;const r=n[s.end];t=e.tokens[s.token],t.type="ins_open",t.tag="ins",t.nesting=1,t.markup="++",t.content="",t=e.tokens[r.token],t.type="ins_close",t.tag="ins",t.nesting=-1,t.markup="++",t.content="","text"===e.tokens[r.token-1].type&&"+"===e.tokens[r.token-1].content&&o.push(r.token-1)}for(;o.length;){const n=o.pop();let s=n+1;for(;s<e.tokens.length&&"ins_close"===e.tokens[s].type;)s++;s--,n!==s&&(t=e.tokens[s],e.tokens[s]=e.tokens[n],e.tokens[n]=t)}}e.inline.ruler.before("emphasis","ins",(function(e,n){const t=e.pos,o=e.src.charCodeAt(t);if(n)return!1;if(43!==o)return!1;const s=e.scanDelims(e.pos,!0);let i=s.length;const r=String.fromCharCode(o);if(i<2)return!1;if(i%2){e.push("text","",0).content=r,i--}for(let n=0;n<i;n+=2){e.push("text","",0).content=r+r,(s.can_open||s.can_close)&&e.delimiters.push({marker:o,length:0,jump:n/2,token:e.tokens.length-1,end:-1,open:s.can_open,close:s.can_close})}return e.pos+=s.length,!0})),e.inline.ruler2.before("emphasis","ins",(function(e){const t=e.tokens_meta,o=(e.tokens_meta||[]).length;n(e,e.delimiters);for(let s=0;s<o;s++)t[s]&&t[s].delimiters&&n(e,t[s].delimiters)}))}}));
-/*! markdown-it-deflist 4.0.0 https://github.com/markdown-it/markdown-it-deflist.git @license MIT */
-!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).markdownitDeflist=e()}(this,function(){"use strict";const t=Symbol("markdown-it-deflist.ddDepth");return function(e){const n=e.utils.isSpace;function o(t,e){let n=t.bMarks[e]+t.tShift[e];const o=t.eMarks[e];if(n>=o)return-1;if(t.sCount[e]-t.blkIndent>=4)return-1;const r=t.src.charCodeAt(n++);if(126!==r&&58!==r)return-1;const i=t.skipSpaces(n);return n<o&&n===i?-1:n}function r(t,e,n,o){let r=-1;for(let i=e;i<n;i++){const e=t.tokens[i];if(e.level===o&&e.block&&!(e.nesting<0)){if(r>=0)return;r=i}}r<0||"paragraph_open"!==t.tokens[r].type||(t.tokens[r+2].hidden=!0,t.tokens[r].hidden=!0)}e.block.ruler.before("paragraph","deflist",function(e,i,s,l){if(l){if(!e.env[t])return!1;return o(e,i)>=0&&e.sCount[i]<e.blkIndent}let f=i+1;if(f>=s)return!1;let d=!0;if(e.isEmpty(f)&&(f++,d=!1,f>=s))return!1;if(e.sCount[f]<e.blkIndent)return!1;let u=o(e,f);if(u<0)return!1;const a=[i,0];e.push("dl_open","dl",1).map=a;let p=i,k=f;t:for(;;){e.push("dt_open","dt",1).map=[p,p];const i=e.push("inline","",0);for(i.map=[p,p],i.content=e.getLines(p,p+1,e.blkIndent,!1).trim(),i.children=[],e.push("dt_close","dt",-1);;){const i=e.tokens.length,l=e.push("dd_open","dd",1),a=[f,0];l.map=a;let p=u;const c=e.eMarks[k];let b=e.sCount[k]+u-(e.bMarks[k]+e.tShift[k]);for(;p<c;){const t=e.src.charCodeAt(p);if(!n(t))break;9===t?b+=4-b%4:b++,p++}u=p;const h=e.tight,m=e.blkIndent,C=e.tShift[k],g=e.sCount[k],y=e.parentType;if(e.blkIndent=e.sCount[k]+2,e.tShift[k]=u-e.bMarks[k],e.sCount[k]=b,e.tight=!0,e.parentType="deflist",e.env[t]=(e.env[t]||0)+1,e.md.block.tokenize(e,k,s,!0),e.env[t]--,d&&r(e,i,e.tokens.length,l.level+1),e.tShift[k]=C,e.sCount[k]=g,e.tight=h,e.parentType=y,e.blkIndent=m,e.push("dd_close","dd",-1),a[1]=f=e.line,f>=s)break t;if(e.sCount[f]<e.blkIndent)break t;if(u=o(e,f),u<0)break;k=f}if(f>=s)break;if(p=f,e.isEmpty(p))break;if(e.sCount[p]<e.blkIndent)break;if(k=p+1,k>=s)break;const l=e.isEmpty(k);if(l&&k++,k>=s)break;if(e.sCount[k]<e.blkIndent)break;if(u=o(e,k),u<0)break;d=!l}return e.push("dl_close","dl",-1),a[1]=f,e.line=f,!0},{alt:["paragraph","reference","blockquote"]})}});
+/*! markdown-it-task-lists 2.1.0 https://github.com/revin/markdown-it-task-lists#readme by @license ISC */
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.markdownitTaskLists = f()}})(function(){var define,module,exports;return (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 
+var disableCheckboxes = true;
+var useLabelWrapper = false;
+var useLabelAfter = false;
+
+module.exports = function(md, options) {
+	if (options) {
+		disableCheckboxes = !options.enabled;
+		useLabelWrapper = !!options.label;
+		useLabelAfter = !!options.labelAfter;
+	}
+
+	md.core.ruler.after('inline', 'github-task-lists', function(state) {
+		var tokens = state.tokens;
+		for (var i = 2; i < tokens.length; i++) {
+			if (isTodoItem(tokens, i)) {
+				todoify(tokens[i], state.Token);
+				attrSet(tokens[i-2], 'class', 'task-list-item' + (!disableCheckboxes ? ' enabled' : ''));
+				attrSet(tokens[parentToken(tokens, i-2)], 'class', 'contains-task-list');
+			}
+		}
+	});
+};
+
+function attrSet(token, name, value) {
+	var index = token.attrIndex(name);
+	var attr = [name, value];
+
+	if (index < 0) {
+		token.attrPush(attr);
+	} else {
+		token.attrs[index] = attr;
+	}
+}
+
+function parentToken(tokens, index) {
+	var targetLevel = tokens[index].level - 1;
+	for (var i = index - 1; i >= 0; i--) {
+		if (tokens[i].level === targetLevel) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+function isTodoItem(tokens, index) {
+	return isInline(tokens[index]) &&
+	       isParagraph(tokens[index - 1]) &&
+	       isListItem(tokens[index - 2]) &&
+	       startsWithTodoMarkdown(tokens[index]);
+}
+
+function todoify(token, TokenConstructor) {
+	token.children.unshift(makeCheckbox(token, TokenConstructor));
+	token.children[1].content = token.children[1].content.slice(3);
+	token.content = token.content.slice(3);
+
+	if (useLabelWrapper) {
+		if (useLabelAfter) {
+			token.children.pop();
+
+			var id = 'task-item-' + Math.ceil(Math.random() * (10000 * 1000) - 1000);
+			token.children[0].content = token.children[0].content.slice(0, -1) + ' id="' + id + '">';
+			token.children.push(afterLabel(token.content, id, TokenConstructor));
+		} else {
+			token.children.unshift(beginLabel(TokenConstructor));
+			token.children.push(endLabel(TokenConstructor));
+		}
+	}
+}
+
+function makeCheckbox(token, TokenConstructor) {
+	var checkbox = new TokenConstructor('html_inline', '', 0);
+	var disabledAttr = disableCheckboxes ? ' disabled="" ' : '';
+	if (token.content.indexOf('[ ] ') === 0) {
+		checkbox.content = '<input class="task-list-item-checkbox"' + disabledAttr + 'type="checkbox">';
+	} else if (token.content.indexOf('[x] ') === 0 || token.content.indexOf('[X] ') === 0) {
+		checkbox.content = '<input class="task-list-item-checkbox" checked=""' + disabledAttr + 'type="checkbox">';
+	}
+	return checkbox;
+}
+
+function beginLabel(TokenConstructor) {
+	var token = new TokenConstructor('html_inline', '', 0);
+	token.content = '<label>';
+	return token;
+}
+
+function endLabel(TokenConstructor) {
+	var token = new TokenConstructor('html_inline', '', 0);
+	token.content = '</label>';
+	return token;
+}
+
+function afterLabel(content, id, TokenConstructor) {
+	var token = new TokenConstructor('html_inline', '', 0);
+	token.content = '<label class="task-list-item-label" for="' + id + '">' + content + '</label>';
+	token.attrs = [{for: id}];
+	return token;
+}
+
+function isInline(token) { return token.type === 'inline'; }
+function isParagraph(token) { return token.type === 'paragraph_open'; }
+function isListItem(token) { return token.type === 'list_item_open'; }
+
+function startsWithTodoMarkdown(token) {
+	return token.content.indexOf('[ ] ') === 0 || token.content.indexOf('[x] ') === 0 || token.content.indexOf('[X] ') === 0;
+}
+
+},{}]},{},[1])(1)
+});
+/*! markdown-it-footnote 4.0.0 https://github.com/markdown-it/markdown-it-footnote @license MIT */
+(function(global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, 
+  global.markdownitFootnote = factory());
+})(this, (function() {
+  "use strict";
+  
+    function render_footnote_anchor_name(tokens, idx, options, env ) {
+    const n = Number(tokens[idx].meta.id + 1).toString();
+    let prefix = "";
+    if (typeof env.docId === "string") prefix = `-${env.docId}-`;
+    return prefix + n;
+  }
+  function render_footnote_caption(tokens, idx ) {
+    let n = Number(tokens[idx].meta.id + 1).toString();
+    if (tokens[idx].meta.subId > 0) n += `:${tokens[idx].meta.subId}`;
+    return `[${n}]`;
+  }
+  function render_footnote_ref(tokens, idx, options, env, slf) {
+    const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+    const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
+    let refid = id;
+    if (tokens[idx].meta.subId > 0) refid += `:${tokens[idx].meta.subId}`;
+    return `<sup class="footnote-ref"><a href="#fn${id}" id="fnref${refid}">${caption}</a></sup>`;
+  }
+  function render_footnote_block_open(tokens, idx, options) {
+    return (options.xhtmlOut ? '<hr class="footnotes-sep" />\n' : '<hr class="footnotes-sep">\n') + '<section class="footnotes">\n' + '<ol class="footnotes-list">\n';
+  }
+  function render_footnote_block_close() {
+    return "</ol>\n</section>\n";
+  }
+  function render_footnote_open(tokens, idx, options, env, slf) {
+    let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+    if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`;
+    return `<li id="fn${id}" class="footnote-item">`;
+  }
+  function render_footnote_close() {
+    return "</li>\n";
+  }
+  function render_footnote_anchor(tokens, idx, options, env, slf) {
+    let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+    if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`
+    ;
+    return ` <a href="#fnref${id}" class="footnote-backref">\u21a9\ufe0e</a>`;
+  }
+  function footnote_plugin(md) {
+    const parseLinkLabel = md.helpers.parseLinkLabel;
+    const isSpace = md.utils.isSpace;
+    md.renderer.rules.footnote_ref = render_footnote_ref;
+    md.renderer.rules.footnote_block_open = render_footnote_block_open;
+    md.renderer.rules.footnote_block_close = render_footnote_block_close;
+    md.renderer.rules.footnote_open = render_footnote_open;
+    md.renderer.rules.footnote_close = render_footnote_close;
+    md.renderer.rules.footnote_anchor = render_footnote_anchor;
+        md.renderer.rules.footnote_caption = render_footnote_caption;
+    md.renderer.rules.footnote_anchor_name = render_footnote_anchor_name;
+        function footnote_def(state, startLine, endLine, silent) {
+      const start = state.bMarks[startLine] + state.tShift[startLine];
+      const max = state.eMarks[startLine];
+            if (start + 4 > max) return false;
+      if (state.src.charCodeAt(start) !== 91 ) return false;
+      if (state.src.charCodeAt(start + 1) !== 94 ) return false;
+      let pos;
+      for (pos = start + 2; pos < max; pos++) {
+        if (state.src.charCodeAt(pos) === 32) return false;
+        if (state.src.charCodeAt(pos) === 93 ) {
+          break;
+        }
+      }
+      if (pos === start + 2) return false;
+            if (pos + 1 >= max || state.src.charCodeAt(++pos) !== 58 ) return false;
+      if (silent) return true;
+      pos++;
+      if (!state.env.footnotes) state.env.footnotes = {};
+      if (!state.env.footnotes.refs) state.env.footnotes.refs = {};
+      const label = state.src.slice(start + 2, pos - 2);
+      state.env.footnotes.refs[`:${label}`] = -1;
+      const token_fref_o = new state.Token("footnote_reference_open", "", 1);
+      token_fref_o.meta = {
+        label: label
+      };
+      token_fref_o.level = state.level++;
+      state.tokens.push(token_fref_o);
+      const oldBMark = state.bMarks[startLine];
+      const oldTShift = state.tShift[startLine];
+      const oldSCount = state.sCount[startLine];
+      const oldParentType = state.parentType;
+      const posAfterColon = pos;
+      const initial = state.sCount[startLine] + pos - (state.bMarks[startLine] + state.tShift[startLine]);
+      let offset = initial;
+      while (pos < max) {
+        const ch = state.src.charCodeAt(pos);
+        if (isSpace(ch)) {
+          if (ch === 9) {
+            offset += 4 - offset % 4;
+          } else {
+            offset++;
+          }
+        } else {
+          break;
+        }
+        pos++;
+      }
+      state.tShift[startLine] = pos - posAfterColon;
+      state.sCount[startLine] = offset - initial;
+      state.bMarks[startLine] = posAfterColon;
+      state.blkIndent += 4;
+      state.parentType = "footnote";
+      if (state.sCount[startLine] < state.blkIndent) {
+        state.sCount[startLine] += state.blkIndent;
+      }
+      state.md.block.tokenize(state, startLine, endLine, true);
+      state.parentType = oldParentType;
+      state.blkIndent -= 4;
+      state.tShift[startLine] = oldTShift;
+      state.sCount[startLine] = oldSCount;
+      state.bMarks[startLine] = oldBMark;
+      const token_fref_c = new state.Token("footnote_reference_close", "", -1);
+      token_fref_c.level = --state.level;
+      state.tokens.push(token_fref_c);
+      return true;
+    }
+        function footnote_inline(state, silent) {
+      const max = state.posMax;
+      const start = state.pos;
+      if (start + 2 >= max) return false;
+      if (state.src.charCodeAt(start) !== 94 ) return false;
+      if (state.src.charCodeAt(start + 1) !== 91 ) return false;
+      const labelStart = start + 2;
+      const labelEnd = parseLinkLabel(state, start + 1);
+            if (labelEnd < 0) return false;
+      
+            if (!silent) {
+        if (!state.env.footnotes) state.env.footnotes = {};
+        if (!state.env.footnotes.list) state.env.footnotes.list = [];
+        const footnoteId = state.env.footnotes.list.length;
+        const tokens = [];
+        state.md.inline.parse(state.src.slice(labelStart, labelEnd), state.md, state.env, tokens);
+        const token = state.push("footnote_ref", "", 0);
+        token.meta = {
+          id: footnoteId
+        };
+        state.env.footnotes.list[footnoteId] = {
+          content: state.src.slice(labelStart, labelEnd),
+          tokens: tokens
+        };
+      }
+      state.pos = labelEnd + 1;
+      state.posMax = max;
+      return true;
+    }
+        function footnote_ref(state, silent) {
+      const max = state.posMax;
+      const start = state.pos;
+            if (start + 3 > max) return false;
+      if (!state.env.footnotes || !state.env.footnotes.refs) return false;
+      if (state.src.charCodeAt(start) !== 91 ) return false;
+      if (state.src.charCodeAt(start + 1) !== 94 ) return false;
+      let pos;
+      for (pos = start + 2; pos < max; pos++) {
+        if (state.src.charCodeAt(pos) === 32) return false;
+        if (state.src.charCodeAt(pos) === 10) return false;
+        if (state.src.charCodeAt(pos) === 93 ) {
+          break;
+        }
+      }
+      if (pos === start + 2) return false;
+            if (pos >= max) return false;
+      pos++;
+      const label = state.src.slice(start + 2, pos - 1);
+      if (typeof state.env.footnotes.refs[`:${label}`] === "undefined") return false;
+      if (!silent) {
+        if (!state.env.footnotes.list) state.env.footnotes.list = [];
+        let footnoteId;
+        if (state.env.footnotes.refs[`:${label}`] < 0) {
+          footnoteId = state.env.footnotes.list.length;
+          state.env.footnotes.list[footnoteId] = {
+            label: label,
+            count: 0
+          };
+          state.env.footnotes.refs[`:${label}`] = footnoteId;
+        } else {
+          footnoteId = state.env.footnotes.refs[`:${label}`];
+        }
+        const footnoteSubId = state.env.footnotes.list[footnoteId].count;
+        state.env.footnotes.list[footnoteId].count++;
+        const token = state.push("footnote_ref", "", 0);
+        token.meta = {
+          id: footnoteId,
+          subId: footnoteSubId,
+          label: label
+        };
+      }
+      state.pos = pos;
+      state.posMax = max;
+      return true;
+    }
+        function footnote_tail(state) {
+      let tokens;
+      let current;
+      let currentLabel;
+      let insideRef = false;
+      const refTokens = {};
+      if (!state.env.footnotes) {
+        return;
+      }
+      state.tokens = state.tokens.filter((function(tok) {
+        if (tok.type === "footnote_reference_open") {
+          insideRef = true;
+          current = [];
+          currentLabel = tok.meta.label;
+          return false;
+        }
+        if (tok.type === "footnote_reference_close") {
+          insideRef = false;
+                    refTokens[":" + currentLabel] = current;
+          return false;
+        }
+        if (insideRef) {
+          current.push(tok);
+        }
+        return !insideRef;
+      }));
+      if (!state.env.footnotes.list) {
+        return;
+      }
+      const list = state.env.footnotes.list;
+      state.tokens.push(new state.Token("footnote_block_open", "", 1));
+      for (let i = 0, l = list.length; i < l; i++) {
+        const token_fo = new state.Token("footnote_open", "", 1);
+        token_fo.meta = {
+          id: i,
+          label: list[i].label
+        };
+        state.tokens.push(token_fo);
+        if (list[i].tokens) {
+          tokens = [];
+          const token_po = new state.Token("paragraph_open", "p", 1);
+          token_po.block = true;
+          tokens.push(token_po);
+          const token_i = new state.Token("inline", "", 0);
+          token_i.children = list[i].tokens;
+          token_i.content = list[i].content;
+          tokens.push(token_i);
+          const token_pc = new state.Token("paragraph_close", "p", -1);
+          token_pc.block = true;
+          tokens.push(token_pc);
+        } else if (list[i].label) {
+          tokens = refTokens[`:${list[i].label}`];
+        }
+        if (tokens) state.tokens = state.tokens.concat(tokens);
+        let lastParagraph;
+        if (state.tokens[state.tokens.length - 1].type === "paragraph_close") {
+          lastParagraph = state.tokens.pop();
+        } else {
+          lastParagraph = null;
+        }
+        const t = list[i].count > 0 ? list[i].count : 1;
+        for (let j = 0; j < t; j++) {
+          const token_a = new state.Token("footnote_anchor", "", 0);
+          token_a.meta = {
+            id: i,
+            subId: j,
+            label: list[i].label
+          };
+          state.tokens.push(token_a);
+        }
+        if (lastParagraph) {
+          state.tokens.push(lastParagraph);
+        }
+        state.tokens.push(new state.Token("footnote_close", "", -1));
+      }
+      state.tokens.push(new state.Token("footnote_block_close", "", -1));
+    }
+    md.block.ruler.before("reference", "footnote_def", footnote_def, {
+      alt: [ "paragraph", "reference" ]
+    });
+    md.inline.ruler.after("image", "footnote_inline", footnote_inline);
+    md.inline.ruler.after("footnote_inline", "footnote_ref", footnote_ref);
+    md.core.ruler.after("inline", "footnote_tail", footnote_tail);
+  }
+  return footnote_plugin;
+}));
+/*! markdown-it-mark 4.0.0 https://github.com/markdown-it/markdown-it-mark @license MIT */
+(function(global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, 
+  global.markdownitMark = factory());
+})(this, (function() {
+  "use strict";
+  function ins_plugin(md) {
+    function tokenize(state, silent) {
+      const start = state.pos;
+      const marker = state.src.charCodeAt(start);
+      if (silent) {
+        return false;
+      }
+      if (marker !== 61 ) {
+        return false;
+      }
+      const scanned = state.scanDelims(state.pos, true);
+      let len = scanned.length;
+      const ch = String.fromCharCode(marker);
+      if (len < 2) {
+        return false;
+      }
+      if (len % 2) {
+        const token = state.push("text", "", 0);
+        token.content = ch;
+        len--;
+      }
+      for (let i = 0; i < len; i += 2) {
+        const token = state.push("text", "", 0);
+        token.content = ch + ch;
+        if (!scanned.can_open && !scanned.can_close) {
+          continue;
+        }
+        state.delimiters.push({
+          marker: marker,
+          length: 0,
+          jump: i / 2,
+          token: state.tokens.length - 1,
+          end: -1,
+          open: scanned.can_open,
+          close: scanned.can_close
+        });
+      }
+      state.pos += scanned.length;
+      return true;
+    }
+    
+        function postProcess(state, delimiters) {
+      const loneMarkers = [];
+      const max = delimiters.length;
+      for (let i = 0; i < max; i++) {
+        const startDelim = delimiters[i];
+        if (startDelim.marker !== 61 ) {
+          continue;
+        }
+        if (startDelim.end === -1) {
+          continue;
+        }
+        const endDelim = delimiters[startDelim.end];
+        const token_o = state.tokens[startDelim.token];
+        token_o.type = "mark_open";
+        token_o.tag = "mark";
+        token_o.nesting = 1;
+        token_o.markup = "==";
+        token_o.content = "";
+        const token_c = state.tokens[endDelim.token];
+        token_c.type = "mark_close";
+        token_c.tag = "mark";
+        token_c.nesting = -1;
+        token_c.markup = "==";
+        token_c.content = "";
+        if (state.tokens[endDelim.token - 1].type === "text" && state.tokens[endDelim.token - 1].content === "=") {
+          loneMarkers.push(endDelim.token - 1);
+        }
+      }
+      
+      
+            while (loneMarkers.length) {
+        const i = loneMarkers.pop();
+        let j = i + 1;
+        while (j < state.tokens.length && state.tokens[j].type === "mark_close") {
+          j++;
+        }
+        j--;
+        if (i !== j) {
+          const token = state.tokens[j];
+          state.tokens[j] = state.tokens[i];
+          state.tokens[i] = token;
+        }
+      }
+    }
+    md.inline.ruler.before("emphasis", "mark", tokenize);
+    md.inline.ruler2.before("emphasis", "mark", (function(state) {
+      let curr;
+      const tokens_meta = state.tokens_meta;
+      const max = (state.tokens_meta || []).length;
+      postProcess(state, state.delimiters);
+      for (curr = 0; curr < max; curr++) {
+        if (tokens_meta[curr] && tokens_meta[curr].delimiters) {
+          postProcess(state, tokens_meta[curr].delimiters);
+        }
+      }
+    }));
+  }
+  return ins_plugin;
+}));
+/*! markdown-it-sup 2.0.0 https://github.com/markdown-it/markdown-it-sup @license MIT */
+(function(global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, 
+  global.markdownitSup = factory());
+})(this, (function() {
+  "use strict";
+    const UNESCAPE_RE = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/g;
+  function superscript(state, silent) {
+    const max = state.posMax;
+    const start = state.pos;
+    if (state.src.charCodeAt(start) !== 94 ) {
+      return false;
+    }
+    if (silent) {
+      return false;
+    }
+        if (start + 2 >= max) {
+      return false;
+    }
+    state.pos = start + 1;
+    let found = false;
+    while (state.pos < max) {
+      if (state.src.charCodeAt(state.pos) === 94 ) {
+        found = true;
+        break;
+      }
+      state.md.inline.skipToken(state);
+    }
+    if (!found || start + 1 === state.pos) {
+      state.pos = start;
+      return false;
+    }
+    const content = state.src.slice(start + 1, state.pos);
+        if (content.match(/(^|[^\\])(\\\\)*\s/)) {
+      state.pos = start;
+      return false;
+    }
+        state.posMax = state.pos;
+    state.pos = start + 1;
+        const token_so = state.push("sup_open", "sup", 1);
+    token_so.markup = "^";
+    const token_t = state.push("text", "", 0);
+    token_t.content = content.replace(UNESCAPE_RE, "$1");
+    const token_sc = state.push("sup_close", "sup", -1);
+    token_sc.markup = "^";
+    state.pos = state.posMax + 1;
+    state.posMax = max;
+    return true;
+  }
+  function sup_plugin(md) {
+    md.inline.ruler.after("emphasis", "sup", superscript);
+  }
+  return sup_plugin;
+}));
+/*! markdown-it-emoji 3.1.0 https://github.com/[object Object] @license MIT */
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.markdownitEmoji = factory());
+})(this, (function () { 'use strict';
+
+  var emojies_defs = {
+    "grinning": "😀",
+    "smiley": "😃",
+    "smile": "😄",
+    "grin": "😁",
+    "laughing": "😆",
+    "satisfied": "😆",
+    "sweat_smile": "😅",
+    "joy": "😂",
+    "wink": "😉",
+    "blush": "😊",
+    "innocent": "😇",
+    "heart_eyes": "😍",
+    "kissing_heart": "😘",
+    "kissing": "😗",
+    "kissing_closed_eyes": "😚",
+    "kissing_smiling_eyes": "😙",
+    "yum": "😋",
+    "stuck_out_tongue": "😛",
+    "stuck_out_tongue_winking_eye": "😜",
+    "stuck_out_tongue_closed_eyes": "😝",
+    "neutral_face": "😐",
+    "expressionless": "😑",
+    "no_mouth": "😶",
+    "smirk": "😏",
+    "unamused": "😒",
+    "relieved": "😌",
+    "pensive": "😔",
+    "sleepy": "😪",
+    "sleeping": "😴",
+    "mask": "😷",
+    "dizzy_face": "😵",
+    "sunglasses": "😎",
+    "confused": "😕",
+    "worried": "😟",
+    "open_mouth": "😮",
+    "hushed": "😯",
+    "astonished": "😲",
+    "flushed": "😳",
+    "frowning": "😦",
+    "anguished": "😧",
+    "fearful": "😨",
+    "cold_sweat": "😰",
+    "disappointed_relieved": "😥",
+    "cry": "😢",
+    "sob": "😭",
+    "scream": "😱",
+    "confounded": "😖",
+    "persevere": "😣",
+    "disappointed": "😞",
+    "sweat": "😓",
+    "weary": "😩",
+    "tired_face": "😫",
+    "rage": "😡",
+    "pout": "😡",
+    "angry": "😠",
+    "smiling_imp": "😈",
+    "smiley_cat": "😺",
+    "smile_cat": "😸",
+    "joy_cat": "😹",
+    "heart_eyes_cat": "😻",
+    "smirk_cat": "😼",
+    "kissing_cat": "😽",
+    "scream_cat": "🙀",
+    "crying_cat_face": "😿",
+    "pouting_cat": "😾",
+    "heart": "❤️",
+    "hand": "✋",
+    "raised_hand": "✋",
+    "v": "✌️",
+    "point_up": "☝️",
+    "fist_raised": "✊",
+    "fist": "✊",
+    "monkey_face": "🐵",
+    "cat": "🐱",
+    "cow": "🐮",
+    "mouse": "🐭",
+    "coffee": "☕",
+    "hotsprings": "♨️",
+    "anchor": "⚓",
+    "airplane": "✈️",
+    "hourglass": "⌛",
+    "watch": "⌚",
+    "sunny": "☀️",
+    "star": "⭐",
+    "cloud": "☁️",
+    "umbrella": "☔",
+    "zap": "⚡",
+    "snowflake": "❄️",
+    "sparkles": "✨",
+    "black_joker": "🃏",
+    "mahjong": "🀄",
+    "phone": "☎️",
+    "telephone": "☎️",
+    "envelope": "✉️",
+    "pencil2": "✏️",
+    "black_nib": "✒️",
+    "scissors": "✂️",
+    "wheelchair": "♿",
+    "warning": "⚠️",
+    "aries": "♈",
+    "taurus": "♉",
+    "gemini": "♊",
+    "cancer": "♋",
+    "leo": "♌",
+    "virgo": "♍",
+    "libra": "♎",
+    "scorpius": "♏",
+    "sagittarius": "♐",
+    "capricorn": "♑",
+    "aquarius": "♒",
+    "pisces": "♓",
+    "heavy_multiplication_x": "✖️",
+    "heavy_plus_sign": "➕",
+    "heavy_minus_sign": "➖",
+    "heavy_division_sign": "➗",
+    "bangbang": "‼️",
+    "interrobang": "⁉️",
+    "question": "❓",
+    "grey_question": "❔",
+    "grey_exclamation": "❕",
+    "exclamation": "❗",
+    "heavy_exclamation_mark": "❗",
+    "wavy_dash": "〰️",
+    "recycle": "♻️",
+    "white_check_mark": "✅",
+    "ballot_box_with_check": "☑️",
+    "heavy_check_mark": "✔️",
+    "x": "❌",
+    "negative_squared_cross_mark": "❎",
+    "curly_loop": "➰",
+    "loop": "➿",
+    "part_alternation_mark": "〽️",
+    "eight_spoked_asterisk": "✳️",
+    "eight_pointed_black_star": "✴️",
+    "sparkle": "❇️",
+    "copyright": "©️",
+    "registered": "®️",
+    "tm": "™️",
+    "information_source": "ℹ️",
+    "m": "Ⓜ️",
+    "black_circle": "⚫",
+    "white_circle": "⚪",
+    "black_large_square": "⬛",
+    "white_large_square": "⬜",
+    "black_medium_square": "◼️",
+    "white_medium_square": "◻️",
+    "black_medium_small_square": "◾",
+    "white_medium_small_square": "◽",
+    "black_small_square": "▪️",
+    "white_small_square": "▫️"
+  };
+
+
+  /* eslint-disable key-spacing */
+
+  var emojies_shortcuts = {
+    angry:            ['>:(', '>:-('],
+    blush:            [':")', ':-")'],
+    broken_heart:     ['</3', '<\\3'],
+    confused:         [':/', ':-/'],
+    cry:              [":'(", ":'-(", ':,(', ':,-('],
+    frowning:         [':(', ':-('],
+    heart:            ['<3'],
+    imp:              [']:(', ']:-('],
+    innocent:         ['o:)', 'O:)', 'o:-)', 'O:-)', '0:)', '0:-)'],
+    joy:              [":')", ":'-)", ':,)', ':,-)', ":'D", ":'-D", ':,D', ':,-D'],
+    kissing:          [':*', ':-*'],
+    laughing:         ['x-)', 'X-)'],
+    neutral_face:     [':|', ':-|'],
+    open_mouth:       [':o', ':-o', ':O', ':-O'],
+    rage:             [':@', ':-@'],
+    smile:            [':D', ':-D'],
+    smiley:           [':)', ':-)'],
+    smiling_imp:      [']:)', ']:-)'],
+    sob:              [":,'(", ":,'-(", ';(', ';-('],
+    stuck_out_tongue: [':P', ':-P'],
+    sunglasses:       ['8-)', 'B-)'],
+    sweat:            [',:(', ',:-('],
+    sweat_smile:      [',:)', ',:-)'],
+    unamused:         [':s', ':-S', ':z', ':-Z', ':$', ':-$'],
+    wink:             [';)', ';-)']
+  };
+
+  function emoji_html (tokens, idx ) {
+    return tokens[idx].content
+  }
+
+  function create_rule (md, emojies, shortcuts, scanRE, replaceRE) {
+    const arrayReplaceAt = md.utils.arrayReplaceAt;
+    const ucm = md.utils.lib.ucmicro;
+    const ZPCc = new RegExp([ucm.Z.source, ucm.P.source, ucm.Cc.source].join('|'));
+
+    function splitTextToken (text, level, Token) {
+      let last_pos = 0;
+      const nodes = [];
+
+      text.replace(replaceRE, function (match, offset, src) {
+        let emoji_name;
+        if (Object.prototype.hasOwnProperty.call(shortcuts, match)) {
+          emoji_name = shortcuts[match];
+
+          if (offset > 0 && !ZPCc.test(src[offset - 1])) return
+
+          if (offset + match.length < src.length && !ZPCc.test(src[offset + match.length])) {
+            return
+          }
+        } else {
+          emoji_name = match.slice(1, -1);
+        }
+
+        if (offset > last_pos) {
+          const token = new Token('text', '', 0);
+          token.content = text.slice(last_pos, offset);
+          nodes.push(token);
+        }
+
+        const token = new Token('emoji', '', 0);
+        token.markup = emoji_name;
+        token.content = emojies[emoji_name];
+        nodes.push(token);
+
+        last_pos = offset + match.length;
+      });
+
+      if (last_pos < text.length) {
+        const token = new Token('text', '', 0);
+        token.content = text.slice(last_pos);
+        nodes.push(token);
+      }
+
+      return nodes
+    }
+
+    return function emoji_replace (state) {
+      let token;
+      const blockTokens = state.tokens;
+      let autolinkLevel = 0;
+
+      for (let j = 0, l = blockTokens.length; j < l; j++) {
+        if (blockTokens[j].type !== 'inline') { continue }
+        let tokens = blockTokens[j].children;
+
+        for (let i = tokens.length - 1; i >= 0; i--) {
+          token = tokens[i];
+
+          if (token.type === 'link_open' || token.type === 'link_close') {
+            if (token.info === 'auto') { autolinkLevel -= token.nesting; }
+          }
+
+          if (token.type === 'text' && autolinkLevel === 0 && scanRE.test(token.content)) {
+            blockTokens[j].children = tokens = arrayReplaceAt(
+              tokens, i, splitTextToken(token.content, token.level, state.Token)
+            );
+          }
+        }
+      }
+    }
+  }
+
+
+  function quoteRE (str) {
+    return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&')
+  }
+
+  function normalize_opts (options) {
+    let emojies = options.defs;
+
+    if (options.enabled.length) {
+      emojies = Object.keys(emojies).reduce((acc, key) => {
+        if (options.enabled.indexOf(key) >= 0) acc[key] = emojies[key];
+        return acc
+      }, {});
+    }
+
+    const shortcuts = Object.keys(options.shortcuts).reduce((acc, key) => {
+      if (!emojies[key]) return acc
+
+      if (Array.isArray(options.shortcuts[key])) {
+        options.shortcuts[key].forEach(alias => { acc[alias] = key; });
+        return acc
+      }
+
+      acc[options.shortcuts[key]] = key;
+      return acc
+    }, {});
+
+    const keys = Object.keys(emojies);
+    let names;
+
+    if (keys.length === 0) {
+      names = '^$';
+    } else {
+      names = keys
+        .map(name => { return `:${name}:` })
+        .concat(Object.keys(shortcuts))
+        .sort()
+        .reverse()
+        .map(name => { return quoteRE(name) })
+        .join('|');
+    }
+    const scanRE = RegExp(names);
+    const replaceRE = RegExp(names, 'g');
+
+    return {
+      defs: emojies,
+      shortcuts,
+      scanRE,
+      replaceRE
+    }
+  }
+
+  function emoji_plugin$1 (md, options) {
+    const defaults = {
+      defs: {},
+      shortcuts: {},
+      enabled: []
+    };
+
+    const opts = normalize_opts(Object.assign({}, defaults, options || {}));
+
+    md.renderer.rules.emoji = emoji_html;
+
+    md.core.ruler.after(
+      'linkify',
+      'emoji',
+      create_rule(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE)
+    );
+  }
+
+  function emoji_plugin (md, options) {
+    const defaults = {
+      defs: emojies_defs,
+      shortcuts: emojies_shortcuts,
+      enabled: []
+    };
+
+    const opts = Object.assign({}, defaults, options || {});
+
+    emoji_plugin$1(md, opts);
+  }
+
+  return emoji_plugin;
+
+}));
+/*! markdown-it-abbr 2.0.0 https://github.com/markdown-it/markdown-it-abbr @license MIT */
+(function(global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, 
+  global.markdownitAbbr = factory());
+})(this, (function() {
+  "use strict";
+  
+    function abbr_plugin(md) {
+    const escapeRE = md.utils.escapeRE;
+    const arrayReplaceAt = md.utils.arrayReplaceAt;
+        const OTHER_CHARS = " \r\n$+<=>^`|~";
+    const UNICODE_PUNCT_RE = md.utils.lib.ucmicro.P.source;
+    const UNICODE_SPACE_RE = md.utils.lib.ucmicro.Z.source;
+    function abbr_def(state, startLine, endLine, silent) {
+      let labelEnd;
+      let pos = state.bMarks[startLine] + state.tShift[startLine];
+      const max = state.eMarks[startLine];
+      if (pos + 2 >= max) {
+        return false;
+      }
+      if (state.src.charCodeAt(pos++) !== 42 ) {
+        return false;
+      }
+      if (state.src.charCodeAt(pos++) !== 91 ) {
+        return false;
+      }
+      const labelStart = pos;
+      for (;pos < max; pos++) {
+        const ch = state.src.charCodeAt(pos);
+        if (ch === 91 ) {
+          return false;
+        } else if (ch === 93 ) {
+          labelEnd = pos;
+          break;
+        } else if (ch === 92 ) {
+          pos++;
+        }
+      }
+      if (labelEnd < 0 || state.src.charCodeAt(labelEnd + 1) !== 58 ) {
+        return false;
+      }
+      if (silent) {
+        return true;
+      }
+      const label = state.src.slice(labelStart, labelEnd).replace(/\\(.)/g, "$1");
+      const title = state.src.slice(labelEnd + 2, max).trim();
+      if (label.length === 0) {
+        return false;
+      }
+      if (title.length === 0) {
+        return false;
+      }
+      if (!state.env.abbreviations) {
+        state.env.abbreviations = {};
+      }
+            if (typeof state.env.abbreviations[":" + label] === "undefined") {
+        state.env.abbreviations[":" + label] = title;
+      }
+      state.line = startLine + 1;
+      return true;
+    }
+    function abbr_replace(state) {
+      const blockTokens = state.tokens;
+      if (!state.env.abbreviations) {
+        return;
+      }
+      const regSimple = new RegExp("(?:" + Object.keys(state.env.abbreviations).map((function(x) {
+        return x.substr(1);
+      })).sort((function(a, b) {
+        return b.length - a.length;
+      })).map(escapeRE).join("|") + ")");
+      const regText = "(^|" + UNICODE_PUNCT_RE + "|" + UNICODE_SPACE_RE + "|[" + OTHER_CHARS.split("").map(escapeRE).join("") + "])" + "(" + Object.keys(state.env.abbreviations).map((function(x) {
+        return x.substr(1);
+      })).sort((function(a, b) {
+        return b.length - a.length;
+      })).map(escapeRE).join("|") + ")" + "($|" + UNICODE_PUNCT_RE + "|" + UNICODE_SPACE_RE + "|[" + OTHER_CHARS.split("").map(escapeRE).join("") + "])";
+      const reg = new RegExp(regText, "g");
+      for (let j = 0, l = blockTokens.length; j < l; j++) {
+        if (blockTokens[j].type !== "inline") {
+          continue;
+        }
+        let tokens = blockTokens[j].children;
+                for (let i = tokens.length - 1; i >= 0; i--) {
+          const currentToken = tokens[i];
+          if (currentToken.type !== "text") {
+            continue;
+          }
+          let pos = 0;
+          const text = currentToken.content;
+          reg.lastIndex = 0;
+          const nodes = [];
+                    if (!regSimple.test(text)) {
+            continue;
+          }
+          let m;
+          while (m = reg.exec(text)) {
+            if (m.index > 0 || m[1].length > 0) {
+              const token = new state.Token("text", "", 0);
+              token.content = text.slice(pos, m.index + m[1].length);
+              nodes.push(token);
+            }
+            const token_o = new state.Token("abbr_open", "abbr", 1);
+            token_o.attrs = [ [ "title", state.env.abbreviations[":" + m[2]] ] ];
+            nodes.push(token_o);
+            const token_t = new state.Token("text", "", 0);
+            token_t.content = m[2];
+            nodes.push(token_t);
+            const token_c = new state.Token("abbr_close", "abbr", -1);
+            nodes.push(token_c);
+            reg.lastIndex -= m[3].length;
+            pos = reg.lastIndex;
+          }
+          if (!nodes.length) {
+            continue;
+          }
+          if (pos < text.length) {
+            const token = new state.Token("text", "", 0);
+            token.content = text.slice(pos);
+            nodes.push(token);
+          }
+                    blockTokens[j].children = tokens = arrayReplaceAt(tokens, i, nodes);
+        }
+      }
+    }
+    md.block.ruler.before("reference", "abbr_def", abbr_def, {
+      alt: [ "paragraph", "reference" ]
+    });
+    md.core.ruler.after("linkify", "abbr_replace", abbr_replace);
+  }
+  return abbr_plugin;
+}));
+/*! markdown-it-ins 4.0.0 https://github.com/markdown-it/markdown-it-ins @license MIT */
+(function(global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, 
+  global.markdownitIns = factory());
+})(this, (function() {
+  "use strict";
+  function ins_plugin(md) {
+    function tokenize(state, silent) {
+      const start = state.pos;
+      const marker = state.src.charCodeAt(start);
+      if (silent) {
+        return false;
+      }
+      if (marker !== 43 ) {
+        return false;
+      }
+      const scanned = state.scanDelims(state.pos, true);
+      let len = scanned.length;
+      const ch = String.fromCharCode(marker);
+      if (len < 2) {
+        return false;
+      }
+      if (len % 2) {
+        const token = state.push("text", "", 0);
+        token.content = ch;
+        len--;
+      }
+      for (let i = 0; i < len; i += 2) {
+        const token = state.push("text", "", 0);
+        token.content = ch + ch;
+        if (!scanned.can_open && !scanned.can_close) {
+          continue;
+        }
+        state.delimiters.push({
+          marker: marker,
+          length: 0,
+          jump: i / 2,
+          token: state.tokens.length - 1,
+          end: -1,
+          open: scanned.can_open,
+          close: scanned.can_close
+        });
+      }
+      state.pos += scanned.length;
+      return true;
+    }
+    
+        function postProcess(state, delimiters) {
+      let token;
+      const loneMarkers = [];
+      const max = delimiters.length;
+      for (let i = 0; i < max; i++) {
+        const startDelim = delimiters[i];
+        if (startDelim.marker !== 43 ) {
+          continue;
+        }
+        if (startDelim.end === -1) {
+          continue;
+        }
+        const endDelim = delimiters[startDelim.end];
+        token = state.tokens[startDelim.token];
+        token.type = "ins_open";
+        token.tag = "ins";
+        token.nesting = 1;
+        token.markup = "++";
+        token.content = "";
+        token = state.tokens[endDelim.token];
+        token.type = "ins_close";
+        token.tag = "ins";
+        token.nesting = -1;
+        token.markup = "++";
+        token.content = "";
+        if (state.tokens[endDelim.token - 1].type === "text" && state.tokens[endDelim.token - 1].content === "+") {
+          loneMarkers.push(endDelim.token - 1);
+        }
+      }
+      
+      
+            while (loneMarkers.length) {
+        const i = loneMarkers.pop();
+        let j = i + 1;
+        while (j < state.tokens.length && state.tokens[j].type === "ins_close") {
+          j++;
+        }
+        j--;
+        if (i !== j) {
+          token = state.tokens[j];
+          state.tokens[j] = state.tokens[i];
+          state.tokens[i] = token;
+        }
+      }
+    }
+    md.inline.ruler.before("emphasis", "ins", tokenize);
+    md.inline.ruler2.before("emphasis", "ins", (function(state) {
+      const tokens_meta = state.tokens_meta;
+      const max = (state.tokens_meta || []).length;
+      postProcess(state, state.delimiters);
+      for (let curr = 0; curr < max; curr++) {
+        if (tokens_meta[curr] && tokens_meta[curr].delimiters) {
+          postProcess(state, tokens_meta[curr].delimiters);
+        }
+      }
+    }));
+  }
+  return ins_plugin;
+}));
+/*! markdown-it-deflist 4.0.0 https://github.com/markdown-it/markdown-it-deflist.git @license MIT */
+(function(global, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, 
+  global.markdownitDeflist = factory());
+})(this, function() {
+  "use strict";
+  
+    const ddDepthKey = Symbol("markdown-it-deflist.ddDepth");
+  function deflist_plugin(md) {
+    const isSpace = md.utils.isSpace;
+        function skipMarker(state, line) {
+      let start = state.bMarks[line] + state.tShift[line];
+      const max = state.eMarks[line];
+      if (start >= max) {
+        return -1;
+      }
+      if (state.sCount[line] - state.blkIndent >= 4) {
+        return -1;
+      }
+            const marker = state.src.charCodeAt(start++);
+      if (marker !== 126  && marker !== 58 ) {
+        return -1;
+      }
+      const pos = state.skipSpaces(start);
+            if (start < max && start === pos) {
+        return -1;
+      }
+      return start;
+    }
+    function markTightParagraph(state, start, end, level) {
+      let block = -1;
+      for (let i = start; i < end; i++) {
+        const token = state.tokens[i];
+        if (token.level !== level || !token.block || token.nesting < 0) {
+          continue;
+        }
+        if (block >= 0) {
+          return;
+        }
+        block = i;
+      }
+      if (block < 0 || state.tokens[block].type !== "paragraph_open") {
+        return;
+      }
+      state.tokens[block + 2].hidden = true;
+      state.tokens[block].hidden = true;
+    }
+    function deflist(state, startLine, endLine, silent) {
+      if (silent) {
+        if (!state.env[ddDepthKey]) {
+          return false;
+        }
+        const markerPos = skipMarker(state, startLine);
+        return markerPos >= 0 && state.sCount[startLine] < state.blkIndent;
+      }
+      let nextLine = startLine + 1;
+      if (nextLine >= endLine) {
+        return false;
+      }
+      let termIsTight = true;
+      if (state.isEmpty(nextLine)) {
+        nextLine++;
+        termIsTight = false;
+        if (nextLine >= endLine) {
+          return false;
+        }
+      }
+      if (state.sCount[nextLine] < state.blkIndent) {
+        return false;
+      }
+      let contentStart = skipMarker(state, nextLine);
+      if (contentStart < 0) {
+        return false;
+      }
+      const token_dl_o = state.push("dl_open", "dl", 1);
+      const listLines = [ startLine, 0 ];
+      token_dl_o.map = listLines;
+      
+      
+            let dtLine = startLine;
+      let ddLine = nextLine;
+      
+      
+      /* eslint no-labels:0,block-scoped-var:0 */      OUTER: for (;;) {
+        const token_dt_o = state.push("dt_open", "dt", 1);
+        token_dt_o.map = [ dtLine, dtLine ];
+        const token_i = state.push("inline", "", 0);
+        token_i.map = [ dtLine, dtLine ];
+        token_i.content = state.getLines(dtLine, dtLine + 1, state.blkIndent, false).trim();
+        token_i.children = [];
+        state.push("dt_close", "dt", -1);
+        for (;;) {
+          const itemTokIdx = state.tokens.length;
+          const token_dd_o = state.push("dd_open", "dd", 1);
+          const itemLines = [ nextLine, 0 ];
+          token_dd_o.map = itemLines;
+          let pos = contentStart;
+          const max = state.eMarks[ddLine];
+          let offset = state.sCount[ddLine] + contentStart - (state.bMarks[ddLine] + state.tShift[ddLine]);
+          while (pos < max) {
+            const ch = state.src.charCodeAt(pos);
+            if (isSpace(ch)) {
+              if (ch === 9) {
+                offset += 4 - offset % 4;
+              } else {
+                offset++;
+              }
+            } else {
+              break;
+            }
+            pos++;
+          }
+          contentStart = pos;
+          const oldTight = state.tight;
+          const oldIndent = state.blkIndent;
+          const oldTShift = state.tShift[ddLine];
+          const oldSCount = state.sCount[ddLine];
+          const oldParentType = state.parentType;
+          state.blkIndent = state.sCount[ddLine] + 2;
+          state.tShift[ddLine] = contentStart - state.bMarks[ddLine];
+          state.sCount[ddLine] = offset;
+          state.tight = true;
+          state.parentType = "deflist";
+          state.env[ddDepthKey] = (state.env[ddDepthKey] || 0) + 1;
+          state.md.block.tokenize(state, ddLine, endLine, true);
+          state.env[ddDepthKey]--;
+          if (termIsTight) {
+            markTightParagraph(state, itemTokIdx, state.tokens.length, token_dd_o.level + 1);
+          }
+          state.tShift[ddLine] = oldTShift;
+          state.sCount[ddLine] = oldSCount;
+          state.tight = oldTight;
+          state.parentType = oldParentType;
+          state.blkIndent = oldIndent;
+          state.push("dd_close", "dd", -1);
+          itemLines[1] = nextLine = state.line;
+          if (nextLine >= endLine) {
+            break OUTER;
+          }
+          if (state.sCount[nextLine] < state.blkIndent) {
+            break OUTER;
+          }
+          contentStart = skipMarker(state, nextLine);
+          if (contentStart < 0) {
+            break;
+          }
+          ddLine = nextLine;
+                }
+                if (nextLine >= endLine) {
+          break;
+        }
+        dtLine = nextLine;
+        if (state.isEmpty(dtLine)) {
+          break;
+        }
+        if (state.sCount[dtLine] < state.blkIndent) {
+          break;
+        }
+        ddLine = dtLine + 1;
+        if (ddLine >= endLine) {
+          break;
+        }
+        const skippedEmptyLine = state.isEmpty(ddLine);
+        if (skippedEmptyLine) {
+          ddLine++;
+        }
+                if (ddLine >= endLine) {
+          break;
+        }
+                if (state.sCount[ddLine] < state.blkIndent) {
+          break;
+        }
+        contentStart = skipMarker(state, ddLine);
+        if (contentStart < 0) {
+          break;
+        }
+        termIsTight = !skippedEmptyLine;
+            }
+            state.push("dl_close", "dl", -1);
+      listLines[1] = nextLine;
+      state.line = nextLine;
+      return true;
+    }
+    md.block.ruler.before("paragraph", "deflist", deflist, {
+      alt: [ "paragraph", "reference", "blockquote" ]
+    });
+  }
+  return deflist_plugin;
+});
 }
 return Object.freeze(root);
 }
