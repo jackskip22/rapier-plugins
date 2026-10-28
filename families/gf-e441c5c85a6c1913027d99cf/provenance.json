@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "WDXL Lubrifont JP N",
+  "sourceRank": 449,
+  "sourcePosition": 855,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wdxllubrifontjpn/METADATA.pb",
+    "sri": "sha384-E88aNG3YOL+UgHeOTJd7I0kjlQAKEz9wE6NAz33OPHaAZkqKnRs2Tnp8sPMY52Sa"
+  },
+  "files": [
+    {
+      "name": "font-9a1ff3094909af94c7918c8286126f2e9c5a95a910f735bba6a04fd897dd2e411a44d9961c956d68098f90db09164384.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/wdxllubrifontjpn/WDXLLubrifontJPN-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wdxllubrifontjpn/WDXLLubrifontJPN-Regular.ttf",
+      "sourceBytes": 10344400,
+      "sourceSri": "sha384-hzITBTyRpvSEA48NHV0cWtY8kuqVZOw0A5f4b3dixP/Onb0Jlg8zzk4dGg6+/8E6",
+      "bytes": 2543912,
+      "sri": "sha384-mh/zCUkJr5THkYyChhJvLpxalakQ9zW7pqBP2JfdLkEaRNmWHJVtaAmPkNsJFkOE",
+      "axes": [],
+      "cmapCodepoints": 13360,
+      "glyphs": 15985
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/wdxllubrifontjpn/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wdxllubrifontjpn/OFL.txt",
+    "bytes": 4521,
+    "sri": "sha384-TcWX+vvIvKCCGj31yj2gzy8LxFola8BRwTM3c7F1ykAs/D6xBMRbwXoTvpRnrcTW"
+  }
+}

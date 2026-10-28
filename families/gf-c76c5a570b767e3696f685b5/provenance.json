@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Shippori Mincho",
+  "sourceRank": 167,
+  "sourcePosition": 335,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shipporimincho/METADATA.pb",
+    "sri": "sha384-WPwVmgumPTukN50xFOjajDEGekSJ2Pf28QLPknIjsAb9dpNpSZXpTw7BMFocmubs"
+  },
+  "files": [
+    {
+      "name": "font-af78d2957b6a5b7d682e517e75f6acc9ca13b61d8e2b7b442ebdc6c9a1593952864f0b4e662e15091fd73d6ab76752e5.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/shipporimincho/ShipporiMincho-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shipporimincho/ShipporiMincho-Bold.ttf",
+      "sourceBytes": 8563788,
+      "sourceSri": "sha384-pXLTwEa8zlX9+9TFdZWxpNKUKJMSkZfJGArTtrZePjt3qIafZGihUFePGP6W5Bpw",
+      "bytes": 3330712,
+      "sri": "sha384-r3jSlXtqW31oLlF+dfasycoTth2OK3tELr3GyaFZOVKGTwtOZi4VCR/XPWq3Z1Ll",
+      "axes": [],
+      "cmapCodepoints": 15363,
+      "glyphs": 16359
+    },
+    {
+      "name": "font-49568e9de413430eb0af1fc841dd774be1b5dd844f409d03ae1eb4f5586ed7707da76537277919ae61fc643413c648a8.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/shipporimincho/ShipporiMincho-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shipporimincho/ShipporiMincho-ExtraBold.ttf",
+      "sourceBytes": 8563208,
+      "sourceSri": "sha384-Ex5GQtV/upgfGcRsXEvkR3tJXop4IiU7eKgmsliSICJfHES9hJwoSZUp1feyDiKC",
+      "bytes": 3329008,
+      "sri": "sha384-SVaOneQTQw6wrx/IQd13S+G13YRPQJ0Drh609Vhu13B9p2U3J3kZrmH8ZDQTxkio",
+      "axes": [],
+      "cmapCodepoints": 15363,
+      "glyphs": 16359
+    },
+    {
+      "name": "font-d6d0af8df436fdc6463fae045f519fb38c78485a33bcae4f80d612e7912cbc426dbdcfe64d7bf81e4f03d49eb43d473e.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/shipporimincho/ShipporiMincho-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shipporimincho/ShipporiMincho-Medium.ttf",
+      "sourceBytes": 8678848,
+      "sourceSri": "sha384-kJ9QSvqAkcmXRMrMlm1qKien2YmADR+d3l2rsR4zA0yttdfbblyumxzw9UxoYmEd",
+      "bytes": 3224764,
+      "sri": "sha384-1tCvjfQ2/cZGP64EX1Gfs4x4SFozvK5PgNYS55EsvEJtvc/mTXv4Hk8D1J60PUc+",
+      "axes": [],
+      "cmapCodepoints": 15363,
+      "glyphs": 16359
+    },
+    {
+      "name": "font-3dd9834d9da7f8afa0244f11e681acd5d5326ec3a57d9ab1fc97cebe66321121cb7a749ce7e1061033b1df8583c06ed5.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/shipporimincho/ShipporiMincho-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shipporimincho/ShipporiMincho-Regular.ttf",
+      "sourceBytes": 8677284,
+      "sourceSri": "sha384-3oGLgxXtio6mAVLeLJyl2q9jh9juME16LF5GhZMtj3sXyqjn/rSp6QmZx5DZTkCI",
+      "bytes": 3164672,
+      "sri": "sha384-PdmDTZ2n+K+gJE8R5oGs1dUybsOlfZqx/JfOvmYyESHLenSc5+EGEDOx34WDwG7V",
+      "axes": [],
+      "cmapCodepoints": 15363,
+      "glyphs": 16359
+    },
+    {
+      "name": "font-d8deca1d8a3252407db894087199f3bdad927fcc32f02ecb503a4b9c0be793e52346df55a1f433162a3fa4c544fb0104.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/shipporimincho/ShipporiMincho-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shipporimincho/ShipporiMincho-SemiBold.ttf",
+      "sourceBytes": 8650032,
+      "sourceSri": "sha384-rnaKOB87sdExj6242De83IvWyAEj2D3w5p4oYOuuzWyOQzRSbGV8vyXNb+z6Dh1p",
+      "bytes": 3254380,
+      "sri": "sha384-2N7KHYoyUkB9uJQIcZnzva2Sf8wy8C7LUDpLnAvnk+UjRt9VofQzFio/pMVE+wEE",
+      "axes": [],
+      "cmapCodepoints": 15363,
+      "glyphs": 16359
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/shipporimincho/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shipporimincho/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-TO7Eu6asfh+Hu/iMLQn+Vew68D25L9s6b+eWVWK5Zft0AKBCRf556Kj32/IxAQfW"
+  }
+}

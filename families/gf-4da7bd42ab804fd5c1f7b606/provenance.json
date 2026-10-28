@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Forum",
+  "sourceRank": 241,
+  "sourcePosition": 473,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/forum/METADATA.pb",
+    "sri": "sha384-2hWJYl1+SPEJkOTOY93HUMod/Mqx4dIysain/4p9yZnL4g8sPgFsimqx7g6Cji4z"
+  },
+  "files": [
+    {
+      "name": "font-af7bf94c46523872687da633093675a27f9e2daa63afcc9cd59b7dd4aadf858afd5961be73c10eea64c429459ec40f88.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/forum/Forum-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/forum/Forum-Regular.ttf",
+      "sourceBytes": 303316,
+      "sourceSri": "sha384-qUqvjWwkT7Yb6iGjKYkc0e4uSO27fJn+Iy/GW5N55cRRi16W/Su2mr2FYPOCYXC0",
+      "bytes": 76912,
+      "sri": "sha384-r3v5TEZSOHJofaYzCTZ1on+eLapjr8yc1Zt91KrfhYr9WWG+c8EO6mTEKUWexA+I",
+      "axes": [],
+      "cmapCodepoints": 578,
+      "glyphs": 584
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/forum/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/forum/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-lwdzYSF1/qA1RQEYGdw3iJtO+SWGotPEK+E8v3JSL9oqEzL1BCndRLnyikLb1p6k"
+  }
+}
