@@ -70,13 +70,42 @@ function sourceString(node) {
 }
 const replacements = new WeakMap(), texts = new WeakMap(), edits = new WeakMap();
 export const sourceEdit = source => edits.get(source) || null;
+const INITIAL_LEAF_CHARS = 16384;
 export class HistorySource {
 	#root;
-	constructor(text) { this.#root = sourceLeaf(text); Object.freeze(this); }
+	constructor(text) {
+		if (typeof text === 'string' && text.length > INITIAL_LEAF_CHARS) {
+			const leaves = [];
+			for (let from = 0; from < text.length;) {
+				let to = Math.min(text.length, from + INITIAL_LEAF_CHARS);
+				if (to < text.length && (text.charCodeAt(to - 1) & 0xfc00) === 0xd800 && (text.charCodeAt(to) & 0xfc00) === 0xdc00) to++;
+				leaves.push(sourceLeaf(text, from, to));
+				from = to;
+			}
+			const build = (from, to) => from === to ? null : to - from === 1 ? leaves[from]
+				: sourceNode(build(from, (from + to) >> 1), build((from + to) >> 1, to));
+			this.#root = build(0, leaves.length);
+		} else this.#root = sourceLeaf(text);
+		Object.freeze(this);
+	}
 	static owns(value) { return value !== null && typeof value === 'object' && #root in value; }
 	static #fromRoot(root) { const source = new HistorySource(''); source.#root = root; return source; }
 	static fromParts(parts) {
-		const leaves = Array.from(parts, text => sourceLeaf(text)).filter(Boolean);
+		const leaves = [];
+		for (const text of parts) {
+			if (typeof text !== 'string') throw new TypeError('source string required');
+			if (text.length <= INITIAL_LEAF_CHARS) {
+				const leaf = sourceLeaf(text);
+				if (leaf) leaves.push(leaf);
+				continue;
+			}
+			for (let from = 0; from < text.length;) {
+				let to = Math.min(text.length, from + INITIAL_LEAF_CHARS);
+				if (to < text.length && (text.charCodeAt(to - 1) & 0xfc00) === 0xd800 && (text.charCodeAt(to) & 0xfc00) === 0xdc00) to++;
+				leaves.push(sourceLeaf(text, from, to));
+				from = to;
+			}
+		}
 		const build = (from, to) => from === to ? null : to - from === 1 ? leaves[from]
 			: sourceNode(build(from, Math.floor((from + to) / 2)), build(Math.floor((from + to) / 2), to));
 		return HistorySource.#fromRoot(build(0, leaves.length));

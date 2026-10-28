@@ -7,8 +7,8 @@ Turn Markdown into one offline HTML file that contains the full Rapier editor.
   <img src="https://raw.githubusercontent.com/jackskip22/rapier-plugins/main/assets/write-390-light.png" alt="The Rapier editor on a phone: a launch plan with an agent's change marked" width="320">
 </picture>
 
-Try it: `npx rapier-html@1.2.46 notes.md`, then open `notes.rapier.html` in any browser.
-Install: `npm install rapier-html@1.2.46`.
+Try it: `npx rapier-html@1.2.48 notes.md`, then open `notes.rapier.html` in any browser.
+Install: `npm install rapier-html@1.2.48`.
 
 It opens on a phone or computer, with no account. People read, edit, draw and paint; agents hand over documents, show
 what changed and get the edited copy back.
@@ -21,19 +21,20 @@ The file needs no hosted workspace.
 - Where scripts don't run (a mail preview, a strict viewer), the file shows the document's words.
 - `--return` adds a one-use Send back address from the agent door.
 - `--view draw` opens on Draw. `--compare original.md` opens the edit with its diff; `--by <name>` attributes it.
+- `--editor page.html` uses another Rapier page as the editor, such as one the agent door exported.
 - `writePage(text, name)` makes the page in one call; `unwrap` gives the document back, exactly.
 
 Needs Node 22 or newer.
 
 ```sh
-npx -- rapier-html@1.2.46 notes.md                          # the editor, notes.md inside it, written beside the file
-npx -- rapier-html@1.2.46 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
-npx -- rapier-html@1.2.46 notes.md --include draw,math     # carries Draw and Math (default: what the document needs)
-npx -- rapier-html@1.2.46 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
-npx -- rapier-html@1.2.46 revised.md --compare original.md # opens showing what changed
-npx -- rapier-html@1.2.46 notes.md --return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT" # Send back
-npx -- rapier-html@1.2.46 notes.md out.html                 # a named output
-npm install rapier-html@1.2.46                              # as a library: writePage, unwrap
+npx -- rapier-html@1.2.48 notes.md                          # the editor, notes.md inside it, written beside the file
+npx -- rapier-html@1.2.48 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
+npx -- rapier-html@1.2.48 notes.md --include draw,math     # carries Draw and Math (default: what the document needs)
+npx -- rapier-html@1.2.48 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
+npx -- rapier-html@1.2.48 revised.md --compare original.md # opens showing what changed
+npx -- rapier-html@1.2.48 notes.md --return <return_url> --return-expires-at <return_expires_at> # Send back
+npx -- rapier-html@1.2.48 notes.md out.html                 # a named output
+npm install rapier-html@1.2.48                              # as a library: writePage, unwrap
 ```
 
 The first `--` is for npm, so `--help` reaches the command. It never overwrites a file.
@@ -52,7 +53,7 @@ Will markers in the Markdown (`keep`, `append`, `edit`) control what agents may 
 ## Send an edited document back
 
 1. Call `show {target:"return"}` on the Rapier agent door for the document's workspace.
-2. Pass its `return_url` and `return_expires_at` as `--return "$RETURN_URL" --return-expires-at "$RETURN_EXPIRES_AT"`,
+2. Pass its `return_url` and `return_expires_at` as `--return <return_url> --return-expires-at <return_expires_at>`,
    or `wrap(..., {return: return_url, return_expires_at})`. Only `https://mcp.rapier.website/return/…` is accepted.
    Share then shows Send back; a page without an address doesn't.
 3. The person edits offline and taps Send back. The source and filename go once; the page shows acceptance or

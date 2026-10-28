@@ -20,7 +20,7 @@ Honor no-upload or no-host instructions. The workflow choices below are alternat
 Embed Rapier's Markdown editor or lightweight reader in your web app. Each build is one offline HTML file. The helper is an ES module: `import {Rapier} from 'rapier-embed'` or `<script type="module">`; there is no classic script or UMD build. Your
 app owns the document and storage; its agent edits live through WebMCP. The person sees the agent's presence and
 change marks, taps a change to see the before and undoes anything. Honor the person's Will/1 regions.
-The reader is one file of about 400 kB, `rapier.html` about 4.0 MB, with optional fonts and plug-ins. The helper is MIT with no dependencies. The two builds it frames are AGPL-3.0-only: use them under the AGPL, or
+The reader is one file of about 410 kB, `rapier.html` about 4.0 MB, with optional fonts and plug-ins. The helper is MIT with no dependencies. The two builds it frames are AGPL-3.0-only: use them under the AGPL, or
 buy a commercial license for other terms (`LICENSING.md` in the Rapier repository).
 
 Choose one of two builds:
@@ -50,7 +50,7 @@ downloaded copy yourself and pass it as `src`.
   document access remain enforced.
 
 ```sh
-npm install rapier-embed@1.2.46
+npm install rapier-embed@1.2.48
 ```
 
 Or copy the package's `embed.mjs` and `contract.mjs` into one directory of your app; no runtime CDN is needed.
@@ -64,7 +64,7 @@ sends Markdown only when saving; change notifications contain no source.
 Rapier is a phone-first Markdown editor for notes, diagrams, drawing and watercolor painting. It runs offline
 as one HTML file on Android, Web, Windows and Linux.
 Collaborate over MCP and WebMCP, use optional plain-file sync to your own cloud storage, or embed the
-editor and lightweight reader (about 400 kB). The agent edits live; the person sees its presence and
+editor and lightweight reader (about 410 kB). The agent edits live; the person sees its presence and
 changes, taps a change to see the before and undoes anything. Use `show {target:"comparison"}` to show a diff deliberately.
 
 1. **Work together live.** Connect to `https://mcp.rapier.website/door/mcp`, then call `open` to share one document with the person.
@@ -138,7 +138,7 @@ The reader on its own page opens a document at an address on its own origin: `ht
 
 Keep the helper, page and plug-in manifest on one version. For version 1.2.46:
 
-1. Install the helper: `npm install rapier-embed@1.2.46`.
+1. Install the helper: `npm install rapier-embed@1.2.48`.
 2. Create `public/vendor/rapier/` and save the reader into it from
    `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.46/embed/rapier-reader.html`.
 3. Fetch its plug-ins from the same version's manifest:
@@ -160,11 +160,11 @@ length and SHA-384 before it runs it, and keeps on the device. A file that fails
 <!-- PLUGIN_TABLE_BEGIN (tools/embed-plugin-table.mjs writes this table) -->
 | Plug-in | Adds | Size | Pages |
 | --- | --- | --- | --- |
-| `flowchart` | Draws Mermaid flowcharts and graphs natively, in the editor's own style. | 0.33 MB | The reader |
-| `docx` | Opens a Word document (.docx) as a Markdown document: headings, lists, tables, pictures and comments. | 0.76 MB | The reader |
+| `flowchart` | Draws Mermaid flowcharts and graphs natively, in the editor's own style. | 0.34 MB | The reader |
+| `docx` | Opens a Word document (.docx) as a Markdown document: headings, lists, tables, pictures and comments. | 0.91 MB | The reader |
 | `math` | Typesets TeX math ($...$ and $$...$$) as SVG. | 0.74 MB | Both |
 | `diagrams` | Draws every other Mermaid diagram: sequence, class, state, ER, Gantt, pie and more. | 1.14 MB (2 files) | Both |
-| `pdf` | Opens a PDF as a Markdown document: its text layer, or each page as a picture. Fetches the pdf.js files itself. | 6.13 MB (198 files) | Both |
+| `pdf` | Opens a PDF as a Markdown document: its text layer, or each page as a picture. Fetches the pdf.js files itself. | 6.15 MB (198 files) | Both |
 | `ocr` | Reads the words in pictures on the device (PP-OCRv6 tiny on ONNX Runtime Web), so search finds them. About 21 MB. | 21.7 MB (10 files) | Both (the reader: only with `--with ocr`) |
 | `font-subset` | Keeps the used characters in fonts embedded in exported pages. | 1.21 MB | `rapier.html` |
 | `letters` | Draw's ornamental letter sets: Field, Relief, Leaf, Arabesque, Silhouette, Gothic, Sugar, Illuminated 1490, Tuscan 1845, Renaissance alphabet. | 1.31 MB (10 files) | `rapier.html` |
@@ -172,7 +172,7 @@ length and SHA-384 before it runs it, and keeps on the device. A file that fails
 | `elements` | The Elements sheet's traced ornaments: 3,155 pieces from the ornament book. | 16.2 MB (51 files) | `rapier.html` |
 | `lettersets` | The Gallery's letter sets: 31 sets of ornamental capitals. | 2.82 MB (31 files) | `rapier.html` |
 
-Totals: the reader, 9.10 MB (30.8 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.46.
+Totals: the reader, 9.29 MB (30.9 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.48.
 <!-- PLUGIN_TABLE_END -->
 
 The manifest lists every plug-in file and, in `builds`, the pages that use it. `rapier.html` has flowcharts and Word import

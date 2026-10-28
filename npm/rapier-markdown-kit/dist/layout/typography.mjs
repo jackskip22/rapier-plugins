@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 import {createPreparationScope, supportsRichStyle, captureFontAuthority} from './preparation.mjs';
 import {createParagraphFitter} from './paragraph-fit.mjs';
+import {initialRange, segment, opening} from './initial-range.mjs';
 
 export function createTypography() {
   const fitter = createParagraphFitter();
@@ -16,24 +17,7 @@ export function createTypography() {
     if (!value) { value = createPreparationScope(document); documents.set(document, value); }
     return value;
   }
-  let graphemes;
-  const segment = text => (graphemes ||= new Intl.Segmenter(undefined, {granularity: 'grapheme'})).segment(text);
-  const opening = /^[\p{Ps}\p{Pi}\p{Pf}"']+$/u;
   const closing = /^[\p{Pe}\p{Pi}\p{Pf}"'.,;:!?]+$/u;
-
-  function initialRange(input) {
-    const text = typeof input === 'string' ? input : input?.textContent;
-    if (typeof text !== 'string') return null;
-    const start = /^\s*/u.exec(text)[0].length;
-    if (start === text.length) return null;
-    let end = start;
-    for (const part of segment(text.slice(start))) {
-      if (/^\s/u.test(part.segment)) break;
-      end = start + part.index + part.segment.length;
-      if (!opening.test(part.segment)) break;
-    }
-    return end > start ? {start, end, text: text.slice(start, end)} : null;
-  }
 
   const flowFloat = '.rapier-flow-float';
   const own = paragraph => [paragraph, ...[...paragraph.querySelectorAll('*')].filter(element => !element.closest(flowFloat))];
@@ -770,7 +754,7 @@ export const apply = typography.apply;
 export const clear = typography.clear;
 export const clearSelection = typography.clearSelection;
 export const firstLineEnd = typography.firstLineEnd;
-export const initialRange = typography.initialRange;
+export {initialRange};
 export const protectInitial = typography.protectInitial;
 export const invalidateFonts = typography.invalidateFonts;
 export const retire = typography.retire;

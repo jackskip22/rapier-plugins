@@ -9,6 +9,7 @@ import {createLineMeasurer, linesHeight} from '../layout/model.mjs';
 import {markPrintCapitals, createPrintCapitals, followingPrintProse} from './print-capitals.mjs';
 import {freezePublishedInk} from './render-ink.mjs';
 import {isTemplatePage, isPageBorderLayout} from '../spec/template-page.mjs';
+import {_rapierArtifactFactoryModules} from './artifact-modules.mjs';
 export function positionNativeDiagram(drawing) {
   const surface=drawing?.closest?.('.diagram-block,.diagram-live-preview');
   if(!surface?.clientWidth)return;
@@ -348,9 +349,14 @@ function* _rapierProjectStyledRootSteps(semanticRoot, options) {
 			yield;
 			cache.innerHTML = sanitizeRapierHtml(cache.innerHTML, 'export');
 		}
-		return root;
 	}
-	return yield* cleanTree(root, sanitizeRapierHtml, 'export');
+	const admitted = opts.sanitized ? root : yield* cleanTree(root, sanitizeRapierHtml, 'export');
+	for (const list of admitted.querySelectorAll('ol[start]')) {
+		yield;
+		const start = list.getAttribute('start');
+		if (/^-?\d{1,9}$/.test(start)) list.style.setProperty('counter-reset', 'rapier-ol ' + (Number(start) - 1));
+	}
+	return admitted;
 }
 
 function _rapierDocxRenderStyles(root) {
@@ -1278,11 +1284,6 @@ function _rapierImageOpenRunsList(tokens) {
 		}
 	}
 	return list;
-}
-
-function _rapierArtifactFactoryModules(dependencies, group) {
-  const paths = dependencies.groups && dependencies.groups[group] ? dependencies.groups[group] : Object.keys(dependencies.factories);
-  return paths.map(path => 'modules[' + JSON.stringify(path) + '] = (' + Function.prototype.toString.call(dependencies.factories[path]) + ')();').join('\n');
 }
 
 function _rapierProjectArtifactLayout(root, metadata, geometry, preparation) {

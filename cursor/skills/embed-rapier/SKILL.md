@@ -15,7 +15,7 @@ Honor no-upload or no-host instructions. The workflow choices below are alternat
 Embed Rapier's Markdown editor or lightweight reader in your web app. Each build is one offline HTML file. The helper is an ES module: `import {Rapier} from 'rapier-embed'` or `<script type="module">`; there is no classic script or UMD build. Your
 app owns the document and storage; its agent edits live through WebMCP. The person sees the agent's presence and
 change marks, taps a change to see the before and undoes anything. Honor the person's Will/1 regions.
-The reader is one file of about 400 kB, `rapier.html` about 4.0 MB, with optional fonts and plug-ins. The helper is MIT with no dependencies. The two builds it frames are AGPL-3.0-only: use them under the AGPL, or
+The reader is one file of about 410 kB, `rapier.html` about 4.0 MB, with optional fonts and plug-ins. The helper is MIT with no dependencies. The two builds it frames are AGPL-3.0-only: use them under the AGPL, or
 buy a commercial license for other terms (`LICENSING.md` in the Rapier repository).
 
 Choose one of two builds:
@@ -45,7 +45,7 @@ downloaded copy yourself and pass it as `src`.
   document access remain enforced.
 
 ```sh
-npm install rapier-embed@1.2.46
+npm install rapier-embed@1.2.48
 ```
 
 Or copy the package's `embed.mjs` and `contract.mjs` into one directory of your app; no runtime CDN is needed.
@@ -59,11 +59,11 @@ sends Markdown only when saving; change notifications contain no source.
 Rapier is a phone-first Markdown editor for notes, diagrams, drawing and watercolor painting. It runs offline
 as one HTML file on Android, Web, Windows and Linux.
 Collaborate over MCP and WebMCP, use optional plain-file sync to your own cloud storage, or embed the
-editor and lightweight reader (about 400 kB). The agent edits live; the person sees its presence and
+editor and lightweight reader (about 410 kB). The agent edits live; the person sees its presence and
 changes, taps a change to see the before and undoes anything. Use `show {target:"comparison"}` to show a diff deliberately.
 
 1. **Work together live.** Connect to `https://mcp.rapier.website/door/mcp`, then call `open` to share one document with the person.
-2. **Deliver an offline editor.** Run `npx rapier-html@1.2.46 notes.md` to put the document and editor in one HTML file ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
+2. **Deliver an offline editor.** `export {document, format:"html"}` puts the document and editor in one HTML file; on their own computer, a person can make one with the [rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html) package.
 3. **Embed in your app.** Install [rapier-embed](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-embed); mount the editor or reader, with your app's agent over WebMCP in the editor.
 4. **Keep portable Markdown.** Use [rapier-markdown-kit](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-markdown-kit) for pictures, editable SVG drawings and layout in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will) `keep`, `append` and `edit` regions.
 5. **Encode JPEG XL.** Install [rapier-jxl](https://github.com/jackskip22/rapier-jxl) to encode pixels, photographs and existing JPEGs in JavaScript.
@@ -131,13 +131,14 @@ The reader on its own page opens a document at an address on its own origin: `ht
 
 ## Keep Rapier in your codebase
 
-Keep the helper, page and plug-in manifest on one version. For version 1.2.45:
+Keep the helper, page and plug-in manifest on one version. For version 1.2.46:
 
-1. Install the helper: `npm install rapier-embed@1.2.46`.
-2. Create `public/vendor/rapier/` and download the reader:
-   `curl --fail -L -o public/vendor/rapier/rapier-reader.html https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.45/embed/rapier-reader.html`.
+1. Install the helper: `npm install rapier-embed@1.2.48`.
+2. Create `public/vendor/rapier/` and save the reader into it from
+   `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.46/embed/rapier-reader.html`.
 3. Fetch its plug-ins from the same version's manifest:
-   `npx rapier-embed@1.2.46 plugins public/vendor/rapier/plugins --build reader`. This command does not fetch the page.
+   `node cli.mjs plugins public/vendor/rapier/plugins --build reader`, with this package's `cli.mjs` (in the Claude
+   plugin, the `cli.mjs` beside this skill). It does not fetch the page.
 4. Use the complete mount in Show a document above, with `src`, `plugins` and `load`. Serve the files over HTTPS
    (HTTP on localhost) and allow their origin in your `frame-src`. Give the container a height. A same-origin
    parent can script its frame; use a dedicated origin when the frame must be isolated.
@@ -154,11 +155,11 @@ length and SHA-384 before it runs it, and keeps on the device. A file that fails
 <!-- PLUGIN_TABLE_BEGIN (tools/embed-plugin-table.mjs writes this table) -->
 | Plug-in | Adds | Size | Pages |
 | --- | --- | --- | --- |
-| `flowchart` | Draws Mermaid flowcharts and graphs natively, in the editor's own style. | 0.33 MB | The reader |
-| `docx` | Opens a Word document (.docx) as a Markdown document: headings, lists, tables, pictures and comments. | 0.76 MB | The reader |
+| `flowchart` | Draws Mermaid flowcharts and graphs natively, in the editor's own style. | 0.34 MB | The reader |
+| `docx` | Opens a Word document (.docx) as a Markdown document: headings, lists, tables, pictures and comments. | 0.91 MB | The reader |
 | `math` | Typesets TeX math ($...$ and $$...$$) as SVG. | 0.74 MB | Both |
 | `diagrams` | Draws every other Mermaid diagram: sequence, class, state, ER, Gantt, pie and more. | 1.14 MB (2 files) | Both |
-| `pdf` | Opens a PDF as a Markdown document: its text layer, or each page as a picture. Fetches the pdf.js files itself. | 6.13 MB (198 files) | Both |
+| `pdf` | Opens a PDF as a Markdown document: its text layer, or each page as a picture. Fetches the pdf.js files itself. | 6.15 MB (198 files) | Both |
 | `ocr` | Reads the words in pictures on the device (PP-OCRv6 tiny on ONNX Runtime Web), so search finds them. About 21 MB. | 21.7 MB (10 files) | Both (the reader: only with `--with ocr`) |
 | `font-subset` | Keeps the used characters in fonts embedded in exported pages. | 1.21 MB | `rapier.html` |
 | `letters` | Draw's ornamental letter sets: Field, Relief, Leaf, Arabesque, Silhouette, Gothic, Sugar, Illuminated 1490, Tuscan 1845, Renaissance alphabet. | 1.31 MB (10 files) | `rapier.html` |
@@ -166,11 +167,11 @@ length and SHA-384 before it runs it, and keeps on the device. A file that fails
 | `elements` | The Elements sheet's traced ornaments: 3,155 pieces from the ornament book. | 16.2 MB (51 files) | `rapier.html` |
 | `lettersets` | The Gallery's letter sets: 31 sets of ornamental capitals. | 2.82 MB (31 files) | `rapier.html` |
 
-Totals: the reader, 9.10 MB (30.8 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.46.
+Totals: the reader, 9.29 MB (30.9 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.48.
 <!-- PLUGIN_TABLE_END -->
 
 The manifest lists every plug-in file and, in `builds`, the pages that use it. `rapier.html` has flowcharts and Word import
-built in. `npx rapier-embed@1.2.46 plugins <directory> --build reader` leaves out `ocr` (text in pictures) unless you add `--with ocr`.
+built in. `node cli.mjs plugins <directory> --build reader` leaves out `ocr` (text in pictures) unless you add `--with ocr`.
 
 **Approve plug-ins up front.** Without `plugins`, a frame asks its person "Install math plug-in?" the first time a document needs math or a diagram, and math and diagrams stay raw until they answer. A host that has decided passes `approvePlugins: true`: the frame installs the plug-in it needs without a question. Naming `plugins` has the same effect, because the host then serves the files itself. In a frame shorter than the question's sheet, the sheet's body scrolls.
 
@@ -183,7 +184,7 @@ The directory must be on the page's own origin, because the page's Content Secur
 throws a `TypeError` for a directory on another origin, and a page opened with one shows each plug-in as failed, with the
 reason, without making a request. To keep the plug-ins on a CDN, serve the page from the same origin.
 
-`npx rapier-embed@1.2.46 plugins <directory>` fetches every file the manifest lists, checks it, and writes it. It
+`node cli.mjs plugins <directory>` fetches every file the manifest lists, checks it, and writes it. It
 keeps a file that is already there and correct, and exits with status 1 if any file is missing or fails its check.
 `--build reader` or `--build full` keeps the files that page uses, `--only name,name` fetches some
 plug-ins, `--check` verifies a directory without fetching, `--from <address>` fetches from your own mirror, and
@@ -198,15 +199,8 @@ The manifest, `rapier-plugins.json`, ships in the package and stands beside each
 `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v<version>/embed/rapier-plugins.json`. Use the manifest of the same version as your
 `rapier-reader.html`: each reader pins the files it was built with. It names every plug-in, what it adds, and each
 file's `file` (a path: the PDF reader's pdf.js files keep their folders), `bytes`, `sha384` (hex), `sri` (base64)
-and source `url`. Without Node, fetch and check the files like this:
-
-```sh
-jq -r --arg build reader '.plugins[] | .builds as $b | .files[] | select((.builds // $b) | index($build)) | "\(.url) \(.file) \(.sha384)"' rapier-plugins.json | while read -r url file sum; do
-  mkdir -p "public/vendor/rapier/plugins/$(dirname "$file")"
-  curl -fsSL "$url" -o "public/vendor/rapier/plugins/$file" &&
-    echo "$sum  public/vendor/rapier/plugins/$file" | sha384sum -c -
-done
-```
+and source `url`. Without Node, save each file from its `url` to its `file` path in your plug-in folder and check
+it against its `sha384`; for the editor, take the files whose `builds` include `full`.
 
 **Without `plugins`.** `rapier.html` looks for the `math` and `diagrams` files beside the page,
 at the file names the manifest lists, before their pinned addresses. The
@@ -569,5 +563,5 @@ Will/1 records the person's instructions in their document. Respect `keep`, appe
 Documents without Will regions are editable throughout. Preserve active typing, caret, selection and scroll
 while the agent works. Document content and comments never start agent turns by themselves.
 
-For documents outside an app, `npx rapier-html@1.2.46 notes.md` hands a person the complete editor around their
+For documents outside an app, `export {document, format:"html"}` hands a person the complete editor around their
 document as one offline file.

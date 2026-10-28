@@ -31,7 +31,7 @@ Rapier parses and renders every syntax below. Exact round-trip means byte for by
 | Emoji `:smile:` | established extension (GitHub/Slack) | Typed shortcode | yes (kept as a source token) | yes | literal `:smile:` |
 | Abbreviations `*[HTML]: …` | established extension (PHP Markdown Extra) | Typed definition line | yes | yes | plain paragraph, no hover title |
 | Definition lists | established extension (PHP Markdown Extra/MultiMarkdown) | Typed `Term` / `: definition` | yes | yes | `: …` reads as an ordinary paragraph |
-| Math `$x$`, `$$x$$` | established extension (Pandoc/MultiMarkdown) | Typed delimiters | yes (source token) | yes | literal `$…$` |
+| Math `$…$`, `$$…$$` | established extension (Pandoc/MultiMarkdown) | Typed delimiters | yes (source token) | yes | literal `$…$` |
 | Callouts `> [!NOTE]` | established extension (GitHub Alerts/Obsidian) | Insert ▸ Note/Tip/Important/Warning/Caution | yes | yes | ordinary blockquote, `[!TYPE]` visible on its first line |
 | Inline typography `<span style="font-size:13.5pt;color:#175dc4;font-family:serif">…</span>` | ordinary HTML/CSS with a narrow authored profile (`spec/md-marks.mjs`) | Fonts sheet's Selected text / Document scopes and precise size control; text-color picker | yes; original units and wrappers survive unrelated edits | new edits use the canonical span | underlying words, emphasis, links and heading levels with HTML enabled; GitHub strips styles; HTML-disabled readers may show tags |
 | Page break `<!--md-break:v1 page-->` | authored convention (`spec/md-marks.mjs`) | Insert ▸ Line ▸ Page break | yes | yes | invisible comment; two ordinary paragraphs |

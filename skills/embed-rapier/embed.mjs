@@ -163,13 +163,22 @@ function assetURL(value) {
   return url.href;
 }
 
+function pictureCeiling(limit) {
+  if (!Number.isSafeInteger(limit) || limit < 1) throw refusal('asset_bytes_invalid');
+  return Math.min(limit, LIMITS.pictureBytes);
+}
 function assetBytes(value, limit = LIMITS.pictureBytes) {
   if (!(value instanceof Uint8Array) || !value.byteLength) throw refusal('asset_bytes_invalid');
-  if (value.byteLength > Math.min(limit, LIMITS.pictureBytes)) throw refusal('picture_too_large');
+  if (value.byteLength > pictureCeiling(limit)) throw refusal('picture_too_large');
   return value;
 }
 async function bytesHash(bytes) {
   return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), n => n.toString(16).padStart(2, '0')).join('');
+}
+function ownedPicture(bytes) {
+  const copy = new Uint8Array(bytes.byteLength);
+  copy.set(bytes);
+  return copy;
 }
 function externalImage(raw, asset, url) {
   if (!url) return raw;
@@ -188,15 +197,19 @@ function createAssetBroker({current, send}) {
     if (identity !== now.identity) { retained.clear(); retainedBytes = 0; identity = now.identity; }
     return now;
   }
+  function admitted(now) {
+    return {identity: now.identity, generation: now.generation, connected: now.connected,
+      granted: now.granted, pictureBytes: now.pictureBytes, baseRevision: now.baseRevision};
+  }
   function cancel(code = 'asset_disconnected') { pending?.finish({code}); }
   async function request(asset) {
-    const state = scope(), bytes = assetBytes(asset.bytes, state.pictureBytes);
+    const state = admitted(scope()), bytes = assetBytes(asset.bytes, state.pictureBytes);
     if (!state.granted) return {code: 'asset_not_granted'};
     if (!state.connected) return {code: 'asset_disconnected'};
     if (pending) return {code: 'asset_busy'};
     if (!ASSET_TYPES.includes(asset.codec)) throw refusal('asset_media_type_invalid');
     if (retained.size >= 1024 || retainedBytes + bytes.byteLength > 25 * 1024 * 1024) return {code: 'asset_cache_full'};
-    const kept = {...asset, bytes: bytes.slice()};
+    const kept = {...asset, bytes: ownedPicture(bytes)};
     let resolve;
     const job = new Promise(yes => { resolve = yes; });
     const row = {state, asset: kept, requestId: crypto.randomUUID(), timer: null, bytesSha256: '',
@@ -258,7 +271,7 @@ function pictureBase(value) {
 return {FEATURES, LIMITS, ASSET_TYPES, refusal, coded, normalizeSettings, snapshotSettings, pickDeviceFile, createFilePicker, assetURL, assetBytes, bytesHash, externalImage, createAssetBroker, pictureBase};
 })();
 const BUILDS = Object.freeze({full: 'https://rapier.website/embed/rapier.html', reader: 'https://rapier.website/embed/rapier-reader.html'});
-const PACKAGE_VERSION = '1.2.46';
+const PACKAGE_VERSION = '1.2.48';
 const OPTIONS = ['build', 'src', 'plugins', 'approvePlugins', 'sessionId', 'documentId', 'agent', 'agentName', 'theme', 'save', 'assets', 'openFile', 'load',
   'onState', 'compare', 'onClose', 'settings', 'style', 'title', 'onError', 'timeout'];
 const READER_FEATURES = ['find', 'readAloud', 'share'];
@@ -888,12 +901,19 @@ function joinForm(field, form) {
       } catch (error) { if (current()) for (const {field} of captured) field._error(error); }
       finally { group.pending = false; group.releasing = false; }
     };
-    group.view = form.ownerDocument.defaultView; group.view.addEventListener('submit', group.submit, true); forms.set(form, group);
+    forms.set(form, group);
+  }
+  const root = form.getRootNode?.();
+  const next = !root || root === form.ownerDocument ? form.ownerDocument.defaultView : root;
+  if (group.view !== next) {
+    group.view?.removeEventListener('submit', group.submit, true);
+    group.view = next;
+    next?.addEventListener('submit', group.submit, true);
   }
   group.fields.add(field);
   return () => {
     group.fields.delete(field);
-    if (!group.fields.size) { group.view.removeEventListener('submit', group.submit, true); forms.delete(form); }
+    if (!group.fields.size) { group.view?.removeEventListener('submit', group.submit, true); forms.delete(form); }
   };
 }
 
@@ -927,15 +947,44 @@ export class RapierEditor extends (globalThis.HTMLElement || class {}) {
       this._initialized = true;
     }
     this._disabled = this.matches(':disabled'); this.tabIndex = this._disabled ? -1 : 0;
-    this._media ||= this.ownerDocument.defaultView.matchMedia('(max-width:600px)');
-    this._onMedia ||= () => this._layout(); this._media.addEventListener('change', this._onMedia);
+    if (!this._onPageHide) {
+      this._onPageHide = () => {
+        if (this._disabled) return;
+        this._setFormValue();
+      };
+      this._onPageShow = () => { if (!this._disabled) this._updateValue(); };
+    }
+    const bindPageLifecycle = () => {
+      if (!this._onPageHide) return;
+      const view = this.isConnected ? this.ownerDocument.defaultView : null;
+      if (this._view === view) return;
+      this._view?.removeEventListener('pagehide', this._onPageHide);
+      this._view?.removeEventListener('pageshow', this._onPageShow);
+      this._media?.removeEventListener('change', this._onMedia);
+      this._view = view;
+      this._media = view ? view.matchMedia('(max-width:600px)') : null;
+      view?.addEventListener('pagehide', this._onPageHide);
+      view?.addEventListener('pageshow', this._onPageShow);
+      if (this._media) {
+        this._onMedia ||= () => this._layout();
+        this._media.addEventListener('change', this._onMedia);
+      }
+    };
+    bindPageLifecycle();
+    queueMicrotask(bindPageLifecycle);
     this._bindForm(); this._updateValue(); this._layout(); if (this._panel.open) this._start();
   }
   disconnectedCallback() {
     this._formAuthority++;
     queueMicrotask(() => {
       if (this.isConnected) return;
-      this._leaveForm?.(); this._leaveForm = null; this._media?.removeEventListener('change', this._onMedia);
+      this._leaveForm?.(); this._leaveForm = null;
+      this._media?.removeEventListener('change', this._onMedia);
+      this._media = null;
+      this._view?.removeEventListener('pagehide', this._onPageHide);
+      this._view?.removeEventListener('pageshow', this._onPageShow);
+      this._view = null;
+      this._onPageHide = null; this._onPageShow = null;
       const editor = this._editor;
       this._generation++; this._editor = null; this._sync = Promise.resolve();
       editor?.disconnect(); this._mount.replaceChildren();
@@ -975,7 +1024,7 @@ export class RapierEditor extends (globalThis.HTMLElement || class {}) {
   _bindForm() { this._formAuthority++; this._leaveForm?.(); this._leaveForm = joinForm(this, this.form); }
   formAssociatedCallback() { if (this._initialized && this.isConnected) this._bindForm(); }
   formResetCallback() { this._replace(this._defaultValue); }
-  formStateRestoreCallback(state) { if (typeof state === 'string') this._replace(state); }
+  formStateRestoreCallback(state, mode) { if (mode === 'restore' && typeof state === 'string') this._replace(state); }
   formDisabledCallback(disabled) {
     const wasDisabled = this._disabled; this._disabled = disabled;
     if (disabled !== wasDisabled) this._formAuthority++;
@@ -992,9 +1041,17 @@ export class RapierEditor extends (globalThis.HTMLElement || class {}) {
     }).catch(error => { if (this._editor === editor) this._error(error); });
   }
   _filename() { return (this.getAttribute('name') || 'document').slice(0, 240) + '.md'; }
+  _submissionFile() {
+    const File = this.ownerDocument.defaultView?.File;
+    return File ? new File([this._value], this._filename(), {type: 'text/markdown'}) : null;
+  }
+  _setFormValue() {
+    const file = this._submissionFile();
+    if (!file) return;
+    this._internals.setFormValue(file, null);
+  }
   _updateValue() {
-    const File = this.ownerDocument.defaultView.File;
-    this._internals.setFormValue(new File([this._value], this._filename(), {type: 'text/markdown'}), this._value);
+    this._setFormValue();
     this._preview.textContent = this._value || 'Edit document'; this._preview.disabled = this._disabled;
     if (this._fallback) this._fallback.value = this._value;
     const missing = this.required && !this._value && !this._dirty;
@@ -1041,11 +1098,13 @@ export class RapierEditor extends (globalThis.HTMLElement || class {}) {
     this._mount.inert = this._disabled;
   }
   _layout() {
-    const narrow = this._media.matches;
+    const narrow = this._media?.matches === true;
     if (this._narrow === narrow) return;
     this._narrow = narrow;
     if (this._panel.open) this._panel.close();
-    if (!narrow) { this._panel.setAttribute('open', ''); this._start(); }
+    if (narrow || !this.ownerDocument.defaultView) return;
+    this._panel.setAttribute('open', '');
+    this._start();
   }
   focus(options) {
     if (this._disabled) return;

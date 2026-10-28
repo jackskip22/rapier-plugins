@@ -81,7 +81,9 @@ editor's own seam: each needs a `host` that supplies its DOM, Markdown, picture,
 `createRenderStyles`, `createRenderSanitizer` and `createPrintRenderer`, plus the explicit font helpers
 `exportFontCss`, `requireDocumentFonts`, `fontRequests`, `waitForFonts` and `waitForFontRequests`. These are the
 functions used by the editor and exported pages. Each factory takes explicit host dependencies
-in its first argument. `style.css` is the
+in its first argument. Refined print paragraphs use the host's retained `RapierArtifactLayoutDependencies`
+(the same factory graph used by standalone HTML). They initialize in the print document so its own font set
+owns every measurement. Missing factories or a blocked initialization refuse the export. `style.css` is the
 MIT `spec/markdown-style.css`, including the numbered-list, checkbox, callout, table,
 footnote and picture-layout treatment.
 

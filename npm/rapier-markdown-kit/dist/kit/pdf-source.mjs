@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MIT
+import {PDF_SOURCE_DIGEST, pdfSourceDigest} from './pdf-source-digest.mjs';
 function pdfStructure(input) {
   const bytes = input instanceof Uint8Array ? input : new Uint8Array(input);
   const fail = () => { throw Object.assign(new Error('The PDF source could not be attached.'), {code: 'pdf_source_invalid'}); };
@@ -116,10 +117,12 @@ export async function attachPdfSource(input, {source, filename, maxBytes = Infin
     table += place ? String(place.at).padStart(10, '0') + ' ' + String(place.generation).padStart(5, '0') + ' n \n' : '0000000000 00000 f \n';
   }
   const identity = trailer.fields.get('ID');
-  table += 'trailer\n<< /Size ' + totalSize + ' /Root ' + rootId + ' ' + generation + ' R /Info ' + infoId + ' 0 R' + (identity ? ' /ID ' + identity.value : '') + ' >>\nstartxref\n' + length + '\n%%EOF\n';
+  table += 'trailer\n<< /Size ' + totalSize + ' /Root ' + rootId + ' ' + generation + ' R /Info ' + infoId + ' 0 R' + (identity ? ' /ID ' + identity.value : '') + ' ' + PDF_SOURCE_DIGEST + ' >>\nstartxref\n' + length + '\n%%EOF\n';
+  const digestAt = length + table.indexOf(PDF_SOURCE_DIGEST) + PDF_SOURCE_DIGEST.indexOf('<') + 1;
   parts.push(ascii(table)); length += table.length;
   if (length > maxBytes) throw Object.assign(new Error('The exported file exceeds the file limit.'), {code: 'export_too_large'});
   const result = new Uint8Array(length); let at = 0;
   for (const chunk of parts) { result.set(chunk, at); at += chunk.length; }
+  result.set(encode.encode(await pdfSourceDigest(result, digestAt, result.length - 1)), digestAt);
   check(); return result;
 }

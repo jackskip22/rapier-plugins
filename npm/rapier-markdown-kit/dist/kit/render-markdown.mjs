@@ -715,7 +715,7 @@ function _rapierRenderSemanticRoot(canonical, metadata, options = {}) {
 	}
 	root.innerHTML = sanitizeRapierHtml(rendered, options.page ? 'source' : 'export');
 	if (cutAt >= 0) _rapierAppendNestingCut(root, markdown, cutAt);
-	_rapierApplyBlockDirection(root);
+	_rapierApplyBlockDirection(root, false, options);
 
 	_rapierAssignHeadingSlugs(root, RAPIER_RENDERED_HEADING_SELECTOR, false, options.carry?.slugs, options.carry?.headingIds);
 	_rapierDisambiguateRenderedAnchors(root);
@@ -791,7 +791,7 @@ async function _rapierRenderSemanticRootAsync(canonical, metadata, options = {})
 		if (html) append();
 		if (cutAt >= 0) _rapierAppendNestingCut(root, markdown, cutAt);
 		parsed = tokens = env = labels = null;
-		await finishAsync(_rapierSemanticDecorations(root, options.carry), work);
+		await finishAsync(_rapierSemanticDecorations(root, options.carry, options), work);
 		await pause(work, .6);
 		complete = true;
 		return root;
@@ -846,8 +846,8 @@ function _rapierReadPartDecorations(canonical, metadata, options = {}) {
 	return Object.freeze({headingIds, captionStart});
 }
 
-function* _rapierSemanticDecorations(root, carry = null) {
-	yield* _rapierApplyBlockDirectionSteps(root); yield;
+function* _rapierSemanticDecorations(root, carry = null, options = {}) {
+	yield* _rapierApplyBlockDirectionSteps(root, false, options); yield;
 	yield* _rapierAssignHeadingSlugsSteps(root, RAPIER_RENDERED_HEADING_SELECTOR, false, carry?.slugs, carry?.headingIds); yield;
 	yield* _rapierDisambiguateRenderedAnchorsSteps(root); yield;
 	for (const code of root.querySelectorAll('pre > code')) { _rapierNormalizeCodeElement(code); yield; }
@@ -1159,14 +1159,20 @@ function _rapierRawHtmlFragment(source, rewrite, parser) {
 	return out;
 }
 
-function _rapierApplyBlockDirection(root) { return finish(_rapierApplyBlockDirectionSteps(root)); }
+function _rapierApplyBlockDirection(root, includeRoot = false, options = {}) { return finish(_rapierApplyBlockDirectionSteps(root, includeRoot, options)); }
 
-function* _rapierApplyBlockDirectionSteps(root) {
+function* _rapierApplyBlockDirectionSteps(root, includeRoot = false, {authoredTableDirection = false} = {}) {
 	if (!root || typeof root.querySelectorAll !== 'function') return;
+	const tableContainers = new Set();
+	if (authoredTableDirection) for (const table of root.querySelectorAll('table')) {
+		for (let parent = table.parentElement; parent && parent !== root && !tableContainers.has(parent); parent = parent.parentElement) {
+			tableContainers.add(parent); yield;
+		}
+	}
 	const blocks = new Set(_RAPIER_DIR_BLOCKS.split(',')), elements = root.ownerDocument.createTreeWalker(root, 1);
-	for (let el = elements.nextNode(); el; el = elements.nextNode()) {
+	for (let el = includeRoot ? root : elements.nextNode(); el; el = elements.nextNode()) {
 		yield;
-		if (!blocks.has(el.localName)) continue;
+		if (!blocks.has(el.localName) || tableContainers.has(el)) continue;
 		let literal = false;
 		for (let parent = el.parentElement; parent; parent = parent.parentElement)
 			if (parent.localName === 'pre' || parent.localName === 'code') { literal = true; break; }

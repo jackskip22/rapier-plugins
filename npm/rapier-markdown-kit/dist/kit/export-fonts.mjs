@@ -165,7 +165,6 @@ function fontSource(bytes) {
 
 function writeFace(face, source) {
   const properties = {...face.properties, src: source};
-  delete properties['unicode-range'];
   return '@font-face{' + Object.entries(properties).map(([name, value]) => name + ':' + value).join(';') + '}';
 }
 
@@ -188,8 +187,29 @@ function fontRuns(root, {settings, css = '', fontCss = '', faces = fontFaces(fon
         '--md-font-main': settings?.mainfont?.css || settings?.sansfont?.css || FAMILY,
         '--md-font-mono': settings?.monofont?.css || MONO}};
     const computed = new WeakMap();
-    let priorFace = null, priorStyle = '';
-    const breakRun = () => { priorFace = null; priorStyle = ''; };
+    let pending = null, segmenter;
+    const breakRun = () => {
+      if (!pending) return;
+      const {text, families, state} = pending;
+      let prior = new Set();
+      for (const {segment} of (segmenter ||= new Intl.Segmenter(undefined, {granularity: 'grapheme'})).segment(text)) {
+        const selected = new Set();
+        for (const character of segment) for (const family of families) {
+          const candidates = faces.filter(face => face.family === family && unicodeIncludes(face, character));
+          if (!candidates.length) continue;
+          candidates.sort((a, b) => stretchOrder(a, b, state['font-stretch']) ||
+            styleDistance(a, state['font-style']) - styleDistance(b, state['font-style']) ||
+            weightDistance(a, state['font-weight']) - weightDistance(b, state['font-weight']));
+          selected.add(candidates[0]); break;
+        }
+        for (const face of selected) {
+          if (prior.has(face)) face.runs[face.runs.length - 1] += segment;
+          else face.runs.push(segment);
+        }
+        prior = selected;
+      }
+      pending = null;
+    };
     function styleOf(element) {
       if (computed.has(element)) return computed.get(element);
       const parent = element === root ? initial : styleOf(element.parentElement || root);
@@ -231,22 +251,10 @@ function fontRuns(root, {settings, css = '', fontCss = '', faces = fontFaces(fon
       else if (state['text-transform'] === 'capitalize') text = text.replace(/(^|\s)(\p{L})/gu, (_, gap, letter) => gap + letter.toUpperCase());
       const families = splitCss(state['font-family'], ',').filter(name => /^\s*['"]/.test(name) || !CSS_GENERIC_FONT_FAMILIES.includes(unquote(name).toLowerCase()))
         .map(name => unquote(name).toLowerCase());
-      const runStyle = [state['font-weight'], state['font-style'], state['font-stretch']].join('/');
-      for (const character of text) {
-        let selected = null;
-        for (const family of families) {
-          const candidates = faces.filter(face => face.family === family && unicodeIncludes(face, character));
-          if (!candidates.length) continue;
-          candidates.sort((a, b) => stretchOrder(a, b, state['font-stretch']) ||
-            styleDistance(a, state['font-style']) - styleDistance(b, state['font-style']) ||
-            weightDistance(a, state['font-weight']) - weightDistance(b, state['font-weight']));
-          selected = candidates[0]; break;
-        }
-        if (!selected) { breakRun(); continue; }
-        if (selected === priorFace && runStyle === priorStyle) selected.runs[selected.runs.length - 1] += character;
-        else selected.runs.push(character);
-        priorFace = selected; priorStyle = runStyle;
-      }
+      const key = JSON.stringify([families, state['font-weight'], state['font-style'], state['font-stretch']]);
+      if (pending?.key !== key) breakRun();
+      if (pending) pending.text += text;
+      else pending = {text, families, state, key};
     }
     function walk(element) {
       const name = element.localName?.toLowerCase();
@@ -277,6 +285,7 @@ function fontRuns(root, {settings, css = '', fontCss = '', faces = fontFaces(fon
       if (boundary) breakRun();
     }
     walk(root);
+    breakRun();
   } finally {
     if (oldClass == null) root.removeAttribute('class'); else root.setAttribute('class', oldClass);
   }

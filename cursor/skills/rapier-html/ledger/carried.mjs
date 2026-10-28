@@ -56,11 +56,19 @@ export function documentTrailer(text, options) {
 export function writeDocument(text, options) {
   return text + documentTrailer(text, options);
 }
+function trailerOpening(source) {
+  const marker = '<!-- rapier-carried/1', at = source.lastIndexOf(marker);
+  if (at < 0) return null;
+  if (source.slice(at - 2, at + marker.length + 1) === OPEN) return {start: at - 2, body: at + marker.length + 1};
+  const before = /(?:\r\n|\r|\n){2}$/.exec(source.slice(Math.max(0, at - 4), at));
+  const after = /^(?:\r\n|\r|\n)/.exec(source.slice(at + marker.length, at + marker.length + 2));
+  return before && after ? {start: at - before[0].length, body: at + marker.length + after[0].length} : null;
+}
 function unfinishedTrailer(source) {
-  if (!source.includes(OPEN)) return false;
-  const at = source.lastIndexOf(OPEN);
+  const opening = trailerOpening(source);
+  if (!opening) return false;
   let fence = null;
-  for (const line of source.slice(0, at).split('\n')) {
+  for (const line of source.slice(0, opening.start).split(/\r\n?|\n/)) {
     const found = /^ {0,3}(`{3,}|~{3,})/.exec(line);
     if (!found) continue;
     if (!fence) fence = found[1];
@@ -69,17 +77,18 @@ function unfinishedTrailer(source) {
   return !fence;
 }
 export function readDocument(source) {
-  if (!source.endsWith(CLOSE)) {
+  const closing = /(?:\r\n|\r|\n)-->(?:\r\n|\r|\n)$/.exec(source.slice(-7));
+  if (!closing) {
     if (unfinishedTrailer(source)) throw fault('unfinished document metadata');
     return {text: source, ledger: null, authorship: null};
   }
-  const at = source.lastIndexOf(OPEN);
-  if (at < 0) return {text: source, ledger: null, authorship: null};
+  const opening = trailerOpening(source);
+  if (!opening) return {text: source, ledger: null, authorship: null};
   let parts;
-  try { parts = JSON.parse(source.slice(at + OPEN.length, -CLOSE.length)); }
+  try { parts = JSON.parse(source.slice(opening.body, -closing[0].length)); }
   catch (_) { throw fault('invalid document metadata'); }
   if (!parts || Object.keys(parts).length !== 2 || !Object.hasOwn(parts, 'ledger') || !Object.hasOwn(parts, 'authorship')) throw fault('invalid document parts');
-  const text = source.slice(0, at);
+  const text = source.slice(0, opening.start);
   return {text, ...validateParts(text, parts)};
 }
 

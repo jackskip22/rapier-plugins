@@ -42,8 +42,9 @@ expire after 30 idle days.
 - Your changes land at once, marked; `undo {act}` takes back yours and keeps theirs.
 - `html` export is the whole editor with the document inside, editable offline.
 - Handing over a draft: give them a `.rapier.html` with Send back. `show {target:"return"}` gives `return_url` and
-  `return_expires_at`; where you have a shell, `npx rapier-html@1.2.46 draft.md --return <return_url> --return-expires-at
-  <return_expires_at>`. Their edited copy comes back once; `read {return_id}` reads it.
+  `return_expires_at`; where you have Node, the `rapier-html` skill's installed `cli.mjs` adds them to an exported
+  page: `node cli.mjs draft.md --editor page.html --return <return_url> --return-expires-at <return_expires_at>`.
+  Their edited copy comes back once; `read {return_id}` reads it.
 
 ## Each step
 

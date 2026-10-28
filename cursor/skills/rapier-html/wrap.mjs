@@ -112,15 +112,20 @@ export function portableNeeds(text, {base, flowchart} = {}) {
 		if (typeof source !== 'string') continue;
 		let prose = '';
 		if (isTemplatePage(source)) needs.add('layout');
+		const wantsMath = /\$|(?:`{3,}|~{3,})[ \t]*math\b/i.test(source);
+		const wantsMermaid = /mermaid/i.test(source);
+		if (!wantsMath && !wantsMermaid) continue;
 		const lines = source.split(/\r\n|\r|\n/);
+		const content = line => line.replace(/^(?: {0,3}>[ \t]?)+/, '').replace(/^ {0,3}(?:[-+*]|\d{1,9}[.)])[ \t]+/, '');
 		for (let at = 0; at < lines.length; at++) {
-			const open = /^ {0,3}(`{3,}|~{3,})\s*([^\s`]*)/.exec(lines[at]);
-			if (!open) { prose += lines[at] + '\n'; continue; }
+			const open = /^ {0,3}(`{3,}|~{3,})\s*([^\s`]*)/.exec(content(lines[at]));
+			if (!open) { if (wantsMath) prose += lines[at] + '\n'; continue; }
 			const body = [];
-			for (at++; at < lines.length && !new RegExp('^ {0,3}' + open[1][0] + '{' + open[1].length + ',}\\s*$').test(lines[at]); at++) body.push(lines[at]);
-			if (open[2].toLowerCase() === 'mermaid' && flowchart?.(body.join('\n')) !== true) needs.add('mermaid');
+			for (at++; at < lines.length && !new RegExp('^ {0,3}' + open[1][0] + '{' + open[1].length + ',}\\s*$').test(content(lines[at])); at++) body.push(lines[at]);
+			if (wantsMermaid && open[2].toLowerCase() === 'mermaid' && flowchart?.(body.join('\n')) !== true) needs.add('mermaid');
+			if (wantsMath && open[2].toLowerCase() === 'math' && at < lines.length) needs.add('math');
 		}
-		if (/\$\$[\s\S]+?\$\$|(?:^|[^\\$])\$(?![\s$])[^$\n]*[^\s\\$]\$(?!\d)/.test(prose.split(/\n[ \t]*\n/).map(paragraph => paragraph.replace(/(`+)[\s\S]*?\1/g, '')).join('\n\n'))) needs.add('math');
+		if (wantsMath && /\$\$[\s\S]+?\$\$|(?:^|[^\\$])\$(?![\s$])[^$\n]*[^\s\\$]\$(?!\d)/.test(prose.split(/\n[ \t]*\n/).map(paragraph => paragraph.replace(/(`+)[\s\S]*?\1/g, '')).join('\n\n'))) needs.add('math');
 	}
 	return CHOICES.filter(id => needs.has(id));
 }

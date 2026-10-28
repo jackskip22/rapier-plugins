@@ -157,14 +157,15 @@ export async function collectPdfVectors(main, {width, height, count, capture, si
         const wrap = document.createElement('div');
         wrap.style.cssText = `position:fixed;left:0;top:0;width:${box.width}px;height:${box.height}px;pointer-events:none;background:transparent`;
         clone.style.setProperty('width', box.width + 'px', 'important'); clone.style.setProperty('height', box.height + 'px', 'important');
-        wrap.append(clone); document.body.append(wrap);
+        const surface = document.createElement('div'); surface.style.cssText = 'width:100%;height:100%';
+        surface.append(clone); wrap.attachShadow({mode: 'open'}).append(surface); document.body.append(wrap);
         try {
           const plainText = node.localName === 'text' && window.getComputedStyle(node).filter === 'none' && window.getComputedStyle(node).textShadow === 'none';
           const bounds = plainText ? node.getBoundingClientRect() : box;
           const left = Math.max(0, bounds.left - box.left - 2), top = Math.max(0, bounds.top - box.top - 2);
           const right = Math.min(box.width, bounds.right - box.left + 2), bottom = Math.min(box.height, bounds.bottom - box.top + 2);
           if (!(right > left && bottom > top)) return;
-          const result = await capture({root: wrap, clip: {x: left, y: top, width: right - left, height: bottom - top}, transparent: true, scale: 2, signal, current, pixels: true}); check();
+          const result = await capture({root: surface, clip: {x: left, y: top, width: right - left, height: bottom - top}, transparent: true, scale: 2, signal, current, pixels: true}); check();
           if (result?.rgb instanceof Uint8Array && result?.alpha instanceof Uint8Array) {
             return {image: {rgb: await compress(result.rgb), alpha: await compress(result.alpha), width: result.width, height: result.height}, x: box.left - origin.left + left, y: box.top - origin.top + top, width: right - left, height: bottom - top};
           }

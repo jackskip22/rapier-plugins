@@ -2,11 +2,12 @@
 import {collectPdfVectors} from './pdf-vectors.mjs';
 import {collectPdfGlyphs} from './pdf-glyphs.mjs';
 import {pdfFontSources, waitForFonts} from './export-fonts.mjs';
-import {apply as applyTypography} from '../layout/typography.mjs';
+import {printTypography} from './artifact-modules.mjs';
 import {documentLanguage, pageSizeOf, paperForLanguage} from '../spec/document-settings.mjs';
 import {applyPrintCapitals} from './print-capitals.mjs';
 import {stripOneTerminator as _rapierWillStripOneTerminator} from '../agent/will.mjs';
 import {quotedWillSpan} from '../spec/md-marks.mjs';
+import {PDF_SOURCE_DIGEST, pdfSourceDigest} from './pdf-source-digest.mjs';
 const RAPIER_WILL_SENTINEL_MARK = '⁣';
 // SPDX-License-Identifier: MIT
 function createPrintRenderer(runtime) {
@@ -229,7 +230,8 @@ async function _rapierWritePrintPdf({root, css, fontCss = '', canonical, bom = f
 	if (bodyWidth < 1 || bodyHeight < 1) refuse('pdf_page_geometry_invalid');
 	const tiled = bodyWidth > CAPTURE_EDGE || bodyHeight > CAPTURE_EDGE || bodyWidth * bodyHeight > CAPTURE_PIXELS;
 	const frame = document.createElement('iframe');
-	let vectors, backdrop = null, nativeGlyphs, filmSession;
+	let vectors, backdrop = null, nativeGlyphs, filmSession, typography;
+	const omitted = [];
 	let rejectAbort;
 	const aborted = new Promise((_, reject) => { rejectAbort = reject; });
 	aborted.catch(() => {});
@@ -281,7 +283,18 @@ async function _rapierWritePrintPdf({root, css, fontCss = '', canonical, bom = f
 		main.getBoundingClientRect();
 		if (fontCss) await step(waitForFonts(main, {fontCss, css, settings}));
 		await step(into.fonts.ready);
-		for (const image of main.querySelectorAll('img')) { image.loading = 'eager'; await step(image.decode()); }
+		for (const image of main.querySelectorAll('img')) {
+			image.loading = 'eager';
+			try { await step(image.decode()); }
+			catch (error) {
+				if (error?.name !== 'EncodingError') throw error;
+				const source = image.getAttribute('src') || '';
+				omitted.push(source.startsWith('data:') ? image.getAttribute('alt') || 'a picture' : source.slice(0, 120));
+				const holder = image.closest('p,figure');
+				image.remove();
+				if (holder && !holder.textContent.trim() && !holder.querySelector('img,svg,math,table,pre')) holder.remove();
+			}
+		}
 		wrapMasks(main);
 		check();
 		for (const node of [main, ...main.querySelectorAll('*')]) {
@@ -303,7 +316,8 @@ async function _rapierWritePrintPdf({root, css, fontCss = '', canonical, bom = f
 			main.style.setProperty(name, value, 'important');
 		globalThis.RapierMath?.fit(main);
 		applyPrintCapitals(main);
-		applyTypography(main, {all: true});
+		typography = printTypography(main, globalThis.RapierArtifactLayoutDependencies);
+		typography?.apply(main, {all: true});
 		ink?.(main);
 		const count = Math.max(1, Math.ceil((main.scrollWidth - 1) / bodyWidth));
 		if (!Number.isSafeInteger(count)) refuse('pdf_page_geometry_invalid');
@@ -421,9 +435,9 @@ async function _rapierWritePrintPdf({root, css, fontCss = '', canonical, bom = f
 		const bytes = await writeRasterPdf({pages, textPages, linkPages, vectorPages: vectors.pages, canonical, bom, filename, title, font, width, height, margins, backdrop: backdrop?.pages[0] || null,
 			pixelWidth: bodyWidth, pixelHeight: bodyHeight, pageNumbers: settings?.pagestyle === 'plain', maxBytes, check});
 		check();
-		return {bytes, pages: count, painted: nativeGlyphs.painted};
+		return {bytes, pages: count, painted: nativeGlyphs.painted, omitted};
 	} catch (error) { throw spoken(error); }
-	finally { filmSession?.close(); backdrop?.restore(); vectors?.restore(); nativeGlyphs?.restore(); signal?.removeEventListener('abort', abort); frame.remove(); }
+	finally { filmSession?.close(); backdrop?.restore(); vectors?.restore(); nativeGlyphs?.restore(); typography?.retire(frame.contentDocument); signal?.removeEventListener('abort', abort); frame.remove(); }
 }
 
 async function _rapierPrintTextPages(main, pageWidth, count, check, origin = main.getBoundingClientRect(), nativeNodes = null, markerNodes = null) {
@@ -442,6 +456,18 @@ async function _rapierPrintTextPages(main, pageWidth, count, check, origin = mai
         }
 		const marker = markerNodes?.get(node);
 		if (marker && marker.page < count) pages[marker.page].push({...marker, block: node, carrier: null, marker: true});
+		const taskItem = node.nodeType === 1 && node.matches('input[type="checkbox"]') && node.closest('li');
+		const taskParent = taskItem && node.parentElement;
+		if (taskItem && taskParent.firstElementChild === node && (taskParent === taskItem || taskParent.localName === 'p' && taskParent.parentElement === taskItem && taskItem.firstElementChild === taskParent)) {
+			const box = node.getBoundingClientRect(), style = into.defaultView.getComputedStyle(node);
+			if (box.width > 0 && box.height > 0 && style.visibility !== 'hidden' && style.visibility !== 'collapse') {
+				const page = Math.max(0, Math.min(count - 1, Math.floor((box.left - origin.left + .01) / pageWidth)));
+				const size = parseFloat(style.fontSize) || 16, width = Math.min(size, box.width), height = Math.min(size, box.height);
+				const text = node.checked ? '[x] ' : '[ ] ', part = {text, x: box.left - origin.left - page * pageWidth + (box.width - width) / 2,
+					y: box.top - origin.top + (box.height - height) / 2, width, height};
+				pages[page].push({...part, parts: [part], block: taskItem, carrier: null, marker: true});
+			}
+		}
 		const formula = node.nodeType === 1 && node.matches('.math-rendered[data-math-src]') && node.querySelector('svg');
 		if (node.nodeType === 1 && !formula || node.nodeType === 3 && element.closest('.math-rendered[data-math-src]')) continue;
 		let value;
@@ -885,7 +911,8 @@ async function writeRasterPdf({pages, textPages, linkPages = [], vectorPages = [
 		cursor += (id + ' 0 obj\n').length + objects[id].length + 8;
 	}
 	const xrefAt = cursor;
-	const xref = encode('xref\n0 ' + objects.length + '\n0000000000 65535 f \n' + offsets.slice(1).map(at => String(at).padStart(10, '0') + ' 00000 n \n').join('') + 'trailer\n<< /Size ' + objects.length + ' /Root 1 0 R /Info ' + info + ' 0 R >>\nstartxref\n' + xrefAt + '\n%%EOF\n');
+	const table = 'xref\n0 ' + objects.length + '\n0000000000 65535 f \n' + offsets.slice(1).map(at => String(at).padStart(10, '0') + ' 00000 n \n').join('') + 'trailer\n<< /Size ' + objects.length + ' /Root 1 0 R /Info ' + info + ' 0 R ' + PDF_SOURCE_DIGEST + ' >>\nstartxref\n' + xrefAt + '\n%%EOF\n';
+	const xref = encode(table), digestAt = xrefAt + table.indexOf(PDF_SOURCE_DIGEST) + PDF_SOURCE_DIGEST.indexOf('<') + 1;
 	if (cursor + xref.length > maxBytes) fail('export_too_large');
 	const bytes = new Uint8Array(cursor + xref.length);
 	bytes.set(header, 0);
@@ -899,6 +926,8 @@ async function writeRasterPdf({pages, textPages, linkPages = [], vectorPages = [
 		bytes.set(suffix, at); at += suffix.length;
 	}
 	bytes.set(xref, at);
+	bytes.set(encode(await pdfSourceDigest(bytes, digestAt, bytes.length - 1)), digestAt);
+	check();
 	return bytes;
 }
 export {createPrintRenderer, applyPrintCapitals, RAPIER_WILL_SENTINEL_MARK as sentinel};

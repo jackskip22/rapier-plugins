@@ -18,12 +18,19 @@ function parserFor(parser) {
 	return md;
 }
 
+const sourceMetadataFields = ['license', 'origin'];
+function sourceMetadata(value) {
+	return Object.fromEntries(sourceMetadataFields.filter(field => value[field] != null).map(field => [field, value[field]]));
+}
+
 function faceOf(value) {
 	const family = normalizeFontFamily(value?.family), style = value?.style || 'normal';
 	const weight = value?.weight ?? 400, stretch = value?.stretch ?? 100;
 	if (!family || !['normal', 'italic', 'oblique'].includes(style) || !Number.isFinite(weight) || weight < 1 || weight > 1000 ||
 		!Number.isFinite(stretch) || stretch <= 0 || stretch > 1000) return null;
 	const result = {family, style, weight, stretch};
+	if (value.subsetted != null && typeof value.subsetted !== 'boolean') return null;
+	if (value.subsetted === true || value.subset?.subset === true) result.subsetted = true;
 	if (value.weightRange != null) {
 		const range = value.weightRange;
 		if (!Array.isArray(range) || range.length !== 2 || range.some(number => !Number.isFinite(number) || number < 1 || number > 1000) || range[0] > range[1]) return null;
@@ -44,6 +51,25 @@ function faceOf(value) {
 		if (!/^f[0-9a-f]{24}$/.test(value.sourceId)) return null;
 		result.sourceId = value.sourceId;
 	}
+	if (value.license != null) {
+		const license = value.license;
+		if (!license || !['OFL-1.0', 'OFL-1.1', 'Apache-2.0', 'Ubuntu-font-1.0'].includes(license.id) ||
+			typeof license.text !== 'string' || !license.text.trim() || new TextEncoder().encode(license.text).length > 128 * 1024 ||
+			typeof license.url !== 'string' || typeof license.sri !== 'string' || !/^sha384-[A-Za-z0-9+/]{64}$/.test(license.sri)) return null;
+		let url;
+		try { url = new URL(license.url); } catch (_) { return null; }
+		if (url.protocol !== 'https:' || url.username || url.password || url.search || url.hash) return null;
+		result.license = {id: license.id, text: license.text, url: license.url, sri: license.sri};
+	}
+	if (value.origin != null) {
+		const origin = value.origin;
+		if (!result.license || result.subsetted || !origin || origin.catalog !== 'google-fonts' ||
+			typeof origin.family !== 'string' || !/^[a-z0-9][a-z0-9-]{0,95}$/.test(origin.family) ||
+			typeof origin.version !== 'string' || !origin.version || origin.version.length > 128 || /[\u0000-\u001f\u007f]/u.test(origin.version) ||
+			typeof origin.file !== 'string' || !/^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,127}\.woff2$/.test(origin.file) ||
+			typeof origin.sri !== 'string' || !/^sha384-[A-Za-z0-9+/]{64}$/.test(origin.sri)) return null;
+		result.origin = {catalog: origin.catalog, family: origin.family, version: origin.version, file: origin.file, sri: origin.sri};
+	}
 	return result;
 }
 
@@ -63,7 +89,7 @@ export function readFontAssets(markdown, parser) {
 		else if (source[at] === '\n') starts.push(at + 1);
 	}
 	md.block.parse(frame.body.replace(/\r\n?/g, '\n').replace(/\0/g, '\ufffd'), md, env, tokens);
-	const labels = new Set(), faces = new Set();
+	const labels = new Set(), faces = new Set(), metadata = new Map(), faceMetadata = new Map(), subsetUrls = new Set();
 	for (const token of tokens) {
 		if (token.type !== 'reference_definition' || !token.map) continue;
 		const id = token.meta.label, first = !labels.has(id);
@@ -79,17 +105,32 @@ export function readFontAssets(markdown, parser) {
 		if (!match) continue;
 		const label = md.utils.unescapeAll(match[1]);
 		if (!data) { refused.push({name: label, reason: 'The font reference must contain an embedded font.'}); continue; }
-		let metadata = {family: label.slice(5)};
+		let definitionMetadata = {family: label.slice(5)};
 		if (definition.title) {
-			try { metadata = JSON.parse(definition.title); }
+			try { definitionMetadata = JSON.parse(definition.title); }
 			catch (_) { refused.push({name: label, reason: 'The font reference has invalid metadata.'}); continue; }
 		}
-		const face = faceOf(metadata);
+		const face = faceOf(definitionMetadata);
 		if (!face) { refused.push({name: label, reason: 'The font reference has invalid metadata.'}); continue; }
 		const key = fontAssetKey(face), active = first && !faces.has(key);
+		const conflict = sourceMetadataFields.find(field => face[field] && [metadata.get(url)?.[field], faceMetadata.get(key)?.[field]]
+			.some(prior => prior && JSON.stringify(prior) !== JSON.stringify(face[field])));
+		if (conflict) { refused.push({name: label, reason: 'The font references have conflicting ' + conflict + ' metadata.'}); continue; }
+		if (face.subsetted && metadata.get(url)?.origin || face.origin && subsetUrls.has(url)) {
+			refused.push({name: label, reason: 'A font subset cannot claim an original catalog file.'}); continue;
+		}
+		metadata.set(url, {...metadata.get(url), ...sourceMetadata(face)});
+		faceMetadata.set(key, {...faceMetadata.get(key), ...sourceMetadata(face)});
+		if (face.subsetted) subsetUrls.add(url);
 		const row = {...face, ...data, url, label, id, key, source: raw, start, end, next, active, topLevel: token.level === 0};
 		blocks.push(row);
 		if (active) { assets.push(row); faces.add(key); }
+	}
+	for (let index = 0; index < assets.length; index++) {
+		const asset = assets[index], declared = metadata.get(asset.url);
+		for (const field of sourceMetadataFields) if (!asset[field] && declared?.[field])
+			assets[index] = {...assets[index], [field]: declared[field]};
+		if (subsetUrls.has(asset.url) && !asset.subsetted) assets[index] = {...assets[index], subsetted: true};
 	}
 	return {assets, blocks, refused, references: env.references || Object.create(null)};
 }
@@ -113,12 +154,25 @@ function escapeFontLabel(label) {
 }
 
 export function writeFontAssets(markdown, assets, parser) {
-	const source = String(markdown ?? ''), md = parserFor(parser), index = readFontAssets(source, md), wanted = new Map();
+	const source = String(markdown ?? ''), md = parserFor(parser), index = readFontAssets(source, md), wanted = new Map(), metadata = new Map(), subsetUrls = new Set();
 	for (const asset of assets || []) {
-		const key = fontAssetKey(asset);
+		const key = fontAssetKey(asset), face = faceOf(asset);
 		if (!key || !fontDataUrl(asset?.url)) throw new TypeError('font: invalid embedded asset');
 		if (wanted.has(key) && wanted.get(key).url !== asset.url) throw new TypeError('font: one file owns each family face');
+		const conflict = sourceMetadataFields.find(field => face[field] && metadata.get(asset.url)?.[field] &&
+			JSON.stringify(metadata.get(asset.url)[field]) !== JSON.stringify(face[field]));
+		if (conflict) throw new TypeError('font: conflicting ' + conflict + ' metadata');
+		if (face.subsetted && metadata.get(asset.url)?.origin || face.origin && subsetUrls.has(asset.url))
+			throw new TypeError('font: a subset cannot claim an original catalog file');
+		metadata.set(asset.url, {...metadata.get(asset.url), ...sourceMetadata(face)});
+		if (face.subsetted) subsetUrls.add(asset.url);
 		wanted.set(key, asset);
+	}
+	for (const [key, asset] of wanted) {
+		const declared = metadata.get(asset.url);
+		for (const field of sourceMetadataFields) if (!asset[field] && declared?.[field])
+			wanted.set(key, {...wanted.get(key), [field]: declared[field]});
+		if (subsetUrls.has(asset.url) && !asset.subsetted) wanted.set(key, {...wanted.get(key), subsetted: true});
 	}
 	const edits = [], consumed = new Set(), labels = new Set(Object.keys(index.references));
 	const retired = index.assets.filter(row => !wanted.has(row.key));

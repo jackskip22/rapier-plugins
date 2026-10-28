@@ -162,13 +162,22 @@ export function assetURL(value) {
   return url.href;
 }
 
+function pictureCeiling(limit) {
+  if (!Number.isSafeInteger(limit) || limit < 1) throw refusal('asset_bytes_invalid');
+  return Math.min(limit, LIMITS.pictureBytes);
+}
 export function assetBytes(value, limit = LIMITS.pictureBytes) {
   if (!(value instanceof Uint8Array) || !value.byteLength) throw refusal('asset_bytes_invalid');
-  if (value.byteLength > Math.min(limit, LIMITS.pictureBytes)) throw refusal('picture_too_large');
+  if (value.byteLength > pictureCeiling(limit)) throw refusal('picture_too_large');
   return value;
 }
 export async function bytesHash(bytes) {
   return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), n => n.toString(16).padStart(2, '0')).join('');
+}
+function ownedPicture(bytes) {
+  const copy = new Uint8Array(bytes.byteLength);
+  copy.set(bytes);
+  return copy;
 }
 export function externalImage(raw, asset, url) {
   if (!url) return raw;
@@ -187,15 +196,19 @@ export function createAssetBroker({current, send}) {
     if (identity !== now.identity) { retained.clear(); retainedBytes = 0; identity = now.identity; }
     return now;
   }
+  function admitted(now) {
+    return {identity: now.identity, generation: now.generation, connected: now.connected,
+      granted: now.granted, pictureBytes: now.pictureBytes, baseRevision: now.baseRevision};
+  }
   function cancel(code = 'asset_disconnected') { pending?.finish({code}); }
   async function request(asset) {
-    const state = scope(), bytes = assetBytes(asset.bytes, state.pictureBytes);
+    const state = admitted(scope()), bytes = assetBytes(asset.bytes, state.pictureBytes);
     if (!state.granted) return {code: 'asset_not_granted'};
     if (!state.connected) return {code: 'asset_disconnected'};
     if (pending) return {code: 'asset_busy'};
     if (!ASSET_TYPES.includes(asset.codec)) throw refusal('asset_media_type_invalid');
     if (retained.size >= 1024 || retainedBytes + bytes.byteLength > 25 * 1024 * 1024) return {code: 'asset_cache_full'};
-    const kept = {...asset, bytes: bytes.slice()};
+    const kept = {...asset, bytes: ownedPicture(bytes)};
     let resolve;
     const job = new Promise(yes => { resolve = yes; });
     const row = {state, asset: kept, requestId: crypto.randomUUID(), timer: null, bytesSha256: '',
