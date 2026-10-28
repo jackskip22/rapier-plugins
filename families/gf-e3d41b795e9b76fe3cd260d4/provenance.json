@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "BIZ UDGothic",
+  "sourceRank": 155,
+  "sourcePosition": 313,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bizudgothic/METADATA.pb",
+    "sri": "sha384-cktM+Pk59AWJSM8tDSm/scoML+bLAyMNDTxFex8Z3Vdss91mPnhJMxtKc+m+gKsx"
+  },
+  "files": [
+    {
+      "name": "font-01260d16fd21e01818000be3e829903b4c67d6fd568c7fa57dbde4747a7fe2572765f077ac6cda53a3129938f0a547ea.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/bizudgothic/BIZUDGothic-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bizudgothic/BIZUDGothic-Bold.ttf",
+      "sourceBytes": 4638128,
+      "sourceSri": "sha384-VuUQjk26SP+Gb0vz1fNQse7Am8cDmcx+uSWLOs5SMviyIdc8lAmVyg4EvxNfYuB+",
+      "bytes": 2240760,
+      "sri": "sha384-ASYNFv0h4BgYAAvj6CmQO0xn1v1WjH+lfb3kdHp/4lcnZfB3rGzaU6MSmTjwpUfq",
+      "axes": [],
+      "cmapCodepoints": 11741,
+      "glyphs": 13932
+    },
+    {
+      "name": "font-6fd244a3f46f9e0ff97a601b923c534457c2f28619a67e1799b782c2ce6fcfb8ff9b44415868d1af55485123ade2252a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bizudgothic/BIZUDGothic-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bizudgothic/BIZUDGothic-Regular.ttf",
+      "sourceBytes": 4667376,
+      "sourceSri": "sha384-b4KQcMrZAlTQOANBxZH1AFxlLF0AF0c4spkzLUBYtbQLwYUtgKwBqkFYVxqtPnKb",
+      "bytes": 2199392,
+      "sri": "sha384-b9JEo/Rvng/5emAbkjxTRFfC8oYZpn4XmbeCws5vz7j/m0RBWGjRr1VIUSOt4iUq",
+      "axes": [],
+      "cmapCodepoints": 11741,
+      "glyphs": 13932
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bizudgothic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bizudgothic/OFL.txt",
+    "bytes": 4408,
+    "sri": "sha384-uh4VPZpnQEZq7MLyEZ+MUambWjzIAgJ4An5xYFWYFBEtBEotQX3iwFmvQkdNNMlY"
+  }
+}

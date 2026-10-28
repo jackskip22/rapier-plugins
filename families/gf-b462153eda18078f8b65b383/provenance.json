@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Zen Kaku Gothic Antique",
+  "sourceRank": 228,
+  "sourcePosition": 454,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicantique/METADATA.pb",
+    "sri": "sha384-0zyIjGz7uq9mDitgpCXegfwfa5rXzDfwldahYxvbYvTm5dr3DqN322O9y+BDcTYl"
+  },
+  "files": [
+    {
+      "name": "font-26726f38c441096a1aac8e5468826058d5d7a8b3ea87ed1f8bbeba37eb62c0b31c743af4393cb67b6f8961d534fff933.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicantique/ZenKakuGothicAntique-Black.ttf",
+      "sourceBytes": 2308740,
+      "sourceSri": "sha384-Ek1nkPiQ5BHh0aYqw3bZl9Zp2cITIA6EDQ4bZVh7l9kUz8IvbHt6+EdwzeBMT6eY",
+      "bytes": 1050064,
+      "sri": "sha384-JnJvOMRBCWoarI5UaIJgWNXXqLPqh+0fi766N+tiwLMcdDr0OTy2e2+JYdU0//kz",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    },
+    {
+      "name": "font-6668c9415c50339b8a504588344bf55ca196414833b1b29e9d0bb98e3c7e1767544425761d1be13190028eade29b634e.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicantique/ZenKakuGothicAntique-Bold.ttf",
+      "sourceBytes": 2324476,
+      "sourceSri": "sha384-LXusfveN/pbcjEGQnPbMO8FNlvTyklrJsMqqGO6LhUc7p/GiJeHyioQ5MhaAUkWb",
+      "bytes": 1085852,
+      "sri": "sha384-ZmjJQVxQM5uKUEWINEv1XKGWQUgzsbKenQu5jjx+F2dURCV2HRvhMZACjq3im2NO",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    },
+    {
+      "name": "font-f79efc374f2c9482458ae06caad5494fe2d7bf7d3458840c119d723c2096353106d4967027e7fdb86aabe600720a7cde.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicantique/ZenKakuGothicAntique-Light.ttf",
+      "sourceBytes": 2184344,
+      "sourceSri": "sha384-42g6Y+lOJmxFagZaRotehWZHibHuvO0kx6TKfFh2FOB66ph/tIYPCPzVsEXyyxe3",
+      "bytes": 891600,
+      "sri": "sha384-9578N08slIJFiuBsqtVJT+LXv300WIQMEZ1yPCCWNTEG1JZwJ+f9uGqr5gByCnze",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    },
+    {
+      "name": "font-dbcc319e5ca728d66e13dbf59461e1a06fd4f98fa3ce49a300801813cba588a15185d60dc18dd3f9e7b5c902e75bad75.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicantique/ZenKakuGothicAntique-Medium.ttf",
+      "sourceBytes": 2337952,
+      "sourceSri": "sha384-psDt+x+e2fcG/cjNxEVem1+EhC1Ib/GLOys+UlubRdqXjBVNBxePH8InwpmvL19I",
+      "bytes": 1067440,
+      "sri": "sha384-28wxnlynKNZuE9v1lGHhoG/U+Y+jzkmjAIAYE8uliKFRhdYNwY3T+ee1yQLnW611",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    },
+    {
+      "name": "font-69e8baf50163bb6d9a146636e16ab5cbcca0ac8cf737c49c037de328a19bc78280189e0b12462d55c247b72c972e4a4b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zenkakugothicantique/ZenKakuGothicAntique-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicantique/ZenKakuGothicAntique-Regular.ttf",
+      "sourceBytes": 2370412,
+      "sourceSri": "sha384-GRhF0yiI50mRPVz5Q1tkYN6LkH9+zxKQgR4J6kU7RVP4rFnjBj0C8gv7frPb+Kwk",
+      "bytes": 1053664,
+      "sri": "sha384-aei69QFju22aFGY24Wq1y8ygrIz3N8ScA33jKKGbx4KAGJ4LEkYtVcJHtyyXLkpL",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zenkakugothicantique/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicantique/OFL.txt",
+    "bytes": 4401,
+    "sri": "sha384-JdGx6SpweG19QBEVp0DUDZWK10Zj4Ly9n3up8R7Er0gDAoLtEz9Qo5fUmMUZTGEE"
+  }
+}

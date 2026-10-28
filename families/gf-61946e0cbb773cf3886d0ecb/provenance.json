@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Sans TC",
+  "sourceRank": 28,
+  "sourcePosition": 66,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanstc/METADATA.pb",
+    "sri": "sha384-Ag0YNlNo8ftJj5/U6pj5tT/mLGBrUUIfHyPjXibd7uWWB9+1vO1kkhioUIylPbIs"
+  },
+  "files": [
+    {
+      "name": "font-6e1bc93edbb70dacddbd0d525c03b71dce0a047afc34b9a81284575b530a63a5c468a3d5be63f69a5e2a9b1ec64af37c.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/notosanstc/NotoSansTC[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanstc/NotoSansTC%5Bwght%5D.ttf",
+      "sourceBytes": 11941968,
+      "sourceSri": "sha384-dNfHOiIklu6gxkOvVMYrKCsXFYsUhYq1Sh4d96s5+RDYjEHfQ7SY5lfYtXBVfcWn",
+      "bytes": 5424076,
+      "sri": "sha384-bhvJPtu3DazdvQ1SXAO3Hc4KBHr8NLmoEoRXW1MKY6XEaKPVvmP2ml4qmx7GSvN8",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 20745,
+      "glyphs": 20950
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanstc/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanstc/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-wm46GclKovWLGccokvZ+eK1MuCbFfYi5WI9m9/8l1QhHAdwaA34I2yzmBk+nmjwb"
+  }
+}

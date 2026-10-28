@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Zen Kaku Gothic New",
+  "sourceRank": 110,
+  "sourcePosition": 224,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicnew/METADATA.pb",
+    "sri": "sha384-2kC1Cs8sCrzCuBI4UoaGKBcTx5NLcICpTPUBwyBvjxq1ci2GclkmQKXHXlRteY7O"
+  },
+  "files": [
+    {
+      "name": "font-974d944d7c50200b796313060492a90539b505536ab57a04314b3c8c5af24ae7a44cffa3b43b2f6c6e22ad44b927ec23.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/zenkakugothicnew/ZenKakuGothicNew-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicnew/ZenKakuGothicNew-Black.ttf",
+      "sourceBytes": 2300600,
+      "sourceSri": "sha384-uV1bvqP/lwWgzLHIHFnOa4somifhpfbx/xNZGoLl7BciSowHSS3/eXFk3zOPipjJ",
+      "bytes": 1047028,
+      "sri": "sha384-l02UTXxQIAt5YxMGBJKpBTm1BVNqtXoEMUs8jFrySuekTP+jtDsvbG4irUS5J+wj",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    },
+    {
+      "name": "font-9d13c8dedc06ea79e9af61b9b74d6111c34a3f503af2b4a77f611876436b027eae58433ef3539fef2c80cf686b8d7cfe.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/zenkakugothicnew/ZenKakuGothicNew-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicnew/ZenKakuGothicNew-Bold.ttf",
+      "sourceBytes": 2314424,
+      "sourceSri": "sha384-nASb9qP+guSVKU+6WlwYsXAnvIpsHvdTCNqVF1lfF5IJh2IwGuaJSXa4nyK2TZYo",
+      "bytes": 1083088,
+      "sri": "sha384-nRPI3twG6nnpr2G5t01hEcNKP1A68rSnf2EYdkNrAn6uWEM+81Of7yyAz2hrjXz+",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    },
+    {
+      "name": "font-217d4f65e3589eb2f3dc0690f8adad523a21f193094075180ee0c7613f6b0deeb2b8026fa342bf0df3a8930c322be6dc.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/zenkakugothicnew/ZenKakuGothicNew-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicnew/ZenKakuGothicNew-Light.ttf",
+      "sourceBytes": 2181020,
+      "sourceSri": "sha384-lT5O01/j93I/pHtww6T8/VHaCFESeVNZZ03Pi18tX7LgAVqHObQYIS7185bkOnJF",
+      "bytes": 890856,
+      "sri": "sha384-IX1PZeNYnrLz3AaQ+K2tUjoh8ZMJQHUYDuDHYT9rDe6yuAJvo0K/DfOokwwyK+bc",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    },
+    {
+      "name": "font-0aaa16c19ffabd49408739e72ce8fea1f28f154ab1ae5fbd36c4def8c881ffadabdd3fb34d502e750d19634830079f2d.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/zenkakugothicnew/ZenKakuGothicNew-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicnew/ZenKakuGothicNew-Medium.ttf",
+      "sourceBytes": 2328176,
+      "sourceSri": "sha384-VYUWMP9mLxWmyAKDhNywSkfwxjCPzuFJQ1H91/vt5B5MRvCLI13DXzs1oJ42b6z8",
+      "bytes": 1066272,
+      "sri": "sha384-CqoWwZ/6vUlAhznnLOj+ofKPFUqxrl+9NsTe+MiB/62r3T+zTVAudQ0ZY0gwB58t",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    },
+    {
+      "name": "font-b4105600e8448f96e3da7cdcb621d0c3b887e5e1fa55f519c67dd87c0d473ccfebf18779d805bf62c82416aa9615d820.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zenkakugothicnew/ZenKakuGothicNew-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicnew/ZenKakuGothicNew-Regular.ttf",
+      "sourceBytes": 2360248,
+      "sourceSri": "sha384-VqWGVcjZoO1qq87VWfBlDMVSfPpVYwrkftcAkEYgbUSYLf9trDwdVrGVm7HjEVc7",
+      "bytes": 1051968,
+      "sri": "sha384-tBBWAOhEj5bj2nzctiHQw7iH5eH6VfUZxn3YfA1HPM/r8Yd52AW/YsgkFqqWFdgg",
+      "axes": [],
+      "cmapCodepoints": 7737,
+      "glyphs": 7792
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zenkakugothicnew/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkakugothicnew/OFL.txt",
+    "bytes": 4401,
+    "sri": "sha384-JdGx6SpweG19QBEVp0DUDZWK10Zj4Ly9n3up8R7Er0gDAoLtEz9Qo5fUmMUZTGEE"
+  }
+}
