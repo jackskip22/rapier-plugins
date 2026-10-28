@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Gaegu",
+  "sourceRank": 193,
+  "sourcePosition": 391,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gaegu/METADATA.pb",
+    "sri": "sha384-i25z9+QIWGexQ7AFyM4WRo3u3qY1IeioDPNcWEwEMOWwjr0v8tY8kX3LwP1TxCDU"
+  },
+  "files": [
+    {
+      "name": "font-af83dc4e8389fc6416133b17f204b04bbc64918ed20ffce79d38d6359dcd1e564fdcd340f0b7b1237d8da40716ddeeac.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/gaegu/Gaegu-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gaegu/Gaegu-Bold.ttf",
+      "sourceBytes": 2962664,
+      "sourceSri": "sha384-2PXilDgWHGebBmMx1NVvjPiGYird8q6lnpQG4nC8UQFPxVa5lullCIikrdJfdAXj",
+      "bytes": 485612,
+      "sri": "sha384-r4PcToOJ/GQWEzsX8gSwS7xkkY7SD/znnTjWNZ3NHlZP3NNA8LexI32NpAcW3e6s",
+      "axes": [],
+      "cmapCodepoints": 2593,
+      "glyphs": 2594
+    },
+    {
+      "name": "font-60892ca1af6cd1d982653ffc4edef9c5287788600e3c630d1b18c96ff9735753b4c657a7c83d973eedd75b0e8b288307.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/gaegu/Gaegu-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gaegu/Gaegu-Light.ttf",
+      "sourceBytes": 3213004,
+      "sourceSri": "sha384-FadTBReFx7vUKwv7MWDE05TB1Y+YFI3PwtP2arnPHDTQxBn2Nhp88yofPLTmLt8s",
+      "bytes": 482100,
+      "sri": "sha384-YIksoa9s0dmCZT/8Tt75xSh3iGAOPGMNGxjJb/lzV1O0xlenyD2XPu3XWw6LKIMH",
+      "axes": [],
+      "cmapCodepoints": 2593,
+      "glyphs": 2594
+    },
+    {
+      "name": "font-d9504fe315191901958c91505579c2ceb759b5f074b94dcdd168e791e3f01c943f7d3dff56d30c6f25131408157ec815.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gaegu/Gaegu-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gaegu/Gaegu-Regular.ttf",
+      "sourceBytes": 3165816,
+      "sourceSri": "sha384-wlS9jKsXAj183OCFgYqZenxc4yP0TQow4IgP70P2YJ28jNTspOhsua5nY/AkwpY4",
+      "bytes": 290592,
+      "sri": "sha384-2VBP4xUZGQGVjJFQVXnCzrdZtfB0uU3N0WjnkePwHJQ/fT3/VtMMbyUTFAgVfsgV",
+      "axes": [],
+      "cmapCodepoints": 2593,
+      "glyphs": 2594
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gaegu/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gaegu/OFL.txt",
+    "bytes": 4344,
+    "sri": "sha384-dQKpTtEFrywzDH051EnNgIc1NLB7ZaU8WB9GnuE4atFRNGQvz+0jM7Y9xQgAI7yO"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Yusei Magic",
+  "sourceRank": 509,
+  "sourcePosition": 946,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yuseimagic/METADATA.pb",
+    "sri": "sha384-ZmUeio/iDMw6NWNm4T7UGSg25x9Qmwn6wd/90iYQT8qxN7FdZ0MDe8zfNdYPvhXB"
+  },
+  "files": [
+    {
+      "name": "font-d43ecfc4753ed7142547a098ddbb6de01c609b0bfa7d8f6044769ea4945f6fcd177ff86bb6dd474fffd6866cef30c5c6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/yuseimagic/YuseiMagic-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yuseimagic/YuseiMagic-Regular.ttf",
+      "sourceBytes": 3134968,
+      "sourceSri": "sha384-GZGvbzRdN07Uf0uD1EC4orZargcoxQmzlLuZokzTuEdkYfJHqCx8hnkMrgsTTqQp",
+      "bytes": 964444,
+      "sri": "sha384-1D7PxHU+1xQlR6CY3btt4Bxgmwv6fY9gRHaepJRfb80Xf/hrtt1HT//WhmzvMMXG",
+      "axes": [],
+      "cmapCodepoints": 7566,
+      "glyphs": 8073
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/yuseimagic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yuseimagic/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-M6Brgk+4FmDGnvR/2aeYF2+Lg8ueNsL+FcRx7Ha1HXjPmcgD2DIjo6cadaBXWhj2"
+  }
+}

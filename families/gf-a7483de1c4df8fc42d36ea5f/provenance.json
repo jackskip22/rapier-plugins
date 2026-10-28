@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "name": "Google Sans Flex",
+  "sourceRank": 72,
+  "sourcePosition": 154,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/googlesansflex/METADATA.pb",
+    "sri": "sha384-MqWzWJF+iP+XL6uRYS9OQ7WBzFD8kWd6YnYuE3ax/iERk5LYaxCE1OgBm9J0dWhW"
+  },
+  "files": [
+    {
+      "name": "font-49768c91fcd4f6687e367406dd3ca05f8adab6f17a9c21df1aafaf06ad60f2679c3482aeab3dc3200d83562dd9f1a1c7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/googlesansflex/GoogleSansFlex[ROND,opsz,slnt,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/googlesansflex/GoogleSansFlex%5BROND%2Copsz%2Cslnt%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 3910784,
+      "sourceSri": "sha384-QekwAkK/4HCOqeWQiNR3HLd6F3lUyLnfmRf3LMBP2QZn/EAu4JSTkqHDmqmbMIRn",
+      "bytes": 1452104,
+      "sri": "sha384-SXaMkfzU9mh+NnQG3TygX4ratvF6nCHfGq+vBq1g8mecNIKuqz3DIA2DVi3Z8aHH",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 1,
+          "default": 18,
+          "max": 144,
+          "name": "Optical Size"
+        },
+        {
+          "tag": "wdth",
+          "min": 25,
+          "default": 100,
+          "max": 151,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 1,
+          "default": 400,
+          "max": 1000,
+          "name": "Weight"
+        },
+        {
+          "tag": "ROND",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Roundness"
+        },
+        {
+          "tag": "slnt",
+          "min": -10,
+          "default": 0,
+          "max": 0,
+          "name": "Slant"
+        }
+      ],
+      "cmapCodepoints": 541,
+      "glyphs": 686
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/googlesansflex/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/googlesansflex/OFL.txt",
+    "bytes": 4488,
+    "sri": "sha384-NUNqlZI+zBkWRmmkyVeUNbhnw3GnWSkqyzu8BdZBC3B/Wd0XdUol/Y+rs1VcD73B"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "name": "Mukta",
+  "sourceRank": 74,
+  "sourcePosition": 156,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/METADATA.pb",
+    "sri": "sha384-WXeNaMhXUwjD0u0uRUwNcP10fu6sEUMWJxy5QY8XpOIh22to5/dR0uxfVsrPIZ+l"
+  },
+  "files": [
+    {
+      "name": "font-d833889ec23774eab2cfec769b18ad140320b3c563b38e82198d93694fd95ad7e472f123ba77fbabc240184323d199f0.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/mukta/Mukta-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/Mukta-Bold.ttf",
+      "sourceBytes": 418416,
+      "sourceSri": "sha384-VLBZDrpUyK7NVS0V4YrTqeNbisUALZBPMTc0M4mYOhsHDxUQBLz4rpa6tGvfyRK9",
+      "bytes": 144692,
+      "sri": "sha384-2DOInsI3dOqyz+x2mxitFAMgs8Vjs46CGY2TaU/ZWtfkcvEjunf7q8JAGEMj0Znw",
+      "axes": [],
+      "cmapCodepoints": 652,
+      "glyphs": 1368
+    },
+    {
+      "name": "font-8c906e5ac7876709409e90b4dc84724c19cdc1585a13dc34e171288b321a4a984149ccf8c3ed3233e8606e2945020125.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/mukta/Mukta-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/Mukta-ExtraBold.ttf",
+      "sourceBytes": 423168,
+      "sourceSri": "sha384-2vo9pzNvP3GwNk7IcnvWOLQHQGqvzBzgju7rk8Y5hG7M+ai9GurzndELo5L0fSVv",
+      "bytes": 138628,
+      "sri": "sha384-jJBuWseHZwlAnpC03IRyTBnNwVhaE9w04XEoizIaSphBScz4w+0yM+hgbilFAgEl",
+      "axes": [],
+      "cmapCodepoints": 652,
+      "glyphs": 1368
+    },
+    {
+      "name": "font-b8f62f6cd33ce3791bae58823e117c858ff3ec92e76fa2cf87fee5ba4a80b9ecbeeb5c804354d3cd9dfb483cbee37466.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/mukta/Mukta-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/Mukta-ExtraLight.ttf",
+      "sourceBytes": 410644,
+      "sourceSri": "sha384-hdR2DAlk1W0+AENrsR7EwE9LAP0xdEt/RDUDbJ09zpqwEtKPR8uM9sQzafKjgPo7",
+      "bytes": 132808,
+      "sri": "sha384-uPYvbNM843kbrliCPhF8hY/z7JLnb6LPh/7lukqAuey+61yAQ1TTzZ37SDy+43Rm",
+      "axes": [],
+      "cmapCodepoints": 652,
+      "glyphs": 1368
+    },
+    {
+      "name": "font-3acf0a6320a9be34077af7f5e1477d143508e4f1b88cc372a94e9ba52b0ba0a6d16cd9bd37f5085d1f792f52a11c566b.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/mukta/Mukta-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/Mukta-Light.ttf",
+      "sourceBytes": 405188,
+      "sourceSri": "sha384-lA0+b/ai3YfZ8t3y5dJfdK6BP5UhHIy1I3qyRj59B2C54c3uORC4K1R4Tmk2ZtG+",
+      "bytes": 137948,
+      "sri": "sha384-Os8KYyCpvjQHevf14Ud9FDUI5PG4jMNyqU6bpSsLoKbRbNm9N/UIXR95L1KhHFZr",
+      "axes": [],
+      "cmapCodepoints": 652,
+      "glyphs": 1368
+    },
+    {
+      "name": "font-24db67fee45357f6c009b5b21b7ef7575fc35f86153c93f24c81ae684065d959170f0ef5066e1277bbfeb80699dbbef3.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/mukta/Mukta-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/Mukta-Medium.ttf",
+      "sourceBytes": 419736,
+      "sourceSri": "sha384-x34SiMOhz299FZDn3nsmIjnDdLs8E7G1B+oc1sy6OAPfEDTE15we9ptPTDFkayTO",
+      "bytes": 144920,
+      "sri": "sha384-JNtn/uRTV/bACbWyG373V1/DX4YVPJPyTIGuaEBl2VkXDw71Bm4Sd7v+uAaZ277z",
+      "axes": [],
+      "cmapCodepoints": 652,
+      "glyphs": 1368
+    },
+    {
+      "name": "font-314be83640b3cba5b9cfd2898deec88f3f5e513e71377b4363b6d9fc08e7fc5a90e2f969f54b3df041aad392f5d26785.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mukta/Mukta-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/Mukta-Regular.ttf",
+      "sourceBytes": 432248,
+      "sourceSri": "sha384-jf0rA4Ia7bf9P1fKIUZ3hDM01PegJPSrfb7YR3ipshF0kHLCcJEqdDOeiNv8Mfbo",
+      "bytes": 137680,
+      "sri": "sha384-MUvoNkCzy6W5z9KJje7Ijz9eUT5xN3tDY7bZ/Ajn/FqQ4vlp9Us98EGq05L10meF",
+      "axes": [],
+      "cmapCodepoints": 652,
+      "glyphs": 1368
+    },
+    {
+      "name": "font-8d58812f6a3b559514f6cd435a86c6a061a7a3b025e6259f456ae9c821a29e73ec897cbf08a4b7a07db731bd7a79ca84.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/mukta/Mukta-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/Mukta-SemiBold.ttf",
+      "sourceBytes": 411160,
+      "sourceSri": "sha384-rcNoYJvqn60M9bW7h5QwJNMGn/N7LbMCnHirG2vq0atwykLAcVc0Z4Sef8Y1PLV7",
+      "bytes": 141740,
+      "sri": "sha384-jViBL2o7VZUU9s1DWobGoGGno7Al5iWfRWrpyCGinnPsiXy/CKS3oH23Mb16ecqE",
+      "axes": [],
+      "cmapCodepoints": 652,
+      "glyphs": 1368
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mukta/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mukta/OFL.txt",
+    "bytes": 4367,
+    "sri": "sha384-vi/swVoXNbWipwJoxaJJPgYkozJ1d/iL/pYWKQfKOf7NoZZQL7sSTQRgtOjDExzq"
+  }
+}

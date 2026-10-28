@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Gentium Plus",
+  "sourceRank": 889,
+  "sourcePosition": 1385,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gentiumplus/METADATA.pb",
+    "sri": "sha384-yaR2zh+qR1EKTA1sOs3y45O5BwT5ZDFWzqaPqSj2qK+2Mg9CDGnr228HXhenUZ4c"
+  },
+  "files": [
+    {
+      "name": "font-a38f0a77d9392308500505308e6f94fdbf322c90c177e5f27db5ab7013d39ec176a53e724dd438c1a9ccd3520636de14.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/gentiumplus/GentiumPlus-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gentiumplus/GentiumPlus-Bold.ttf",
+      "sourceBytes": 824904,
+      "sourceSri": "sha384-yxqqcIgo1XwhwaDRoGSF3w35bpTShLNNxpa8wIt8zqJEka/9aBR51k9K49H1js83",
+      "bytes": 317844,
+      "sri": "sha384-o48Kd9k5IwhQBQUwjm+U/b8yLJDBd+XyfbWrcBPTnsF2pT5yTdQ4wanM01IGNt4U",
+      "axes": [],
+      "cmapCodepoints": 2783,
+      "glyphs": 4307
+    },
+    {
+      "name": "font-df8ad593c82f2d36bbb30b0e79751dd61101d61e6916e08b33a6c09416a6a507f67afe4962500770eae5a5a201481c10.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/gentiumplus/GentiumPlus-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gentiumplus/GentiumPlus-BoldItalic.ttf",
+      "sourceBytes": 890860,
+      "sourceSri": "sha384-J0K0HxRXQ9i07+fLUByn9d+GUwEBH+vjybI00TjXq8Pslf4/Uhd61ngmExsI6S6+",
+      "bytes": 347092,
+      "sri": "sha384-34rVk8gvLTa7swsOeXUd1hEB1h5pFuCLM6bAlBampQf2ev5JYlAHcOrlpaIBSBwQ",
+      "axes": [],
+      "cmapCodepoints": 2783,
+      "glyphs": 4307
+    },
+    {
+      "name": "font-c947d714ee54e2f2bd39236e9320ba30e4133da5b1eb05dd6b5be4d119090c148621625afabb7050b0911d358c9531fb.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/gentiumplus/GentiumPlus-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gentiumplus/GentiumPlus-Italic.ttf",
+      "sourceBytes": 873104,
+      "sourceSri": "sha384-wK4fIIXUNjrXmMJzQyWD//s3Nq4mImhnUxdyhkR9EXyqB7LJJ3XZpcA5JEINLy3u",
+      "bytes": 323460,
+      "sri": "sha384-yUfXFO5U4vK9OSNukyC6MOQTPaWx6wXda1vk0RkJDBSGIWJa+rtwULCRHTWMlTH7",
+      "axes": [],
+      "cmapCodepoints": 2783,
+      "glyphs": 4307
+    },
+    {
+      "name": "font-692948134d52015ebd356784730232a55fa646a4b451e23ccbbcf58ead20da4a25180dbc2a5914f118315b20979fcd3f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gentiumplus/GentiumPlus-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gentiumplus/GentiumPlus-Regular.ttf",
+      "sourceBytes": 822956,
+      "sourceSri": "sha384-y0ELbDGgYnAAGZiTVr9qyQZY5bxgeEcI5KpApymiD4oLUHH4TpzcHm2da11kHchV",
+      "bytes": 297404,
+      "sri": "sha384-aSlIE01SAV69NWeEcwIypV+mRqS0UeI8y7z1jq0g2kolGA28KlkU8RgxWyCXn80/",
+      "axes": [],
+      "cmapCodepoints": 2783,
+      "glyphs": 4307
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gentiumplus/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gentiumplus/OFL.txt",
+    "bytes": 4507,
+    "sri": "sha384-+xmU8qwVQUY16TE35pk11fBduyNg8SyFtdKoe/porchGcXWIqPZRPpHs70vpQfWi"
+  }
+}

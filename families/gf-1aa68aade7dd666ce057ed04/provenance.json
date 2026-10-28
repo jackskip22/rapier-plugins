@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Zen Kurenaido",
+  "sourceRank": 168,
+  "sourcePosition": 337,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkurenaido/METADATA.pb",
+    "sri": "sha384-37/HDfcoNcKCrDQQzCuuDdmGAfMyBq3n7vgRzkBT7Q+3576PWKHxuePBYU/Pwbig"
+  },
+  "files": [
+    {
+      "name": "font-8339f47478e9408ee0976f44154d0294971492a8ee31c7fbf30b092d4968fb4dbd60287ecf387f6892318ef4d67b0b65.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zenkurenaido/ZenKurenaido-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkurenaido/ZenKurenaido-Regular.ttf",
+      "sourceBytes": 4303112,
+      "sourceSri": "sha384-9nHLHA3BVJY68YDLAILfpIRxFT/52G5joE6I0pjgOnyfmoFKCeeY5ZgJioQ5hqfC",
+      "bytes": 1461424,
+      "sri": "sha384-gzn0dHjpQI7gl29EFU0ClJcUkqjuMcf78wsJLUlo+029YCh+zzh/aJIxjvTWewtl",
+      "axes": [],
+      "cmapCodepoints": 7815,
+      "glyphs": 7867
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zenkurenaido/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenkurenaido/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-09qc/3MToBeHyeqkiP1ncyNconzKSvJwU+fcjiaQyhZ0Vb1zxDHxuIvPfRX+A79Y"
+  }
+}

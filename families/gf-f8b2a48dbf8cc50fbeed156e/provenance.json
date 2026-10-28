@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "name": "Playfair",
+  "sourceRank": 49,
+  "sourcePosition": 112,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfair/METADATA.pb",
+    "sri": "sha384-eEL36VtqMKwLBf7ekReKrukBW7dxzu9ZTjAUb8AmZHJcmo1bIXx5qcsAw8oSqEl3"
+  },
+  "files": [
+    {
+      "name": "font-deae25e0065a1d4e111d069165fab0ef8c6e562c2baf20a52a3e9d916451713baae6339d5ad49480bcd5846a6c3797e3.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/playfair/Playfair-Italic[opsz,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfair/Playfair-Italic%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 1783732,
+      "sourceSri": "sha384-7jrgHzZUkue+gYqhOxoKuqpGUBi+FR4qToXzyPRgJe3iA2ALLyCk601SeSO1F0VM",
+      "bytes": 713524,
+      "sri": "sha384-3q4l4AZaHU4RHQaRZfqw74xuViwrryClKj6dkWRRcTuq5jOdWtSUgLzVhGpsN5fj",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 5,
+          "default": 5,
+          "max": 1200,
+          "name": "Optical size"
+        },
+        {
+          "tag": "wdth",
+          "min": 87.5,
+          "default": 112.5,
+          "max": 112.5,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1112,
+      "glyphs": 2326
+    },
+    {
+      "name": "font-d0ae42276afc425b1d0738c16a69579ca6d4a5c8a6e916745b72cdbaf6be188d0e68c6ee9196042f3c8af1c648d3f40b.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/playfair/Playfair[opsz,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfair/Playfair%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 1776724,
+      "sourceSri": "sha384-Dj0kGRW/x8kUVnd2KAevaaka4xPbwtkqqGRo75GmKOOjVgjlUqM3Xq34OUGGd8lc",
+      "bytes": 653320,
+      "sri": "sha384-0K5CJ2r8QlsdBzjBamlXnKbUpcim6RZ0W3LNuva+GI0OaMbukZYELzyK8cZI0/QL",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 5,
+          "default": 5,
+          "max": 1200,
+          "name": "Optical size"
+        },
+        {
+          "tag": "wdth",
+          "min": 87.5,
+          "default": 112.5,
+          "max": 112.5,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1110,
+      "glyphs": 2316
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playfair/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfair/OFL.txt",
+    "bytes": 4482,
+    "sri": "sha384-Y9W8fvXrI4kmVUHgo/y/yXVzfL1aNuhlVWjnrhjyoFaWHv9TaBnpQrCa36ZfztOx"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Kosugi",
+  "sourceRank": 185,
+  "sourcePosition": 375,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/kosugi/METADATA.pb",
+    "sri": "sha384-oU4wIXjm1YftY9eOhO0dilc9viI+Pa4FDLdlDT3QoAIuSD1AJ/07TcAa0ljyhFAH"
+  },
+  "files": [
+    {
+      "name": "font-eae6ef74afa2a1c3d98787da9ecdb443ae0bbaf1e88e2c2998ddec00a5f58a338278b635386ba9d3dc104a8a0f128b86.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/kosugi/Kosugi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/kosugi/Kosugi-Regular.ttf",
+      "sourceBytes": 2288848,
+      "sourceSri": "sha384-i1HrGI1O8g8gJXL4iBEJj7lE9NjKFkoX0AvqJmslO67XxMTqxM1cWxSSSlfotSPV",
+      "bytes": 1116156,
+      "sri": "sha384-6ubvdK+iocPZh4fans20Q64LuvHojiwpmN3sAKX1ijOCeLY1OGup09wQSooPEouG",
+      "axes": [],
+      "cmapCodepoints": 7526,
+      "glyphs": 7576
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/kosugi/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/kosugi/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

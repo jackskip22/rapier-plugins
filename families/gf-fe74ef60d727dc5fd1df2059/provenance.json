@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "RocknRoll One",
+  "sourceRank": 208,
+  "sourcePosition": 413,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rocknrollone/METADATA.pb",
+    "sri": "sha384-7m9HS66EBQjTpYFMrf/zRFMajMcosQQM0cTF2Sos7E8R7D7M3tVRAfa2iLK3q1BK"
+  },
+  "files": [
+    {
+      "name": "font-f6c3d556142110d0ff14cbe11afeeaa0428c153e63d46d695e11de07c1fa81567b0381464d4eb6b57e058d4045f0b542.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rocknrollone/RocknRollOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rocknrollone/RocknRollOne-Regular.ttf",
+      "sourceBytes": 2682824,
+      "sourceSri": "sha384-UCYJ24vtbHhhAPyxbrf9C1fh+S7BzhekYfY1+b37XotWKTPOt8HYSzrP7RSjTPhT",
+      "bytes": 1165280,
+      "sri": "sha384-9sPVVhQhEND/FMvhGv7qoEKMFT5j1G1pXhHeB8H6gVZ7A4FGTU62tX4FjUBF8LVC",
+      "axes": [],
+      "cmapCodepoints": 8230,
+      "glyphs": 9362
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rocknrollone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rocknrollone/OFL.txt",
+    "bytes": 4488,
+    "sri": "sha384-wwOu1IBB5Jimg8++7+JCwjujclLgkXOOU2E/QfW3xpjyBt6xjQj4dRWaHUUHWs3b"
+  }
+}

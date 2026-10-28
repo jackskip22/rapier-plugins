@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Nanum Gothic",
+  "sourceRank": 71,
+  "sourcePosition": 152,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nanumgothic/METADATA.pb",
+    "sri": "sha384-/kaSpQmH4HWjht72fbGPtNCV0HsknoWNw2uS71XDWxJizvDrR0KKhqKYtR4aU219"
+  },
+  "files": [
+    {
+      "name": "font-7cb58d53bff4960d41eec96a15a897dc3b8657793e011eb626e874794ddb54dd6764b6087cafcdbb8e4d9915c4b59274.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/nanumgothic/NanumGothic-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nanumgothic/NanumGothic-Bold.ttf",
+      "sourceBytes": 2073868,
+      "sourceSri": "sha384-8gfWgnGPv0XA9Ku3Ztq8637gMJT1n1Et+Zhe/BkHaBf2C86XxIYBdtAGqO7yUfPE",
+      "bytes": 440348,
+      "sri": "sha384-fLWNU7/0lg1B7slqFaiX3DuGV3k+AR62Juh0eU3bVN1nZLYIfK/Nu45NmRXEtZJ0",
+      "axes": [],
+      "cmapCodepoints": 11825,
+      "glyphs": 13534
+    },
+    {
+      "name": "font-19bfeec3fd88de30251e96c03523f665563784126b1e1b06a0ae4fb3ec6a399381c8f9d1bfa337f0a24630dce1b2e894.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/nanumgothic/NanumGothic-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nanumgothic/NanumGothic-ExtraBold.ttf",
+      "sourceBytes": 2112720,
+      "sourceSri": "sha384-ZpO5hjXe4jvYc48Q58wdGo/fB6E0+gl2irpQCRszDLbsUMWSXFSCTyFajziUNc+8",
+      "bytes": 402384,
+      "sri": "sha384-Gb/uw/2I3jAlHpbANSP2ZVY3hBJrHhsGoK5Ps+xqOZOByPnRv6M38KJGMNzhsuiU",
+      "axes": [],
+      "cmapCodepoints": 11826,
+      "glyphs": 13671
+    },
+    {
+      "name": "font-5897a8a965680d4d71263fa7ec71ffcd7876cc2bb85785f4752ff4d9ddc7b088377305494985c4ccf8f0ad4060c442d6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/nanumgothic/NanumGothic-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nanumgothic/NanumGothic-Regular.ttf",
+      "sourceBytes": 2054744,
+      "sourceSri": "sha384-9iNVD/2+xFrJXDg9d28QtWgPqj9sq3OTNxHKxBsN6cHslnpQvm5++VjEdfOI8cbn",
+      "bytes": 364240,
+      "sri": "sha384-WJeoqWVoDU1xJj+n7HH/zXh2zCu4V4X0dS/02d3HsIg3cwVJSYXEzPjwrUBgxELW",
+      "axes": [],
+      "cmapCodepoints": 11827,
+      "glyphs": 13297
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/nanumgothic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nanumgothic/OFL.txt",
+    "bytes": 4534,
+    "sri": "sha384-5WCE0W2coA2ClauM9msyBxVpqYHQaXmqh5mN30WbjYBxKVO4zAQ1eGAa1goAvqS+"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Charis SIL",
+  "sourceRank": 295,
+  "sourcePosition": 572,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/charissil/METADATA.pb",
+    "sri": "sha384-cPghZkygEeMinMRA2lp2mtGW6Pyq6rbii8ncgTi25/LCQTl1UvrG4pHwjoExghMs"
+  },
+  "files": [
+    {
+      "name": "font-024e2fd07f9b5a82aafd3ee9585479ef5b38279e087785a880e3fcd63431d3c5899e1c44c41d97a2c5f88c2818b87091.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/charissil/CharisSIL-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/charissil/CharisSIL-Bold.ttf",
+      "sourceBytes": 738488,
+      "sourceSri": "sha384-BWed4xsHDfBhTEr8kJ6nIuMxfNIvOQ62NyZFw+q9XyletoxayOHTFZyfsuf3XUT7",
+      "bytes": 263468,
+      "sri": "sha384-Ak4v0H+bWoKq/T7pWFR571s4J54Id4WogOP81jQx08WJnhxExB2XosX4jCgYuHCR",
+      "axes": [],
+      "cmapCodepoints": 2448,
+      "glyphs": 3609
+    },
+    {
+      "name": "font-c84c02b65e448070443c2afcccb950472b5ec16c624f2e3a247b8a122833099caca4fa1f8ebe3af31be4f46b36d3d8aa.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/charissil/CharisSIL-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/charissil/CharisSIL-BoldItalic.ttf",
+      "sourceBytes": 802588,
+      "sourceSri": "sha384-VG2US9PQPPFq3XEKS336uMVrks2gcq0dcPe/sHdqLboQqZUgFHdHX5pXt1xZIUFS",
+      "bytes": 291156,
+      "sri": "sha384-yEwCtl5EgHBEPCr8zLlQRytewWxiTy46JHuKEigzCZyspPofjr468xvk9Gs209iq",
+      "axes": [],
+      "cmapCodepoints": 2448,
+      "glyphs": 3609
+    },
+    {
+      "name": "font-50a459247db3f31e790fbcd163a974f3a2edc9f13233367f389abe8659501d89e7773266e31b5d83a4fdef0dc71843e9.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/charissil/CharisSIL-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/charissil/CharisSIL-Italic.ttf",
+      "sourceBytes": 775668,
+      "sourceSri": "sha384-tjrKRFzRrw5Kssx3PsKUlYjjmx4isa1fVP6LV6+87nXAJBlmmoP/E7uo2dwaxt9C",
+      "bytes": 285448,
+      "sri": "sha384-UKRZJH2z8x55D7zRY6l086LtyfEyMzZ/OJq+hllQHYnndzJm4xtdg6T97w3HGEPp",
+      "axes": [],
+      "cmapCodepoints": 2448,
+      "glyphs": 3609
+    },
+    {
+      "name": "font-f0959aed87771bfc3beb7df85a573c0956f620b7ad8fc3f00e539512d4649d0fbe9ecf1ec791fd49799cdcbb932e0f4c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/charissil/CharisSIL-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/charissil/CharisSIL-Regular.ttf",
+      "sourceBytes": 752900,
+      "sourceSri": "sha384-IeUVZOJ/gP2gSTpWxuWt1WSAqLMkfCswoAMgCvVK/qCD/cntKGwaidbO9B54HVwD",
+      "bytes": 264616,
+      "sri": "sha384-8JWa7Yd3G/w76334Wlc8CVb2ILetj8PwDlOVEtRknQ++ns8ex5H9SXmc3LuTLg9M",
+      "axes": [],
+      "cmapCodepoints": 2448,
+      "glyphs": 3609
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/charissil/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/charissil/OFL.txt",
+    "bytes": 4505,
+    "sri": "sha384-EL1Zjgnwrg6Kxu/YrFKygjbxJ9bz1qIlbtpTfI/a7TYKDJcs9bDt+o4VEY1M/LXN"
+  }
+}

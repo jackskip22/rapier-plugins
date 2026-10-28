@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Kablammo",
+  "sourceRank": 534,
+  "sourcePosition": 980,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kablammo/METADATA.pb",
+    "sri": "sha384-7jlhopt51fWqDNt7QL4q7BMrlrMkvfDKQ6wBxUcd8nwVbe3AtIcViRlWa3TC9vDe"
+  },
+  "files": [
+    {
+      "name": "font-ff3852554a46b04d51331c5bbf305277ebdefd37e409c4eefffa1c033e68cd857fc89c1aa1f49f56ecef74660efd5450.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kablammo/Kablammo[MORF].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kablammo/Kablammo%5BMORF%5D.ttf",
+      "sourceBytes": 2209224,
+      "sourceSri": "sha384-CQJ0djoD3sIgY5/bKDBnGyMfTHT5jtIwRgdBao45U2DSbNLGiMYH3VBXWZtCC2Ft",
+      "bytes": 834492,
+      "sri": "sha384-/zhSVUpGsE1RMxxbvzBSd+ve/TfkCcTu//ocAz5ozYV/yJwaofSfVuzvdGYO/VRQ",
+      "axes": [
+        {
+          "tag": "MORF",
+          "min": 0,
+          "default": 0,
+          "max": 60,
+          "name": "Morph"
+        }
+      ],
+      "cmapCodepoints": 985,
+      "glyphs": 1106
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kablammo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kablammo/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-ESsu1vG135IN9mZIcliGNbO0YAJD9DGhGuPkVY6xj3Q+WzrilLr660O5AM7NQh2Q"
+  }
+}

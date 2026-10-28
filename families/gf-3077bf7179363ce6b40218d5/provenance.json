@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Anek Devanagari",
+  "sourceRank": 550,
+  "sourcePosition": 1002,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anekdevanagari/METADATA.pb",
+    "sri": "sha384-R62x5GFEGioEzpr0Rccbj0O9qkpnD7nQW1PU0Ro2mZnvlO2vcsRCW+U0jCyZA41+"
+  },
+  "files": [
+    {
+      "name": "font-ed72ac60a4021eaf9ceba8aa55e643eb4987fc9aba5ef5fee63b492adec2f203ae7ac61d403fba99f487280344fe0800.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/anekdevanagari/AnekDevanagari[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anekdevanagari/AnekDevanagari%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 2190532,
+      "sourceSri": "sha384-3cMBZzNlNc1PagLKbVmvfPpb4g53BjRZ+aUbZZxmkW86aAbMup1eHSgK/XZbcUVq",
+      "bytes": 855944,
+      "sri": "sha384-7XKsYKQCHq+c66iqVeZD60mH/Jq6XvX+5jtJKt7C8gOuesYdQD+6mfSHKANE/ggA",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 500,
+          "max": 800,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 383,
+      "glyphs": 1282
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/anekdevanagari/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anekdevanagari/OFL.txt",
+    "bytes": 4379,
+    "sri": "sha384-uqqoxYm5AQ6Z7akZRkYz6GZz6DgQneF8rNq4MjZp5gQVnYgbA4FBKBTOlq1DWtLU"
+  }
+}

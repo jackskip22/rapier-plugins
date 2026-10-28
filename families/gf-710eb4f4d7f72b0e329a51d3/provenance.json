@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "name": "Ubuntu",
+  "sourceRank": 21,
+  "sourcePosition": 47,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/METADATA.pb",
+    "sri": "sha384-OxBJvYkH615d8BDM0wtiNo445oTh2i44lAzgjHG/bP7yJz22sJ8Z5eXL75ehzM/C"
+  },
+  "files": [
+    {
+      "name": "font-f1debfecdba77775753380e194ba9f62352371c3bc811b21d1310befd445f83eccfb0a8074596ff38482cc2f1aa16888.woff2",
+      "variant": "700",
+      "sourcePath": "ufl/ubuntu/Ubuntu-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/Ubuntu-Bold.ttf",
+      "sourceBytes": 331612,
+      "sourceSri": "sha384-KTePxhePGRbNHKHHDI6je7YPF2TyW1p1cUFFOJzkCaQqleDYlUXsmCQd8HnfDnDB",
+      "bytes": 115664,
+      "sri": "sha384-8d6/7Nund3V1M4DhlLqfYjUjccO8gRsh0TEL79RF+D7M+wqAdFlv84SCzC8aoWiI",
+      "axes": [],
+      "cmapCodepoints": 1194,
+      "glyphs": 1264
+    },
+    {
+      "name": "font-de266bceb8e2f4d0c1659b6a6fbf376ca70c9ca73009e6ecf1a05f834847e9f94be9cb3902a07519ddd027428e7b0e68.woff2",
+      "variant": "700italic",
+      "sourcePath": "ufl/ubuntu/Ubuntu-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/Ubuntu-BoldItalic.ttf",
+      "sourceBytes": 354956,
+      "sourceSri": "sha384-5XhBv8SJBLaGbsfVRn9RjwcEMqQzu7fY6rHzPP+DQIALbNTpW8pYlPObOx0cgm/X",
+      "bytes": 125260,
+      "sri": "sha384-3iZrzrji9NDBZZtqb783bKcMnKcwCebs8aBfg0hH6flL6cs5AqB1Gd3QJ0KOew5o",
+      "axes": [],
+      "cmapCodepoints": 1194,
+      "glyphs": 1269
+    },
+    {
+      "name": "font-a1d95d92b0d22bba410995c09801657503e6cf16d446bde603c44b1c0b1dedd364d7f865a999edf938b6982c5ae5b8b8.woff2",
+      "variant": "italic",
+      "sourcePath": "ufl/ubuntu/Ubuntu-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/Ubuntu-Italic.ttf",
+      "sourceBytes": 384408,
+      "sourceSri": "sha384-zE84a/L2y6Fx6AuYhmt8OdJog8OXRyboYa1Zaxv4cOUJiube0RiWDkeKYo6E/zcR",
+      "bytes": 136936,
+      "sri": "sha384-odldkrDSK7pBCZXAmAFldQPmzxbURr3mA8RLHAsd7dNk1/hlqZnt+Ti2mCxa5bi4",
+      "axes": [],
+      "cmapCodepoints": 1194,
+      "glyphs": 1269
+    },
+    {
+      "name": "font-9777aba4f58ebb9c10e439d3b95c12a1887290b2cb4f68b46f62b5f583cd6b0893ca5c13cbab58611420f0deb3e67651.woff2",
+      "variant": "300",
+      "sourcePath": "ufl/ubuntu/Ubuntu-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/Ubuntu-Light.ttf",
+      "sourceBytes": 413600,
+      "sourceSri": "sha384-m9yRDoMng5vKS57+cC2krKDAthPLdFOfYImpjbZrsRyRXxqMdQp5g+Himlz8xMKm",
+      "bytes": 142600,
+      "sri": "sha384-l3erpPWOu5wQ5DnTuVwSoYhykLLLT2i0b2K19YPNawiTylwTy6tYYRQg8N6z5nZR",
+      "axes": [],
+      "cmapCodepoints": 1194,
+      "glyphs": 1264
+    },
+    {
+      "name": "font-c7135a51a5862ff5f0b201a919399d142c85df7a16c821631c7e05717ce8be622f7f2dd05b0bf3074ecdc8adb0b3a6d1.woff2",
+      "variant": "300italic",
+      "sourcePath": "ufl/ubuntu/Ubuntu-LightItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/Ubuntu-LightItalic.ttf",
+      "sourceBytes": 407728,
+      "sourceSri": "sha384-iSBJGwkIU3wdaIu+1s7JF9UQfUTVJ6eScERJZVJUpf0d3jrxLxLHiaLSujujEnZz",
+      "bytes": 142880,
+      "sri": "sha384-xxNaUaWGL/XwsgGpGTmdFCyF33oWyCFjHH4FcXzovmIvfy3QWwvzB07NyK2ws6bR",
+      "axes": [],
+      "cmapCodepoints": 1194,
+      "glyphs": 1269
+    },
+    {
+      "name": "font-cc2f86f4247f7bfee25b4abda3a908748096b3e46aaed0a5ebb9b7c22e975b2bdc80127b78df8c1278482bbaf77140e0.woff2",
+      "variant": "500",
+      "sourcePath": "ufl/ubuntu/Ubuntu-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/Ubuntu-Medium.ttf",
+      "sourceBytes": 339360,
+      "sourceSri": "sha384-5J/2hJfd+QL1gF6A/qhBIYKySVUjstK39GjCkVgVmCvoXu1OfpsGMJt0rNbsY5nO",
+      "bytes": 118416,
+      "sri": "sha384-zC+G9CR/e/7iW0q9o6kIdICWs+RqrtCl67m3wi6XWyvcgBJ7eN+MEnhIK7r3cUDg",
+      "axes": [],
+      "cmapCodepoints": 1194,
+      "glyphs": 1264
+    },
+    {
+      "name": "font-50797427c38615cac33253c4d966dabb11e3dfc03151a80d5dd3e21d2996b4eb68e2c000ab3dce273cb70e54c0a78f19.woff2",
+      "variant": "500italic",
+      "sourcePath": "ufl/ubuntu/Ubuntu-MediumItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/Ubuntu-MediumItalic.ttf",
+      "sourceBytes": 365080,
+      "sourceSri": "sha384-LiseNMtcbhrymJDAhKwF2yzX0z7KoYKMtR01FFLDjEdqjg+QcPiuVi99orGGU/5A",
+      "bytes": 132040,
+      "sri": "sha384-UHl0J8OGFcrDMlPE2WbauxHj38AxUagNXdPiHSmWtOto4sAAqz3OJzy3DlTAp48Z",
+      "axes": [],
+      "cmapCodepoints": 1194,
+      "glyphs": 1269
+    },
+    {
+      "name": "font-d6300b627cb52527f4f0c82e3560b8810c4de38b5bb1a96ed2c3ca9d56840051731ac0593bff6d5ce71cd6728c87d573.woff2",
+      "variant": "regular",
+      "sourcePath": "ufl/ubuntu/Ubuntu-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/Ubuntu-Regular.ttf",
+      "sourceBytes": 351884,
+      "sourceSri": "sha384-OvA+kEw7NuhVXJYYaU0n49jy14uIr9dSs16GweLaHo2qvGi1miCgolLQEecOzQ1Z",
+      "bytes": 126860,
+      "sri": "sha384-1jALYny1JSf08MguNWC4gQxN44tbsalu0sPKnVaEAFFzGsBZO/9tXOcc1nKMh9Vz",
+      "axes": [],
+      "cmapCodepoints": 1194,
+      "glyphs": 1264
+    }
+  ],
+  "license": {
+    "sourcePath": "ufl/ubuntu/LICENCE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntu/LICENCE.txt",
+    "bytes": 4673,
+    "sri": "sha384-2Yo/N8bsSRjOUxtfDeF/zpf5b8q4WBaDhnimESDLsszFdVLHcmJqttJEXFLNufBn"
+  }
+}

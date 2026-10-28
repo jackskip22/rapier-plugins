@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Menbere",
+  "sourceRank": 367,
+  "sourcePosition": 697,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/menbere/METADATA.pb",
+    "sri": "sha384-QxCectycrfk2VmgCgorFtLpN+tqnolaYLKQxgYV9xGxUV5Ihy3D41V6a0Due2O9a"
+  },
+  "files": [
+    {
+      "name": "font-2fcf681e03beca350765460b2ec081ed629abc0431b80649efc4c849822236b1e3fde4ffc06120a925a2fcdd878446d7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/menbere/Menbere[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/menbere/Menbere%5Bwght%5D.ttf",
+      "sourceBytes": 2717324,
+      "sourceSri": "sha384-132EHhjdlxIJc+muxeVl/ul29Na2tYaDXy9E1HN2TvGqvigJvsGaR+Ui46nBStG7",
+      "bytes": 962236,
+      "sri": "sha384-L89oHgO+yjUHZUYLLsCB7WKavAQxuAZJ78TISYIiNrHj/eT/wGEgqSWi/N2HhEbX",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1232,
+      "glyphs": 1333
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/menbere/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/menbere/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-LUYg/kPnGLx2VnuVx4sA7/030ExMeAe3bR8UD/KGYbDoXBBeUAECQEWmdGQ5DtDn"
+  }
+}
