@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Serif KR",
+  "sourceRank": 58,
+  "sourcePosition": 130,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifkr/METADATA.pb",
+    "sri": "sha384-8h3zQuAmo651AVCztHZZNPvLft5HsLlILm3j+qDA8J7XDPvB+lVdBe0fQEtAKzOi"
+  },
+  "files": [
+    {
+      "name": "font-57b8fda00936cffcca9eb450dc91cebc371e70c125e97c843eb34af1cb4d706423ac03904242341bccf19cc0d68ae3c4.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/notoserifkr/NotoSerifKR[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifkr/NotoSerifKR%5Bwght%5D.ttf",
+      "sourceBytes": 23795420,
+      "sourceSri": "sha384-CZW8Oeni+oTAQMuOSztRpGNbYMxQJW8pY8nd0nOA3Ejl3nfcl8waDa+vIBCl6YFx",
+      "bytes": 5858804,
+      "sri": "sha384-V7j9oAk2z/zKnrRQ3JHOvDcecMEl6XyEPrNK8ctNcGQjrAOQQkI0G8zxnMDWiuPE",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 23124,
+      "glyphs": 24910
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoserifkr/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifkr/OFL.txt",
+    "bytes": 4350,
+    "sri": "sha384-EGrJLKc6gKOG5f5jLQSo8qWveI18/3hWrb22iRv6GPxtN0CpSv2IvneyqytLey7f"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Klee One",
+  "sourceRank": 450,
+  "sourcePosition": 856,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kleeone/METADATA.pb",
+    "sri": "sha384-NUGOi7Wo+atCg208ilHQGyAEox+uz797MOn5Y7/jJa6Ec8WFAaPekwFN5F5jLaYr"
+  },
+  "files": [
+    {
+      "name": "font-4ae3e2abce994e985a6ae72088c86067496826b71ea40d7d5d47f36f49955b0ae61ca0e7e3777ca1ddbefda9688d0cb2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kleeone/KleeOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kleeone/KleeOne-Regular.ttf",
+      "sourceBytes": 8724204,
+      "sourceSri": "sha384-iRBi+pCKCp3gDpndFD+hBMD5GbD3A/dyGkIHkEXoi/SThGACJP69MIasVT8+Kfg1",
+      "bytes": 2864480,
+      "sri": "sha384-SuPiq86ZTphaaucgiMhgZ0loJrcepA19XUfzb0mVWwrmHKDn43d8od2+/alojQyy",
+      "axes": [],
+      "cmapCodepoints": 10178,
+      "glyphs": 15450
+    },
+    {
+      "name": "font-b06a731b2c421bcd98d22faefcb40e2688aa766548fe7afc81c2e0453d18203bd52114cbab95ae285e8c9d4b49207b59.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/kleeone/KleeOne-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kleeone/KleeOne-SemiBold.ttf",
+      "sourceBytes": 8905128,
+      "sourceSri": "sha384-YgF0NIxKPDw6KgNfabbdaw5+MGQkqxnKIfw5h59frWeS8wy/d+wg+jWNKnBh9ZPv",
+      "bytes": 3090252,
+      "sri": "sha384-sGpzGyxCG82Y0i+u/LQOJoiqdmVI/nr8gcLgRT0YIDvVIRTLq5WuKF6MnUtJIHtZ",
+      "axes": [],
+      "cmapCodepoints": 10178,
+      "glyphs": 15450
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kleeone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kleeone/OFL.txt",
+    "bytes": 4479,
+    "sri": "sha384-zvGBZkIXbFFC2HtToJWIYMzuB4DytM7ySaHKDaBhWX8pWHYoWwkLxBY/8NQCEB39"
+  }
+}

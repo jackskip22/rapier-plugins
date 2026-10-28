@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Kaisei Decol",
+  "sourceRank": 371,
+  "sourcePosition": 704,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kaiseidecol/METADATA.pb",
+    "sri": "sha384-1eeJzST9goZtmYm7CyobqrThpOJIfCvD1KxIL3lH8V5h7+ssYKZCFyxfVKWk7+6I"
+  },
+  "files": [
+    {
+      "name": "font-b69dfa2b21c955c8a012e0d04c48ea74d69b995ff6d180595de0df4ab5dcee23c68abab8f4dbd91b120f44c82d2160df.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/kaiseidecol/KaiseiDecol-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kaiseidecol/KaiseiDecol-Bold.ttf",
+      "sourceBytes": 4286896,
+      "sourceSri": "sha384-jyiiwLWL5RMudvvdiKCsVe9xYIDet9k3c4zpt0Q3tWEIGpYXJCtwEDVPy+iRbUsj",
+      "bytes": 1989020,
+      "sri": "sha384-tp36KyHJVcigEuDQTEjqdNabmV/20YBZXeDfSrXc7iPGirq49NvZGxIPRMgtIWDf",
+      "axes": [],
+      "cmapCodepoints": 7930,
+      "glyphs": 9368
+    },
+    {
+      "name": "font-1fe667ed39aefea2a861ccdfa3bd86dd002234632ec5c9331a8f8e64f9d70d709909e345aca3cd15459fdafa047ba3cb.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/kaiseidecol/KaiseiDecol-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kaiseidecol/KaiseiDecol-Medium.ttf",
+      "sourceBytes": 4297772,
+      "sourceSri": "sha384-to6tdr+Wm77jRO6fTRfjIjzqJDnIPAF3pNy50tk+UkW74N4b2lmcd5cvBpkd6DQ1",
+      "bytes": 1908040,
+      "sri": "sha384-H+Zn7Tmu/qKoYczfo72G3QAiNGMuxckzGo+OZPnXDXCZCeNFrKPNFUWf2voEe6PL",
+      "axes": [],
+      "cmapCodepoints": 7930,
+      "glyphs": 9368
+    },
+    {
+      "name": "font-8cd47e9af426c9e40c7e0c820177e152c1763bf77a0e4421f478752412186f6d44eacdc0eeb7e1917bdd5db3a287337a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kaiseidecol/KaiseiDecol-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kaiseidecol/KaiseiDecol-Regular.ttf",
+      "sourceBytes": 4503152,
+      "sourceSri": "sha384-NCAdC2yqss8MNYB/JgW8ANSTvpdZEOTlpxZw95/bQN2N2gmbxOJsVe2LV599xIQV",
+      "bytes": 2111516,
+      "sri": "sha384-jNR+mvQmyeQMfgyCAXfhUsF2O/d6DkQh9Hh1JBIYb21E6s3A7rfhkXvdXbOihzN6",
+      "axes": [],
+      "cmapCodepoints": 7930,
+      "glyphs": 9368
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kaiseidecol/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kaiseidecol/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-lSDpxE+ZadFfPEupBJyJIKZ2i8Heilf9uKKhxG7Bck22Y0zHmHBqKwl/yEZIGQxe"
+  }
+}

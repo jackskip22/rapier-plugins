@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Color Emoji",
+  "sourceRank": 50,
+  "sourcePosition": 113,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notocoloremoji/METADATA.pb",
+    "sri": "sha384-LZpm5TkpAzXMiE58DU7DYyOhIbGyvSq/75KUJEqPDlCTwrHwROQ1uAaUHUtrRwrQ"
+  },
+  "files": [
+    {
+      "name": "font-6358ef911d116c954802f849f2a3cb0312d9f187351fd8e0c4efdd4e5a8babeee8fa90d7a92c90261bd33a72d0d3f977.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notocoloremoji/NotoColorEmoji-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notocoloremoji/NotoColorEmoji-Regular.ttf",
+      "sourceBytes": 25332736,
+      "sourceSri": "sha384-OmSJNIUVqr2AdpsmMNhDh2mUFfY60Ro0Dm10lZfeGgd+haHA3+AJAxA+lpTqYD2o",
+      "bytes": 5790064,
+      "sri": "sha384-Y1jvkR0RbJVIAvhJ8qPLAxLZ8Yc1H9jgxO/dTlqLq+7o+pDXqSyQJhvTOnLQ0/l3",
+      "axes": [],
+      "cmapCodepoints": 1508,
+      "glyphs": 42352
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notocoloremoji/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notocoloremoji/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-+kMAzGba/uh/lvyyxTiJJx/kNjxWsHi3i3s/v9GNv8+xVBnQ/vbQ1HFOtk6KWXJo"
+  }
+}

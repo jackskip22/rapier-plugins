@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "LINE Seed JP",
+  "sourceRank": 77,
+  "sourcePosition": 161,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lineseedjp/METADATA.pb",
+    "sri": "sha384-bw2kXUOVAmOIDI9/HdLfQSzUTgYMe1s24uLFOApLdvvXc2COZ+11rqsisL4DhgMy"
+  },
+  "files": [
+    {
+      "name": "font-22bfbb08279ff461f3e6b6cd2e4d879e42fe392d76a22f8efe9df12292aaaeb1bf98e8b0660ea48c97c603e34ce58aa1.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/lineseedjp/LINESeedJP-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lineseedjp/LINESeedJP-Bold.ttf",
+      "sourceBytes": 3786144,
+      "sourceSri": "sha384-3wmmGx3s7nUSKYsTyR+IWUWsA0H1sIoL7m1TOG9Za0FxdHtPOA02HKqyyuHVmPFb",
+      "bytes": 1551504,
+      "sri": "sha384-Ir+7CCef9GHz5rbNLk2HnkL+OS12oi+O/p3xIpKqrrG/mOiwZg6kjJfGA+NM5Yqh",
+      "axes": [],
+      "cmapCodepoints": 8341,
+      "glyphs": 9225
+    },
+    {
+      "name": "font-4a7924d6f151acc169b16f0dadcadf01ceaa3bf0364095a53e502864151eec397abd0b8861ec99ccf3e4b4c9e904574b.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/lineseedjp/LINESeedJP-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lineseedjp/LINESeedJP-ExtraBold.ttf",
+      "sourceBytes": 3603732,
+      "sourceSri": "sha384-0Uz6N99sCJkagtghjCaWILsFgsbsTV/9+WSv7c07xgjcFSTVGQLqozPf3EwSnc5o",
+      "bytes": 1496764,
+      "sri": "sha384-Snkk1vFRrMFpsW8NrcrfAc6qO/A2QJWlPlAoZBUe7Dl6vQuIYeyZzPPktMnpBFdL",
+      "axes": [],
+      "cmapCodepoints": 8341,
+      "glyphs": 9225
+    },
+    {
+      "name": "font-efebb0931b9568affe09d020b42ef2a65a37aac81d5573801f3e333541caae1ce848a8c235253f7d1b7600460aae2a5e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/lineseedjp/LINESeedJP-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lineseedjp/LINESeedJP-Regular.ttf",
+      "sourceBytes": 3673280,
+      "sourceSri": "sha384-5LoKVL49BbebwddzhcdkvUvNvyOKRgERt0laKQxv/iQXWY584FxAq3LxS8ydiFzP",
+      "bytes": 1512544,
+      "sri": "sha384-7+uwkxuVaK/+CdAgtC7yplo3qsgdVXOAHz4zNUHKrhzoSKjCNSU/fRt2AEYKripe",
+      "axes": [],
+      "cmapCodepoints": 8341,
+      "glyphs": 9225
+    },
+    {
+      "name": "font-6b575d41b7c8ec5c0b57e946e5747fe510da3d13a83ed7ba13e430227b0ff7f07eeb4c527a3489bf76842c964a9b5434.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/lineseedjp/LINESeedJP-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lineseedjp/LINESeedJP-Thin.ttf",
+      "sourceBytes": 3747104,
+      "sourceSri": "sha384-qWcSyOlmEmlYf5T8i0rixWxjMXFoJHgQN7JqEJBOJ0O67uC1dIsPTRMP18Vd10jM",
+      "bytes": 1287216,
+      "sri": "sha384-a1ddQbfI7FwLV+lG5XR/5RDaPROoPte6E+QwInsP9/B+60xSejSJv3aELJZKm1Q0",
+      "axes": [],
+      "cmapCodepoints": 8341,
+      "glyphs": 9225
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/lineseedjp/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lineseedjp/OFL.txt",
+    "bytes": 4322,
+    "sri": "sha384-bkz7Ab4+NCzxJ5oZRgPanXxviRcj9ZBHM7LjRadTjbjCEGIEFLqSo5wsglDzwWZl"
+  }
+}

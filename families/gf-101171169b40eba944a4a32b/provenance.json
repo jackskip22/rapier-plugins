@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Caladea",
+  "sourceRank": 437,
+  "sourcePosition": 833,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caladea/METADATA.pb",
+    "sri": "sha384-+Th1A+YaNuUL7UH8D07maZMSMRGxtpjAimQ51bA8Ki/9EjsTIhrTbuHt6jYGI6If"
+  },
+  "files": [
+    {
+      "name": "font-32cf34f3da55c07b7f7717447409642deeeef2a30ada9d0dc1e0940ad2d5142daf7dc47060e004210e4bd08c521974b8.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/caladea/Caladea-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caladea/Caladea-Bold.ttf",
+      "sourceBytes": 84492,
+      "sourceSri": "sha384-FGyjhP5zn/RlAOT8ul6BaLS2hAZtUl8wjqezHn+M7cfaDqOSf5vaCJ7N/qwHPzgg",
+      "bytes": 31832,
+      "sri": "sha384-Ms8089pVwHt/dxdEdAlkLe7u8qMK2p0NweCUCtLVFC2vfcRwYOAEIQ5L0IxSGXS4",
+      "axes": [],
+      "cmapCodepoints": 435,
+      "glyphs": 464
+    },
+    {
+      "name": "font-7c69a9a801b4e302bcd9cf8d4a922c2a459b00027f63a3fba8d52788f2636465601031dc27d34915dd5735330e790aaa.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/caladea/Caladea-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caladea/Caladea-BoldItalic.ttf",
+      "sourceBytes": 83356,
+      "sourceSri": "sha384-0kRqtcZoz/fk2+/28JB9hcv7UvsfT3ejS2cLZJnn0hUMBsgkWozjJMPhIqFX67wk",
+      "bytes": 33268,
+      "sri": "sha384-fGmpqAG04wK82c+NSpIsKkWbAAJ/Y6P7qNUniPJjZGVgEDHcJ9NJFd1XNTMOeQqq",
+      "axes": [],
+      "cmapCodepoints": 430,
+      "glyphs": 459
+    },
+    {
+      "name": "font-fc395bf91cafbd2e006a76e46e5dd857a4577ef9bcd6d1fa587575040aafc096be14907163d0ee12fb663e1d60d9118d.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/caladea/Caladea-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caladea/Caladea-Italic.ttf",
+      "sourceBytes": 83780,
+      "sourceSri": "sha384-NC6WxcrikAJNK9fW0gnUJuEIqbLv36H9ay5b+SFacZj8J8e9A+gZfgcPRoCo9QER",
+      "bytes": 32964,
+      "sri": "sha384-/Dlb+RyvvS4Aanbkbl3YV6RXfvm81tH6WHV1BAqvwJa+FJBxY9DuEvtmPh1g2RGN",
+      "axes": [],
+      "cmapCodepoints": 430,
+      "glyphs": 459
+    },
+    {
+      "name": "font-3b395838b01663b8c6c5a58f331e9d9fe4403013b980ff48441b43cff7d910df9dc097b5c5badabeecd74fd399228675.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/caladea/Caladea-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caladea/Caladea-Regular.ttf",
+      "sourceBytes": 81600,
+      "sourceSri": "sha384-zNXwYdCp+XmZDXLB+AL43vBkI6Ur1YK+1P5eKDwuEUL36ghY5U8yvkLMSu1l+bid",
+      "bytes": 31664,
+      "sri": "sha384-OzlYOLAWY7jGxaWPMx6dn+RAMBO5gP9IRBtDz/fZEN+dwJe1xbravuzXT9OZIoZ1",
+      "axes": [],
+      "cmapCodepoints": 435,
+      "glyphs": 464
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/caladea/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caladea/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-UmHNzCKcgPd36BTSKjHc13xzGEBbMG0j+BwRsfrhz6DMJ4Y6ym5RwM0YkJPJJsR+"
+  }
+}
