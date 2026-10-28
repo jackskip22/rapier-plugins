@@ -210,6 +210,24 @@ const REFUSALS = {
 	export_too_large: 'The file is larger than the limit. Split the document.',
 };
 
+function sliceTallDrawings(main, pageHeight) {
+	const document = main.ownerDocument;
+	for (const svg of main.querySelectorAll('svg.rapier-native-flowchart, svg.rapier-diagram')) {
+		const box = svg.getBoundingClientRect(), view = (svg.getAttribute('viewBox') || '').trim().split(/[\s,]+/).map(Number);
+		if (!(box.height > pageHeight) || view.length !== 4 || !view.every(Number.isFinite) || !(view[2] > 0) || !(view[3] > 0)) continue;
+		const unit = view[3] / box.height, windows = [];
+		for (let offset = 0; offset < box.height; offset += pageHeight) {
+			const shown = Math.min(pageHeight, box.height - offset), part = svg.cloneNode(true);
+			part.setAttribute('viewBox', [view[0], view[1] + offset * unit, view[2], shown * unit].join(' '));
+			part.setAttribute('preserveAspectRatio', 'xMidYMin meet');
+			part.style.setProperty('width', box.width + 'px', 'important'); part.style.setProperty('height', shown + 'px', 'important');
+			part.style.setProperty('break-before', 'column', 'important'); part.style.setProperty('break-inside', 'avoid', 'important');
+			windows.push(part);
+		}
+		svg.replaceWith(...windows);
+	}
+}
+
 async function _rapierWritePrintPdf({root, css, fontCss = '', canonical, bom = false, filename, title, settings, templatePage = null}, {capture, signal, current, maxBytes = 8 * 1024 * 1024, film, ink} = {}) {
 	const refuse = code => { throw Object.assign(new Error(code), {code}); };
 	const spoken = error => {
@@ -295,6 +313,7 @@ async function _rapierWritePrintPdf({root, css, fontCss = '', canonical, bom = f
 				if (holder && !holder.textContent.trim() && !holder.querySelector('img,svg,math,table,pre')) holder.remove();
 			}
 		}
+		sliceTallDrawings(main, bodyHeight);
 		wrapMasks(main);
 		check();
 		for (const node of [main, ...main.querySelectorAll('*')]) {

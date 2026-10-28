@@ -243,7 +243,8 @@
 	:where(.md-render) svg.rapier-diagram[aria-roledescription^="flowchart"] :is(path,line,polyline):is(.edge-animation-fast,.edge-animation-slow){animation:none!important;stroke-dashoffset:0!important}
 }
 @media print{
-	:where(.md-render) .diagram-block{overflow:visible!important}
+	:where(.md-render) .diagram-block{overflow:visible!important;min-height:0!important}
+	:where(.md-render) .diagram-block:is([data-diagram-state="ready"],[data-diagram-state="idle"]),:where(.md-render) .diagram-block .diagram-cache{display:contents!important}
 	:where(.md-render) svg.rapier-diagram,:where(.md-render) svg.rapier-native-flowchart{width:auto!important;max-width:100%!important}
 }
 :where(.md-render) .diagram-reason {

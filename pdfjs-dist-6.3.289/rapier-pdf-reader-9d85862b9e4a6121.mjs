@@ -205,7 +205,64 @@ function paragraph(lines, strip = 0, heading = false, words = null) {
   return html;
 }
 
-function linkRuns(runs, annotations, viewport) {
+// Where each drawn character stands, from the page's own text operators: the position of every glyph along its line, in page
+// coordinates. A link annotation ends between two characters, and a count of characters misplaces it in proportional type.
+function glyphStops(operators, api, viewport) {
+  const ops=api.OPS,stops=[],stack=[];
+  let ctm=identity(),tm=identity(),tlm=identity(),size=0,scale=1,charSpace=0,wordSpace=0,leading=0;
+  const shift=(m,x,y)=>multiply(m,[1,0,0,1,x,y]);
+  for(let i=0;i<operators.fnArray.length;i++){
+    const op=operators.fnArray[i],args=operators.argsArray[i]||[];
+    if(op===ops.save)stack.push([ctm,size,scale,charSpace,wordSpace,leading]);
+    else if(op===ops.restore){[ctm=identity(),size=0,scale=1,charSpace=0,wordSpace=0,leading=0]=stack.pop()||[];}
+    else if(op===ops.transform)ctm=multiply(ctm,Array.from(ArrayBuffer.isView(args[0])||Array.isArray(args[0])?args[0]:args));
+    else if(op===ops.paintFormXObjectBegin){stack.push([ctm,size,scale,charSpace,wordSpace,leading]);if(args[0])ctm=multiply(ctm,Array.from(args[0]));}
+    else if(op===ops.paintFormXObjectEnd)[ctm=identity(),size=0,scale=1,charSpace=0,wordSpace=0,leading=0]=stack.pop()||[];
+    else if(op===ops.beginText){tm=tlm=identity();}
+    else if(op===ops.setFont)size=Number(args[1])||0;
+    else if(op===ops.setHScale)scale=(Number(args[0])||100)/100;
+    else if(op===ops.setCharSpacing)charSpace=Number(args[0])||0;
+    else if(op===ops.setWordSpacing)wordSpace=Number(args[0])||0;
+    else if(op===ops.setLeading)leading=Number(args[0])||0;
+    else if(op===ops.setTextMatrix)tm=tlm=Array.from(ArrayBuffer.isView(args[0])||Array.isArray(args[0])?args[0]:args).slice(0,6);
+    else if(op===ops.moveText){tlm=tm=shift(tlm,args[0],args[1]);}
+    else if(op===ops.setLeadingMoveText){leading=-args[1];tlm=tm=shift(tlm,args[0],args[1]);}
+    else if(op===ops.nextLine){tlm=tm=shift(tlm,0,-leading);}
+    else if(op===ops.showText&&Array.isArray(args[0])){
+      const page=multiply(multiply(viewport.transform,ctm),tm);
+      let along=0;
+      for(const glyph of args[0]){
+        if(typeof glyph==='number'){along-=glyph/1000*size*scale;continue;}
+        if(!glyph||typeof glyph!=='object')continue;
+        const advance=((Number(glyph.width)||0)/1000*size+charSpace+(glyph.isSpace?wordSpace:0))*scale;
+        // A glyph that stands for several characters ("d ") shares its width among them.
+        const characters=[...String(glyph.unicode??'')];
+        characters.forEach((text,at)=>stops.push({text,x0:page[4]+(along+advance*at/characters.length)*page[0],x1:page[4]+(along+advance*(at+1)/characters.length)*page[0],y:page[5]+along*page[1]}));
+        along+=advance;
+      }
+      tm=shift(tm,along,0);
+    }
+  }
+  return stops;
+}
+
+// The boundaries between a run's characters, from the drawn glyphs lying along it; null where they do not spell the run.
+function characterEdges(run, stops) {
+  if(run.vertical||run.sideways||run.dir==='rtl')return null;
+  const along=stops.filter(stop=>Math.abs(stop.y-run.baseline)<run.size*.35&&stop.x1>run.x-1&&stop.x0<run.x+run.w+1);
+  const edges=[];let at=0;
+  for(const character of run.str){
+    // A space drawn beside the run's words belongs to its neighbor.
+    while(along[at]&&!along[at].text.trim()&&along[at].text!==character&&!edges.length)at++;
+    const next=along[at];
+    if(next&&next.text===character){edges.push([next.x0,next.x1]);at++;}
+    else if(/\s/.test(character)){const before=edges.at(-1)?.[1]??next?.x0;if(before==null)return null;edges.push([before,before]);}
+    else return null;
+  }
+  return along.slice(at).every(stop=>!stop.text.trim())?edges:null;
+}
+
+function linkRuns(runs, annotations, viewport, stops = []) {
   const links=[];
   for (const a of annotations) {
     if (a.subtype!=='Link' || !Array.isArray(a.rect)) continue;
@@ -219,6 +276,15 @@ function linkRuns(runs, annotations, viewport) {
     // Annotation edges can cut a combined text item. Snap the estimated split
     // to word boundaries; tagged links usually already have separate items.
     if (overlaps(run,link)>run.w*run.h*.65 || run.vertical || run.sideways || run.dir==='rtl') return [{...run,link:link.url}];
+    // Where the glyphs are known, the annotation takes exactly the characters whose middle it covers.
+    const edges=stops.length?characterEdges(run,stops):null;
+    if(edges&&edges.length===run.str.length){
+      const middle=([a,b])=>(a+b)/2,first=edges.findIndex(edge=>middle(edge)>=link.x-.5),after=edges.findLastIndex(edge=>middle(edge)<=link.x+link.w+.5)+1;
+      if(first>=0&&after>first){
+        const cuts=[[0,first,null],[first,after,link.url],[after,run.str.length,null]].filter(([a,b])=>a<b);
+        return cuts.map(([a,b,url])=>({...run,str:run.str.slice(a,b),x:edges[a][0],w:Math.max(0,edges[b-1][1]-edges[a][0]),link:url}));
+      }
+    }
     let start=Math.round((link.x-run.x)/run.w*run.str.length),end=Math.round((link.x+link.w-run.x)/run.w*run.str.length);
     start=Math.max(0,Math.min(run.str.length,start));end=Math.max(start,Math.min(run.str.length,end));
     // Only a letter or number joins a word: punctuation beside the link stays outside it, but an
@@ -925,7 +991,7 @@ export async function readPdf(blob, {mode = 'text', embedImage, checkCurrent = (
         const pictures = await pagePictures(page, viewport, session.api, operators, ids,
           {embedImage, step, checkpoint, limits: PDF_LIMITS, stats, setRender:value=>{render=value;}});
         const words=runs.filter(r=>!pictures.some(p=>p.composite&&overlaps(p,r)>r.w*r.h*.8));
-        pages.push({runs: linkRuns(words, annotations, viewport), tree, pictures, annotations, ref:page.ref,
+        pages.push({runs: linkRuns(words, annotations, viewport, annotations.some(a=>a.subtype==='Link')?glyphStops(operators, session.api, viewport):[]), tree, pictures, annotations, ref:page.ref,
           transform:viewport.transform, width: viewport.width, height: viewport.height});
         if (runs.length) stats.pagesWithText++;
       } else {

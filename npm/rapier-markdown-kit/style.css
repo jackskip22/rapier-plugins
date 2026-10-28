@@ -264,9 +264,12 @@
 @media (prefers-reduced-motion:reduce){
 	:where(.md-render) svg.rapier-diagram[aria-roledescription^="flowchart"] :is(path,line,polyline):is(.edge-animation-fast,.edge-animation-slow){animation:none!important;stroke-dashoffset:0!important}
 }
-/* Printed diagrams fit the page. */
+/* Printed diagrams fit the page's width, at their own size; a drawing taller than a page continues onto the next (the
+   export slices it, the browser's print fragments it) and the figure's screen height is not held. */
 @media print{
-	:where(.md-render) .diagram-block{overflow:visible!important}
+	:where(.md-render) .diagram-block{overflow:visible!important;min-height:0!important}
+	/* The frame's rules are a background, not ink, and the figure's box and its cache hold no words: the drawing alone is the block. */
+	:where(.md-render) .diagram-block:is([data-diagram-state="ready"],[data-diagram-state="idle"]),:where(.md-render) .diagram-block .diagram-cache{display:contents!important}
 	:where(.md-render) svg.rapier-diagram,:where(.md-render) svg.rapier-native-flowchart{width:auto!important;max-width:100%!important}
 }
 :where(.md-render) .diagram-reason {

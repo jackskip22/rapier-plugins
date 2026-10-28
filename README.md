@@ -28,8 +28,8 @@ The agent edits live, with the person there or away. The person sees each change
 
 | Package | |
 | --- | --- |
-| [rapier-html](npm/rapier-html/README.md) | `npx rapier-html@1.2.48 notes.md` writes `notes.rapier.html`: the editor and the document in one offline file. |
-| [rapier-embed](npm/rapier-embed/README.md) | `npm install rapier-embed@1.2.48`: the editor or the read-only reader in your app, saving to your storage. `agent: true` connects your app's own agent over WebMCP. MIT. |
+| [rapier-html](npm/rapier-html/README.md) | `npx rapier-html@1.2.49 notes.md` writes `notes.rapier.html`: the editor and the document in one offline file. |
+| [rapier-embed](npm/rapier-embed/README.md) | `npm install rapier-embed@1.2.49`: the editor or the read-only reader in your app, saving to your storage. `agent: true` connects your app's own agent over WebMCP. MIT. |
 | [rapier-markdown-kit](npm/rapier-markdown-kit/README.md) | Read, write and render Self-contained Markdown, one `.md` file with its pictures, editable drawings and layout, without the editor. MIT. |
 | [rapier-jxl](https://github.com/jackskip22/rapier-jxl) | The JPEG XL encoder Rapier uses, for any JavaScript runtime. |
 
@@ -37,7 +37,7 @@ To serve documents from your own folder or S3-compatible bucket through the same
 
 ## Plug-in files
 
-Rapier loads these the first time a document needs one, from `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.48/<directory>/<file>`, and checks each by length and SHA-384. `npx rapier-embed@1.2.48 plugins <directory>` copies the reader's into your app ([Plug-ins](npm/rapier-embed/README.md#plug-ins)).
+Rapier loads these the first time a document needs one, from `https://cdn.jsdelivr.net/gh/jackskip22/rapier-plugins@cdn-v1.2.49/<directory>/<file>`, and checks each by length and SHA-384. `npx rapier-embed@1.2.49 plugins <directory>` copies the reader's into your app ([Plug-ins](npm/rapier-embed/README.md#plug-ins)).
 
 | Directory | Contents |
 | --- | --- |
@@ -45,6 +45,6 @@ Rapier loads these the first time a document needs one, from `https://cdn.jsdeli
 | `letters/` | Draw's letter sets: ornamental capitals traced from British Library scans (CC0) |
 | `templates/`, `elements/` | Page borders and ornaments traced from the ornament book (CC0) |
 | `flowchart/`, `docx/`, `pdf/` | The reader's flowchart, Word and PDF plug-ins |
-| `sources/reader-1.2.48/` | Their source, which builds them offline (`README.reader-plugins.md`) |
+| `sources/reader-1.2.49/` | Their source, which builds them offline (`README.reader-plugins.md`) |
 
 Source: [jackskip22/rapier](https://github.com/jackskip22/rapier). [Privacy and terms](PRIVACY.md).

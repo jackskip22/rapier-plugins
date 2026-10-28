@@ -36790,15 +36790,6 @@ async function _rapierOpenCarriedDrawing() {
 	if (!recipe || !await _rapierPartReady('drawing')) return;
 	_rapierDrawPart.surface({recipe, editing: null});
 }
-function _rapierSearchStarter() {
-	let path = '';
-	try { path = /^https?:$/.test(location.protocol) && window.self === window.top ? location.pathname.replace(/\/+$/, '') : ''; } catch (_) {}
-	const menu = 'Tap ••• at the top right';
-	const starters = {
-	};
-	const starter = starters[path];
-	return starter ? {name: starter[0], text: starter[1]} : null;
-}
 async function _rapierGuideStarter() {
 	let path = '';
 	try { path = /^https?:$/.test(location.protocol) && window.self === window.top ? location.pathname.replace(/\/+$/, '') : ''; } catch (_) {}
@@ -36813,7 +36804,7 @@ async function _rapierGuideStarter() {
 	} catch (_) { return null; }
 }
 async function _rapierOpenSiteStarter(context) {
-	const starter = _rapierSearchStarter() || await (context?.guide ?? _rapierGuideStarter());
+	const starter = await (context?.guide ?? _rapierGuideStarter());
 	return starter ? rapierLoad(starter.text, starter.name, {virtualDocumentKind: 'welcome', opensClean: true}) : null;
 }
 
@@ -36981,12 +36972,13 @@ async function _rapierPublishBootReady(context) {
 		const stamp = Object.freeze(_rapierMutationStamp());
 		const current = () => !_rapierBootstrapRuntime.failed && _rapierMutationStampIsCurrent(stamp);
 		_rapierWysiwygRenderWindow();
-		if (await _rapierBootStep(context, 'pictures', () => globalThis.RapierEmbeddedImages?.prepareView(current, layoutView)) === false) {
+		const prepared = await _rapierBootStep(context, 'pictures', () => globalThis.RapierEmbeddedImages?.prepareView(current, layoutView));
+		if (prepared === false) {
 			if (current()) break;
 			continue;
 		}
 		if (!current()) continue;
-		layoutView();
+		if (prepared !== 'laid') layoutView();
 		_rapierApplyEditorViewport();
 		if (resumedFind && resumedFind.epoch === _rapierFindRuntime.revealEpoch &&
 				resumedFind.guard === _rapierFindRuntime.documentGuard && _rapierFindOwnsCurrentDocument()) {
