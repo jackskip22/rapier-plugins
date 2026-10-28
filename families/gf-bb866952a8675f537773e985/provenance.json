@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sofia",
+  "sourceRank": 358,
+  "sourcePosition": 678,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sofia/METADATA.pb",
+    "sri": "sha384-e71f2OrcGKnywd05tcgYuradsItBRyxUWMdK1qDEnwqnYkkw+ODZipJFmJi1+EV6"
+  },
+  "files": [
+    {
+      "name": "font-45e33c6fe6ddd1994f3f9507006c945fa35c14877950b6cb565ebd0b2555e9b42b7e2644e857ae01077a9a15ad8e9e69.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sofia/Sofia-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sofia/Sofia-Regular.ttf",
+      "sourceBytes": 29796,
+      "sourceSri": "sha384-6rWC7n2S0b/rrkbKcYPmrwicoiDCvjx/rPYo39Lc+HK5CcAbA2U+/gUE7w1ZNJQ5",
+      "bytes": 13020,
+      "sri": "sha384-ReM8b+bd0ZlPP5UHAGyUX6NcFId5ULbLVl69CyVV6bQrfiZE6FeuAQd6mhWtjp5p",
+      "axes": [],
+      "cmapCodepoints": 229,
+      "glyphs": 232
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sofia/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sofia/OFL.txt",
+    "bytes": 4405,
+    "sri": "sha384-GRKBA8sl6QAE7beo9LJd1sh7UXxrqprSvl91BU1JQR2l7N3eWQ7NGZjnEmp6oGA3"
+  }
+}

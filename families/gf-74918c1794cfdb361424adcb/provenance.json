@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sarina",
+  "sourceRank": 218,
+  "sourcePosition": 433,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sarina/METADATA.pb",
+    "sri": "sha384-rENJJVcY6t7XtKZNXUqsqjJgbk0yWlrrOudEmM1PgptK4kycbDJRLqUl98sYTNB6"
+  },
+  "files": [
+    {
+      "name": "font-c719df17d2eff74a4b7d2c6de5c203bddc14635626b11fc211a1ae320075ae737ce56c4fe16fbe726c0e78f16c6a0749.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sarina/Sarina-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sarina/Sarina-Regular.ttf",
+      "sourceBytes": 96104,
+      "sourceSri": "sha384-/coOA+E43DxXEzKsKJ1syV47ex735o6CP2EDWi+M7gUk5QEMS/ZOLFjv5TVERjil",
+      "bytes": 28892,
+      "sri": "sha384-xxnfF9Lv90pLfSxt5cIDvdwUY1YmsR/CEaGuMgB1rnN85WxP4W++cmwOePFsagdJ",
+      "axes": [],
+      "cmapCodepoints": 411,
+      "glyphs": 424
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sarina/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sarina/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-TJUkba7oaO+LqvfrzydqpgA2W+t8yZt9vqMVvkJXe+ToWNXfxCtxs+ZHj+c1flFF"
+  }
+}

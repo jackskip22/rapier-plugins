@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Khudawadi",
+  "sourceRank": 430,
+  "sourcePosition": 818,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanskhudawadi/METADATA.pb",
+    "sri": "sha384-BOL8EOE6EBMVFKUd0NAbAHThcW+gqPBnzM2LwJdtPpem45BvdtdXsdmp2uF5aeeP"
+  },
+  "files": [
+    {
+      "name": "font-5ec19a632d7544e7a054a6d889e535a7b9aba6d64d45752ecc5f0076000c3a6dd78a817bd5dfb1eeeda0aea3e93e84d1.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosanskhudawadi/NotoSansKhudawadi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanskhudawadi/NotoSansKhudawadi-Regular.ttf",
+      "sourceBytes": 68840,
+      "sourceSri": "sha384-7ImGoGXRkYLk+4tjha4smCc+zais57aPO8Lrp3bcpphCCtdheRHDagt+D5pXQGHO",
+      "bytes": 31096,
+      "sri": "sha384-XsGaYy11ROegVKbYieU1p7mrptZNRXUuzF8AdgAMOm3XioF71d+x7u2grqPpPoTR",
+      "axes": [],
+      "cmapCodepoints": 406,
+      "glyphs": 428
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanskhudawadi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanskhudawadi/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-l3gOQX+hUwYtao2BqU1A2lmHnDcwX3EW41xBHSoXA/FVq8b2YUX8bCfjRiAWS2Va"
+  }
+}

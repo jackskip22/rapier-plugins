@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Quantico",
+  "sourceRank": 55,
+  "sourcePosition": 124,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quantico/METADATA.pb",
+    "sri": "sha384-KrKelgdMzJf8qA8py0V5GFIVrY28FM7RpBAUU6W1HZu6TCpdQC+ifSNLMIdCReOD"
+  },
+  "files": [
+    {
+      "name": "font-c17d910c26c353961ff71b19d77beede5d21193ab871c9548f0d9814c82ef9e485de8f643f84f34e08fb36099bbd7b89.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/quantico/Quantico-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quantico/Quantico-Bold.ttf",
+      "sourceBytes": 20896,
+      "sourceSri": "sha384-23A1GNyPzEduP4rbA3xJXq7YJ1wmerepzNo2OYNfKRQYyxU/L6xJQ0KwA4X8gXs0",
+      "bytes": 7712,
+      "sri": "sha384-wX2RDCbDU5Yf9xsZ13vu3l0hGTq4cclUjw2YFMgu+eSF3o9kP4TzTgj7NgmbvXuJ",
+      "axes": [],
+      "cmapCodepoints": 258,
+      "glyphs": 268
+    },
+    {
+      "name": "font-210d783383f99cf8d4ba36faae522af93dfc89349792c19f43f0a531e13a8c5e676544138d0a08554cf8a51a307d31ca.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/quantico/Quantico-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quantico/Quantico-BoldItalic.ttf",
+      "sourceBytes": 20660,
+      "sourceSri": "sha384-wzCfi+dYRxUajKnVO0oyGcThtJxPEfwh6YuijX70cx9GFk5wYwkUius3dc/GL7dn",
+      "bytes": 8228,
+      "sri": "sha384-IQ14M4P5nPjUujb6rlIq+T38iTSXksGfQ/ClMeE6jF5nZUQTjQoIVUz4pRowfTHK",
+      "axes": [],
+      "cmapCodepoints": 258,
+      "glyphs": 268
+    },
+    {
+      "name": "font-4fd6e1f67aa3ceb69e8f1dd7e0d6a31346fea00265aa0404a83138de8752936b6669893a6373a72d12bcc60600b6d415.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/quantico/Quantico-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quantico/Quantico-Italic.ttf",
+      "sourceBytes": 22144,
+      "sourceSri": "sha384-JPlRsE1yhEtu/VMdP3nZpl2E645GMmiV+Kw5B06PzBS6Y2Pfmqpzy9sYb9b8lNss",
+      "bytes": 8276,
+      "sri": "sha384-T9bh9nqjzraejx3X4NajE0b+oAJlqgQEqDE43odSk2tmaYk6Y3OnLRK8xgYAttQV",
+      "axes": [],
+      "cmapCodepoints": 258,
+      "glyphs": 268
+    },
+    {
+      "name": "font-48254dcb6b5eb6ec8a138c59fd780216f6d3a8aa5f7e955e8736ed0412df80a3ae2b8c2811d376dea077ba9cc5ee3438.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/quantico/Quantico-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quantico/Quantico-Regular.ttf",
+      "sourceBytes": 20940,
+      "sourceSri": "sha384-e4KcMKVkLej9dDEGLzpbYtNmzldTDE7S+bEzP0ZaPAFjL+fE3c+Ub9hts5222P1w",
+      "bytes": 7692,
+      "sri": "sha384-SCVNy2tetuyKE4xZ/XgCFvbTqKpffpVehzbtBBLfgKOuK4woEdN23qB3upzF7jQ4",
+      "axes": [],
+      "cmapCodepoints": 258,
+      "glyphs": 268
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/quantico/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quantico/OFL.txt",
+    "bytes": 4422,
+    "sri": "sha384-DuTziLUR6lQ0fxU+UAdla0Uv3rEMv8+/0yPP3EMQXO4Z25IKdNoQuxDisYam3vnI"
+  }
+}

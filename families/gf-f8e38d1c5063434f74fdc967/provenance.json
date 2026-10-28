@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Nixie One",
+  "sourceRank": 178,
+  "sourcePosition": 358,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nixieone/METADATA.pb",
+    "sri": "sha384-2LeX/Kcr3JhrEYKE62B2OfLBGijUnmD4kctwF2j8ClF4fkWxX8iR0TlmmuvDkKNp"
+  },
+  "files": [
+    {
+      "name": "font-40c0531ae59059d6e80b90ac4c8f2f7e1d9e1fa480eb3294e0dbddc3be5cc0f1a5deb88e261662f0df1e14c529875f7d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/nixieone/NixieOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nixieone/NixieOne-Regular.ttf",
+      "sourceBytes": 52580,
+      "sourceSri": "sha384-GlhG5jE9u7TPzF6oMkXZ6D2srwXkwEUDUlz2rf+k5+P6NKvoZ1P1qB3mA6UZtozF",
+      "bytes": 16864,
+      "sri": "sha384-QMBTGuWQWdboC5CsTI8vfh2eH6SA6zKU4Nvdw75cwPGl3riOJhZi8N8eFMUph199",
+      "axes": [],
+      "cmapCodepoints": 217,
+      "glyphs": 221
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/nixieone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nixieone/OFL.txt",
+    "bytes": 4365,
+    "sri": "sha384-hJyw/ICX19ZqwGrCxvdg/SrSY4CBjDz3xKOaknhyklLPw2rl2MXDhnN8BaUMxiWg"
+  }
+}

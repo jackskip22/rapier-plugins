@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Bowlby One",
+  "sourceRank": 318,
+  "sourcePosition": 610,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bowlbyone/METADATA.pb",
+    "sri": "sha384-amTMIAcJ30MlpEiFoQDeqYK3zvzv7a4MB3eyMtlBS+PStXgtbseoW6LCFmKDYmOF"
+  },
+  "files": [
+    {
+      "name": "font-1dd57f7f71d8c5752508e303671799b6c7c80c3ffb9b58a6a5ba90e3a53fa455ef1f09792bb9415db3d2313306368e72.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bowlbyone/BowlbyOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bowlbyone/BowlbyOne-Regular.ttf",
+      "sourceBytes": 59856,
+      "sourceSri": "sha384-z/vsR/33ytgh4KsGb+4QuGmqwOMPi0xCJfhc+zHsZ69Sw5HqW1KG60CixHXPYIyU",
+      "bytes": 28740,
+      "sri": "sha384-HdV/f3HYxXUlCOMDZxeZtsfIDD/7m1impbqQ46U/pFXvHwl5K7lBXbPSMTMGNo5y",
+      "axes": [],
+      "cmapCodepoints": 288,
+      "glyphs": 293
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bowlbyone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bowlbyone/OFL.txt",
+    "bytes": 4433,
+    "sri": "sha384-U/8IuckmyZXZLGGNBB8xjs/X4h6UJh3rY5QCp8m52fECyLYgTeHuMdfnaLo33bUP"
+  }
+}

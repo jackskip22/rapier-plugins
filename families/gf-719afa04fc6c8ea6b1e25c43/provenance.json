@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Prociono",
+  "sourceRank": 319,
+  "sourcePosition": 613,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/prociono/METADATA.pb",
+    "sri": "sha384-lco3KyFJiez4HLJNO710Cd1affQHP7JzS8FEqqOK1yTRYqetIkuUTsEIqjibZgGc"
+  },
+  "files": [
+    {
+      "name": "font-d0cdd965d47d7c875c192f6e1d8561e503c417c033831ddcdeb66d193e5d6aa8a655aac42a6999750fdbfdafc4df6e91.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/prociono/Prociono-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/prociono/Prociono-Regular.ttf",
+      "sourceBytes": 31136,
+      "sourceSri": "sha384-XYau8p0DfIkiP96bEc6DFSI5bXTO5NieDYwRbruH56zcsSUxi2XlOiHjSKHfaJts",
+      "bytes": 14916,
+      "sri": "sha384-0M3ZZdR9fIdcGS9uHYVh5QPEF8Azgx3c3rZtGT5daqimVarEKmmZdQ/b/a/E326R",
+      "axes": [],
+      "cmapCodepoints": 313,
+      "glyphs": 333
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/prociono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/prociono/OFL.txt",
+    "bytes": 4372,
+    "sri": "sha384-Phjc/OlCUf6O8KputHlRECS+Vt6D9IHwSZWkIhnsV3MHW9FP0rMljGJGufTlRR4f"
+  }
+}

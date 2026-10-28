@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "MedievalSharp",
+  "sourceRank": 546,
+  "sourcePosition": 996,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/medievalsharp/METADATA.pb",
+    "sri": "sha384-zqSXn3hSlSt54YK8NY/ACYEAGq0mZNX1aG4WWaFoAU1vMHDNAF186++YQk8re4Qv"
+  },
+  "files": [
+    {
+      "name": "font-86bd71d4764516420368f8254c96ec199895f30c95764290b7310b43264986ec90a1f5608527ee5273ddddde5b187fcd.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/medievalsharp/MedievalSharp.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/medievalsharp/MedievalSharp.ttf",
+      "sourceBytes": 148712,
+      "sourceSri": "sha384-DBw4fqHS//MmTt0+4V6zPcbLGCMadC75J2vv948ETxVlfIfNo3OV49+0gQI7X024",
+      "bytes": 54880,
+      "sri": "sha384-hr1x1HZFFkIDaPglTJbsGZiV8wyVdkKQtzELQyZJhuyQofVghSfuUnPd3d5bGH/N",
+      "axes": [],
+      "cmapCodepoints": 400,
+      "glyphs": 404
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/medievalsharp/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/medievalsharp/OFL.txt",
+    "bytes": 4276,
+    "sri": "sha384-zx+nYLyWetAI9CQcRj0nCjf9MbOz7C/QnScICcRwsc+7sVfblDo2OKEmnbadO0Ll"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Amiri Quran",
+  "sourceRank": 280,
+  "sourcePosition": 549,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiriquran/METADATA.pb",
+    "sri": "sha384-RFJlACwcdrb/PdwJZeIU0nq1Y78nJfko04RMwkO1ZXIuhmSIhVBmxrCRKN0mHI8s"
+  },
+  "files": [
+    {
+      "name": "font-b75b4c84f2c345a976c626f909cde362b3c5203b3bb7fa1b97f34e2b3b353973756b86d2efaf8c094f5b43dec64def40.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/amiriquran/AmiriQuran-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiriquran/AmiriQuran-Regular.ttf",
+      "sourceBytes": 136920,
+      "sourceSri": "sha384-kejeF3syZmb61q7HqM/53nMOO2aLXL+zfvLrjjzz9/bF7mfwCJucujskPFcIwXvU",
+      "bytes": 62248,
+      "sri": "sha384-t1tMhPLDRal2xib5Cc3jYrPFIDs7t/obl/NOKzs1OXN1a4bS76+MCU9bQ97GTe9A",
+      "axes": [],
+      "cmapCodepoints": 266,
+      "glyphs": 1446
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/amiriquran/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiriquran/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-hVVz1NuoSv7OxxLoNlwLZBFYnK2Ov0jW3QocLpCnqHYYpI/qVIDfSeYnkYb5v7aO"
+  }
+}

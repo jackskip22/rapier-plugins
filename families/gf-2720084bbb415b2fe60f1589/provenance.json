@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Gothic",
+  "sourceRank": 323,
+  "sourcePosition": 620,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansgothic/METADATA.pb",
+    "sri": "sha384-YOqtAuHukhgQc9FXWjGjp46XnoaZqg9zy7Vm8dyq2SIIj/DExvZMkevUlxMILB6D"
+  },
+  "files": [
+    {
+      "name": "font-c88a2a27bd542baaba19310db628940da12cbca2aa2cd22a15ae3d9999038c9b8bfa226834e78f586b5c976037294fe1.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansgothic/NotoSansGothic-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansgothic/NotoSansGothic-Regular.ttf",
+      "sourceBytes": 49956,
+      "sourceSri": "sha384-ZolQ2yRLMOc+7xnXBKlcbT0C/F/185N2TIO6CLhqiBkRl8Iuj1c/kcNLQEMz+Xsh",
+      "bytes": 21892,
+      "sri": "sha384-yIoqJ71UK6q6GTENtiiUDaEsvKKqLNIqFa49mZkDjJuL+iJoNOePWGtcl2A3KU/h",
+      "axes": [],
+      "cmapCodepoints": 365,
+      "glyphs": 376
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansgothic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansgothic/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-XBShT0atnxg9sReGUr1khi57zHX856kSrGK6UOh5BEhT0W/3S/aVspYdkLAxSf5l"
+  }
+}

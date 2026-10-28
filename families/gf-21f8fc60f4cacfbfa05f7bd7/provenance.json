@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Mrs Saint Delafield",
+  "sourceRank": 400,
+  "sourcePosition": 760,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mrssaintdelafield/METADATA.pb",
+    "sri": "sha384-i3F9vzkIfafnxJEYA28h7m/hg9hDzufIzB+Ki3qX1vOX7DuDcZy5JP2GsmVZcEsV"
+  },
+  "files": [
+    {
+      "name": "font-39af3f97ef10b4383b73dc9e108fad49423963e5ad2491e9707651c887c0a6dbdeb63639298df35a2417ebcb742ab3ee.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mrssaintdelafield/MrsSaintDelafield-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mrssaintdelafield/MrsSaintDelafield-Regular.ttf",
+      "sourceBytes": 49140,
+      "sourceSri": "sha384-bg8kGNkKuvZ7leJ7Vi7+cWmB0ueJ1e0MvB98Vwe/o4rhOAYxDJNvg7qt19DoSbKN",
+      "bytes": 20676,
+      "sri": "sha384-Oa8/l+8QtDg7c9yeEI+tSUI5Y+WtJJHpcHZRyIfAptvetjY5KY3zWiQX68t0KrPu",
+      "axes": [],
+      "cmapCodepoints": 236,
+      "glyphs": 238
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mrssaintdelafield/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mrssaintdelafield/OFL.txt",
+    "bytes": 4409,
+    "sri": "sha384-uWspvAog30Mt7WHynQZUcGLMaWoYDHYLmK6XFulh0xyS14fe59fflZmdUMk8KNdZ"
+  }
+}

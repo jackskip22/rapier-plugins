@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Macondo",
+  "sourceRank": 219,
+  "sourcePosition": 435,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/macondo/METADATA.pb",
+    "sri": "sha384-ZeplQXyh5hpwsN+95vH6IpUZI35G4wXOeP0LRDX08JHux2NU7PW5p8loeP5LqwjX"
+  },
+  "files": [
+    {
+      "name": "font-11e6757b1eec156cc922eadbe8c279714627b75e6980d60062c4847f106ccf274a63310e1f3fea94b1105cfee8fe309b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/macondo/Macondo-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/macondo/Macondo-Regular.ttf",
+      "sourceBytes": 48776,
+      "sourceSri": "sha384-l1NXNFAycKhzZlFPMD17QsKrnBtZ4OkcOmlWc5jnv3Cn4wyL3KD7xsIMpYcOhhwI",
+      "bytes": 16576,
+      "sri": "sha384-EeZ1ex7sFWzJIurb6MJ5cUYnt15pgNYAYsSEfxBszydKYzEOHz/qlLEQXP7o/jCb",
+      "axes": [],
+      "cmapCodepoints": 310,
+      "glyphs": 311
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/macondo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/macondo/OFL.txt",
+    "bytes": 4443,
+    "sri": "sha384-bNcNFg+pPWpp2IZQ54ldmdmOxC1gdoOqQMybp0Inx5jmdYao1l+tI8BG/aTa7uY+"
+  }
+}

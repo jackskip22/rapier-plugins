@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Nova Round",
+  "sourceRank": 336,
+  "sourcePosition": 643,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novaround/METADATA.pb",
+    "sri": "sha384-N10qY2Dmk7v4ZyJpavezge66t33sDzDFEncC551+NO2BhtVpFylx4miDh7d4wtNT"
+  },
+  "files": [
+    {
+      "name": "font-1dcd2c7dedef8b541e85110fe37893611634eb792039f659182861689702f44efcca5d818853c1d63e7496c43cd5822d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/novaround/NovaRound.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novaround/NovaRound.ttf",
+      "sourceBytes": 93212,
+      "sourceSri": "sha384-MAmri+j+9Pq9O/BOTFGm5aQHAN/v3eHIVjDPVRP+UieIN8RI2OOgtTtUa7v3rNOt",
+      "bytes": 28224,
+      "sri": "sha384-Hc0sfe3vi1QehREP43iTYRY063kgOfZZGChhaJcC9E78yl2BiFPB1j50lsQ81YIt",
+      "axes": [],
+      "cmapCodepoints": 418,
+      "glyphs": 421
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/novaround/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novaround/OFL.txt",
+    "bytes": 4272,
+    "sri": "sha384-7xTSeaOP/I3o9Tji+7deO9wX92JBzhnG8b4tNzzvBdG/rdt5waiRKva7XMYAQXHY"
+  }
+}

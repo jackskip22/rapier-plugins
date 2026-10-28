@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Over the Rainbow",
+  "sourceRank": 243,
+  "sourcePosition": 477,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/overtherainbow/METADATA.pb",
+    "sri": "sha384-PyFUHDEDAegTulESgwqMXp9zvjbOuLhhRCTlOzBaIbwtbziDEoGep1ipZdtl4p85"
+  },
+  "files": [
+    {
+      "name": "font-72f1949c77f550dc3e3ea15383fd45e9f866f820b647f52cbb0ec02bc8a5cf2573cb1ff854594239ab66f2ccd1bd4fd8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/overtherainbow/OvertheRainbow.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/overtherainbow/OvertheRainbow.ttf",
+      "sourceBytes": 47508,
+      "sourceSri": "sha384-hoUr1SdaV9C7ZurJr0RHCFAnpfx6axLypjvi8jmZSI5zvisj4arD1JCdMTwOxtOu",
+      "bytes": 23192,
+      "sri": "sha384-cvGUnHf1UNw+PqFTg/1F6fhm+CC2R/Usuw7AK8ilzyVzyx/4VFlCOatm8szRvU/Y",
+      "axes": [],
+      "cmapCodepoints": 353,
+      "glyphs": 356
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/overtherainbow/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/overtherainbow/OFL.txt",
+    "bytes": 4362,
+    "sri": "sha384-1YKmofHCyJDlDsppmYBFx5tEP29mPreOCEmka3gUdA6TGDKpgCKnKy90effPAKhr"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Secular One",
+  "sourceRank": 289,
+  "sourcePosition": 561,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/secularone/METADATA.pb",
+    "sri": "sha384-0XPs1cclhHrNSEWEwbO8BZmQusAvTKK80Tv5f3xwLzo6XYPL3gZwiI3nLf+tTOrx"
+  },
+  "files": [
+    {
+      "name": "font-00b52553fce3731bed1990514386466385ca3c095445fe4e42364963b15d8a7bcad68a0472a1f7e1f98426f4572a9220.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/secularone/SecularOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/secularone/SecularOne-Regular.ttf",
+      "sourceBytes": 83916,
+      "sourceSri": "sha384-yX1m4ovMY+aqKFh1rNYZEC03CBUQnTcpY4TFykLkrSvlW0tgZTD4eYOXV34kVbpP",
+      "bytes": 32420,
+      "sri": "sha384-ALUlU/zjcxvtGZBRQ4ZGY4XKPAlURf5OQjZJY7FdinvK1ooEcqH34fmEJvRXKpIg",
+      "axes": [],
+      "cmapCodepoints": 453,
+      "glyphs": 466
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/secularone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/secularone/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-LSRdm6MPgw2hupEUJqeYL4261ffTWUck+WzSPEiHBqzKl8NMB4Kkd6m11fGvBlyG"
+  }
+}

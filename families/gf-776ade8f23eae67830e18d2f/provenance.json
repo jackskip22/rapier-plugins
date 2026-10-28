@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Silkscreen",
+  "sourceRank": 157,
+  "sourcePosition": 318,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/silkscreen/METADATA.pb",
+    "sri": "sha384-hFZDyM7JphboO5OWoPXRWffkrjZ8GpmOwzMQtyQugPNk5fimojLBhVXxCm946M8Z"
+  },
+  "files": [
+    {
+      "name": "font-e5fc867dedab071cb8bb700b211bc2f4c9c14d73b71ca1e10dc431971ed1f83239b7769be7b8b6b1cdd2ffb975c58d40.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/silkscreen/Silkscreen-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/silkscreen/Silkscreen-Bold.ttf",
+      "sourceBytes": 30632,
+      "sourceSri": "sha384-1Y/XHX8lY9LLrQrTldCDuSRAVwFcHsu9W1ysn70G+J8PzBdwYFE5+yCBh3pkPP0s",
+      "bytes": 8140,
+      "sri": "sha384-5fyGfe2rBxy4u3ALIRvC9MnBTXO3HKHhDcQxlx7R+DI5t3ab57i2sc3S/7l1xY1A",
+      "axes": [],
+      "cmapCodepoints": 226,
+      "glyphs": 228
+    },
+    {
+      "name": "font-eb23b7d339ff2d262803102d689a6b8bc6c9f85e00dbdfdf7f8162b3d68cbf1407ed4628f25cacc4f2eeaca7974a97c0.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/silkscreen/Silkscreen-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/silkscreen/Silkscreen-Regular.ttf",
+      "sourceBytes": 32220,
+      "sourceSri": "sha384-+nAeBAKWJa+u37sFZeL3oc15ALMTtEq2StnzxDM1VRqx2u42UnpO4qrOk8llo4/1",
+      "bytes": 8952,
+      "sri": "sha384-6yO30zn/LSYoAxAtaJpri8bJ+F4A29/ff4Fis9aMvxQH7UYo8lysxPLurKeXSpfA",
+      "axes": [],
+      "cmapCodepoints": 226,
+      "glyphs": 228
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/silkscreen/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/silkscreen/OFL.txt",
+    "bytes": 4394,
+    "sri": "sha384-eL3UJhSeCkXoaoC2f4pjxLq9GcanVYdwmJ0ej5jBSEN5CXBzKHzpCTfHHFXlM5/i"
+  }
+}

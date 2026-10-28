@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sue Ellen Francisco",
+  "sourceRank": 197,
+  "sourcePosition": 399,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sueellenfrancisco/METADATA.pb",
+    "sri": "sha384-oFTMFAJkYkEHvy361t2vGd0M27ixHjg2F0frl20JLnZq2hDMh8HotzrKc/iMg4RP"
+  },
+  "files": [
+    {
+      "name": "font-624c27d242acf66e631c79b8f687eff3a946ef421470eed404501c7f51a8773107008495d6541cb7a21cf4a02ffaf695.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sueellenfrancisco/SueEllenFrancisco-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sueellenfrancisco/SueEllenFrancisco-Regular.ttf",
+      "sourceBytes": 60728,
+      "sourceSri": "sha384-BTlDpk1LrDyexqOUrFAMWRAjq42i9PS96doSSpbCo4RUrP+FmkqR8MXWPG1cWuac",
+      "bytes": 21152,
+      "sri": "sha384-Ykwn0kKs9m5jHHm49ofv86lG70IUcO7UBFAcf1GodzEHAISV1lQct6Ic9KAv+vaV",
+      "axes": [],
+      "cmapCodepoints": 287,
+      "glyphs": 290
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sueellenfrancisco/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sueellenfrancisco/OFL.txt",
+    "bytes": 4362,
+    "sri": "sha384-1YKmofHCyJDlDsppmYBFx5tEP29mPreOCEmka3gUdA6TGDKpgCKnKy90effPAKhr"
+  }
+}

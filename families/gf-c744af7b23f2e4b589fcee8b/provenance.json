@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Parkinsans",
+  "sourceRank": 362,
+  "sourcePosition": 686,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/parkinsans/METADATA.pb",
+    "sri": "sha384-+NVRFQOxFz3TuSj2xBtSGQQmxKsvuK1onGSrTforlrf9L07XcOFjE3e7ls8qNTig"
+  },
+  "files": [
+    {
+      "name": "font-c2f5c0bf89076306e50b58a4a6177d77ff0ae15472c312e9d7e68624c7a39c86145b187e3b3cda0a5db872e4af511fd4.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/parkinsans/Parkinsans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/parkinsans/Parkinsans%5Bwght%5D.ttf",
+      "sourceBytes": 93096,
+      "sourceSri": "sha384-6LflFAqN/NV6hP+HaXZSsaz4Gxj1dQcOXVwMD/dY84oLxJzPJ6AS6kAcxuR7T9BH",
+      "bytes": 41056,
+      "sri": "sha384-wvXAv4kHYwblC1ikphd9d/8K4VRywxLp1+aGJMejnIYUWxh+OzzaCl24cuSvUR/U",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 382,
+      "glyphs": 387
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/parkinsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/parkinsans/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-VpXdxJFyS3etKb8yi84pIurza0EOu8gFtFgQEWiwmhdbWAJ9jMhgbl77IC33W+q6"
+  }
+}

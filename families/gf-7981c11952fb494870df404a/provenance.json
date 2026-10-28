@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Arizonia",
+  "sourceRank": 526,
+  "sourcePosition": 968,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arizonia/METADATA.pb",
+    "sri": "sha384-ioqsyhcBCO5SB2lgfIrbaqvgu5bjuIjOY4TXsjAli7rA494lJqPbX7U20LCduCu2"
+  },
+  "files": [
+    {
+      "name": "font-8f3c0060c75335b75745b943d4cca875bb6100d61698f26aa8d05ee6972c31c8ea4998ac4ecf3923706915a15e8997de.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/arizonia/Arizonia-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arizonia/Arizonia-Regular.ttf",
+      "sourceBytes": 126276,
+      "sourceSri": "sha384-UfLAgMmLOx5SwFpVuHUF/JrnxqkVeiymtGH7xZzeuaZ7nm3aeU3u48l9VfBy57jX",
+      "bytes": 49796,
+      "sri": "sha384-jzwAYMdTNbdXRblD1MyodbthANYWmPJqqNBe5pcsMcjqSZisTs85I3BpFaFeiZfe",
+      "axes": [],
+      "cmapCodepoints": 588,
+      "glyphs": 652
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/arizonia/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arizonia/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-9cdysb2PF+5Q+baI/an1lQLQ+G0RWsVB3kYAWikhGxYz69Spy73xHE7rMkvD0ba0"
+  }
+}

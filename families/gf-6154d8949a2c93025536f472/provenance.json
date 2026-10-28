@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Metrophobic",
+  "sourceRank": 461,
+  "sourcePosition": 877,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/metrophobic/METADATA.pb",
+    "sri": "sha384-dMA/9EJ5YWf1vVdY41myOTnflOla21ZF5Jlh3x0++2681/c3ku5Z89fmXOYKnstu"
+  },
+  "files": [
+    {
+      "name": "font-4f6c2d8f737f94c332f123dda4d302975eb952e5ec4869d99911e67b1bfeb4b359ac09c62c5f986ef803a0d337973fe6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/metrophobic/Metrophobic-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/metrophobic/Metrophobic-Regular.ttf",
+      "sourceBytes": 79772,
+      "sourceSri": "sha384-sis4HRn+3TwEJH49+VdpmmTHaCrXlMQF+w9D1geeNW4+Ps06BDV3Eeozdr/nfl4V",
+      "bytes": 29916,
+      "sri": "sha384-T2wtj3N/lMMy8SPdpNMCl165UuXsSGnZmRHmexv+tLNZrAnGLF+YbvgDoNM3lz/m",
+      "axes": [],
+      "cmapCodepoints": 575,
+      "glyphs": 602
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/metrophobic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/metrophobic/OFL.txt",
+    "bytes": 4533,
+    "sri": "sha384-YxIYNfJm2bLvMXNE1TQhteStA15kYuEcdX3JHMGwWswSGC6PZwiMi5zoq53I3LW8"
+  }
+}

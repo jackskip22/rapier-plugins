@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Krona One",
+  "sourceRank": 392,
+  "sourcePosition": 743,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kronaone/METADATA.pb",
+    "sri": "sha384-MhR4RBZ0XqIR3zmDkgdr6CHRr3FY4tw5Op+5j7q/Rikg1Zbe4Ia2sUexm5xMqYA6"
+  },
+  "files": [
+    {
+      "name": "font-4f5c414a1bbe70ac3ac4f3fd47a5c58c8cdeb52ac3f27a7cc957f1df33024fc3fb7a5c57bd9832363958baa943d8dee9.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kronaone/KronaOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kronaone/KronaOne-Regular.ttf",
+      "sourceBytes": 35168,
+      "sourceSri": "sha384-x0IWS9XFRYS6ov+1nrqgz/CH0hujpm5E0+CKQnc7wIg+xVPkZNKoqAflf72e5ewd",
+      "bytes": 15728,
+      "sri": "sha384-T1xBShu+cKw6xPP9R6XFjIzetSrD8np8yVfx3zMCT8P7elxXvZgyNjlYuqlD2N7p",
+      "axes": [],
+      "cmapCodepoints": 411,
+      "glyphs": 424
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kronaone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kronaone/OFL.txt",
+    "bytes": 4412,
+    "sri": "sha384-8NK1dCbRS7ILKwBHqiLHGRDj9aCX7sCTxGMadfF46mI2Vsnm1rYaezd7hCFnF0wH"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Abel",
+  "sourceRank": 108,
+  "sourcePosition": 218,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/METADATA.pb",
+    "sri": "sha384-zVScp059IdhL9Xq53FBurmLsYRCsrpmDngmuSP23uWvkgpvenVeF/pYH62Yj0B70"
+  },
+  "files": [
+    {
+      "name": "font-7af233e4914fb2ac0d1239927a15e703dc4d2fc2f209551cf040c8efac58822a5d2ffee71d2a620195421d2d68daabfa.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/abel/Abel-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/Abel-Regular.ttf",
+      "sourceBytes": 35220,
+      "sourceSri": "sha384-t6H/IX1EizNCmgh5w3KH5IF5ZJRbblRx1380Wz5Bvv/URoshKfykDMhUzVXjsICC",
+      "bytes": 11632,
+      "sri": "sha384-evIz5JFPsqwNEjmSehXnA9xNL8LyCVUc8EDI76xYgipdL/7nHSpiAZVCHS1o2qv6",
+      "axes": [],
+      "cmapCodepoints": 248,
+      "glyphs": 259
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/abel/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abel/OFL.txt",
+    "bytes": 4418,
+    "sri": "sha384-GRmU9Pn/+jEx5mjkV4+A+6GRxda8A0pWlTO0PL9dVsfdaW/A/eBSQCvHKyqrR1XO"
+  }
+}

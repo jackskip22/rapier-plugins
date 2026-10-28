@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Norican",
+  "sourceRank": 171,
+  "sourcePosition": 343,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/norican/METADATA.pb",
+    "sri": "sha384-Tma0zuRPX+s9YWD0CCD44TPfDasvXvV0W420crNQzA61DsZvhoqeziGdMUNo4Mep"
+  },
+  "files": [
+    {
+      "name": "font-49a5e71541a76e54a5742b07e8987fd924ba06949054d182d3c1e1bb357d9f96b2e5a34e55d2a9e641f0faa230040f47.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/norican/Norican-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/norican/Norican-Regular.ttf",
+      "sourceBytes": 83416,
+      "sourceSri": "sha384-WRpIUXcd7cFUCFSpqgxjtm2bo99bPLaKyppoGTlWI6HOdze2HaFKXiXHix8aXmDA",
+      "bytes": 40312,
+      "sri": "sha384-SaXnFUGnblSldCsH6Jh/2SS6BpSQVNGC08HhuzV9n5ay5aNOVdKp5kHw+qIwBA9H",
+      "axes": [],
+      "cmapCodepoints": 362,
+      "glyphs": 396
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/norican/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/norican/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-KAliHQJTmcm2XaDcIsGgPBALAEJ0kknXXFF72URIY/WVZbuNfr69E7QzBbIBRVo8"
+  }
+}

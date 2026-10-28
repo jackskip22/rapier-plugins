@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Rakkas",
+  "sourceRank": 177,
+  "sourcePosition": 356,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rakkas/METADATA.pb",
+    "sri": "sha384-uwK/Nj9QJ5X1HHZH1YKr0WcypPPubs3U8M82iN1xuuOaPMVKMEendamA/sVzn4H6"
+  },
+  "files": [
+    {
+      "name": "font-e3e703950e8f9aa4821c051382f5e70e2aeadf00712abe64eeaf76574aa705fb44ede41a31be4b87c43b4a2b533a159f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rakkas/Rakkas-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rakkas/Rakkas-Regular.ttf",
+      "sourceBytes": 146824,
+      "sourceSri": "sha384-Cxx2L0nNmZZ4GIpxa4ySb11wXSG5V9G5fo15c0RwFWZQMwlJoJJNdJ7JydjcHln2",
+      "bytes": 55412,
+      "sri": "sha384-4+cDlQ6PmqSCHAUTgvXnDirq3wBxKr5k7q92V0qnBftE7eQaMb5Lh8Q7SitTOhWf",
+      "axes": [],
+      "cmapCodepoints": 639,
+      "glyphs": 926
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rakkas/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rakkas/OFL.txt",
+    "bytes": 4423,
+    "sri": "sha384-t328NcrgzZMaMwaGpuSqU6zdU0ARd8/E7RntmcSOeVur6GyjlV5QsVx8e9bnJ3Hd"
+  }
+}

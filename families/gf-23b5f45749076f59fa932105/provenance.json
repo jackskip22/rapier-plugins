@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Kumbh Sans",
+  "sourceRank": 8,
+  "sourcePosition": 19,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kumbhsans/METADATA.pb",
+    "sri": "sha384-heEeBswwD4WJmFxs+gwTVAB/fMgRLOublpdG5in8c9ve5Z113POB01Q6jX96LfYJ"
+  },
+  "files": [
+    {
+      "name": "font-69a728e103969aea506a8a26827bda069fcbd29869d7ab3ca5abae22ad359779040576ab4ebf53d05e109836e2a11d6a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kumbhsans/KumbhSans[YOPQ,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kumbhsans/KumbhSans%5BYOPQ%2Cwght%5D.ttf",
+      "sourceBytes": 118796,
+      "sourceSri": "sha384-+VzVzW41YXDU0KXco5jJ6CFsIhgsFraZYKr0dha7ymbqdD06fIEzRj+rNJ20pqLo",
+      "bytes": 62556,
+      "sri": "sha384-aaco4QOWmupQaoomgnvaBp/L0php16s8pauuIq01l3kEBXarTr9T0F4QmDbioR1q",
+      "axes": [
+        {
+          "tag": "YOPQ",
+          "min": 40,
+          "default": 300,
+          "max": 300,
+          "name": "Thin Stroke"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 412,
+      "glyphs": 416
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kumbhsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kumbhsans/OFL.txt",
+    "bytes": 4481,
+    "sri": "sha384-sycYFtHmo4znkAdiNPxxZqul9FF8Rs6s2gSt7RzR31t6k/8QxM2VCG6Y/Iqvmwjm"
+  }
+}

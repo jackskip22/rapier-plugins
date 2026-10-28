@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Condiment",
+  "sourceRank": 327,
+  "sourcePosition": 626,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/condiment/METADATA.pb",
+    "sri": "sha384-FLeoXFDAk+p0QSQxpb/oOmoKl4AaBZxOM4yNbnryKigiDGvNe7UTAaMWpmJIBcFQ"
+  },
+  "files": [
+    {
+      "name": "font-bc72e1c252f60090bc9e5f3951b36a12a2c4d31dee2ab4d97306c03fe5667f269399146017e236d7b0d694823413e4cb.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/condiment/Condiment-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/condiment/Condiment-Regular.ttf",
+      "sourceBytes": 43392,
+      "sourceSri": "sha384-gYDzk5L7lnHLldpIyqKLoTFCSyShMaTZ4x5d6kU665wdzzSTXROiHVBL4ppVyxqf",
+      "bytes": 18412,
+      "sri": "sha384-vHLhwlL2AJC8nl85UbNqEqLE0x3uKrTZcwbAP+VmfyaTmRRgF+I217DWlII0E+TL",
+      "axes": [],
+      "cmapCodepoints": 230,
+      "glyphs": 234
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/condiment/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/condiment/OFL.txt",
+    "bytes": 4458,
+    "sri": "sha384-nuLtOAJeKo1cDjM3g4O7jGvV86ExaVjAtZst3EJ+d05585Dk8iFBWM6T17I1gmab"
+  }
+}

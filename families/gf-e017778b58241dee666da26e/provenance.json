@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Libre Barcode 39 Text",
+  "sourceRank": 177,
+  "sourcePosition": 354,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librebarcode39text/METADATA.pb",
+    "sri": "sha384-YxylcnLcPogxUsvrfYERCeop6wDDUw5VOgbyAfWy0jVSRhX03fXq5Pa2V/Wff4BK"
+  },
+  "files": [
+    {
+      "name": "font-335dc2fd0bb49605e37e0a5e107c1d526b384793855b65a656c1c7e8e77e9a30b5bb2339c92467cd70b50afccb82b04a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/librebarcode39text/LibreBarcode39Text-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librebarcode39text/LibreBarcode39Text-Regular.ttf",
+      "sourceBytes": 22984,
+      "sourceSri": "sha384-DLe791lajIoKuoJA7sdg9NV0+S3qSEtI+pONVva57AqFUtyuRIsLRtpB8vlnsdDr",
+      "bytes": 6604,
+      "sri": "sha384-M13C/Qu0lgXjfgpeEHwdUms4R5OFW2WmVsHH6Od+mjC1uyM5ySRnzXC1CvzLgrBK",
+      "axes": [],
+      "cmapCodepoints": 76,
+      "glyphs": 163
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/librebarcode39text/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librebarcode39text/OFL.txt",
+    "bytes": 4402,
+    "sri": "sha384-fL15dM4NB8WTpg6gdUdCD5rhDt2FfZSfMvw1sY2rtS8jTHy7o5WvR3xvHUg4qv0p"
+  }
+}

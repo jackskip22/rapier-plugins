@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Chelsea Market",
+  "sourceRank": 218,
+  "sourcePosition": 431,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chelseamarket/METADATA.pb",
+    "sri": "sha384-FQ7ahHizQ1Ogm6O+Ey8KW93jgZoHwtXHCUSVOkLaSVUpqF+VAg7uqqK5OVdpijoR"
+  },
+  "files": [
+    {
+      "name": "font-b3c29ba9f69c9708442e1e1654ed7e020ce9574374fd1c4ddf24bf5fec3c4848b06dcdc3f6eceacd9fc8003675fb2d8c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/chelseamarket/ChelseaMarket-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chelseamarket/ChelseaMarket-Regular.ttf",
+      "sourceBytes": 172924,
+      "sourceSri": "sha384-rdSDg9dVSKwyPpw9iWyRge/jmNK53IT7tOQtIfNs95Q+ASdzIIdDtGiKRg93tjZN",
+      "bytes": 63684,
+      "sri": "sha384-s8KbqfaclwhELh4WVO1+AgzpV0N0/RxN3yS/X+w8SEiwbc3D9uzqzZ/IADZ1+y2M",
+      "axes": [],
+      "cmapCodepoints": 227,
+      "glyphs": 228
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/chelseamarket/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chelseamarket/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-MmPhRh7UkbhX+OAr8iplKuhuAwDGRJlcntFyLhrpge7IVHUAfXBEph9HZfsPArrW"
+  }
+}

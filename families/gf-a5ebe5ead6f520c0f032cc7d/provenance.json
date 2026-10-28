@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Funnel Sans",
+  "sourceRank": 285,
+  "sourcePosition": 556,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/funnelsans/METADATA.pb",
+    "sri": "sha384-M84VZsDy+65z5r1zUHNogExfc7268yysi9jPkRcvRpIyDHRZ3GoKXF5iSRMae9Gu"
+  },
+  "files": [
+    {
+      "name": "font-9221166cf81ff212310974371607cc2eea50096738cbb288dd105f24f285438193cbe3e4b88ffd8d7eb7c20b0ed67881.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/funnelsans/FunnelSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/funnelsans/FunnelSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 55044,
+      "sourceSri": "sha384-l99wwDuKEZHLh/TexXWNFu95ZVcvSWdAUT5pqjWD9xCi5Lobyz7eDlgg4kIskbnx",
+      "bytes": 24576,
+      "sri": "sha384-kiEWbPgf8hIxCXQ3FgfMLupQCWc4y7KI3RBfJPKFQ4GTy+PkuI/9jX63wgsO1niB",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 348,
+      "glyphs": 370
+    },
+    {
+      "name": "font-1218e466d7c6fb68ce3d19bc70347d814cec324e4327adc2bc96becb35bdd45ed97db2bd45b38d2a0c551b99a51f0ad2.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/funnelsans/FunnelSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/funnelsans/FunnelSans%5Bwght%5D.ttf",
+      "sourceBytes": 53268,
+      "sourceSri": "sha384-hsdqHVOTGr5fg6FOJVGGXVxw1TQWs/qIVfOGecAuTSx9C9JaDKjlYb1XCMBGXFCz",
+      "bytes": 22768,
+      "sri": "sha384-EhjkZtfG+2jOPRm8cDR9gUzsMk5DJ63CvJa+yzW91F7ZfbK9RbONKgxVG5mlHwrS",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 348,
+      "glyphs": 370
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/funnelsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/funnelsans/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-jSdL26HZgjGmE+Zg/BtW1nH0or/C/D57qjYGZsJ6yVP3vWDBSQhlo457r9lluyus"
+  }
+}

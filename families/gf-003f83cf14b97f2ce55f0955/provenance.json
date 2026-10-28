@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Chango",
+  "sourceRank": 368,
+  "sourcePosition": 698,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chango/METADATA.pb",
+    "sri": "sha384-OUvxSUOvB0TN5oUP4QNzRiEjKshtYojS5MWxwNm5YJQq6UMdFI8KlZKeRxKihbJR"
+  },
+  "files": [
+    {
+      "name": "font-b2ae915a92311d8517991d6631e763d4c2908fdea78457ba617fd7393b44f7e4b701aca3ef943006c1bf17a61edfd091.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/chango/Chango-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chango/Chango-Regular.ttf",
+      "sourceBytes": 40732,
+      "sourceSri": "sha384-bkonixeZ+RogCcMigeewCpMUQCvFKFj1HaKp3t7lft+a8V1LACUXMdWRr1CoLXOW",
+      "bytes": 15900,
+      "sri": "sha384-sq6RWpIxHYUXmR1mMedj1MKQj96nhFe6YX/XOTtE9+S3Aayj75QwBsG/F6Ye39CR",
+      "axes": [],
+      "cmapCodepoints": 270,
+      "glyphs": 273
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/chango/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chango/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-Z2gBoJC4xQCY8Enc+d/ft6iNtGH39HfZA2kbIxPI7iFaHgAYAgpbp0tORw7q+FTQ"
+  }
+}

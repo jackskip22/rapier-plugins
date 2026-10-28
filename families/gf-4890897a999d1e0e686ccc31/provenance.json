@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Fjord One",
+  "sourceRank": 223,
+  "sourcePosition": 443,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fjordone/METADATA.pb",
+    "sri": "sha384-/48w7Vv24wj13SMkPhKVnJo+FKcCx+h0POWbzdpN+2pPZc99YXEYo9jdlW05Ssb/"
+  },
+  "files": [
+    {
+      "name": "font-e4b09260095239080a162ac1da741162ff4ffc7531bcdf697f6f11d1deda08b1bbda58cbc8e264116459df3d40936700.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/fjordone/FjordOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fjordone/FjordOne-Regular.ttf",
+      "sourceBytes": 54156,
+      "sourceSri": "sha384-TrBjqzK+0uDV0vUl0YjADHn22K7WOBcjrGKsE8bof0OKHAv4QG9IyHPcAVzlMHjb",
+      "bytes": 21236,
+      "sri": "sha384-5LCSYAlSOQgKFirB2nQRYv9P/HUxvN9pf28R0d7aCLG72ljLyOJkEWRZ3z1Ak2cA",
+      "axes": [],
+      "cmapCodepoints": 270,
+      "glyphs": 282
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/fjordone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fjordone/OFL.txt",
+    "bytes": 4411,
+    "sri": "sha384-W3jfBWcmUnu9+gYuK90DfG2zo1gl0NIP1M3z8u3m0n0w3BlLZyG7usXQPojLPgB2"
+  }
+}

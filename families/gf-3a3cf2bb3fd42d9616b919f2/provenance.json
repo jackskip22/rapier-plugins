@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Viga",
+  "sourceRank": 187,
+  "sourcePosition": 381,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/viga/METADATA.pb",
+    "sri": "sha384-bpwrvXBvDqGdyZDRCN0Lro2btZB1XmFTLmD5frgIhdwEFoVcRcgA4jSdzN173HiL"
+  },
+  "files": [
+    {
+      "name": "font-094c3a292df86f277d7a8f540c47788a9ed1e820a256fea9f3a033e643fed2990b50f79f40bf6aa87bdc46a7ab9c0d32.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/viga/Viga-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/viga/Viga-Regular.ttf",
+      "sourceBytes": 28436,
+      "sourceSri": "sha384-AUyIg5gWA4CEUIShrZz/m8dNrlMetqE1/FII1Z10ipVgOLysoju327hEdX0gkJPK",
+      "bytes": 11320,
+      "sri": "sha384-CUw6KS34byd9eo9UDEd4ip7R6CCiVv6p86Az5kP+0pkLUPefQL9qqHvcRqernA0y",
+      "axes": [],
+      "cmapCodepoints": 271,
+      "glyphs": 282
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/viga/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/viga/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-VS/TqpaJOPUMe0/v5oJzizvvBv+8QL4aX+VTLJXxeSOKy6IPpXJUMJ7C0zO34oER"
+  }
+}

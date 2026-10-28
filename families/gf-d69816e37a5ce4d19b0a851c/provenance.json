@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Candal",
+  "sourceRank": 470,
+  "sourcePosition": 894,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/candal/METADATA.pb",
+    "sri": "sha384-YfVxaldLo1tEce3sKOYMMiSoKAOLrlifg11K/d3stx+LQqIpib6rJAYdjmJwloyj"
+  },
+  "files": [
+    {
+      "name": "font-2d5eafd1380fb3003136a9b3d90b5adf64f4800dff0e2c5a6fbca11cf3c7b685ed35d9a7079006d56146f1f1e6496c1b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/candal/Candal.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/candal/Candal.ttf",
+      "sourceBytes": 32816,
+      "sourceSri": "sha384-FbYai+3qtOIZMtZR2reZPVt6rDGGC8ExQE0UcQ/PriT+Bi92j2kjtTHBVtsnh2C7",
+      "bytes": 15268,
+      "sri": "sha384-LV6v0TgPswAxNqmz2Qta32T0gA3/Dixab7yhHPPHtoXtNdmnB5AG1WFG8fHmSWwb",
+      "axes": [],
+      "cmapCodepoints": 347,
+      "glyphs": 353
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/candal/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/candal/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-yqxpXn7v83k5tx2K1WSYjKgo7/n7O575qiu0ls5+emqn3xu4Q/H899XfO5L7jhwj"
+  }
+}

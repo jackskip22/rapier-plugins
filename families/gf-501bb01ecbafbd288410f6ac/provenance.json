@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Gravitas One",
+  "sourceRank": 131,
+  "sourcePosition": 268,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gravitasone/METADATA.pb",
+    "sri": "sha384-QDM4VMh5VsXe86xH/Mz26v3OTYI5yxVE/T4qfez/nk7z8k3cgLPxSEJEPkLfJC+k"
+  },
+  "files": [
+    {
+      "name": "font-dfa93dc4d6362b5af67e539f91ccc2ca01b8101a524445ee60fbab632ba014b1603db279787ad1705dc785344612ad8f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gravitasone/GravitasOne.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gravitasone/GravitasOne.ttf",
+      "sourceBytes": 41448,
+      "sourceSri": "sha384-HjoNb+/p7uRiDL3uv7LphyYHyd7EKd68Q8pqHub8lNqaDFwpkvAlkpkyvOsFQfvJ",
+      "bytes": 15468,
+      "sri": "sha384-36k9xNY2K1r2flOfkczCygG4EBpSREXuYPurYyugFLFgPbJ5eHrRcF3HhTRGEq2P",
+      "axes": [],
+      "cmapCodepoints": 229,
+      "glyphs": 238
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gravitasone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gravitasone/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-l9wRkj6LA7z+ZopnJkg1+c+lRm3vxJLrXX5sxeBGOQLqiUJdxEkNjAgxxTKmrp2b"
+  }
+}

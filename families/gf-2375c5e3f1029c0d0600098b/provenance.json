@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Alex Brush",
+  "sourceRank": 332,
+  "sourcePosition": 633,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alexbrush/METADATA.pb",
+    "sri": "sha384-2CPry2oUmnf42uTltomJoYKCRFyPWQBPRJwRD7KVVUkXs1462BrTEmXNqFTx98il"
+  },
+  "files": [
+    {
+      "name": "font-22ef994c4c044ff6ad34b34b4f486dcf780309be54f608a295544d96d122f6c597196f052aa600564e7398fed2b4fc8d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/alexbrush/AlexBrush-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alexbrush/AlexBrush-Regular.ttf",
+      "sourceBytes": 116244,
+      "sourceSri": "sha384-bSn7UC5NwKQBs5A/9BVeTrKRb8x8H62E3Lrd9fLFtVsKEpfxLUW0cNoxo70StEqV",
+      "bytes": 51880,
+      "sri": "sha384-Iu+ZTEwET/atNLNLT0htz3gDCb5U9giilVRNltEi9sWXGW8FKqYAVk5zmP7StPyN",
+      "axes": [],
+      "cmapCodepoints": 575,
+      "glyphs": 617
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alexbrush/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alexbrush/OFL.txt",
+    "bytes": 4489,
+    "sri": "sha384-srmt+8rvyn2vtC8zF7iSW3CA1XAyC1dkq96Bz8/5m4cSLwRCUiYxu+8ghZZmh4W3"
+  }
+}

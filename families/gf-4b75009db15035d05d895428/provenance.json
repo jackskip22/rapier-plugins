@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Rye",
+  "sourceRank": 311,
+  "sourcePosition": 597,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rye/METADATA.pb",
+    "sri": "sha384-On2IAYjWtwRdoxUyn/KpO6H+wJtlWhl/89XdADq66d6rtcLsMUzXlZNk+Oej7Wtr"
+  },
+  "files": [
+    {
+      "name": "font-ce4db32d40df8ee0de10a71f5ae2d9b3cdcbecdd33154e2c9bf7b4a307f9ca63c0d5e10c7a29daf5f8a2a47f93bdfe55.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rye/Rye-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rye/Rye-Regular.ttf",
+      "sourceBytes": 183244,
+      "sourceSri": "sha384-uF2UUfvUj29Gd/OaFsxp+FmpcDb1b1Oa3nD394n6UJjjkSl+EXQaMdaiPrzcUW3Z",
+      "bytes": 47200,
+      "sri": "sha384-zk2zLUDfjuDeEKcfWuLZs83L7N0zFU4sm/e0owf5ymPA1eEMeina9fiipH+Tvf5V",
+      "axes": [],
+      "cmapCodepoints": 258,
+      "glyphs": 271
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rye/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rye/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-GX8iCUVIvP2Xv9d1EUrhCO0Sfo+Ez0G6YQbexDVV647TK8OkwGH2PfCuDE6+8+h2"
+  }
+}

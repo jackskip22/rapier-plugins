@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Stack Sans Notch",
+  "sourceRank": 28,
+  "sourcePosition": 68,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stacksansnotch/METADATA.pb",
+    "sri": "sha384-l8+7tOJh7iwWxI30lpgHb465YNNKy4M1wtq7HTwVkb2MHVCN2FTzubIB6v40Ufid"
+  },
+  "files": [
+    {
+      "name": "font-eb18e6dddcf6daf07037853073a29668029765b693211fbb693b8b780e55169485e25429425b41b00d1946929833d435.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/stacksansnotch/StackSansNotch[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stacksansnotch/StackSansNotch%5Bwght%5D.ttf",
+      "sourceBytes": 128932,
+      "sourceSri": "sha384-UPNb+mF04BW3EwIOVsH65S1aXsp9DtVWyT4xw7f8uQuwf4CNOnhhEtfqCZXCkFSM",
+      "bytes": 50536,
+      "sri": "sha384-6xjm3dz22vBwN4Uwc6KWaAKXZbaTIR+7aTuLeA5VFpSF4lQpQltBsA0ZRpKYM9Q1",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 423,
+      "glyphs": 522
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/stacksansnotch/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stacksansnotch/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-mSR8gw19pZ6X7xrd1WEBcXUS4zubKLAb+W+8KTdtk9OFiQMEczusrJ9w51Czh3aM"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Nosifer",
+  "sourceRank": 219,
+  "sourcePosition": 436,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nosifer/METADATA.pb",
+    "sri": "sha384-QiQoKVBPkzInjJ7hQIStfmEv10LvcDlqflT0VLXqh+fg2ZQG1yRaqX3CFANqHMIx"
+  },
+  "files": [
+    {
+      "name": "font-bef50d2d66e5873807af33939a26e3709cb5f31af36fc3d2abf48b7b9e67ff5517004d24843526f02cca9d469394042a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/nosifer/Nosifer-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nosifer/Nosifer-Regular.ttf",
+      "sourceBytes": 43272,
+      "sourceSri": "sha384-P7rtCE1e5PNasBJqBkPnPSFjafP0PIM0KDy1flcn6d4qXmjrNTnwtLpe0twSEqx2",
+      "bytes": 17936,
+      "sri": "sha384-vvUNLWblhzgHrzOTmibjcJy18xrzb8PSq/SLe55n/1UXAE0khDUm8CzKnUaTlAQq",
+      "axes": [],
+      "cmapCodepoints": 334,
+      "glyphs": 337
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/nosifer/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nosifer/OFL.txt",
+    "bytes": 4369,
+    "sri": "sha384-iWNtQKw44lwaBR+W8PTOrFpkcEc5cdT0zHPYK8FDSTRpKmKKNvw4qF7wJLkZGVP4"
+  }
+}

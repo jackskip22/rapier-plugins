@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Unica One",
+  "sourceRank": 84,
+  "sourcePosition": 173,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/unicaone/METADATA.pb",
+    "sri": "sha384-U04wnkz07+/f52ElKbcRS99UzT857RVbfVJidrXS10TTNZB6qKUkkB4gc5fVM0ry"
+  },
+  "files": [
+    {
+      "name": "font-9d5074a10cb38ba05229c4a58296eacc7cc144e1d431bbed4f1dba9ec92d84f2e8cd42779f226fed34412055663cb918.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/unicaone/UnicaOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/unicaone/UnicaOne-Regular.ttf",
+      "sourceBytes": 71872,
+      "sourceSri": "sha384-zczjFcmkTsUHAX6kxBSGNCZ3KoQ0w5IyiYzdbtJHHMAcZdCWep6GMQY/PC34+n6Y",
+      "bytes": 24756,
+      "sri": "sha384-nVB0oQyzi6BSKcSlgpbqzHzBROHUMbvtTx26nskthPLozUJ3nyJv7TRBIFVmPLkY",
+      "axes": [],
+      "cmapCodepoints": 603,
+      "glyphs": 645
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/unicaone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/unicaone/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-7qFPlaLmHMOj+AWr1fH+pMloSABp7DbCjDJogQdIu98pOiE/wPSV+3sajnp/o1K5"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Alfa Slab One",
+  "sourceRank": 69,
+  "sourcePosition": 148,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alfaslabone/METADATA.pb",
+    "sri": "sha384-PaU0i4FmVfG3J4xqJ1+x8JyYuUgjHNFV/bSQDZC3xSh4CtYqpeQFH4Gbni2e2V9T"
+  },
+  "files": [
+    {
+      "name": "font-2a7d81ff7ded702336c79ffe2d66340d018614d561179e6d250c3460f9e258d86c7500547a4e44af72648e93e28da1fd.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/alfaslabone/AlfaSlabOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alfaslabone/AlfaSlabOne-Regular.ttf",
+      "sourceBytes": 97376,
+      "sourceSri": "sha384-yWT70+prxIkADa3hH82s/xV4H1Gipd8pvIH9Ie0rnCirpGXrrlN4zqif10JFSnyk",
+      "bytes": 34584,
+      "sri": "sha384-Kn2B/33tcCM2x5/+LWY0DQGGFNVhF55tJQw0YPniWNhsdQBUek5Er3JkjpPijaH9",
+      "axes": [],
+      "cmapCodepoints": 671,
+      "glyphs": 734
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alfaslabone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alfaslabone/OFL.txt",
+    "bytes": 4523,
+    "sri": "sha384-agIFP63veSXso0M+09MQYZSGyHJi/HM0CJM2A+4OvOk54C4Dywp/BZgOQ7+W0zEB"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Patrick Hand",
+  "sourceRank": 193,
+  "sourcePosition": 392,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/patrickhand/METADATA.pb",
+    "sri": "sha384-CZRdp9OF93U9WphwRru4zvXBxBrLUtgNj69IG/d95AF7dimtp8jRPqN1QPJIqsDJ"
+  },
+  "files": [
+    {
+      "name": "font-b371c5637119b1195f7f67d415d466af314808eb55026da1503e7c41e96b39b12cc16549d1fa73fddae00fc234a7598c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/patrickhand/PatrickHand-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/patrickhand/PatrickHand-Regular.ttf",
+      "sourceBytes": 214772,
+      "sourceSri": "sha384-YFRDR8fHxnKqAphlYwJa75jwtZLeK/ZRzHANXF6tsU+AB1cAGVpF7qY/NEIpHUbq",
+      "bytes": 62792,
+      "sri": "sha384-s3HFY3EZsRlff2fUFdRmrzFICOtVAm2hUD58QelrObEswWVJ0fpz/drgD8I0p1mM",
+      "axes": [],
+      "cmapCodepoints": 515,
+      "glyphs": 728
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/patrickhand/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/patrickhand/OFL.txt",
+    "bytes": 4376,
+    "sri": "sha384-dMIp2Y7W7PbACj2X+bb0NzCO5XLzTAXh+/jlXgwpk7OijCq8nENmZ6BgPobOn53I"
+  }
+}

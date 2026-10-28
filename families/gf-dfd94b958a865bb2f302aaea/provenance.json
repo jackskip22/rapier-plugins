@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Indic Siyaq Numbers",
+  "sourceRank": 411,
+  "sourcePosition": 779,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansindicsiyaqnumbers/METADATA.pb",
+    "sri": "sha384-b/puM/d6b8QtUy9BV7y+gdBLwqCy8LVK2DqrTOQZdK/xGNoQQTa0PNb9RI6gWkJO"
+  },
+  "files": [
+    {
+      "name": "font-b0ba06db3168a3ca04f72f998903c1be63631a301d3320dcc9a6fa1af17ba84d94caa8d77a66a81ae341e55e145e79c3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansindicsiyaqnumbers/NotoSansIndicSiyaqNumbers-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansindicsiyaqnumbers/NotoSansIndicSiyaqNumbers-Regular.ttf",
+      "sourceBytes": 73460,
+      "sourceSri": "sha384-DEVwcmi1iAkKXU4Mlb8B1HiYa7FS5PGn9zZsftnQ3iJnb8XKRubjB2HprJUQty9r",
+      "bytes": 32012,
+      "sri": "sha384-sLoG2zFoo8oE9y+ZiQPBvmNjGjAdMyDcyab6GvF7qE2UyqjXemaoGuNB5V4UXnnD",
+      "axes": [],
+      "cmapCodepoints": 424,
+      "glyphs": 430
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansindicsiyaqnumbers/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansindicsiyaqnumbers/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-lmJGfIpCtPBOX2rqVGL6ztptI2c0wNmNRsrxS+obyDDuILshNivK7zdysIp+j14G"
+  }
+}

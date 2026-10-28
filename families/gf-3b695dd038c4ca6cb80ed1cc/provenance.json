@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Josefin Slab",
+  "sourceRank": 322,
+  "sourcePosition": 618,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/josefinslab/METADATA.pb",
+    "sri": "sha384-EgpO8PNZnfvT89Cb9BW0++ZNKz0AcPK0P2zr39gyZbThfD/pUL87lGlCegsEjIfU"
+  },
+  "files": [
+    {
+      "name": "font-58bd84c38a860434fc2f639d6ebd7694bcdf7fd2e122a1a030172c5db71a11cc3364a4e5243b78e0d5c04243eb4d0356.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/josefinslab/JosefinSlab-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/josefinslab/JosefinSlab-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 51020,
+      "sourceSri": "sha384-UNRToF/+f0FRWUht7dEe+DQKPKg+yyoNVDWvEc0ec14pZas5VGWpQR/FIWzdE0w3",
+      "bytes": 22140,
+      "sri": "sha384-WL2Ew4qGBDT8L2Odbr12lLzff9LhIqGgMBcsXbcaEcwzZKTlJDt44NXAQkPrTQNW",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 214,
+      "glyphs": 216
+    },
+    {
+      "name": "font-d3e4eaad74787121fa7c08d5bf2ebe9265b4529a750ef394c666569f4f407292df922ec5ce0a92c057a081568ab1f3b4.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/josefinslab/JosefinSlab[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/josefinslab/JosefinSlab%5Bwght%5D.ttf",
+      "sourceBytes": 48792,
+      "sourceSri": "sha384-0DMcVNbySzzttmzbXG/Jc99e9COU1OOT7CAG/8I1fNKH8dj/EhvumjHgDfGtdECk",
+      "bytes": 20892,
+      "sri": "sha384-0+TqrXR4cSH6fAjVvy6+kmW0Upp1DvOUxmZWn09AcpLfki7FzgqSwFeggVaKsfO0",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 214,
+      "glyphs": 216
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/josefinslab/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/josefinslab/OFL.txt",
+    "bytes": 4578,
+    "sri": "sha384-LRpS3GAT21+02z+ETqlyIcNj8belE3PoZgCTeFet+W1dotiEnOUO7Mu2Cd3i/v2X"
+  }
+}

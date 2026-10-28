@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Pirata One",
+  "sourceRank": 302,
+  "sourcePosition": 585,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pirataone/METADATA.pb",
+    "sri": "sha384-ltbzpXdcpK6F6Cpmo49mBvo0o7ht8phGdWYqNMh0TuK3qs942vZdnv7BYfEc5ezz"
+  },
+  "files": [
+    {
+      "name": "font-1e5e63d0152aa9259d07e51a42a0238928e3c4286a0dbd6c7c05764286d94fb03f3a68c0e74aa5d55ce0785c9e672600.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/pirataone/PirataOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pirataone/PirataOne-Regular.ttf",
+      "sourceBytes": 56316,
+      "sourceSri": "sha384-4Qek9RroMZ1yYOium+avwTPrs3ESkNLhrVRdGVZfqFBVI8YN73LHlebFyzNzzJ3p",
+      "bytes": 13480,
+      "sri": "sha384-Hl5j0BUqqSWdB+UaQqAjiSjjxChqDb1sfAV2QobZT7A/OmjA50ql1VzgeFyeZyYA",
+      "axes": [],
+      "cmapCodepoints": 382,
+      "glyphs": 386
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/pirataone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pirataone/OFL.txt",
+    "bytes": 4427,
+    "sri": "sha384-0b9Yb9YQYgJJGuSKERjuWGwVNcDA9+chrLI7Z8GdyPsgNHxhrCciNh1hvidQLWXB"
+  }
+}

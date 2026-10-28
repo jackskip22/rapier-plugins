@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Caprasimo",
+  "sourceRank": 323,
+  "sourcePosition": 619,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caprasimo/METADATA.pb",
+    "sri": "sha384-9Y2GvdHqmPaxrDp7SKxeVSAZCmSJnZs/bXXUR+ZDeJUq/q4yCajr7qsbTh0WvGIc"
+  },
+  "files": [
+    {
+      "name": "font-64b55f8106c63561178cace3c6e6170614dae6f975f8c53c952304230ebd7f953c4fa1329c78f81a8783cf0e7faea4b3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/caprasimo/Caprasimo-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caprasimo/Caprasimo-Regular.ttf",
+      "sourceBytes": 41660,
+      "sourceSri": "sha384-0JxP/MzunWT9JQZtK6HuyCgbdoxM/te6oimTghGKXP02DR8njGyLle1aqBo/QryD",
+      "bytes": 22828,
+      "sri": "sha384-ZLVfgQbGNWEXjKzjxuYXBhTa5vl1+MU8lSMEIw69f5U8T6EynHj4GoeDzw5/rqSz",
+      "axes": [],
+      "cmapCodepoints": 248,
+      "glyphs": 256
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/caprasimo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caprasimo/OFL.txt",
+    "bytes": 4403,
+    "sri": "sha384-EezeaPpa27RQGRpNszhSoHTvmY89WVZ0rq/DuXLBJf6bvWTGXy5b01Ivr5ZQ1Xh8"
+  }
+}

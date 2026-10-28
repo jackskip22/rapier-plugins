@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Hedvig Letters Serif",
+  "sourceRank": 467,
+  "sourcePosition": 889,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hedviglettersserif/METADATA.pb",
+    "sri": "sha384-ktWM2RwsVlkjP2FJupzdUBWk5JcoUKNK9b7mJa1/GW/A76k+i1zxmh+reJmEU9/n"
+  },
+  "files": [
+    {
+      "name": "font-a77a7cab9c1b04d264139ea62bad523a7f1d6660fd218c39a7024dc658a9cadc1882853f426ad8138253c06d2f0d0ec7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/hedviglettersserif/HedvigLettersSerif[opsz].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hedviglettersserif/HedvigLettersSerif%5Bopsz%5D.ttf",
+      "sourceBytes": 122240,
+      "sourceSri": "sha384-QbiqVmFshn6mzCgy5Wt7TP+GdfQ6aF0omYKfPXa1Ny/0/F2e6jluNfWb07r/9RQF",
+      "bytes": 47948,
+      "sri": "sha384-p3p8q5wbBNJkE56mK61SOn8dZmD9IYw5pwJNxlipytwYgoU/QmrYE4JTwG0vDQ7H",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 12,
+          "default": 24,
+          "max": 24,
+          "name": "Optical size"
+        }
+      ],
+      "cmapCodepoints": 416,
+      "glyphs": 459
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hedviglettersserif/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hedviglettersserif/OFL.txt",
+    "bytes": 4402,
+    "sri": "sha384-TlfVxSkFEIXzun9Xt9So/fx+GMNlNlnK6EzTwUKndcm7ke5Z1KEGf8LVBdlP4ysS"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Herr Von Muellerhoff",
+  "sourceRank": 451,
+  "sourcePosition": 858,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/herrvonmuellerhoff/METADATA.pb",
+    "sri": "sha384-69Ai6jLYe9sW9kYJK+JiEsAD6YCO9OC9mk1qYj92rfLoLTaWxXGn3svjuhy8sw4r"
+  },
+  "files": [
+    {
+      "name": "font-d48aa8f481a041d86c570f2f01366ecf48fe7647e5cc4de47ae3b58161dd03d2f0a53488c40b3f3a97829ebc93a1604d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/herrvonmuellerhoff/HerrVonMuellerhoff-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/herrvonmuellerhoff/HerrVonMuellerhoff-Regular.ttf",
+      "sourceBytes": 46624,
+      "sourceSri": "sha384-bVNVogmCgxablozJlcygtcbr7ia+ZGB2qI8UnDg4vWybJNpB0jOfRLg2z+UoqsFE",
+      "bytes": 19644,
+      "sri": "sha384-1Iqo9IGgQdhsVw8vATZuz0j+dkflzE3keuO1gWHdA9LwpTSIxAs/OpeCnryToWBN",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 233
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/herrvonmuellerhoff/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/herrvonmuellerhoff/OFL.txt",
+    "bytes": 4410,
+    "sri": "sha384-ZCxtW5Rq9bGRLfUT2X4uKmudJln8Hq/5GKzl1H1XZrOKW0u5XkBp6ladubyuaK/D"
+  }
+}

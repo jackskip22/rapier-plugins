@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Sniglet",
+  "sourceRank": 487,
+  "sourcePosition": 918,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sniglet/METADATA.pb",
+    "sri": "sha384-SORfNxt0v1uDUMoG1ZPC24jnKNy38j91+jZuAbAJjgEqOHIXZUd8PRGGrUnZK9tb"
+  },
+  "files": [
+    {
+      "name": "font-3d9e9ebb73d5995358ffea836ab47bdb164a1ba81920e4a92e310356c18986bdbc893e7a3d9cb22ca5551d8e752215b3.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/sniglet/Sniglet-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sniglet/Sniglet-ExtraBold.ttf",
+      "sourceBytes": 74228,
+      "sourceSri": "sha384-CGvdiRLyJ73g1zC8YBIhS+DvjgkVOhmdYBJ/xy8aSf53wUCIeIDTS/wQZ1WsqDPM",
+      "bytes": 27852,
+      "sri": "sha384-PZ6eu3PVmVNY/+qDarR72xZKG6gZIOSpLjEDVsGJhr28iT56PZyyLKVVHY51IhWz",
+      "axes": [],
+      "cmapCodepoints": 241,
+      "glyphs": 244
+    },
+    {
+      "name": "font-3b0fb9f1e5f6d3b3790ed894d3d4c0f1246028653b3236f526ac28a5656f6586e53044ed268ac723d807c69a72b14bc8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sniglet/Sniglet-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sniglet/Sniglet-Regular.ttf",
+      "sourceBytes": 75212,
+      "sourceSri": "sha384-6BOvFKLYS5KqW4iLARkLnohcSgxkWBk/ysGv9d8Rfd7kQbY/lPq0M003ePvkk4TH",
+      "bytes": 27104,
+      "sri": "sha384-Ow+58eX207N5DtiU09TA8SRgKGU7Mjb1JqwopWVvZYblMETtJorHI9gHxppysUvI",
+      "axes": [],
+      "cmapCodepoints": 241,
+      "glyphs": 244
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sniglet/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sniglet/OFL.txt",
+    "bytes": 4592,
+    "sri": "sha384-OkI89zmaMPKBAdWIk0fRx3JnPNAET4D81GU9ZCmtG9IJ41Yky56VeMTpHUGoKvmq"
+  }
+}

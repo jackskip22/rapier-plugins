@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Protest Strike",
+  "sourceRank": 276,
+  "sourcePosition": 543,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/proteststrike/METADATA.pb",
+    "sri": "sha384-SmGi9P2H+zcMZfvVypF8biiST3tEvB2Pgr7raX9Qd5uICA1Z/DvyJWakiAVOi5FM"
+  },
+  "files": [
+    {
+      "name": "font-5a44a69667af8d4cb1943e38bf27160190189f610fa8291fcbf9b9af5f395ba2cf6dea969fec9188bf0b29159180121a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/proteststrike/ProtestStrike-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/proteststrike/ProtestStrike-Regular.ttf",
+      "sourceBytes": 84524,
+      "sourceSri": "sha384-H33hTPEo32TuliIHIbOCd+1/lAS4p4cIB+9ELgenUWN7+NSQPjTJr+bqzJ3X21yY",
+      "bytes": 31300,
+      "sri": "sha384-WkSmlmevjUyxlD44vycWAZAYn2EPqCkfy/m5r185W6LPbeqWn+yRiL8LKRWRgBIa",
+      "axes": [],
+      "cmapCodepoints": 558,
+      "glyphs": 587
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/proteststrike/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/proteststrike/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-r0xHVZiL04119KIg9u/bHA3Mzjn1XCxlvhE7Tsbh9Ay9C08IlwgYRwQjaQ8IZ93f"
+  }
+}

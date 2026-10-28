@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Orbitron",
+  "sourceRank": 80,
+  "sourcePosition": 167,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/orbitron/METADATA.pb",
+    "sri": "sha384-DBFBVgZ1KnHK3fmfKNwlBo4BprUtyXi7WoZZHXXxHsOeibY9RVeoqYR5+ugYrSJ3"
+  },
+  "files": [
+    {
+      "name": "font-9e2442dc63a490f6d368b5f9f937adfd48f9256ee3f509922fae94c2dea152389d9e10cdd64a92ee2e8554f3e709642b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/orbitron/Orbitron[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+      "sourceBytes": 38576,
+      "sourceSri": "sha384-9E+JDoUoEmmqKfGG35k4s7MoovNOe31RqD8aVvHwuyNuOqdbkbxeVgLQp2emEdg6",
+      "bytes": 16036,
+      "sri": "sha384-niRC3GOkkPbTaLX5+Tet/Uj5JW7j9QmSL66Uwt6hUjidnhDN1kqS7i6FVPPnCWQr",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 207,
+      "glyphs": 269
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/orbitron/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/orbitron/OFL.txt",
+    "bytes": 4426,
+    "sri": "sha384-lz4vHrCdVYOcCNnRnujJtmKaLXRK/giY8kMA/qZhbhGeKMsGomhVME5sYrSRXf6c"
+  }
+}

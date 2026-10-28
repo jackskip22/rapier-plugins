@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Notable",
+  "sourceRank": 383,
+  "sourcePosition": 726,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notable/METADATA.pb",
+    "sri": "sha384-rSOsOhhPNDYtjbkZfteb2Y6RF4diqJl9WyT6i6vq/bX9GQSF+7rC9mmLRLtZgxvn"
+  },
+  "files": [
+    {
+      "name": "font-27352b1494aeb6ef27c60724ddf38818012cfbb48c546958a72e70228672f4d8a94a87a09a728661471d069b89ec077b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notable/Notable-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notable/Notable-Regular.ttf",
+      "sourceBytes": 38216,
+      "sourceSri": "sha384-rXmLQKrDYO8rkVbEkJma7zX+mKm8LR87L0FlH0R68yHPtO70DhaFFKJldvD2JnJs",
+      "bytes": 16336,
+      "sri": "sha384-JzUrFJSutu8nxgck3fOIGAEs+7SMVGlYpy5wIoZy9NipSoegmnKGYUcdBpuJ7Ad7",
+      "axes": [],
+      "cmapCodepoints": 258,
+      "glyphs": 265
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notable/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notable/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-lvPLm581kpZiImvhgIxas3ysaLySvzkY+TtTdL9rN/t5n0H2hCbwK39B03tD5pcs"
+  }
+}

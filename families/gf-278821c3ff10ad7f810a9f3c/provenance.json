@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "GFS Didot",
+  "sourceRank": 380,
+  "sourcePosition": 721,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gfsdidot/METADATA.pb",
+    "sri": "sha384-5e+Y2wW+P7rrKSxj8mfJSSHc8WR+GxGEhaRS4lAjADcNSwbDC4kAJ1z1y+DwPLfL"
+  },
+  "files": [
+    {
+      "name": "font-6edea9d45f4c73726aa84465228a34aede0cce5a024926e454ea26846698279a12579426e4da4cdc3c9ecc7abb23fabf.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gfsdidot/GFSDidot-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gfsdidot/GFSDidot-Regular.ttf",
+      "sourceBytes": 191168,
+      "sourceSri": "sha384-0kWrGgrNGStxj6l0nwyp31ef3CAeEz6ZxsEh6EmNWPjqb5809c+uSbk/cCuFohdV",
+      "bytes": 54684,
+      "sri": "sha384-bt6p1F9Mc3JqqERlIoo0rt4MzloCSSbkVOomhGaYJ5oSV5Qm5NpM3DyezHq7I/q/",
+      "axes": [],
+      "cmapCodepoints": 1104,
+      "glyphs": 1147
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gfsdidot/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gfsdidot/OFL.txt",
+    "bytes": 4543,
+    "sri": "sha384-pHm0z5xO5GG7pYoHWHs0v6pIHdRSsiFEji8UyWqxvW3KF+/A8mzoKBP753DLZLMv"
+  }
+}

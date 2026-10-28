@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Russo One",
+  "sourceRank": 7,
+  "sourcePosition": 17,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/russoone/METADATA.pb",
+    "sri": "sha384-r3bBPZNR9t6JbnSMYiLaMO+InRqlGlMd/anN6SxA9pvMwUyyR2yHRt1NTUJpVpP0"
+  },
+  "files": [
+    {
+      "name": "font-a2d403ffe2fd284f0d828c480438fe3e564aab9c09350805de1fa767a9a4dce54368b83eaa54e6fb5ef9eba387c34d3d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/russoone/RussoOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/russoone/RussoOne-Regular.ttf",
+      "sourceBytes": 39124,
+      "sourceSri": "sha384-3SnXGXAvaP6+2iIUpvvRxXiSn6DlVWx/buUBh4Q+/40XUxIxLTaZ/jLw5K4Uueo3",
+      "bytes": 13444,
+      "sri": "sha384-otQD/+L9KE8NgoxIBDj+PlZKq5wJNQgF3h+nZ6mk3OVDaLg+qlTm+17566OHw009",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 413
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/russoone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/russoone/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-PxWpzqBYneBrPrJSvHryDCJAxNxLfWIHUPMa5nh+uPfi3zrZFIskOp2Cl3YAEKl7"
+  }
+}

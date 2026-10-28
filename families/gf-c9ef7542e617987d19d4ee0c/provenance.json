@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Plaster",
+  "sourceRank": 422,
+  "sourcePosition": 797,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/plaster/METADATA.pb",
+    "sri": "sha384-GWSFP7daavF/JdRROiqDjxIcex5bnE5eBgwBM3xyok2eiBvgrjI/5wf+pHBrx0Sy"
+  },
+  "files": [
+    {
+      "name": "font-1787d0f56ba4d53bd065ea5766314f847925fc8635d1aa4029e03b7643283ee56dce5a0a964f6a450b05710d3a79db30.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/plaster/Plaster-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/plaster/Plaster-Regular.ttf",
+      "sourceBytes": 32852,
+      "sourceSri": "sha384-W+UJj5YGs9a5RFLzvGQxn0EDsHx8JxASZlxxr2s6z7y/a1GHaf927+cU8Q1FJYUJ",
+      "bytes": 13500,
+      "sri": "sha384-F4fQ9Wuk1TvQZepXZjFPhHkl/IY10apAKeA7dkMoPuVtzloKlk9qRQsFcQ06edsw",
+      "axes": [],
+      "cmapCodepoints": 411,
+      "glyphs": 426
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/plaster/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/plaster/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-rSLZXL8oXc3nFyYtBeJAC2wJ+zERgHxdzauEh2TS4DXWZE/TpqXboFNTcxrzwUwi"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sedan SC",
+  "sourceRank": 343,
+  "sourcePosition": 655,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sedansc/METADATA.pb",
+    "sri": "sha384-MTlOMnIJ/bkW4ieNirYEEkEXxYNNQ8lAwKvgOexb0Qbd9o4IgVNWfXVqhkE2Fpz4"
+  },
+  "files": [
+    {
+      "name": "font-27915e0aca36cb29805708b13794ac47f639ded8daef0a24459958922e9b37d6c9f304b859c1f907703a850541fa2cbe.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sedansc/SedanSC-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sedansc/SedanSC-Regular.ttf",
+      "sourceBytes": 116128,
+      "sourceSri": "sha384-679w7IUOPOokyJGOgH9Zu2fX8H02sJc6+8LksDhS2AyXXcKjeDMlktAQXfQqOxLp",
+      "bytes": 43596,
+      "sri": "sha384-J5FeCso2yymAVwixN5SsR/Y53tja7wokRZlYki6bN9bJ8wS4WcH5B3A6hQVB+iy+",
+      "axes": [],
+      "cmapCodepoints": 339,
+      "glyphs": 494
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sedansc/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sedansc/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-bUQmXgDySgf6fzhEYWxn/hn+cIE8XmitRsHxkzyvAm04EuhmktdiQcVB2YO7TEKI"
+  }
+}

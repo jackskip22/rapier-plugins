@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Momo Trust Display",
+  "sourceRank": 258,
+  "sourcePosition": 504,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/momotrustdisplay/METADATA.pb",
+    "sri": "sha384-5csoEcCMGm3n/+j2ZwPgWd71XilNXvG2pyFbxx9eTDbA+H1Zv1cEXk3/jKcdELSj"
+  },
+  "files": [
+    {
+      "name": "font-aa697103114d2069043900da164b52168938f38eccb335cf10cec3a24f8fb0d569a5c6c6738ef5e6a93210e15bda5384.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/momotrustdisplay/MomoTrustDisplay-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/momotrustdisplay/MomoTrustDisplay-Regular.ttf",
+      "sourceBytes": 93640,
+      "sourceSri": "sha384-O18YytLGo2GUXdyW7x5v61iDAooukTirVYRQFTjaz3a4iRXoRx2EgMpCzknvwDOc",
+      "bytes": 38076,
+      "sri": "sha384-qmlxAxFNIGkEOQDaFktSFok4847MszXPEM7Dok+PsNVppcbGc4715qkyEOFb2lOE",
+      "axes": [],
+      "cmapCodepoints": 455,
+      "glyphs": 469
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/momotrustdisplay/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/momotrustdisplay/OFL.txt",
+    "bytes": 4411,
+    "sri": "sha384-d4wK8CzSVA/S7vynkRbYJBgG2HMmQCHrBcg8P6uo4MOKpVSnqcUGEsfF/V4W9bQk"
+  }
+}

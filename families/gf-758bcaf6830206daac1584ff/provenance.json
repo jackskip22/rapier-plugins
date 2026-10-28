@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Federant",
+  "sourceRank": 367,
+  "sourcePosition": 695,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/federant/METADATA.pb",
+    "sri": "sha384-McA4ytZUC4fhm71WwVqT6kcIAsyauhb+Iy9iiD5LD7VmTMA7kJlwCtBTG/+2Xeon"
+  },
+  "files": [
+    {
+      "name": "font-5b29ba3fccc8ebac90037649c1ec7ff53be876bc7c53528c807efe32cb65d9991551a8d54bca54fa7cfe521f6fe4f447.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/federant/Federant-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/federant/Federant-Regular.ttf",
+      "sourceBytes": 45588,
+      "sourceSri": "sha384-Ox+CaWrtmYnLvqA/SCYP62+r9LQ0CTavMQq60R3cd0J8SVlubzDhOS+RPqZQVEFT",
+      "bytes": 19716,
+      "sri": "sha384-Wym6P8zI66yQA3ZJwex/9Tvodrx8U1KMgH7+Mstl2ZkVUajVS8pU+nz+Uh9v5PRH",
+      "axes": [],
+      "cmapCodepoints": 213,
+      "glyphs": 229
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/federant/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/federant/OFL.txt",
+    "bytes": 4477,
+    "sri": "sha384-7Itj/Dm7gewZX2hxs912rAgG5DwnjcXTRlCHC3AOL0KoymP/yOcz3uiICIaxLZPU"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Nova Square",
+  "sourceRank": 515,
+  "sourcePosition": 952,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novasquare/METADATA.pb",
+    "sri": "sha384-pF7nk+F/lD+Yr78A9TGr0qg91zTPu6WT7NEmGQd7ohHmrzeUqJrCERlt7OyVPl7p"
+  },
+  "files": [
+    {
+      "name": "font-69c68843e4957097f876b25d0bfb87eafe7307017f0a326038b53076cf4006dc7249064a4b30162a91dddf1352bca64a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/novasquare/NovaSquare.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novasquare/NovaSquare.ttf",
+      "sourceBytes": 87968,
+      "sourceSri": "sha384-Ulf8Xpv5JB2kljEF5TQ4IyNygmiEspP19bclz6vdM2j+M5yZNChvKO8EfQ8LXERU",
+      "bytes": 24456,
+      "sri": "sha384-acaIQ+SVcJf4drJdC/uH6v5zBwF/CjJgOLUwds9ABtxySQZKSzAWKpHd3xNSvKZK",
+      "axes": [],
+      "cmapCodepoints": 418,
+      "glyphs": 421
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/novasquare/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novasquare/OFL.txt",
+    "bytes": 4273,
+    "sri": "sha384-2q/YUwIa+dRrdrk5qrqGezRWj5utZAx4MaXF+PQVlFd1QEPpc+IxTkynirCLNC7Q"
+  }
+}

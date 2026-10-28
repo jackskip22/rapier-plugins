@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Days One",
+  "sourceRank": 380,
+  "sourcePosition": 720,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/daysone/METADATA.pb",
+    "sri": "sha384-nqUUNtVTGrJ1W1UR5GnyxrpoK0JdVleGgFDeCAQgBiGwB0JZYKNFjgNEafgce8Ho"
+  },
+  "files": [
+    {
+      "name": "font-c419c69472269d68dfe08857eecfbed399e1f9797e6fe11ec7c807ae5ea589098322a8702e152f38980744406c35677d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/daysone/DaysOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/daysone/DaysOne-Regular.ttf",
+      "sourceBytes": 65580,
+      "sourceSri": "sha384-/Pgco015JPaOj3uAo+FP+wGMlaql/S4U4VUbP0xr8FPNjwuBPeuWgtgkSPmkjZfK",
+      "bytes": 21556,
+      "sri": "sha384-xBnGlHImnWjf4IhX7s++05nh+Xl+b+Eex8gHrl6liQmDIqhwLhUvOJgHREBsNWd9",
+      "axes": [],
+      "cmapCodepoints": 350,
+      "glyphs": 354
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/daysone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/daysone/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-U79GbGkQiKb/PZZryDoIVTsxv49MA1FtJKWagMwJUK665MmC5ZgrcqDqq+NCheKV"
+  }
+}

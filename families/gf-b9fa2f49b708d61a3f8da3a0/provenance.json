@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Permanent Marker",
+  "sourceRank": 128,
+  "sourcePosition": 261,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/permanentmarker/METADATA.pb",
+    "sri": "sha384-OB8GgIrA7R2/IEGEUiNAuPTXgCOFXvmEJ8XKSb3axsyZZafV792piq5UjRy4lwLa"
+  },
+  "files": [
+    {
+      "name": "font-08d1992b56f0de8efaf676fd93de9a8354476f745945396418a84953267f2294d6a1858056e3ffd4209444399c37cf59.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/permanentmarker/PermanentMarker-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/permanentmarker/PermanentMarker-Regular.ttf",
+      "sourceBytes": 74632,
+      "sourceSri": "sha384-M3+uJSunIcu9AfC8Jhle+FUGY+nc10o2H7lHHulDu4+dqNCtditakWarGV5ZWeii",
+      "bytes": 30844,
+      "sri": "sha384-CNGZK1bw3o769nb9k96ag1RHb3RZRTlkGKhJUyZ/IpTWoYWAVuP/1CCURDmcN89Z",
+      "axes": [],
+      "cmapCodepoints": 229,
+      "glyphs": 230
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/permanentmarker/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/permanentmarker/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Vidaloka",
+  "sourceRank": 269,
+  "sourcePosition": 526,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vidaloka/METADATA.pb",
+    "sri": "sha384-EXL5Rud7d/cUePRpw2Ysu/thAv3lSbdqcJbvKBubbAl1Ddnap6ejY/X3H+0bu6jo"
+  },
+  "files": [
+    {
+      "name": "font-fcf2535c8534d5da477f91c948a8fd8f872c40500a9d809f264caed2d6f78ede1630938aae6449acb2645a06f4e97a10.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/vidaloka/Vidaloka-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vidaloka/Vidaloka-Regular.ttf",
+      "sourceBytes": 135540,
+      "sourceSri": "sha384-7Y5odbvMlMYkPuxRwK4enE2G/6OT8wAmXmuhX/b+JRgReff9qX5al96Zt28HDNIB",
+      "bytes": 41748,
+      "sri": "sha384-/PJTXIU01dpHf5HJSKj9j4csQFAKnYCfJkyu0tb3jt4WMJOKrmRJrLJkWgb06XoQ",
+      "axes": [],
+      "cmapCodepoints": 220,
+      "glyphs": 232
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/vidaloka/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vidaloka/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-a+7DLgpM9GRKVTaYjssU/hMamAbOb3tRLx/Vyqe+lARRkZGB1vVEXT0wNkdo9IUW"
+  }
+}

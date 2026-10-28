@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Niconne",
+  "sourceRank": 463,
+  "sourcePosition": 883,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/niconne/METADATA.pb",
+    "sri": "sha384-tDjtA3gTPnRX/ZzEQ2aH1wJ/xWF7HYbdWiTqOuc+Cm0o2PW2z4PGqBCVjhK+sL/V"
+  },
+  "files": [
+    {
+      "name": "font-ef7f60c66e7d8c319faf3d61a450e59ec17873ad13e5c6b941f9c4c70aadfb4954801ad96831991ec564d9cc89741638.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/niconne/Niconne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/niconne/Niconne-Regular.ttf",
+      "sourceBytes": 45616,
+      "sourceSri": "sha384-u9K9D2Ww0ESclPTrS7wlL9eetUj8ay49lNe04M31jW5908WWTJNBgE7aj96emCRL",
+      "bytes": 19160,
+      "sri": "sha384-739gxm59jDGfrz1hpFDlnsF4c60T5ca5QfnExwqt+0lUgBrZaDGZHsVk2cyJdBY4",
+      "axes": [],
+      "cmapCodepoints": 283,
+      "glyphs": 293
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/niconne/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/niconne/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-JF9ZdIryaxK9EBXvH0wWJh152NGav58m0IGUHujz+QQgp1+Xjw4t4YuGuGw9yMT5"
+  }
+}

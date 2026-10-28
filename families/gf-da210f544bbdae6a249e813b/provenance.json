@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Quintessential",
+  "sourceRank": 536,
+  "sourcePosition": 984,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quintessential/METADATA.pb",
+    "sri": "sha384-I2RgtaRIm+7I+PWlDNMBdBLbfVcDVq5b+ITA1/hOLzwyLIbQufUPpGEFSEgKU1hi"
+  },
+  "files": [
+    {
+      "name": "font-8eed76751567d139ee5cec6f9246445a8aaeb023a05ad3a7ac9fcb8fbe6b44057f15370aa4767555af032b9e0562a638.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/quintessential/Quintessential-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quintessential/Quintessential-Regular.ttf",
+      "sourceBytes": 73892,
+      "sourceSri": "sha384-3hoEX3BjvBwuSAa1FbWQHkpZnFU9oaGzCYiTOHFuRh4wwdwe3dcaQdDuNpFzkS3N",
+      "bytes": 34216,
+      "sri": "sha384-ju12dRVn0TnuXOxvkkZEWoqusCOgWtOnrJ/Lj75rRAV/FTcKpHZ1Va8DK54FYqY4",
+      "axes": [],
+      "cmapCodepoints": 368,
+      "glyphs": 371
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/quintessential/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/quintessential/OFL.txt",
+    "bytes": 4435,
+    "sri": "sha384-GU+mFCa0CkJce/6XHF0kSaiRnnkDdRfyECdwQAsfZaoHFMlTtn/e1Y66NY4wLWDo"
+  }
+}

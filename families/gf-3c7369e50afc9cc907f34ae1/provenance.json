@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Red Rose",
+  "sourceRank": 176,
+  "sourcePosition": 351,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/redrose/METADATA.pb",
+    "sri": "sha384-JsetWJjl6qHHcdkaY8mqJ2fKY9iRiys1rFLukDZd4G3+BPNbrxHewn6KBsR7BTaP"
+  },
+  "files": [
+    {
+      "name": "font-6c783c14c86732a66ca95841f8b5e34311b0de68d306245558577be88e26e0f631689295ce1ca00245fa7b62a144e1e2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/redrose/RedRose[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/redrose/RedRose%5Bwght%5D.ttf",
+      "sourceBytes": 114928,
+      "sourceSri": "sha384-cIHpsxscTJx6WZ7VPXxq2MSX1qZc9ROi/S8v7SlJPZAKTE31b5Yn0dXaemUkm06k",
+      "bytes": 48408,
+      "sri": "sha384-bHg8FMhnMqZsqVhB+LXjQxGw3mjTBiRVWFd76I4m4PYxaJKVzhygAkX6e2KhROHi",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 595,
+      "glyphs": 638
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/redrose/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/redrose/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-p9JKS4vttiq5MTiVCiA4PWzaqbMt3Z90FXb60GTDZcFXPofZzf2RlW2uxC9gGQ5r"
+  }
+}

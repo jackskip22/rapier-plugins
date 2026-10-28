@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Matemasie",
+  "sourceRank": 483,
+  "sourcePosition": 913,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/matemasie/METADATA.pb",
+    "sri": "sha384-WWtbgesxAaYtai71LGlJC0wq6t5Y7Fjd5N2+3UgI4UK56N6GwOfVV/kYrk7ATGEX"
+  },
+  "files": [
+    {
+      "name": "font-005da761055206c386ff15d766a56cd5bdf1f55dee9e1095d45cd83274c2f39ec30c27ef839b731aaa2936ca8ca4ed35.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/matemasie/Matemasie-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/matemasie/Matemasie-Regular.ttf",
+      "sourceBytes": 143128,
+      "sourceSri": "sha384-TelNoAupe9IxtvDxnls8bV22FNkBD03htFvc8PByBX5DamtQBv1ULREgIHxWKHtf",
+      "bytes": 62404,
+      "sri": "sha384-AF2nYQVSBsOG/xXXZqVs1b3x9V3unhCV1FzYMnTC857DDCfvg5tzGqopNsqMpO01",
+      "axes": [],
+      "cmapCodepoints": 362,
+      "glyphs": 407
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/matemasie/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/matemasie/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-Gd2wURgXNm8RcAR6qgzjgIqqTCx5Tg8qhoui6rTS1Y8gj+bmblehtgLWcXhAELNq"
+  }
+}

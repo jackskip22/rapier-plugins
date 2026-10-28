@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Black Ops One",
+  "sourceRank": 36,
+  "sourcePosition": 87,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blackopsone/METADATA.pb",
+    "sri": "sha384-UnT5gxyU6+xx/D6lFcNoODNVstaYpusildNsTJCFyy8D6Vnsfjft2dzzcXXcuS8f"
+  },
+  "files": [
+    {
+      "name": "font-165efbba02cf9349108737f3ef261316383c1471fe91a2b16976e07c34c9fef12de87d12cf946a17e0fa7811f82f52da.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/blackopsone/BlackOpsOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blackopsone/BlackOpsOne-Regular.ttf",
+      "sourceBytes": 166532,
+      "sourceSri": "sha384-Dity3SKuRlRum0VW9CEU/pGHiYckj627LQN/wO+IzGlfjKiChceFvOmRbBVMZNi7",
+      "bytes": 56268,
+      "sri": "sha384-Fl77ugLPk0kQhzfz7yYTFjg8FHH+kaKxaXbgfDTJ/vEt6H0Sz5RqF+D6eBH4L1La",
+      "axes": [],
+      "cmapCodepoints": 693,
+      "glyphs": 760
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/blackopsone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blackopsone/OFL.txt",
+    "bytes": 4411,
+    "sri": "sha384-uUDMVhUkYAzbV9XzcPubfn0ju/602V7UvX2/Mn0ibxQYO9KVghzKiJ/CzgZGL89N"
+  }
+}

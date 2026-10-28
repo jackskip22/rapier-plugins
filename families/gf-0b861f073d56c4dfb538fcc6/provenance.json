@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Varela",
+  "sourceRank": 304,
+  "sourcePosition": 590,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/varela/METADATA.pb",
+    "sri": "sha384-KsvFRDgku9UeG4TM1odNsLpVsdxekMZrGPOZcAOgGVhs0cmjLEAW8C/WVyZ2jJkz"
+  },
+  "files": [
+    {
+      "name": "font-833b69c2e8a4bef2609d4792d03f7ad78e64cf7bbbff2fcc0193171717320c690053d112f5cec892e35965dfcab71c07.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/varela/Varela-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/varela/Varela-Regular.ttf",
+      "sourceBytes": 188240,
+      "sourceSri": "sha384-VpFOk/5y0NiJZ09zvfKFMShPJ5xphk/6iWxacwnCiXG0uqZ8Yavfbw08CnHYMrmD",
+      "bytes": 52568,
+      "sri": "sha384-gztpwuikvvJgnUeS0D96145kz3u7/y/MAZMXFxcyDGkAU9ES9c7IkuNZZd/KtxwH",
+      "axes": [],
+      "cmapCodepoints": 531,
+      "glyphs": 850
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/varela/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/varela/OFL.txt",
+    "bytes": 4415,
+    "sri": "sha384-NfDAhFWxFm+V0MwypTSJNr+XveolriRVK4mk0ysGjoSf+CvAscGHkZ8KZHNNSCX9"
+  }
+}

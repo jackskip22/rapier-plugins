@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sacramento",
+  "sourceRank": 127,
+  "sourcePosition": 259,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sacramento/METADATA.pb",
+    "sri": "sha384-6wRmcioNBN6oH77S2fK+7p8u0Dgmy0Zuxf9Y9Aq58cLWh5GdIOh3Vx7psoVOdyFn"
+  },
+  "files": [
+    {
+      "name": "font-ee275e7364236d8d962fedb6760f30b77a6ca8b4f63c32c7439c861c746bad3ae943f0e85a3b8e597ad17591a5765a63.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sacramento/Sacramento-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sacramento/Sacramento-Regular.ttf",
+      "sourceBytes": 79696,
+      "sourceSri": "sha384-zHG68uUe1r9hPmHK6kbNAw+SxRVAiPWubuo93eewZoYPm/pCj43ZTokPKM5V3Oz3",
+      "bytes": 32128,
+      "sri": "sha384-7idec2QjbY2WL+22dg8wt3psqLT2PDLHQ5yGHHRrrTrpQ/DoWjuOWXrRdZGldlpj",
+      "axes": [],
+      "cmapCodepoints": 370,
+      "glyphs": 375
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sacramento/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sacramento/OFL.txt",
+    "bytes": 4431,
+    "sri": "sha384-08aAgvNpBT5bpAyODBzEbHHcO+W5M4C1t1CHlLm1gRWNPl8iuqOsPbY5wkxey0Jw"
+  }
+}

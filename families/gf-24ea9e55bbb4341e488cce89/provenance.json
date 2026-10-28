@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Jacquard 12 Charted",
+  "sourceRank": 420,
+  "sourcePosition": 791,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jacquard12charted/METADATA.pb",
+    "sri": "sha384-6y9HFSlQmPTaj/2jWwrqZVsktlp0oOt6YmNppKF9U/mKXn/oLQaiatFTUMjb8o2+"
+  },
+  "files": [
+    {
+      "name": "font-fef0b4aaf73a5bbb1e02b49af6eca7601f5bd89245ff0c3d1c2ef055774575888e6059fb5144d3fe215b484882462126.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/jacquard12charted/Jacquard12Charted-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jacquard12charted/Jacquard12Charted-Regular.ttf",
+      "sourceBytes": 592196,
+      "sourceSri": "sha384-aI36WwqCVMeN3R64sru4/CDUg0S1rf+oyJbRVqoKLfQEMkueqqNg8kIvwOexmYls",
+      "bytes": 53372,
+      "sri": "sha384-/vC0qvc6W7seArSa9uynYB9b2JJF/ww9HC7wVXdFdYiOYFn7UUTT/iFbSEiCRiEm",
+      "axes": [],
+      "cmapCodepoints": 331,
+      "glyphs": 357
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/jacquard12charted/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jacquard12charted/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-levlK9K85TgbtNh0fQDM3v5fcfHIo3Sg4dMzEjF4HxXDFD6ycHx7vHdPGHisJzeO"
+  }
+}

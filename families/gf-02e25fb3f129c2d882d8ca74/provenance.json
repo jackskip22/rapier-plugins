@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Adlam Unjoined",
+  "sourceRank": 402,
+  "sourcePosition": 763,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansadlamunjoined/METADATA.pb",
+    "sri": "sha384-RSWTsQZJ5Oh0Mp7Eh3/6Bx5Xbbe3XQcy6p9nWdHMdKz8NxK708fdMESs16VHzVkY"
+  },
+  "files": [
+    {
+      "name": "font-c76e5f0c303b85605ca96db0e37fd71e72c158ac004de84e2014df39420d0b640c6ad721cbb8effc1a86926cb6461733.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansadlamunjoined/NotoSansAdlamUnjoined[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansadlamunjoined/NotoSansAdlamUnjoined%5Bwght%5D.ttf",
+      "sourceBytes": 73680,
+      "sourceSri": "sha384-0nOjB3lPLmyHKjLITNMmKQs6DMGutgtxoZ/sZ5jZGMHQh+YLf07k1N8AJfoUvObT",
+      "bytes": 37476,
+      "sri": "sha384-x25fDDA7hWBcqW2w43/XHnLBWKwATehOIBTfOUINC2QMatchy7jv/BqGkmy2Rhcz",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 422,
+      "glyphs": 430
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansadlamunjoined/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansadlamunjoined/OFL.txt",
+    "bytes": 4381,
+    "sri": "sha384-TNNEc67iydicCAoA3kQIJY0CLYdTjBPvUKi6YXnJX8j9eZMgz5U5QymzHlH58Egl"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Iceberg",
+  "sourceRank": 242,
+  "sourcePosition": 475,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/iceberg/METADATA.pb",
+    "sri": "sha384-OGk54q5QkhG4Q3+rgzszB35cSrPUY4NGO7/jhWfQ0lKOQG3hTLwTP8BmsIgtqQWx"
+  },
+  "files": [
+    {
+      "name": "font-73640cecfc1efc662565cb21fb588458626f630fd25a6c46a4782bef8ef405b4260adcaf096d5ab5aa2489ad95014045.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/iceberg/Iceberg-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/iceberg/Iceberg-Regular.ttf",
+      "sourceBytes": 42808,
+      "sourceSri": "sha384-2AotOPvmDYYVLFhfbjI4pyUscstaMps8wT4gQAwsEyYraYdsW5HrRKZLwWbPwMLA",
+      "bytes": 15248,
+      "sri": "sha384-c2QM7Pwe/GYlZcsh+1iEWGJvYw/SWmxGpHgr7470BbQmCtyvCW1ataokia2VAUBF",
+      "axes": [],
+      "cmapCodepoints": 215,
+      "glyphs": 225
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/iceberg/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/iceberg/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-nehiMX/NCQgfM+3eNNVc7rKSjGlK9yF7flVn/l3663J+FgUtM4gTZ39//qFLMfQz"
+  }
+}

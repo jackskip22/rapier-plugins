@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Mate",
+  "sourceRank": 366,
+  "sourcePosition": 693,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mate/METADATA.pb",
+    "sri": "sha384-OYMcYQR36RIr2UXNlNoTZmM7Eb268gi04JJq5x1hdWnhDBJVfFBBK9HPYoRrBJYG"
+  },
+  "files": [
+    {
+      "name": "font-e87d5741399893e08b30b9129449d4989c5602f1d5031338b2992e3ffbb236528f55caf8d8507d25a5ca4872fed82751.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/mate/Mate-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mate/Mate-Italic.ttf",
+      "sourceBytes": 63944,
+      "sourceSri": "sha384-LzWRqpsUSfO+5wiLnDDtftIoZZYJEnwJaITGeGkhcfdKs8Qba0uYGSUnwOJWsJlg",
+      "bytes": 27932,
+      "sri": "sha384-6H1XQTmYk+CLMLkSlEnUmJxWAvHVAxM4spkuP/uyNlKPVcr42FB9JaXKSHL+2CdR",
+      "axes": [],
+      "cmapCodepoints": 403,
+      "glyphs": 432
+    },
+    {
+      "name": "font-d974ce2fb678745ebe6705e536625293cad9f45692d99c055681f7c752c91df00d26e21dc5a8ae207aa7d8675bfb77c4.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mate/Mate-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mate/Mate-Regular.ttf",
+      "sourceBytes": 62816,
+      "sourceSri": "sha384-MH5rU/dRTjKQhjKWo3zCR2JryTw3ZA+cNk6OUCMbr16uu9TPKOLTm1o3RdsJs8IY",
+      "bytes": 27048,
+      "sri": "sha384-2XTOL7Z4dF6+ZwXlNmJSk8rZ9FaS2ZwFVoH3x1LJHfANJuIdxaiuIHqn2Gdb+3fE",
+      "axes": [],
+      "cmapCodepoints": 403,
+      "glyphs": 432
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mate/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mate/OFL.txt",
+    "bytes": 4501,
+    "sri": "sha384-6SR4Sb5mIk+dDx3jgZtpJRAkMGRibYXSHrrtI6XThr+H8ZwX11Ka7cJI1yl9EaF0"
+  }
+}

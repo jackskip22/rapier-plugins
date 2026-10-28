@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Economica",
+  "sourceRank": 342,
+  "sourcePosition": 652,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/economica/METADATA.pb",
+    "sri": "sha384-bk8RwvFd0R49F8JdOOrMtKB5drCK2IeyLvfgYR26eTKvU4cIDx5GKqWahx6WFY/T"
+  },
+  "files": [
+    {
+      "name": "font-88fcd9e0996269ae79076dacac2db06d0bca162c412d3533554e7d487f7b045eae73284839c57601d34350bf169a1f67.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/economica/Economica-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/economica/Economica-Bold.ttf",
+      "sourceBytes": 27196,
+      "sourceSri": "sha384-Dkcf9rHEzGzGjJ12ILOIpVZwrt7WzFXrDDsq22GRa1psF1Ijnf7L8LPcDK/TpHIH",
+      "bytes": 11792,
+      "sri": "sha384-iPzZ4Jliaa55B22srC2wbQvKFixBLTUzVU59SH97BF6ucyhIOcV2AdNDUL8Wmh9n",
+      "axes": [],
+      "cmapCodepoints": 248,
+      "glyphs": 257
+    },
+    {
+      "name": "font-e4108e2b735440a2d6da23d64a238ed46b06c70a17165f6b72cdceba0c049a0328e7f96915b1e2c8dff7bf0982005995.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/economica/Economica-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/economica/Economica-BoldItalic.ttf",
+      "sourceBytes": 27024,
+      "sourceSri": "sha384-iiMgdinag/78IMfEYoDExhcfHatZoJW8A3/CiBD7FL7dtqaYezO4gNGR6I00IjsI",
+      "bytes": 12124,
+      "sri": "sha384-5BCOK3NUQKLW2iPWSiOO1GsGxwoXFl9rcs3OugwEmgMo5/lpFbHiyN/3vwmCAFmV",
+      "axes": [],
+      "cmapCodepoints": 251,
+      "glyphs": 260
+    },
+    {
+      "name": "font-752eedfebe8bdb896c08f65b890d1b3f6990a2f964c094ebffa2d1030b6ae8850c24587fc764fb7d0c60117f6e8e216a.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/economica/Economica-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/economica/Economica-Italic.ttf",
+      "sourceBytes": 27692,
+      "sourceSri": "sha384-08SKSaVQV9D1nHWrqjbIfQ7Nhl7YDZx+tMANCwNcGvae928vRjdZv0K3Y7VlrEvi",
+      "bytes": 12088,
+      "sri": "sha384-dS7t/r6L24lsCPZbiQ0bP2mQovlkwJTr/6LRAwtq6IUMJFh/x2T7fQxgEX9ujiFq",
+      "axes": [],
+      "cmapCodepoints": 248,
+      "glyphs": 257
+    },
+    {
+      "name": "font-368bb6299011a8bfb4fd13cc74671822a4b7b1e99c925563c691ca3b1004cd2cd4febfda2299ed81bcc2d5b879e81b8a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/economica/Economica-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/economica/Economica-Regular.ttf",
+      "sourceBytes": 26756,
+      "sourceSri": "sha384-8HSil7dAM8BTLryuVwhUfiU6DbrX+LJRpxLM0MGmY7wdmB9ncQynzZqewEsEMdfp",
+      "bytes": 11472,
+      "sri": "sha384-Nou2KZARqL+0/RPMdGcYIqS3semcklVjxpHKOxAEzSzU/r/aIpntgbzC1bh56BuK",
+      "axes": [],
+      "cmapCodepoints": 248,
+      "glyphs": 257
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/economica/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/economica/OFL.txt",
+    "bytes": 4454,
+    "sri": "sha384-Q3sg3DqfMNHZ9uPJLB+SoagOXYRpHQTHBsvFKbUXK6yCGXJl0I2OzO2xbfhq8/mH"
+  }
+}

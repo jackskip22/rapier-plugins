@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Telex",
+  "sourceRank": 460,
+  "sourcePosition": 876,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/telex/METADATA.pb",
+    "sri": "sha384-XvMt6eUROL7kp6JDFP8IvAHGdfXi5JMxN/qqF7wZY2q24bxewy+Rd3e80PjvElTy"
+  },
+  "files": [
+    {
+      "name": "font-ab013bb2c40ca4ad37ec979e736dab52f46189c03cb807afb730e0726567c4d205251b74e3b1405706686b9459139af3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/telex/Telex-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/telex/Telex-Regular.ttf",
+      "sourceBytes": 38940,
+      "sourceSri": "sha384-qyj5t1U63m5NjsLHYhrSnkdzJaTDcMGKEWAjxKjn7pQKimFDGPvdmxag+VUsTrN7",
+      "bytes": 17652,
+      "sri": "sha384-qwE7ssQMpK037Jeec22rUvRhicA8uAevtzDgcmVnxNIFJRt047FAVwZoa5RZE5rz",
+      "axes": [],
+      "cmapCodepoints": 266,
+      "glyphs": 269
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/telex/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/telex/OFL.txt",
+    "bytes": 4404,
+    "sri": "sha384-p5JjuVHpEunNx83PkbqI5mRFzLlSdvPw1vRRVKIrSOWTKCQP7e9g9AXrnb7FN733"
+  }
+}

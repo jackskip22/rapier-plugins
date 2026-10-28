@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Miltonian Tattoo",
+  "sourceRank": 26,
+  "sourcePosition": 62,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/miltoniantattoo/METADATA.pb",
+    "sri": "sha384-ycW9wS0wH5MS1sFQZCgOJN2fqxcVfod5eVexNChfz+VTl+oEjlxuDG+hlRNwrTQ/"
+  },
+  "files": [
+    {
+      "name": "font-63666bde4c0d7739c0eb53369a0a51f8ed80620b1a3d4e27282928df86b7c7e338105a779d6e09069ea5f983fdd7ddc3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/miltoniantattoo/MiltonianTattoo-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/miltoniantattoo/MiltonianTattoo-Regular.ttf",
+      "sourceBytes": 107880,
+      "sourceSri": "sha384-O5HPuEc7J5MNu5u8KZSi1nJ6bvp5mQvy6JMfmp5ScfB1WhIt3JqhzEuagDsio6eS",
+      "bytes": 53908,
+      "sri": "sha384-Y2Zr3kwNdznA61M2mgpR+O2AYgsaPU4nKCko34a3x+M4EFp3nW4JBp6l+YP9193D",
+      "axes": [],
+      "cmapCodepoints": 255,
+      "glyphs": 259
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/miltoniantattoo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/miltoniantattoo/OFL.txt",
+    "bytes": 4411,
+    "sri": "sha384-wSN5hEyM0Ad54/kluUAVJiaLh5McXGMmT52FIii7S6WDmh8MJnyHiJa9OmyotEfT"
+  }
+}

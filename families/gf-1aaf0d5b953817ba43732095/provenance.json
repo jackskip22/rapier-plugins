@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Linear A",
+  "sourceRank": 423,
+  "sourcePosition": 802,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanslineara/METADATA.pb",
+    "sri": "sha384-azAO/Ly8WwQs8/wyhzhPQR40sjIfo/fwVs/PR066iNIbZlDdMSOxuiPHmH2X3wax"
+  },
+  "files": [
+    {
+      "name": "font-181abb2edb2f5452d51a839d6aef39e1212fac25cd35144bddac18bba1e103cd30765719067a193c59a1d25518409f2f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosanslineara/NotoSansLinearA-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanslineara/NotoSansLinearA-Regular.ttf",
+      "sourceBytes": 162012,
+      "sourceSri": "sha384-RnoBdleGqsziaUuxl6sNWaRM2pnWSYNAZFw/LhY3hkZLrzmkyRZ42/dhH4MVFzH4",
+      "bytes": 64760,
+      "sri": "sha384-GBq7LtsvVFLVGoOdau854SEvrCXNNRRL3awYu6HhA80wdlcZBnoZPFmh0lUYQJ8v",
+      "axes": [],
+      "cmapCodepoints": 722,
+      "glyphs": 726
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanslineara/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanslineara/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-+VTjL+UQjABAyCYigA96iQMpU7eH/mcz6pfCLg9oCHQvf15HWJYru0wXssck1tpg"
+  }
+}

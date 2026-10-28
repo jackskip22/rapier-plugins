@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Gabriela",
+  "sourceRank": 490,
+  "sourcePosition": 921,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gabriela/METADATA.pb",
+    "sri": "sha384-CIqArzpQQAq8pJ700t5fitc5SvZinzcA2dOruSeKa+xrPRS28cFnDywoei9a67IH"
+  },
+  "files": [
+    {
+      "name": "font-06a83c06f950f872c312b6382371a61e564d86d54eb81a9c1fcb30fcb8eff55b9d03fae18df13b678daa6e340fee7402.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gabriela/Gabriela-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gabriela/Gabriela-Regular.ttf",
+      "sourceBytes": 70984,
+      "sourceSri": "sha384-YluCTq91F/pXrfPCA8QneoGj6W4EvhAcLwuTNSL7eEunNqH0pBTzorvoU8XzQGUi",
+      "bytes": 28256,
+      "sri": "sha384-Bqg8BvlQ+HLDErY4I3GmHlZNhtVOuBqcH8sw/Ljv9VudA/rhjfE7Z42qbjQP7nQC",
+      "axes": [],
+      "cmapCodepoints": 566,
+      "glyphs": 604
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gabriela/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gabriela/OFL.txt",
+    "bytes": 4515,
+    "sri": "sha384-XwHlfbeDmMmqVlKSZG9nt5nnsPG1C0S/+5Y301abLRKjvUqmxp2frqzsy++E2sLz"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Kristi",
+  "sourceRank": 512,
+  "sourcePosition": 948,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kristi/METADATA.pb",
+    "sri": "sha384-juluLi6NGgquwCAqORRMNX62S28SYwdx8m8Phh2pXKm9mItK48hA00UCJ1E0RgbY"
+  },
+  "files": [
+    {
+      "name": "font-371a81fb8f7c97bcd1fbcedade69fecbbcb7a2cc825fff381a7e51b5b0f97ae482830fe25c8c3f90f100f5477031d8d1.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kristi/Kristi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kristi/Kristi-Regular.ttf",
+      "sourceBytes": 47440,
+      "sourceSri": "sha384-OMy9tlDqk6WqADa6nD8/homjyNB0n1n322U4P5fomLMoMz+x4VnTpVIl+Akopmbw",
+      "bytes": 26576,
+      "sri": "sha384-NxqB+498l7zR+87a3mn+y7y3osyCX/84Gn5RtbD5euSCgw/iXIw/kPEA9UdwMdjR",
+      "axes": [],
+      "cmapCodepoints": 202,
+      "glyphs": 212
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kristi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kristi/OFL.txt",
+    "bytes": 4358,
+    "sri": "sha384-zQOzv+QRe2n8/1GwlJtE6ch7lLctpz6pmPBJQ2fCGHXID4y+dM3bqi312eOMdR8e"
+  }
+}

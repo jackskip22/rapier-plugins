@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Yeseva One",
+  "sourceRank": 253,
+  "sourcePosition": 494,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yesevaone/METADATA.pb",
+    "sri": "sha384-J0CV4w/qDKrZt7Ixv/H2AJjcrdIyME5ueMbObIuzBisDf5Sq1oJB99oB8fo+/K53"
+  },
+  "files": [
+    {
+      "name": "font-5046a4cdb0e36c0c640385fdbde3cde9a76a57fa36b8c838090af17fb07cadd344466c6ebfb84fd77218eb1ef266d68f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/yesevaone/YesevaOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yesevaone/YesevaOne-Regular.ttf",
+      "sourceBytes": 108016,
+      "sourceSri": "sha384-dCddh96z1ZpCaFq+YYrfehfGiLdmOVyGsJo7dnMd8pTukM96BZkfJXum6Th6ofcE",
+      "bytes": 36584,
+      "sri": "sha384-UEakzbDjbAxkA4X9vePN6adqV/o2uMg4CQrxf7B8rdNERmxuv7hP13IY6x7yZtaP",
+      "axes": [],
+      "cmapCodepoints": 652,
+      "glyphs": 666
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/yesevaone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yesevaone/OFL.txt",
+    "bytes": 4405,
+    "sri": "sha384-AStKJBWqGtkZEHd0wZvS9nf1FI2+3EjxeaochjiLHQAa87W1sPMmh/uVeHmrlpZq"
+  }
+}

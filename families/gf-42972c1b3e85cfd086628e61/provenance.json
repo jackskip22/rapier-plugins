@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Anton",
+  "sourceRank": 48,
+  "sourcePosition": 108,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anton/METADATA.pb",
+    "sri": "sha384-ub8rZwfys1g7RGA+z6k0MlEB0JM8KQX15+RdZ+LJ8mhrl2J85vkUITPEXM3KAT0l"
+  },
+  "files": [
+    {
+      "name": "font-c6309f41803f47a7b755e8aca9cba31025ccf69d65095309ed7e8e10cca0a353fde893f4b19e69b26a64b07123803b7e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/anton/Anton-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anton/Anton-Regular.ttf",
+      "sourceBytes": 170812,
+      "sourceSri": "sha384-Hy4Gs/2XLHDB77TrS+rkoMTjLb6XFnDHNekCZN8Q/KoZZ4CFk+W5/iNqDPcA80mR",
+      "bytes": 57400,
+      "sri": "sha384-xjCfQYA/R6e3VeisqcujECXM9p1lCVMJ7X6OEMygo1P96JP0sZ5psmpksHEjgDt+",
+      "axes": [],
+      "cmapCodepoints": 978,
+      "glyphs": 1373
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/anton/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anton/OFL.txt",
+    "bytes": 4484,
+    "sri": "sha384-OpDKX4WGwyeoKGKTByKmjn74Ck/4HPOkFpsWozRLzHAsZTJg93+8C4+ku3xoYx0w"
+  }
+}

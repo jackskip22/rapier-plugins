@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Smokum",
+  "sourceRank": 332,
+  "sourcePosition": 636,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/smokum/METADATA.pb",
+    "sri": "sha384-Y9sPAXnX295bP7kXuYeDhJQKRAtjs3z9CkTgXGQ9gX9soOr4Lz+Rl/yp7VgP3LEw"
+  },
+  "files": [
+    {
+      "name": "font-5d3069ba209daa85af08f32b55789a18eecfa8598c9a6adeb6544a59b94977d01116f5a3d89b8dd91ad9ab212aa8b3ba.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/smokum/Smokum-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/smokum/Smokum-Regular.ttf",
+      "sourceBytes": 63080,
+      "sourceSri": "sha384-3/xa8EqwI6HIEcOmw04CU2mZlg+dIlqt6zyul3UmZN4yNu9NDG2XmyjxBl1bbsyv",
+      "bytes": 22684,
+      "sri": "sha384-XTBpuiCdqoWvCPMrVXiaGO7PqFmMmmretlRKWblJd9ARFvWj2JuN2RrZqyEqqLO6",
+      "axes": [],
+      "cmapCodepoints": 368,
+      "glyphs": 372
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/smokum/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/smokum/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

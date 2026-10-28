@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Stalemate",
+  "sourceRank": 311,
+  "sourcePosition": 598,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stalemate/METADATA.pb",
+    "sri": "sha384-kb3HgY+hK098vvRtwvQPs2SQ1Ud3tCFwpCDrGCsQ/+tbYmudgDhDtJVBmbmSEmN7"
+  },
+  "files": [
+    {
+      "name": "font-daff8862af455fc62e9f316971c6978d4f3f05cf038f93a590b4f51e715e415b6795203e6fadad6c95ddc8400e38904a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/stalemate/Stalemate-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stalemate/Stalemate-Regular.ttf",
+      "sourceBytes": 75356,
+      "sourceSri": "sha384-l7AMcaoEYiOoE8E0qRDQ35/ieAT0J17gL5qXySahzKRobiGc+jCGlX0iXRtxw9Vh",
+      "bytes": 32552,
+      "sri": "sha384-2v+IYq9FX8YunzFpccaXjU8/Bc8Dj5OlkLT1HnFeQVtnlSA+b62tbJXdyEAOOJBK",
+      "axes": [],
+      "cmapCodepoints": 370,
+      "glyphs": 378
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/stalemate/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stalemate/OFL.txt",
+    "bytes": 4513,
+    "sri": "sha384-1UkhDu2dCE3sd5ezKJbAIj4saCtenYKbBACIToOEp2Xd4RONcuA3uXlGx+X3cIpq"
+  }
+}

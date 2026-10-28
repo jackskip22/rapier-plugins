@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "League Gothic",
+  "sourceRank": 71,
+  "sourcePosition": 151,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/leaguegothic/METADATA.pb",
+    "sri": "sha384-9oDIHk5E67D71SGsNMyX6UoFzHjyXEr2ST5JV8t4Qx/lE+AgGbYRD0mYSoHqNICU"
+  },
+  "files": [
+    {
+      "name": "font-955b646d57c73ff774f1d9dbb1bddb7bf21a2a37879aef5920a0610639633449886ed8e548b8d42f2bee49839d73b09c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/leaguegothic/LeagueGothic[wdth].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/leaguegothic/LeagueGothic%5Bwdth%5D.ttf",
+      "sourceBytes": 65972,
+      "sourceSri": "sha384-JKDd2YnJnQP3sHf09+qUUd21rvUmvl1WghliLAPjdxTpdNwFvUdrqTph2cM13F4J",
+      "bytes": 27156,
+      "sri": "sha384-lVtkbVfHP/d08dnbsb3be/IaKjeHmu9ZIKBhBjljNEmIbtjlSLjULyvuSYOdc7Cc",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 469,
+      "glyphs": 529
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/leaguegothic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/leaguegothic/OFL.txt",
+    "bytes": 4400,
+    "sri": "sha384-1K3mXxcMBGO+VH4RirOrMOWuQzxPcQyQAnbcL4771rus/fo8JvJCpocmGIDUPwS+"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Bayon",
+  "sourceRank": 541,
+  "sourcePosition": 991,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bayon/METADATA.pb",
+    "sri": "sha384-tj+kZGqua9YG/YPWua/LPmBzrNk0lRpAx+YHT2s5E8IM2g0/iTLOCcv+RiEqWJBI"
+  },
+  "files": [
+    {
+      "name": "font-8d45efcbe8be136d95045fa5a275067df4e8e99e93df88b9e2fe63c16f04be52b8e208e4eced981bbb6836d278f5a846.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bayon/Bayon-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bayon/Bayon-Regular.ttf",
+      "sourceBytes": 55132,
+      "sourceSri": "sha384-czOMLJF3HVWHjE2699OlqOWnk9iOGb+1UhfkSEQXfOizYZxAgfPnWEPskRNHpmXT",
+      "bytes": 20576,
+      "sri": "sha384-jUXvy+i+E22VBF+lonUGffTo6Z6T34i54v5jwW8EvlK44gjk7O2YG7toNtJ49ahG",
+      "axes": [],
+      "cmapCodepoints": 203,
+      "glyphs": 277
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bayon/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bayon/OFL.txt",
+    "bytes": 4380,
+    "sri": "sha384-g/xXDOLm/alodMgGDG4ejo2HxH+NZ/58ZQrXhBU35b6f2pJUCb5Aad1IGezYJ2Bm"
+  }
+}

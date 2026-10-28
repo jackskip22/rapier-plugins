@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Marvel",
+  "sourceRank": 483,
+  "sourcePosition": 912,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marvel/METADATA.pb",
+    "sri": "sha384-iHgUWJUPsCfyUU347fLydQyrOYpvnQ/cDYB6OyzHspRXae2JFP+U4n13eOQu8gns"
+  },
+  "files": [
+    {
+      "name": "font-cd06d4df4fc1031520ff9ec367c1eca0905753c6c0140e00ff3115edee8efe0458398c567caed7da775424e38b87490b.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/marvel/Marvel-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marvel/Marvel-Bold.ttf",
+      "sourceBytes": 36968,
+      "sourceSri": "sha384-mu5FviXBohWIeGmQWsJRQWg7r7HnQDFbQHKntWIwcqqcJj5Ke47Qm/w0Gb9IpEke",
+      "bytes": 12608,
+      "sri": "sha384-zQbU30/BAxUg/57DZ8HsoJBXU8bAFA4A/zEV7e6O/gRYOYxWfK7X2ndUJOOLh0kL",
+      "axes": [],
+      "cmapCodepoints": 193,
+      "glyphs": 195
+    },
+    {
+      "name": "font-9e702e8f40a4a1e0a0588818b965813bc8f4f2a896234b6aaccf50fdc3e034c72b7be83dc334afea989fde503da61da7.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/marvel/Marvel-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marvel/Marvel-BoldItalic.ttf",
+      "sourceBytes": 40080,
+      "sourceSri": "sha384-CB7q30zwN38jWxjxuphx5teotvP25Z6wG3eBCj9t8V1aDU1aClAT0dg0OeTpOrMz",
+      "bytes": 13744,
+      "sri": "sha384-nnAuj0CkoeCgWIgYuWWBO8j08qiWI0tqrM9Q/cPgNMcre+g9wzSv6pif3lA9ph2n",
+      "axes": [],
+      "cmapCodepoints": 193,
+      "glyphs": 195
+    },
+    {
+      "name": "font-a86ae5af5483560cdaf15b257cb3b2bb08e9a514bee4161ff9e4bd52ec926248e47c92967b44ac914184701552521ca7.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/marvel/Marvel-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marvel/Marvel-Italic.ttf",
+      "sourceBytes": 40668,
+      "sourceSri": "sha384-G+5WhPFpTUCmQqWFLV87fthE4bq9NU/+z6YmYN5xJMjOuhnOROIpGbmMFaXBnyr5",
+      "bytes": 13324,
+      "sri": "sha384-qGrlr1SDVgza8VslfLOyuwjppRS+5BYf+eS9UuySYkjkfJKWe0SskUGEcBVSUhyn",
+      "axes": [],
+      "cmapCodepoints": 193,
+      "glyphs": 195
+    },
+    {
+      "name": "font-48fb3b570f478734c53866fbed16b79ca4a8f1ed117e9e81ebadd968c66e3dfb7d27b44a52f97142ed242335298340c3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/marvel/Marvel-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marvel/Marvel-Regular.ttf",
+      "sourceBytes": 38220,
+      "sourceSri": "sha384-IdurDGSAcZKw1AEJYI+W+cZjGCpfxS6Cdb6tiwDr+t7fv9BdpGT0ZpSWCf9zz1R+",
+      "bytes": 12528,
+      "sri": "sha384-SPs7Vw9HhzTFOGb77Ra3nKSo8e0Rfp6B663ZaMZuPft9J7RKUvlxQu0kIzUpg0DD",
+      "axes": [],
+      "cmapCodepoints": 193,
+      "glyphs": 195
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/marvel/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marvel/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-vOPSIsaM+El55FKdgemzbbHb11H3dVonCDG6TE3QSJA85TLWzZCMISORCeCB/b/R"
+  }
+}

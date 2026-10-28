@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Satisfy",
+  "sourceRank": 149,
+  "sourcePosition": 305,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/satisfy/METADATA.pb",
+    "sri": "sha384-1q6rsSI9gvi7fkVjfuwn80A4fL11DozrUxeqN6VKeKauSp32HAq6pdAYU9vIE6AF"
+  },
+  "files": [
+    {
+      "name": "font-67b0906111ddb387e5db8a5f9c72c8c0cffbe4252b2616764436005821acba8563b35d89c7a35dbfaebaaa0cb340b1cd.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/satisfy/Satisfy-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/satisfy/Satisfy-Regular.ttf",
+      "sourceBytes": 47928,
+      "sourceSri": "sha384-o74cPsMqaa9EnEhdVGlpWZRfMPqfFSeEt9QUQv7+6aA1fS8fHXIJ92xX4nk9+Ax7",
+      "bytes": 23852,
+      "sri": "sha384-Z7CQYRHds4fl24pfnHLIwM/75CUrJhZ2RDYAWCGsuoVjs12Jx6Ndv666qgyzQLHN",
+      "axes": [],
+      "cmapCodepoints": 226,
+      "glyphs": 227
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/satisfy/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/satisfy/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

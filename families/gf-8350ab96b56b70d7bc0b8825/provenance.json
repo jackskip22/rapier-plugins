@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Deseret",
+  "sourceRank": 548,
+  "sourcePosition": 999,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansdeseret/METADATA.pb",
+    "sri": "sha384-zfzfc8YCdxMVyurDdcdOuii+kOuSpltqIROp5F/YJMmT6rbVKsmCHbJ9dhTcib4p"
+  },
+  "files": [
+    {
+      "name": "font-aba75d28478447b75fcb99262eacaff74d9bb8e3542e83c0f78df8051659a6533c01821efcceb94831befbdde7ebecee.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansdeseret/NotoSansDeseret-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansdeseret/NotoSansDeseret-Regular.ttf",
+      "sourceBytes": 60572,
+      "sourceSri": "sha384-HrFRy4YM2M262nMTc6KW77YbSHDaSVlUmhemi2+dIyDnJSdzparInxvicnx2dM6d",
+      "bytes": 26648,
+      "sri": "sha384-q6ddKEeER7dfy5kmLqyv902buONULoPA9434BRZZplM8AYIe/M65SDG++93n6+zu",
+      "axes": [],
+      "cmapCodepoints": 415,
+      "glyphs": 420
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansdeseret/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansdeseret/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-RSGDEAqPXyBk7kdt8++2KodUzOZ6xfjP1w7GNkA2yc+ZWvmszdm0dMiDvYb0wErd"
+  }
+}

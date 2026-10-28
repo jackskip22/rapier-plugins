@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "DM Serif Display",
+  "sourceRank": 23,
+  "sourcePosition": 52,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmserifdisplay/METADATA.pb",
+    "sri": "sha384-AwQALG/aq0kVdQ6bvI42jQ0FN+dfppYp+BhvEvDxQrxNdIyrCyxfVfh6s5hpwhY+"
+  },
+  "files": [
+    {
+      "name": "font-2e6b6ab72159e7ff55c6a433e64b8c784b787f5ef66a6cf12c3fb9f73ad4d100c92b22e094ca9f0283bf7a30adf059b1.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/dmserifdisplay/DMSerifDisplay-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmserifdisplay/DMSerifDisplay-Italic.ttf",
+      "sourceBytes": 71208,
+      "sourceSri": "sha384-3VMbaz/o7kKuxXwONABVDlynHTiyH4FZ3y4z3HZFNqdxZBz4I2AJwbqfKon2oZT7",
+      "bytes": 30712,
+      "sri": "sha384-LmtqtyFZ5/9VxqQz5kuMeEt4f172amzxLD+59zrU0QDJKyLglMqfAoO/ejCt8Fmx",
+      "axes": [],
+      "cmapCodepoints": 336,
+      "glyphs": 355
+    },
+    {
+      "name": "font-a3d55348d78c1b69b21488686768c5991516cd39cba8f21feec32308cfbc755f39419386013336021db2fc3f6389e438.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/dmserifdisplay/DMSerifDisplay-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmserifdisplay/DMSerifDisplay-Regular.ttf",
+      "sourceBytes": 76580,
+      "sourceSri": "sha384-rFutp7bECF8gxsM8amny9T+tS7RlZdMLK2pcPZIMQ+/IC2bqtTYK4CBcNE0y+RPi",
+      "bytes": 31580,
+      "sri": "sha384-o9VTSNeMG2myFIhoZ2jFmRUWzTnLqPIf7sMjCM+8dV85QZOGATM2Ah2y/D9jieQ4",
+      "axes": [],
+      "cmapCodepoints": 333,
+      "glyphs": 355
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/dmserifdisplay/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmserifdisplay/OFL.txt",
+    "bytes": 4605,
+    "sri": "sha384-bTMbHhS1ZL7YDBFmiCfW7VzdAt0ojNbq1H8DJ3xQZj25IqZuARHcn7glPqOWeZMj"
+  }
+}

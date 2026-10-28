@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Creepster",
+  "sourceRank": 170,
+  "sourcePosition": 341,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/creepster/METADATA.pb",
+    "sri": "sha384-icwzpWV154LJroWp+ZAacVjrqJVTykFvLXwiUzkp438l9UOvrwNZb07azm+QlsPG"
+  },
+  "files": [
+    {
+      "name": "font-1c1915c04be268a10ffcba4909255f186fbc48cd502fe659ab38ac5429f8a51770e4645494d494ecacb9a21629f3c14b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/creepster/Creepster-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/creepster/Creepster-Regular.ttf",
+      "sourceBytes": 62724,
+      "sourceSri": "sha384-cNZRoaSELCfsmR0JXmY8ewVdKKQ6a4TGTMzPFpIlZ7R+kMS897CXiSGm5g5F+Jpd",
+      "bytes": 29812,
+      "sri": "sha384-HBkVwEviaKEP/LpJCSVfGG+8SM1QL+ZZqzisVCn4pRdw5GRUlNSU7Ky5ohYp88FL",
+      "axes": [],
+      "cmapCodepoints": 227,
+      "glyphs": 230
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/creepster/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/creepster/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-aUjlpNPVmLpKgXTzpjYC+xyB+BywefEEbx/Zq5qm35qzGD56SfbUIs5ks2jRuxKj"
+  }
+}

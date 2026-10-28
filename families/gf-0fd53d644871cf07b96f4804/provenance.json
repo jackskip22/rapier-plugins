@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Aguafina Script",
+  "sourceRank": 17,
+  "sourcePosition": 37,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aguafinascript/METADATA.pb",
+    "sri": "sha384-W+9pUV9B8FRdzKwwTO1iPROFosajyCbiKvy9qd4XOzYnxLHVUm2LM3hb/0VQu3Ug"
+  },
+  "files": [
+    {
+      "name": "font-2dbdf85d288eafdeb92e78f6bf289ffefd1f084034f0555ed1fd741dcd8c083fba237ae03b6753d20606fa8d0172c41c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/aguafinascript/AguafinaScript-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aguafinascript/AguafinaScript-Regular.ttf",
+      "sourceBytes": 47252,
+      "sourceSri": "sha384-YZ2tDkYpQ1eNwVupV0vvJs3E+HtI1+b1cYTFgPibUw9QyNUwWWdP643yBd0C8gS5",
+      "bytes": 17508,
+      "sri": "sha384-Lb34XSiOr965Lnj2vyif/v0fCEA08FVe0f10Hc2MCD+6I3rgO2dT0gYG+o0BcsQc",
+      "axes": [],
+      "cmapCodepoints": 232,
+      "glyphs": 236
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/aguafinascript/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aguafinascript/OFL.txt",
+    "bytes": 4463,
+    "sri": "sha384-HphLD1xsaV3gUOCeTCMXFXJg1l1L4k8C3+ATqvA9madjYbAFs7wcC6KlQdfSTUqe"
+  }
+}

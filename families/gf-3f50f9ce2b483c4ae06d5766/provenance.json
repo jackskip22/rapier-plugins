@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Antic Slab",
+  "sourceRank": 202,
+  "sourcePosition": 405,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anticslab/METADATA.pb",
+    "sri": "sha384-6x5j97CRjLAsU/wgjTGUG9gDG4EV/axuwMh1AjRIDGQO/akgmozS9DKIm+WLgC00"
+  },
+  "files": [
+    {
+      "name": "font-629a73b8728941c0f003a43e7dcf04fddd3945b4f97199a6c83a702b02173d0430fbc7a7c9b4a085e09c3522a6dd7498.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/anticslab/AnticSlab-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anticslab/AnticSlab-Regular.ttf",
+      "sourceBytes": 36948,
+      "sourceSri": "sha384-AOSI5Ar1T5Bs/J/jyAiECOOqRRKKEjNOV8RbKUkr+wN6XW1xX9kV+qu4ni1puNrq",
+      "bytes": 12960,
+      "sri": "sha384-YppzuHKJQcDwA6Q+fc8E/d05RbT5cZmmyDpwKwIXPQQw+8enybSgheCcNSKm3XSY",
+      "axes": [],
+      "cmapCodepoints": 214,
+      "glyphs": 219
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/anticslab/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anticslab/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-x6mWmJxszWEyoZSpF/8xy7MG2P4zsSahhRDEQlHqLMeLyGTaNv8aWt1RIsHxmViB"
+  }
+}

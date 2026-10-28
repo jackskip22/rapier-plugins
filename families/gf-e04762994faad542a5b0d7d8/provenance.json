@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Dawning of a New Day",
+  "sourceRank": 482,
+  "sourcePosition": 911,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dawningofanewday/METADATA.pb",
+    "sri": "sha384-/3VdmEOsakMDNzaRBnziN+vPiKVaMn7zCOy++6IJhzhq89V+Qp3DOFegXu4/8a/X"
+  },
+  "files": [
+    {
+      "name": "font-d285ff584242f24bebd9d8c2dbad4b1727f72cecabfdf2a58709b18e342299a0e0e936cb5572e25a1b4599361ec6b7b2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/dawningofanewday/DawningofaNewDay.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dawningofanewday/DawningofaNewDay.ttf",
+      "sourceBytes": 65344,
+      "sourceSri": "sha384-KiclcKH/Gr1jYXTTJViUjf+Zvermmpa/ZNCHnQOn3WZnjrV9qVZsXl0YvczJdpb7",
+      "bytes": 23412,
+      "sri": "sha384-0oX/WEJC8kvr2djC261LFyf3LOyr/fKlhwmxjjQimaDg6TbLVXLiWhtFmTYexrey",
+      "axes": [],
+      "cmapCodepoints": 260,
+      "glyphs": 265
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/dawningofanewday/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dawningofanewday/OFL.txt",
+    "bytes": 4362,
+    "sri": "sha384-1YKmofHCyJDlDsppmYBFx5tEP29mPreOCEmka3gUdA6TGDKpgCKnKy90effPAKhr"
+  }
+}

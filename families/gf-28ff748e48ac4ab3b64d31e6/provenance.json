@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Pompiere",
+  "sourceRank": 547,
+  "sourcePosition": 997,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pompiere/METADATA.pb",
+    "sri": "sha384-dFGeR1OVUzDkOLu2ujOeGT3ECW9yvScOUXi+6iSxCSvwrS1TzeYB8fESEdG8+I58"
+  },
+  "files": [
+    {
+      "name": "font-ed8a365af3d18045c0437764f9e7df9166b87efc8972814ed33664d95a8884515af6304a4a7ec0cf567f56a1b8e3454f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/pompiere/Pompiere-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pompiere/Pompiere-Regular.ttf",
+      "sourceBytes": 36632,
+      "sourceSri": "sha384-08S/WiEOO3vozvoyCIA0GXVC41UAGJCg+AvVPBg7PY54F3SDu1Bg/w2GHUnKZKjg",
+      "bytes": 21256,
+      "sri": "sha384-7Yo2WvPRgEXAQ3dk+effkWa4fvyJcoFO0zZk2VqIhFFa9jBKSn7Az1Z/VqG440VP",
+      "axes": [],
+      "cmapCodepoints": 260,
+      "glyphs": 271
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/pompiere/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pompiere/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-xQAaQUISm0zzMCWqO5jKN3r8avHl5LVeBdPqP5d1mghYxY3wxwe4gAMZm7o7Pj0M"
+  }
+}

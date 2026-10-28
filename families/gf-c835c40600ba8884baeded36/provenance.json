@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Metamorphous",
+  "sourceRank": 184,
+  "sourcePosition": 374,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/metamorphous/METADATA.pb",
+    "sri": "sha384-KYTzgxQoqGM5ZTkI96u1CeLEt1mtmBA+bUPGaX2lSquvGQPdbausj9t1ZWBuTN6o"
+  },
+  "files": [
+    {
+      "name": "font-b88d1884aa6c40acd10c46914451e9bed11203da911fcaa06b38db16d6b3b1d1fd7b99d2b1d48e25aacea9b7b3a76bc7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/metamorphous/Metamorphous-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/metamorphous/Metamorphous-Regular.ttf",
+      "sourceBytes": 135740,
+      "sourceSri": "sha384-TOLqHHiZRRXZriSYX/61KtuYX5tV6pdLJaHrUzM2xayWTnLLrdMNadnfdqrZmA5T",
+      "bytes": 36952,
+      "sri": "sha384-uI0YhKpsQKzRDEaRRFHpvtESA9qRH8qgazjbFtazsdH9e5nSsdSOJarOqbezp2vH",
+      "axes": [],
+      "cmapCodepoints": 411,
+      "glyphs": 425
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/metamorphous/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/metamorphous/OFL.txt",
+    "bytes": 4407,
+    "sri": "sha384-u55rd35pGH4gRD9lFJopF0CXR/C3ErWlVDGisHkDlRSG74AH4EBm8f+dxXDfyZ/O"
+  }
+}

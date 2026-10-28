@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Delius",
+  "sourceRank": 154,
+  "sourcePosition": 312,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/delius/METADATA.pb",
+    "sri": "sha384-WDykm1OmpcQ2p6xzVOw2KNBnZhsQfXe5/opHCF/HEsz2xOOv6FxAQqYzyz/suERq"
+  },
+  "files": [
+    {
+      "name": "font-5106f1cca1226e22f6960826a18b02859766c64fc3f11a64ef88a056ca31c60ffa090d14fe76f9d05812046fe7131d51.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/delius/Delius-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/delius/Delius-Regular.ttf",
+      "sourceBytes": 77488,
+      "sourceSri": "sha384-gFmOUcw/u3KB0TTv9k4sxb8q9MXgIgHNRS3jP2ugCoOc7QSWrS4J8mlWNZAr14iW",
+      "bytes": 26884,
+      "sri": "sha384-UQbxzKEibiL2lggmoYsChZdmxk/D8Rpk74igVsoxxg/6CQ0U/nb50FgSBG/nEx1R",
+      "axes": [],
+      "cmapCodepoints": 267,
+      "glyphs": 298
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/delius/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/delius/OFL.txt",
+    "bytes": 4500,
+    "sri": "sha384-42CYcii0K4GQk/rOBvNsY0etSEQYqqDl28mjaaqoC6E28rSJ4lPAYZXzcT3DIsWS"
+  }
+}

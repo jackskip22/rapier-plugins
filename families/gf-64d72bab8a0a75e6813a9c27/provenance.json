@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Italiana",
+  "sourceRank": 460,
+  "sourcePosition": 874,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/italiana/METADATA.pb",
+    "sri": "sha384-3NqYsW/t2yNRa+b6fZa7aAssjnLaDmI3MAP1dhnCGzoFlNwpouGM12VtMiENY/Is"
+  },
+  "files": [
+    {
+      "name": "font-947d1b51358e0d94d7bb1ed867cb0f4e0fa1be9693d0b213bb438a2b2b4cae61945594468a1b5d0525eee07d6eb1220f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/italiana/Italiana-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/italiana/Italiana-Regular.ttf",
+      "sourceBytes": 31828,
+      "sourceSri": "sha384-kKLHb4c8T7lSeS66luYTJsFNwXbuIRjnALnrl1fHvDtXZt7RIHc++Eo5f5Fwlowx",
+      "bytes": 10868,
+      "sri": "sha384-lH0bUTWODZTXux7YZ8sPTg+hvpaT0LITu0OKKytMrmGUVZRGihtdBSXu4H1usSIP",
+      "axes": [],
+      "cmapCodepoints": 211,
+      "glyphs": 217
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/italiana/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/italiana/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-glLznwDux09N+0GDxe0xsny/9zQEu3sP8+h9GXBLaecp36f1jim8zrr1XBrshwL0"
+  }
+}

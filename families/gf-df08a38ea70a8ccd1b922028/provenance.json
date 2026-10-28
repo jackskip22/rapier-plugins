@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Goudy Bookletter 1911",
+  "sourceRank": 522,
+  "sourcePosition": 962,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/goudybookletter1911/METADATA.pb",
+    "sri": "sha384-w1F2L1SfMa6IJ1C8URjtks6tGB/EDEmmXL2yYEMCaHr4dd6IEvBPqOl/F+f0/ouj"
+  },
+  "files": [
+    {
+      "name": "font-c2c075ff75e0f003deed12e8ba91578a83f14630cc459174fa03c1dfd7f65d1881dacd91a3366745bc72270805092bdc.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/goudybookletter1911/GoudyBookletter1911.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/goudybookletter1911/GoudyBookletter1911.ttf",
+      "sourceBytes": 73496,
+      "sourceSri": "sha384-BkVluicuFpoJpUhUWC0cgQqcjs50N3sMBrqq0z3NZ4txRBAxtmO0LvYTFpCHCnDi",
+      "bytes": 34252,
+      "sri": "sha384-wsB1/3Xg8APe7RLoupFXioPxRjDMRZF0+gPB39f2XRiB2s2RozZnRbxyJwgFCSvc",
+      "axes": [],
+      "cmapCodepoints": 292,
+      "glyphs": 303
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/goudybookletter1911/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/goudybookletter1911/OFL.txt",
+    "bytes": 4355,
+    "sri": "sha384-+JjMnKq2St8b/C5TlmxfLuFOWn1ZTpD1858lH+U5gDXkk60RtHLBhAnjeBZKohpK"
+  }
+}

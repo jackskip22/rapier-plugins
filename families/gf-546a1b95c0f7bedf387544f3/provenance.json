@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "BBH Bartle",
+  "sourceRank": 304,
+  "sourcePosition": 589,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bbhbartle/METADATA.pb",
+    "sri": "sha384-sjkY1gyn0cbAMcE/SIJkbM+WYcoPpuDBkLgzVKLan2mSMZkqDLcjsRh9FhKni+bo"
+  },
+  "files": [
+    {
+      "name": "font-a07abd504cb6659d8d3ba55dc1e485932de38f02eb49c538e29e6b8537abf72de00c18812e6fa3ce046f49000aeb0e41.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bbhbartle/BBHBartle-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bbhbartle/BBHBartle-Regular.ttf",
+      "sourceBytes": 17880,
+      "sourceSri": "sha384-oKV9mCmIQc3DX4vGfyjXPlbiNj20zQXp5nCvWu1aWNQIGvXNE1LXfJryPGA+teta",
+      "bytes": 8496,
+      "sri": "sha384-oHq9UEy2ZZ2NO6VdweSFky3jjwLrScU44p5rhTer9y3gDBiBLm+jzgRvSQAK6w5B",
+      "axes": [],
+      "cmapCodepoints": 134,
+      "glyphs": 137
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bbhbartle/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bbhbartle/OFL.txt",
+    "bytes": 4381,
+    "sri": "sha384-syUbkAy4HRMSQ8zguByTHW6yUqJn6F2s7ecgHivbHvDXyCLNmjZIjHVhUk2yelDX"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Brahmi",
+  "sourceRank": 376,
+  "sourcePosition": 712,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansbrahmi/METADATA.pb",
+    "sri": "sha384-Z+TuO5uSh2v54H7iHBP4sC/0HWF0wvzNt6EytlKIwwpcL/bzTwGNHawWPIa2l7wb"
+  },
+  "files": [
+    {
+      "name": "font-b6e593a5ffdb7979ff651601cf6ee9c1d6cdb33052ec1c96248abb90cb9918337a51786e719a47c3b1c39760252cd8f4.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansbrahmi/NotoSansBrahmi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansbrahmi/NotoSansBrahmi-Regular.ttf",
+      "sourceBytes": 115452,
+      "sourceSri": "sha384-113umXE2LAivNbI3erz9n4V72PDqzcmFTB/weRjZvwxfy6UQ6hOQMGbUySGipSjh",
+      "bytes": 46272,
+      "sri": "sha384-tuWTpf/beXn/ZRYBz27pwdbNszBS7ByWJIq7kMuZGDN6UXhucZpHw7HDl2AlLNj0",
+      "axes": [],
+      "cmapCodepoints": 450,
+      "glyphs": 600
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansbrahmi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansbrahmi/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-hHXR8qbyug3qDtDE2s17mkZx+d2NRJ3dxBPmmGm2+8bOQasgS0JPjqDSMSJsfNsI"
+  }
+}

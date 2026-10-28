@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Tirhuta",
+  "sourceRank": 437,
+  "sourcePosition": 836,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanstirhuta/METADATA.pb",
+    "sri": "sha384-LPyXXfuUo37wGFIvoTIk8e89bl9kNNCKphOEkNd/EycR6K5JyyKKoqtDwHyNmlur"
+  },
+  "files": [
+    {
+      "name": "font-30afd8b3ef48dc0e1e35f8020a4b263c7e00cedf325c0adf32aa6b291133c2b8a885c0721d8dbfa69e51386f5bd8f78f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosanstirhuta/NotoSansTirhuta-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanstirhuta/NotoSansTirhuta-Regular.ttf",
+      "sourceBytes": 137848,
+      "sourceSri": "sha384-J42kxJSZNiVMai+H6BewpIziiAPsFctUbjL14C0YznF9uwo4Q6eLCCCWTgYM301I",
+      "bytes": 59204,
+      "sri": "sha384-MK/Ys+9I3A4eNfgCCksmPH4Azt8yXArfMqprKREzwriohcByHY2/pp5ROG9b2PeP",
+      "axes": [],
+      "cmapCodepoints": 439,
+      "glyphs": 597
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanstirhuta/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanstirhuta/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-JDyTBLAJtUHQKSQFjEMV301/B6fmYc38aYkcMyY9sF17NfMPf6+NgmU/yJn/ne9P"
+  }
+}

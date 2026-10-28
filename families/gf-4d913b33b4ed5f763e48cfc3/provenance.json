@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "UnifrakturMaguntia",
+  "sourceRank": 418,
+  "sourcePosition": 787,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/unifrakturmaguntia/METADATA.pb",
+    "sri": "sha384-WRCDhrB3to4v1mQaQ9AHX4nCQguh7yEEppAfoynbBNJANrCIWj8wXDGHZqK6AAKx"
+  },
+  "files": [
+    {
+      "name": "font-1ee34b1b28a74ec8745d08b675c6e548c1e4498d454be7f8a9dfd823f0533f4958a884b2cdd29a5c0f6b4568e527a82e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/unifrakturmaguntia/UnifrakturMaguntia-Book.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/unifrakturmaguntia/UnifrakturMaguntia-Book.ttf",
+      "sourceBytes": 88508,
+      "sourceSri": "sha384-fmhyjMLKeCkIiwkjiBzm4irCNER3yGRySnqxhozHw4tBaSBANHcsXkrTFo2536DV",
+      "bytes": 35612,
+      "sri": "sha384-HuNLGyinTsh0XQi2dcblSMHkSY1FS+f4qd/YI/BTP0lYqISyzdKaXA9rRWjlJ6gu",
+      "axes": [],
+      "cmapCodepoints": 247,
+      "glyphs": 270
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/unifrakturmaguntia/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/unifrakturmaguntia/OFL.txt",
+    "bytes": 4511,
+    "sri": "sha384-Sa8vzndsSV6YmgupnewGuXG1oJtE+drFmgIrWhFkUsQ6zDKY+HdtvivFcvXDDiCv"
+  }
+}

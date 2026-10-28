@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Grey Qo",
+  "sourceRank": 345,
+  "sourcePosition": 658,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/greyqo/METADATA.pb",
+    "sri": "sha384-z7nMu1C6MeaNKnU5uQm9amPdhVjEdK2y7Po+D7si2FSV9FYRfCl9XgXKK6JksxS/"
+  },
+  "files": [
+    {
+      "name": "font-70a810b556cc8ad417107efb719e24053d64e3379b182151a53268e8f85ee855e0377036ac45bb24b30847bfd0cd59a8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/greyqo/GreyQo-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/greyqo/GreyQo-Regular.ttf",
+      "sourceBytes": 111544,
+      "sourceSri": "sha384-dVsPIAvIUbTKlNsLskCrnRrSGw/dQsluU2IL1gyEAlOUW7aU1zJ8TQumwoOWnk8v",
+      "bytes": 39212,
+      "sri": "sha384-cKgQtVbMitQXEH77cZ4kBT1k4zebGCFRpTJo6Phe6FXgN3A2rEW7JLMIR7/QzVmo",
+      "axes": [],
+      "cmapCodepoints": 581,
+      "glyphs": 628
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/greyqo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/greyqo/OFL.txt",
+    "bytes": 4485,
+    "sri": "sha384-Fk7dM5uzmJLQMe2B1T0YzSvehpxeHZtub7L8cfsIZTU0DzbiLUHr1wVCMtNWKwG2"
+  }
+}

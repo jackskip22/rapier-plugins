@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Nova Oval",
+  "sourceRank": 379,
+  "sourcePosition": 717,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novaoval/METADATA.pb",
+    "sri": "sha384-tjcbTZT/miOy1utaG9U9HR+UBIryHFaMQ+P4gbRs2mCMP1O25D+/GhHp6hcLuaq6"
+  },
+  "files": [
+    {
+      "name": "font-b7e542497bfb4aefa055b6f153ecd3fdbfeb4f65bdfd0953da80345e18242759cb1dfe85f424ac5fdfce325e2bf3f5c3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/novaoval/NovaOval.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novaoval/NovaOval.ttf",
+      "sourceBytes": 96656,
+      "sourceSri": "sha384-CKgApt8FXJ7JTvxz3woRUldSaEq3FxOzge87SN+4I81iN2l+ghIXNYIJxZvk6n7N",
+      "bytes": 28008,
+      "sri": "sha384-t+VCSXv7Su+gVbbxU+zT/b/rT2W9/QlT2oA0XhgkJ1nLHf6F9CSsX9/OMl4r8/XD",
+      "axes": [],
+      "cmapCodepoints": 418,
+      "glyphs": 421
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/novaoval/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novaoval/OFL.txt",
+    "bytes": 4271,
+    "sri": "sha384-LFc3v7H+4eHa0tq3sYQebM4k2WCm4l/NgF7ObKwKwZY0yw2PXSV4uZiHBaOjt3Lh"
+  }
+}

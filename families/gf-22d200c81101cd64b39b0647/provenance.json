@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Zen Tokyo Zoo",
+  "sourceRank": 396,
+  "sourcePosition": 753,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zentokyozoo/METADATA.pb",
+    "sri": "sha384-QIW8Xw8lw5/EScCm8h84uvG2TdGZdj/T+9LVm+eOjdJ7B7AUYyOefxSUixDOvY/p"
+  },
+  "files": [
+    {
+      "name": "font-1007e36a77093724d93740646650e295dfc1446f590733f7a59411ca0e07066fa4454239c4a73a452e522a1dc003e1b7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zentokyozoo/ZenTokyoZoo-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zentokyozoo/ZenTokyoZoo-Regular.ttf",
+      "sourceBytes": 92176,
+      "sourceSri": "sha384-ftgG2l6iEC0GDVBo12V9Nm+oEarXqVa++U4blWGQ5MfTW8reEw9TLI7drbFdHl+r",
+      "bytes": 35536,
+      "sri": "sha384-EAfjancJNyTZN0BkZlDild/BRG9ZBzP3pZQRyg4HBm+kRUI5xKc6RS5SKh3AA+G3",
+      "axes": [],
+      "cmapCodepoints": 241,
+      "glyphs": 339
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zentokyozoo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zentokyozoo/OFL.txt",
+    "bytes": 4394,
+    "sri": "sha384-kWmXRTagHHsKxbxb95VNDXcPqSSIwTS4PUOA4XrieW//OwMG/Xk2khjiQ0q0PYxA"
+  }
+}

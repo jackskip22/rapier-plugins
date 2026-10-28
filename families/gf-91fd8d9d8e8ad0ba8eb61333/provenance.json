@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Orelega One",
+  "sourceRank": 216,
+  "sourcePosition": 426,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/orelegaone/METADATA.pb",
+    "sri": "sha384-dtPaWuXCr3o+XSTFdvphJRkpJuUzuBYxh0K6XW4qRWA/3xu2JP7sK1gXrtUW+y2w"
+  },
+  "files": [
+    {
+      "name": "font-202124269928b415a75640bf16d411dba64413481e1e80c2713dcb25c827fbfb4fb836cc42a3597e086e07a7089e3cca.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/orelegaone/OrelegaOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/orelegaone/OrelegaOne-Regular.ttf",
+      "sourceBytes": 133732,
+      "sourceSri": "sha384-3p/wY7DNiqEi98UB+5xvDFCzLHc+oj8T4h+v75JjTT9G4Ibt1RupAhgBh2CPSB2U",
+      "bytes": 45104,
+      "sri": "sha384-ICEkJpkotBWnVkC/FtQR26ZEE0geHoDCcT3LJcgn+/tPuDbMQqNZfghuB6cInjzK",
+      "axes": [],
+      "cmapCodepoints": 587,
+      "glyphs": 590
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/orelegaone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/orelegaone/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-JIUGcOCzV/0VgIBFD7JIlIULlWqnbiiFYXYmEBQ4qvZnwLo5HjyuRHeB3YsN4pHk"
+  }
+}

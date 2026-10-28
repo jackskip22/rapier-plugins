@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Oxygen Mono",
+  "sourceRank": 533,
+  "sourcePosition": 979,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oxygenmono/METADATA.pb",
+    "sri": "sha384-RFRRVfCLIHb4JZTbBjRLLSW4+T6QeVqhBovEFNPXeXtGTfe4D7ULYcnDKdI7+yMy"
+  },
+  "files": [
+    {
+      "name": "font-eb5a8f96bbf0e45e3be1b583936c73bc382ec11d95ad78169d0c30d5e309cbd9d9a3db198159162a9ed96f46e37522cc.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/oxygenmono/OxygenMono-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oxygenmono/OxygenMono-Regular.ttf",
+      "sourceBytes": 68940,
+      "sourceSri": "sha384-TLWPRpEhM0sF+LfqDzFz8FRLWGBod4x/Q4wc9T0pEecu3UcsP5aj9S5OwESGnqjt",
+      "bytes": 25812,
+      "sri": "sha384-61qPlrvw5F474bWDk2xzvDguwR2VrXgWnQww1eMJy9nZo9sZgVkWKp7Zb0bjdSLM",
+      "axes": [],
+      "cmapCodepoints": 359,
+      "glyphs": 362
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/oxygenmono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oxygenmono/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-ZqAGRmd73aivYu6cdWfr66lcYrajE4rai0gaaeXVAOe3jwwCXiXwd/sUY7T0eKBf"
+  }
+}

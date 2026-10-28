@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Francois One",
+  "sourceRank": 227,
+  "sourcePosition": 450,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/francoisone/METADATA.pb",
+    "sri": "sha384-lLLrCxx76P3UmtwRH/KdpybJH1dQSb7coeR4d+8SK/c7ITeNkMARjzTwv3ejyBzN"
+  },
+  "files": [
+    {
+      "name": "font-188b9dceabee364b6ae62d2fc0e92ec38f86ccd07773d7c2f7d6dcfb67c3b10b2493f47b54d425952baa20cd120f15c2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/francoisone/FrancoisOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/francoisone/FrancoisOne-Regular.ttf",
+      "sourceBytes": 79356,
+      "sourceSri": "sha384-Ul1cYkK+QyNIwunptvZjo4EnlkhavjDWmQDyqCVqoITlnEJYi0/omKD5eZlAahr/",
+      "bytes": 32060,
+      "sri": "sha384-GIudzqvuNktq5i0vwOkuw4+GzNB3c9fC99bc+2fDsQskk/R7VNQllSuqIM0SDxXC",
+      "axes": [],
+      "cmapCodepoints": 568,
+      "glyphs": 612
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/francoisone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/francoisone/OFL.txt",
+    "bytes": 4376,
+    "sri": "sha384-aiRVOcdYieMVgQSa4/XzNYdkxs4fZQxqEidOVtDnpgXbC6MEcXfRVVk26E+jvRJe"
+  }
+}

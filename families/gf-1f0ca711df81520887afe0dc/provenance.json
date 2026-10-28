@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Antonio",
+  "sourceRank": 89,
+  "sourcePosition": 182,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/antonio/METADATA.pb",
+    "sri": "sha384-5oSGNk3Z7z3ncTK45bENObtJri3SSULsGCl4a6UAa8HQWvC8B1rqnbDCrtcPugB/"
+  },
+  "files": [
+    {
+      "name": "font-434691cc12817610305740ec90a89af4c92ddb39ce60a6112e45c1d2e6bfb75abd115cecc5b89447c9c05a2313b291a2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/antonio/Antonio[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/antonio/Antonio%5Bwght%5D.ttf",
+      "sourceBytes": 74104,
+      "sourceSri": "sha384-ZuD7916C8IuwE2CKPyUKXCo7HP6uyYFMxMvyKMqg+VYsNOy/zkIFRWocrVRwk8qv",
+      "bytes": 36724,
+      "sri": "sha384-Q0aRzBKBdhAwV0DskKia9Mkt2znOYKYRLkXB0ua/t1q9EVzsxbiUR8nAWiMTspGi",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 433,
+      "glyphs": 440
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/antonio/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/antonio/OFL.txt",
+    "bytes": 4484,
+    "sri": "sha384-5eFdsc8q7HHsPqtJDp5gUiJ2nnZSYDUwSeiZQbjIn13CmtQ0G1PYY/EhR0ODOB4V"
+  }
+}

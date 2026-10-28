@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Masaram Gondi",
+  "sourceRank": 529,
+  "sourcePosition": 972,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansmasaramgondi/METADATA.pb",
+    "sri": "sha384-aRRfg1uWNgXg01vZp78pCoC911gRbVoFRxUIlOaDoCTFj51HSzQg2nAXUkert2N1"
+  },
+  "files": [
+    {
+      "name": "font-7d3051427bf475fb33816165613252f35eff456cde32c2c8278b5a692152f5f824229b55cbfc2352b2fa76f01995b575.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansmasaramgondi/NotoSansMasaramGondi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansmasaramgondi/NotoSansMasaramGondi-Regular.ttf",
+      "sourceBytes": 81772,
+      "sourceSri": "sha384-gOyhZykBedXrcjuQyjOBzz3T20k4uE1ewl4Q8GYyYusqR71NApG9i6jNNebdCTN6",
+      "bytes": 33196,
+      "sri": "sha384-fTBRQnv0dfszgWFlYTJS817/RWzeMsLIJ4taaSFS9fgkIptVy/wjUrL6dvAZlbV1",
+      "axes": [],
+      "cmapCodepoints": 400,
+      "glyphs": 485
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansmasaramgondi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansmasaramgondi/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-Mg+2NWJiZB2FcqO85WbLWktFepzRUVsNRTObu+/ysxeNLvQb+7mklScDe7VQOhcj"
+  }
+}

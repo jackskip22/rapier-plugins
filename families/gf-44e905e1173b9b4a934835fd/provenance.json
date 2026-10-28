@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Mr Dafoe",
+  "sourceRank": 291,
+  "sourcePosition": 565,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mrdafoe/METADATA.pb",
+    "sri": "sha384-9pP02HrUzg/LPngMVaxOeVZiXuLehNP6ak7LSkd+UF7G+DP0Gh1IvggUaJjXo4EE"
+  },
+  "files": [
+    {
+      "name": "font-daa9ca96957e2b31f0c33ee6b93064d8974679cd2b3fef56db0a04183f0d4bcebc47cdecae61ee0ee1a0e2be260e8157.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mrdafoe/MrDafoe-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mrdafoe/MrDafoe-Regular.ttf",
+      "sourceBytes": 47976,
+      "sourceSri": "sha384-Z8DmCA9W+GCm7vwuQRzrDeH1PBWrSzD8VYClgg7ZZrppilLeHa5J0D2UVd36ZsIF",
+      "bytes": 19308,
+      "sri": "sha384-2qnKlpV+KzHwwz7muTBk2JdGec0rP+9W2woEGD8NS868R83srmHuDuGg4r4mDoFX",
+      "axes": [],
+      "cmapCodepoints": 232,
+      "glyphs": 235
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mrdafoe/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mrdafoe/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-Y0O8Zy/ImVOl1AkrokhALv7ttPy86ewMdKKNXfUx3EHnGt+CATkBCInwye/UJdRw"
+  }
+}

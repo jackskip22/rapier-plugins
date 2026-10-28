@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Concert One",
+  "sourceRank": 116,
+  "sourcePosition": 236,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/concertone/METADATA.pb",
+    "sri": "sha384-LJbTW89aSJb+EeEUGdxQP9RnFM7cu4caMQu45G6qER4yt00cP6NnKHsLg60bQA4F"
+  },
+  "files": [
+    {
+      "name": "font-59ecf79334eb8991654b612d039ab3dd8e1740d899277c5765a2b1bbe44184b67b4616622b54ca66bec1f544ebdc0a9d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/concertone/ConcertOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/concertone/ConcertOne-Regular.ttf",
+      "sourceBytes": 71028,
+      "sourceSri": "sha384-MIKWCKOOG8pdBkBsZlEO2fp5PggZuJlA4UyYPDjMIMbs1zXr6ViM5rv+0uuG5gwi",
+      "bytes": 26016,
+      "sri": "sha384-Wez3kzTriZFlS2EtA5qz3Y4XQNiZJ3xXZaKxu+RBhLZ7RhZiK1TKZr7B9UTr3Aqd",
+      "axes": [],
+      "cmapCodepoints": 229,
+      "glyphs": 231
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/concertone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/concertone/OFL.txt",
+    "bytes": 4473,
+    "sri": "sha384-dUiYkhVclyahExz06KAdWHvlzMzN3avksQGx8WqMsvTUS2mc7MKN4OIwC0GDtTAx"
+  }
+}

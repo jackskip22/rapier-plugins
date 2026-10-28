@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Vina Sans",
+  "sourceRank": 430,
+  "sourcePosition": 819,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vinasans/METADATA.pb",
+    "sri": "sha384-GY2pCWvVp5EJMbIwgF6+wsxEkBPmQ/QKPIaRHgU0c+OnGwOuXoDzSHRPIGTLQSNv"
+  },
+  "files": [
+    {
+      "name": "font-4f5b89f614e978767ea9e696ba1ebee42a709a3387c9d24e1b6d7ac4ef139a7b2ea1cd877690faecf424ae7e3874e2cd.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/vinasans/VinaSans-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vinasans/VinaSans-Regular.ttf",
+      "sourceBytes": 93328,
+      "sourceSri": "sha384-lrMznvEXU2Nz/9Fpl/r05RnQoT49dcEjHUbb9cfPP6KlY3qla8X1EgDwhdDDT4ox",
+      "bytes": 31984,
+      "sri": "sha384-T1uJ9hTpeHZ+qeaWuh6+5CpwmjOHydJOG216xO8Tmnsuoc2HdpD67PQkrn44dOLN",
+      "axes": [],
+      "cmapCodepoints": 462,
+      "glyphs": 578
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/vinasans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vinasans/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-avMZNOwyLXDPwHO4U3nOCvSkt7quLnqmjZpyVIeJbWUYGg5aDABlbyzcdy+Kg7W/"
+  }
+}

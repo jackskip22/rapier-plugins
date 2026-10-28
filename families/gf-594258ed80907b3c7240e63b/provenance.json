@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Squada One",
+  "sourceRank": 390,
+  "sourcePosition": 740,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/squadaone/METADATA.pb",
+    "sri": "sha384-IBYURL+f/RNfK9jO18/qZbdRO3L92H6aeG4ig8bdFRTJXLcfksVZRQG72Ek57e9A"
+  },
+  "files": [
+    {
+      "name": "font-07eee46842c0dbe93983cd56ac57288d36132fe63d55696d759c5333956ed37a91b33a694e71c65d580182a9586eeb32.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/squadaone/SquadaOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/squadaone/SquadaOne-Regular.ttf",
+      "sourceBytes": 19072,
+      "sourceSri": "sha384-KKzCdiDq/qCRXyrepXEZE3S5aESc8xeEjcCtNWK+P4R4JzRO0OV56/QdY7WDZAHr",
+      "bytes": 6348,
+      "sri": "sha384-B+7kaELA2+k5g81WrFcojTYTL+Y9VWltdZxTM5Vu03qRszppTnHGXVgBgqlYbusy",
+      "axes": [],
+      "cmapCodepoints": 190,
+      "glyphs": 192
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/squadaone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/squadaone/OFL.txt",
+    "bytes": 4420,
+    "sri": "sha384-FtPIG1mWYiNZrkwvep/v3r1XwKeqA92wozjdRaC2HSkZiE0yNgWDlAT0DokBJgVx"
+  }
+}

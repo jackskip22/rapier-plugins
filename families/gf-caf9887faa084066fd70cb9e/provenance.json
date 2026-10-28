@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Chokokutai",
+  "sourceRank": 451,
+  "sourcePosition": 857,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chokokutai/METADATA.pb",
+    "sri": "sha384-lyzTfJG1phuaiHQELW6eKv9jADDB2GZTKOsrjbSfCJHJnJa6sViF4lTDUgr4JubG"
+  },
+  "files": [
+    {
+      "name": "font-99e1a5b28719043f797014b5b2d37cd3e5cfbf60492e77fbb07be515b1e571ddfa591d0e6a242237b738eb29f3354b61.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/chokokutai/Chokokutai-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chokokutai/Chokokutai-Regular.ttf",
+      "sourceBytes": 165580,
+      "sourceSri": "sha384-nxRe52HlL/1LRdjJRTTuuzjvjOj+4jK80IKyhSiwLyRdfhUUQYdyIHJ1F6mMhQJl",
+      "bytes": 53824,
+      "sri": "sha384-meGlsocZBD95cBS1stN80+XPv2BJLnf7sHvlFbHlcd36WR0OaiQiN7c46ynzNUth",
+      "axes": [],
+      "cmapCodepoints": 923,
+      "glyphs": 980
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/chokokutai/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chokokutai/OFL.txt",
+    "bytes": 4482,
+    "sri": "sha384-RzsveYvCCJfa5AbqUQRQnrbM0Yaf8/cB71KgrrCCThcTuQkbTCTryg9RT2OqPREz"
+  }
+}

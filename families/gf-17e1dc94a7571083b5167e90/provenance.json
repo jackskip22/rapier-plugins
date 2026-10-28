@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sail",
+  "sourceRank": 22,
+  "sourcePosition": 50,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sail/METADATA.pb",
+    "sri": "sha384-EQqGOkIZWHcZQxooTN3sARjbQPRdhTMFq+ZEykONgoks7RrNriB4tsfSuWOHFrzZ"
+  },
+  "files": [
+    {
+      "name": "font-e3f1def264c9748ce9967357d353e4424ad522a793d2b60dc18fbb5e077254af40495910a27e02f4d7ef13d03e714540.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sail/Sail-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sail/Sail-Regular.ttf",
+      "sourceBytes": 32656,
+      "sourceSri": "sha384-l2GdGvv55s6boWp86tk5Q2wfkSS9/XoYKe6aXCeDJrTrBIJyLSaIppoDx1ZT2WQt",
+      "bytes": 14612,
+      "sri": "sha384-4/He8mTJdIzplnNX01PkQkrVIqeT0rYNwY+7XgdyVK9ASVkQon4C9NfvE9A+cUVA",
+      "axes": [],
+      "cmapCodepoints": 219,
+      "glyphs": 224
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sail/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sail/OFL.txt",
+    "bytes": 4404,
+    "sri": "sha384-obI2AxfPZz4J6rDEBVbEjzUu/iyOTCOjSqiaPzX/gSo4SYBMUJo+LcRMuJ81GZSO"
+  }
+}

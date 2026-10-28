@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Risque",
+  "sourceRank": 293,
+  "sourcePosition": 569,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/risque/METADATA.pb",
+    "sri": "sha384-LM9QLuMOsG/G8l7TEsoLMrQ/tuSd9VeQ0RMW9oIv9u34rKN/HVzsXd4e3H/Kp0nC"
+  },
+  "files": [
+    {
+      "name": "font-359f04558a8dc4bce42de977327b10b7d711de6d778aa1b08b8395c8819f808c7dc302fa9c6852f5f7c4cfe81e908b82.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/risque/Risque-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/risque/Risque-Regular.ttf",
+      "sourceBytes": 59392,
+      "sourceSri": "sha384-u2LX+uZt0gFA5TotYycpfs0fKRGw1b7FtK/bdxB9xWsyo2e4RUJ3ToeOIGD5rkqi",
+      "bytes": 25864,
+      "sri": "sha384-NZ8EVYqNxLzkLel3MnsQt9cR3m13iqGwi4OVyIGfgIx9wwL6nGhS9ffEz+gekIuC",
+      "axes": [],
+      "cmapCodepoints": 372,
+      "glyphs": 375
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/risque/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/risque/OFL.txt",
+    "bytes": 4521,
+    "sri": "sha384-nljvykqdNxs3YiXamP4UzcCAYmCOYomFUM4YxQJNvC85GeFClGOtTROfa9cYYiUf"
+  }
+}

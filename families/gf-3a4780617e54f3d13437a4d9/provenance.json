@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Monoton",
+  "sourceRank": 344,
+  "sourcePosition": 656,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/monoton/METADATA.pb",
+    "sri": "sha384-l89G4y7UXC4q19iRETqaAdxBPUqW874QZYfYK2EUCZIV8+GI/91yWKO/GnlhahEG"
+  },
+  "files": [
+    {
+      "name": "font-0b0ff0e4eaa91eda8c5ab28ffd58c6bc9dd03f8f317badc02558356b8aee29e6fd2bc343780847c83078fed0651a8a43.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/monoton/Monoton-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/monoton/Monoton-Regular.ttf",
+      "sourceBytes": 51604,
+      "sourceSri": "sha384-RcalpGKTyGR2G2SzqGK2wgjKVeMGahsEvm9zViOXA3t66TLyN+sFKrN0Ynq+aI+V",
+      "bytes": 20168,
+      "sri": "sha384-Cw/w5OqpHtqMWrKP/VjGvJ3QP48xe63AJVg1a4ruKeb9K8NDeAhHyDB4/tBlGopD",
+      "axes": [],
+      "cmapCodepoints": 371,
+      "glyphs": 373
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/monoton/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/monoton/OFL.txt",
+    "bytes": 4401,
+    "sri": "sha384-QSqoNG1S3QhVwULa/UZAdiVjna708RTEfn6yeEdWhpIGCzkXA89wvZibibotWodk"
+  }
+}

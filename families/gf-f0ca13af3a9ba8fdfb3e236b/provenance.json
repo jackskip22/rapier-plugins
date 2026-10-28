@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Shrikhand",
+  "sourceRank": 400,
+  "sourcePosition": 761,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shrikhand/METADATA.pb",
+    "sri": "sha384-4aRNlArRf5PaBSXhc0ESWm0XOx3U1QTLiBCclkyA7tiNixgQqx+WJ0okx0VaGsYa"
+  },
+  "files": [
+    {
+      "name": "font-64742096c850a8fefea1c8767c71dc620562fd18502dc45dace8f9cc00ee0b17fe802d9739ba6b4da46dc5554ccedd7d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/shrikhand/Shrikhand-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shrikhand/Shrikhand-Regular.ttf",
+      "sourceBytes": 220804,
+      "sourceSri": "sha384-qlPjTW7gV9QrqqfIosPyTzy3nMdE60uInLbGZmwcMFGvW4wFLpjZDo1rr49PEpzI",
+      "bytes": 60736,
+      "sri": "sha384-ZHQglshQqP7+och2fHHcYgVi/RhQLcRdrOj5zADuCxf+gC2XObprTaRtxVVMzt19",
+      "axes": [],
+      "cmapCodepoints": 421,
+      "glyphs": 841
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/shrikhand/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/shrikhand/OFL.txt",
+    "bytes": 4463,
+    "sri": "sha384-7JkdJ26kniE0D/0tXWvjqeI77btu+3pmbx0zNd6J6vC3ou0wWqTpu6JC22BijxE4"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Monomaniac One",
+  "sourceRank": 180,
+  "sourcePosition": 364,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/monomaniacone/METADATA.pb",
+    "sri": "sha384-oyYlzCFIM/kckZMI+5UYD+/xByXnbw+CQpFmF43Ag2wXJoJyuIkkdd6UqHGaICjZ"
+  },
+  "files": [
+    {
+      "name": "font-58a8f889288df080b7ae3cb9a4e7066d0b3a7168950a0339dc466e6ccfc500f6834f6a09e0090482385f515eb58968da.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/monomaniacone/MonomaniacOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/monomaniacone/MonomaniacOne-Regular.ttf",
+      "sourceBytes": 122056,
+      "sourceSri": "sha384-5HZ3rANOm5t7RHhBm6z7t01IQcBuLUlLkxB17PwVFtSpJcLhOb0ynTumJW+HJtpK",
+      "bytes": 40664,
+      "sri": "sha384-WKj4iSiN8IC3rjy5pOcGbQs6cWiVCgM53EZubM/FAPaDT2oJ4AkEgjhfUV61iWja",
+      "axes": [],
+      "cmapCodepoints": 525,
+      "glyphs": 526
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/monomaniacone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/monomaniacone/OFL.txt",
+    "bytes": 4420,
+    "sri": "sha384-TKTuNwlLrXp3euGPO0OL3YYIdbv2jynzzSheewAr0FoWU2aa9AmLrwhOa0kMIUm4"
+  }
+}

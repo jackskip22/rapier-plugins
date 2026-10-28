@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Marck Script",
+  "sourceRank": 299,
+  "sourcePosition": 580,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marckscript/METADATA.pb",
+    "sri": "sha384-gRkrxi5nU4anJvd167L0QaD8jKduxLwWTNpW1FV9OcKvFbdbukDZUUNq36Y7WvF2"
+  },
+  "files": [
+    {
+      "name": "font-d78bb65243d6e2d5b1c482a1561f5719d0436199242bfab5dedf617f3d7010789693a00f35b63a528d5082dfac42916b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/marckscript/MarckScript-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marckscript/MarckScript-Regular.ttf",
+      "sourceBytes": 83664,
+      "sourceSri": "sha384-H1QOuAhTR6pRkHGZ/Qo11U21oWfTsftVEN/O9K8xnGQWi7TT/gAL5CUlpMMkYkj2",
+      "bytes": 27280,
+      "sri": "sha384-14u2UkPW4tWxxIKhVh9XGdBDYZkkK/q13t9hfz1wEHiWk6APNbY6Uo1Qgt+sQpFr",
+      "axes": [],
+      "cmapCodepoints": 442,
+      "glyphs": 445
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/marckscript/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marckscript/OFL.txt",
+    "bytes": 4420,
+    "sri": "sha384-75hJZqy/lJb7wb3Hpoe9ZTFpcMagF1yYE8M2/L+KZRNOoA4fTp3NEZEJWyDQ1u3w"
+  }
+}

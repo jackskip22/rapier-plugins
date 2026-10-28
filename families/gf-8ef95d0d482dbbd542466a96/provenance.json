@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Schoolbell",
+  "sourceRank": 503,
+  "sourcePosition": 941,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/schoolbell/METADATA.pb",
+    "sri": "sha384-Jt7NJ8z3minw0FV+2GhSWjxl9HwLzd5tNBxGcX2dmSceojH5JV9JyvPxEYHD35nM"
+  },
+  "files": [
+    {
+      "name": "font-897e251a727c548e8c5432b00292905b1c79e9021a689a1c2ba7a9b211801b35215a65fcc54dc55b4fdb78ac602cba07.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/schoolbell/Schoolbell-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/schoolbell/Schoolbell-Regular.ttf",
+      "sourceBytes": 48904,
+      "sourceSri": "sha384-Leg/Zb/+mmOo4KWSmloDyWixrvU5Y2JJBsPRMvjcs+UL93WumKqVeiZiiUrKXLLq",
+      "bytes": 22820,
+      "sri": "sha384-iX4lGnJ8VI6MVDKwApKQWxx56QIaaJocK6epshGAGzUhWmX8xU3FW0/beKxgLLoH",
+      "axes": [],
+      "cmapCodepoints": 227,
+      "glyphs": 228
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/schoolbell/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/schoolbell/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

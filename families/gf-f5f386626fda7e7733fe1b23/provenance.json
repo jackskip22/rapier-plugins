@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Martian Mono",
+  "sourceRank": 182,
+  "sourcePosition": 368,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martianmono/METADATA.pb",
+    "sri": "sha384-4QwEZDhojFoVHavmAa9lUO0guacq53yiGxHfdP0/NZk+1erkwI2L1ODKjoWVZ5nG"
+  },
+  "files": [
+    {
+      "name": "font-99d0a3a385f1944ab2ae93235d4890a90d2f87adcfbfc1fe0b38b281cc5a0aabbc42902d59d3bc4a175daf269896b94a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/martianmono/MartianMono[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martianmono/MartianMono%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 148460,
+      "sourceSri": "sha384-Vr0tSy+M5X00ve4DXf4enKgbKHuHLijfvcSLd0PRgVccYC+zBHsDX3V4Mr97NP9R",
+      "bytes": 63444,
+      "sri": "sha384-mdCjo4XxlEqyrpMjXUiQqQ0vh63Pv8H+CziygcxaCqu8QpAtWdO8ShddryaYlrlK",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 112.5,
+          "max": 112.5,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 511,
+      "glyphs": 567
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/martianmono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martianmono/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-lCR6rEM+ohfSUm2gnVDM8aGur0I/6aYWsvuIebkwQn4iNp6w+K5JlHavWBw2YX/C"
+  }
+}

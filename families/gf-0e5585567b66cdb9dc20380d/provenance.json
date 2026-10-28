@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "ABeeZee",
+  "sourceRank": 42,
+  "sourcePosition": 99,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/METADATA.pb",
+    "sri": "sha384-bgp+Hf6JKWNVbWHSaP/BYZKHVUCkUUb0bKQbhplcSKlf+HONbmJwmggZJgv+YZ4S"
+  },
+  "files": [
+    {
+      "name": "font-e885c63249b2b709b8d995cbc7e4e9ca49754221a55537fc2cd1b8cbb8266a78c90d10ea153d4b89c393af8387815dde.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/abeezee/ABeeZee-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/ABeeZee-Italic.ttf",
+      "sourceBytes": 47012,
+      "sourceSri": "sha384-2SMeUwycYnlm5H8fFSluYn+T5ZSItKft4bgap0D0F03dGiFYJKZv1jGCMdoWIJ8G",
+      "bytes": 20300,
+      "sri": "sha384-6IXGMkmytwm42ZXLx+Tpykl1QiGlVTf8LNG4y7gmanjJDRDqFT1LicOTr4OHgV3e",
+      "axes": [],
+      "cmapCodepoints": 250,
+      "glyphs": 268
+    },
+    {
+      "name": "font-88a8b0e1e0f0fa756f871b546bf01e74fd105a5e0466334a558286e2ef61969b35ead49485d955a1913695366ed6e797.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/abeezee/ABeeZee-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/ABeeZee-Regular.ttf",
+      "sourceBytes": 46016,
+      "sourceSri": "sha384-83xxAK/Qy5UtWuiTmzsuERw9K1iQ76W+8wacd2iERwq54dLYqFWmi6YF4uvrg33B",
+      "bytes": 19296,
+      "sri": "sha384-iKiw4eDw+nVvhxtUa/AedP0QWl4EZjNKVYKG4u9hlps16tSUhdlVoZE2lTZu1ueX",
+      "axes": [],
+      "cmapCodepoints": 250,
+      "glyphs": 268
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/abeezee/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abeezee/OFL.txt",
+    "bytes": 4516,
+    "sri": "sha384-fP8FWKS52O9Xh6laYNIjl3d1iAPxs3AGPeBkF2Yl1R4p318gLpq8UvVYU/S1dnx7"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Special Gothic Expanded One",
+  "sourceRank": 166,
+  "sourcePosition": 334,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/specialgothicexpandedone/METADATA.pb",
+    "sri": "sha384-LwExr0Dop1NHl2/mpYxqggDSRAa/T5ZClmkj2iLdSfcQlE4qCgI4FD0gc5gDczhc"
+  },
+  "files": [
+    {
+      "name": "font-ee408cd222a06feeeea36b025fd71b0bf4e0891392a6bae4a5a8835fc3efeaee2848f51892d6f94bed9a899b771ff409.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/specialgothicexpandedone/SpecialGothicExpandedOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/specialgothicexpandedone/SpecialGothicExpandedOne-Regular.ttf",
+      "sourceBytes": 107240,
+      "sourceSri": "sha384-UPh4TvXGsHgW8tD8S/NzvWnV3mCdcOTlW/ZP9TY/9n7J0RfsHLJXgB1xebHAgKlw",
+      "bytes": 43092,
+      "sri": "sha384-7kCM0iKgb+7uo2sCX9cbC/TgiROSprrkpaiDX8Pv6u4oSPUYktb5S+2aiZt3H/QJ",
+      "axes": [],
+      "cmapCodepoints": 454,
+      "glyphs": 559
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/specialgothicexpandedone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/specialgothicexpandedone/OFL.txt",
+    "bytes": 4408,
+    "sri": "sha384-2OixOOID3q9zFwfRY82qSOPObc56wCTh0f/apnZwWIW+M+5iLf1JV6DzVODWlcX1"
+  }
+}

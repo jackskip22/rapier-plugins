@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Cookie",
+  "sourceRank": 105,
+  "sourcePosition": 212,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cookie/METADATA.pb",
+    "sri": "sha384-QgjzAoVk8OCzfikAcKxC4v3aG9wqzocEbdZCJ6kW+dCSqRn43R6We5wNvUm+23Zc"
+  },
+  "files": [
+    {
+      "name": "font-1c77e1164eb7a0493796ee1c56f93903053d44ef470cdcfbf97f96016e9c6aa73e8161180631194213f63450125b242b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/cookie/Cookie-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cookie/Cookie-Regular.ttf",
+      "sourceBytes": 43800,
+      "sourceSri": "sha384-jCRw+PY4H7GIcHyFbz6F2dhs2J658tc6EAbI5Ht3Ns4yVjCbu0m3YaeBsxSHfGKN",
+      "bytes": 16828,
+      "sri": "sha384-HHfhFk63oEk3lu4cVvk5AwU9RO9HDNz7+X+WAW6caqc+gWEYBjEZQhP2NFASWyQr",
+      "axes": [],
+      "cmapCodepoints": 251,
+      "glyphs": 259
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cookie/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cookie/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-cslwBaGHjLMPBjt8dGbwAIv1sgbRB/I26PxeeYOLYCQjMEUulR/woCafQRqj7vNa"
+  }
+}

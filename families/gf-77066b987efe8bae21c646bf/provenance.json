@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Questrial",
+  "sourceRank": 112,
+  "sourcePosition": 228,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/questrial/METADATA.pb",
+    "sri": "sha384-2Rk6xiAbIG2DQwP5g1n5kq+69ZtKKziBMjLoGNgz2A9DcUyD5fGRFoAzOCYDLa9X"
+  },
+  "files": [
+    {
+      "name": "font-165057c34758817100aec677979d6d32e66ae50258bc092a776020788de8a8af508f2feb8e111a1b288b6f4e80c322ad.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/questrial/Questrial-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/questrial/Questrial-Regular.ttf",
+      "sourceBytes": 184176,
+      "sourceSri": "sha384-hXiN8xrwU2veiUEfEeqTmwHhEctj9sEGhDE0pHbo+LgkiA5GwhYqgw8w1mY18BIA",
+      "bytes": 65308,
+      "sri": "sha384-FlBXw0dYgXEArsZ3l51tMuZq5QJYvAkqd2AgeI3oqK9Qjy/rjhEaGyiLb06AwyKt",
+      "axes": [],
+      "cmapCodepoints": 971,
+      "glyphs": 1351
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/questrial/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/questrial/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-MoDc0gpH++1LyEVa06H/XjoA5k0Di0Nug9YgvzANNZ81OKIJnRcobT7N1hqxbdlU"
+  }
+}

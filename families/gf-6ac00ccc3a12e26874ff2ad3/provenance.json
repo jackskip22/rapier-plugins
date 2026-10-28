@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Yellowtail",
+  "sourceRank": 96,
+  "sourcePosition": 195,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/yellowtail/METADATA.pb",
+    "sri": "sha384-j9r3nuB39AJwJKeLJYQoMzjeufaRXGQhvX0WQL2Bo3dtoTKQticTSWExM6CfJac0"
+  },
+  "files": [
+    {
+      "name": "font-42ac6ae62b0ca9c2d9182212b8d114699ee42c35b960779f6fc1ee8ebd6002830e2da5c59147215a65ff47213c4af2ce.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/yellowtail/Yellowtail-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/yellowtail/Yellowtail-Regular.ttf",
+      "sourceBytes": 62216,
+      "sourceSri": "sha384-2J+pYtU4cdnek7KNJKTcFgBvD4IPzdlyjVtlPgD6jaNenbnn4CWR7AclQbiZC6nd",
+      "bytes": 23768,
+      "sri": "sha384-Qqxq5isMqcLZGCISuNEUaZ7kLDW5YHefb8Hujr1gAoMOLaXFkUchWmX/RyE8SvLO",
+      "axes": [],
+      "cmapCodepoints": 369,
+      "glyphs": 373
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/yellowtail/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/yellowtail/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

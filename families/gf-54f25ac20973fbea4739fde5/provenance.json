@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Eagle Lake",
+  "sourceRank": 250,
+  "sourcePosition": 487,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/eaglelake/METADATA.pb",
+    "sri": "sha384-KMEmfZ8CP4kGbxN+x5NJGhvce8nnU3K0E+A6pBs5JQgNK/h7JNROARA8iY+FYVlL"
+  },
+  "files": [
+    {
+      "name": "font-a7c077872f2ebc89956c7ca9ae17b07124758e67033082a5e0c9cff0c85196e050d82b6b0fc9446442b04ded3fd8f9ea.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/eaglelake/EagleLake-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/eaglelake/EagleLake-Regular.ttf",
+      "sourceBytes": 78000,
+      "sourceSri": "sha384-KoIbFs1TldNK44nTCm7s3MmgBBiW3P80F1gFnkdSSGUxfK3apBQRiVQq0YU6QFw2",
+      "bytes": 36220,
+      "sri": "sha384-p8B3hy8uvImVbHyprhewcSR1jmcDMIKl4MnP8MhRluBQ2CtrD8lEZEKwTe0/2Pnq",
+      "axes": [],
+      "cmapCodepoints": 367,
+      "glyphs": 370
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/eaglelake/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/eaglelake/OFL.txt",
+    "bytes": 4431,
+    "sri": "sha384-tp+wcMVVuTPVmXHj1aeezxjZVoC+TbYPdzylLxTBbon9dhX6Jz+nquXGodgppVVH"
+  }
+}

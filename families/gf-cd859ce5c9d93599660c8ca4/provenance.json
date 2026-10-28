@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Figtree",
+  "sourceRank": 25,
+  "sourcePosition": 59,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/figtree/METADATA.pb",
+    "sri": "sha384-kZZvUmunLuPgE1oBo8uLLOQQhnyoHhGAFn19/IMaD8vgq7KEwvm7gZSITzQhlekq"
+  },
+  "files": [
+    {
+      "name": "font-8798c5b923876544796bdfbf757f5b07c114ee6d6594c5638b4f4cb5806ac9b954b71b4b15dfa5fae95ae04d33de0eac.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/figtree/Figtree-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/figtree/Figtree-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 62632,
+      "sourceSri": "sha384-aGN7mbUgZG1ElFHiQU01f0d9qt93ZLoGlScS/7EEfSeZ7RIcbmswkEgYOya/sPdn",
+      "bytes": 28576,
+      "sri": "sha384-h5jFuSOHZUR5a9+/dX9bB8EU7m1llMVji09MtYBqyblUtxtLFd+l+ula4E0z3g6s",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 391,
+      "glyphs": 459
+    },
+    {
+      "name": "font-1aafb84c45429a840ea3b0423fd1cbea14d0f5280a45213c86866d35b8f2911507e1754c92cf68f033d5580260c1dc4a.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/figtree/Figtree[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/figtree/Figtree%5Bwght%5D.ttf",
+      "sourceBytes": 62712,
+      "sourceSri": "sha384-MAvGpgpFOJZZe7OVIaKJH1J7nFyXn7PLwzTRHoPbZCk1Y7U3ZPxCAzjFxNSnXZre",
+      "bytes": 27828,
+      "sri": "sha384-Gq+4TEVCmoQOo7BCP9HL6hTQ9SgKRSE8hoZtNbjykRUH4XVMks9o8DPVWAJgwdxK",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 391,
+      "glyphs": 459
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/figtree/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/figtree/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-gSXNHkfMkzazPG5IE2myPuFrJMcAs0W2S0uTe3B0mt1I+gy+1UhbOjlEqSQiGYY3"
+  }
+}

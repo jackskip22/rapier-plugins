@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Arapey",
+  "sourceRank": 83,
+  "sourcePosition": 169,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arapey/METADATA.pb",
+    "sri": "sha384-YPG+xwMKcYzlNSLwYEvWv2SOJz0JEsgXfU+gsmRtojlSgecoPu5TiTr16+jwsRyh"
+  },
+  "files": [
+    {
+      "name": "font-d738b9fc1b54f412e0b11e7c1421668e2a7a1ba1f250019c7328ca32f2912aacf5628bd1805489c19c41282b1cfc9f6b.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/arapey/Arapey-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arapey/Arapey-Italic.ttf",
+      "sourceBytes": 29588,
+      "sourceSri": "sha384-HZj9rTNo85Qc2jo3LWGQwLMfFvi1Pb52Kvi22TA1dVr4PGWdLgXYY38zSR6G4zQk",
+      "bytes": 12412,
+      "sri": "sha384-1zi5/BtU9BLgsR58FCFmjip6G6HyUAGccyjKMvKRKqz1YovRgFSJwZxBKCsc/J9r",
+      "axes": [],
+      "cmapCodepoints": 247,
+      "glyphs": 251
+    },
+    {
+      "name": "font-a9e614e2e51bfaca40bfe34d17492492951174b8f511042affdb968c9c888656686b4b96a40de090b20c45038d7f222d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/arapey/Arapey-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arapey/Arapey-Regular.ttf",
+      "sourceBytes": 26784,
+      "sourceSri": "sha384-M5EoHcnnNRMjny5/WDEm1rGLMqC1swvbVtP3BTFu2NsUOTmQa3DjWaAbFWEsSeES",
+      "bytes": 11036,
+      "sri": "sha384-qeYU4uUb+spAv+NNF0kkkpURdLj1EQQq/9uWjJyIhlZoa0uWpA3gkLIMRQONfyIt",
+      "axes": [],
+      "cmapCodepoints": 244,
+      "glyphs": 248
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/arapey/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arapey/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-Qfhrw/9r+KL8yDMLA0Ezw/otd0u0n0e7FBz2hOnRQgn3HumRCDcczPm+K/f2KBcR"
+  }
+}

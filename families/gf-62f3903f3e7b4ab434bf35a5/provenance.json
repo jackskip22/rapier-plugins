@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Paytone One",
+  "sourceRank": 179,
+  "sourcePosition": 362,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/paytoneone/METADATA.pb",
+    "sri": "sha384-mGja6uOy37clk7h/zo68UduLTkkqIhUs2/5NJa12YsRQmJhoR7Xkj3Gl4PREMtht"
+  },
+  "files": [
+    {
+      "name": "font-0d682b0209226ca233b70ead71a9d566a3277595c9ed83095dc5fe444de0f7c2f7984dae46aebec3d0f9a0fccc6cfedd.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/paytoneone/PaytoneOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/paytoneone/PaytoneOne-Regular.ttf",
+      "sourceBytes": 114648,
+      "sourceSri": "sha384-fgK5kTqVOyTMELArcW5UV3T5sumxQwY/VzPRwiQ/tNt5lwct1M6VcoymqsCU9t3L",
+      "bytes": 38516,
+      "sri": "sha384-DWgrAgkibKIztw6tcanVZqMndZXJ7YMJXcX+RE3g98L3mE2uRq6+w9D5oPzMbP7d",
+      "axes": [],
+      "cmapCodepoints": 593,
+      "glyphs": 681
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/paytoneone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/paytoneone/OFL.txt",
+    "bytes": 4446,
+    "sri": "sha384-BRKFbVHYFzojuA+CfrAurZVXDt4a2vc9AUPc6r7EN8p+I/Acg2/Lr9jHYu5TKGlQ"
+  }
+}

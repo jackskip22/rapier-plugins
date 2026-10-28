@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Vast Shadow",
+  "sourceRank": 552,
+  "sourcePosition": 1007,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vastshadow/METADATA.pb",
+    "sri": "sha384-pQA4oinNaHQylvMo/ngmkwnASfCqA2Kub9G1jq0Ke7lwC7NnNZ/Zs25rZeFTxVWZ"
+  },
+  "files": [
+    {
+      "name": "font-b9ac890b7a3912c8e163c5a29de92b832dafe9ed5fdcab661e3a04a8090a708d474809bebdda9b1be4bde32c9b27207e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/vastshadow/VastShadow-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vastshadow/VastShadow-Regular.ttf",
+      "sourceBytes": 62364,
+      "sourceSri": "sha384-/DaLioeBMlgbX9VD1lVrrqC3ThtDyyYD3ghXXyYoOnTZbrzXGjJlaFiZYgQ+VaE0",
+      "bytes": 25456,
+      "sri": "sha384-uayJC3o5EsjhY8Winekrgy2v6e1f3KtmHjoEqAkKcI1HSAm+vdqbG+S94yybJyB+",
+      "axes": [],
+      "cmapCodepoints": 230,
+      "glyphs": 235
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/vastshadow/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vastshadow/OFL.txt",
+    "bytes": 4413,
+    "sri": "sha384-UaNDxSq31Dv1dkXc+8hKEU3v5Nlw8qvNJ6vXt0TvIu2Ce0CenxPXBsvoVdCBy1fX"
+  }
+}

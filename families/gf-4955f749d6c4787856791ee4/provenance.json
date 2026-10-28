@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Cedarville Cursive",
+  "sourceRank": 363,
+  "sourcePosition": 687,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cedarvillecursive/METADATA.pb",
+    "sri": "sha384-hq7B24nVeUx7XBugii6hFWj5dnnjfXUXEy/+DI0sEw/2C8Zr0D6MWVqQ/e6Tas2E"
+  },
+  "files": [
+    {
+      "name": "font-ddbf1dc1292c149dc2ef13c2d6cceda491dfc125d8f1ca2bf1b49e93e65e27a3ba640a108828f392135816d185d2142a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/cedarvillecursive/Cedarville-Cursive.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cedarvillecursive/Cedarville-Cursive.ttf",
+      "sourceBytes": 69436,
+      "sourceSri": "sha384-WrwC6yqpPnVzlqTt13YP0cpvJJNa8fOrxMclDSKNWuuJG4tbKX4huYgNVs/2We+F",
+      "bytes": 31528,
+      "sri": "sha384-3b8dwSksFJ3C7xPC1sztpJHfwSXY8cor8bSek+ZeJ6O6ZAoQiCjzkhNYFtGF0hQq",
+      "axes": [],
+      "cmapCodepoints": 352,
+      "glyphs": 355
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cedarvillecursive/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cedarvillecursive/OFL.txt",
+    "bytes": 4362,
+    "sri": "sha384-1YKmofHCyJDlDsppmYBFx5tEP29mPreOCEmka3gUdA6TGDKpgCKnKy90effPAKhr"
+  }
+}

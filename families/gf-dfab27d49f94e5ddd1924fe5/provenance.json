@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Kameron",
+  "sourceRank": 386,
+  "sourcePosition": 730,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kameron/METADATA.pb",
+    "sri": "sha384-ItxtqZwswpaDikp+6Sz+HVap2/lTWDdCS2Ix1Og4xf9X8M/ag36rei3LghnrVPCM"
+  },
+  "files": [
+    {
+      "name": "font-a29ff1ca2b5c4a6d583923b11c818f09258c62f4c62224ffb2273f7a28e8cf2d39d1e7d7befcebe2605ae4c08a42dfad.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kameron/Kameron[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kameron/Kameron%5Bwght%5D.ttf",
+      "sourceBytes": 83064,
+      "sourceSri": "sha384-1czKvrNI1WZR2ij9a+8Airy1MFfSVZPurnr0rf1b88vRVG1k7AAgZy86jvjhtQP7",
+      "bytes": 40556,
+      "sri": "sha384-op/xyitcSm1YOSOxHIGPCSWMYvTGIiT/sic/eijozy050efXvvzr4mBa5MCKQt+t",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 394,
+      "glyphs": 408
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kameron/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kameron/OFL.txt",
+    "bytes": 4485,
+    "sri": "sha384-4cg1l7OXF25LUicPy/fBoxLojdgMDdROWaYj37zfjD7GRvbDyvASoOX+eGSgVkLs"
+  }
+}

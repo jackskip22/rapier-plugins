@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Tektur",
+  "sourceRank": 233,
+  "sourcePosition": 461,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tektur/METADATA.pb",
+    "sri": "sha384-W9gSHf7in3Yxw6GrYX4NrOjOu7l4eAH8oYo9MJwTg7uuY9OC5hwgeT9lC6jsgW6Y"
+  },
+  "files": [
+    {
+      "name": "font-d6d8fb471897445d99f33b250e1a890855af1e6e1c47257736b1d69b41ed06424e1d4077a793c13f1a23e35cecb87608.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/tektur/Tektur[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tektur/Tektur%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 163160,
+      "sourceSri": "sha384-DPLytudDQcbQ8sARPNI83WcWWwmCZDYG/X7bzSFf+vWad2JcL6VaTH8RIEBlN+NS",
+      "bytes": 60768,
+      "sri": "sha384-1tj7RxiXRF2Z8zslDhqJCFWvHm4cRyV3NrHWm0HtBkJOHUB3p5PBPxoj41zsuHYI",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 962,
+      "glyphs": 1129
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/tektur/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tektur/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-AmZMSHHH5GOraEWyeA24bW++epMj4DWmxlxk77zRF64hLDKzbhxyVRMQb2qKqzDz"
+  }
+}

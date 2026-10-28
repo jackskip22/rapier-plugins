@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Bree Serif",
+  "sourceRank": 160,
+  "sourcePosition": 320,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/breeserif/METADATA.pb",
+    "sri": "sha384-B0Fm+0k/Eq6dnmT8+CDg7lo7b3Lew3xIS+2n0BleSZR69B9UDc3qaoEDVYGRAjPQ"
+  },
+  "files": [
+    {
+      "name": "font-d246c8c91fa7cc5fee412c4890268b591fc4cefd672391d373a632c256c49fe47f0ce6c5536fd7eabb301f3b10b6528e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/breeserif/BreeSerif-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/breeserif/BreeSerif-Regular.ttf",
+      "sourceBytes": 46572,
+      "sourceSri": "sha384-zgajXtdB45Dc20KX8j3yXwte+XHT7Qszr0rfhl4Xsj04vZK6ANryuOBZ6MOECgIL",
+      "bytes": 15884,
+      "sri": "sha384-0kbIyR+nzF/uQSxIkCaLWR/Ezv1nI5HTc6YywlbEn+R/DObFU2/X6rswHzsQtlKO",
+      "axes": [],
+      "cmapCodepoints": 394,
+      "glyphs": 416
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/breeserif/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/breeserif/OFL.txt",
+    "bytes": 4411,
+    "sri": "sha384-An06DkzQBoTSsGyeN3FmCiMT5ScPWziPihIfIKtAaD8n9lBZxSkJrWPq7fW5dbLD"
+  }
+}

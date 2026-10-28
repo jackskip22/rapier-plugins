@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Funnel Display",
+  "sourceRank": 337,
+  "sourcePosition": 644,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/funneldisplay/METADATA.pb",
+    "sri": "sha384-ZpDHctfuUbLfxPbpVRc7Nt6E8keJZpY3XI6v/l0gAQo1QyuHGYxXBVDMsQNDoXPm"
+  },
+  "files": [
+    {
+      "name": "font-a8f74cc1e4a0135e14d52c297dd1bec22c224b65bc309e3a3d36c7b24be945137787ff8b28c0dd97b4b3c5f134b604ad.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/funneldisplay/FunnelDisplay[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/funneldisplay/FunnelDisplay%5Bwght%5D.ttf",
+      "sourceBytes": 53436,
+      "sourceSri": "sha384-8yTkc4tnvE9Sa5/K0QOaXWZRqYOYNbt4YkwPwMjFLFa+J7X0ErEEgc6rsjwP7E3u",
+      "bytes": 23124,
+      "sri": "sha384-qPdMweSgE14U1SwpfdG+wiwiS2W8MJ46PTbHskvpRRN3h/+LKMDdl7SzxfE0tgSt",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 348,
+      "glyphs": 370
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/funneldisplay/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/funneldisplay/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-jSdL26HZgjGmE+Zg/BtW1nH0or/C/D57qjYGZsJ6yVP3vWDBSQhlo457r9lluyus"
+  }
+}

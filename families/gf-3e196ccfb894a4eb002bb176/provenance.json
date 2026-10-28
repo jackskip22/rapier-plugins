@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Allerta",
+  "sourceRank": 539,
+  "sourcePosition": 988,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/allerta/METADATA.pb",
+    "sri": "sha384-3W9ZZFX4wrs7Enl2OllkTl33KBgRaQGgGimWIe+BDWrgizqVQOpEjneKzKVaEyLx"
+  },
+  "files": [
+    {
+      "name": "font-f8428eaedfaeca4bc9dc6236c87c863742d5acc208ffc486fcdc6c243957ab213907a2a845a848a15bfbf7f78f7fb47d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/allerta/Allerta-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/allerta/Allerta-Regular.ttf",
+      "sourceBytes": 19596,
+      "sourceSri": "sha384-FvBPIfz6weBocitxG1KsCSbh79gV2+G1HwWavSYQ024JEkZWqrktG4xdC0awt6Mj",
+      "bytes": 9668,
+      "sri": "sha384-+EKOrt+uykvJ3GI2yHyGN0LVrMII/8SG/NxsJDlXqyE5B6KoRahIoVv79/ePf7R9",
+      "axes": [],
+      "cmapCodepoints": 186,
+      "glyphs": 217
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/allerta/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/allerta/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-QWdTiXMzV9okdrKfRSVLy9Zw74Bsa/PqqdyHbtLY4YKDBElomldbP/VvFoh87Qcf"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Domine",
+  "sourceRank": 102,
+  "sourcePosition": 206,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/domine/METADATA.pb",
+    "sri": "sha384-HGk7WiAeYHP2+Bx4LZQ/nXHN6/htzVHL7Cvb5Cix+YJZu41OlJxyTB7M/+wU90rb"
+  },
+  "files": [
+    {
+      "name": "font-9ddefffa26cecb16362282294998a4dc10e278d4e664b9072e4a2316ad9f2e6a7b7283fbe7c958eceb8c01ee6d6e554c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/domine/Domine[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/domine/Domine%5Bwght%5D.ttf",
+      "sourceBytes": 101904,
+      "sourceSri": "sha384-rX3DkAFUbr3QlhL9cVmtxRZ778AQceUguZ6K0HVR2jULRFWR+O0ju8o5KAE/CK97",
+      "bytes": 40480,
+      "sri": "sha384-nd7/+ibOyxY2IoIpSZik3BDieNTmZLkHLkojFq2fLmp7coP758lY7OuMAe5tblVM",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 456,
+      "glyphs": 477
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/domine/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/domine/OFL.txt",
+    "bytes": 4713,
+    "sri": "sha384-6lFvbCbgKvC2YE0ylc8Z/sJWXyGQ3OZ/AUylQWaXAZYP/IaJkH2fa2qOM8164oJm"
+  }
+}

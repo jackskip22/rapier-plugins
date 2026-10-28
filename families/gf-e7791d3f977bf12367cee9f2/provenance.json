@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Rufina",
+  "sourceRank": 406,
+  "sourcePosition": 771,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rufina/METADATA.pb",
+    "sri": "sha384-g27sMlM49LhsXP57caWhq0KPlkUPpoHE6MfuuoASAAFYkNlCWjAi4AQwaBN/DohT"
+  },
+  "files": [
+    {
+      "name": "font-29a9fbb7cbfbb2cb24082fb75824f7c970315291d9b91eeb19b771c579cc297ab799871c531010efe842585e7fde3338.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/rufina/Rufina-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rufina/Rufina-Bold.ttf",
+      "sourceBytes": 40056,
+      "sourceSri": "sha384-y+McCDO/Jes3grItPbgiHrZ968vN7LBo+LjbOsQFPKYbr6LWHb5ClK/tbfVIgx8j",
+      "bytes": 14184,
+      "sri": "sha384-Kan7t8v7ssskCC+3WCT3yXAxUpHZuR7rGbdxxXnMKXq3mYccUxAQ7+hCWF5/3jM4",
+      "axes": [],
+      "cmapCodepoints": 228,
+      "glyphs": 235
+    },
+    {
+      "name": "font-cc80a4a7b95884e99eaed37e829c843619ee4eff31001165f973aec2ab029e4e2e5c07cae123124841e3065bbac8cf0f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rufina/Rufina-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rufina/Rufina-Regular.ttf",
+      "sourceBytes": 40040,
+      "sourceSri": "sha384-o0VujldITK5nqTHQgbQ+MzEk6gA3oUWRUz/mPGQym6K0mzpnGOzwR6dairZyN34x",
+      "bytes": 14208,
+      "sri": "sha384-zICkp7lYhOmertN+gpyENhnuTv8xABFl+XOuwqsCnk4uXAfK4SMSSEHjBlu6yM8P",
+      "axes": [],
+      "cmapCodepoints": 228,
+      "glyphs": 235
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rufina/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rufina/OFL.txt",
+    "bytes": 4498,
+    "sri": "sha384-rCQKgA7hHffm3QjrXmcnYALmLwKGWq0vGf/WAAjH8V1w3SQHtKpBhP18prd2PEKc"
+  }
+}

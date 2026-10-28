@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Marcellus",
+  "sourceRank": 120,
+  "sourcePosition": 245,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marcellus/METADATA.pb",
+    "sri": "sha384-lWFOQSSb21Oe/0hTrTOePmekdTey9YGr9Q5fxRfxsROrm6O+9HzoIZmVu+BaUE1f"
+  },
+  "files": [
+    {
+      "name": "font-491577c4759fb6bbbbabc88eaf3ce1a58849e438eb32432fed9f97b3dbb664545983f95bc5a135a827ce8112d78378e5.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/marcellus/Marcellus-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marcellus/Marcellus-Regular.ttf",
+      "sourceBytes": 46004,
+      "sourceSri": "sha384-UaRLuI7r/sCs22ZfWvMDzRGCJQHBjhpRP9Tt4BB4XHW62CivGQ6cEbi70WDZ9D2P",
+      "bytes": 19336,
+      "sri": "sha384-SRV3xHWftru7q8iOrzzhpYhJ5DjrMkMv7Z+Xs9u2ZFRZg/lbxaE1qCfOgRLXg3jl",
+      "axes": [],
+      "cmapCodepoints": 368,
+      "glyphs": 370
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/marcellus/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/marcellus/OFL.txt",
+    "bytes": 4430,
+    "sri": "sha384-8YPu0wFFAtfCDZxBD4eEdczQnpyI7C5cy1pDnNmb+7r2vT3VAwx4mC/pQnT91eDH"
+  }
+}

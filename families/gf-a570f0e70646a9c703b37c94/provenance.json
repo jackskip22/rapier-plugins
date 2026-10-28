@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Zeyada",
+  "sourceRank": 88,
+  "sourcePosition": 181,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zeyada/METADATA.pb",
+    "sri": "sha384-EmIqRsTi/l6uJgEsrrUPJe2cxslUoxt1Aamu7NMEk+TAeYdA33CeG2gTcPjqeqHj"
+  },
+  "files": [
+    {
+      "name": "font-6e445de9560bb71cad339049f5daa643e8fc1671df90f341d852716e79d7578e1a2e73088f218de1fc07134b126cdf45.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zeyada/Zeyada.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zeyada/Zeyada.ttf",
+      "sourceBytes": 63064,
+      "sourceSri": "sha384-5U/14KQ3FwO4GUBvXelEgO+DV6+FienNCj79/er8I6ZKTnLVvCya0N0gTkSkFG/q",
+      "bytes": 27088,
+      "sri": "sha384-bkRd6VYLtxytM5BJ9dqmQ+j8FnHfkPNB2FJxbnnXV44aLnMIjyGN4fwHE0sSbN9F",
+      "axes": [],
+      "cmapCodepoints": 343,
+      "glyphs": 346
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zeyada/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zeyada/OFL.txt",
+    "bytes": 4362,
+    "sri": "sha384-1YKmofHCyJDlDsppmYBFx5tEP29mPreOCEmka3gUdA6TGDKpgCKnKy90effPAKhr"
+  }
+}

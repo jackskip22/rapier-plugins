@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Eater",
+  "sourceRank": 370,
+  "sourcePosition": 701,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/eater/METADATA.pb",
+    "sri": "sha384-2PP2TN8wIph2pw0hdcszc6/gd5f5gZEUxkF3zE/rtMZuMvogL87rx8OvEU2Nhb+n"
+  },
+  "files": [
+    {
+      "name": "font-bdc3da6ee9a473caf204d0b025920827e2003763c6b708d0ffd8a22f3f88e4ffd61dbe6719f676277397a48d9f8ace76.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/eater/Eater-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/eater/Eater-Regular.ttf",
+      "sourceBytes": 83928,
+      "sourceSri": "sha384-O95o5qGEPD/YqfX9PkTaOZ0RNMCyxUAfphBlBqEyZFvxsgj2UTzHvLzPO1O/sG0Y",
+      "bytes": 46276,
+      "sri": "sha384-vcPabumkc8ryBNCwJZIIJ+IAN2PGtwjQ/9iiLz+I5P/WHb5nGfZ2J3OXpI2fis52",
+      "axes": [],
+      "cmapCodepoints": 342,
+      "glyphs": 346
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/eater/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/eater/OFL.txt",
+    "bytes": 4368,
+    "sri": "sha384-8A1hQqTacsV9nG90UPPPy5WelXjJsr+0YLQptQnq7wMWDQgTH6B4B4nGbqaFg6we"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Spinnaker",
+  "sourceRank": 445,
+  "sourcePosition": 849,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spinnaker/METADATA.pb",
+    "sri": "sha384-h2l0fBv9fwPqlxFjChy0kHVOIA79l+N8eFZhtFn9wCX49OcS5I/GSHKy/aSzWjax"
+  },
+  "files": [
+    {
+      "name": "font-5f636aa5048c7615e2c0743f0642d9fb5644a2b7ad275766802f8455da3620545d4c4112414e5a10a0d69a5a6c99fb3e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/spinnaker/Spinnaker-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spinnaker/Spinnaker-Regular.ttf",
+      "sourceBytes": 24988,
+      "sourceSri": "sha384-yE3yoLFvWhcXvyj3agOvhd/j9En/HSXRCgtdILWU+hgMdD3MzMWSTHmQIWcG3/LX",
+      "bytes": 12216,
+      "sri": "sha384-X2NqpQSMdhXiwHQ/BkLZ+1ZEoretJ1dmgC+EVdo2IFRdTEESQU5aEKDWmlpsmfs+",
+      "axes": [],
+      "cmapCodepoints": 250,
+      "glyphs": 260
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/spinnaker/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spinnaker/OFL.txt",
+    "bytes": 4401,
+    "sri": "sha384-Ni72mF55hChkmU9yPPPyUowG1PeHU9Dcv1pesCvKYZ6CHOw6nHRw78fXArZBLA2g"
+  }
+}

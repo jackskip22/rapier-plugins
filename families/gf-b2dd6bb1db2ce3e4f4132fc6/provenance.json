@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "name": "Bitcount Grid Double Ink",
+  "sourceRank": 468,
+  "sourcePosition": 891,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bitcountgriddoubleink/METADATA.pb",
+    "sri": "sha384-93WI4ad9y+rB7ejgsHqJABXtLpyu1bvnrK7ZQQgzAsVKj5Dap+w+rFR+RMGrQJ8z"
+  },
+  "files": [
+    {
+      "name": "font-dcf9b70c4cad0d594fcc4557a4644e25b721e1003a3f5da7e92681170932699c237904e4b8df2c85b89e7586672478e5.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bitcountgriddoubleink/BitcountGridDoubleInk[CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bitcountgriddoubleink/BitcountGridDoubleInk%5BCRSV%2CELSH%2CELXP%2CSZP1%2CSZP2%2CXPN1%2CXPN2%2CYPN1%2CYPN2%2Cslnt%2Cwght%5D.ttf",
+      "sourceBytes": 207728,
+      "sourceSri": "sha384-9YfIAqgeQ3Zl+FjxYf//xnIbWX3tlZLdYtmcM/NZo3KGPHJ5HSFb9IEV6E8QJVlA",
+      "bytes": 34260,
+      "sri": "sha384-3Pm3DEytDVlPzEVXpGROJbch4QA6P12n6SaBFwkyaZwjeQTkuN8shbiedYZnJHjl",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "ELXP",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Element Expansion"
+        },
+        {
+          "tag": "ELSH",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Element Shape"
+        },
+        {
+          "tag": "slnt",
+          "min": -8,
+          "default": 0,
+          "max": 0,
+          "name": "Slant"
+        },
+        {
+          "tag": "CRSV",
+          "min": 0,
+          "default": 0.5,
+          "max": 1,
+          "name": "Cursive"
+        },
+        {
+          "tag": "SZP1",
+          "min": 0,
+          "default": 30,
+          "max": 100,
+          "name": "Size of Paint 1"
+        },
+        {
+          "tag": "XPN1",
+          "min": -100,
+          "default": 0,
+          "max": 100,
+          "name": "Horizontal Position of Paint 1"
+        },
+        {
+          "tag": "YPN1",
+          "min": -100,
+          "default": 0,
+          "max": 100,
+          "name": "Vertical Position of Paint 1"
+        },
+        {
+          "tag": "SZP2",
+          "min": 0,
+          "default": 30,
+          "max": 100,
+          "name": "Size of Paint 2"
+        },
+        {
+          "tag": "XPN2",
+          "min": -100,
+          "default": 0,
+          "max": 100,
+          "name": "Horizontal Position of Paint 2"
+        },
+        {
+          "tag": "YPN2",
+          "min": -100,
+          "default": 0,
+          "max": 100,
+          "name": "Vertical Position of Paint 2"
+        }
+      ],
+      "cmapCodepoints": 396,
+      "glyphs": 709
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bitcountgriddoubleink/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bitcountgriddoubleink/OFL.txt",
+    "bytes": 4401,
+    "sri": "sha384-N9DBBzv8t7Q8kdfPxcRAhCbim2s8dh0xICufi15VpmXc0qJIm/00OoR2+n7Ho2mn"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Chakma",
+  "sourceRank": 275,
+  "sourcePosition": 541,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanschakma/METADATA.pb",
+    "sri": "sha384-YvIf86iFjqKRcJ/bFkCarHGaV8NdErirNUDqns/eZJnpAW9crSOv8xuFx/zyMb+1"
+  },
+  "files": [
+    {
+      "name": "font-fdf7b4ecaaa10f96679775f92cc7bc94de6db03534e8396aea5e118c0e79e80ccbc37901ec27954fc2a332d9aaeaf2cb.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosanschakma/NotoSansChakma-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanschakma/NotoSansChakma-Regular.ttf",
+      "sourceBytes": 126960,
+      "sourceSri": "sha384-J1RNfYRC2uBa8WqgGxcWt+Ei9LQZ1cFR/qELZGjThWLr6rDpCiUAh9r6AK+sQvrf",
+      "bytes": 51684,
+      "sri": "sha384-/fe07KqhD5Znl3X5LMe8lN5tsDU06Dlq6l4RjA556AzLw3kB7CeVT8KjMtmq6vLL",
+      "axes": [],
+      "cmapCodepoints": 429,
+      "glyphs": 585
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanschakma/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanschakma/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-qutlgo13oOU/6oSjcGx42OSrc+ZeGuey1HBABnDpEz5Hk66G77VvIX26OwqTWt/r"
+  }
+}

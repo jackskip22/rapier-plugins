@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Just Another Hand",
+  "sourceRank": 364,
+  "sourcePosition": 689,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/justanotherhand/METADATA.pb",
+    "sri": "sha384-oWWHrTjZN4QYuYyofPdn29LzIMuT6HEYEoQ+dwLWHqyacoBhVWEtBh8iDfi67cVo"
+  },
+  "files": [
+    {
+      "name": "font-28d4ddb41345973055bd0f5bc0eee043b0217f1995fd17b90d0db64c7b0e2a69198b5432c72eb38b9a740d4eabe68135.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/justanotherhand/JustAnotherHand-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/justanotherhand/JustAnotherHand-Regular.ttf",
+      "sourceBytes": 191076,
+      "sourceSri": "sha384-cuKUbhlfAlWfZsrvG3984yhBcZXmuoaxycB+ELjhHC5m9hz2GSXOoi/JhpffL7HA",
+      "bytes": 56760,
+      "sri": "sha384-KNTdtBNFlzBVvQ9bwO7gQ7AhfxmV/Re5DQ22THsOKmkZi1Qyxy6zi5p0DU6r5oE1",
+      "axes": [],
+      "cmapCodepoints": 368,
+      "glyphs": 369
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/justanotherhand/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/justanotherhand/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

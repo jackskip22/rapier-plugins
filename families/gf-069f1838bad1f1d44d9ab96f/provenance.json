@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Libre Caslon Display",
+  "sourceRank": 405,
+  "sourcePosition": 769,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librecaslondisplay/METADATA.pb",
+    "sri": "sha384-ptpsLEYsNc4wfI1KQAn27o2/QFSfPKQnS8avPnRQF5ys1L9s3IHsjEidXZ3c9B7P"
+  },
+  "files": [
+    {
+      "name": "font-c840f5e5dff13b143c69fd67b1e63a9e596d526c7a32aef74cda4361704d0784c1434ba21885923e02f3e99c546f1b0f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/librecaslondisplay/LibreCaslonDisplay-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librecaslondisplay/LibreCaslonDisplay-Regular.ttf",
+      "sourceBytes": 101384,
+      "sourceSri": "sha384-Y1Uf+NPPZ7pZWJDaQlKdFeo3oTkGgbAwDKKaBhUuu/5AgisZ+dMiSsq5ZisxgpSk",
+      "bytes": 38344,
+      "sri": "sha384-yED15d/xOxQ8af1nseY6nlltUmx6Mq73TNpDYXBNB4TBQ0uiGIWSPgLz6ZxUbxsP",
+      "axes": [],
+      "cmapCodepoints": 501,
+      "glyphs": 551
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/librecaslondisplay/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librecaslondisplay/OFL.txt",
+    "bytes": 4403,
+    "sri": "sha384-54kWCgIS3iY/nmGu6Zu7l6qxFRO/FeJMTKtsJPbvEHXQ/djJ2RzOvJhjgJrehKXT"
+  }
+}

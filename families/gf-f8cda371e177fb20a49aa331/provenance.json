@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Nothing You Could Do",
+  "sourceRank": 266,
+  "sourcePosition": 522,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nothingyoucoulddo/METADATA.pb",
+    "sri": "sha384-mh+lpvjyj5GNJ/RgaKJewgq+644Vb68k83iVW03cf0zs9GZYsYBIE3RacscxFgaO"
+  },
+  "files": [
+    {
+      "name": "font-903af082b921d966b731bc9df1e50e39ebe573cb513593072237e85bd041b590a475b1c6e79f3bfd5f9ac2269653d532.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/nothingyoucoulddo/NothingYouCouldDo.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nothingyoucoulddo/NothingYouCouldDo.ttf",
+      "sourceBytes": 34920,
+      "sourceSri": "sha384-q8g1asmOIzlcglbDRuMjk2UH2hhrx9GbZkXBRnAscOwXtTVoBw5LlkNWEt0UbrzO",
+      "bytes": 18636,
+      "sri": "sha384-kDrwgrkh2Wa3Mbyd8eUOOevlc8tRNZMHIjfoW9BBtZCkdbHG5587/V+awiaWU9Uy",
+      "axes": [],
+      "cmapCodepoints": 310,
+      "glyphs": 312
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/nothingyoucoulddo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nothingyoucoulddo/OFL.txt",
+    "bytes": 4362,
+    "sri": "sha384-1YKmofHCyJDlDsppmYBFx5tEP29mPreOCEmka3gUdA6TGDKpgCKnKy90effPAKhr"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Aldrich",
+  "sourceRank": 442,
+  "sourcePosition": 843,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aldrich/METADATA.pb",
+    "sri": "sha384-KwKVIooVoe8Qa8B2Ks168rjvtvfgFTT0rAwixabvzWpWWFgRaytzj9hy1eZpqKRi"
+  },
+  "files": [
+    {
+      "name": "font-24bc1ce26da6eaa9db857837456723f81f01fe3f4d93d9896270fe42fc7acde611b7e350cecdc1773c858e7495bc6e13.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/aldrich/Aldrich-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aldrich/Aldrich-Regular.ttf",
+      "sourceBytes": 56548,
+      "sourceSri": "sha384-4JZGou+6FzcLxtTCRfxHftjExTY44CaYi/TWygX+sT9pe6tQai2wURhUxgnnA0Y6",
+      "bytes": 19548,
+      "sri": "sha384-JLwc4m2m6qnbhXg3RWcj+B8B/j9Nk9mJYnD+Qvx6zeYRt+NQzs3BdzyFjnSVvG4T",
+      "axes": [],
+      "cmapCodepoints": 248,
+      "glyphs": 259
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/aldrich/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aldrich/OFL.txt",
+    "bytes": 4421,
+    "sri": "sha384-WdiFjFbbAHsHURPppV9bAATtZrJ+C7jCaP0bYbxY5RJDEnnWVpUvu6e0kG6Pr0M3"
+  }
+}

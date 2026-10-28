@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Henny Penny",
+  "sourceRank": 255,
+  "sourcePosition": 497,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hennypenny/METADATA.pb",
+    "sri": "sha384-F5Yma/lWNM+KLYA2nYIADHUnRkZisaLQtn9ZcAnORenNu9thEWafATGd1V302m7t"
+  },
+  "files": [
+    {
+      "name": "font-7177697972ad44bba233b14424cbb7e79a21fff4db44bcd0d38d062cdffc43b80daba86878ea8ce4e76fe1d54b3de765.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/hennypenny/HennyPenny-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hennypenny/HennyPenny-Regular.ttf",
+      "sourceBytes": 92596,
+      "sourceSri": "sha384-L3oDCEVogP7Yb+X467A6wZiwLkMuFuyVIvil+5FOMtdLTLXB6ie8ss7mnDZBbr+V",
+      "bytes": 48644,
+      "sri": "sha384-cXdpeXKtRLuiM7FEJMu355oh//TbRLzQ040GLN/8Q7gNq6hoeOqM5Odv4dVLPedl",
+      "axes": [],
+      "cmapCodepoints": 215,
+      "glyphs": 232
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hennypenny/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hennypenny/OFL.txt",
+    "bytes": 4677,
+    "sri": "sha384-7MlGszz+2smfJGYybWwtQrF5d3zMAuYLlSj3l0A7x6DZFQn/vrjjrNbt1NZhcPoU"
+  }
+}

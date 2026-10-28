@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Electrolize",
+  "sourceRank": 110,
+  "sourcePosition": 222,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/electrolize/METADATA.pb",
+    "sri": "sha384-8JElyuBkN9BEhxcYyCFmCjZU4IxSnovL3XEOAs75eX3VJXw8hyDoTtZaIIbfZM74"
+  },
+  "files": [
+    {
+      "name": "font-64fee2cdd714f7395beb78bb13c240fe8ba85e73f597b684e07fcd82da34edc0ddd6d3b9cc9bafa42c0e8473637891cf.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/electrolize/Electrolize-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/electrolize/Electrolize-Regular.ttf",
+      "sourceBytes": 55712,
+      "sourceSri": "sha384-GvQnBs7EMRCS/8rETTxcCEv0DqwwIZJzrLcVH8sdaQnPfZ5iVVzbtmUDJGPRvzjD",
+      "bytes": 18156,
+      "sri": "sha384-ZP7izdcU9zlb63i7E8JA/ouoXnP1l7aE4H/Ngto07cDd1tO5zJuvpCwOhHNjeJHP",
+      "axes": [],
+      "cmapCodepoints": 213,
+      "glyphs": 224
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/electrolize/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/electrolize/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-1uSsDs7w6TKpJGux622+I/5E1EBgpHstmrV1yVeRAthZ19Da3uHDVaq1y/JG6sCW"
+  }
+}

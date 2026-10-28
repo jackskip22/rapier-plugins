@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "League Spartan",
+  "sourceRank": 45,
+  "sourcePosition": 105,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/leaguespartan/METADATA.pb",
+    "sri": "sha384-2k7G5yRnCovERCZTEyTd7bNFd+J8bZwzXIWjTw9sBNqHFhCBsiDcfXTMtwHcZAT8"
+  },
+  "files": [
+    {
+      "name": "font-57a84fc30043eade0a222c08a4869d33d024acffe6e5829912b02da8ac9ec5bf11b83cda82c1c94454faa930790936eb.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/leaguespartan/LeagueSpartan[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/leaguespartan/LeagueSpartan%5Bwght%5D.ttf",
+      "sourceBytes": 95116,
+      "sourceSri": "sha384-D4CdTPsQFDOt1a/5Mh/fxfMInUDe3yLsZYo2DCNecpmC9nYagLNAlDeBEPYc3NZJ",
+      "bytes": 41080,
+      "sri": "sha384-V6hPwwBD6t4KIiwIpIadM9AkrP/m5YKZErAtqKyexb8RuDzagsHJRFT6qTB5CTbr",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 561,
+      "glyphs": 635
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/leaguespartan/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/leaguespartan/OFL.txt",
+    "bytes": 4402,
+    "sri": "sha384-+SeMvonq0HjzmJQYCDpx9avQ/qB+E4mLP12PmH77xLfFlutoj/2XZqrzOLw3dxLp"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Warang Citi",
+  "sourceRank": 265,
+  "sourcePosition": 519,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanswarangciti/METADATA.pb",
+    "sri": "sha384-ugZKg9c/ZhCngX0UFJPHxP3Z3AziENPnhENzCnsbH9MdvWFyRqQ+04DVCdBl94sT"
+  },
+  "files": [
+    {
+      "name": "font-eff49375476d78ec81752330cc07f9f4788df842a384ed23415132ea4b90d6462fefb8384ef83f46b0cfcce374901203.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosanswarangciti/NotoSansWarangCiti-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanswarangciti/NotoSansWarangCiti-Regular.ttf",
+      "sourceBytes": 86880,
+      "sourceSri": "sha384-F4upO8XV5EKAgk7IlOkgGXZXl2lRLItq4yNxIzeHBQseB8xKixwPsHTRxAbC1jGI",
+      "bytes": 35112,
+      "sri": "sha384-7/STdUdteOyBdSMwzAf59HiN+EKjhO0jQVEy6kuQ1kYv77g4Tvg/RrDPzON0kBID",
+      "axes": [],
+      "cmapCodepoints": 419,
+      "glyphs": 514
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanswarangciti/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanswarangciti/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-rmIwzgfULq2YlljF5ITT6KdUC59iuW8ggK/rWInTidwxmFZe845JZyv56fGqu7j9"
+  }
+}

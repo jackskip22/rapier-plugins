@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Amarante",
+  "sourceRank": 516,
+  "sourcePosition": 954,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amarante/METADATA.pb",
+    "sri": "sha384-cRjpjG2heC0gc3Ujjeq7CiTDQIgXuao5sz5qUwH/6a7vjt1xGwwt14jBlfsyPf0I"
+  },
+  "files": [
+    {
+      "name": "font-b3a08cc16b7e52db8e5f5de09eebdece21d1e91601daa455a07307af10e5b68bcc50c1deb90b285d4916715c61c6fed6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/amarante/Amarante-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amarante/Amarante-Regular.ttf",
+      "sourceBytes": 148116,
+      "sourceSri": "sha384-UofsX6qxw9TFNmrkhGrw98ZybwPFKF4411TxtXtUgGMGdJOOV/9LWLNyHHlkfoKB",
+      "bytes": 37120,
+      "sri": "sha384-s6CMwWt+UtuOX13gnuveziHR6RYB2qRVoHMHrxDltovMUMHeuQsoXUkWcVxhxv7W",
+      "axes": [],
+      "cmapCodepoints": 411,
+      "glyphs": 424
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/amarante/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amarante/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-YlrxoupBTuE4LmDQ0WiLCsfbILYC1aPJ0AgyO/+/22EFJmLqHCoT44cK5/F1rXVY"
+  }
+}

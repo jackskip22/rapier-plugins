@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Cantata One",
+  "sourceRank": 149,
+  "sourcePosition": 303,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cantataone/METADATA.pb",
+    "sri": "sha384-Y9VeZSccoGjALHctpdB6eNiVvGuSwRdMY7yaRxqCB77HmzHmpVDLUZy4mZlOt9ZK"
+  },
+  "files": [
+    {
+      "name": "font-751cab8883687a8679f160d8699f84e7b43988b619612d8a809a546940e06480aea62bb34b8adf29571c4a2668b529c1.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/cantataone/CantataOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cantataone/CantataOne-Regular.ttf",
+      "sourceBytes": 96828,
+      "sourceSri": "sha384-lqsZpxrCQoYp581FHo7bCRJnbf9vQnLn4AU6bwFB45hk75bdrC/V/sNACPoOvLfF",
+      "bytes": 29740,
+      "sri": "sha384-dRyriINoeoZ58WDYaZ+E57Q5iLYZYS2KgJpUaUDgZICupiuzS4rfKVccSiZotSnB",
+      "axes": [],
+      "cmapCodepoints": 411,
+      "glyphs": 424
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cantataone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cantataone/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-5KuKlu/dM5xIrelRlkOgniWmisMyxglESSWjne5fNEbWLJPPykL0u8CWsSW6ERgV"
+  }
+}

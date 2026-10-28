@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Fauna One",
+  "sourceRank": 181,
+  "sourcePosition": 366,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/faunaone/METADATA.pb",
+    "sri": "sha384-9F+petkRjtDXw/DnTzQF+9ETsv+BrgAxaPWMz2LcZ0D7N/Y+G5Uonixc6AvqcYcD"
+  },
+  "files": [
+    {
+      "name": "font-d26920cb5595634757e28fd36916309c828511995c0e818d72a1f57a1952ad26baa3f6fa25487dbc1480f435fc6b72e2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/faunaone/FaunaOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/faunaone/FaunaOne-Regular.ttf",
+      "sourceBytes": 58804,
+      "sourceSri": "sha384-HrziydqTe3dhH2nIZb1Uy7Zj52CYQxMEcqVUwSAeS0HVXL/zXXNPGo+q8qBt3lYE",
+      "bytes": 24808,
+      "sri": "sha384-0mkgy1WVY0dX4o/TaRYwnIKFEZlcDoGNcqH1ehlSrSa6o/b6JUh9vBSA9DX8a3Li",
+      "axes": [],
+      "cmapCodepoints": 413,
+      "glyphs": 459
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/faunaone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/faunaone/OFL.txt",
+    "bytes": 4419,
+    "sri": "sha384-uFyQk0rX/+nB2KO3lBQd+SRgPDws4Evo9QQAqeM1Tugk5PBIF70AQI4/bERFzimD"
+  }
+}

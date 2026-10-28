@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Langar",
+  "sourceRank": 30,
+  "sourcePosition": 73,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/langar/METADATA.pb",
+    "sri": "sha384-2q+GSINM9kHEHYRTg6Abje0R5dPLTp0T8I39+XgkV3ZaoRIh1o8MpruLMa3Y/hO9"
+  },
+  "files": [
+    {
+      "name": "font-2d3ae16360f8001034e5c52ce79c3db512732506d92bbc8e0dd2aa0a079794900477bc77d3ef4058027a622165c457f7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/langar/Langar-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/langar/Langar-Regular.ttf",
+      "sourceBytes": 192308,
+      "sourceSri": "sha384-OFMkbsAT3j5ia9Nm9A5q5FzhLFbXWYUxBS1SR8fiKP2r3ZQAAphtJzIZHDnJtu51",
+      "bytes": 58276,
+      "sri": "sha384-LTrhY2D4ABA05cUs55w9tRJzJQbZK7yODdKqCgeXlJAEd7x30+9AWAJ6YiFlxFf3",
+      "axes": [],
+      "cmapCodepoints": 489,
+      "glyphs": 640
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/langar/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/langar/OFL.txt",
+    "bytes": 4475,
+    "sri": "sha384-Fu03engouZbaUoeH8PJJrURlC0iDQ8SkJaSlrKOb30nIgJQ/LG/PNUG3apdYt/od"
+  }
+}

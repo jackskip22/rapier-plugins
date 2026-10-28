@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Patua One",
+  "sourceRank": 121,
+  "sourcePosition": 247,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/patuaone/METADATA.pb",
+    "sri": "sha384-Fy4uMi5INgqa/qe9lfus+N7+ABZskax5a9huGtb0mCZc81XzjuJMqN7+DrKP8HPF"
+  },
+  "files": [
+    {
+      "name": "font-5e6222ae1fce50b8b781871272bbacf516c4bf56f20d8f023e4e998b445bef632e9865672e694b53976f5581d7e24757.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/patuaone/PatuaOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/patuaone/PatuaOne-Regular.ttf",
+      "sourceBytes": 35624,
+      "sourceSri": "sha384-5voxfRcptK57EzHmvdgAs9l/l72sf5M5shtGy1R0Xi47NQ1JvtUwmLeX5fujKQmJ",
+      "bytes": 14680,
+      "sri": "sha384-XmIirh/OULi3gYcScrus9RbEv1byDY8CPk6Zi0Rb72MumGVnLmlLU5dvVYHX4kdX",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 236
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/patuaone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/patuaone/OFL.txt",
+    "bytes": 4409,
+    "sri": "sha384-HSxpAjUZN6BwPmWAu1wAkV043CvKGNnVns/O2r+HLLRLMDfjWSwEiKlXtJgaHIZT"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Carter One",
+  "sourceRank": 333,
+  "sourcePosition": 637,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carterone/METADATA.pb",
+    "sri": "sha384-33nqXuh7xqSaYcWv95U39QLrrdPqeqN5iEScHoJgTGM+sWfMrLGHSSitOwxBWFsE"
+  },
+  "files": [
+    {
+      "name": "font-9917170d8371ce137852c96d2dc3e19527095cbb374d85e5813fc2c582dd9b66b29b44fab9124117fc49946fc0133b37.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/carterone/CarterOne.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carterone/CarterOne.ttf",
+      "sourceBytes": 66532,
+      "sourceSri": "sha384-x4kbubL8MJqFDiqZbVDGjjkpI/KiFxaLrpOEsHY/oaNxqjXwXMyIahYXqlA+iVsF",
+      "bytes": 31532,
+      "sri": "sha384-mRcXDYNxzhN4UsltLcPhlScJXLs3TYXlgT/CxYLdm2aym0T6uRJBF/xJlG/AEzs3",
+      "axes": [],
+      "cmapCodepoints": 269,
+      "glyphs": 271
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/carterone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/carterone/OFL.txt",
+    "bytes": 4415,
+    "sri": "sha384-QsolXBi1K1AvX/Z37sbkw5kX94xnX+yOaNWjXoCegtRnFblPrlRoA0SpvVkDsr8O"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Damion",
+  "sourceRank": 256,
+  "sourcePosition": 498,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/damion/METADATA.pb",
+    "sri": "sha384-WZ4spYeJEX3iOs5znJV2pp7Up81rBuH1fCPdxLL36IZRwgDufVc4ETs7bd2LRLY1"
+  },
+  "files": [
+    {
+      "name": "font-b9d5cf49724ef00e65646ee8491b81467fdc5f911256c9dbf41f32badd1033e30fdb17e5d22b9ccb3c1825f3bff56892.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/damion/Damion-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/damion/Damion-Regular.ttf",
+      "sourceBytes": 75756,
+      "sourceSri": "sha384-GKonFCkH2j3N0MeG1+1LZQQaFAQN9nd3jQnvooEAwNyKGiv+GGD5JeX0IaQtLqlk",
+      "bytes": 34192,
+      "sri": "sha384-udXPSXJO8A5lZG7oSRuBRn/cX5ESVsnb9B8yut0QM+MP2xfl0iucyzwYJfO/9WiS",
+      "axes": [],
+      "cmapCodepoints": 366,
+      "glyphs": 376
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/damion/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/damion/OFL.txt",
+    "bytes": 4483,
+    "sri": "sha384-E8CCxYXgcqf2PIF1ckA4w6B0AD0TlII81SlTNeEO55jUGQDbCzTH+AacQ2qgOzWX"
+  }
+}

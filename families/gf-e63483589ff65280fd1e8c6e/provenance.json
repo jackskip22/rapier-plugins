@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Puppies Play",
+  "sourceRank": 525,
+  "sourcePosition": 966,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/puppiesplay/METADATA.pb",
+    "sri": "sha384-H/x8bO4oLZgRubxJYQe37YDsvBYmsxfoCh815TRB+qmoE259CcvMDXHbk3toS47B"
+  },
+  "files": [
+    {
+      "name": "font-1e2c72be4e3dd7e18d5955b977e723636344732582a44f012045ce2a258e9d364cc938624d4f3a72293fe8bece548109.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/puppiesplay/PuppiesPlay-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/puppiesplay/PuppiesPlay-Regular.ttf",
+      "sourceBytes": 167944,
+      "sourceSri": "sha384-BG2bfdYGjoqq5hF6GU+ayMWLC/hlKQushrOMwyjRNBDqov7wO6xf6XGukU826YWO",
+      "bytes": 59892,
+      "sri": "sha384-Hixyvk491+GNWVW5d+cjY2NEcyWCpE8BIEXOKiWOnTZMyThiTU86cik/6L7OVIEJ",
+      "axes": [],
+      "cmapCodepoints": 579,
+      "glyphs": 633
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/puppiesplay/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/puppiesplay/OFL.txt",
+    "bytes": 4403,
+    "sri": "sha384-Brvq9yWVHb+l9GnWYMjT6U7Y1DAstrX9cNXG2TuCbPu5c8EH6RZ9jvnpf/F0AeES"
+  }
+}

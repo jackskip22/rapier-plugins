@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Workbench",
+  "sourceRank": 381,
+  "sourcePosition": 723,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/workbench/METADATA.pb",
+    "sri": "sha384-YKGmlRZ+HZmFKde44RAPYIVE2UtBHwomhIGqIs+s16wAg70acST4u0tLd7Tal6pb"
+  },
+  "files": [
+    {
+      "name": "font-1a143c41d384ab70ee0754d5dad61a589eb115dcc7ca21e3a1b15e779266d79702d8b0c97bc1cf80f3d3a7d55462b065.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/workbench/Workbench[BLED,SCAN].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/workbench/Workbench%5BBLED%2CSCAN%5D.ttf",
+      "sourceBytes": 32472,
+      "sourceSri": "sha384-yZMNBxf2/kjfhWlLAPog7urof5f2fEUVifq5cA5SQ/qzLdNZKv0rhXhNMQEus+bW",
+      "bytes": 5384,
+      "sri": "sha384-GhQ8QdOEq3DuB1TV2tYaWJ6xFdzHyiHjobFed5Jm15cC2LDJe8HPgPPTp9VUYrBl",
+      "axes": [
+        {
+          "tag": "SCAN",
+          "min": -53,
+          "default": 0,
+          "max": 100,
+          "name": "Scanlines"
+        },
+        {
+          "tag": "BLED",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Bleed"
+        }
+      ],
+      "cmapCodepoints": 217,
+      "glyphs": 237
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/workbench/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/workbench/OFL.txt",
+    "bytes": 4401,
+    "sri": "sha384-gzvopJmGEa9qKPSPw+8qc0BppCTbLSlBDBH6jDDpl0I7R/MrXkkJMjZdpYCpWI3T"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Kreon",
+  "sourceRank": 401,
+  "sourcePosition": 762,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kreon/METADATA.pb",
+    "sri": "sha384-QqLykx1FFJJJ/UlVyd2ShzWQL7SwyD5sml8wEBeUuo/ClJ415xyOfKmQzrwIx/DR"
+  },
+  "files": [
+    {
+      "name": "font-3a197dfaf7a744606aa65aea5413cbbf6b8b44fba9a54e6ea0cf4abe805bfd0b363e7f98aafe9f8721358b69f6508b76.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/kreon/Kreon[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kreon/Kreon%5Bwght%5D.ttf",
+      "sourceBytes": 79176,
+      "sourceSri": "sha384-MdtlczPJJzRbvCOnNqG4zDCvwfkEQfb092csK44V+fLJUrWtxow6eOSd8tdlO+jp",
+      "bytes": 34168,
+      "sri": "sha384-Ohl9+venRGBqplrqVBPLv2uLRPuppU5uoM9KvoBb/Qs2Pn+Yqv6fhyE1i2n2UIt2",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 369,
+      "glyphs": 407
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kreon/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kreon/OFL.txt",
+    "bytes": 4417,
+    "sri": "sha384-fZE2g1zpod6Xhaz+l7ZWSu5j05bcmfnyfcecskGIH87b1NJrGgYYviCCUPzB37QF"
+  }
+}

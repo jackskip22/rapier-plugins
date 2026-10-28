@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Seaweed Script",
+  "sourceRank": 455,
+  "sourcePosition": 868,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/seaweedscript/METADATA.pb",
+    "sri": "sha384-1L1BSdhznULktAS86lST56JyQdOBWcC0GDpgeQaNFrMvoWuTh51wL5iEvHzh0Iax"
+  },
+  "files": [
+    {
+      "name": "font-8fd5f05bdb0209b69de9ce48177d41116595b47a742b9e40d35bf971a73fe1e45b2b9cf39b1bb6675c6ed893701ba3ac.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/seaweedscript/SeaweedScript-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/seaweedscript/SeaweedScript-Regular.ttf",
+      "sourceBytes": 117072,
+      "sourceSri": "sha384-LA2G/A9KXEAaDRQ5UpblcMHaOt3sC/IUYxjX2C9+e4nbl73Ywp874tMNdDyN4DNN",
+      "bytes": 45460,
+      "sri": "sha384-j9XwW9sCCbad6c5IF31BEWWVtHp0K55A01v5cac/4eRbK5zzmxu2Z1xu2JNwG6Os",
+      "axes": [],
+      "cmapCodepoints": 227,
+      "glyphs": 228
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/seaweedscript/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/seaweedscript/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-GsmqFNK/zQpw9J/eI/CVmgP4gGWevSzGJtNi1Lix79+LANfVnh6VagIpgSxwvXWH"
+  }
+}

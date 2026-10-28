@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Fugaz One",
+  "sourceRank": 270,
+  "sourcePosition": 528,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fugazone/METADATA.pb",
+    "sri": "sha384-wkGVm6exuA1resKIEXtohAAcjoRrDMUUnAJWFcD1brdMKIyQ+YB51qccMPr5aODF"
+  },
+  "files": [
+    {
+      "name": "font-a1df5a77856bbff874e8b15abac24cf8902b6ea405059b3a26e3b00c7fbcd2688f6d7d99f6f5be33e462e40a3a0889a1.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/fugazone/FugazOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fugazone/FugazOne-Regular.ttf",
+      "sourceBytes": 27868,
+      "sourceSri": "sha384-ff6bmSgPWFnz8jHoI6AMEpj7qfjlT5Yut6KF1tPAI2iwqWaW0h2A/drqIGxAIOhJ",
+      "bytes": 12668,
+      "sri": "sha384-od9ad4Vrv/h06LFausJM+JArbqQFBZs6JuOwDH+80miPbX2Z9vW+M+Ri5Ao6CImh",
+      "axes": [],
+      "cmapCodepoints": 226,
+      "glyphs": 229
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/fugazone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fugazone/OFL.txt",
+    "bytes": 4409,
+    "sri": "sha384-D0eQkLy695obX3N+8AwRM6wdkerbH+dKofSvjo2Xr6iu9KEN76uwIKT11IUesHvy"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Abril Fatface",
+  "sourceRank": 123,
+  "sourcePosition": 251,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abrilfatface/METADATA.pb",
+    "sri": "sha384-LZVzESUBdInvosTwxWJtBb3+7KVFTCKIwOupsHkQIfxsUMjvBGsltGykYhn9+YQ4"
+  },
+  "files": [
+    {
+      "name": "font-90685037e094ad553f7894f13b2af24153386e5278e0c0a8ce07f0bf8abfc58e30fa060a7bedc69424d5cd7a66c7e594.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/abrilfatface/AbrilFatface-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abrilfatface/AbrilFatface-Regular.ttf",
+      "sourceBytes": 67364,
+      "sourceSri": "sha384-pTM6ifCNsu6FxGVCWFdWkcod41SutuWfBTnJpc0zmnRl4QB1bB13OLY75eD63XBx",
+      "bytes": 20740,
+      "sri": "sha384-kGhQN+CUrVU/eJTxOyryQVM4blJ44MCozgfwv4q/xY4w+gYKe+3GlCTVzXpmx+WU",
+      "axes": [],
+      "cmapCodepoints": 394,
+      "glyphs": 425
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/abrilfatface/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abrilfatface/OFL.txt",
+    "bytes": 4415,
+    "sri": "sha384-Dm1fd+jLP7j4RBSD63FkCKicsFk2gC7/xh/zUdAj5T6qcQK2HmQzw81d5tXfnwog"
+  }
+}

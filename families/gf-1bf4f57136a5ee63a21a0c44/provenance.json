@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Koulen",
+  "sourceRank": 519,
+  "sourcePosition": 959,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/koulen/METADATA.pb",
+    "sri": "sha384-I4Z4TLRTgZgpC90G82l005FPMqQPe3gbmKneab7XV46WS81rNn4vdC+lF1OjudqP"
+  },
+  "files": [
+    {
+      "name": "font-327540e6ac39dc8d1c19a433519c3d5c77034db875020c1bb383b7c64a47256b3310b3147f6204ca454d67aa20809cea.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/koulen/Koulen-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/koulen/Koulen-Regular.ttf",
+      "sourceBytes": 56324,
+      "sourceSri": "sha384-A6bKCf7UKZ45HNTCSOpxG/RCD8a9UxXhxnHU8sG5hL1xrb5HpaInM7TF0CjDldj1",
+      "bytes": 20892,
+      "sri": "sha384-MnVA5qw53I0cGaQzUZw9XHcDTbh1Agwbs4O3xkpHJWszELMUf2IEykVNZ6oggJzq",
+      "axes": [],
+      "cmapCodepoints": 203,
+      "glyphs": 277
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/koulen/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/koulen/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-sLsdWIlNj8A18A/izm+NNJgXA7R41vm/Ydy5r/AizyQojyDIiiWV50GzQTrTRaUX"
+  }
+}

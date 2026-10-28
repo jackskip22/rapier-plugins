@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Doppio One",
+  "sourceRank": 130,
+  "sourcePosition": 267,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/doppioone/METADATA.pb",
+    "sri": "sha384-zktPfB1nUempx0Ka0olN3BZayXlH5JNENTdpQLMrufMm1oudTK7QWEcSnmuQhQO9"
+  },
+  "files": [
+    {
+      "name": "font-e7689cd17f257f5f01809666e9c2eac59db3ab9b38c5bc32c8f640db52ec8712eb3400c81078982d782b0c79faa0f3dc.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/doppioone/DoppioOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/doppioone/DoppioOne-Regular.ttf",
+      "sourceBytes": 55704,
+      "sourceSri": "sha384-OhwdJyNcFLSbCeyZfokY4VltXR+zTc2KLlR4OKKWpAH9HvHtj7bYyhUuEDakVNAk",
+      "bytes": 24732,
+      "sri": "sha384-52ic0X8lf18BgJZm6cLqxZ2zq5s4xbwyyPZA21LshxLrNADIEHiYLXgrDHn6oPPc",
+      "axes": [],
+      "cmapCodepoints": 391,
+      "glyphs": 403
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/doppioone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/doppioone/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-145m8ZutxA3OM4lMbfcegVuN/rgvhXBN8SULYIn46rPxQe3td+N6Vf7QATWpKVmu"
+  }
+}

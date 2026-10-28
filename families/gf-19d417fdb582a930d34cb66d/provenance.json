@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Covered By Your Grace",
+  "sourceRank": 367,
+  "sourcePosition": 694,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/coveredbyyourgrace/METADATA.pb",
+    "sri": "sha384-09gifbjhkVVGE0Pqqtmkzfjg/yyRaMLe0sCZILSIkG/GA0mw9FrN2cbSuBdxkDb7"
+  },
+  "files": [
+    {
+      "name": "font-f8ae785c1635c7d43dfa6cd208d60c35277324170d21e96be3b9f612515fc05361150598ce736d963606673b03610d38.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/coveredbyyourgrace/CoveredByYourGrace.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/coveredbyyourgrace/CoveredByYourGrace.ttf",
+      "sourceBytes": 57040,
+      "sourceSri": "sha384-MAuhWDanQYEwrzoEqEPFFO1WsmT0bukYw7HUipVv2uWjF8+1Okz3Ke1zGPQzo8yk",
+      "bytes": 22724,
+      "sri": "sha384-+K54XBY1x9Q9+mzSCNYMNSdzJBcNIelr47n2ElFfwFNhFQWYznNtljYGZzsDYQ04",
+      "axes": [],
+      "cmapCodepoints": 344,
+      "glyphs": 349
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/coveredbyyourgrace/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/coveredbyyourgrace/OFL.txt",
+    "bytes": 4362,
+    "sri": "sha384-1YKmofHCyJDlDsppmYBFx5tEP29mPreOCEmka3gUdA6TGDKpgCKnKy90effPAKhr"
+  }
+}

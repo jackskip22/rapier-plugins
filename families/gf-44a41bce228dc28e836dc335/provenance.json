@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Tangerine",
+  "sourceRank": 213,
+  "sourcePosition": 420,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tangerine/METADATA.pb",
+    "sri": "sha384-F/ThmNBkdgJ1TD4vikJ0E/3CXU3+H7YPrsoEcleBZNWQKIRGcaEsDZGBfI4ymONE"
+  },
+  "files": [
+    {
+      "name": "font-93e9c53cf885287b49d7802fb7d6fb957cb5620d52a885be4f8f5ed8ac2fe2addd60525ed04c88d4fbcc407782440e16.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/tangerine/Tangerine-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tangerine/Tangerine-Bold.ttf",
+      "sourceBytes": 65464,
+      "sourceSri": "sha384-JnUEctFyaHipKgpFMvEc3np5BFxtCC8o3AZHA0F6ec3ABfeN6Zs9iQ9NXqkAOCgD",
+      "bytes": 26984,
+      "sri": "sha384-k+nFPPiFKHtJ14Avt9b7lXy1Yg1SqIW+T49e2Kwv4q3dYFJe0EyI1PvMQHeCRA4W",
+      "axes": [],
+      "cmapCodepoints": 230,
+      "glyphs": 231
+    },
+    {
+      "name": "font-c7b5d48b45151fe3c32c32bc3452504b61cb0ada53737094bb4ef08d9128b9cc9ea1a9f021e452455880767b90e24996.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/tangerine/Tangerine-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tangerine/Tangerine-Regular.ttf",
+      "sourceBytes": 60648,
+      "sourceSri": "sha384-ygHjxcNAz6vAKbA/YvlBJXhMddcYRsFAKJALa1yKkDOa/0fTx3HEC15Ak/kkUY5d",
+      "bytes": 25404,
+      "sri": "sha384-x7XUi0UVH+PDLDK8NFJQS2HLCtpTc3CUu07wjZEoucyeoanwIeRSRViAdnuQ4kmW",
+      "axes": [],
+      "cmapCodepoints": 230,
+      "glyphs": 231
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/tangerine/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tangerine/OFL.txt",
+    "bytes": 4354,
+    "sri": "sha384-0cfXhO6nh5nDK3briC/DuQ2tYiSvhBiGC0fqCNOIX0ofx6Kg+IGyjoUYXBJVQbgA"
+  }
+}

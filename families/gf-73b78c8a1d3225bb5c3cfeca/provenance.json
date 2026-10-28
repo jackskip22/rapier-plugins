@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Poller One",
+  "sourceRank": 177,
+  "sourcePosition": 355,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pollerone/METADATA.pb",
+    "sri": "sha384-EFgBAIOebLSYMsc2KQ2D6SSHYC3vYJxacPGfrUeKbISgzgdA/sBy1lUNP/cxTdYW"
+  },
+  "files": [
+    {
+      "name": "font-dfeb39dca3ddb5bad13106899938b38f10615c4a87a44f2e298f216b2cc8956b6540a8a6fb21607b9fcc5104cab44fe1.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/pollerone/PollerOne.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pollerone/PollerOne.ttf",
+      "sourceBytes": 31588,
+      "sourceSri": "sha384-6G9hFgUNDDty7XaKQm7uKGmyt0AylW/mr22OYci3+/psagBnAuUp/eg70RQa5Lqj",
+      "bytes": 12236,
+      "sri": "sha384-3+s53KPdtbrRMQaJmTizjxBhXEqHpE8uKY8hayzIlWtlQKim+yFge5/MUQTKtE/h",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 241
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/pollerone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pollerone/OFL.txt",
+    "bytes": 4414,
+    "sri": "sha384-1PLRL2u08mt6vgL4wWQcj6eR3JYeOKlNbvtenjI7kenK7IF8t2eICN9ndGyVk+Hy"
+  }
+}

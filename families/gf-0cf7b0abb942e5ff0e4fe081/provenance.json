@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Space Grotesk",
+  "sourceRank": 22,
+  "sourcePosition": 51,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacegrotesk/METADATA.pb",
+    "sri": "sha384-AWEWjIvYMD4AFtbmZbQqYEPijXSpo8lCE8lgjeaX9NZqCbz8d4foz+OncG5pPAq7"
+  },
+  "files": [
+    {
+      "name": "font-fd75f366a9b60d17f1eb208c4797247df14cf1729ba178d586e44000954588f87c05e1cbfed01ec4dfe747a2ef54fcb9.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/spacegrotesk/SpaceGrotesk[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacegrotesk/SpaceGrotesk%5Bwght%5D.ttf",
+      "sourceBytes": 136676,
+      "sourceSri": "sha384-+F2KYX+Jw40gsXzAvrzEYLVbThTyvhwwVtKsedUB1BcnGDRVo0ZhqUmbbPizPKo7",
+      "bytes": 49208,
+      "sri": "sha384-/XXzZqm2DRfx6yCMR5ckffFM8XKboXjVhuRAAJVFiPh8BeHL/tAexN/nR6LvVPy5",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 735,
+      "glyphs": 1001
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/spacegrotesk/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacegrotesk/OFL.txt",
+    "bytes": 4495,
+    "sri": "sha384-SvC0k5Mx8Fsz+30Jiq8A0Glb7hF98LJhU3gUOUrnshDCiPGJE2IcK3g0bvFSaRcb"
+  }
+}

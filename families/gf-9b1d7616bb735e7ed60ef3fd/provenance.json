@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Handlee",
+  "sourceRank": 287,
+  "sourcePosition": 558,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/handlee/METADATA.pb",
+    "sri": "sha384-gV0E5G79bI8BWtcmT9kGNuOAXpB3LuvOqasYUyMgbwXZFZFNAauQgylOW13GQQAc"
+  },
+  "files": [
+    {
+      "name": "font-81b879cba8b5234207898fabfa04ce43975ad182c36943b0deaee6a75b17f0c2dc1d49ddf9f1a958a34e95303e3889b7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/handlee/Handlee-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/handlee/Handlee-Regular.ttf",
+      "sourceBytes": 39132,
+      "sourceSri": "sha384-h4BQ6K1VtYm8jjuTICvo+0POJeuJG1J2plSb9a/GDI28FngYUlb+g6N/AsHIkenk",
+      "bytes": 17512,
+      "sri": "sha384-gbh5y6i1I0IHiY+r+gTOQ5da0YLDaUOw3q7mp1sX8MLcHUnd+fGpWKNOlTA+OIm3",
+      "axes": [],
+      "cmapCodepoints": 201,
+      "glyphs": 204
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/handlee/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/handlee/OFL.txt",
+    "bytes": 4418,
+    "sri": "sha384-M6kRXUzUKYLvuwP/lmjy3U5vTawAeZiEsHi8p8WNYDZt/3Nstmlg5CEvIFDIpJUN"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Oooh Baby",
+  "sourceRank": 417,
+  "sourcePosition": 786,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ooohbaby/METADATA.pb",
+    "sri": "sha384-W+uQygPyygjHQ4KHf/7r/ucUcic5Hu8DM249Y9TfRL00i8VK8rjWeiy03LRJUbfz"
+  },
+  "files": [
+    {
+      "name": "font-e069c26fa404cc5de4c288c74093a39089e7726a128c0b299e45d3fa1e173cce9738bd167858618d243e65f5e3409825.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/ooohbaby/OoohBaby-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ooohbaby/OoohBaby-Regular.ttf",
+      "sourceBytes": 135104,
+      "sourceSri": "sha384-7LPZIz8lOJ8QLlJmAgzKzR6mDLclgiK9ElvE3DDtr2EQpt1+V4QNG0PIldLo8ahA",
+      "bytes": 53556,
+      "sri": "sha384-4GnCb6QEzF3kwojHQJOjkInncmoSjAspnkXT+h4XPM6XOL0WeFhhjSQ+ZfXjQJgl",
+      "axes": [],
+      "cmapCodepoints": 588,
+      "glyphs": 635
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ooohbaby/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ooohbaby/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-FTAvSguWOI7/W+VdCi4aYbPSIInBoOOrIa1iisZ0+4iVJK+lxGVDOzE9lX50kPxf"
+  }
+}

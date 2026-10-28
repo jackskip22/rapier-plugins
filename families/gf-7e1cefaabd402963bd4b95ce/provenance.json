@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Maven Pro",
+  "sourceRank": 109,
+  "sourcePosition": 220,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mavenpro/METADATA.pb",
+    "sri": "sha384-gi7LkpxlWKG1KiaszU+kCJur244VhdEqYQhjXyxqMu2GGj8mBPhjxV84WqqUUsIE"
+  },
+  "files": [
+    {
+      "name": "font-5bca907cb86edd4d6912803d896b3a81b3d09c212e0b8cebbd090f93a0c18e0dafa8835a37fb6cbe97db7e81e1840d7b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mavenpro/MavenPro[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mavenpro/MavenPro%5Bwght%5D.ttf",
+      "sourceBytes": 87944,
+      "sourceSri": "sha384-SSKIqIPp0PvCqvZ89eCG/zebrkxyu/uZMOcCZ5rLhhxTb1OuEFEF25VKhaz1n3pk",
+      "bytes": 38588,
+      "sri": "sha384-W8qQfLhu3U1pEoA9iWs6gbPQnCEuC4zrvQkPk6DBjg2vqINaN/tsvpfbfoHhhA17",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 671,
+      "glyphs": 730
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mavenpro/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mavenpro/OFL.txt",
+    "bytes": 4428,
+    "sri": "sha384-F4P0AWvqJ3zUSSdQK0lsesUfDTN3ZVpQl+En4fFY5/bzElgrAct5hFVNPEYa3A5M"
+  }
+}

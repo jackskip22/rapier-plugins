@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Neucha",
+  "sourceRank": 321,
+  "sourcePosition": 616,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/neucha/METADATA.pb",
+    "sri": "sha384-UgqTG219iTM7XlcRAF6QEiXvRee8vpPUgL2B0ie5ytX2yajgOKRG3F3GpH9tk0LS"
+  },
+  "files": [
+    {
+      "name": "font-9818ca3b7def8de97334fc44e2150b51673dd990db2c58e53e56be81856e269fdadabc8632d69c999691e51fbae7be28.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/neucha/Neucha.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/neucha/Neucha.ttf",
+      "sourceBytes": 141432,
+      "sourceSri": "sha384-r6bX+oJF1/tYYEZMkHIXUyatL7INbeco0rQGp/3D35PSN1L/aibHcSUEkZe4N+mD",
+      "bytes": 47596,
+      "sri": "sha384-mBjKO33vjelzNPxE4hULUWc92ZDbLFjlPla+gYVuJp/a2ryGMtacmZaR5R+6574o",
+      "axes": [],
+      "cmapCodepoints": 283,
+      "glyphs": 286
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/neucha/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/neucha/OFL.txt",
+    "bytes": 4370,
+    "sri": "sha384-gbABF+UloOfAQTU7yYMXmyZh+BtcC4q7xFOFFdZwDDoAnQW/+EFGcX+LEoI/Yb2M"
+  }
+}

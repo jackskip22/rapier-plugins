@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Alike Angular",
+  "sourceRank": 278,
+  "sourcePosition": 545,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alikeangular/METADATA.pb",
+    "sri": "sha384-fi1hYmLzsbPq+bTuLisqMOxeHMvGFBUzNgiQjZQoV/m6glLitbaoE2zgNuKlEB8m"
+  },
+  "files": [
+    {
+      "name": "font-a582f670f41868d65bc06972e5b2fdf8b3784501737bd8cbf0ce2846ade625b196210ed05f5fcf6fe24de0e1132237ef.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/alikeangular/AlikeAngular-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alikeangular/AlikeAngular-Regular.ttf",
+      "sourceBytes": 62184,
+      "sourceSri": "sha384-S56UyJ1bi89+mxOQ/m8RJjJvQrd5Ylz5ozU+47jOGCrl8+LGCEeV/wqDBztauJ/C",
+      "bytes": 26552,
+      "sri": "sha384-pYL2cPQYaNZbwGly5bL9+LN4RQFze9jL8M4oRq3mJbGWIQ7QX1/Pb+JN4OETIjfv",
+      "axes": [],
+      "cmapCodepoints": 343,
+      "glyphs": 364
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alikeangular/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alikeangular/OFL.txt",
+    "bytes": 4545,
+    "sri": "sha384-FTwrXqpfzyEmiD/7izAh5Dug9DQu9IcrW9Cb6h2YATB13rRt7PsqnC23Dcm6tejz"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Bungee",
+  "sourceRank": 100,
+  "sourcePosition": 204,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bungee/METADATA.pb",
+    "sri": "sha384-vkiSuL3lsW12a/IlC73Pbk8T4ek+pAyw5Pby+r8S2coKmBABaZLNyrOZ9LyUz2nP"
+  },
+  "files": [
+    {
+      "name": "font-fc05148807bc574b493ef9235a5e53e8838ec92aedd4112010d45987deccb844b35848860945b04ec59f88dc89c402de.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bungee/Bungee-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bungee/Bungee-Regular.ttf",
+      "sourceBytes": 118996,
+      "sourceSri": "sha384-/wy0dNQ4AvMhX9fcCzZdjc4tyRsvfe+NHtJVGy7vq4Y+V7BI5kbQtbLe+lhh60Pu",
+      "bytes": 40528,
+      "sri": "sha384-/AUUiAe8V0tJPvkjWl5T6IOOySrt1BEgENRZh97MuESzWEiGCUWwTsWfiNyJxALe",
+      "axes": [],
+      "cmapCodepoints": 1082,
+      "glyphs": 1063
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bungee/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bungee/OFL.txt",
+    "bytes": 4473,
+    "sri": "sha384-XGux7SXOj0EwjXyTlkqYemi3cbsRb+5tslKhN/9cYRU2BYVAnU1Qin2K9g3ABPAL"
+  }
+}

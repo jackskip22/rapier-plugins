@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Reenie Beanie",
+  "sourceRank": 251,
+  "sourcePosition": 490,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/reeniebeanie/METADATA.pb",
+    "sri": "sha384-j1Q454fIa165FSBk8Tvsx07RCdqrtN85s6n9tHDjMeY9nC53YzbAubGGlQ9LWayS"
+  },
+  "files": [
+    {
+      "name": "font-d01de6d74800bc9a2d6183d5b08f1e827bf54ebb13341e770a89068ca88c4bb20f50c47b8167f709395cdac15bc39477.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/reeniebeanie/ReenieBeanie.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/reeniebeanie/ReenieBeanie.ttf",
+      "sourceBytes": 147036,
+      "sourceSri": "sha384-6CsRVgx0KqZBwTZsUxvtlBKvw+rPQa8wkk5S2y6GVoHmgzSgsZRDwl1B5Bajgfdc",
+      "bytes": 40936,
+      "sri": "sha384-0B3m10gAvJotYYPVsI8egnv1TrsTNB53CokGjKiMS7IPUMR7gWf3CTlc2sFbw5R3",
+      "axes": [],
+      "cmapCodepoints": 320,
+      "glyphs": 318
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/reeniebeanie/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/reeniebeanie/OFL.txt",
+    "bytes": 4452,
+    "sri": "sha384-yx8SGVNFWcQm/Odw/0IdDylWw+o3RQM3texTWzFp9uvY0TsmEHYiKuKnKaUaTzim"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Bubbler One",
+  "sourceRank": 295,
+  "sourcePosition": 571,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bubblerone/METADATA.pb",
+    "sri": "sha384-EyHnPlUYfhXJ76o1SndZG+yDNTrFvaUBiv1HvqiAkX0GgTPHu6bui0eJVJfkC5o+"
+  },
+  "files": [
+    {
+      "name": "font-30986869a8c9a95f8f4d72e023f00858be24e20df7083fa50ebd42e2bf9384990a3618f5aa2c4fb14774cad25c89d252.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bubblerone/BubblerOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bubblerone/BubblerOne-Regular.ttf",
+      "sourceBytes": 31260,
+      "sourceSri": "sha384-ouYuRbU33C1DEQaMwRcMVoT0Uox2IH8CRUZxNg1rvQNapn7+7HXuzt1kIs3GpHer",
+      "bytes": 10844,
+      "sri": "sha384-MJhoaajJqV+PTXLgI/AIWL4k4g33CD+lDr1C4r+ThJkKNhj1qixPsUd0ytJcidJS",
+      "axes": [],
+      "cmapCodepoints": 217,
+      "glyphs": 220
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bubblerone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bubblerone/OFL.txt",
+    "bytes": 4490,
+    "sri": "sha384-LKN+nFUv4WDReuyDmR74XTDGa6aAYFd+qSFwJHuK2tirFQQTLFx0GO8jDqbh69G7"
+  }
+}

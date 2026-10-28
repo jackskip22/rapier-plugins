@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Miranda Sans",
+  "sourceRank": 27,
+  "sourcePosition": 64,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mirandasans/METADATA.pb",
+    "sri": "sha384-OiwhB8yaFuWyu28FlCt4NiShsOP5vE/ReMO3mxBFsBdnRq30KkV/8I3otQKHJDkv"
+  },
+  "files": [
+    {
+      "name": "font-28fa6a0322085b4746826d4e8535a02b83eafcff2b3521a76ec39ba862bb2a3c57d8553e038ee88ff9e0b6db2beeb465.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/mirandasans/MirandaSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mirandasans/MirandaSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 82528,
+      "sourceSri": "sha384-UvY7k4/a6unHW/yvMXpuquvgJ5v0JEZrSAeug/mwfo0AAyIKmDvA1C99GKnsywqv",
+      "bytes": 31240,
+      "sri": "sha384-KPpqAyIIW0dGgm1OhTWgK4Pq/P8rNSGnbsObqGK7KjxX2FU+A47oj/ngttsr7rRl",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 439,
+      "glyphs": 460
+    },
+    {
+      "name": "font-7f2013a105a285e0ffadb4221195eb36c8a4a5d764e7c551d1104a06886d0f4e5ee42612a4b8bdce2103ad2d9d413dbc.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mirandasans/MirandaSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mirandasans/MirandaSans%5Bwght%5D.ttf",
+      "sourceBytes": 79716,
+      "sourceSri": "sha384-QoioktKXMyyCSKN8FuZW3TZ8kQrArUkY45Gc12MpdbKZ1FXqwU3vqC+WUKyHxXxf",
+      "bytes": 28312,
+      "sri": "sha384-fyAToQWiheD/rbQiEZXrNsikpddk58VR0RBKBohtD05e5CYSpLi9ziEDrS2dQT28",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 439,
+      "glyphs": 460
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mirandasans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mirandasans/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-4bwyyzwZZzDte8I/maF3Scz8FVTuckRlE9xuUgdlrp6pz4FiNPv2TAm/X/4NvUlg"
+  }
+}
