@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Ma Shan Zheng",
+  "sourceRank": 398,
+  "sourcePosition": 756,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mashanzheng/METADATA.pb",
+    "sri": "sha384-lUgWzmQhKLirP0Jt2sNmShElLBoEoaDFC05ebtDsxKK/NI4+v9HJxbgyfT/f5aG4"
+  },
+  "files": [
+    {
+      "name": "font-599262d1ddbf497c885e89503c29e9f8c01be714a67cc18cf096a4b10e038a84fe9d8f4c4e20ee79e421877aec5ee74e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mashanzheng/MaShanZheng-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mashanzheng/MaShanZheng-Regular.ttf",
+      "sourceBytes": 5857936,
+      "sourceSri": "sha384-of9kL0WWR3RhFZcrZJRrNmCD5A4er9zEZgK6xwYzbzmXgmlzSmPGp4vtE+VzHCTw",
+      "bytes": 3250468,
+      "sri": "sha384-WZJi0d2/SXyIXolQPCnp+MAb5xSmfMGM8JaksQ4DioT+nY9MTiDueeQhh3rsXudO",
+      "axes": [],
+      "cmapCodepoints": 7015,
+      "glyphs": 7017
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mashanzheng/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mashanzheng/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-zSwNDWQZlfWjM63H3/R+UR7SM0+UFFvWm4kL2WQjvKBr8MVaNZJ3DYU5Eqt4ozEB"
+  }
+}

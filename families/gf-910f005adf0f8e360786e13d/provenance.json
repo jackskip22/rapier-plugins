@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Yuji Mai",
+  "sourceRank": 186,
+  "sourcePosition": 377,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yujimai/METADATA.pb",
+    "sri": "sha384-JjbmZ+3yGaK8gfEX7EbEwJKL/PYSZhkZW/ojQS6BljGDDfQPMdS4XgnQfnL7HzJo"
+  },
+  "files": [
+    {
+      "name": "font-6ca7a5d9f8c7b2328971e6d80507af27d0ce3fa0af3eab0765708449571a441b43dceec09cc9c2f5416d2ee909e8be59.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/yujimai/YujiMai-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yujimai/YujiMai-Regular.ttf",
+      "sourceBytes": 8496292,
+      "sourceSri": "sha384-hy/rc86j+zBLm+6ELjniAIlTt1BUXxsw5IfvuqYUhcV0FCyDopAsnvEIdEPMwwQX",
+      "bytes": 4090232,
+      "sri": "sha384-bKel2fjHsjKJcebYBQevJ9DOP6CvPqsHZXCESVcaRBtD3O7AnMnC9UFtLukJ6L5Z",
+      "axes": [],
+      "cmapCodepoints": 8013,
+      "glyphs": 9504
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/yujimai/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yujimai/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-TGKsfuHT3yony/nODN6xWuIvxOt86hppL78vcVHvM89RArBgGSsjWYyTovzzzkvF"
+  }
+}

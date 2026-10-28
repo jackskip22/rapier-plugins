@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Sans KR",
+  "sourceRank": 23,
+  "sourcePosition": 53,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanskr/METADATA.pb",
+    "sri": "sha384-Q93M4O2eYSGiQNqoOPDtejnWzNwxr+vJBpS5jmbvpOlq8Qn2UNeRQOBYVNTzPGqP"
+  },
+  "files": [
+    {
+      "name": "font-07c1f87b703559b14211b510846a6391ee78a59593263c987a3ffaed387d756fc763bc6ae24667d2e08ac3d16769111d.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/notosanskr/NotoSansKR[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanskr/NotoSansKR%5Bwght%5D.ttf",
+      "sourceBytes": 10414588,
+      "sourceSri": "sha384-oYMifP5HT7A/U0wlzBJhOcAzRArutWf2a8l2D8BFwXIOf89qynFeQmYZed7M3fvg",
+      "bytes": 3907912,
+      "sri": "sha384-B8H4e3A1WbFCEbUQhGpjke54pZWTJjyYej/67Th9dW/HY7xq4kZn0uCKw9FnaREd",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 23174,
+      "glyphs": 24964
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanskr/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanskr/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-wm46GclKovWLGccokvZ+eK1MuCbFfYi5WI9m9/8l1QhHAdwaA34I2yzmBk+nmjwb"
+  }
+}

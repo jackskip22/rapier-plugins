@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Yuji Syuku",
+  "sourceRank": 542,
+  "sourcePosition": 993,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yujisyuku/METADATA.pb",
+    "sri": "sha384-Bfsrby1nUTYIRdiqSMfhdE33oYtta41x+8qXom2jK1XXG27yxyxVSq7MT0bki9kT"
+  },
+  "files": [
+    {
+      "name": "font-c7a853f49f4b38720e841daa6bcdec4d8fe8ef6b01bed2490e508821d4e68a9ff844ffa9fd970b53da7c6358815a9fb8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/yujisyuku/YujiSyuku-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yujisyuku/YujiSyuku-Regular.ttf",
+      "sourceBytes": 8430348,
+      "sourceSri": "sha384-N/vrkCqn2U/mPRp6Uj+i6Qjv0a/PKAnm2Tjvo9um0wJufUfQG/XvAOsgtaCErIew",
+      "bytes": 4067552,
+      "sri": "sha384-x6hT9J9LOHIOhB2qa83sTY/o72sBvtJJDlCIIdTmip/4RP+p/ZcLU9p8Y1iBWp+4",
+      "axes": [],
+      "cmapCodepoints": 8013,
+      "glyphs": 9504
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/yujisyuku/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yujisyuku/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-TGKsfuHT3yony/nODN6xWuIvxOt86hppL78vcVHvM89RArBgGSsjWYyTovzzzkvF"
+  }
+}

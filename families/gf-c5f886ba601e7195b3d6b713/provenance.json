@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "name": "Roboto Serif",
+  "sourceRank": 83,
+  "sourcePosition": 171,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotoserif/METADATA.pb",
+    "sri": "sha384-CpTgDkLTiSph0inQnAs/6E1YQCUx1wvRRG4+eweqS9NWPAWEKrqzgWq9Z0KePLFp"
+  },
+  "files": [
+    {
+      "name": "font-9d182da2da412cf83d1499c61cc2fbf5f96f129431b60d2cbe08010274a9fecdaf2fddc6d251fc129832d04996e5edac.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/robotoserif/RobotoSerif-Italic[GRAD,opsz,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotoserif/RobotoSerif-Italic%5BGRAD%2Copsz%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 4680368,
+      "sourceSri": "sha384-S4f9/9YKY77O8GQUEPGDKa9Kvbeui6uJbzM/7HtYoG1okgHc85zUEdEbgYHV6o4K",
+      "bytes": 2005440,
+      "sri": "sha384-nRgtotpBLPg9FJnGHML79flvEpQxtg0svggBAnSp/s2vL93G0lH8Epgy0EmW5e2s",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 50,
+          "default": 100,
+          "max": 150,
+          "name": "Width"
+        },
+        {
+          "tag": "opsz",
+          "min": 8,
+          "default": 20,
+          "max": 144,
+          "name": "Optical Size"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "GRAD",
+          "min": -50,
+          "default": 0,
+          "max": 100,
+          "name": "Grade"
+        }
+      ],
+      "cmapCodepoints": 919,
+      "glyphs": 1243
+    },
+    {
+      "name": "font-c9dd9bae96facf03088f10bc96f1233ea7aa3bce6f7b97e525d40e36c7c222978dd07d733fb5bf365713cf2262264c09.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/robotoserif/RobotoSerif[GRAD,opsz,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotoserif/RobotoSerif%5BGRAD%2Copsz%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 3944924,
+      "sourceSri": "sha384-SlEeZWk+ULgDVzXPdgHvJTQA0sIhKp97PUeKxX0le2quGrhRDGXlj9RRKIJiCk0C",
+      "bytes": 1588244,
+      "sri": "sha384-yd2brpb6zwMIjxC8lvEjPqeqO85ve5flJdQONsfCIpeN0H1zP7W/NlcTzyJiJkwJ",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 50,
+          "default": 100,
+          "max": 150,
+          "name": "Width"
+        },
+        {
+          "tag": "opsz",
+          "min": 8,
+          "default": 20,
+          "max": 144,
+          "name": "Optical Size"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "GRAD",
+          "min": -50,
+          "default": 0,
+          "max": 100,
+          "name": "Grade"
+        }
+      ],
+      "cmapCodepoints": 919,
+      "glyphs": 1264
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/robotoserif/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotoserif/OFL.txt",
+    "bytes": 4489,
+    "sri": "sha384-53RqNpXXQfZD9toAKc0d0lLWL4k6FNpnGD2M3lte/uRPQ/7HOktOvr/hPhibne6E"
+  }
+}
