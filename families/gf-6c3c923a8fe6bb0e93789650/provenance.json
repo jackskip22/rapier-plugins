@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Nanum Brush Script",
+  "sourceRank": 260,
+  "sourcePosition": 508,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nanumbrushscript/METADATA.pb",
+    "sri": "sha384-6NuD8E8wj0wJJMjqu5aQPAKYkCezrS0ytlMNNMqpvnEKmO4OL6jnhH3Fv9hlcWeM"
+  },
+  "files": [
+    {
+      "name": "font-f11cbc3b60c4f0a4645f7e4e49697afd638a7e41101691c8c4a5355b7ed9686be1ee97905bfcf2d5dc8b7d51ae359711.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/nanumbrushscript/NanumBrushScript-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nanumbrushscript/NanumBrushScript-Regular.ttf",
+      "sourceBytes": 3564804,
+      "sourceSri": "sha384-liObZMz+uSBZY0a9uYZ+KTS+QU2sS47S7HvO0RLVukhd5EdT8xbpKTB2Qu80CkpF",
+      "bytes": 594384,
+      "sri": "sha384-8Ry8O2DE8KRkX35OSWl6/WOKfkEQFpHIxKU1W37ZaGvh7peQW/zy1dyLfVGuNZcR",
+      "axes": [],
+      "cmapCodepoints": 11789,
+      "glyphs": 13799
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/nanumbrushscript/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nanumbrushscript/OFL.txt",
+    "bytes": 4534,
+    "sri": "sha384-5WCE0W2coA2ClauM9msyBxVpqYHQaXmqh5mN30WbjYBxKVO4zAQ1eGAa1goAvqS+"
+  }
+}

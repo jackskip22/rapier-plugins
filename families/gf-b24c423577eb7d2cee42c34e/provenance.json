@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Amiri",
+  "sourceRank": 146,
+  "sourcePosition": 297,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiri/METADATA.pb",
+    "sri": "sha384-Gw8dArxrP27VIgNmDnF+8g5RO/8GG/Lya2LXrROrYmT7/ZzBTOSJLId1DcxVfbX4"
+  },
+  "files": [
+    {
+      "name": "font-9eea368ff7bf6ba432ec18a5d414cb6763a2f5460f1352c534c2fb5812dbd6fe92a855dc918526c89134c0e9de5c9595.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/amiri/Amiri-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiri/Amiri-Bold.ttf",
+      "sourceBytes": 413480,
+      "sourceSri": "sha384-XYAkxnKI3uB3ljcdOOq6Yglk9VfjJ86UN0ndvlBaCLFHjews0LHiCIznSqlph4gN",
+      "bytes": 140224,
+      "sri": "sha384-nuo2j/e/a6Qy7Bil1BTLZ2Oi9UYPE1LFNML7WBLb1v6SqFXckYUmyJE0wOneXJWV",
+      "axes": [],
+      "cmapCodepoints": 1548,
+      "glyphs": 6551
+    },
+    {
+      "name": "font-6f416f53e576b27aab7943e72ca2364f991ef914a4f40bb3c8eeda1a9e2cde1afc640d056d8cc4de85bea4b7d2d26157.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/amiri/Amiri-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiri/Amiri-BoldItalic.ttf",
+      "sourceBytes": 409692,
+      "sourceSri": "sha384-u+9p94dN1jlt9BBKn75qElGDB4Ai2ImnsrfBWF2hiM20LIX1J55HrwYq9lDAHs2R",
+      "bytes": 143192,
+      "sri": "sha384-b0FvU+V2snqreUPnLKI2T5ke+RSk9AuzyO7aGp4s3hr8ZA0FbYzE3oW+pLfS0mFX",
+      "axes": [],
+      "cmapCodepoints": 1549,
+      "glyphs": 6555
+    },
+    {
+      "name": "font-6f5e56e0c0d9b7df637f49dac38afb02d808ab167a384af699a01732ed753258515fbcc34c6385bb0d3ab5190ac2ab27.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/amiri/Amiri-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiri/Amiri-Italic.ttf",
+      "sourceBytes": 428532,
+      "sourceSri": "sha384-WQkiFrMKmPqvMaZhzYl+NKbxrzWvyC9K6dHxTXu/PHdiO/Hl9LqNshnZFtP58SM6",
+      "bytes": 151888,
+      "sri": "sha384-b15W4MDZt99jf0naw4r7AtgIqxZ6OEr2maAXMu11MlhRX7zDTGOFuw06tRkKwqsn",
+      "axes": [],
+      "cmapCodepoints": 1693,
+      "glyphs": 6705
+    },
+    {
+      "name": "font-8e76d7fd02f3199257fb3ce73496c2048f41deaa83ea0c44789318e943137d2f40e35e6bab8f958361fdc7c29cce9c91.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/amiri/Amiri-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiri/Amiri-Regular.ttf",
+      "sourceBytes": 431116,
+      "sourceSri": "sha384-2APj4MLEQIomyyOLMBzgZW05YCsHdB17prOeAw82jXPNMCzg452NbmqsgTINOib4",
+      "bytes": 149424,
+      "sri": "sha384-jnbX/QLzGZJX+zznNJbCBI9B3qqD6gxEeJMY6UMTfS9A415rq4+Vg2H9x8KczpyR",
+      "axes": [],
+      "cmapCodepoints": 1699,
+      "glyphs": 6710
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/amiri/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/amiri/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-qLEwY6VeKzQVMvYZGLFD+974ZuF8q/WQcTuDhVS6X5ysR9DCFBTrFJGMC42f1LIl"
+  }
+}

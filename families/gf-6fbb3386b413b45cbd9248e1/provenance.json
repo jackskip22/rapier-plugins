@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sawarabi Gothic",
+  "sourceRank": 97,
+  "sourcePosition": 198,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sawarabigothic/METADATA.pb",
+    "sri": "sha384-gtz/RaBwsAPymc1QUMD64uHFRy7LmBB384t+25Yk9JLpO5Sq0RY6balKHcC0rff+"
+  },
+  "files": [
+    {
+      "name": "font-2a819ebb52dbe762386647a2bb931521a735db7cc0badd7a772887acef8e7fabeda8a638cfb1f83369b025d41415a137.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sawarabigothic/SawarabiGothic-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sawarabigothic/SawarabiGothic-Regular.ttf",
+      "sourceBytes": 1902848,
+      "sourceSri": "sha384-+TvPI8V+V41vtoJQcqFgbx6Z/1LZ5sgsAWx9SJOo5fUc0G41h4lsGfa5d4bwMcsP",
+      "bytes": 781132,
+      "sri": "sha384-KoGeu1Lb52I4Zkeiu5MVIac123zAut16dyiHrO+Of6vtqKY4z7H4M2mwJdQUFaE3",
+      "axes": [],
+      "cmapCodepoints": 6884,
+      "glyphs": 6945
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sawarabigothic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sawarabigothic/OFL.txt",
+    "bytes": 4355,
+    "sri": "sha384-gHMhEWj/BIUJfos/Y8MJCIU02Mqhmf1gZ2IA9V0c2pPXVCjqemAcUkxdhlQhe506"
+  }
+}

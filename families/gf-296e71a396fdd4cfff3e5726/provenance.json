@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Karma",
+  "sourceRank": 13,
+  "sourcePosition": 31,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/karma/METADATA.pb",
+    "sri": "sha384-pKAtqzUFFUQlSRPsOkk2fxW6+LmSU++ZB4Xa8Y5E1lbvM4b6D32Qtv3HDqSup8u5"
+  },
+  "files": [
+    {
+      "name": "font-ce462af5dd147743c12c0bcb5c88efc3d785c90346922ef994434329f711c6e4e62292824a71bed3589ec05823846471.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/karma/Karma-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/karma/Karma-Bold.ttf",
+      "sourceBytes": 346620,
+      "sourceSri": "sha384-yUK0qwgdc+7aX7PZvF/gDeUrqCSeFnxkAghV13xIqivfRzUsfXWAD6HRbe/mlXgi",
+      "bytes": 109236,
+      "sri": "sha384-zkYq9d0Ud0PBLAvLXIjvw9eFyQNGki75lENDKfcRxuTmIpKCSnG+01iewFgjhGRx",
+      "axes": [],
+      "cmapCodepoints": 490,
+      "glyphs": 1167
+    },
+    {
+      "name": "font-21d4d1ee7781caaba6066a42435faa6485e3b56dd1f14f6880947d3f3c86a284902eabb16825dfc9b967d1ba2153e40c.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/karma/Karma-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/karma/Karma-Light.ttf",
+      "sourceBytes": 315108,
+      "sourceSri": "sha384-aytlWY5rHpgCAheP5z+GZkvRHQ8VIqtjnLBXmUmRGcs2fUeNe8/gFkVUEnleF447",
+      "bytes": 99420,
+      "sri": "sha384-IdTR7neByqumBmpCQ1+qZIXjtW3R8U9ogJR9PzyGooSQLquxaCXfybln0bohU+QM",
+      "axes": [],
+      "cmapCodepoints": 490,
+      "glyphs": 1167
+    },
+    {
+      "name": "font-416a9e84d3ac3124599e7c7b6c82186a6f16a6c0a942e5ae852207d1938931716a2d9c95a0d6b11671dc323649588c48.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/karma/Karma-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/karma/Karma-Medium.ttf",
+      "sourceBytes": 335956,
+      "sourceSri": "sha384-mc1jSuwgvCE690FoQpwXRy3ZlGc60c3fHrrlqZS0zzFdse3MD8JoQcOuFjLd4R4j",
+      "bytes": 114548,
+      "sri": "sha384-QWqehNOsMSRZnnx7bIIYam8WpsCpQuWuhSIH0ZOJMXFqLZyVoNaxFnHcMjZJWIxI",
+      "axes": [],
+      "cmapCodepoints": 490,
+      "glyphs": 1167
+    },
+    {
+      "name": "font-da65961cf36ca559703db49ac5825b59deffb5e4779ae1361d831630555f6d862a497919d98a9393a2c726fe9bf419a2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/karma/Karma-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/karma/Karma-Regular.ttf",
+      "sourceBytes": 339812,
+      "sourceSri": "sha384-byjF15Yc9mtNEFzol/r1D5hUExTJUK2sFlxBI9S4ExFUg71JaHeKAaFqhM7/Guwa",
+      "bytes": 112448,
+      "sri": "sha384-2mWWHPNspVlwPbSaxYJbWd7/teR3muE2HYMWMFVfbYYqSXkZ2YqTk6LHJv6b9Bmi",
+      "axes": [],
+      "cmapCodepoints": 490,
+      "glyphs": 1167
+    },
+    {
+      "name": "font-1c16842287f8120bbf44db52f1cfc7dba69aefeacb56d90d6f468ddaa6ebcdefe1650373d3916a4a76abae3b61fe5e5b.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/karma/Karma-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/karma/Karma-SemiBold.ttf",
+      "sourceBytes": 335912,
+      "sourceSri": "sha384-xNIdk3sgpuyS1o3DCm7gw7UjX0VrP8w3mg7h8O2s5uytJHxQPC3CBE6nE7T/QEKC",
+      "bytes": 114536,
+      "sri": "sha384-HBaEIof4Egu/RNtS8c/H26aa7+rLVtkNb0aN2qbrze/hZQNz05FqSnarrjth/l5b",
+      "axes": [],
+      "cmapCodepoints": 490,
+      "glyphs": 1167
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/karma/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/karma/OFL.txt",
+    "bytes": 4373,
+    "sri": "sha384-+3wQjINRbHICMVOvmBJ+qwDqejxTITbFtpTm1TUF4DxQkZXm1nVdM1WUpnROScub"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Hind Guntur",
+  "sourceRank": 122,
+  "sourcePosition": 249,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindguntur/METADATA.pb",
+    "sri": "sha384-v6U2PT04Fa2eiI8x9Ycm6vq2ZTtliW9wpSN7tM+lgGu0QlPd5+MltVQla4dijAkC"
+  },
+  "files": [
+    {
+      "name": "font-e56fd007127d29f4a93374003a5a81744c4a3a337e06fa8ea94cf6d6b9a747388f62a4974806fcc14e2702158f82bdfc.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/hindguntur/HindGuntur-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindguntur/HindGuntur-Bold.ttf",
+      "sourceBytes": 340816,
+      "sourceSri": "sha384-9Y+Vuuk3NoWayECLdctTm/Xe+s6+bmT8J8Rrn6ffmGQyJ3FcC/PHADEVUFESH+V6",
+      "bytes": 87372,
+      "sri": "sha384-5W/QBxJ9KfSpM3QAOlqBdExKOjN+BvqOqUz21rmnRziPYqSXSAb8wU4nAhWPgr38",
+      "axes": [],
+      "cmapCodepoints": 409,
+      "glyphs": 894
+    },
+    {
+      "name": "font-5c80554d2e2d672f647f567cc85623d80e2126ed5a024a98216f645784591e4538a1fdb3113705df4ae456212ea7acfa.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/hindguntur/HindGuntur-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindguntur/HindGuntur-Light.ttf",
+      "sourceBytes": 307852,
+      "sourceSri": "sha384-6mCO9FN1stxM5EPgW92Vgw1UPuoUOnzDPJnOuI0UXLnJTZChalCLU1Bl34fOUayi",
+      "bytes": 85304,
+      "sri": "sha384-XIBVTS4tZy9kf1Z8yFYj2A4hJu1aAkqYIW9kV4RZHkU4of2zETcF30rkViEup6z6",
+      "axes": [],
+      "cmapCodepoints": 409,
+      "glyphs": 894
+    },
+    {
+      "name": "font-0e3181ab5ead3c7599abeb65769f50b8a1f422d04dcf523e8564a28d220badd24783c2f7bd74f725b285b120122db3f2.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/hindguntur/HindGuntur-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindguntur/HindGuntur-Medium.ttf",
+      "sourceBytes": 321408,
+      "sourceSri": "sha384-+kCUsr4ZcBXfsgEGeTwxWoSU4QnHimTdQ7cEER++PGF7ovFWZiJm2sCyP9KtH2dy",
+      "bytes": 89820,
+      "sri": "sha384-DjGBq16tPHWZq+tldp9QuKH0ItBNz1I+hWSijSILrdJHg8L3vXT3JbKFsSASLbPy",
+      "axes": [],
+      "cmapCodepoints": 409,
+      "glyphs": 894
+    },
+    {
+      "name": "font-7b56f74b2672f6e9ecedc9766f0f52c8b004aa798456322f3afd917928fa0594e916ea3e7fca2d97c0bd3bb1ff8b5c08.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/hindguntur/HindGuntur-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindguntur/HindGuntur-Regular.ttf",
+      "sourceBytes": 322564,
+      "sourceSri": "sha384-DM6j2P6qHvhpV39R9sY7Pn0H/KSYlKzCsP/zlWCsq3Uq8r1DjyBexxy9MKiejKdC",
+      "bytes": 89276,
+      "sri": "sha384-e1b3SyZy9uns7cl2bw9SyLAEqnmEVjIvOv2ReSj6BZTpFuo+f8otl8C9O7H/i1wI",
+      "axes": [],
+      "cmapCodepoints": 409,
+      "glyphs": 894
+    },
+    {
+      "name": "font-00b358c7d095b88b0d701415ff209d1216d31987550cc2a893c12ffcffcdbe978938e1c524effdcf0eb585a44dacd4f7.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/hindguntur/HindGuntur-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindguntur/HindGuntur-SemiBold.ttf",
+      "sourceBytes": 326228,
+      "sourceSri": "sha384-mEPeBbq4o94z3oVTYCBxvLHq2vbaiAETwUt/UtU3FxK+lvN1tvmArf2wh1UvqAt1",
+      "bytes": 90192,
+      "sri": "sha384-ALNYx9CVuIsNcBQV/yCdEhbTGYdVDMKok8Ev/P/NvpeJOOHFJO/9zw61haRNrNT3",
+      "axes": [],
+      "cmapCodepoints": 409,
+      "glyphs": 894
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hindguntur/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindguntur/OFL.txt",
+    "bytes": 4371,
+    "sri": "sha384-Gs6EWE6QSRE+Bdg/S3RzlASSnVwLlR99HOjsxH7wPxMAoXKA6ECZWO/YjZeN8l6m"
+  }
+}

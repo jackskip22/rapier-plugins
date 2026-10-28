@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Halant",
+  "sourceRank": 489,
+  "sourcePosition": 920,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/halant/METADATA.pb",
+    "sri": "sha384-8x0c1bilUGZZbEAKZSlZx4RS492H1I+Ej041VxACguwTEu++BiftMJlgN08g5v5g"
+  },
+  "files": [
+    {
+      "name": "font-a6d28dd3b0466d33300c10b20415b152b1ad2c26fe02ab75c5904715929611eb5f1ab69994ebe3cf2cd621e92d1342e4.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/halant/Halant-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/halant/Halant-Bold.ttf",
+      "sourceBytes": 306388,
+      "sourceSri": "sha384-XiNAqH58jASev0rIRryVN+13LcRTCsQKXgoi/zB58oNuS3qALCGYt/UZaLJN0Mxe",
+      "bytes": 100528,
+      "sri": "sha384-ptKN07BGbTMwDBCyBBWxUrGtLCb+Aqt1xZBHFZKWEetfGraZlOvjzyzWIektE0Lk",
+      "axes": [],
+      "cmapCodepoints": 339,
+      "glyphs": 931
+    },
+    {
+      "name": "font-f6e802e4c318a67f6f1b81056a0a281676791c1161240034b158fee75de6f8fa5c05c6472ab70dedc2153ac8369f48e0.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/halant/Halant-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/halant/Halant-Light.ttf",
+      "sourceBytes": 334772,
+      "sourceSri": "sha384-jsM9PWxo3KtYX/KI+7R78jlsJ7+T6pndMdVYBc8u87nXrjT7aOpvjV26CEbokK1+",
+      "bytes": 99216,
+      "sri": "sha384-9ugC5MMYpn9vG4EFagooFnZ5HBFhJAA0sVj+513m+PpcBcZHKrcN7cIVOsg2n0jg",
+      "axes": [],
+      "cmapCodepoints": 339,
+      "glyphs": 931
+    },
+    {
+      "name": "font-0a15bf79f5a2e3e7a9b9998e5246cc4edc01578f5444dec9f5829c57b2939cebaa61f39e216c6c59a08125abd2058c8a.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/halant/Halant-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/halant/Halant-Medium.ttf",
+      "sourceBytes": 267908,
+      "sourceSri": "sha384-IH5KdCpTm3qJ/6CIN3e0tYXpL13uXfF4unxgzVpaJg/AnFrk4fKOKNQhvpwLqgKp",
+      "bytes": 95240,
+      "sri": "sha384-ChW/efWi4+epuZmOUkbMTtwBV49URN7J9YKcV7KTnOuqYfOeIWxsWaCBJavSBYyK",
+      "axes": [],
+      "cmapCodepoints": 339,
+      "glyphs": 931
+    },
+    {
+      "name": "font-3ac3e1d471d9b097afd906805ba2e8ecec126b34ae8a824142785f992644ed862f809cf5a78e1d318387cef2aa4ebf1e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/halant/Halant-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/halant/Halant-Regular.ttf",
+      "sourceBytes": 289408,
+      "sourceSri": "sha384-TiRSbLMAzUiHBLZIY2huvKPlEPp5CSjdbVTyt/gis+XHOKC91nC8NgIKhEQYkk/W",
+      "bytes": 98808,
+      "sri": "sha384-OsPh1HHZsJev2QaAW6Lo7OwSazSuioJBQnhfmSZE7YYvgJz1p44dMYOHzvKqTr8e",
+      "axes": [],
+      "cmapCodepoints": 339,
+      "glyphs": 931
+    },
+    {
+      "name": "font-608be44e4e95b776fb614c44031e08693c5ec4dd913ea4d0f1c3215f02237ccbef627ec4efaf6243daa1a1a55cb29505.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/halant/Halant-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/halant/Halant-SemiBold.ttf",
+      "sourceBytes": 276284,
+      "sourceSri": "sha384-Dtzbr/Y+TFFSzl+czpnGq2/X8s1AIsr+fc3fnwMs1ZwDpLBBWo7V3wmExVBsDnSz",
+      "bytes": 96604,
+      "sri": "sha384-YIvkTk6Vt3b7YUxEAx4IaTxexN2RPqTQ8cMhXwIjfMvvYn7E769iQ9qhoaVcspUF",
+      "axes": [],
+      "cmapCodepoints": 339,
+      "glyphs": 931
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/halant/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/halant/OFL.txt",
+    "bytes": 4373,
+    "sri": "sha384-+3wQjINRbHICMVOvmBJ+qwDqejxTITbFtpTm1TUF4DxQkZXm1nVdM1WUpnROScub"
+  }
+}

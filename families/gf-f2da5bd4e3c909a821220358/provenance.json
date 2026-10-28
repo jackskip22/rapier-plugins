@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Caudex",
+  "sourceRank": 441,
+  "sourcePosition": 841,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caudex/METADATA.pb",
+    "sri": "sha384-K9EZntDz6bK6ayiOZ4D3CXnpAZf4YSR5VaR9rNhAOhENU6r/w9c1NPU3bYUJJTrQ"
+  },
+  "files": [
+    {
+      "name": "font-ae9c9ba57819e179ce4fd455e6dfe5fdc8c2d8b1b795151db5109f00f6fb958fa6bc265bd765f055f9735d6bb3e3f1eb.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/caudex/Caudex-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caudex/Caudex-Bold.ttf",
+      "sourceBytes": 471708,
+      "sourceSri": "sha384-twrejhthgiAC9G8vgp5ieQUu+pkSuC6M57yppswYovysrw/VFx2DZzRTZGx37JJT",
+      "bytes": 115200,
+      "sri": "sha384-rpybpXgZ4XnOT9RV5t/l/cjC2LG3lRUdtRCfAPb7lY+mvCZb12XwVflzXWuz4/Hr",
+      "axes": [],
+      "cmapCodepoints": 2014,
+      "glyphs": 2017
+    },
+    {
+      "name": "font-e6aa881561d0032860dea37e2a1de9fba7ea2c1dad176e76812092846b45c4dfc63dee7399c0c2b02b8443f8ec1718aa.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/caudex/Caudex-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caudex/Caudex-BoldItalic.ttf",
+      "sourceBytes": 555156,
+      "sourceSri": "sha384-D+8SbQOuqusp5L5fIJUBlytoukD/1c4STAAv1eoW6NnsvmLj/gqsMJ5yWKxmQrgs",
+      "bytes": 129976,
+      "sri": "sha384-5qqIFWHQAyhg3qN+Kh3p+6fqLB2tF252gSCShGtFxN/GPe5zmcDCsCuEQ/jsFxiq",
+      "axes": [],
+      "cmapCodepoints": 2014,
+      "glyphs": 2017
+    },
+    {
+      "name": "font-eab801fde184c0686ef3715fd8d4ad7a9170408843d7e30c839ce67625632ce3210c1bbe2b695bb385b5805157e14340.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/caudex/Caudex-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caudex/Caudex-Italic.ttf",
+      "sourceBytes": 559440,
+      "sourceSri": "sha384-pS9qiM9bqUZ44+94bTGypTSco2ei3yjWFEkLt85n7WfywsTh8+uwJOvWXwkJ8rSG",
+      "bytes": 124168,
+      "sri": "sha384-6rgB/eGEwGhu83Ff2NStepFwQIhD1+MMg5zmdiVjLOMhDBu+K2lbs4W1gFFX4UNA",
+      "axes": [],
+      "cmapCodepoints": 2014,
+      "glyphs": 2017
+    },
+    {
+      "name": "font-7f91c6e64e384852de1bfcbfdf2b68f2944e0859aa2f9a906d82a47a13834d76e1db1d78e2a6dbe572ab87f941227458.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/caudex/Caudex-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caudex/Caudex-Regular.ttf",
+      "sourceBytes": 466324,
+      "sourceSri": "sha384-56leB/Ffhc1R8q9q/kqKFnWMwnPxiLGdvWxUemlsHUp9QJ/UWmsG0/EfvHCvsMP9",
+      "bytes": 110000,
+      "sri": "sha384-f5HG5k44SFLeG/y/3yto8pROCFmqL5qQbYKkehODTXbh2x144qbb5XKrh/lBInRY",
+      "axes": [],
+      "cmapCodepoints": 2014,
+      "glyphs": 2017
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/caudex/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caudex/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-/D/o2Pzkk6ldOOo1lt9je6BmZ6COv+v1unIBT0Zqw0xgoedyx5QW5zMp5Sz7E4yi"
+  }
+}

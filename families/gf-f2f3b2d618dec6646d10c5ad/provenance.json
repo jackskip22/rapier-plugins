@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Hind Siliguri",
+  "sourceRank": 92,
+  "sourcePosition": 188,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindsiliguri/METADATA.pb",
+    "sri": "sha384-Sa8gnKkqq3NKY0iDeSJo6yWSWdQg38qQnCTbAY5vvNtyLS6frULCvevDJ0dEbyA/"
+  },
+  "files": [
+    {
+      "name": "font-5e0a004fb57488e59a8615b032fd0ec4e4650394df40d6cd18be71f2d2338eab6d9b65ad39f2e2f30b8193b25504138c.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/hindsiliguri/HindSiliguri-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindsiliguri/HindSiliguri-Bold.ttf",
+      "sourceBytes": 287660,
+      "sourceSri": "sha384-nncfuYIwqRMA76h0rPG3KQnLttObVpRN4xKii4cWfXoMAU+iwed+CxCLFpq1AhNe",
+      "bytes": 90688,
+      "sri": "sha384-XgoAT7V0iOWahhWwMv0OxORlA5TfQNbNGL5x8tIzjqttm2WtOfLi8wuBk7JVBBOM",
+      "axes": [],
+      "cmapCodepoints": 427,
+      "glyphs": 821
+    },
+    {
+      "name": "font-0bef96fa57787cb43ad31c36225f77d457290b04ac2810e9db0c032134241bc83839bf535c585287c4a5737b9c694737.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/hindsiliguri/HindSiliguri-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindsiliguri/HindSiliguri-Light.ttf",
+      "sourceBytes": 259344,
+      "sourceSri": "sha384-qXcvwWH9M+lNT4PUOgMFhMAObQB0i1RdtHJXkdYi5YTbSK/DiDD/XSWSe8h+7rfF",
+      "bytes": 84080,
+      "sri": "sha384-C++W+ld4fLQ60xw2Il931FcpCwSsKBDp2wwDITQkG8g4Ob9TXFhSh8Slc3ucaUc3",
+      "axes": [],
+      "cmapCodepoints": 427,
+      "glyphs": 821
+    },
+    {
+      "name": "font-83b718362b219e8a80d6ee4f76545edfe5e7427bb7b8ea4af440c597f722b3ebe253ae3741fa6430eb19c111305569b3.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/hindsiliguri/HindSiliguri-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindsiliguri/HindSiliguri-Medium.ttf",
+      "sourceBytes": 266516,
+      "sourceSri": "sha384-W2VU/Kjfhfz4TsBNmNewkyWVS8F6kMZskUPI0EhqROG6OKn0TEb9IE9tmy/X/mgY",
+      "bytes": 92168,
+      "sri": "sha384-g7cYNishnoqA1u5PdlRe3+XnQnu3uOpK9EDFl/cis+viU643QfpkMOsZwREwVWmz",
+      "axes": [],
+      "cmapCodepoints": 427,
+      "glyphs": 821
+    },
+    {
+      "name": "font-6e1a5a87b3f649e595e000f5e8415955c4c563b84f6e9fde014e6519a14d19aed86cc76cef3059333f9e4c5fcaf55c09.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/hindsiliguri/HindSiliguri-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindsiliguri/HindSiliguri-Regular.ttf",
+      "sourceBytes": 250052,
+      "sourceSri": "sha384-w/umxqgP8h7VCfgZ+HaQ1MPAh1VeSQ34dhzHm2btpSGPW0jWSJP/6F86mBMS/H+k",
+      "bytes": 88472,
+      "sri": "sha384-bhpah7P2SeWV4AD16EFZVcTFY7hPbp/eAU5lGaFNGa7YbMds7zBZMz+eTF/K9VwJ",
+      "axes": [],
+      "cmapCodepoints": 427,
+      "glyphs": 821
+    },
+    {
+      "name": "font-35414ea6e110f2843060c52f875bc92e5ee18fdbc2e124b8c62192a4bf19b03565bbc2727786b43059ecd897a3fbac55.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/hindsiliguri/HindSiliguri-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindsiliguri/HindSiliguri-SemiBold.ttf",
+      "sourceBytes": 272740,
+      "sourceSri": "sha384-s95KMAHJ+HXNv7X5JS1/BZnME53utWvYexRoyAfpeQ3JXh1oTmtUoSd0Clm8392i",
+      "bytes": 92988,
+      "sri": "sha384-NUFOpuEQ8oQwYMUvh1vJLl7hj9vC4SS4xiGSpL8ZsDVlu8Jyd4a0MFns2Jej+6xV",
+      "axes": [],
+      "cmapCodepoints": 427,
+      "glyphs": 821
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hindsiliguri/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindsiliguri/OFL.txt",
+    "bytes": 4371,
+    "sri": "sha384-Gs6EWE6QSRE+Bdg/S3RzlASSnVwLlR99HOjsxH7wPxMAoXKA6ECZWO/YjZeN8l6m"
+  }
+}

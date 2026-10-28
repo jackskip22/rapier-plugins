@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Kalam",
+  "sourceRank": 138,
+  "sourcePosition": 281,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalam/METADATA.pb",
+    "sri": "sha384-zeP5y0/A2xytBxkn5S4xMfcYM0g1VVLBVxiMf0pb+Uqmu2y4J+xXV7Zs07ZIhSLg"
+  },
+  "files": [
+    {
+      "name": "font-4dffd484c1403e3b8085f5cd6bf37e5068b1c38fac058d054c06f3babdcc10eb380b7e512cd19a0c1b883ac276845b37.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/kalam/Kalam-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalam/Kalam-Bold.ttf",
+      "sourceBytes": 460896,
+      "sourceSri": "sha384-LvgXfBqvyk/msRYgZ7Jhl6gAD1XSbVDyqGezWNj6zPLAgzR/S29TvA1fUIjJTDmP",
+      "bytes": 136368,
+      "sri": "sha384-Tf/UhMFAPjuAhfXNa/N+UGixw4+sBY0FTAbzur3MEOs4C35RLNGaDBuIOsJ2hFs3",
+      "axes": [],
+      "cmapCodepoints": 1026,
+      "glyphs": 1027
+    },
+    {
+      "name": "font-cc0894b57a47501774937d7fe19ebb7d81fe084fa2f9efc68830eace1d45d883deeaa4004c882fdc8b039eec0058841b.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/kalam/Kalam-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalam/Kalam-Light.ttf",
+      "sourceBytes": 437512,
+      "sourceSri": "sha384-2COgvVAgJY7XkW5V71Vc023zf5iMD5IHCAkkOxu+AaiXfjYHr8vooJqyr9Y1kq/J",
+      "bytes": 132592,
+      "sri": "sha384-zAiUtXpHUBd0k31/4Z67fYH+CE+i+e/GiDDqzh1F2IPe6qQATIgv3IsDnuwAWIQb",
+      "axes": [],
+      "cmapCodepoints": 1026,
+      "glyphs": 1027
+    },
+    {
+      "name": "font-10d05f815f54e5d62617bc44160b81e5f73b0c6bc3335480b8cfe7ecfc1586f50b2ae5a9664b657bd09ab1c3f7a8d809.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kalam/Kalam-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalam/Kalam-Regular.ttf",
+      "sourceBytes": 427360,
+      "sourceSri": "sha384-DrBgg7kcV7B+gS/f/awJ26NEzH9e3LmSrm8GOuFYYAxKtZNb3/fTsUBg7+uRVFhz",
+      "bytes": 137628,
+      "sri": "sha384-ENBfgV9U5dYmF7xEFguB5fc7DGvDM1SAuM/n7PwVhvULKuWpZktle9CascP3qNgJ",
+      "axes": [],
+      "cmapCodepoints": 1026,
+      "glyphs": 1027
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kalam/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalam/OFL.txt",
+    "bytes": 4373,
+    "sri": "sha384-+3wQjINRbHICMVOvmBJ+qwDqejxTITbFtpTm1TUF4DxQkZXm1nVdM1WUpnROScub"
+  }
+}

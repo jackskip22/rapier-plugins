@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "name": "Roboto Flex",
+  "sourceRank": 73,
+  "sourcePosition": 155,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotoflex/METADATA.pb",
+    "sri": "sha384-FGDIdhFsRxQV/m0YDZIv3gb5xvC+OAsUaJ+acX6hs7acGvw0A2l90XzB+kVnrplI"
+  },
+  "files": [
+    {
+      "name": "font-3de3868b054b1b99de014ceb81508bbd0ec8733910a97521e08cdd57a8b5e6b4fb6fbd7b1da7a5e2762d3dd6a81a7123.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/robotoflex/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotoflex/RobotoFlex%5BGRAD%2CXOPQ%2CXTRA%2CYOPQ%2CYTAS%2CYTDE%2CYTFI%2CYTLC%2CYTUC%2Copsz%2Cslnt%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 1787292,
+      "sourceSri": "sha384-Qgaig0/VnFgbEpbCfrA89PpOLaBj7lUlleD8nwSQyMMuw9814hXueLdxgDdjbhLd",
+      "bytes": 792368,
+      "sri": "sha384-PeOGiwVLG5neAUzrgVCLvQ7IczkQqXUh4IzdV6i15rT7b717Hael4nYtPdaoGnEj",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 8,
+          "default": 14,
+          "max": 144,
+          "name": "Optical Size"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 1000,
+          "name": "Weight"
+        },
+        {
+          "tag": "GRAD",
+          "min": -200,
+          "default": 0,
+          "max": 150,
+          "name": "Grade"
+        },
+        {
+          "tag": "wdth",
+          "min": 25,
+          "default": 100,
+          "max": 151,
+          "name": "Width"
+        },
+        {
+          "tag": "slnt",
+          "min": -10,
+          "default": 0,
+          "max": 0,
+          "name": "Slant"
+        },
+        {
+          "tag": "XOPQ",
+          "min": 27,
+          "default": 96,
+          "max": 175,
+          "name": "Parametric Thick Stroke"
+        },
+        {
+          "tag": "YOPQ",
+          "min": 25,
+          "default": 79,
+          "max": 135,
+          "name": "Parametric Thin Stroke"
+        },
+        {
+          "tag": "XTRA",
+          "min": 323,
+          "default": 468,
+          "max": 603,
+          "name": "Parametric Counter Width"
+        },
+        {
+          "tag": "YTUC",
+          "min": 528,
+          "default": 712,
+          "max": 760,
+          "name": "Parametric Uppercase Height"
+        },
+        {
+          "tag": "YTLC",
+          "min": 416,
+          "default": 514,
+          "max": 570,
+          "name": "Parametric Lowercase Height"
+        },
+        {
+          "tag": "YTAS",
+          "min": 649,
+          "default": 750,
+          "max": 854,
+          "name": "Parametric Ascender Height"
+        },
+        {
+          "tag": "YTDE",
+          "min": -305,
+          "default": -203,
+          "max": -98,
+          "name": "Parametric Descender Depth"
+        },
+        {
+          "tag": "YTFI",
+          "min": 560,
+          "default": 738,
+          "max": 788,
+          "name": "Parametric Figure Height"
+        }
+      ],
+      "cmapCodepoints": 826,
+      "glyphs": 948
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/robotoflex/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotoflex/OFL.txt",
+    "bytes": 4488,
+    "sri": "sha384-gq7afn8lQqXSj04UPZdRelQR7EgXekeWh4Kr0n5CgWiHsRSJ9TJewLKy1YfhKo3N"
+  }
+}

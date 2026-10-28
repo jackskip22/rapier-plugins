@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Abhaya Libre",
+  "sourceRank": 113,
+  "sourcePosition": 230,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abhayalibre/METADATA.pb",
+    "sri": "sha384-VhHc6qXB6gcizDEtfllWM0RxuH6gYAco3f8oJqfiWhZ/F8EfZb7V2EW5gWRezTpc"
+  },
+  "files": [
+    {
+      "name": "font-6b194351fa69ccf76e08eea718169e455e65905dcb51a649957fa5beca2034e92df041628fc1644de9e232e0eef5c9bf.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/abhayalibre/AbhayaLibre-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abhayalibre/AbhayaLibre-Bold.ttf",
+      "sourceBytes": 527476,
+      "sourceSri": "sha384-+O9cT0cbC6W3sc1VEkYPywskVf5fjzGIyhtctL3DLJZoDrap+2QjO90adSlhk+TZ",
+      "bytes": 123928,
+      "sri": "sha384-axlDUfppzPduCO6nGBaeRV5lkF3LUaZJlX+lvsogNOkt8EFij8FkTeniMuDu9cm/",
+      "axes": [],
+      "cmapCodepoints": 416,
+      "glyphs": 943
+    },
+    {
+      "name": "font-3e969e0bf243d5c4384187a868bfb324c774afa501fa6dec04d42e68fbd6ed89cdf3b96719b1c27d5e7d899b4678989a.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/abhayalibre/AbhayaLibre-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abhayalibre/AbhayaLibre-ExtraBold.ttf",
+      "sourceBytes": 535456,
+      "sourceSri": "sha384-ctvfVzGqzG661mVE+aYppRcv/KipyWsyjqJxveRxtr0L4TvSWnDyKKbZQfs1AkFM",
+      "bytes": 123296,
+      "sri": "sha384-PpaeC/JD1cQ4QYeoaL+zJMd0r6UB+m3sBNQuaPvW7YnN87lnGbHCfV59iZtGeJia",
+      "axes": [],
+      "cmapCodepoints": 416,
+      "glyphs": 943
+    },
+    {
+      "name": "font-786fdbb68c8530eab30a5b7b072a9fbfc2dc488970f47286e7d04d7ad68dc5fcc1cb81bc74fc19b71aee64ca4a9e12a5.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/abhayalibre/AbhayaLibre-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abhayalibre/AbhayaLibre-Medium.ttf",
+      "sourceBytes": 543924,
+      "sourceSri": "sha384-cCsyUmUlscfcz9gn1oOC9aIAHvpCi3fifrlFmN0pDz7rH4IzFu7MiMhEhu3fr+qJ",
+      "bytes": 121760,
+      "sri": "sha384-eG/btoyFMOqzClt7Byqfv8LcSIlw9HKG59BNetaNxfzBy4G8dPwZtxruZMpKnhKl",
+      "axes": [],
+      "cmapCodepoints": 416,
+      "glyphs": 943
+    },
+    {
+      "name": "font-d44c6201e9056d6bf3f1dc3a34ee69c399b3a3d834839e99b639f72f9b44e01bc98724931575a549244bd00065a73e80.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/abhayalibre/AbhayaLibre-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abhayalibre/AbhayaLibre-Regular.ttf",
+      "sourceBytes": 555376,
+      "sourceSri": "sha384-1tTfXC0j6HojHeH460rBHUTtNnSjHFNK/lBYfDDnPLeliw5HJtCcvj+vdVD70pZk",
+      "bytes": 120144,
+      "sri": "sha384-1ExiAekFbWvz8dw6NO5pw5mzo9g0g56Ztjn3L5tE4BvJhySTFXWlSSRL0ABlpz6A",
+      "axes": [],
+      "cmapCodepoints": 416,
+      "glyphs": 943
+    },
+    {
+      "name": "font-aa88abd82d689c24d47fa890e7aa8c9f1e8c526379df2bac29f6529ca84f11b7f72279df24c08318b456a418d19a86b4.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/abhayalibre/AbhayaLibre-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abhayalibre/AbhayaLibre-SemiBold.ttf",
+      "sourceBytes": 518716,
+      "sourceSri": "sha384-gXDqgDk2S5mybtANUouWuRDqzEROUkplPk9lU1AGIFJZ907ESQRqmpHa2WZ95b96",
+      "bytes": 122124,
+      "sri": "sha384-qoir2C1onCTUf6iQ56qMnx6MUmN53yusKfZSnKhPEbf3InnfJMCDGLRWpBjRmoa0",
+      "axes": [],
+      "cmapCodepoints": 416,
+      "glyphs": 943
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/abhayalibre/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/abhayalibre/OFL.txt",
+    "bytes": 4404,
+    "sri": "sha384-ON/LbzSiAHp3IdABFo7Ti+/C7WECCypXOVJQr8Whdc0UOnGzFyLHLinXEQ0nUpu+"
+  }
+}

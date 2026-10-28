@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "PT Sans",
+  "sourceRank": 6,
+  "sourcePosition": 14,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsans/METADATA.pb",
+    "sri": "sha384-B+oBlxZFY8w0wTriD/SmT9P9GhY55XGji6TwGAOYOrUOPtcUFwP4KBdsPDP2UHkv"
+  },
+  "files": [
+    {
+      "name": "font-7edb44cfb0b86bc1df8073ec72e57579bd41a54c9052b91d85da44c4ecca563f18088a2543b371321a5b6d831e412fc3.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/ptsans/PT_Sans-Web-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsans/PT_Sans-Web-Bold.ttf",
+      "sourceBytes": 470240,
+      "sourceSri": "sha384-r5k2dyZPyeZQ40cyhytfdjr7fePlSxMO25MqKuFHktFOo9WA8RkCJ802HfA7OF8T",
+      "bytes": 137364,
+      "sri": "sha384-fttEz7C4a8HfgHPscuV1eb1BpUyQUrkdhdpExOzKVj8YCIolQ7NxMhpbbYMeQS/D",
+      "axes": [],
+      "cmapCodepoints": 717,
+      "glyphs": 720
+    },
+    {
+      "name": "font-1a5235e8db05b6b75bcfe2c77f878eb52f269a4807c2062dbd87ae6838a4d26401f2b01147963a1eef93843a1646382e.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/ptsans/PT_Sans-Web-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsans/PT_Sans-Web-BoldItalic.ttf",
+      "sourceBytes": 375204,
+      "sourceSri": "sha384-kgd7Xh7KM7vKqJhkY4jIWitYodDYfyZE/BhT299Zkov6lzLnfRHN2gPwDoOajp2h",
+      "bytes": 103012,
+      "sri": "sha384-GlI16NsFtrdbz+LHf4eOtS8mmkgHwgYtvYeuaDik0mQB8rARR5Y6Hu+ThDoWRjgu",
+      "axes": [],
+      "cmapCodepoints": 717,
+      "glyphs": 721
+    },
+    {
+      "name": "font-368a3cc61df5dcd3cfeb126aaede32264a1378dfa1577f2bb8f07396c8ab2df422169d1b326b2d175e9186955d97edd5.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/ptsans/PT_Sans-Web-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsans/PT_Sans-Web-Italic.ttf",
+      "sourceBytes": 436452,
+      "sourceSri": "sha384-2ZmfbxUGSW5KfHBTUleUf+K3jl2sn+Wskmc287gxPHZEloLITqHERtFkxwZaFA+O",
+      "bytes": 126516,
+      "sri": "sha384-Noo8xh313NPP6xJqrt4yJkoTeN+hV38ruPBzlsirLfQiFp0bMmstF16RhpVdl+3V",
+      "axes": [],
+      "cmapCodepoints": 717,
+      "glyphs": 721
+    },
+    {
+      "name": "font-28386c932a02d2ad7f00d85e9168be2812e58bc0b8121dcb362c5ec7c81039efc686eae7ae850bdbea5d705cd44419df.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/ptsans/PT_Sans-Web-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsans/PT_Sans-Web-Regular.ttf",
+      "sourceBytes": 442960,
+      "sourceSri": "sha384-Rh3sN2632rlcvbMiBc3j3FHiK+YcXcFift2zjBc6j3RgVweQY14o0Qv8y95BwdBX",
+      "bytes": 132512,
+      "sri": "sha384-KDhskyoC0q1/ANhekWi+KBLli8C4Eh3LNixex8gQOe/GhurnroUL2+pdcFzURBnf",
+      "axes": [],
+      "cmapCodepoints": 717,
+      "glyphs": 720
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ptsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsans/OFL.txt",
+    "bytes": 4425,
+    "sri": "sha384-ffAiZvyPNX5SBBKBPX0Jzj4HW0gsER+EXnKpi44x9HvMzM80qRxkne9jueBrH1LG"
+  }
+}

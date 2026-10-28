@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Murecho",
+  "sourceRank": 394,
+  "sourcePosition": 747,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/murecho/METADATA.pb",
+    "sri": "sha384-RDB5nK82jikxQB8u8C4Ucyixe1PryBBktY5qJxapRpuaQqOwqBHASWNeVgOwKbRn"
+  },
+  "files": [
+    {
+      "name": "font-324f7f0b906b0b1349614fc6ee7436a86e7fb534cc449d2a3d0cf627df851f41ae878b45fbdc6dd2afc7a28d1d506f9d.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/murecho/Murecho[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/murecho/Murecho%5Bwght%5D.ttf",
+      "sourceBytes": 1430664,
+      "sourceSri": "sha384-kayGgK88M54FftnaQROMaoh3VjCOAqt/Vfp4v+685QFa9PR0VONwKcyMjYOTuJAp",
+      "bytes": 634000,
+      "sri": "sha384-Mk9/C5BrCxNJYU/G7nQ2qG5/tTTMRJ0qPQz2J9+FH0Guh4tF+9xt0q/Hoo0dUG+d",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 4450,
+      "glyphs": 4656
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/murecho/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/murecho/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-HIlgY4I2M5mqiAfrwMn2bRHsDirGsFc7HB3e1HZlKb2HI/PxRUl85ojdI3ftsDr6"
+  }
+}

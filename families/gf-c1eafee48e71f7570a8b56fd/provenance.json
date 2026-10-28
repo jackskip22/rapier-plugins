@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "name": "Lateef",
+  "sourceRank": 431,
+  "sourcePosition": 820,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/METADATA.pb",
+    "sri": "sha384-VGnZBu4DY61+kCCqg5jwSEup0wEDJq8Ds1VWdd9G1Hff+UWW/0PXlwuPmDikXq5T"
+  },
+  "files": [
+    {
+      "name": "font-5c82b543c3bbcd30418480a9beb756f41205c49e8e0531f2e0750e0852a2e8417f9271dd980947691a6a18ef74b85a1b.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/lateef/Lateef-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/Lateef-Bold.ttf",
+      "sourceBytes": 243260,
+      "sourceSri": "sha384-3HhGmsiXSMjMVxN2lQP14ijZqEigaz0j6KxPU7iI/pFfLLdvG5SBAvFmskoDTFcM",
+      "bytes": 94596,
+      "sri": "sha384-XIK1Q8O7zTBBhICpvrdW9BIFxJ6OBTHy4HUOCFKi6EF/knHdmAlHaRpqGO90uFob",
+      "axes": [],
+      "cmapCodepoints": 799,
+      "glyphs": 1830
+    },
+    {
+      "name": "font-bb041c879d3c30f9e966eb25707e5b1b1ee91d60ec632f0b480829923209bf329d318435764ada88390f1ead28073ce7.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/lateef/Lateef-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/Lateef-ExtraBold.ttf",
+      "sourceBytes": 244116,
+      "sourceSri": "sha384-oEvwjqIQcVxxxS3wzn99U9+zKaMfQNAysZbTpyEbzBc/6bUPy0LV6RZHzYgayOLX",
+      "bytes": 89960,
+      "sri": "sha384-uwQch508MPnpZuslcH5bGx7pHWDsYy8LSAgpkjIJvzKdMYQ1dkraiDkPHq0oBzzn",
+      "axes": [],
+      "cmapCodepoints": 799,
+      "glyphs": 1830
+    },
+    {
+      "name": "font-14d88b167fdc0d83969e9fb04e851ddc7a8b7ecf676d40330916201009ee01544f98b1dc0742960488072dd0742fee39.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/lateef/Lateef-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/Lateef-ExtraLight.ttf",
+      "sourceBytes": 240832,
+      "sourceSri": "sha384-FvY85eiCXJwSrqS6xHo4ZjaG9DnCDzsX7ci+yYMXHHx2gEVmQg2yDES6sdLR4M6B",
+      "bytes": 87272,
+      "sri": "sha384-FNiLFn/cDYOWnp+wToUd3HqLfs9nbUAzCRYgEAnuAVRPmLHcB0KWBIgHLdB0L+45",
+      "axes": [],
+      "cmapCodepoints": 799,
+      "glyphs": 1828
+    },
+    {
+      "name": "font-e9f5eb23a3a95b55945922b09b9f5b971d0550a983f5831904c1b3fbdcf1697edfca2ad8c754f7cb42d9220bf5da60ff.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/lateef/Lateef-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/Lateef-Light.ttf",
+      "sourceBytes": 239892,
+      "sourceSri": "sha384-4e2ovuTnhZ5NM0s3+S5UWJ3t+0o+YY97E+g0IcrSiYixIqEKUBjtiSVeFL9irvtP",
+      "bytes": 90244,
+      "sri": "sha384-6fXrI6OpW1WUWSKwm59blx0FUKmD9YMZBMGz+9zxaX7fyirYx1T3y0LZIgv12mD/",
+      "axes": [],
+      "cmapCodepoints": 799,
+      "glyphs": 1830
+    },
+    {
+      "name": "font-e26be57ad25445a689f95932997562dbc26c0cfd31601e06d6cc2c933236023daf8eef1b4814b6dc68448ee5b0ce33c3.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/lateef/Lateef-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/Lateef-Medium.ttf",
+      "sourceBytes": 242052,
+      "sourceSri": "sha384-3PavIy0LJewNV1x53XAtITteISxTjIPfUMELt3DuSjpFhm9jPrf+IgkGpibgTsKG",
+      "bytes": 93864,
+      "sri": "sha384-4mvletJURaaJ+VkymXVi28JsDP0xYB4G1swskzI2Aj2vju8bSBS23GhEjuWwzjPD",
+      "axes": [],
+      "cmapCodepoints": 799,
+      "glyphs": 1830
+    },
+    {
+      "name": "font-ddca688b2fcf82b3ae834d87c0b933404f70618f9dfad782d5314c0786bd4e08efc323a0f5f2178c8412d49e027364ec.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/lateef/Lateef-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/Lateef-Regular.ttf",
+      "sourceBytes": 241092,
+      "sourceSri": "sha384-fRq+hFg+KciqG8m9khwjJ7AQecs9NzbpIGz9eQnuM65PKm7udxDmDQZLPcK+Cmay",
+      "bytes": 87636,
+      "sri": "sha384-3cpoiy/PgrOug02HwLkzQE9wYY+d+teC1TFMB4a9TgjvwyOg9fIXjIQS1J4Cc2Ts",
+      "axes": [],
+      "cmapCodepoints": 799,
+      "glyphs": 1830
+    },
+    {
+      "name": "font-7edf81ead53cf04aa00a02dd4d50954f211f475571d020fe8944224630a63d90d561d1282b04f89026dddb84c9089edd.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/lateef/Lateef-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/Lateef-SemiBold.ttf",
+      "sourceBytes": 242260,
+      "sourceSri": "sha384-P+PG330XpXk2oM6gJtbLVal5vMnK+tFbATr4vT1FhG4q5mSlAKvZSvp99Ou393ve",
+      "bytes": 92412,
+      "sri": "sha384-ft+B6tU88EqgCgLdTVCVTyEfR1Vx0CD+iUQiRjCmPZDVYdEoKwT4kCbd24TJCJ7d",
+      "axes": [],
+      "cmapCodepoints": 799,
+      "glyphs": 1830
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/lateef/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lateef/OFL.txt",
+    "bytes": 4603,
+    "sri": "sha384-jiwJU0eIUlmZ2Pe9J/kj9IHuHIbpNZ2DkfgPPYjOJOy29z5ZbbezYehSAgSO0JGk"
+  }
+}

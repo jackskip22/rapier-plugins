@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Cormorant SC",
+  "sourceRank": 452,
+  "sourcePosition": 859,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantsc/METADATA.pb",
+    "sri": "sha384-Q70b+alC9FgZ70M1RU7hxJy+TFxT44yn1fYZbamkzOKXylqTRopH+jjG4gRaGqA4"
+  },
+  "files": [
+    {
+      "name": "font-38a560d68ca7ac0fd2b216f5e5a7d1e3967132fc944af2fb54d245a96547aa81079dfeb260477efa4875f1bdb916d0cc.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/cormorantsc/CormorantSC-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantsc/CormorantSC-Bold.ttf",
+      "sourceBytes": 763124,
+      "sourceSri": "sha384-TNGpFLDwGAkHNouuxTBls/jXlQiEP7okmC4HRM7KU0YHsf+gzqrWki2GISC20v1X",
+      "bytes": 114700,
+      "sri": "sha384-OKVg1oynrA/Sshb15afR45ZxMvyUSvL7VNJFqWVHqoEHnf6yYEd++kh18b25FtDM",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    },
+    {
+      "name": "font-1ea5a5ad6b51b65eea4284a3d72faa4786d33a1df4d647649efbb0c3901582749e25611ef8b6f8e1f64b0f3452f70a58.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/cormorantsc/CormorantSC-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantsc/CormorantSC-Light.ttf",
+      "sourceBytes": 764892,
+      "sourceSri": "sha384-OMsrrJ3KFP20u3iRcbJTjQzG83iXlEhszF33piR7kNhumnp4F+pySB/aCaZKkQjB",
+      "bytes": 113008,
+      "sri": "sha384-HqWlrWtRtl7qQoSj1y+qR4bTOh301kdknvuww5AVgnSeJWEe+Lb44fZLDzRS9wpY",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    },
+    {
+      "name": "font-803b946993816f61e687846ab3a1950b2641c3f7c16d0085a6c67c4b08888c5888ffc02a9a42976679228a472f755e29.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/cormorantsc/CormorantSC-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantsc/CormorantSC-Medium.ttf",
+      "sourceBytes": 762320,
+      "sourceSri": "sha384-ClkddZ/JVlOJBohOKpioP8Dy9DVBtDpw4wVAFhDcxxG8UGU7yky4A0BqTNrNWkDh",
+      "bytes": 120204,
+      "sri": "sha384-gDuUaZOBb2Hmh4Rqs6GVCyZBw/fBbQCFpsZ8SwiIjFiI/8AqmkKXZnkiikcvdV4p",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    },
+    {
+      "name": "font-baf2287696176e767352ad6f37e5bbf84744c6eec25fa8a74088a6400169ef2954983f6d1822f2966ff4ae935e0a33e4.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/cormorantsc/CormorantSC-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantsc/CormorantSC-Regular.ttf",
+      "sourceBytes": 763624,
+      "sourceSri": "sha384-ncwxXiJmlSTD5waOCyJoldaBYxMLfZLBAjkUuQr7u4TVV3kT9A5hjrz9kef9Bvcx",
+      "bytes": 119460,
+      "sri": "sha384-uvIodpYXbnZzUq1vN+W7+EdExu7CX6inQIimQAFp7ylUmD9tGCLylm/0rpNeCjPk",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    },
+    {
+      "name": "font-2298621b7a9b73cffcf70d4c1849e22b307b9a157a4ff19d73602257b0fa6d4500b79dfd939fe1c9416bdf6a4036b523.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/cormorantsc/CormorantSC-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantsc/CormorantSC-SemiBold.ttf",
+      "sourceBytes": 762872,
+      "sourceSri": "sha384-B8cqBQmEvgvk+6om5YWRy4g4gZsFNsgp6FKX8WMu0JmHYRBxHb6wiaf9ZgwIHvH/",
+      "bytes": 119672,
+      "sri": "sha384-IphiG3qbc8/89w1MGEniKzB7mhV6T/Gdc2AiV7D6bUUAt539k5/hyUFr32pANrUj",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cormorantsc/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantsc/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-l/KEESRVy52+1sODIxk+zVPWBrlMwDIt6KxWzIV/yXvKF3UzL2foX6eVQca4MFL1"
+  }
+}

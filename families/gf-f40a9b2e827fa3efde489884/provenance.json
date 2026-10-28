@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "IBM Plex Sans",
+  "sourceRank": 32,
+  "sourcePosition": 78,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsans/METADATA.pb",
+    "sri": "sha384-0KM/6FfmSfXid7m2a8z7MWZOO/fuahAh3dfecs6/iQNn+ofWz0P5Q8n+c2rEJkSN"
+  },
+  "files": [
+    {
+      "name": "font-a2c0fbc27ffea25f9248609a4c4e15cfaabe2d838248ba4ad99151caa9898fd1e48ad739bb8c3cd98d1ffe0ca073dbe5.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/ibmplexsans/IBMPlexSans-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsans/IBMPlexSans-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 599624,
+      "sourceSri": "sha384-NYnZyoC720BLUuJAHxkmTfZTzYa2uZetfAEd796o3geKW1MWSIuH4MTUN2moGWTr",
+      "bytes": 262948,
+      "sri": "sha384-osD7wn/+ol+SSGCaTE4Vz6q+LYOCSLpK2ZFRyqmJj9Hkitc5u4w82Y0f/gygc9vl",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 891,
+      "glyphs": 1017
+    },
+    {
+      "name": "font-be72233a8a78967f15654226b9b92e0654ab3a2be117caaad5a9dd5b0a6623d16f694dd68e42ef057a3282147ec93ca7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/ibmplexsans/IBMPlexSans[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsans/IBMPlexSans%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 537244,
+      "sourceSri": "sha384-wknJkOXgTonC07CDmUiGnzS65bZhTiu6hqtBHRnRqgnk9k8Aru9uh4aB8hDMGPuB",
+      "bytes": 229740,
+      "sri": "sha384-vnIjOop4ln8VZUImubkuBlSrOivhF8qq1andWwpmI9FvaU3WjkLvBXoyghR+yTyn",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 891,
+      "glyphs": 1025
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ibmplexsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsans/OFL.txt",
+    "bytes": 4456,
+    "sri": "sha384-nJMRAEm3/jyDfD3kNrW7WQuX4T8Rgt62WYm/Dnse/hVOIYHZma62B6vzS5rnudJu"
+  }
+}

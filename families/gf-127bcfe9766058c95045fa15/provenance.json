@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Montserrat",
+  "sourceRank": 3,
+  "sourcePosition": 4,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/montserrat/METADATA.pb",
+    "sri": "sha384-jjeIl4QyjuefZjk90ylVnG4f87v/GYZmwB3XpTLBN7pMDpmoa4gAq7WfaHyRqw+p"
+  },
+  "files": [
+    {
+      "name": "font-89833d54119834363edad1832807f20cc4a3315264cd27ba6f83023c4dfa996898bfd8eb4acbbff3bbb6eb216a956345.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/montserrat/Montserrat-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/montserrat/Montserrat-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 762376,
+      "sourceSri": "sha384-6S6UkA6oTzSiYD2VtuQwc6bFvHGQagXxfZ6Pu4Zmfo0t3dvpOgvyP55lak2kzMym",
+      "bytes": 230664,
+      "sri": "sha384-iYM9VBGYNDY+2tGDKAfyDMSjMVJkzSe6b4MCPE36mWiYv9jrSsu/87u26yFqlWNF",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1312,
+      "glyphs": 2791
+    },
+    {
+      "name": "font-5a337c9557f3460aa13b655761be561bf5c59f0eca0ad1a4eedf09e31754224d453f4b636a63cdd14748dab7777b485f.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/montserrat/Montserrat[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/montserrat/Montserrat%5Bwght%5D.ttf",
+      "sourceBytes": 744936,
+      "sourceSri": "sha384-Ww5WXrAWfEb2ZJAfj/F0k+RDJ50zEFMVQYaCwgv2eXsgEiP5/ejU7QaWSmdZqtWL",
+      "bytes": 216472,
+      "sri": "sha384-WjN8lVfzRgqhO2VXYb5WG/XFnw7KCtGk7t8J4xdUIk1FP0tjamPN0UdI2rd3e0hf",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1312,
+      "glyphs": 2747
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/montserrat/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/montserrat/OFL.txt",
+    "bytes": 4400,
+    "sri": "sha384-ik1GAxP6DC4WUobN8jX90SjSz6jfbVOit+uh0EGiBhu0MlQRvSBlczwXHEl9MswJ"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Cousine",
+  "sourceRank": 301,
+  "sourcePosition": 583,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cousine/METADATA.pb",
+    "sri": "sha384-qqe+489ZVLjbEMWn6jpcVXAFkUiQef2MvYdL1ZJY9jS8jL7lm8Kyr2XRC41r2KuV"
+  },
+  "files": [
+    {
+      "name": "font-f595ac89a2fdc2d7f43a9bfc02ce5b046bb39f5b8814763511f615c71f63eb3feafbe516baecddcd0f2dbb45253339b9.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/cousine/Cousine-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cousine/Cousine-Bold.ttf",
+      "sourceBytes": 298048,
+      "sourceSri": "sha384-UTRsTAuLgjRq3gqQ4YEyFnmk1SkaPghPkbRCbmOr9I1wzNMGsIHoKOtD6hGSuMGI",
+      "bytes": 111328,
+      "sri": "sha384-9ZWsiaL9wtf0Opv8As5bBGuzn1uIFHY1EfYVxx9j6z/q++UWuuzdzQ8tu0UlMzm5",
+      "axes": [],
+      "cmapCodepoints": 2282,
+      "glyphs": 2396
+    },
+    {
+      "name": "font-fe2fd647d5091aa82cabe19f7c0832aa571943a7db51eb41c22cd7a76e2384b49f67730eeabb6241b79faddc8da6af02.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/cousine/Cousine-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cousine/Cousine-BoldItalic.ttf",
+      "sourceBytes": 308292,
+      "sourceSri": "sha384-KPcXm472A5gQXRjoZoN0SXJXZYqIZrzcATg3Ak+f1e3PjFi4psPtwnnzSAmlBVJd",
+      "bytes": 120480,
+      "sri": "sha384-/i/WR9UJGqgsq+GffAgyqlcZQ6fbUetBwizXp24jhLSfZ3MO6rtiQbefrdyNpq8C",
+      "axes": [],
+      "cmapCodepoints": 2282,
+      "glyphs": 2401
+    },
+    {
+      "name": "font-2f4bcc677c7d08dc461811a88bfb042897752a8b4db14b332ff07e0002054f51501288729e5ce4fce19277f68dacf4dc.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/cousine/Cousine-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cousine/Cousine-Italic.ttf",
+      "sourceBytes": 306880,
+      "sourceSri": "sha384-1WAoN2msqfkUng1SLTIvZTV6Q1cxTXOZt2c7uA6svUZ0vVqI+h/AV+AC5ZGTt5Mz",
+      "bytes": 119000,
+      "sri": "sha384-L0vMZ3x9CNxGGBGoi/sEKJd1KotNsUszL/B+AAIFT1FQEohynlzk/OGSd/aNrPTc",
+      "axes": [],
+      "cmapCodepoints": 2282,
+      "glyphs": 2401
+    },
+    {
+      "name": "font-ff2a8431ab8b68314b32bfde1a54eec2a60c52c1801f46f81f74e48c7177e2923ae7e6a5b00667f68600fb8bd416ae9b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/cousine/Cousine-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cousine/Cousine-Regular.ttf",
+      "sourceBytes": 296856,
+      "sourceSri": "sha384-6syJ1tbpGmWPJp+xVx708PzfstfMij9ckgyu6RTDZLZ4ACtAN1EpTrhqBKkrVHiq",
+      "bytes": 109964,
+      "sri": "sha384-/yqEMauLaDFLMr/eGlTuwqYMUsGAH0b4H3TkjHF34pI65+alsAZn9oYA+4vUFq6b",
+      "axes": [],
+      "cmapCodepoints": 2282,
+      "glyphs": 2396
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cousine/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cousine/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-XyPKKQYUA8pbILL+6lvnR/GwDFBwhmiXL2694yX6D1PTUzLgvL+n3pGWzRM14LnB"
+  }
+}

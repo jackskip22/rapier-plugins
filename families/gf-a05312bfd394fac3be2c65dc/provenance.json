@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Playpen Sans Deva",
+  "sourceRank": 410,
+  "sourcePosition": 775,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playpensansdeva/METADATA.pb",
+    "sri": "sha384-fp/sOB+TXDEWevlKcmIro2ssNscWET/bVxJAoE/l+M82/IyfXPvqczJnGf9+hJF5"
+  },
+  "files": [
+    {
+      "name": "font-d5ff08cde54ba9240db88158c7b44217d991d3b83ecb91c11e9893554f5fed86492bb427a1c9f85c11ab6315c3fdd998.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playpensansdeva/PlaypenSansDeva[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playpensansdeva/PlaypenSansDeva%5Bwght%5D.ttf",
+      "sourceBytes": 1567116,
+      "sourceSri": "sha384-cXrTXqEahn+iqD1AlGLBqzAbJpK8WvGry9JvirDM6GlTfvLlvy/hf52TT0mhshLh",
+      "bytes": 629312,
+      "sri": "sha384-1f8IzeVLqSQNuIFYx7RCF9mR07g+y5HBHpiTVU9f7YZJK7Qnocn4XBGrYxXD/dmY",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 538,
+      "glyphs": 2418
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playpensansdeva/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playpensansdeva/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-xogLhCT9KbeKccyPp0LlzoMPSC6MuQyJJ/z9knEdikD+LFgjZ/VjOC68nYx5znno"
+  }
+}

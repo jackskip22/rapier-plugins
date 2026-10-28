@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Dongle",
+  "sourceRank": 339,
+  "sourcePosition": 649,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dongle/METADATA.pb",
+    "sri": "sha384-0dCETlqpDuO8/mhwQOXRfgCnTVTG+tJFEg0E42CzE4c3gbVWedUK54rEZ9kQbsmV"
+  },
+  "files": [
+    {
+      "name": "font-db32ec6138dd03c03cade17d2c73c0b290400aeb80d3fa72888c1b75ff293efac5e71c6d09233f99424764f6688e4a3d.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/dongle/Dongle-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dongle/Dongle-Bold.ttf",
+      "sourceBytes": 4476536,
+      "sourceSri": "sha384-rbcbhdd1yyLtRupjdpcU+hfYKRDT5e3HqbyHhRZLZV0VqkeG+5Zp9aXeaByQZLRE",
+      "bytes": 247584,
+      "sri": "sha384-2zLsYTjdA8A8reF9LHPAspBACuuA0/pyiIwbdf8pPvrF5xxtCSM/mUJHZPZojko9",
+      "axes": [],
+      "cmapCodepoints": 12494,
+      "glyphs": 12550
+    },
+    {
+      "name": "font-6c2379992879267aef2cece974195864bcef4a7f5fba61d7f7fa0e7df3a0dfcc58b683e679bb585f7da9ba4de28666d4.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/dongle/Dongle-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dongle/Dongle-Light.ttf",
+      "sourceBytes": 4389060,
+      "sourceSri": "sha384-t+bOwaG6RIPpF0apVXG1SmVzX1DLYwSX8iI5OCNmV90BtLit9vwPyz3imnm4bEEq",
+      "bytes": 228320,
+      "sri": "sha384-bCN5mSh5JnrvLOzpdBlYZLzvSn9fumHX9/oOffOg38xYtoPmebtYX32puk3ihmbU",
+      "axes": [],
+      "cmapCodepoints": 12494,
+      "glyphs": 12550
+    },
+    {
+      "name": "font-5bd975ababda5e43b801445f6f0d20eba93dcc457d5d5575bd2c00b72e92439fb282b5bed5b21720084fc730835fa43a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/dongle/Dongle-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dongle/Dongle-Regular.ttf",
+      "sourceBytes": 4458600,
+      "sourceSri": "sha384-NeDqwsAGAav8xb73g/82QesXEtLWYbJReXocvLT7/ckyBWc2aXn28VjmXGpuIcik",
+      "bytes": 245392,
+      "sri": "sha384-W9l1q6vaXkO4AURfbw0g66k9zEV9XVV1vSwAty6SQ5+ygrW+1bIXIAhPxzCDX6Q6",
+      "axes": [],
+      "cmapCodepoints": 12494,
+      "glyphs": 12550
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/dongle/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dongle/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-q01NN423HR8vvAAiznmr2e/3/KAx9RV37lWi13WdKzK6NzK238AcgMlYTaljFpqx"
+  }
+}

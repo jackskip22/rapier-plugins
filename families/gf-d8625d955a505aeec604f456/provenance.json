@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Literata",
+  "sourceRank": 151,
+  "sourcePosition": 308,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/literata/METADATA.pb",
+    "sri": "sha384-OsQtHwBzIWF1RxjmXacVvKg2iLm2qIR/rdYlZ9j2XjCt4B50qEExB2fBbvGw4GmP"
+  },
+  "files": [
+    {
+      "name": "font-9c362d5178b9b7657ccac479ca53ab0538f5773c2e3c04972f99ff988676c9fe741a4d4f3f4f0a474c2536beb459d9ec.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/literata/Literata-Italic[opsz,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/literata/Literata-Italic%5Bopsz%2Cwght%5D.ttf",
+      "sourceBytes": 902728,
+      "sourceSri": "sha384-BMnWnK+ccjLHz26RnhSU82p4LexBT6bhSGvU9OKw2kwbmSQdBTMjsLZuVFioECtL",
+      "bytes": 396680,
+      "sri": "sha384-nDYtUXi5t2V8ysR5ylOrBTj1dzwuPASXL5n/mIZ2yf50Gk1PP08KR0wlNr60Wdns",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 7,
+          "default": 12,
+          "max": 72,
+          "name": "Optical size"
+        },
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1163,
+      "glyphs": 1769
+    },
+    {
+      "name": "font-7d91c8827459108e653822a5b2934694afd8daeb22ba0c8549d2067a1814d30d119efb9d7d38391b254c099662095dde.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/literata/Literata[opsz,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/literata/Literata%5Bopsz%2Cwght%5D.ttf",
+      "sourceBytes": 955132,
+      "sourceSri": "sha384-Ityt5jBdFVa30mUyatYFyBTNuC06ypedgVjI0FQdPVo9KhNvx9Vaidagwm+XAOVg",
+      "bytes": 397816,
+      "sri": "sha384-fZHIgnRZEI5lOCKlspNGlK/Y2usiugyFSdIGehgU0w0RnvudfTg5GyVMCZZiCV3e",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 7,
+          "default": 12,
+          "max": 72,
+          "name": "Optical size"
+        },
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1163,
+      "glyphs": 1789
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/literata/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/literata/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-YQSEnUZPdlrkQy5LCmz9uBVDFopa8UoON774xxeu3/Z2cdwiX+MkTDK0fFgGzmMu"
+  }
+}

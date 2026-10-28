@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Cormorant Unicase",
+  "sourceRank": 532,
+  "sourcePosition": 977,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantunicase/METADATA.pb",
+    "sri": "sha384-Nmwd/1yl6ku3Sj6/zPAOioh5diI7Hr23gso7qzbNOu4mkMw49wj8YCnAgt7Eqp7T"
+  },
+  "files": [
+    {
+      "name": "font-8bd605c30c3917633b11892b75a4981a6ffb70a14457b6462fef59b4076ee7b69e48cfdae152fac0a6026ccab21cbdc7.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/cormorantunicase/CormorantUnicase-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantunicase/CormorantUnicase-Bold.ttf",
+      "sourceBytes": 763380,
+      "sourceSri": "sha384-rQO5BQX8vZM4EAf4V6e1On9MXphT5fVYO7m8YNgcq5hONzw/pHDiP5C6BIfSI9yH",
+      "bytes": 114812,
+      "sri": "sha384-i9YFwww5F2M7EYkrdaSYGm/7cKFEV7ZGL+9ZtAdu57aeSM/a4VL6wKYCbMqyHL3H",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    },
+    {
+      "name": "font-4172e879606f7bd75ed63287c2ff48c7bdc0a8fb90c350f56a9f1e023b5465e260d44420978b4dc88b4394d9b007d22a.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/cormorantunicase/CormorantUnicase-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantunicase/CormorantUnicase-Light.ttf",
+      "sourceBytes": 765136,
+      "sourceSri": "sha384-bpREktzTu6/qbZcikYOw1MaHc9pM05nm88v8qwuQUn8862j0FWFXXBtjDABVFFWt",
+      "bytes": 113620,
+      "sri": "sha384-QXLoeWBve9de1jKHwv9Ix73AqPuQw1D1ap8eAjtUZeJg1EQgl4tNyItDlNmwB9Iq",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    },
+    {
+      "name": "font-729da8fc278deaf0dc3ec0837b6e89badfb109d219a5986c06a37a914b948c156ea88c0e4325d878ca495941f1d314d7.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/cormorantunicase/CormorantUnicase-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantunicase/CormorantUnicase-Medium.ttf",
+      "sourceBytes": 762560,
+      "sourceSri": "sha384-1oilBAULZXFvgHeJCjBzGe05hAeHBNnUMpS/7xuuY5LqaUrgAVe8EaAWlBls14bb",
+      "bytes": 120380,
+      "sri": "sha384-cp2o/CeN6vDcPsCDe26Jut+xCdIZpZhsBqN6kUuUjBVuqIwOQyXYeMpJWUHx0xTX",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    },
+    {
+      "name": "font-d292a67a45ce209cb36f5faad6524ae2efcc49917ddef567b4434c0fb74545c6ecb0deeae2349c88a242e8a7b0f443b9.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/cormorantunicase/CormorantUnicase-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantunicase/CormorantUnicase-Regular.ttf",
+      "sourceBytes": 763872,
+      "sourceSri": "sha384-dp3hpMsV03VFIrWdgN7Q3Fy+CcMVJuKOsMdGZFHnBE8Ht82g+Yi4UOlval05kNC0",
+      "bytes": 119592,
+      "sri": "sha384-0pKmekXOIJyzb1+q1lJK4u/MSZF93vVntENMD7dFRcbssN7q4jSciKJC6Kew9EO5",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    },
+    {
+      "name": "font-a421e81f85e9546c9c365745e1deb682a9cf8011c0987af0e3413605599416a597a684b9a25ddf77e2eada5a33ac0548.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/cormorantunicase/CormorantUnicase-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantunicase/CormorantUnicase-SemiBold.ttf",
+      "sourceBytes": 763128,
+      "sourceSri": "sha384-vJ3Xj+OgQ3n7IBmHvji4gqgCqFzq8lnrbuU3UZ93qDpkTE7sJzgVuCUHNmcouMVD",
+      "bytes": 120184,
+      "sri": "sha384-pCHoH4XpVGycNldF4d62gqnPgBHAmHrw40E2BVmUFqWXpoS5ol3fd+Lq2lozrAVI",
+      "axes": [],
+      "cmapCodepoints": 972,
+      "glyphs": 3203
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cormorantunicase/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantunicase/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-l/KEESRVy52+1sODIxk+zVPWBrlMwDIt6KxWzIV/yXvKF3UzL2foX6eVQca4MFL1"
+  }
+}

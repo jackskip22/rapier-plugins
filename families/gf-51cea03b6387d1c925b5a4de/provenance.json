@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "name": "Encode Sans Condensed",
+  "sourceRank": 333,
+  "sourcePosition": 638,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/METADATA.pb",
+    "sri": "sha384-/2X/eNKOahEME1Gcc1GRW+vYgWfa4YBAPn/EDob+tvJJcDrSH1a+ismFkk5VO9+i"
+  },
+  "files": [
+    {
+      "name": "font-cc844eb0ae051676a524aeb736cd4698bfd47981ce5751cbca084419155a8724147efe7499f10b78e37df22ec9fd2f12.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-Black.ttf",
+      "sourceBytes": 166812,
+      "sourceSri": "sha384-vlCyIgba/JNVyervrYtLa1po9g3TSOsPfnCmcihIjx3PI1PXsfxkushNnIsnmCN4",
+      "bytes": 50560,
+      "sri": "sha384-zIROsK4FFnalJK63Ns1GmL/UeYHOV1HLyghEGRVahyQUfv50mfELeON98i7J/S8S",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    },
+    {
+      "name": "font-44d2a8fe99fa07d0f945abd02370d665cb5afacf952c9fb7c2bc167748a42d6c8f6221f7cfc430d3a2d04bd5aedcf388.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-Bold.ttf",
+      "sourceBytes": 167844,
+      "sourceSri": "sha384-ieQlMpDIQXZ622Ggwr0UYzqwN76Z0v2GxnfG4KIClOtHH/yZ4RGEpNeDnp5CAHYh",
+      "bytes": 53676,
+      "sri": "sha384-RNKo/pn6B9D5RavQI3DWZcta+s+VLJ+3wrwWd0ikLWyPYiH3z8Qw06LQS9Wu3POI",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    },
+    {
+      "name": "font-da00eba6f0b658fa6051befc47daec58cf78921bf1508274883a235995e299b154714c2dd9ddeb7ffe3b6c4cc1fbcb42.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-ExtraBold.ttf",
+      "sourceBytes": 169456,
+      "sourceSri": "sha384-dNdYPKuCe/FT0KnJpwbhQ3YAdDCigGKvNAC1YZVhhTLWE1vbJGv/VfjRfSi87sWa",
+      "bytes": 53848,
+      "sri": "sha384-2gDrpvC2WPpgUb78R9rsWM94khvxUIJ0iDojWZXimbFUcUwt2d3rf/47bEzB+8tC",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    },
+    {
+      "name": "font-493e1b192e8fb6ca26eab17ea70a4cb25c36497812c0efd4a8d5b2f9d1b8bbcbe9192bdf895807d54d835363f4f3f786.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-ExtraLight.ttf",
+      "sourceBytes": 166844,
+      "sourceSri": "sha384-FE9lyob9eUa/t5sEhR8ym1ODMoX2r4rk8bRn3xdOeMOe5cquVb2DTK/0DYqc+zdd",
+      "bytes": 52512,
+      "sri": "sha384-ST4bGS6Ptsom6rF+pwpMslw2SXgSwO/UqNWy+dG4u8vpGSvfiVgH1U2DU2P08/eG",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    },
+    {
+      "name": "font-00ba6e840ee812b6fa4e1e788be57731726f3598f89665160ca08b1efe37d9c86044d78ee8f19e2a825c74326e0abd5a.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-Light.ttf",
+      "sourceBytes": 168208,
+      "sourceSri": "sha384-T/os8ambrrOEY94ZXniGSCYKNFurXGg5TFRbBZRt5yruZSMv7ZCoLuX7LfCJ8Cht",
+      "bytes": 52940,
+      "sri": "sha384-ALpuhA7oErb6Th54i+V3MXJvNZj4lmUWDKCLHv432chgRNeO6PGeKoJcdDJuCr1a",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    },
+    {
+      "name": "font-140fa1404d8daf9f8b587e6e3c05d2ad50e298e95954bcf9fc259a131148deb27f3364bda485dc4edf48d69e9cd3357b.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-Medium.ttf",
+      "sourceBytes": 169464,
+      "sourceSri": "sha384-B9Y61YGZzntHyXC+b+vQfxtIzdlqqZdRkRLiU/gDYoUvB1ihRKtakHRMuCwg91+b",
+      "bytes": 53484,
+      "sri": "sha384-FA+hQE2Nr5+LWH5uPAXSrVDimOlZVLz5/CWaExFI3rJ/M2S9pIXcTt9I1p6c0zV7",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    },
+    {
+      "name": "font-669f21b46ca2c5f2f33114e32b6afc875a8d7be6c0a9184ca19897c7aee313075b8aaf8cf4012e074a9def697c32b698.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-Regular.ttf",
+      "sourceBytes": 168396,
+      "sourceSri": "sha384-pfXcBGNb40iSXfVyA9CX0BUNngQ9dwgvnxbOL9mPL9ekBC1I4/NZf2xjTEMK7lj0",
+      "bytes": 53472,
+      "sri": "sha384-Zp8htGyixfLzMRTjK2r8h1qNe+bAqRhMoZiXx67jEwdbiq+M9AEuB0qd72l8MraY",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    },
+    {
+      "name": "font-f8221f0cb50f86c6070aa378f6131597e08f98d6fde83fb665b1e88e330469bad3e7ef6e58bcdf0cea326cb6082067f0.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-SemiBold.ttf",
+      "sourceBytes": 170560,
+      "sourceSri": "sha384-JOxw8eCfNcES7txIe4TjCHRXT4ncBeTxf4UPbsRXv181Ju4hVH1jMgWHPRbQbmgN",
+      "bytes": 53976,
+      "sri": "sha384-+CIfDLUPhsYHCqN49hMVl+CPmNb96D+2ZbHojjMEabrT5+9uWLzfDOoybLYIIGfw",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    },
+    {
+      "name": "font-bc00fdd87f461f0ad54f03dfe72ea25ec59e3e0bfb201e45e621665010e91c4a8c8411ca03447941e7565f7ae9871cbd.woff2",
+      "variant": "250",
+      "sourcePath": "ofl/encodesanscondensed/EncodeSansCondensed-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/EncodeSansCondensed-Thin.ttf",
+      "sourceBytes": 161668,
+      "sourceSri": "sha384-9Ext4MYjg4MHUMAfvR9pZGd4LuCFjbReSSHmkJfDrzLpV2+dShFAZIqU78PHyHOD",
+      "bytes": 48176,
+      "sri": "sha384-vAD92H9GHwrVTwPf5y6iXsWePgv7IB5F5iFmUBDpHEqMhBHKA0R5QedWX3rphxy9",
+      "axes": [],
+      "cmapCodepoints": 687,
+      "glyphs": 1204
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/encodesanscondensed/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesanscondensed/OFL.txt",
+    "bytes": 4502,
+    "sri": "sha384-kKNyWTMivZfLYld81ktn5KoC25oHvmdArR0CslN5gpsDWP0ernxG05rjPlV6Cxpq"
+  }
+}

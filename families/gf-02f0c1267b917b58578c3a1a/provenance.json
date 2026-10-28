@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Rubik Dirt",
+  "sourceRank": 290,
+  "sourcePosition": 564,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rubikdirt/METADATA.pb",
+    "sri": "sha384-AKv0jX7Oe/E9zc5clc0pvIqBCbL6cvI1Ah0H94oGo7b2X9zggxC+OYOYFAGRqIVY"
+  },
+  "files": [
+    {
+      "name": "font-928bb7c236d1532a736c09ee399a3a455db9d6e60723d55833bdb83502d6c5eb5378bd5d6ea3e05037c7508fb2026720.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rubikdirt/RubikDirt-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rubikdirt/RubikDirt-Regular.ttf",
+      "sourceBytes": 1492292,
+      "sourceSri": "sha384-RAlSoR4gloFyUaPF6cKnMm4pGTXdyMaSehwlCykIR9okjqhX2ShTT7NgiFT+BsxE",
+      "bytes": 691508,
+      "sri": "sha384-kou3wjbRUypzbAnuOZo6RV251uYHI9VYM724NQLWxetTeL1dbqPgUDfHUI+yAmcg",
+      "axes": [],
+      "cmapCodepoints": 689,
+      "glyphs": 774
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rubikdirt/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rubikdirt/OFL.txt",
+    "bytes": 4406,
+    "sri": "sha384-Xjo0EI3XcPjsflkLefd8/PsTRUxd4yjguo31WvXdJgvVVc5gyOCqTSckwvb5pbcK"
+  }
+}

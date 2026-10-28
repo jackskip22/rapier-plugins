@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Rajdhani",
+  "sourceRank": 38,
+  "sourcePosition": 94,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rajdhani/METADATA.pb",
+    "sri": "sha384-HNqqiG8FVn/3A0VGdKvFPRhEFBs29Kd/1f16DU9mwkAYkVB4BFczNegyuby6NM08"
+  },
+  "files": [
+    {
+      "name": "font-b97168940ed9edd3eeeb58913bca979145484e98fe2e073f1564e8bec5f1930583c669657c53596ddda4ce196344605f.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/rajdhani/Rajdhani-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rajdhani/Rajdhani-Bold.ttf",
+      "sourceBytes": 400680,
+      "sourceSri": "sha384-X9vdn/QRo7F/1d4AdZQcajo1HDTGEmuiG2BkKs1cslqUF00Wz5ncFQ4ZMrUz5MSP",
+      "bytes": 104776,
+      "sri": "sha384-uXFolA7Z7dPu61iRO8qXkUVITpj+Lgc/FWTovsXxkwWDxmllfFNZbd2kzhljRGBf",
+      "axes": [],
+      "cmapCodepoints": 465,
+      "glyphs": 1100
+    },
+    {
+      "name": "font-fd24064c21b75738111ef1e865fcdadda2b8a826912e6b69cb03875bbe72e8b33892714b047bf74ea4af8ca212410c15.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/rajdhani/Rajdhani-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rajdhani/Rajdhani-Light.ttf",
+      "sourceBytes": 383928,
+      "sourceSri": "sha384-N4YzMTVqlSWl/O1CprVcPO0tMT66FBL0FDU3nN+qhK2pEFEU3RifROknTl3azulL",
+      "bytes": 99304,
+      "sri": "sha384-/SQGTCG3VzgRHvHoZfza3aK4qCaRLmtpywOHW75y6LM4knFLBHv3TqSvjKISQQwV",
+      "axes": [],
+      "cmapCodepoints": 465,
+      "glyphs": 1100
+    },
+    {
+      "name": "font-af6acc6e8c7b996aed7427d8eb3ec9fcc796e52910834cf7dfda627e7a861fbe8ab9b2fc6f48df25c98134490fcbb565.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/rajdhani/Rajdhani-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rajdhani/Rajdhani-Medium.ttf",
+      "sourceBytes": 384348,
+      "sourceSri": "sha384-uO8SYo9c2CLKy7X7BYr4WHpXdLgZypVGyeaV0qopBtHf73TTuYkP9PD/JYq+7yUs",
+      "bytes": 104036,
+      "sri": "sha384-r2rMbox7mWrtdCfY6z7J/MeW5SkQg0z339pifnqGH76KubL8b0jfJcmBNEkPy7Vl",
+      "axes": [],
+      "cmapCodepoints": 465,
+      "glyphs": 1100
+    },
+    {
+      "name": "font-6e16b77d47494e7d6747a2152b43bba47b21a499c5f449c45d41d68b93e54a6873aba9af40e8985e216ba0bad3c11e95.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rajdhani/Rajdhani-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rajdhani/Rajdhani-Regular.ttf",
+      "sourceBytes": 377860,
+      "sourceSri": "sha384-8l51ns589W9puihUgb0awDqKbgB2w28ZclfwYmUEjDkpeqTSimBJZnQS1hZS/EgW",
+      "bytes": 102204,
+      "sri": "sha384-bha3fUdJTn1nR6IVK0O7pHshpJnF9EnEXUHWi5PlSmhzq6mvQOiYXiFroLrTwR6V",
+      "axes": [],
+      "cmapCodepoints": 465,
+      "glyphs": 1100
+    },
+    {
+      "name": "font-770cbb2cd1131ab28fafe92eeedce96c8fe13780c1a47f0881cbd82d15c15d94c2f6ba73a14351faa7f86dbad3c5ea71.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/rajdhani/Rajdhani-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rajdhani/Rajdhani-SemiBold.ttf",
+      "sourceBytes": 390340,
+      "sourceSri": "sha384-DM/HCUCv/pHq4CMhWypwPWGS0G31cljVBv5nACv5I/lKeOX3jL7nt9Z1PLF9jY/A",
+      "bytes": 107248,
+      "sri": "sha384-dwy7LNETGrKPr+ku7tzpbI/hN4DBpH8IgcvYLRXBXZTC9rpzoUNR+qf4bbrTxepx",
+      "axes": [],
+      "cmapCodepoints": 465,
+      "glyphs": 1100
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rajdhani/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rajdhani/OFL.txt",
+    "bytes": 4373,
+    "sri": "sha384-+3wQjINRbHICMVOvmBJ+qwDqejxTITbFtpTm1TUF4DxQkZXm1nVdM1WUpnROScub"
+  }
+}

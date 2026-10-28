@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Inter Tight",
+  "sourceRank": 45,
+  "sourcePosition": 104,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/intertight/METADATA.pb",
+    "sri": "sha384-JsE7HSGDKMcWi9OjaC7GkhY/ysnvSLcfx3A6It0GuMkgXphzHwuu9nGswFw60N9R"
+  },
+  "files": [
+    {
+      "name": "font-c1def84c299d5c1faf150cdf5e836a91366980182df7fcf352065a91479f1aec7f39176ea7ffb15e3d90d6190c773a35.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/intertight/InterTight-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/intertight/InterTight-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 593844,
+      "sourceSri": "sha384-dTi6281v1mxx6uoYL4ED9us1S0p+JDusdLV3hND75pseJ28euTahsd6OjO1XX0XE",
+      "bytes": 247568,
+      "sri": "sha384-wd74TCmdXB+vFQzfXoNqkTZpgBgt9/zzUgZakUefGux/ORdup/+xXj2Q1hkMdzo1",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 2504,
+      "glyphs": 2547
+    },
+    {
+      "name": "font-7ea727a4f78e771e5a53ef8be8780a7e3ce13ebdf2b9b664e17f8004d60e1c5e37f44cddc8dfafaec2deb1f39611aa3e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/intertight/InterTight[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/intertight/InterTight%5Bwght%5D.ttf",
+      "sourceBytes": 581588,
+      "sourceSri": "sha384-UyA08oYwCSdvnjQiUwfpVlC0dv6BDXQ9V2DLQYb2rltLcib/gO6/3/johLJbCPSt",
+      "bytes": 233840,
+      "sri": "sha384-fqcnpPeOdx5aU++L6HgKfjzhPr3yubZk4X+ABNYOHF439EzdyN+vrsLesfOWEao+",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 2504,
+      "glyphs": 2547
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/intertight/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/intertight/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-/5uQYrs9r9bTQxKSAZFnaPIHsVND1YwWF/53oPPU+HnazsXgKIdryyKbLQJ96cKh"
+  }
+}
