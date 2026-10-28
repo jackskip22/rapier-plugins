@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Zen Old Mincho",
+  "sourceRank": 205,
+  "sourcePosition": 410,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenoldmincho/METADATA.pb",
+    "sri": "sha384-tTSArY6CQbZusw3RIY6smOgCE+1r97X3fj0g4tWW7GBNW0reMJ0L3n8oP6eQ1HzM"
+  },
+  "files": [
+    {
+      "name": "font-83c3845f1cb5b48083d74ddaff73fb6abbc570621256713d7b6508d0260c55626fbc6a37211766edcb7e1906e74d6d51.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/zenoldmincho/ZenOldMincho-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenoldmincho/ZenOldMincho-Black.ttf",
+      "sourceBytes": 5416348,
+      "sourceSri": "sha384-fORZ/4oRyOYZtLwiDavW3Gj9iXoYU6RTjMpbn7V2+LcKg7t8GoIW2RZ5uq9qb1Ck",
+      "bytes": 2078372,
+      "sri": "sha384-g8OEXxy1tICD103a/3P7arvFcGISVnE9e2UI0CYMVWJvvGo3IRdm7ct+GQbnTW1R",
+      "axes": [],
+      "cmapCodepoints": 7815,
+      "glyphs": 7866
+    },
+    {
+      "name": "font-7d74b4a97e4acfd262dc42a766ea1425c39b7c7e46e53fc012f6d5a2120a8180e8148eda536f9eaba18878a244d767cf.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/zenoldmincho/ZenOldMincho-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenoldmincho/ZenOldMincho-Bold.ttf",
+      "sourceBytes": 5436460,
+      "sourceSri": "sha384-qA42hO30KSrZqkFG3YtDPbzCxuzm9hmqMoC8aqAYV45b2RuJThOqaaRi++sm44AT",
+      "bytes": 2200252,
+      "sri": "sha384-fXS0qX5Kz9Ji3EKnZuoUJcObfH5G5T/AEvbVohIKgYDoFI7aU2+eq6GIeKJE12fP",
+      "axes": [],
+      "cmapCodepoints": 7815,
+      "glyphs": 7866
+    },
+    {
+      "name": "font-359b57d11548938ffd13b85ecc02c4fd3bd3f13cd512adffe24fe692da185a145257611caeb5fe4ae87edb27eb5e0796.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/zenoldmincho/ZenOldMincho-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenoldmincho/ZenOldMincho-Medium.ttf",
+      "sourceBytes": 5502836,
+      "sourceSri": "sha384-Kk4B2t+fWiWnQfutuHnZ6SO5jylCNG7B5eXhqTnwZ3QP3F3C7/YCKd3Z/16odUhw",
+      "bytes": 2172856,
+      "sri": "sha384-NZtX0RVIk4/9E7hezALE/TvT8TzVEq3/4k/mktoYWhRSV2EcrrX+Suh+2yfrXgeW",
+      "axes": [],
+      "cmapCodepoints": 7815,
+      "glyphs": 7866
+    },
+    {
+      "name": "font-9294e77e10a75b1471466ec1ae8530874fc67ec6bf7226c99c915e693fda6753e130909269842eb94536a738bf485db6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zenoldmincho/ZenOldMincho-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenoldmincho/ZenOldMincho-Regular.ttf",
+      "sourceBytes": 5442512,
+      "sourceSri": "sha384-Y5PBT1mhiU2K6ItoIwC0ekZEZtLSQ2GW5BYY+H25QU6WN1sos23D4ieeiJujrAxK",
+      "bytes": 2007216,
+      "sri": "sha384-kpTnfhCnWxRxRm7BroUwh0/Gfsa/cibJnJFeaT/aZ1PhMJCSaYQuuUU2pzi/SF22",
+      "axes": [],
+      "cmapCodepoints": 7815,
+      "glyphs": 7866
+    },
+    {
+      "name": "font-f1b98ca43f7fe6d50aa00efd46eb37e10ac6f7ef67ce7c2fcc6ec793195d3a1e05fdff2bdcaca1248d553fc3621891d7.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/zenoldmincho/ZenOldMincho-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenoldmincho/ZenOldMincho-SemiBold.ttf",
+      "sourceBytes": 5521388,
+      "sourceSri": "sha384-YlyVMQFek1uP8gq4+fqj2x5wkazscAghmLfAea8zxMEvYPGX5SjxToBoK+yQLGj2",
+      "bytes": 2197320,
+      "sri": "sha384-8bmMpD9/5tUKoA79Rus34QrG9+9nznwvzG7HkxldOh4F/f8r3KyhJI1VP8NiGJHX",
+      "axes": [],
+      "cmapCodepoints": 7815,
+      "glyphs": 7866
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zenoldmincho/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zenoldmincho/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-fgEWrZH6SkFLym0xnhSMrCZ2+mCrfKzRr6sTwdnQDpKijckbKfmQveq0pmAZA7yO"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Anek Bangla",
+  "sourceRank": 129,
+  "sourcePosition": 262,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anekbangla/METADATA.pb",
+    "sri": "sha384-Y70n34jTIoykM4u0ZKbjo1FwgCnhXej3CIRRzFs9pggmQ8w+dQ2y30aQGKkWIKkh"
+  },
+  "files": [
+    {
+      "name": "font-99fbad76842240e5b033b12eb0f03332d6455378dd4db0446679301015414574535225b9908103269ae4f30376e42abb.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/anekbangla/AnekBangla[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anekbangla/AnekBangla%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 1344456,
+      "sourceSri": "sha384-AXpGiMQyadEoKOuFK/Lz/WdI8/7XlTePzqUiyz8+8sGHyoQHZ/wEwzxTffVM5isR",
+      "bytes": 577400,
+      "sri": "sha384-mfutdoQiQOWwM7EusPAzMtZFU3jdTbBEZnkwEBVBRXRTUiW5kIEDJprk8wN25Cq7",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 500,
+          "max": 800,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 345,
+      "glyphs": 838
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/anekbangla/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anekbangla/OFL.txt",
+    "bytes": 4379,
+    "sri": "sha384-uqqoxYm5AQ6Z7akZRkYz6GZz6DgQneF8rNq4MjZp5gQVnYgbA4FBKBTOlq1DWtLU"
+  }
+}
