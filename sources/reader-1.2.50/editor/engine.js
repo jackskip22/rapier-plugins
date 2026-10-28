@@ -16392,7 +16392,8 @@ function _rapierSectionDragStart(event) {
 	const blockId = Number(handle.closest('.block-wrapper')?.dataset.blockId);
 	if (!host || !Number.isSafeInteger(blockId)) return;
 	try { handle.setPointerCapture(event.pointerId); } catch (_) {}
-	const drag = { id: blockId, y: event.clientY, startY: event.clientY, plan: null, target: null, mark: null, frame: 0, moving: [] };
+	const slop = event.pointerType === 'mouse' ? 4 : 10;
+	const drag = { id: blockId, x: event.clientX, y: event.clientY, startX: event.clientX, startY: event.clientY, plan: null, target: null, mark: null, frame: 0, moving: [] };
 	const wrapperAt = index => {
 		const block = rapier.document.blocks[index];
 		return block ? _rapierBlockWrapperById(block.id, host) : null;
@@ -16444,16 +16445,32 @@ function _rapierSectionDragStart(event) {
 	};
 	const move = e => {
 		drag.y = e.clientY;
-		if (!drag.plan && (Math.abs(drag.y - drag.startY) < 4 || !begin())) return;
+		if (!drag.plan && (Math.hypot(e.clientX - drag.startX, drag.y - drag.startY) <= slop || !begin())) return;
 		if (!drag.frame) drag.frame = requestAnimationFrame(tick);
 	};
-	const up = () => { const tapped = !drag.plan; finish(true); if (tapped) void _rapierOpenBlockSpacing(handle.closest('.block-wrapper')); };
+	const up = () => { const tapped = !drag.plan; finish(true); if (tapped) _rapierCaretToOpenBlockStart(handle.closest('.block-wrapper')); };
 	const cancel = () => finish(false);
 	const escape = e => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); finish(false); } };
 	handle.addEventListener('pointermove', move);
 	handle.addEventListener('pointerup', up);
 	handle.addEventListener('pointercancel', cancel);
 	document.addEventListener('keydown', escape, true);
+}
+
+function _rapierCaretToOpenBlockStart(wrapper) {
+	const open = _activeBlockEditContext(), selection = window.getSelection?.();
+	if (!open || open.wrapper !== wrapper || !selection) return false;
+	const edit = open.editDiv, walker = document.createTreeWalker(edit, NodeFilter.SHOW_TEXT);
+	let text = walker.nextNode();
+	while (text && (!text.data.replace(/^[\s\u200b\ufeff]+/, '') || text.parentElement?.closest('[contenteditable="false"]') !== edit.closest('[contenteditable="false"]'))) text = walker.nextNode();
+	try { edit.focus({ preventScroll: true }); } catch (_) {}
+	if (!text) { _setCursorCharOffset(edit, 0); return true; }
+	const range = document.createRange();
+	range.setStart(text, text.data.length - text.data.replace(/^[\s\u200b\ufeff]+/, '').length);
+	range.collapse(true);
+	selection.removeAllRanges();
+	selection.addRange(range);
+	return true;
 }
 
 function _rapierListItemTree(raw) {
@@ -16797,6 +16814,7 @@ function _rapierEnsurePickBar() {
 	for (const [act, label, shapes] of [
 		['up', 'move up', [line(12, 19, 12, 5), ['polyline', { points: '5 12 12 5 19 12' }]]],
 		['down', 'move down', [line(12, 5, 12, 19), ['polyline', { points: '19 12 12 19 5 12' }]]],
+		['spacing', 'block spacing', [line(21, 10, 3, 10), line(21, 6, 3, 6), line(21, 14, 3, 14), line(21, 18, 3, 18)]],
 		['copy', 'copy', [['rect', { x: 9, y: 9, width: 13, height: 13, rx: 2, ry: 2 }], ['path', { d: 'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1' }]]],
 		['cut', 'cut', [['circle', { cx: 6, cy: 6, r: 3 }], ['circle', { cx: 6, cy: 18, r: 3 }], line(20, 4, 8.12, 15.88), line(14.47, 14.48, 20, 20), line(8.12, 8.12, 12, 12)]],
 		['delete', 'delete', [['path', { d: 'M3 6h18M8 6V4h8v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6' }]]],
@@ -16839,6 +16857,12 @@ function _rapierPickAct(act) {
 		return copied && _rapierPickDelete('Cut');
 	}
 	if (act === 'delete') return _rapierPickDelete('Deleted');
+	if (act === 'spacing') {
+		const wrapper = _rapierPickedWrappers()[0];
+		_rapierLetGoBlock(false);
+		if (wrapper) void _rapierOpenBlockSpacing(wrapper);
+		return !!wrapper;
+	}
 	return false;
 }
 

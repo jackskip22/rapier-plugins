@@ -4,7 +4,7 @@ Rapier is a Markdown editor with art built in. With this plugin your agent write
 one page you both edit, draws diagrams whose boxes you move by hand, and paints watercolors that spread, mix and dry.
 Keep the result as Markdown, or as one offline HTML file that is the whole editor with your document inside.
 
-Version 1.2.49. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
+Version 1.2.50. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
 ## Write together
 

@@ -41,7 +41,7 @@ const MODULES = {
 	RapierPreferenceDefinitions: 'shell/preferences.mjs', RapierEmbedContract: 'packages/rapier-embed/contract.mjs',
 	RapierImageLayout: 'layout/model.mjs', RapierMdLayoutSpec: 'spec/md-layout.mjs',
 	RapierTextPreparation: 'layout/preparation.mjs',
-	RapierHtmlBlocks: 'spec/html-blocks.mjs',
+	RapierHtmlBlocks: 'spec/html-blocks.mjs', RapierDiagramTheme: 'shell/diagram-theme.mjs',
 };
 const READ_ALL = new Set(['RapierOcr']);
 const PLANNER_EXPORTS = {
@@ -221,7 +221,7 @@ export async function buildReader({root = here, unchecked = [], toolchainCanonic
 		if (!grew && round > 0) break;
 	}
 	report.unresolved = linked.unresolved.filter(name => !BROWSER.has(name));
-	const PROVIDED = ['DOMPurify', 'IDBKeyRange', 'URIError', 'RapierImageAssets', 'RapierPictureMarks', 'RapierPluginLoader', 'RapierUnpack', 'modules'];
+	const PROVIDED = ['DOMPurify', 'IDBKeyRange', 'URIError', 'RapierImageAssets', 'RapierPictureMarks', 'RapierDiagramTheme', 'RapierPluginLoader', 'RapierUnpack', 'modules'];
 	const GUARDED = ['_rapierDocumentPart', '_rapierDrawReadSVGRecipe', '_rapierDrawShapeProfileFor', 'RapierBundledPlugins', 'RapierLexer', 'RapierParts'];
 	const UNREACHED = ['RapierLedgerCarried'];
 	const known = new Set([...PROVIDED, ...GUARDED, ...UNREACHED]);

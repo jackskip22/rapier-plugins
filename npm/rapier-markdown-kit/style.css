@@ -220,30 +220,46 @@
 :where(.md-render) svg.rapier-native-flowchart{display:block;margin-inline:auto;height:auto}
 :where(.md-render) svg.rapier-diagram{display:block;margin-inline:auto;height:auto;text-rendering:optimizeLegibility}
 /* The same token bridge serves the document, live preview and portable page. Pele reads --pele-* names; the
-   adapter (_presentPele in shell/plugin-loader.js) points them at these --md-pele-* names, and the app's own sheet
+   theme (presentPele in shell/diagram-theme.mjs) points them at these --md-pele-* names, and the app's own sheet
    lets its theme (--color-*, --font-*) lead them in the editor. */
 :where(.md-render) :is(.diagram-block,.diagram-live-preview){
- --md-pele-bg:transparent;
+ /* v1.2.11's palette (--md-mermaid-*): warm surfaces with a gray edge, Rapier's twelve series and their tints. */
+ --md-pele-bg:var(--md-color-bg);
  --md-pele-fg:var(--md-color-text);
  --md-pele-line:var(--md-color-text);
- --md-pele-muted:var(--md-color-text-secondary);
- --md-pele-surface:var(--md-color-surface-2);
- --md-pele-surface-alt:var(--md-color-border-focus);
- --md-pele-border:var(--md-color-border);
- --md-pele-accent:var(--md-color-accent);
+ --md-pele-muted:var(--md-mermaid-muted);
+ --md-pele-surface:var(--md-mermaid-surface);
+ --md-pele-surface-alt:var(--md-color-surface);
+ --md-pele-border:var(--md-mermaid-border);
+ --md-pele-accent:var(--md-mermaid-series-1);
+ --md-pele-critical:var(--md-mermaid-series-5);
  --md-pele-font:var(--md-font-sans);
  --md-pele-font-mono:var(--md-font-mono);
  --md-pele-radius:0;
  --md-pele-heading-weight:var(--md-fw-semibold);
- --md-pele-title-weight:var(--md-fw-semibold);
- --md-pele-series-1:var(--md-pele-accent);
- --md-pele-series-2:#4f91f7;
- --md-pele-series-3:#35c57a;
- --md-pele-series-4:#e6b91e;
- --md-pele-series-5:#9b6dea;
- --md-pele-series-6:#f05a62;
- --md-pele-series-7:color-mix(in srgb,var(--md-pele-accent) 50%,#4f91f7);
- --md-pele-series-8:color-mix(in srgb,#9b6dea 50%,#f05a62);
+ --md-pele-title-weight:700;
+ --md-pele-series-1:var(--md-mermaid-series-1);
+ --md-pele-series-2:var(--md-mermaid-series-2);
+ --md-pele-series-3:var(--md-mermaid-series-3);
+ --md-pele-series-4:var(--md-mermaid-series-4);
+ --md-pele-series-5:var(--md-mermaid-series-5);
+ --md-pele-series-6:var(--md-mermaid-series-6);
+ --md-pele-series-7:var(--md-mermaid-series-7);
+ --md-pele-series-8:var(--md-mermaid-series-8);
+ --md-pele-series-9:var(--md-mermaid-series-9);
+ --md-pele-series-10:var(--md-mermaid-series-10);
+ --md-pele-series-11:var(--md-mermaid-series-11);
+ --md-pele-series-12:var(--md-mermaid-series-12);
+ /* C4's own blues and architecture's icon tiles, as v1.2.11 drew them, with a lighter twin on dark paper. */
+ --md-diagram-c4-person:light-dark(#08427b,#6a9fe0);
+ --md-diagram-c4-system:light-dark(#1168bd,#7fb0ea);
+ --md-diagram-c4-container:light-dark(#438dd5,#93c1f0);
+ --md-diagram-c4-component:light-dark(#85bbf0,#c2dcf7);
+ --md-diagram-c4-external:light-dark(#7a7a7a,#c4c4c4);
+ --md-diagram-c4-ink:light-dark(#ffffff,#0b1a2b);
+ --md-diagram-c4-component-ink:light-dark(#0b1a2b,#0b1a2b);
+ --md-diagram-tile:light-dark(#087ebf,#4aa3dc);
+ --md-diagram-tile-ink:light-dark(#ffffff,#04121c);--md-diagram-tile-ink-deep:light-dark(#ffffff,#f4f1ea);
 }
 
 /* Radar gives these SVG labels a color declaration; SVG text needs a fill. */
@@ -251,7 +267,7 @@
 /* Multiplying a ribbon by black paper makes its entire flow disappear. */
 :where(.md-render) svg.rapier-diagram[aria-roledescription="sankey"] .link{mix-blend-mode:normal!important}
 /* Captions keep their baseline while masking chart marks behind their letters. */
-:where(.md-render) svg.rapier-diagram[aria-roledescription="c4"] text:not(.c4-shape *),
+:where(.md-render) svg.rapier-diagram[aria-roledescription="c4"] text:not(.c4-shape *,.pele-node *),
 :where(.md-render) svg.rapier-diagram[aria-roledescription="architecture"] .architecture-service text,
 :where(.md-render) svg.rapier-diagram[aria-roledescription="wardley"] .wardley-node-label,
 :where(.md-render) svg.rapier-diagram[aria-roledescription="xychart"] [class^="line-plot-"]>.labels>text,

@@ -94,7 +94,8 @@ export function carry(pageHtml, include = []) {
 	if (kept.has('mermaid')) kept.add('mermaid-zenuml');
 	let html = pageHtml;
 	const cut = id => { const at = element(html, id); if (at) html = html.slice(0, at.start) + html.slice(at.end); };
-	const parts = new Set([...(kept.has('drawing') ? ['rapier-part-drawing'] : []), ...(kept.has('layout') ? ['rapier-part-document'] : [])]);
+	const parts = new Set([...(kept.has('drawing') ? ['rapier-part-drawing'] : []), ...(kept.has('layout') ? ['rapier-part-document'] : []),
+		...(kept.has('mermaid') ? ['rapier-part-diagramtheme'] : [])]);
 	for (const id of [...new Set([...html.matchAll(/<script type="application\/rapier-runtime" id="(rapier-part-[a-z-]+)">/g)].map(match => match[1]))])
 		if (!parts.has(id)) cut(id);
 	const start = html.indexOf(INVENTORY);
