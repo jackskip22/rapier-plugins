@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Old Standard TT",
+  "sourceRank": 210,
+  "sourcePosition": 416,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oldstandardtt/METADATA.pb",
+    "sri": "sha384-OrNetvOkWD8+kTmK/cp4p0AbZQhubm8w0Tx3fHDRD4OHrPFlmRbm6glbVqFDcOGs"
+  },
+  "files": [
+    {
+      "name": "font-c051acf1f582858c2e51c8d8666caeee3624a9a10c6b321e25b55e30831a6dd420ea2376f3b20c5e9d7ec9f12ba4ead1.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/oldstandardtt/OldStandard-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oldstandardtt/OldStandard-Bold.ttf",
+      "sourceBytes": 267128,
+      "sourceSri": "sha384-oPblLNCJLr2wCb2tWk1YMgRJIEACu0mLzxG41NhJCZ5ubJHddcqINYJ9LAcqas84",
+      "bytes": 70288,
+      "sri": "sha384-wFGs8fWChYwuUcjYZmyu7jYkqaEMazIeJbVeMIMabdQg6iN287IMXp1+yfErpOrR",
+      "axes": [],
+      "cmapCodepoints": 888,
+      "glyphs": 940
+    },
+    {
+      "name": "font-126518d4a7092086925bfbfe8f751c80a5672c76bb20b2a41b5d2b98e489075f63118d52f8dc03d78a7c179b96934929.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/oldstandardtt/OldStandard-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oldstandardtt/OldStandard-Italic.ttf",
+      "sourceBytes": 272692,
+      "sourceSri": "sha384-IfYyfBj11q53/uGlKPO8MOou2Pepw/Fs9IgP/3ztoNiwTSM0M8gY9szyDfwfBVTz",
+      "bytes": 73840,
+      "sri": "sha384-EmUY1KcJIIaSW/v+j3UcgKVnLHa7ILKkG10rmOSJB19jEY1S+NwD14p8F5uWk0kp",
+      "axes": [],
+      "cmapCodepoints": 887,
+      "glyphs": 938
+    },
+    {
+      "name": "font-7f6dc97aa22d613a91562a638047c6b8cd4aa377aa2dceb3804ebd0eed27b7b638fada2b58fd97c080c66d0d98d42be6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/oldstandardtt/OldStandard-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oldstandardtt/OldStandard-Regular.ttf",
+      "sourceBytes": 249668,
+      "sourceSri": "sha384-OWTMgmAxAo3QyoXXeHI96Zpef3vL4qWH4PChzo4Ed8LE+IzxUi00j/eI+eza4xDe",
+      "bytes": 69092,
+      "sri": "sha384-f23JeqItYTqRVipjgEfGuM1Ko3eqLc6zgE69Du0nt7Y4+torWP2XwIDGbQ2Y1Cvm",
+      "axes": [],
+      "cmapCodepoints": 888,
+      "glyphs": 940
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/oldstandardtt/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oldstandardtt/OFL.txt",
+    "bytes": 4373,
+    "sri": "sha384-n6theM1sjYyJt7bLQ062ZM5vv0rYZGgyLn0f6Kshq7FUv2sROwA8DKig6i0iKWkx"
+  }
+}

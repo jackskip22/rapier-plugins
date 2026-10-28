@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Georgian",
+  "sourceRank": 350,
+  "sourcePosition": 666,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansgeorgian/METADATA.pb",
+    "sri": "sha384-HBr3Ols81a31catNQqsugJwMx2dziq3bbCpxUJxzBtjO1s7/8jlCTfDWx7URrtm5"
+  },
+  "files": [
+    {
+      "name": "font-340210df1cf0ac4cc70ff9a2f389b5fdb4491c6a7263e2630e26704065852639f30f2f4998ffceae413960240dbd4dd3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansgeorgian/NotoSansGeorgian[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansgeorgian/NotoSansGeorgian%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 231988,
+      "sourceSri": "sha384-BjvFYJvRsj3D4jXh7UsYO2EGOOUCkREJuTVkypHUv6ukxrahcrJhS+NCKJ7EXZE9",
+      "bytes": 127848,
+      "sri": "sha384-NAIQ3xzwrEzHD/mi84m1/bRJHGpyY+JjDiZwQGWFJjnzDy9JmP/OrkE5YCQNvU3T",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 509,
+      "glyphs": 554
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansgeorgian/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansgeorgian/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-nAJhgPaIWLj4Tto1RJrF3pnuMtJ+JEY+xG6hRyDElkdMxgtfl3VWYggUXGoXgj09"
+  }
+}

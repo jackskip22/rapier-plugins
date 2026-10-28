@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Archivo Narrow",
+  "sourceRank": 40,
+  "sourcePosition": 96,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivonarrow/METADATA.pb",
+    "sri": "sha384-HVcyDa1rmooXUieRqeaJst1oyyEKKT24ASrV8piLLN4jywyO50C8t8o49+c4PboC"
+  },
+  "files": [
+    {
+      "name": "font-4520dcd4dd6592be6575ba27444f53456990f62caa348a70c0bc00cfcbc5892320d1e3bfb0b92a4ccdb458dd86110978.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/archivonarrow/ArchivoNarrow-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivonarrow/ArchivoNarrow-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 98456,
+      "sourceSri": "sha384-q20v6en42af0vl1pX8XDtZwhxKZXWYlCIOjxxAJ+poMgd2CmSzO334s0z1LB6LGD",
+      "bytes": 40384,
+      "sri": "sha384-RSDc1N1lkr5ldbonRE9TRWmQ9iyqNIpwwLwAz8vFiSMg0eO/sLkqTM20WN2GEQl4",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 657,
+      "glyphs": 798
+    },
+    {
+      "name": "font-0cdbb2fb03780942d7bddeaa7172d975914f06f6377b2b596aec47b7e3dc74b9af4007e414200b9d35b5a3f60c437630.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/archivonarrow/ArchivoNarrow[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivonarrow/ArchivoNarrow%5Bwght%5D.ttf",
+      "sourceBytes": 93304,
+      "sourceSri": "sha384-aTYL81pt3QIaEO7oAhE8E+8YV2/10XznidZZ0mFStgAY6KJg78T3lHZTEvF+Gzy2",
+      "bytes": 36196,
+      "sri": "sha384-DNuy+wN4CULXvd6qcXLZdZFPBvY3eytZauxHt+PcdLmvQAfkFCALnTW1o/YMQ3Yw",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 657,
+      "glyphs": 798
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/archivonarrow/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivonarrow/OFL.txt",
+    "bytes": 4495,
+    "sri": "sha384-BiwoiCudTLKr44iMA+u9Dy93J+BffPHV0FBojRt2lSZZI19lWo3zfB/u3hBpKh2T"
+  }
+}

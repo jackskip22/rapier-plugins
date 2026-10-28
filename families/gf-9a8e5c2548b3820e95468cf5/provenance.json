@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "BJCree",
+  "sourceRank": 538,
+  "sourcePosition": 986,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bjcree/METADATA.pb",
+    "sri": "sha384-L1td2dkJcphsXZuRX+THNfAPw+I4N/oZfQy/z0bZ26QIkV/Rfq0ZcgN++CivY6Wo"
+  },
+  "files": [
+    {
+      "name": "font-7e109493500388bf58ef55700dbf1d1c59b2d3012482b95776dbadb3c5504cf5e8399d422116840b053e9e56fb5ae593.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/bjcree/BJCree-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bjcree/BJCree-Bold.ttf",
+      "sourceBytes": 106376,
+      "sourceSri": "sha384-d5T8/tVxw6XALI2BUmZby9ztKvMMENvtBi2SH8ra4Xx5vncWjbn4t80dxcmDWEIl",
+      "bytes": 29168,
+      "sri": "sha384-fhCUk1ADiL9Y71VwDb8dHFmy0wEkgrlXdtuts8VQTPXoOZ1CIRaECwU+nlb7WuWT",
+      "axes": [],
+      "cmapCodepoints": 729,
+      "glyphs": 732
+    },
+    {
+      "name": "font-41fe4fbc800d1adf2dfa65217b08783d3eb084bc24a151b1a59fd128d0730fafc6da06c44b345120e870e61d08503975.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/bjcree/BJCree-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bjcree/BJCree-Medium.ttf",
+      "sourceBytes": 105820,
+      "sourceSri": "sha384-YMflgX++njSBnBHT+p2TMpxRUaQppZ3DXklyoat8oXcKkGUAuARkmNQVmXmO99Sh",
+      "bytes": 30544,
+      "sri": "sha384-Qf5PvIANGt8t+mUhewh4PT6whLwkoVGxpZ/RKNBzD6/G2gbESzRRIOhw5h0IUDl1",
+      "axes": [],
+      "cmapCodepoints": 729,
+      "glyphs": 732
+    },
+    {
+      "name": "font-6f218030fb47c14fdb7739d24198f33b7d42b4c991c521a7deb732ce0ef794b826b8661b31c94e740dfe7026078e8ba0.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bjcree/BJCree-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bjcree/BJCree-Regular.ttf",
+      "sourceBytes": 106236,
+      "sourceSri": "sha384-3Sn6AYI4K8+8RR8l7pYiINv98TkXZvLxAIDlZ4nDH0S5Esk6jYPZlZTh8b3goJ8+",
+      "bytes": 28772,
+      "sri": "sha384-byGAMPtHwU/bdznSQZjzO31CtMmRxSGn3rcyzg73lLgmuGYbMclOdA3+cCYHjoug",
+      "axes": [],
+      "cmapCodepoints": 729,
+      "glyphs": 732
+    },
+    {
+      "name": "font-39852f216773d61a306583eb758217af46831bd46f2db726f48d624a098c1677b0707ad302c81ece9e0f3ebd417619de.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/bjcree/BJCree-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bjcree/BJCree-SemiBold.ttf",
+      "sourceBytes": 105548,
+      "sourceSri": "sha384-hDYXV8IpnGf63w4jEkVLp3BioBnNPJWaE0SUPdf7fW4jihzN2XP5EpgCQounxIzo",
+      "bytes": 30828,
+      "sri": "sha384-OYUvIWdz1howZYPrdYIXr0aDG9RvLbcm9I1iSgmMFnewcHrTAsgezp4PPr1Bdhne",
+      "axes": [],
+      "cmapCodepoints": 729,
+      "glyphs": 732
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bjcree/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bjcree/OFL.txt",
+    "bytes": 4583,
+    "sri": "sha384-VEiQbzbvd4V7x4C5vqs4rhuEr58ahC8/e9aM187qDos1ph/SPoYeZW0x3CppIX7a"
+  }
+}

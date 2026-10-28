@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Mandali",
+  "sourceRank": 403,
+  "sourcePosition": 765,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mandali/METADATA.pb",
+    "sri": "sha384-wrZjfM+Q3iih0lj6mByUqZNwuU/KRxg1lAr3W6sHdW3TqfLpyD7Te+QcUUJbb5p5"
+  },
+  "files": [
+    {
+      "name": "font-51061b6c018fcd7c7ffd5442fb55384717fa38346cceeffadf7d096edf1b72dc906276e7821782d6f0a91967f826bd12.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mandali/Mandali-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mandali/Mandali-Regular.ttf",
+      "sourceBytes": 619212,
+      "sourceSri": "sha384-gd/71JInOi1lAjWG2f1CGHheXlc5lD50n8IGYSgLIkjfbLw7sjCS5T34YvxAXV86",
+      "bytes": 149076,
+      "sri": "sha384-UQYbbAGPzXx//VRC+1U4Rxf6ODRszu/6330Jbt8bctyQYnbngheC1vCpGWf4Jr0S",
+      "axes": [],
+      "cmapCodepoints": 224,
+      "glyphs": 1235
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mandali/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mandali/OFL.txt",
+    "bytes": 4455,
+    "sri": "sha384-pXB8sAMddm+t5TXpY0rFfVJZyd+Qas1HwkLdh1L533cK49MfmwQD0TrmszmN40eb"
+  }
+}

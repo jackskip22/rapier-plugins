@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Playwrite NZ Guides",
+  "sourceRank": 429,
+  "sourcePosition": 816,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritenzguides/METADATA.pb",
+    "sri": "sha384-2JLRbyIqg3r23P9jMeQdZAHu/JHcEixxrUUX1cyCsOlaXNVguSvqDzhIheyYMMF0"
+  },
+  "files": [
+    {
+      "name": "font-286b839b84bf72c012e44f4cc267fecc983bc254dcb8ad45dd55555b9923346479a2bc9461432ad1eafba9d40187e235.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwritenzguides/PlaywriteNZGuides-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritenzguides/PlaywriteNZGuides-Regular.ttf",
+      "sourceBytes": 387680,
+      "sourceSri": "sha384-wXZvewrrPLSPOVCpDMqdDLFbchRI+BdKP5DPpQ2v1lOMkraw4cShFVk6u9Js4RiS",
+      "bytes": 88296,
+      "sri": "sha384-KGuDm4S/csAS5E9Mwmf+zJg7wlTcuK1F3VVVW5kjNGR5oryUYUMq0er7qdQBh+I1",
+      "axes": [],
+      "cmapCodepoints": 486,
+      "glyphs": 1312
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwritenzguides/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritenzguides/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Catamaran",
+  "sourceRank": 60,
+  "sourcePosition": 136,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/catamaran/METADATA.pb",
+    "sri": "sha384-W9J9Ny6yyX5kumUwVpk1ayAHB36ffmxpG58NnkUeOE8FGWJ2Ov1elaodaQYMkhAV"
+  },
+  "files": [
+    {
+      "name": "font-a11e8860b8bfd61e3ebd0eef99e17cf3dc6c66685d37f2dbc87abb637625ca9e2499af29015cfd349ac1d18b216ed6c2.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/catamaran/Catamaran[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/catamaran/Catamaran%5Bwght%5D.ttf",
+      "sourceBytes": 184276,
+      "sourceSri": "sha384-kuq+IWFMEDYjn70XMm2YjNo4uqKs9EVitjNVQAa2FtRstyhUUjRdWkX6RLSougcK",
+      "bytes": 84684,
+      "sri": "sha384-oR6IYLi/1h4+vQ7vmeF889xsZmhdN/LbyHq7Y3Ylyp4kma8pAVz9NJrB0YshbtbC",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 410,
+      "glyphs": 462
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/catamaran/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/catamaran/OFL.txt",
+    "bytes": 4370,
+    "sri": "sha384-L1fmyXk6qXkJTFsQ2meoHnUwQfvdjQuZn1ycd2KPC/Lj8fUNnGM6eZKqWCvmwbEE"
+  }
+}

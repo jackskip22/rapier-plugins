@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Road Rage",
+  "sourceRank": 316,
+  "sourcePosition": 608,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/roadrage/METADATA.pb",
+    "sri": "sha384-h9DQLLjaDzYdaNXVRPnBhgrysJNPs/u47ld7ngxXSPnvbaPuPl5DkiqJ1i/3BLhx"
+  },
+  "files": [
+    {
+      "name": "font-d9318e94c51999a99f10dc89b5ced04aa407f16ee97a6c40c59772a3d0c6664ecd92ca49e63f5f4d92c83b39bbef26d9.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/roadrage/RoadRage-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/roadrage/RoadRage-Regular.ttf",
+      "sourceBytes": 427472,
+      "sourceSri": "sha384-hLJK6HZY31zZqx3t29RHlZo2fRVV/DoAHn4uQ+HXc8eUdNv7q+0ALvrrfUdPfrb3",
+      "bytes": 117536,
+      "sri": "sha384-2TGOlMUZmamfENyJtc7QSqQH8W7pemxAxZdyo9DGZk7NkspJ5j9fTZLIOzm77ybZ",
+      "axes": [],
+      "cmapCodepoints": 587,
+      "glyphs": 642
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/roadrage/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/roadrage/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-WB+fjjpzhVI5Q0gN0MQuW0DwU5SbG7Xtmfd8WRgOki2qmUABagLBA2vyvwZTxr82"
+  }
+}

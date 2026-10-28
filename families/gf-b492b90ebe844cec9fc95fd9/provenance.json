@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Lexend Tera",
+  "sourceRank": 437,
+  "sourcePosition": 834,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendtera/METADATA.pb",
+    "sri": "sha384-JAuav0BHmrv5vlZcAViAWpLGxWA/umjk6jQ0N4GD8938dEIprUGmlWaZWr95bcpr"
+  },
+  "files": [
+    {
+      "name": "font-a824b5b858f2c90da96606996edba11010ef87db1164f2b15525c9f53fa41e506d79e54710f16ecf07f39c38effe549d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/lexendtera/LexendTera[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendtera/LexendTera%5Bwght%5D.ttf",
+      "sourceBytes": 192544,
+      "sourceSri": "sha384-934J30vj+9bWl9/IayG16xjubc3vsbBAdpAGG73beMuZvWSkiw7ad80m8/XhQDv1",
+      "bytes": 81744,
+      "sri": "sha384-qCS1uFjyyQ2pZgaZbtuhEBDvh9sRZPKxVSXJ9T+kHlBteeVHEPFuzwfznDjv/lSd",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 685,
+      "glyphs": 850
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/lexendtera/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendtera/OFL.txt",
+    "bytes": 4436,
+    "sri": "sha384-6aJe7EFHi7aadivqHytXtg7xuFNZI7SMxeb1R4a/4fdUQOarovJUxC6K6byKG4Xn"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Lao",
+  "sourceRank": 659,
+  "sourcePosition": 1135,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanslao/METADATA.pb",
+    "sri": "sha384-WFZGnLxlR3U66uITYzkbXJCm8KajEmvxaXP5NC5uY64AjJk/K59e2jKdNatr1AMr"
+  },
+  "files": [
+    {
+      "name": "font-fff8cdd325a63b5a604b415ca31f53a1dfa226b6201896557567bc86d141b8c725faa4254f9cade18f982ffc053a8d53.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosanslao/NotoSansLao[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanslao/NotoSansLao%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 176620,
+      "sourceSri": "sha384-keEiBUCVKFO3IouWf0e8tQytlSrpHcgKuLVzSijmRWNLo/9iFcuKNFSmOpHVE8oY",
+      "bytes": 93424,
+      "sri": "sha384-//jN0yWmO1pgS0Fcox9Tod+iJrYgGJZVdWe8htFBuMcl+qQlT5yt4Y+YL/wFOo1T",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 421,
+      "glyphs": 466
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanslao/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanslao/OFL.txt",
+    "bytes": 4379,
+    "sri": "sha384-HwX01tloMr6Y97sqFsWaYan5RH1TINrcuxodkBT1z3QI9NcVCoZ0Z3Q8Gl0OaixJ"
+  }
+}

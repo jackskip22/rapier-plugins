@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Bodoni Moda SC",
+  "sourceRank": 357,
+  "sourcePosition": 676,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bodonimodasc/METADATA.pb",
+    "sri": "sha384-mUqEVz/ncMMbANjxI75zjZaOmOnxyjNxg1ZxAjhWjKgcRSBABEtYg3W1jIhQ5+t+"
+  },
+  "files": [
+    {
+      "name": "font-cd0224f6b8aa801ecdb2e89b712546daf67ac7b830968ace8f81f0b4c9ccee5d9f953d84ee1414fcc6696685f51ed6d5.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/bodonimodasc/BodoniModaSC-Italic[opsz,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bodonimodasc/BodoniModaSC-Italic%5Bopsz%2Cwght%5D.ttf",
+      "sourceBytes": 176300,
+      "sourceSri": "sha384-QbjfhgjpPYmfgfDj5dgk+n0hrHOAOGU4qVYU/lwHn4lVOyWOJKvzsNMIHe0i+kP8",
+      "bytes": 85100,
+      "sri": "sha384-zQIk9riqgB7NsuibcSVG2vZ6x7gwlorOj4HwtMnM7l2flT2E7hQU/MZpZoX1HtbV",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "opsz",
+          "min": 6,
+          "default": 11,
+          "max": 96,
+          "name": "Optical size"
+        }
+      ],
+      "cmapCodepoints": 428,
+      "glyphs": 563
+    },
+    {
+      "name": "font-aea0628e1e5f97e4e184dfc18bf568b92bd99f7c3b4695564dfac4b4fa6f0390a688d3e6e4b1cc56cf1f642d5b492de2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bodonimodasc/BodoniModaSC[opsz,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bodonimodasc/BodoniModaSC%5Bopsz%2Cwght%5D.ttf",
+      "sourceBytes": 161760,
+      "sourceSri": "sha384-7t/9CaIGN8+i64xBVdMfoWgBAFErygnSBc6yd/JoejwCTJxja9p/ltKLOnYf9Zs1",
+      "bytes": 74136,
+      "sri": "sha384-rqBijh5fl+ThhN/Bi/VouSvZn3w7RpVWTfrEtPpvA5CmiNPm5LHMVs8fZC1bSS3i",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "opsz",
+          "min": 6,
+          "default": 11,
+          "max": 96,
+          "name": "Optical size"
+        }
+      ],
+      "cmapCodepoints": 428,
+      "glyphs": 563
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bodonimodasc/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bodonimodasc/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-Iw4g/wQH2/jHtZltsSLbfCW83PWy20/heBTnRqR6vpkD58A/cCejWycfjNu60Uv/"
+  }
+}

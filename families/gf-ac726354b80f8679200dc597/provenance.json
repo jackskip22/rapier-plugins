@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Platypi",
+  "sourceRank": 172,
+  "sourcePosition": 345,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/platypi/METADATA.pb",
+    "sri": "sha384-7GwA8qoGVfZeuUj7CYLEzOAp4M2ybwWZWaaJdKJ9aWvkkVZQzae/YSRsEb7TOPMq"
+  },
+  "files": [
+    {
+      "name": "font-fd6e8679e60674fc663345a6deec971998d1688b15f26cbbcb1b5d981ff8001ae85659957e183b7a8944af7f1f6a077f.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/platypi/Platypi-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/platypi/Platypi-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 166552,
+      "sourceSri": "sha384-hmJ9sUKGah2Uw2jze97/4TFLZpqqhmrfS3iODrMciWx8cz+PDJSSFrapNoa9IQEf",
+      "bytes": 72400,
+      "sri": "sha384-/W6GeeYGdPxmM0Wm3uyXGZjRaIsV8my7yxtdmB/4ABroVlmVfhg7eolEr38fagd/",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 621,
+      "glyphs": 707
+    },
+    {
+      "name": "font-c3d229d84985b65c8efa5b021d3a2ee3c2a48323318ff37891532a84a5d1bf3e5ea5d80fbaf8391b95ac161f217cd50b.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/platypi/Platypi[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/platypi/Platypi%5Bwght%5D.ttf",
+      "sourceBytes": 169476,
+      "sourceSri": "sha384-VOndwyUmsyLfi3Rsrd3F6Adjqh1VTiaBhERAXydegdheOZojzC/PE/o2XJhotl2x",
+      "bytes": 71244,
+      "sri": "sha384-w9Ip2EmFtlyO+lsCHTou48KkgyMxj/N4kVMqhKXRvz5epdgPuvg5G5WsFh8hfNUL",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 621,
+      "glyphs": 707
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/platypi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/platypi/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-ccEGzrrOw8Hnxo1WesUR/LfAD1frsD2fXU8gKh2ZoW2zBpAKxLSLbRO4dev7Nd54"
+  }
+}

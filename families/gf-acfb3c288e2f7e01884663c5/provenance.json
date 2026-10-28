@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Reddit Sans",
+  "sourceRank": 296,
+  "sourcePosition": 573,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/redditsans/METADATA.pb",
+    "sri": "sha384-tgfZ/sABNvh+w/K+C69Z9ZpN1DbdT47JC9fE3+czdbq5xzldfWJnuDuUT9d2iVCg"
+  },
+  "files": [
+    {
+      "name": "font-cddb71639aa91c339e03f4dc0b9435f4041f0d5bdec738e0d717e073535a192958f94805644255726c338fb4e3b226e7.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/redditsans/RedditSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/redditsans/RedditSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 242572,
+      "sourceSri": "sha384-kZ/fJcvXK+osw0oIPncjvdanZHDIuhlC5emAhR4OGmH11pID4NF2J8xgGiRLcKoT",
+      "bytes": 97368,
+      "sri": "sha384-zdtxY5qpHDOeA/TcC5Q19AQfDVvexzjg1xfgc1NaGSlY+UgFZEJVcmwzj7Tjsibn",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 722,
+      "glyphs": 1064
+    },
+    {
+      "name": "font-85a684e59ebada826d8d913044bea3565de66efc259ccccf8dd9a9c8c4c51d115f24e3d7c63e37ce8b2271ac42ce78f0.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/redditsans/RedditSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/redditsans/RedditSans%5Bwght%5D.ttf",
+      "sourceBytes": 262060,
+      "sourceSri": "sha384-/QmPva7zAmPGIks202IX0c35oTDJjcYLFmCeiZf8IbhveenD+UiV9bWkv+U48kQs",
+      "bytes": 95892,
+      "sri": "sha384-haaE5Z662oJtjZEwRL6jVl3mbvwlnMzPjdmpyMTFHRFfJOPXxj43zosicaxCznjw",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 722,
+      "glyphs": 1079
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/redditsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/redditsans/OFL.txt",
+    "bytes": 4879,
+    "sri": "sha384-rPwRAE5uWFmmUWdsHL3Pfp+MwghqOBIDT53FeLdLPdxMaVP7ZePOKWaaV6Ui7mVD"
+  }
+}

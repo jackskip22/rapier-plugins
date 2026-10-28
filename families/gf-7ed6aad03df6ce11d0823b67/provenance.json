@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Kalnia Glaze",
+  "sourceRank": 388,
+  "sourcePosition": 733,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalniaglaze/METADATA.pb",
+    "sri": "sha384-8tE+tbQkWUkLhsOeaQq2jUPtgUZ7dqBq/wP4qPmWl6giX8r6M9VASeQ5xPKs6XXY"
+  },
+  "files": [
+    {
+      "name": "font-2b629bec1fc4333e5028d22b565a584773edda938062982d9dc0ce019eb008477335daeca20c595117c27af935963dba.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/kalniaglaze/KalniaGlaze[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalniaglaze/KalniaGlaze%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 392184,
+      "sourceSri": "sha384-KUm5TGAGONccnbxkmuruEnjqui92/MnAsmwcDPbb2sk6mC9Jf/pRYGwG/6pL8BNu",
+      "bytes": 125984,
+      "sri": "sha384-K2Kb7B/EMz5QKNIrVlpYR3Pt2pOAYpgtncDOAZ6wCEdzNdrsogxZURfCevk1lj26",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 100,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 380,
+      "glyphs": 1138
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kalniaglaze/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kalniaglaze/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-6KqGE3lQoNFG/cjxBxzOvdTrNNgi9LF10UiTpkBx3SG4+ph/+Y868cWn4L9Gs4mP"
+  }
+}

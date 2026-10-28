@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Philosopher",
+  "sourceRank": 102,
+  "sourcePosition": 207,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/philosopher/METADATA.pb",
+    "sri": "sha384-09B0zeevRyytw3UTFM2teKUmiJrsEBGhorl91qy9n1OB3xQ5OprsPAnLFzUWCPEQ"
+  },
+  "files": [
+    {
+      "name": "font-f4238d2ef09bbc83c7adf54ed79e62400968c4c14f90af028fc2d3b46a430b9463a39e6e48ecdbeae7e7b307a2863e5d.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/philosopher/Philosopher-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/philosopher/Philosopher-Bold.ttf",
+      "sourceBytes": 110068,
+      "sourceSri": "sha384-jRJLs7pJePgbAoxYRWLn8gRXzRze2WzsPNDVOlpz81sBJOo5Yg+C3ya7O9emJ2pe",
+      "bytes": 40568,
+      "sri": "sha384-9CONLvCbvIPHrfVO155iQAloxMFPkK8Cj8LTtGpDC5Rjo55uSOzb6ufnsweihj5d",
+      "axes": [],
+      "cmapCodepoints": 538,
+      "glyphs": 555
+    },
+    {
+      "name": "font-0367d2eedff81aa1af70a845be81d446519107956c64bd7bb2baa585907414b53d8dd5f306c31f97de9d7f8ac11fa545.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/philosopher/Philosopher-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/philosopher/Philosopher-BoldItalic.ttf",
+      "sourceBytes": 118380,
+      "sourceSri": "sha384-WmtZ6kSnqI9EEyuxFps3gOjU3yPxCc8LHzjMdmbIA0Qzbh1jbsv4am0vZR04ST1k",
+      "bytes": 44176,
+      "sri": "sha384-A2fS7t/4GqGvcKhFvoHURlGRB5VsZL17srqlhZB0FLU9jdXzBsMfl96df4rBH6VF",
+      "axes": [],
+      "cmapCodepoints": 534,
+      "glyphs": 553
+    },
+    {
+      "name": "font-602bb0e9cb1814c94d75f83a2f6ff7c8f47ff7f614c2c899d17a09353e2f51a7dd35dadfa455e7db61c89d84bcba49fb.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/philosopher/Philosopher-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/philosopher/Philosopher-Italic.ttf",
+      "sourceBytes": 118000,
+      "sourceSri": "sha384-tRZK9H4bdck74RqcT1uZvs0UVtgSCxnBVhLAI5dcFJbCXj8m0ogugvYvmDetyMNb",
+      "bytes": 43344,
+      "sri": "sha384-YCuw6csYFMlNdfg6L2/3yPR/9/YUwsiZ0XoJNT4vUafdNdrfpFXn22HInYS8ukn7",
+      "axes": [],
+      "cmapCodepoints": 534,
+      "glyphs": 553
+    },
+    {
+      "name": "font-4587db8917a428e7ba657b5a2bcee5123e96ec519939495e25c4d687e1566f25ef24fc831f2cfdeb66b57fac76ca02a4.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/philosopher/Philosopher-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/philosopher/Philosopher-Regular.ttf",
+      "sourceBytes": 111676,
+      "sourceSri": "sha384-tziFjiwMDRSNZWJyzI7pBF9aDZyeCcj3/fQMPf7lJKB3CQy85c76NGiUrNAWRMz/",
+      "bytes": 40784,
+      "sri": "sha384-RYfbiRekKOe6ZXtaK87lEj6W7FGZOUleJcTWh+FWbyXvJPyDHyz962a1f6x2ygKk",
+      "axes": [],
+      "cmapCodepoints": 538,
+      "glyphs": 555
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/philosopher/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/philosopher/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sq1F2YCOc9JP3QHjaI7iBG3pPpizJyXWMXsz2bOXXME4Ocp/XZECoa9ssoby8WBH"
+  }
+}

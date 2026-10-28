@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Hanken Grotesk",
+  "sourceRank": 32,
+  "sourcePosition": 77,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hankengrotesk/METADATA.pb",
+    "sri": "sha384-08WE9fy73kTNDPHiET4xCrTfQ/xDbX73dfThkJhM6yJ/eST1AciEmegXpADKS/Sb"
+  },
+  "files": [
+    {
+      "name": "font-221f9bc006a76f127a0112e303331a5f4b59d1300a2c6c91862a57d958ff758fd202a3fb384344e9639a505303ebc685.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/hankengrotesk/HankenGrotesk-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hankengrotesk/HankenGrotesk-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 139388,
+      "sourceSri": "sha384-PV00wFDI7d0DPFu9wi64dZxTCvsifZKa9rBZ3Zb0qDSR+Vrgn7guttSvvtb14kJk",
+      "bytes": 60252,
+      "sri": "sha384-Ih+bwAanbxJ6ARLjAzMaX0tZ0TAKLGyRhipX2Vj/dY/SAqP7OENE6WOaUFMD68aF",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 550,
+      "glyphs": 708
+    },
+    {
+      "name": "font-a8774110682b97601b848d977645dfdd491481fee19e3d73a5d6130151ed20acedefa019e66600cbedae861790828ed0.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/hankengrotesk/HankenGrotesk[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hankengrotesk/HankenGrotesk%5Bwght%5D.ttf",
+      "sourceBytes": 132892,
+      "sourceSri": "sha384-pm1fz8ijIxLQ10knr6D5bzHI9I5Y/QvcdU3kAlx/TmCYPD3SJfFK61aLyeCBmkV+",
+      "bytes": 57220,
+      "sri": "sha384-qHdBEGgrl2AbhI2XdkXf3UkUgf7hnj1zpdYTAVHtIKzt76AZ5mYAy+2uhheQgo7Q",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 550,
+      "glyphs": 708
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hankengrotesk/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hankengrotesk/OFL.txt",
+    "bytes": 4402,
+    "sri": "sha384-WPLhPBVfq2+oFzWV6AOxVgdYoBuENTilUhyXX1aeyN8T8CMMzHGZ5MOuKzlBRB1T"
+  }
+}

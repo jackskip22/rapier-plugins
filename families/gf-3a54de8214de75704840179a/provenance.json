@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Urbanist",
+  "sourceRank": 67,
+  "sourcePosition": 145,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/urbanist/METADATA.pb",
+    "sri": "sha384-7P1lQV7kjGY9ZBpm1j1451SpGO/HribFX+DrRH/miPX6kzG6WTdHm/Ggq8CWK/oG"
+  },
+  "files": [
+    {
+      "name": "font-18d6dfee5868714b761617595d24a14c24828d0c27aef1e2a27488b869305c34be16d8441b06ac1474ae969725af6f67.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/urbanist/Urbanist-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/urbanist/Urbanist-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 87508,
+      "sourceSri": "sha384-NqCyD8D8ERNmopE3fNZLMKFphZSxZYYJT1WmS4P6Hwxa0iMrI4vWgSRNITcAtukf",
+      "bytes": 41316,
+      "sri": "sha384-GNbf7lhocUt2FhdZXSShTCSCjQwnrvHionSIuGkwXDS+FthEGwasFHSulpclr29n",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 491,
+      "glyphs": 496
+    },
+    {
+      "name": "font-c13b8148bb88bb7e5acd85a28c8cddf65f7b88f8b585c1366c03bdf46e20f7eece6048a115bd70adcfeb3dcd1ad9931e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/urbanist/Urbanist[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/urbanist/Urbanist%5Bwght%5D.ttf",
+      "sourceBytes": 84840,
+      "sourceSri": "sha384-vn+XH2uQZtjVmVfNxo2kLfJL0u30GHgfaobvCeDdR4wcKuWFTkKt6+XphDM1PToD",
+      "bytes": 38352,
+      "sri": "sha384-wTuBSLuIu35azYWijIzd9l97iPi1hcE2bAO99G4g9+7OYEihFb1wrc/rPc0a2ZMe",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 491,
+      "glyphs": 496
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/urbanist/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/urbanist/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-vgPT2kmlp1I4GwlJ+8CIvpFqVN2PH+lqsXRIo0ySdscIUR8aQs/1VP9ittpabzHW"
+  }
+}

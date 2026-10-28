@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Farro",
+  "sourceRank": 251,
+  "sourcePosition": 489,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/farro/METADATA.pb",
+    "sri": "sha384-8b4an9srYVXmB1Xy1kG4HGvcDo0MZXUSWm90B2eqFiEz+OuwULZ7bMjhHdv3p5Rs"
+  },
+  "files": [
+    {
+      "name": "font-56ea4768f4e51478253713327ebe91869889094df1913fe158e133fe38f46a57e7d081e678587428b7dea29214e9b75f.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/farro/Farro-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/farro/Farro-Bold.ttf",
+      "sourceBytes": 68004,
+      "sourceSri": "sha384-r5VoW8KGWzIP279t9+TsFrW7dcjLJiJwHUtGXpQJBg8Z9UnaYLzQ6LIKPKhIDL02",
+      "bytes": 26912,
+      "sri": "sha384-VupHaPTlFHglNxMyfr6RhpiJCU3xkT/hWOEz/jj0alfn0IHmeFh0KLfeopIU6bdf",
+      "axes": [],
+      "cmapCodepoints": 387,
+      "glyphs": 428
+    },
+    {
+      "name": "font-d7842a261bbf12c7c5070b0d9881e25b5268f67667c8814f441fdb079958f6320be2d89b35547c373c9c94c37d4af04a.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/farro/Farro-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/farro/Farro-Light.ttf",
+      "sourceBytes": 68252,
+      "sourceSri": "sha384-mvmuUtBA+n8nrGW3K5LVHlAs7r+B9v7rWJQS9n3B8Mhtx6+s/hYBzlgMDTQdxoDZ",
+      "bytes": 26944,
+      "sri": "sha384-14QqJhu/EsfFBwsNmIHiW1Jo9nZnyIFPRB/bB5lY9jIL4tibNVR8NzyclMN9SvBK",
+      "axes": [],
+      "cmapCodepoints": 387,
+      "glyphs": 428
+    },
+    {
+      "name": "font-2ddfb3a703df258e81ea808a0ca1f22ec69ba247dfff7c114ced9f89c4478dc309671bf02b4ea4430f7a769ce2711883.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/farro/Farro-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/farro/Farro-Medium.ttf",
+      "sourceBytes": 68928,
+      "sourceSri": "sha384-wRhTSXyrQkn65BjJZPVB/0fKe2q0M4Ki88gp8d6cDhKdM9tyHoHz8HKk7RKIJWpT",
+      "bytes": 27580,
+      "sri": "sha384-Ld+zpwPfJY6B6oCKDKHyLsabokff/3wRTO2ficRHjcMJZxvwK06kQw96dpzicRiD",
+      "axes": [],
+      "cmapCodepoints": 387,
+      "glyphs": 428
+    },
+    {
+      "name": "font-2b91b1b7d7491d8372a83e0bfaa573b385e259e62347b40cd58903d5efc535c75f7a5e5d9414fecf6b1ee87fd1e464e9.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/farro/Farro-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/farro/Farro-Regular.ttf",
+      "sourceBytes": 68588,
+      "sourceSri": "sha384-hva1d3QurfO4cpasjN6nUaYEs6WkwPK55o20yH14vxAUejw816MnqMWaz67jvfGt",
+      "bytes": 27556,
+      "sri": "sha384-K5Gxt9dJHYNyqD4L+qVzs4XiWeYjR7QM1YkD1e/FNcdfel5dlBT+z2se6H/R5GTp",
+      "axes": [],
+      "cmapCodepoints": 387,
+      "glyphs": 428
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/farro/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/farro/OFL.txt",
+    "bytes": 4476,
+    "sri": "sha384-CPrLINvqf7Cb9u8DfkuqFjD1A/FbrrHftfQqlvKV3g2BtDNNXKqGVA6FmBvzEc2E"
+  }
+}

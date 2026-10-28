@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Caveat",
+  "sourceRank": 22,
+  "sourcePosition": 48,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caveat/METADATA.pb",
+    "sri": "sha384-+qciVMUFJ0JhhbQv6UTXuyxaJRZMD88yrAlPIDCSK7Wvo1GHZERcb8RqZ9rMqfDO"
+  },
+  "files": [
+    {
+      "name": "font-b051f8cb8697c5cb527506bbddd8fa36c5a57b0d92733dc9f2e9e85e7a8853de765fbf87a9c49a56c62e235ec602ac7a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/caveat/Caveat[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caveat/Caveat%5Bwght%5D.ttf",
+      "sourceBytes": 403648,
+      "sourceSri": "sha384-/TA5LkM6BvnzbsuRZGrjiU1g71rzXXiOf8NmJ9lmjvIW83INlTP1tPjqDuMdVFfP",
+      "bytes": 173692,
+      "sri": "sha384-sFH4y4aXxctSdQa73dj6NsWlew2Scz3J8unoXnqIU952X7+HqcSaVsYuI17GAqx6",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 753,
+      "glyphs": 1034
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/caveat/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caveat/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-l911Hl/fkgplR26WC6KkNITbNcldYNd6Lp89nmBEeGVPeLwZ40DO6XZRS8wm/lIH"
+  }
+}

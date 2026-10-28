@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Faustina",
+  "sourceRank": 172,
+  "sourcePosition": 344,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/faustina/METADATA.pb",
+    "sri": "sha384-VgfFvBjW3wcYqJ9DBhcMeS/bPso4wABvd7yy06adMsLO0rUICBCkiPCa3aGGx4Gk"
+  },
+  "files": [
+    {
+      "name": "font-52e9e8cb9590d4facd16e46b677ba4491a2b1dce0abbcca3c11678671ed8e6af9037f36e49144cd66408df6a25494ec2.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/faustina/Faustina-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/faustina/Faustina-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 120744,
+      "sourceSri": "sha384-ungf18aiZmUaSmPfpilxkdGTXBGEaLZPXd7dCrBwI1fyflahsa3RWM3qWNxPvtxJ",
+      "bytes": 52260,
+      "sri": "sha384-Uunoy5WQ1PrNFuRrZ3ukSRorHc4Ku8yjwRZ4Zx7Y5q+QN/NuSRRM1mQI32olSU7C",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 648,
+      "glyphs": 804
+    },
+    {
+      "name": "font-46706f427c5547f4247f73190993e414a54307e5dbfe9d8e950b1b966e18d028a40d46c6b03f8a1bdc27af890cecddba.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/faustina/Faustina[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/faustina/Faustina%5Bwght%5D.ttf",
+      "sourceBytes": 118468,
+      "sourceSri": "sha384-RjAwO8FHmtUkZUeEK7AVDNZgYoO2gvkh1jAxfl33v4b867YoxuBbEAJlpiZCOchp",
+      "bytes": 49784,
+      "sri": "sha384-RnBvQnxVR/Qkf3MZCZPkFKVDB+Xb/p2OlQsblm4Y0CikDUbGsD+KG9wnr4kM7N26",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 649,
+      "glyphs": 804
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/faustina/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/faustina/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-QALc+bFMYsF+oKZxYQe8PpbvNnIJYmwIby8uTbhcjdEBPpJFFiYw0R7jtVE/TKvx"
+  }
+}

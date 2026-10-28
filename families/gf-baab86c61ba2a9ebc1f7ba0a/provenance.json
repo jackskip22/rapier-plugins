@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Anuphan",
+  "sourceRank": 151,
+  "sourcePosition": 307,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anuphan/METADATA.pb",
+    "sri": "sha384-McYFjnAE4f+LSnHnp73l5RtC2/eTF65hIfo8f+kl7MP1MUB82q71cS3UJh3fwcNP"
+  },
+  "files": [
+    {
+      "name": "font-fab1e7ee8773af3b6cf9d3b7d87ff0e8ad4cf3194648093e8e084db34951e0d19ac84ea4c169454adb1d68b84356958e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/anuphan/Anuphan[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anuphan/Anuphan%5Bwght%5D.ttf",
+      "sourceBytes": 231712,
+      "sourceSri": "sha384-q1v/2GPqbpIoXXbIIZDdfSsJhozY9D45kJkh8IhKCgpq5kYG/S0Jjrw5LCbORopU",
+      "bytes": 90976,
+      "sri": "sha384-+rHn7odzrzts+dO32H/w6K1M8xlGSAk+jghNs0lR4NGayE6kwWlFStsdaLhDVpWO",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 671,
+      "glyphs": 790
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/anuphan/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anuphan/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-++zBAahbveutW6Fd1qzZRPpIOmHyvW6g6oGDl3+c1vI3LycT9Fp4K6PzsjL4iYAX"
+  }
+}

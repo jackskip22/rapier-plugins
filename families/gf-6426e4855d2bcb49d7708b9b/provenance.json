@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Playwrite CO",
+  "sourceRank": 421,
+  "sourcePosition": 794,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteco/METADATA.pb",
+    "sri": "sha384-sy1w8/36QgBQk4gVZDOnDzI3lFL/tyS5nev4FFsUQM04ziiEKRAtAFNy/utTUnzO"
+  },
+  "files": [
+    {
+      "name": "font-11266e445e4acebd96dd9182057397c15a85968a1713ab85f752414a8094435a07ef693b33feee7ff5384c5706168bd4.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwriteco/PlaywriteCO[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteco/PlaywriteCO%5Bwght%5D.ttf",
+      "sourceBytes": 339624,
+      "sourceSri": "sha384-qyVDg8vAaMhTy4Iqt+ZE2qmqwtwkCZMABvsbD4YPdtEMgZf41h2rPfsn2XK5EW+1",
+      "bytes": 120876,
+      "sri": "sha384-ESZuRF5Kzr2W3ZGCBXOXwVqFlooXE6uF91JBSoCUQ1oH72k7M/7uf/U4TFcGFovU",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 400,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 486,
+      "glyphs": 1270
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwriteco/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteco/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Frank Ruhl Libre",
+  "sourceRank": 134,
+  "sourcePosition": 274,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/frankruhllibre/METADATA.pb",
+    "sri": "sha384-Hrz7NDRaXyrTVTRw7nJ1Fs34EoTl3HsEOO6yiTrfSB53f0SqcxIGuXJ33wu8v4Cp"
+  },
+  "files": [
+    {
+      "name": "font-3a17fe00695e65bafa98ba4ac863ef4aad249ed1bf81bca62cc5bbba4258af90965a4deacefc93dd2fd54f52950ba2b8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/frankruhllibre/FrankRuhlLibre[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/frankruhllibre/FrankRuhlLibre%5Bwght%5D.ttf",
+      "sourceBytes": 178468,
+      "sourceSri": "sha384-Ng7jJ5r/ebcnfvzM8gwgrPm5Ny19LlfexJPH4rBW+Gy2Vonrnj4UUP2v3P25N48q",
+      "bytes": 76064,
+      "sri": "sha384-Ohf+AGleZbr6mLpKyGPvSq0kntG/gbymLMW7ukJYr5CWWk3qzvyT3S/VT1KVC6K4",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 520,
+      "glyphs": 604
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/frankruhllibre/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/frankruhllibre/OFL.txt",
+    "bytes": 4502,
+    "sri": "sha384-ES0V5zPlryr6jEF4bygJ/+OCY0yspqy6YixTNgxxE3psZSapEArscdDFXocRW9wC"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Afacad",
+  "sourceRank": 189,
+  "sourcePosition": 383,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/afacad/METADATA.pb",
+    "sri": "sha384-bZEyM3TV7sjMLIbvJYTEfHkjgsVHqCSVjytwpXd8/wfOWJBy+XKyQMBMVxPWUgZ1"
+  },
+  "files": [
+    {
+      "name": "font-7a905b2f471c6297b6b8a05f61ba724fc2018f562da73692f9a3e626c51fd2aa3180d45e7a501e953a236bc8fc96ea9f.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/afacad/Afacad-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/afacad/Afacad-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 121024,
+      "sourceSri": "sha384-Z7mRgMl/KDStm58vMLZS4M6Hx0AhVcJjiVN78lxSndOShFuH8FQ/Mz1chNidxCFf",
+      "bytes": 46592,
+      "sri": "sha384-epBbL0ccYpe2uKBfYbpyT8IBj1YtpzaS+aPmJsUf0qoxgNReelAelToja8j8luqf",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 669,
+      "glyphs": 845
+    },
+    {
+      "name": "font-fed40598a32d0869d539e4abcb27af624954f6d8e52c99ec08bfdbb1cdcce27e05034e2cf4efef7097978b8977973eea.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/afacad/Afacad[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/afacad/Afacad%5Bwght%5D.ttf",
+      "sourceBytes": 117456,
+      "sourceSri": "sha384-uai4TtDq2roIIUpLx1okmsr3HZzJTBixEa7JdYtm7dRSZ2v0fxoHJNXkeYZHdJZg",
+      "bytes": 43512,
+      "sri": "sha384-/tQFmKMtCGnVOeSryyevYklU9tjlLJnsCL/bsc3M4n4FA04s9O/vcJeXi4l3lz7q",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 669,
+      "glyphs": 845
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/afacad/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/afacad/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-wRG7qcVK84GNBFpib3PZAKf/0LuniSX+/PuH0OAOjQ6ezo4VGM6Y1R7EU1R5dDKA"
+  }
+}

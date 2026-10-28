@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Rethink Sans",
+  "sourceRank": 142,
+  "sourcePosition": 292,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rethinksans/METADATA.pb",
+    "sri": "sha384-B/6PfsyjCPH35WDu/xOcydxUFG+Q/j9XfXPM2iwz6lttsdXr0MEnLs/KzNwmIPJw"
+  },
+  "files": [
+    {
+      "name": "font-673eccababe5272bf8d27d81b80f46f655c97783e945c995f9a45cf8818f634cc5012ac01c5bfc812138b09a5902afa0.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/rethinksans/RethinkSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rethinksans/RethinkSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 119908,
+      "sourceSri": "sha384-Y00oAVA8LTymNbrAqSX8JIr3DCO1LRrDG27HPMhTeaw/LgFdy0hfGZqPbmWjfmN/",
+      "bytes": 50768,
+      "sri": "sha384-Zz7Mq6vlJyv40n2BuA9G9lXJd4PpRcmV+aRc+IGPY0zFASrAHFv8gSE4sJpZAq+g",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 447,
+      "glyphs": 494
+    },
+    {
+      "name": "font-763a522a4c5e7856ec29ab649d29f8d3917379390df0c606eed783fe36cad0757abc03b324e645cfc08076613bc67e59.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rethinksans/RethinkSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rethinksans/RethinkSans%5Bwght%5D.ttf",
+      "sourceBytes": 120588,
+      "sourceSri": "sha384-8u1NR/edaxMNG2FncGiQDdpaU4nnp+wsnFfRt2gDgQVCwpMqzPavY/AAFVzDY0do",
+      "bytes": 48780,
+      "sri": "sha384-djpSKkxeeFbsKatknSn405FzeTkN8MYG7teD/jbK0HV6vAOzJOZFz8CAdmE7xn5Z",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 447,
+      "glyphs": 494
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rethinksans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rethinksans/OFL.txt",
+    "bytes": 4400,
+    "sri": "sha384-xL7IkDUljsctuwk2g7FFs9SYaU8Q8T99sWdnil0csF90+iubrDA2lVdHjoixtC3u"
+  }
+}

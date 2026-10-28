@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Neonderthaw",
+  "sourceRank": 290,
+  "sourcePosition": 562,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/neonderthaw/METADATA.pb",
+    "sri": "sha384-weBC/T7QDTb/EGTRIFy11xtZh/DkgLzrI5uRoVbCDGWmL/DOqiZugnl3DkuRbcST"
+  },
+  "files": [
+    {
+      "name": "font-f6e9a1c9e96a1d2b7b3723e45dc80cde91bbfa4be55b3609087720630a8905b8a557d542ca3b29f4df71237fb19fdfe3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/neonderthaw/Neonderthaw-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/neonderthaw/Neonderthaw-Regular.ttf",
+      "sourceBytes": 276228,
+      "sourceSri": "sha384-Ww7kS/6P/FGC59R3aMy6v6Xn+DA382O1CH2p45pWfYofiei3u5NMBnwf9RXiMRlf",
+      "bytes": 90020,
+      "sri": "sha384-9umhyelqHSt7NyPkXcgM3pG7+kvlWzYJCHcgYwqJBbilV9VCyjsp9N9xI3+xn9/j",
+      "axes": [],
+      "cmapCodepoints": 583,
+      "glyphs": 632
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/neonderthaw/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/neonderthaw/OFL.txt",
+    "bytes": 4401,
+    "sri": "sha384-3TpUNv2pqxjdjFExUFA5TMK7lWhIJxg55dMB++a8yVnl3LmIHlMySXdynFLQXGvB"
+  }
+}

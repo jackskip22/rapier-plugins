@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Mulish",
+  "sourceRank": 17,
+  "sourcePosition": 39,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mulish/METADATA.pb",
+    "sri": "sha384-42oERhfyNIBYzh5fRfMkFVd8prktfWmG82QFAKuBRPoMUmeyTNrHzzPlQ83M3GMp"
+  },
+  "files": [
+    {
+      "name": "font-fbd2b2bc38708d7e53b89464585bf0df8d6a69051d73c417f050f0c870a99c06101ca705b431249bd09112bc0b05ddb5.woff2",
+      "variant": "200italic",
+      "sourcePath": "ofl/mulish/Mulish-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mulish/Mulish-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 219548,
+      "sourceSri": "sha384-/CsvsyMAjNznx5J0Mtlptw80Oru3KFmU1tjHyCANp3iRqQ++FM67bcj2BeQMuRzc",
+      "bytes": 83916,
+      "sri": "sha384-+9KyvDhwjX5TuJRkWFvw341qaQUdc8QX8FDwyHCpnAYQHKcFtDEkm9CRErwLBd21",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 936,
+      "glyphs": 1063
+    },
+    {
+      "name": "font-9ec7ba6bc1221410ea4e7372beba67d7667848cfef87f452088cdc82a4b9fa0d59fc6e3d45f8840291ede6db5efd102b.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/mulish/Mulish[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mulish/Mulish%5Bwght%5D.ttf",
+      "sourceBytes": 211988,
+      "sourceSri": "sha384-C0eEdi3vmWIlqjswm2uykavbnpgAHTFgthS7EmvswbCZO7lZtEFKCqTqnURs/NYH",
+      "bytes": 77260,
+      "sri": "sha384-nse6a8EiFBDqTnNyvrpn12Z4SM/vh/RSCIzcgqS5+g1Z/G49RfiEApHt5tte/RAr",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 936,
+      "glyphs": 1063
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mulish/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mulish/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-zXtWqWKYTqiQK7FvqpTXboe3r/vW1IXpbv2G4X3vfuqhyq9rlMfEzh1/nNpBNufA"
+  }
+}

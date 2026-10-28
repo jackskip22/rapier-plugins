@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Style Script",
+  "sourceRank": 205,
+  "sourcePosition": 409,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stylescript/METADATA.pb",
+    "sri": "sha384-ftV5hXaIlZnZMEC3mx4fvIid5IC09ZI5eCoKIR5sEo5lgNZ4qwTopshkXhZLv8e2"
+  },
+  "files": [
+    {
+      "name": "font-fcf4c83c71268b2a2a4168517dc3d802a6cc177d781b90435cf03421ad9aa41f09246a84ef21e6d88f54853e6780d44c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/stylescript/StyleScript-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stylescript/StyleScript-Regular.ttf",
+      "sourceBytes": 603164,
+      "sourceSri": "sha384-vFdzA60/Sa1NI2Xm+mpyEI7H4pQ3L5DK85O2+a+/7bnnuN7DTGjVFKvAux7s330v",
+      "bytes": 198108,
+      "sri": "sha384-/PTIPHEmiyoqQWhRfcPYAqbMF314G5BDXPA0Ia2apB8JJGqE7yHm2I9UhT5ngNRM",
+      "axes": [],
+      "cmapCodepoints": 481,
+      "glyphs": 1439
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/stylescript/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stylescript/OFL.txt",
+    "bytes": 4489,
+    "sri": "sha384-odvmMWTGuffwOiT14xDpd8EhnDno1yRGkg6eNuUa4LmGuODnjPy3RCKTKQO68mGS"
+  }
+}

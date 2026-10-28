@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Schibsted Grotesk",
+  "sourceRank": 32,
+  "sourcePosition": 79,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/schibstedgrotesk/METADATA.pb",
+    "sri": "sha384-Zk0C/08CRmkF0bztYnMgQ9OFa/HZAuan6CC7g/r0LK/A+Le4LzDhDmCA7+qTwZUI"
+  },
+  "files": [
+    {
+      "name": "font-19ee680fe69f05e7ecf6918ac3555f1673afd47bda12caad39bf7b1f35da68f7099942466e384009f408361f9b653111.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/schibstedgrotesk/SchibstedGrotesk-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/schibstedgrotesk/SchibstedGrotesk-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 181440,
+      "sourceSri": "sha384-dmmMBxQmnDu035dfCXsAPkaJ2KFoICDrd2B+tzDzRoN2FTb09C00CRGeiiYbePLn",
+      "bytes": 74728,
+      "sri": "sha384-Ge5oD+afBefs9pGKw1VfFnOv1HvaEsqtOb97HzXaaPcJmUJGbjhACfQINh+bZTER",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 497,
+      "glyphs": 583
+    },
+    {
+      "name": "font-9e8938032323a298544d72061686d6043f1cf521e5bd740ab08f66197c415c2aa92be8fb1703f8390be2f35826f08266.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/schibstedgrotesk/SchibstedGrotesk[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/schibstedgrotesk/SchibstedGrotesk%5Bwght%5D.ttf",
+      "sourceBytes": 176068,
+      "sourceSri": "sha384-WHiPyBxbhaTW21S0GuhbGMorG8aWf9cgDuBMNT6J1O63NXxU5782GRB0jgaAnbv9",
+      "bytes": 70360,
+      "sri": "sha384-nok4AyMjophUTXIGFobWBD8c9SHlvXQKsI9mGXxBXCqpK+j7FwP4OQvi81gm8IJm",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 497,
+      "glyphs": 583
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/schibstedgrotesk/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/schibstedgrotesk/OFL.txt",
+    "bytes": 4406,
+    "sri": "sha384-r/6w/bRLHkTz0n7hK6zcaJ4apHuQwpqkAXw3utc6YgX9oCFfU0yCeoTVDw1PRWTF"
+  }
+}

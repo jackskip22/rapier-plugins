@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Libre Franklin",
+  "sourceRank": 51,
+  "sourcePosition": 115,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librefranklin/METADATA.pb",
+    "sri": "sha384-WHQQR+A0bFVn4Fb44t18FtIr/bH6S4VGQ3kanpNv+LksKyLsnB+8TmGizB6fJlPA"
+  },
+  "files": [
+    {
+      "name": "font-1b6e666889d27f4e74c67b8c6d696331885aae5c52b6a06cc9893b8415f16cf987b70a1b7f28a4c1cc2ba605e25f21ff.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/librefranklin/LibreFranklin-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librefranklin/LibreFranklin-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 206092,
+      "sourceSri": "sha384-1dNVJ4+A42dOcY6c8w/1BhF/9kWroNyx09DlGFv/yn8mbkvKTTonh8XAHhgUi09s",
+      "bytes": 82048,
+      "sri": "sha384-G25maInSf050xnuMbWljMYharlxStqBsyYk7hBXxbPmHtwobfyikwcwrpgXiXyH/",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 918,
+      "glyphs": 1012
+    },
+    {
+      "name": "font-a3094463fbdc303b8683b6a1e0688b2b90421145303b9599e2822b6829e9e7ce5ffebbeed4157b70385fa119538b5c5a.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/librefranklin/LibreFranklin[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librefranklin/LibreFranklin%5Bwght%5D.ttf",
+      "sourceBytes": 187436,
+      "sourceSri": "sha384-ge/XAw7vF1LPrkzsS+eLVDtGXKjD4by2hSONr8B/BWl5LFa3Vvy8a0KL5qeenP3B",
+      "bytes": 72052,
+      "sri": "sha384-owlEY/vcMDuGg7ah4GiLK5BCEUUwO5WZ4oIraCnp585f/rvu1BV7cDhfoRlTi1xa",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 918,
+      "glyphs": 1007
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/librefranklin/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librefranklin/OFL.txt",
+    "bytes": 4495,
+    "sri": "sha384-xIeQfGHiDBzrXYkugN5xV7XCmbB5ggkz3Gqr+0lVIafGPHfHf2KSVCduq5/ZVokA"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Courier Prime",
+  "sourceRank": 64,
+  "sourcePosition": 139,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/courierprime/METADATA.pb",
+    "sri": "sha384-HF11yRPNwEm3eWe7niZ8KWiFEk3VRUuq5zz+hPj5booPUSweoIBhL5XQsNQFe968"
+  },
+  "files": [
+    {
+      "name": "font-0de18cf520353c0781a251ea0a0cea154ef0fbbb7fe1447121ba542fc34f7b46ce6da736b5c938ac1ea0c50f61958a4f.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/courierprime/CourierPrime-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/courierprime/CourierPrime-Bold.ttf",
+      "sourceBytes": 72856,
+      "sourceSri": "sha384-Lzbd1Lq/2XAMTy2askk3qutEtXMNtBZt/DX/KXomr5dm8u4f2iG/G96+SA8zSI/M",
+      "bytes": 27792,
+      "sri": "sha384-DeGM9SA1PAeBolHqCgzqFU7w+7t/4URxIbpUL8NPe0bObac2tck4rB6gxQ9hlYpP",
+      "axes": [],
+      "cmapCodepoints": 383,
+      "glyphs": 415
+    },
+    {
+      "name": "font-a0c37e38d63b8e5fb6b0f2f8ba220e32dc5d5b5c07596da113715990c5f42b4d0affc348c1f56f51b68e53d622370c34.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/courierprime/CourierPrime-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/courierprime/CourierPrime-BoldItalic.ttf",
+      "sourceBytes": 80872,
+      "sourceSri": "sha384-cbyTg0wJ7AEdpBlVflEPZ1K/nwaU6LV2w+Sep0Fq4qOh76pwglsRM/614sTby4/t",
+      "bytes": 30772,
+      "sri": "sha384-oMN+ONY7jl+2sPL4uiIOMtxdW1wHWW2hE3FZkMX0K00K/8NIwfVvUbaOU9YiNww0",
+      "axes": [],
+      "cmapCodepoints": 383,
+      "glyphs": 416
+    },
+    {
+      "name": "font-e29a13080e2633ab08ddd25c49aac4ecc2740363ad42f0b68e9cac0a6ce89902fc369621b66f52b0ec3d437c9b298330.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/courierprime/CourierPrime-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/courierprime/CourierPrime-Italic.ttf",
+      "sourceBytes": 79980,
+      "sourceSri": "sha384-ip9pcSmcYMNXq/ASUZsPcDe4PpReDXSW65aQCsbUZieznIEaokzjDOLHWR8GRM0H",
+      "bytes": 30288,
+      "sri": "sha384-4poTCA4mM6sI3dJcSarE7MJ0A2OtQvC2jpysCmzomQL8NpYhtm9SsOw9Q3ybKYMw",
+      "axes": [],
+      "cmapCodepoints": 383,
+      "glyphs": 416
+    },
+    {
+      "name": "font-2ed7147a3b3c3992ea33496aef4b4b0e76a355943e8631e62e38b0f96f65b4076818eda746bd065b49d2ef99c3e3cd93.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/courierprime/CourierPrime-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/courierprime/CourierPrime-Regular.ttf",
+      "sourceBytes": 71188,
+      "sourceSri": "sha384-2xERHk08JjoOQUduAICvSfCghAL5rhl+VFhPpYKJcxpEqyMaLP2X/BkpMys7vKwm",
+      "bytes": 27072,
+      "sri": "sha384-LtcUejs8OZLqM0lq70tLDnajVZQ+hjHmLjiw+W9ltAdoGO2nRr0GW0nS75nD482T",
+      "axes": [],
+      "cmapCodepoints": 383,
+      "glyphs": 415
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/courierprime/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/courierprime/OFL.txt",
+    "bytes": 4403,
+    "sri": "sha384-GduBVeiYoKiP3Kvrxf4nRJ8mwKZVOUEZe7y48GiSukjAImX19eI0EPwkjuRExFDa"
+  }
+}

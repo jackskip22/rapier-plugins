@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Google Sans Code",
+  "sourceRank": 177,
+  "sourcePosition": 352,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/googlesanscode/METADATA.pb",
+    "sri": "sha384-3SqXfA8CJCZZ19MHZfC2bMi96FhVKQyUVFkNQkcrD3B+tPepxWe0YeSfmuSQzBqg"
+  },
+  "files": [
+    {
+      "name": "font-838a83f912cd93974ea8f1aa098a970fcaf0abac56a3783246dbadc65ad94aec8f6da18f4edbf9f09c3470ef472a6e5f.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/googlesanscode/GoogleSansCode-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/googlesanscode/GoogleSansCode-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 132968,
+      "sourceSri": "sha384-5OgQAicy49CDOL0eFGQPe1nB3ifn0+82sEh7VI7odb5RC9VB03K3OeyKVGcVV9Ul",
+      "bytes": 63648,
+      "sri": "sha384-g4qD+RLNk5dOqPGqCYqXD8rwq6xWo3gyRtutxlrZSuyPbaGPTtv58Jw0cO9HKm5f",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 670,
+      "glyphs": 688
+    },
+    {
+      "name": "font-66528ee04a69242a294cdec0e04665917d7bbeff06770613709ed65df21cf25f7b7ab8303906c48071b3a95284aaf532.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/googlesanscode/GoogleSansCode[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/googlesanscode/GoogleSansCode%5Bwght%5D.ttf",
+      "sourceBytes": 126224,
+      "sourceSri": "sha384-IvzYCDsHzE17cq+ldUBccWGnFUZuigJlxj0BOhAHKt4/+749P7WPEDqWE6lpDZTg",
+      "bytes": 58564,
+      "sri": "sha384-ZlKO4EppJCopTN7A4EZlkX17vv8GdwYTcJ7WXfIc8l97ergwOQbEgHGzqVKEqvUy",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 670,
+      "glyphs": 687
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/googlesanscode/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/googlesanscode/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-lh5J+fIYMaCg+lXiR7EMoFhHQ5t34CLC88DMLdYQfFglg6eX/rzGDeBeOSs9SwCK"
+  }
+}

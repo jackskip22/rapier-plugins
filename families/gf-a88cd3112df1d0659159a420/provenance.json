@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Serif Hebrew",
+  "sourceRank": 253,
+  "sourcePosition": 493,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifhebrew/METADATA.pb",
+    "sri": "sha384-qllB4SDicGQqOqOVnV2NJX4LT6iJyzkkfFXx7Ak4xvbrbOkelfkO7z4+JuyfSCT7"
+  },
+  "files": [
+    {
+      "name": "font-bdf25b922aa432004d8b5ada231b6a7dacfadd0969d6239b3740c9562188b89bf7fe76ab47b788712a8144c626affc8a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notoserifhebrew/NotoSerifHebrew[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifhebrew/NotoSerifHebrew%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 183600,
+      "sourceSri": "sha384-buBa5Pb7e3mBKWcZxkP9W2845oflSHVyESW/X9t8VGWKXGkLyGUqBDnqgUM3Qzqe",
+      "bytes": 93052,
+      "sri": "sha384-vfJbkiqkMgBNi1raIxtqfaz63Qlp1iObN0DJViGIuJv3/narR7eIcSqBRMYmr/yK",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 463,
+      "glyphs": 472
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoserifhebrew/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifhebrew/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-YtjN3mjaok2Sbfc9HpxPsSMj7ViPZutgsIQAd/zWOwumun1GLgxeRjn3pB6hjOaT"
+  }
+}

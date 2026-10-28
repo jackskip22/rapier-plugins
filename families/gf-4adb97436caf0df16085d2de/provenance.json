@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Lexend Zetta",
+  "sourceRank": 11,
+  "sourcePosition": 26,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendzetta/METADATA.pb",
+    "sri": "sha384-OaSou19M9Qhsg56hhVdnyZruJFJAISGYXqbwhU38OR3BSQ4rtv8rp3yVXlruIHX4"
+  },
+  "files": [
+    {
+      "name": "font-9edd4f355a0252d8fde4611cc4f8f9853567aedbee8a5050f5b2c24b305cc3c9b17107203629490052810cea0567e9c2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/lexendzetta/LexendZetta[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendzetta/LexendZetta%5Bwght%5D.ttf",
+      "sourceBytes": 192720,
+      "sourceSri": "sha384-t7kZ/QwV44YrJVNF0giY9KnVzinCVyIFXtzgYJobm+jGAs7Sau/WKyplHOelHylr",
+      "bytes": 81888,
+      "sri": "sha384-nt1PNVoCUtj95GEcxPj5hTVnrtvuilBQ9bLCSzBcw8mxcQcgNilJAFKBDOoFZ+nC",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 685,
+      "glyphs": 850
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/lexendzetta/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendzetta/OFL.txt",
+    "bytes": 4436,
+    "sri": "sha384-6aJe7EFHi7aadivqHytXtg7xuFNZI7SMxeb1R4a/4fdUQOarovJUxC6K6byKG4Xn"
+  }
+}

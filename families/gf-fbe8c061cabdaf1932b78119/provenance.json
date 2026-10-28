@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Playball",
+  "sourceRank": 68,
+  "sourcePosition": 147,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playball/METADATA.pb",
+    "sri": "sha384-RyL5Ii8B8FUHAFhxlil74C4Qij4erU3ApKwHX+4tIi2lpIy3iKAOkvDoDWhgA22x"
+  },
+  "files": [
+    {
+      "name": "font-c16a88f450a27ed57a90dc1b789781224a23abcae69828f1ccc1f2f73ab2de57e3098e2d270a91e36b7a5dcd652916e8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playball/Playball-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playball/Playball-Regular.ttf",
+      "sourceBytes": 190720,
+      "sourceSri": "sha384-CQEnxcwVHDZG5MWCdaShiSbHGAdpzQv2BeIiouilqiwy++x/y7+PRi6Eh3RShWXV",
+      "bytes": 66592,
+      "sri": "sha384-wWqI9FCiftV6kNwbeJeBIkojq8rmmCjxzMHy9zqy3lfjCY4tJwqR42t6Xc1lKRbo",
+      "axes": [],
+      "cmapCodepoints": 554,
+      "glyphs": 785
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playball/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playball/OFL.txt",
+    "bytes": 4482,
+    "sri": "sha384-7x2nSlovcK0FIRGxwUB4S3/vN5EkaVv6kjNYYDWCEfYmKA0REPWZcbMH7VKACVxs"
+  }
+}

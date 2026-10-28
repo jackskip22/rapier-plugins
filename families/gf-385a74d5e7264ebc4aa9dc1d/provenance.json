@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Albert Sans",
+  "sourceRank": 163,
+  "sourcePosition": 328,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/albertsans/METADATA.pb",
+    "sri": "sha384-BS8FZ6cSVPxaYSzEXYf+6QDmQQuWhTi2fXByR63W0tAykwUbCuICy0Wjbm4rqRIp"
+  },
+  "files": [
+    {
+      "name": "font-80709e043899beccba79b9ad59fd3bfed822ddb53a2794e6559539ea52b9653e4c7721a99189eb786d4876bfce7af4a8.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/albertsans/AlbertSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/albertsans/AlbertSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 142156,
+      "sourceSri": "sha384-NIS8knrOSn+do8lZOKAAP+3GMOFxLo27mi1Vsh57M2/Fk3A1FcHkAhD6FjmGPQcX",
+      "bytes": 56704,
+      "sri": "sha384-gHCeBDiZvsy6ebmtWf07/tgi3bU6J5TmVZU56lK5ZT5MdyGpkYnreG1Idr/OevSo",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 395,
+      "glyphs": 405
+    },
+    {
+      "name": "font-cb0bcb0fed37f3dc75fe7577dc68a44b121a38146e6aa68357aa4890eee6e3593d0b777caeb8ec055ef059c9c0cf8faf.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/albertsans/AlbertSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/albertsans/AlbertSans%5Bwght%5D.ttf",
+      "sourceBytes": 129000,
+      "sourceSri": "sha384-D0+oeBVU7i3wb0dNVAl+MIhBazqKxyYyXAIUEIx1DGw9vtCtP+bL6BDGFh7UapX2",
+      "bytes": 52384,
+      "sri": "sha384-ywvLD+0389x1/nV33GikSxIaOBRuaqaDV6pIkO7m41k9C3d8rrjsBV7wWcnAz4+v",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 395,
+      "glyphs": 405
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/albertsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/albertsans/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-b1ycNXlKX0U8WvzcOAXHfMRDxCeUnaz6h1liebr7Q8stpKyawqnVvR5MJOo8/2T4"
+  }
+}

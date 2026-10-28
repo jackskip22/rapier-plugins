@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Public Sans",
+  "sourceRank": 56,
+  "sourcePosition": 125,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/publicsans/METADATA.pb",
+    "sri": "sha384-jqPPWZJzzfEdjlZksJ/mWC+7JMEPs4TZ2eZiMGwNgBPj0kx07iZ7OBiIMNvHtxuv"
+  },
+  "files": [
+    {
+      "name": "font-8aed17f5d201ddbd59bb515cfc9706b84dcbd241099f0bf75139623bb7a538e19989802855df09a44abfeab7b1418f2a.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/publicsans/PublicSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/publicsans/PublicSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 107940,
+      "sourceSri": "sha384-2F/I9+6QhEcSBemnht8Oz/Lq2eW1e0QELRlAZ+I0sNWiVImOo+t+nSrzyM58kbk3",
+      "bytes": 44916,
+      "sri": "sha384-iu0X9dIB3b1Zu1Fc/JcGuE3L0kEJnwv3UTliO7elOOGZiYAoVd8JpEq/6rexQY8q",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 565,
+      "glyphs": 648
+    },
+    {
+      "name": "font-75feba264f4d4531b905e357425c227d54b91a8c79ff880a77b40e32f7cf9c89a5baeee6d127d0f506b6ea080ca75661.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/publicsans/PublicSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/publicsans/PublicSans%5Bwght%5D.ttf",
+      "sourceBytes": 103316,
+      "sourceSri": "sha384-Iro3AT07gQm3sD8W5gUR3AicibZ200X4v7Tj2EmVcew7b4ab826axnJ7OXZ6dHXr",
+      "bytes": 41944,
+      "sri": "sha384-df66Jk9NRTG5BeNXQlwifVS5Gox5/4gKd7QOMvfPnImluu7m0SfQ9Qa26ggMp1Zh",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 565,
+      "glyphs": 648
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/publicsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/publicsans/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-8jVtVIrVjXuJqvKBqiHVawXjiOXQ9Eypw07md6AyqqBhRYo5aENcKo3uq8M5kRkx"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Source Code Pro",
+  "sourceRank": 47,
+  "sourcePosition": 107,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcecodepro/METADATA.pb",
+    "sri": "sha384-oWG5GjUJtIpgcWVvGttbcvVQfktw8X16fGkQkqqF+VHIgOvh5WuaR9y2zw7dQU0G"
+  },
+  "files": [
+    {
+      "name": "font-20cfec1452938bed7869854790fc38505b00480208be82dabf46bddfa74a08476ee6f0aa314dc30b13cb405ba7b1d350.woff2",
+      "variant": "200italic",
+      "sourcePath": "ofl/sourcecodepro/SourceCodePro-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcecodepro/SourceCodePro-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 174852,
+      "sourceSri": "sha384-x/g5zjOwr+jJES53PNVlPq9AaoPiaS59OV90XMbpBXQkYvaivLkGvkBcUpjlwMje",
+      "bytes": 75260,
+      "sri": "sha384-IM/sFFKTi+14aYVHkPw4UFsASAIIvoLav0a936dKCEdu5vCqMU3DCxPLQFunsdNQ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1085,
+      "glyphs": 1271
+    },
+    {
+      "name": "font-853cc391ecd0ad0ba6621412301d24910208861f5d7e68fd0468209e0072087a033e853a8c0c9ebf0c845671d51848ff.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/sourcecodepro/SourceCodePro[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcecodepro/SourceCodePro%5Bwght%5D.ttf",
+      "sourceBytes": 212340,
+      "sourceSri": "sha384-wAK2RLMEpM3jP0+fBTHKSTDsFPHN0YGPXdLBLd5jzAVmWZHgOi/DZvDuJ/o0b4nS",
+      "bytes": 89652,
+      "sri": "sha384-hTzDkezQrQumYhQSMB0kkQIIhh9dfmj9BGggngByCHoDPoU6jAyevwyEVnHVGEj/",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1334,
+      "glyphs": 1568
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sourcecodepro/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sourcecodepro/OFL.txt",
+    "bytes": 4622,
+    "sri": "sha384-py7agWbTG1b27LxFd5zTFG1KQJtRgOxvXm3jr7FI4wnclCY0yAxBeLEmvTquqjr1"
+  }
+}

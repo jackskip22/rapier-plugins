@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Encode Sans",
+  "sourceRank": 51,
+  "sourcePosition": 114,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesans/METADATA.pb",
+    "sri": "sha384-7+B9w5bs07jxzygf72dxkdVbMDkDiqHg+hu0vkIOlRvCk9rOZCmur9xrNqoFNQDP"
+  },
+  "files": [
+    {
+      "name": "font-2816087e123bcd1c7cd5f2d9c4a7e66240f667a89f3e6daf1358a4b65e88c1e5158812ca83d59aa06893b8197c2a9844.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/encodesans/EncodeSans[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesans/EncodeSans%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 285792,
+      "sourceSri": "sha384-FVJFla2wDU85Daj9VDI8MttCylGwRpoRAEwMhuuTG792gu6Ezvm3ap3AfG/xnRYY",
+      "bytes": 99504,
+      "sri": "sha384-KBYIfhI7zRx81fLZxKfmYkD2Z6ifPm2vE1iktl6IweUViBLKg9WaoGiTuBl8KphE",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 75,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 687,
+      "glyphs": 1214
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/encodesans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/encodesans/OFL.txt",
+    "bytes": 4527,
+    "sri": "sha384-ze8gTkgEGpl8HN84TrMbNVZBoUJzgyOQ0WWuKCfMeuOQbnZeoAATsDiSy/gJFChw"
+  }
+}

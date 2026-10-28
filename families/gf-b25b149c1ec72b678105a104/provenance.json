@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Fustat",
+  "sourceRank": 395,
+  "sourcePosition": 749,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fustat/METADATA.pb",
+    "sri": "sha384-Fa2ssU9QIzuxenyY3sDJwgNYA3yx6B0eKTXQGjS2VnORZE59cp/HIiz+jxNOBNeO"
+  },
+  "files": [
+    {
+      "name": "font-61b1fbce0214319b3d48c04efd938626116e128f52e01700d34b5822b9c83a3a8f03177a983a830963e977d3f7d88b84.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/fustat/Fustat[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fustat/Fustat%5Bwght%5D.ttf",
+      "sourceBytes": 172620,
+      "sourceSri": "sha384-wrDkGr14IMmwM+/IjHznmjMwPZSFFIyXFmdVTg8qYeZFi0aQyvARpyjV7sleuHM1",
+      "bytes": 69192,
+      "sri": "sha384-YbH7zgIUMZs9SMBO/ZOGJhFuEo9S4BcA00tYIrnIOjqPAxd6mDqDCWPpd9P32IuE",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 649,
+      "glyphs": 1006
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/fustat/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fustat/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-v999oDD4uFQH+RPmc/rLiJT+e1+WIBO/aDcjJuS9Bz8XMJ+MGWgfHlF1iGLn/Kar"
+  }
+}

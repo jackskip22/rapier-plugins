@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Spline Sans",
+  "sourceRank": 317,
+  "sourcePosition": 609,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/splinesans/METADATA.pb",
+    "sri": "sha384-Pf2ikJ5tQeZQLFeOlEreBnvGUMnhttpwBO3FZ4WBGjjYCgfYqbxv9+WFHi8p9f/n"
+  },
+  "files": [
+    {
+      "name": "font-2d9a2f43762d34dc8f66fe8ad94760fc559ec1366ea81a43d20acd6bd4d894a903545eb1d3aabdd58dead72a8e28799d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/splinesans/SplineSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/splinesans/SplineSans%5Bwght%5D.ttf",
+      "sourceBytes": 146896,
+      "sourceSri": "sha384-EQMcUjYUH5hGoO+1bp8OLSNwglGbbtW+LlT6uZELU7bn0cInHGpVi6D9m+XNnf8l",
+      "bytes": 72300,
+      "sri": "sha384-LZovQ3YtNNyPZv6K2Udg/FWewTZuqBpD0grNa9TYlKkDVF6x06q91Y3q1yqOKHmd",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 425,
+      "glyphs": 520
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/splinesans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/splinesans/OFL.txt",
+    "bytes": 4394,
+    "sri": "sha384-JcqGw4iD3MyFDUNp4ixNEdI3JnE9he7/eCK6lvTsP1v/jC5c/UhUJq/F8K8sbwek"
+  }
+}

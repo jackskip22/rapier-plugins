@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "DynaPuff",
+  "sourceRank": 454,
+  "sourcePosition": 864,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dynapuff/METADATA.pb",
+    "sri": "sha384-VWOPpTtit71NJx5oe48NNubuD+zIz3FW5/m1cCMrVw4vSMRWp+d6J5VL8RrNG/f6"
+  },
+  "files": [
+    {
+      "name": "font-5313c800cbabba04ed92c9ccc764eb3c0ff4be82e3e5a184adbd1d8cbb12f5f8bc8e260eb449ab5a584df1e8ecf83b92.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/dynapuff/DynaPuff[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dynapuff/DynaPuff%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 212600,
+      "sourceSri": "sha384-8aOwAZLUt3gMOvkqYeiYg4LVAA7t0qcCSvl27b6R8OGcsVgJ0UoXeP63mIN/8jNy",
+      "bytes": 97564,
+      "sri": "sha384-UxPIAMurugTtksnMx2TrPA/0voLj5aGErb0djLsS9fi8jiYOtEmrWlhN8ejs+DuS",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 449,
+      "glyphs": 709
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/dynapuff/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dynapuff/OFL.txt",
+    "bytes": 4492,
+    "sri": "sha384-hjD0SUPNa0BihpxG1T3wA8HKwkmDJ6FyOz3oSPzUd6n0GXWHRXt6afustrn3oMqb"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Fjalla One",
+  "sourceRank": 62,
+  "sourcePosition": 137,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fjallaone/METADATA.pb",
+    "sri": "sha384-YFUe2y2taXCwMZFqXVIhdzxaXGa457iHv5oS9nV7raa/4/51FUVD6AnkoALBnyph"
+  },
+  "files": [
+    {
+      "name": "font-e24c69715a8bec88292844e2a16e78519d34daa6f689702ba6078cad7e5fb3d28f226dc99db834cb6ca440e345d59c98.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/fjallaone/FjallaOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fjallaone/FjallaOne-Regular.ttf",
+      "sourceBytes": 209052,
+      "sourceSri": "sha384-lCuNEXfBMhmPskbBg4YLDFBuo2TVfOIep+v11jK0tjGPCVSMq9QXYTB72flGKFFP",
+      "bytes": 84684,
+      "sri": "sha384-4kxpcVqL7IgpKETioW54UZ002qb2iXArpgeMrX5fs9KPIm3Jnbg0y2ykQONF1ZyY",
+      "axes": [],
+      "cmapCodepoints": 700,
+      "glyphs": 777
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/fjallaone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fjallaone/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-My8YqPYVGzYeVw9MBeYm7LmP3U2JU2UlLKim+TVNO5PRQqKvY8ojQOMbZgVuQ5/Y"
+  }
+}

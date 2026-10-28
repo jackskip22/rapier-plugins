@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Playwrite AU TAS",
+  "sourceRank": 407,
+  "sourcePosition": 772,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteautas/METADATA.pb",
+    "sri": "sha384-+tGuxtvX1LRUi8VeMjrOHwNXMHjzk57DM6NFcLAnArfDAX8j0YWH1ndiv5kPo/Hd"
+  },
+  "files": [
+    {
+      "name": "font-4d9e5ee9b7cd28a14878401a0e04c40576deb83fd612ce3accbabfc6041cc968411ed4b583587dc022dbd5a22ada1351.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwriteautas/PlaywriteAUTAS[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteautas/PlaywriteAUTAS%5Bwght%5D.ttf",
+      "sourceBytes": 348212,
+      "sourceSri": "sha384-twx8mSnqoBLeFNSjHZI5Q8EltCZUeFYoy6zEHfsZUMUgZyMWX+klNAiy5mF6/Gb4",
+      "bytes": 123928,
+      "sri": "sha384-TZ5e6bfNKKFIeEAaDgTEBXbeuD/WEs46zLq/xgQcyWhBHtS1g1h9wCLb1aIq2hNR",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 400,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 486,
+      "glyphs": 1286
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwriteautas/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteautas/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

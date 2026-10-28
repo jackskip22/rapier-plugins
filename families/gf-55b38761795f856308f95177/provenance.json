@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Canadian Aboriginal",
+  "sourceRank": 1007,
+  "sourcePosition": 1503,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanscanadianaboriginal/METADATA.pb",
+    "sri": "sha384-3gvdFbN8n0Tj4X4TUjp7dStb10smn8FhNc8TcUc0ZVHWwFgTr/zvtwohjv7BU97+"
+  },
+  "files": [
+    {
+      "name": "font-67222a209d49e2dc7f9fd24474a507fb3c272b5fba11e13a2a28b020aab65264c0c8922a820228221b678340c251702c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosanscanadianaboriginal/NotoSansCanadianAboriginal[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanscanadianaboriginal/NotoSansCanadianAboriginal%5Bwght%5D.ttf",
+      "sourceBytes": 292524,
+      "sourceSri": "sha384-d9lr53L+32OYvGzM/uEPthUPxJ6DaOxIL+YO73AFSGQfNAXWiBWguxd+fIE8kha9",
+      "bytes": 100052,
+      "sri": "sha384-ZyIqIJ1J4tx/n9JEdKUH+zwnK1+6EeE6KiiwIKq2UmTAyJIqggIoIhtng0DCUXAs",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1057,
+      "glyphs": 1076
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanscanadianaboriginal/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanscanadianaboriginal/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-sFfvMJqa9HLNWRSe4ZhDuIA+Tf+uY8kPZqQLN9Dt12K6iU6WVB81iivFGMVa1HYN"
+  }
+}

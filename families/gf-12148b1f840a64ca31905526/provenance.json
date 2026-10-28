@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Space Mono",
+  "sourceRank": 139,
+  "sourcePosition": 285,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacemono/METADATA.pb",
+    "sri": "sha384-p1e/czyZuW6M4iLTUewHiqng4lEAwOPD4SabvGXvDRRu3vSn2fda+TdhjBJ4SIoQ"
+  },
+  "files": [
+    {
+      "name": "font-e5a1f8b5ba94fa33275423b4ca0076d1be423aa45681ba8c2556119f9bc506d292d4f5bc8e83c722187493bd4a6d413a.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/spacemono/SpaceMono-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacemono/SpaceMono-Bold.ttf",
+      "sourceBytes": 98232,
+      "sourceSri": "sha384-Dzi0gyBl2GxFsXHkMkSZSadmFkzG7du/6iamWWuved5wB+xHoRuJh5xNxatdlVKt",
+      "bytes": 35412,
+      "sri": "sha384-5aH4tbqU+jMnVCO0ygB20b5COqRWgbqMJVYRn5vFBtKS1PW8joPHIhh0k71KbUE6",
+      "axes": [],
+      "cmapCodepoints": 624,
+      "glyphs": 765
+    },
+    {
+      "name": "font-1542d4a5cdae0190b5e4e33a4cc01e284fc7b067d1657e19e41c3a483549bf3d05b7d4725db0855aff7175f5e9c82e97.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/spacemono/SpaceMono-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacemono/SpaceMono-BoldItalic.ttf",
+      "sourceBytes": 111904,
+      "sourceSri": "sha384-Aj5OvW+0F0KVJqgSMyfXjXbk4C4h3dCl0q8GBUZ+sCjWgxKs/8T/wOmOBhmc9Vhe",
+      "bytes": 39264,
+      "sri": "sha384-FULUpc2uAZC15OM6TMAeKE/HsGfRZX4Z5Bw6SDVJvz0Ft9RyXbCFWv9xdfXpyC6X",
+      "axes": [],
+      "cmapCodepoints": 624,
+      "glyphs": 763
+    },
+    {
+      "name": "font-a7166a0f027863c7fbf938a4d9d626bf7744426da53f7f090e099339451805f8c96d3dd2912f85a84c5193041ea4c849.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/spacemono/SpaceMono-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacemono/SpaceMono-Italic.ttf",
+      "sourceBytes": 121396,
+      "sourceSri": "sha384-XR5j8Z+kOBuASsyFTp3oBqF+Fr4XVMZABpuN7jMhQL1kv5kbE/Kom6FnicJyhL07",
+      "bytes": 40548,
+      "sri": "sha384-pxZqDwJ4Y8f7+Tik2dYmv3dEQm2lP38JDgmTOUUYBfjJbT3SkS+FqExRkwQepMhJ",
+      "axes": [],
+      "cmapCodepoints": 624,
+      "glyphs": 763
+    },
+    {
+      "name": "font-37946c48db118ed593e1fd82b813f055e63cf831b398c1a2cf414ab3076549164ed948a97dd14a0ba210102d0afd5d0a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/spacemono/SpaceMono-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacemono/SpaceMono-Regular.ttf",
+      "sourceBytes": 99356,
+      "sourceSri": "sha384-fVDN7pNEZfY6yUDsaoTwqQoembzEhahm41O8EtQvXIXVSeLPKZZzTT3L6zpZeJG5",
+      "bytes": 34948,
+      "sri": "sha384-N5RsSNsRjtWT4f2CuBPwVeY8+DGzmMGiz0FKswdlSRZO2UipfdFKC6IQEC0K/V0K",
+      "axes": [],
+      "cmapCodepoints": 624,
+      "glyphs": 765
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/spacemono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/spacemono/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-bywUzkInT48R4jz1jDBk0ygCsJMZ7vdEQIR1LOIfw4fpL5oL9IP51QUjbvP88Q3k"
+  }
+}

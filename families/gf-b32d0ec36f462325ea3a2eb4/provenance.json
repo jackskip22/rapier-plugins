@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Ysabeau SC",
+  "sourceRank": 243,
+  "sourcePosition": 478,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ysabeausc/METADATA.pb",
+    "sri": "sha384-Zx8g3m00MEn/l+AGCLYqrS3L84fCxCg/2ll7HNuRN1uYRC72P66F1MF30ptJ+NTf"
+  },
+  "files": [
+    {
+      "name": "font-c68346ed936f798ee58680b45b5e092e2d766795d464612fa3b3c558d9fa3636e94f1ebfd25c3517c869c5e63fc3fc13.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/ysabeausc/YsabeauSC[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ysabeausc/YsabeauSC%5Bwght%5D.ttf",
+      "sourceBytes": 223356,
+      "sourceSri": "sha384-Tiw9+mjhllDhc3uIO9S5I5NcPhPMz0oR6g2qya7eGdtkd9t9DX3GFQRsdRJL/ADE",
+      "bytes": 98760,
+      "sri": "sha384-xoNG7ZNveY7lhoC0W14JLi12Z5XUZGEvo7PFWNn6NjbpTx6/0lw1F8hpxeY/w/wT",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 1,
+          "default": 700,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1012,
+      "glyphs": 1247
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ysabeausc/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ysabeausc/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-9K/wpBQ1ZB3+gDbN++GfMmpHC4H1lc1Hu3LITa4LE8lL3sdrzbDbARH7GKX1nz9/"
+  }
+}

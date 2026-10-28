@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Stoke",
+  "sourceRank": 395,
+  "sourcePosition": 750,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stoke/METADATA.pb",
+    "sri": "sha384-fuBTM0s5Jdx55wqxkq1SoGgm5ZgrU7P5DITcjZkCtZGPCAs5nKvnVJOdDlgTeu1K"
+  },
+  "files": [
+    {
+      "name": "font-1ae709667625a9fa60fd0103f86799b9577d67d78d49f0091b19bfa0ed499119b673fc50dc7432906bc5cbf7e2931127.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/stoke/Stoke-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stoke/Stoke-Light.ttf",
+      "sourceBytes": 50820,
+      "sourceSri": "sha384-Wy0ZEHZq2vpgGB1vz3o3zwtDhjySUvykScchXkobUcdfeWhjE+HbPNVCsJOiTlAZ",
+      "bytes": 21344,
+      "sri": "sha384-GucJZnYlqfpg/QED+GeZuVd9Z9eNSfAJGxm/oO1JkRm2c/xQ3HQykGvFy/fikxEn",
+      "axes": [],
+      "cmapCodepoints": 411,
+      "glyphs": 427
+    },
+    {
+      "name": "font-522be1d0f0fa728b0962fd71f429b5b80b1319acec024481876f29e8f23a2dd14a0b4e6045dd72e73b27158f684d11ab.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/stoke/Stoke-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stoke/Stoke-Regular.ttf",
+      "sourceBytes": 133340,
+      "sourceSri": "sha384-gyYlWWzbZ+o+TxdpcoFZ8PQ4L/HqWyyMHAioBJyGR9V2uOToUHbvMqRmpNe7Yn+z",
+      "bytes": 44052,
+      "sri": "sha384-Uivh0PD6cosJYv1x9Cm1uAsTGazsAkSBh28p6PI6LdFKC05gRd1y5zsnFY9oTRGr",
+      "axes": [],
+      "cmapCodepoints": 414,
+      "glyphs": 425
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/stoke/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stoke/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-C7Z7vqgkeVHhkHoAzYxXBxpm6hdp48Zz7HwIRJ9Wwrqjz36vyBFh/p3zE5dafwMR"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Alef",
+  "sourceRank": 306,
+  "sourcePosition": 592,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alef/METADATA.pb",
+    "sri": "sha384-XvojrBRsCUD6cAaQw3tHRDhCAx/H01LcvU9cHKaElt8K7lZoFW73wDTyPx8Z4APd"
+  },
+  "files": [
+    {
+      "name": "font-2c96dcf46c5ee3b27c682639bd05b566c23317ba79496b78ae90aef8422a7b50fc5b37e49617729384af80a71cb9b4d9.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/alef/Alef-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alef/Alef-Bold.ttf",
+      "sourceBytes": 92312,
+      "sourceSri": "sha384-LoJ+EtfiS82bXmgJMhpIikBESbXkqj99yakalLdL8Otl++ef57x4czDyxLLx2yf/",
+      "bytes": 34212,
+      "sri": "sha384-LJbc9Gxe47J8aCY5vQW1ZsIzF7p5SWt4rpCu+EIqe1D8Wzfklhdyk4SvgKccubTZ",
+      "axes": [],
+      "cmapCodepoints": 423,
+      "glyphs": 424
+    },
+    {
+      "name": "font-d7fdf163f8af92334f3060ceb05c162b706cd765f85cfb1e0fc44fe4ab34096bc7ce2d436f618c444449b27569ad799b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/alef/Alef-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alef/Alef-Regular.ttf",
+      "sourceBytes": 90996,
+      "sourceSri": "sha384-xLqonMrgxsMjifzGwv3LcC1+rct28RXDYjve040Lsdo5Ryoe4jTfKtwPiPNr3wIe",
+      "bytes": 35484,
+      "sri": "sha384-1/3xY/ivkjNPMGDOsFwWK3Bs12X4XPseD8RP5Ks0CWvHzi1Db2GMRERJsnVprXmb",
+      "axes": [],
+      "cmapCodepoints": 423,
+      "glyphs": 424
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alef/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alef/OFL.txt",
+    "bytes": 4519,
+    "sri": "sha384-K2p6Y5HY9vu1vFa3p3d3MMv7XdP+O6YFVJ6Dtd/ppyfX6jporizmlIEL6evqFTTq"
+  }
+}

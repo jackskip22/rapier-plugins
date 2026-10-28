@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Fira Code",
+  "sourceRank": 144,
+  "sourcePosition": 295,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/firacode/METADATA.pb",
+    "sri": "sha384-yjtJKnB7uyg0JrXijt3MayAz2sgFY7AgNRo3sm3uRu/uI5vX/pz8Y21OO5aSGLgr"
+  },
+  "files": [
+    {
+      "name": "font-d47621a15e29c6fe158d445922455c98e0e70bce88a67a78577088a178a329138d3e30b3db7ef07439d9e39b1cdf0e48.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/firacode/FiraCode[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/firacode/FiraCode%5Bwght%5D.ttf",
+      "sourceBytes": 260364,
+      "sourceSri": "sha384-skNRtuRSS/+R4gAZ0IfAvat+dLpLD8lV8dP0QrI5QlGXNS6b3iEbv/oogsl22z6N",
+      "bytes": 106344,
+      "sri": "sha384-1HYhoV4pxv4VjURZIkVcmODnC86Ipnp4V3CIoXijKRONPjCz237wdDnZ45sc3w5I",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1551,
+      "glyphs": 1857
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/firacode/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/firacode/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-+6yA6hXNBbI3hrcirQkGyqyM+up2Tj8LJKSOZIEfEVDScYFwoVTIrZYkt+g2HT3m"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Playwrite RO Guides",
+  "sourceRank": 447,
+  "sourcePosition": 852,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteroguides/METADATA.pb",
+    "sri": "sha384-7ngcOBGiYqG0CXKI9Dqvdkp2Dzn+xEZEDGLwiUcM0WV/e6kED47aWPh9qz2+qADP"
+  },
+  "files": [
+    {
+      "name": "font-9a6b084bbf24f8b71cc93dcd999174410681c1950ce9eb1f72269e8ba5dc261b2f59417bdeed06cf366f1be488e14a13.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwriteroguides/PlaywriteROGuides-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteroguides/PlaywriteROGuides-Regular.ttf",
+      "sourceBytes": 369692,
+      "sourceSri": "sha384-2lpJKkbnUiuxPejDKFMldFGkuI0B67PId/dqYD7DS5AeiAmyYuSKqYwHNZ8lKe1M",
+      "bytes": 86360,
+      "sri": "sha384-mmsIS78k+LccyT3NmZF0QQaBwZUM6esfciaei6XcJhsvWUF73u0GzzZvG+SI4UoT",
+      "axes": [],
+      "cmapCodepoints": 486,
+      "glyphs": 1241
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwriteroguides/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteroguides/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

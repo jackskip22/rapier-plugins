@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Plus Jakarta Sans",
+  "sourceRank": 8,
+  "sourcePosition": 20,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/plusjakartasans/METADATA.pb",
+    "sri": "sha384-q+6fRTRf9N/Hb6nyltqH2ci5H1otnEadQVEq6ayD2bOpOrZr6/DlRRLuZ77lM+ID"
+  },
+  "files": [
+    {
+      "name": "font-0f85b4b0dbeea8efcf451c60c5369056071be9e18714e282bd8272515bce27cb9df5600e7e3108e1a5b8779dccb92500.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/plusjakartasans/PlusJakartaSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/plusjakartasans/PlusJakartaSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 183188,
+      "sourceSri": "sha384-m+xjt+pMyM2gd4xq6Snnjso7xayTv8KgEZ7jK2S5n6xpPolBD1WkDd1L9Oa/ic8d",
+      "bytes": 66016,
+      "sri": "sha384-D4W0sNvuqO/PRRxgxTaQVgcb6eGHFOKCvYJyUVvOJ8ud9WAOfjEI4aW4d53MuSUA",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 721,
+      "glyphs": 1188
+    },
+    {
+      "name": "font-c0f8a24b584e66d7ae6972a8f4a04124a71c4603c2bf0950cdeff184581e7b14c846361318c5a6dc190fe787d6171061.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/plusjakartasans/PlusJakartaSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/plusjakartasans/PlusJakartaSans%5Bwght%5D.ttf",
+      "sourceBytes": 176288,
+      "sourceSri": "sha384-8e2JLcIJIByq7T8/fC/xRZwYxv/z9ToHi1WdfOfsjaoDC0+dncHc28H2icXmSfSJ",
+      "bytes": 60548,
+      "sri": "sha384-wPiiS1hOZteuaXKo9KBBJKccRgPCvwlQze/xhFgeexTIRjYTGMWm3BkP54fWFxBh",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 721,
+      "glyphs": 1188
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/plusjakartasans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/plusjakartasans/OFL.txt",
+    "bytes": 4402,
+    "sri": "sha384-NK/tCsvb8rYGQ81eKNFVxI3hsNQ8I0j5sWgOxWMnEkICGBru6TP+z1nhILPwqhGv"
+  }
+}

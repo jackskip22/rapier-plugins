@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Playwrite AU SA",
+  "sourceRank": 478,
+  "sourcePosition": 907,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteausa/METADATA.pb",
+    "sri": "sha384-b57RCC/wZJco2ddu4+QmpcenVXwnVMgt6ugWpp6b523nlIVgYvyKEBDe0+btJStM"
+  },
+  "files": [
+    {
+      "name": "font-a51bdb54e2479efc19fcbe1d357df21285b9023ed50f792915d00abf4bbf47cae82abb188716215580d79fcd6211bbae.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwriteausa/PlaywriteAUSA[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteausa/PlaywriteAUSA%5Bwght%5D.ttf",
+      "sourceBytes": 348456,
+      "sourceSri": "sha384-THxx4TSWKzfEXz4XmjtP00ZreKaiNp9u3VehdqpB8kW4vCFIa0hSh3b2PYqSVQWh",
+      "bytes": 123680,
+      "sri": "sha384-pRvbVOJHnvwZ/L4dNX3yEoW5Aj7VD3kpFdAKv0u/R8roKrsYhxYhVYDXn81iEbuu",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 400,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 486,
+      "glyphs": 1292
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwriteausa/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteausa/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

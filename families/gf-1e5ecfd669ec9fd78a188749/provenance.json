@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Baloo Da 2",
+  "sourceRank": 425,
+  "sourcePosition": 806,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/balooda2/METADATA.pb",
+    "sri": "sha384-we2Dem9LfPyITzIjixTz3P1+xyRRFGEtSKA9Qs+0NuAlx7omgf7zouxiV1q0KTB7"
+  },
+  "files": [
+    {
+      "name": "font-80a4c7eff891a8d3d0d37a9b4934211fb7c164d04fa479932a1568e5bbacbe8a9cc1d084ac91e8c4e0ce72093fa96b03.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/balooda2/BalooDa2[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/balooda2/BalooDa2%5Bwght%5D.ttf",
+      "sourceBytes": 451504,
+      "sourceSri": "sha384-/6EseVAk2k3tCp3Al/M8UdmO7GAH5QzOoYmtuio03FTAeZBxq70miH81U7AEGT7g",
+      "bytes": 151208,
+      "sri": "sha384-gKTH7/iRqNPQ03qbSTQhH7fBZNBPpHmTKhVo5busvoqcwdCErJHoxODOcgk/qWsD",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 818,
+      "glyphs": 1264
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/balooda2/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/balooda2/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-kk4uInBvWF4bPG2gCMzJLg05PIKR40js6PvVxwmumzi0+TXhGRgEzknXEqJe2PxJ"
+  }
+}

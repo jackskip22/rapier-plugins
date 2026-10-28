@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Playwrite RO",
+  "sourceRank": 432,
+  "sourcePosition": 822,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritero/METADATA.pb",
+    "sri": "sha384-/MiG751BWJxzB06oiNDi8HE6wATkQQva5dpURBwA7gLgclCjfdPtedi222qz3UEX"
+  },
+  "files": [
+    {
+      "name": "font-6b5e8bebd9e33e239b6fe63406ee86481d6b36962ef4d84bd12fc8eaccb9f37e1754ceec0ef0e6d7a33dd9a91cd2ace0.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwritero/PlaywriteRO[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritero/PlaywriteRO%5Bwght%5D.ttf",
+      "sourceBytes": 356168,
+      "sourceSri": "sha384-oIhYGzWHEEJPcgHC1nQt8VsfRd2/hiz3B5VMeG9suBnQLEUCswQKXVuTCIavUPUM",
+      "bytes": 122004,
+      "sri": "sha384-a16L69njPiObb+Y0Bu6GSB1rNpYu9NhL0S/I6sy5834XVM7sDvDm16M92akc0qzg",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 400,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 486,
+      "glyphs": 1295
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwritero/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritero/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Host Grotesk",
+  "sourceRank": 112,
+  "sourcePosition": 227,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hostgrotesk/METADATA.pb",
+    "sri": "sha384-qSILaeeQs0LmLq3UplBze0p6KTdkUHLCb6xVrn+86Dmw0ptFmIK7cXxKIZjNLP9W"
+  },
+  "files": [
+    {
+      "name": "font-276611652327a72327e56591197041a0d32d9866b76e7e1d9017105b7a833b1f2e5bdb729ff93ec1476af227e3a3965b.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/hostgrotesk/HostGrotesk-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hostgrotesk/HostGrotesk-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 84264,
+      "sourceSri": "sha384-yFBzSZGFJxYQlPev/bvlaOwLBMv89ICUk3VTYTqa1igudcaEkrMtEXb6iu+9eVMC",
+      "bytes": 34464,
+      "sri": "sha384-J2YRZSMnpyMn5WWRGXBBoNMtmGa3bn4dkBcQW3qDOx8uW9tyn/k+wUdq8ifjo5Zb",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 403,
+      "glyphs": 448
+    },
+    {
+      "name": "font-b32cbc7d8d3298bed1e68a0d3370859195bd441de39c178fbc0674bc735b32ad7ab5712dd4d07ede256cfdeb5e9d59bf.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/hostgrotesk/HostGrotesk[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hostgrotesk/HostGrotesk%5Bwght%5D.ttf",
+      "sourceBytes": 81784,
+      "sourceSri": "sha384-niT39NUyx75AvR2ORzURNRa/WsDIRvN8dBwzFPqufSRYB2eywHQIhBfIv0N35r0A",
+      "bytes": 31576,
+      "sri": "sha384-syy8fY0ymL7R5ooNM3CFkZW9RB3jnBePvAZ0vHNbMq16tXEt1NB+3iVs/etenVm/",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 404,
+      "glyphs": 449
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hostgrotesk/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hostgrotesk/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-tI3btE+93+RcpRoYnR3DfSsD/lw58zG2FFQJjWPAZUGVfpUJyoXdnzPxwPzmYfob"
+  }
+}

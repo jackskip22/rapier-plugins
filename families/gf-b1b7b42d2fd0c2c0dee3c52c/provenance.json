@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Oswald",
+  "sourceRank": 14,
+  "sourcePosition": 33,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oswald/METADATA.pb",
+    "sri": "sha384-s2G0QAJkESASKE0X7dGH8VxMC4aqpK7Bn+DvA7Z23Tx0MyWuQBNWuxCcLX18cYwX"
+  },
+  "files": [
+    {
+      "name": "font-22e271b67fa4767d2b673881f8cb244ba2efa3c809e5ef5c246e8374f2d53fd3cbd364a2cb6b5b1a2f838b22c49c1fa9.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/oswald/Oswald[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oswald/Oswald%5Bwght%5D.ttf",
+      "sourceBytes": 172088,
+      "sourceSri": "sha384-WfZ3LBcUwNEHt38UoApwHIlzWQ7x15vqnGInKGflVBQpY4tnsB5wGJQ5k1i4L85V",
+      "bytes": 71904,
+      "sri": "sha384-IuJxtn+kdn0rZziB+MskS6Lvo8gJ5e9cJG6DdPLVP9PL02Siy2tbGi+DiyLEnB+p",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 850,
+      "glyphs": 883
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/oswald/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oswald/OFL.txt",
+    "bytes": 4483,
+    "sri": "sha384-foiUf7y+TFbpXIe0yavhIppvxPbdTNZQhb/rWDg0AbXQJKC8rpaAaYR6SyO56cIK"
+  }
+}

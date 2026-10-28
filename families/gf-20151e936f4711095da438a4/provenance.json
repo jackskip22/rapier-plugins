@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Baloo Bhai 2",
+  "sourceRank": 397,
+  "sourcePosition": 755,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/baloobhai2/METADATA.pb",
+    "sri": "sha384-ItaK1gq4YEmrTqdKoA/IhI1+RwRySNL2Z4YU91HIxo9ku0TfSymElgVcVtTJqrWM"
+  },
+  "files": [
+    {
+      "name": "font-52c4c342136f1f02cbb861f2e1241716d7982c4810d7b3444ba2ad329b4043f2a4c5d26cb72ac7ff276e9e91349d5d73.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/baloobhai2/BalooBhai2[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/baloobhai2/BalooBhai2%5Bwght%5D.ttf",
+      "sourceBytes": 710488,
+      "sourceSri": "sha384-6PWGZfbs6BBvqDsNzNux83g8o69mJflkKTDfNO3E4ucr7iWdoFYefNK2O+CywmoS",
+      "bytes": 165232,
+      "sri": "sha384-UsTDQhNvHwLLuGHy4SQXFteYLEgQ17NES6KtMptAQ/KkxdJstyrH/ydunpE0nV1z",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 814,
+      "glyphs": 1292
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/baloobhai2/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/baloobhai2/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-kk4uInBvWF4bPG2gCMzJLg05PIKR40js6PvVxwmumzi0+TXhGRgEzknXEqJe2PxJ"
+  }
+}

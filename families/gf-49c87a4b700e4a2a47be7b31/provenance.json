@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Serif Armenian",
+  "sourceRank": 1010,
+  "sourcePosition": 1506,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifarmenian/METADATA.pb",
+    "sri": "sha384-D9Ksn4awD3ZipZZ34FJqfvs5V47HNHtPkxi8dDan4NO5Lgo1lOxWcz4qyVZTnYoN"
+  },
+  "files": [
+    {
+      "name": "font-3c7ed75320b880989612b36921a63bbecb0d30dd1dde72639c0a346be5fb87b67748d8c5743f7ab0377fdc41c78a6f38.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notoserifarmenian/NotoSerifArmenian[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifarmenian/NotoSerifArmenian%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 292528,
+      "sourceSri": "sha384-+ocwp7hW0tXn9J2cFQ9upIxcmTHzlY2od8n1HXNACG5ZjXnnbRyE8F6dgV4963jY",
+      "bytes": 138412,
+      "sri": "sha384-PH7XUyC4gJiWErNpIaY7vssNMN0d3nJjnAo0a+X7h7Z3SNjFdD96sDd/3EHHim84",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 430,
+      "glyphs": 435
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoserifarmenian/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifarmenian/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-uRo/ruPC68b8iZQg9vvV8hfVQyJpmWt5ogSqLDvi4KKXpeOraH9qp1Iz78Usr5mS"
+  }
+}

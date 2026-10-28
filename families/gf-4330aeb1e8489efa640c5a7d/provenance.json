@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Taprom",
+  "sourceRank": 379,
+  "sourcePosition": 719,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/taprom/METADATA.pb",
+    "sri": "sha384-GhPFUus7GbmggHyKLZks4fqtQWfWPlGoXeyD2Q5XlgyqwTfwTCnwllfSD0rxMzQ0"
+  },
+  "files": [
+    {
+      "name": "font-0c988f00d080c1e14501349bd312911e497b643201ec3a0120f9cf5c69186753c0be131e4c5a43aac966f7c6fd47bfc6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/taprom/Taprom-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/taprom/Taprom-Regular.ttf",
+      "sourceBytes": 203652,
+      "sourceSri": "sha384-WuD5Ij5P6ejVyw2YYOPGEvsFdyAiQc/mry/PJIjJ8ubuGEzhjP0KFdqKTsE5FjF1",
+      "bytes": 81428,
+      "sri": "sha384-DJiPANCAweFFATSb0xKRHkl7ZDIB7DoBIPnPXGkYZ1PAvhMeTFpDqslm98b9R7/G",
+      "axes": [],
+      "cmapCodepoints": 203,
+      "glyphs": 360
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/taprom/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/taprom/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-OMGZJ39XPnTdqwZApMuRz57xX0RvP+Q4Xjss3vM2XFrfUN/yMxoznWgyPtULwlFp"
+  }
+}

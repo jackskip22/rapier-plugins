@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Nova Mono",
+  "sourceRank": 530,
+  "sourcePosition": 974,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novamono/METADATA.pb",
+    "sri": "sha384-BLziD05wvqiY4RQ9Kj9Gg/qydQ0Uphd3h8dhb5qnNSmJKpyp3LMqkzLtlSQ7BT4B"
+  },
+  "files": [
+    {
+      "name": "font-4062cbe5665e0a9ae0084402263ef9a9c8f9a1abc5db88eb32e3e20d146d006a52d6d8afdbb7260c90136f8cc9c8ef4d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/novamono/NovaMono.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novamono/NovaMono.ttf",
+      "sourceBytes": 302380,
+      "sourceSri": "sha384-Zt59Y6+Q6+IC8pO4iuUj+lwlyYuq+lRXY800kz/Nef9H4VSIv0fKgv0esCf61WHO",
+      "bytes": 99908,
+      "sri": "sha384-QGLL5WZeCprgCEQCJj75qcj5oavF24jrMuPiDRRtAGpS1tiv27cmDJATb4zJyO9N",
+      "axes": [],
+      "cmapCodepoints": 1328,
+      "glyphs": 1331
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/novamono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/novamono/OFL.txt",
+    "bytes": 4271,
+    "sri": "sha384-Dcv7r2UZ0nUqa7OQP0Hdsmg5I4+kxYTqKrRqpL1hMNvE+EjGcMs87Mhfbj+DEx34"
+  }
+}

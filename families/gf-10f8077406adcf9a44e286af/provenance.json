@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Inria Sans",
+  "sourceRank": 504,
+  "sourcePosition": 942,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inriasans/METADATA.pb",
+    "sri": "sha384-AL8UTaZSSPf7O/4Fy2O+XZjy+Uq/42AMzoH0m2RxrctYmByeaIl2jfpxBDf9Jk8s"
+  },
+  "files": [
+    {
+      "name": "font-b1836144889d46639d2c7ddc1ff89cc4d8af509a41ef22c51e9f2e42bea2e81920242d34a4a26d34fe99b0d4a3ed02b8.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/inriasans/InriaSans-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inriasans/InriaSans-Bold.ttf",
+      "sourceBytes": 83536,
+      "sourceSri": "sha384-63ro7WadzuewfOshBpkJTn6zzVULS547RDgMoA/80p+KMcSb1sxcRW+/a6Q7iHVu",
+      "bytes": 29952,
+      "sri": "sha384-sYNhRIidRmOdLH3cH/icxNivUJpB7yLFHp8uQr6i6BkgJC00pKJtNP6ZsNSj7QK4",
+      "axes": [],
+      "cmapCodepoints": 420,
+      "glyphs": 591
+    },
+    {
+      "name": "font-9d0d15efa4378a26e358dbd23266ed135b84dc46c5280137b4b05b5cae40243fe1a8b7a93d6e088c20a32249da0a0db0.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/inriasans/InriaSans-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inriasans/InriaSans-BoldItalic.ttf",
+      "sourceBytes": 84968,
+      "sourceSri": "sha384-Nuyw5PLN9jkm+yuZxw6e7tAlOhLGuUSK9mgQ48rAghgyenpzonrFNSWbwYkQ39Nt",
+      "bytes": 30888,
+      "sri": "sha384-nQ0V76Q3iibjWNvSMmbtE1uE3EbFKAE3tLBbXK5AJD/hqLepPW4IjCCjIknaCg2w",
+      "axes": [],
+      "cmapCodepoints": 420,
+      "glyphs": 591
+    },
+    {
+      "name": "font-0987c18eb0f1d74d654648ceec123104292c898cd9f6c15da9ea2d13161b6539ced0f0137e255cdee2c751a16bc289d2.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/inriasans/InriaSans-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inriasans/InriaSans-Italic.ttf",
+      "sourceBytes": 85528,
+      "sourceSri": "sha384-Tv6wHJLhxfRqZOQj4rdtNnRro6ObY6Hh3Fu3Xb7tTbT06cXVhJWPIUKBIgPzlh0N",
+      "bytes": 31736,
+      "sri": "sha384-CYfBjrDx101lRkjO7BIxBCksiYzZ9sFdqeotExYbZTnO0PATfiVc3uLHUaFrwonS",
+      "axes": [],
+      "cmapCodepoints": 420,
+      "glyphs": 591
+    },
+    {
+      "name": "font-a8a9bcf009e81791f6f61f2d1c6576b4f8aec9b17e38a7d481d9328a595c857f4df76a1bd608be6696cbd57472a12607.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/inriasans/InriaSans-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inriasans/InriaSans-Light.ttf",
+      "sourceBytes": 85808,
+      "sourceSri": "sha384-4iORdPLJfCERvZpx85gkS4o4rTi6B8kYwRxgpYXzN5nkszz3WStWjWYFW2dt0syd",
+      "bytes": 29744,
+      "sri": "sha384-qKm88AnoF5H29h8tHGV2tPiuybF+OKfUgdkyillchX9N92ob1gi+ZpbL1XRyoSYH",
+      "axes": [],
+      "cmapCodepoints": 420,
+      "glyphs": 591
+    },
+    {
+      "name": "font-d60316f29cfe5239d5a62f3e28c821bf888a65fc37839db42ee83d8e7fb7052d80987e3f7e2d1e76eaaf6ff5371b0f7c.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/inriasans/InriaSans-LightItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inriasans/InriaSans-LightItalic.ttf",
+      "sourceBytes": 86656,
+      "sourceSri": "sha384-WaWiBHI/W9e1NyrrpZB9/an+le9R8By8NMJAqcEdizaPvm77ovqkx0zEjOzKvihn",
+      "bytes": 30660,
+      "sri": "sha384-1gMW8pz+UjnVpi8+KMghv4iKZfw3g520Lug9jn+3BS2AmH4/fi0eduqvb/U3Gw98",
+      "axes": [],
+      "cmapCodepoints": 420,
+      "glyphs": 591
+    },
+    {
+      "name": "font-220c1daab5cd7aa1901c2d72844632cca18a637f5deb13ece4d36a06728c34a07f3b7b228fb297af3b3d33472d47ff8f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/inriasans/InriaSans-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inriasans/InriaSans-Regular.ttf",
+      "sourceBytes": 83672,
+      "sourceSri": "sha384-ZGX2i7GjE4alyqeUvy1B05YPMem+dABt++xaYxEW+Ns9proEeOIO/U3pdl4zd6jK",
+      "bytes": 30776,
+      "sri": "sha384-IgwdqrXNeqGQHC1yhEYyzKGKY39d6xPs5NNqBnKMNKB/O3sij7KXrzs9M0ctR/+P",
+      "axes": [],
+      "cmapCodepoints": 420,
+      "glyphs": 591
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/inriasans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inriasans/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-ybjpM2R6Cs5ktU6nSswJhBm3KigdNOf6/ubnH98lkkZZpPGT6xtXvaz/CDESX14W"
+  }
+}

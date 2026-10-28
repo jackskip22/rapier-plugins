@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Special Elite",
+  "sourceRank": 52,
+  "sourcePosition": 118,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/specialelite/METADATA.pb",
+    "sri": "sha384-SNruVd35IfNPZKAFxdAlwAkQtMHeA2aHqgfyx1WtiRP1rAcY06iblrIBEJJ4uECx"
+  },
+  "files": [
+    {
+      "name": "font-7969882f21072fdde8d9e2b44d49982800fa0906161660666d233a77aa4c309de6982da7bc403477c6a835ed2ecbabfe.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/specialelite/SpecialElite-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/specialelite/SpecialElite-Regular.ttf",
+      "sourceBytes": 166180,
+      "sourceSri": "sha384-NaDBpbaNihqau7gom5oTkf7Dy+Q17sH+B/2Or5uRPF/O+R82HKVqdo7+Y8S7vc07",
+      "bytes": 65456,
+      "sri": "sha384-eWmILyEHL93o2eK0TUmYKAD6CQYWFmBmbSM6d6pMMJ3mmC2nvEA0d8aoNe0uy6v+",
+      "axes": [],
+      "cmapCodepoints": 368,
+      "glyphs": 370
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/specialelite/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/specialelite/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

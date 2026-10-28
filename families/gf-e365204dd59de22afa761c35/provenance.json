@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Bad Script",
+  "sourceRank": 312,
+  "sourcePosition": 599,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/badscript/METADATA.pb",
+    "sri": "sha384-S9Ck2VbPPMBkAHsXzyzQdylFUmZAhrvWwBBjDBmLu/FbDYLKAny3GxBZUmuxa1ro"
+  },
+  "files": [
+    {
+      "name": "font-b8721e6ec2aa86b30bb10d9fe51ec21efff93731bf6d6f6ac8e2e66c003bc7402c88e7a7e6284eadd6dc1ff3754d8c9e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/badscript/BadScript-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/badscript/BadScript-Regular.ttf",
+      "sourceBytes": 184216,
+      "sourceSri": "sha384-INvN36jwxZH2t5jgY/9B1mqWzNWngVdDrrOQN+MU5rYm7yBH6HtcKfZWj2wllaLH",
+      "bytes": 80200,
+      "sri": "sha384-uHIebsKqhrMLsQ2f5R7CHv/5NzG/bW9qyOLmbAA7x0AsiOen5ihOrdbcH/N1TYye",
+      "axes": [],
+      "cmapCodepoints": 758,
+      "glyphs": 801
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/badscript/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/badscript/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-FjIYANxZRgIpDChFgY2bd3hY14+7NdhZCggRhqvcXT40fnJbTFKY9QAn2SQPN18B"
+  }
+}

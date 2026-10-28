@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Tiro Gurmukhi",
+  "sourceRank": 308,
+  "sourcePosition": 594,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirogurmukhi/METADATA.pb",
+    "sri": "sha384-mtGVDIrGjqBBBtIKmEcZJb82FJzI52tC0Bfb4TmVNJIc2fIpQoOhdUhPvOXrj3kF"
+  },
+  "files": [
+    {
+      "name": "font-62c716f34fd357140bf656b60558ee9a031922ab7abb3b67393a10af3e281d6b21434ad218a6808929bcc39aa7a77a64.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/tirogurmukhi/TiroGurmukhi-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirogurmukhi/TiroGurmukhi-Italic.ttf",
+      "sourceBytes": 153924,
+      "sourceSri": "sha384-lWRR6czPcR0kJHHLfmnOSw1yWvH9oK7h4Rk6Y00YVZFY+maJg6QhvG4be1xPFe4M",
+      "bytes": 61480,
+      "sri": "sha384-YscW80/TVxQL9la2BVjumgMZIqt6uztnOToQrz4oHWshQ0rSGKaAiSm8w5qnp3pk",
+      "axes": [],
+      "cmapCodepoints": 467,
+      "glyphs": 874
+    },
+    {
+      "name": "font-07359adb459e6f2033d7d728a005d25bcfa352e499155fbce82ad9f10dea88af116f20a5f14d0d590453ef498dfc6d8b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/tirogurmukhi/TiroGurmukhi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirogurmukhi/TiroGurmukhi-Regular.ttf",
+      "sourceBytes": 150708,
+      "sourceSri": "sha384-hNvYUnXW8siN5aynwaf+haBKfhX8Rv9EMWOjv1+c6wx8/vNGvRyQVcv3+DIrqgqL",
+      "bytes": 59308,
+      "sri": "sha384-BzWa20WebyAz19cooAXSW8+jUuSZFV+86CrZ8Q3qiK8RbyCl8U0NWQRT70mN/G2L",
+      "axes": [],
+      "cmapCodepoints": 467,
+      "glyphs": 874
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/tirogurmukhi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirogurmukhi/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-mjCz0lzdq30nRdJ2PGxxr5T2leHKqqR73MSCrCIHk+FbpTLwAmJZj8JisJucGHeU"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Mada",
+  "sourceRank": 85,
+  "sourcePosition": 175,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mada/METADATA.pb",
+    "sri": "sha384-R6e5dOyVSgAizfMZ82Decddl0y6SNoXNO0dIlYLnVB0W1QvkoiebHsXhkGgotGoW"
+  },
+  "files": [
+    {
+      "name": "font-16ec47f662f2f8038fb8dc4ee75d704c099efc65a96a733f97aa539d8bb8f08a37a1fee4458bae913fa799240741f9f0.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mada/Mada[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mada/Mada%5Bwght%5D.ttf",
+      "sourceBytes": 181408,
+      "sourceSri": "sha384-xddYx4cc7GK+3KgNGfcvCu/UCT4o1ttIHx6aozwhB7ZeJQN8e/7Czo+iXEJvwEJ1",
+      "bytes": 74164,
+      "sri": "sha384-FuxH9mLy+AOPuNxO511wTAme/GWpanM/l6pTnYu48Io3of7kRYuukT+nmSQHQfnw",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 847,
+      "glyphs": 986
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mada/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mada/OFL.txt",
+    "bytes": 4419,
+    "sri": "sha384-p1tzUPZDlHDf5G0QpRAr8CmYszuZm5VEnwr24P46Phv0lHywSgvmOYjZY1YKp9mu"
+  }
+}

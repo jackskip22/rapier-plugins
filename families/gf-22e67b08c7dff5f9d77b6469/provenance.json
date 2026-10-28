@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Playwrite AU VIC",
+  "sourceRank": 540,
+  "sourcePosition": 990,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteauvic/METADATA.pb",
+    "sri": "sha384-uI9dFsAA657sMOawqUuPEb4DdR7mTK8uOxv65VR2Z7V4kTmosEbuZlzJZapH6yjT"
+  },
+  "files": [
+    {
+      "name": "font-5ec666f5d090cce01647aa8788cee2a7a6843fdbe642c5a27f39089223a5ee10d9cd26bb4ca82b9d6771dd8f3bdd796e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwriteauvic/PlaywriteAUVIC[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteauvic/PlaywriteAUVIC%5Bwght%5D.ttf",
+      "sourceBytes": 351660,
+      "sourceSri": "sha384-erjXcH1I4U+rTgzTJ8HXIsw0HdC3+TlqlEgVjWeLSnZoMyOJSs8FK4Y58SaBlLXJ",
+      "bytes": 124752,
+      "sri": "sha384-XsZm9dCQzOAWR6qHiM7ip6aEP9vmQsWifzkIkiOl7hDZzSa7TKgrnWdx3Y873Xlu",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 400,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 486,
+      "glyphs": 1293
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwriteauvic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteauvic/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

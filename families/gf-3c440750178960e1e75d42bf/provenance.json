@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Anek Latin",
+  "sourceRank": 99,
+  "sourcePosition": 201,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aneklatin/METADATA.pb",
+    "sri": "sha384-S3iQs4ms2AwmOs5luVCbqQEQbdH/VzwpdYkR0znFs8auib3vrInJkRr0sPyTduuT"
+  },
+  "files": [
+    {
+      "name": "font-593ef69b1ff8106a32de348e8c55313adc3ac1d2a387f24453b10337dd24b1c500dd79faae81938378a2d8e6373eea9d.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/aneklatin/AnekLatin[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aneklatin/AnekLatin%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 404880,
+      "sourceSri": "sha384-VztPNq1btVhztkZQIlQuaj3RDmHamINUaOAikj0Z2E5uVXv6fMVfsVEzq14/BfZs",
+      "bytes": 181436,
+      "sri": "sha384-WT72mx/4EGoy3jSOjFUxOtw6wdKjh/JEU7EDN90kscUA3Xn6roGTg3ii2OY3Puqd",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 500,
+          "max": 800,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 683,
+      "glyphs": 790
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/aneklatin/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/aneklatin/OFL.txt",
+    "bytes": 4379,
+    "sri": "sha384-uqqoxYm5AQ6Z7akZRkYz6GZz6DgQneF8rNq4MjZp5gQVnYgbA4FBKBTOlq1DWtLU"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Caveat Brush",
+  "sourceRank": 387,
+  "sourcePosition": 731,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caveatbrush/METADATA.pb",
+    "sri": "sha384-QJpEedv5/j+DAxYMJ+b7PTpJM/YWCVzGz2mQmRTwOV6nqKBamHbVphZL0VwGFdC1"
+  },
+  "files": [
+    {
+      "name": "font-69a164587ef7ece365089522d447111cf192e606179aa9706a7d46a7807569e93521ef1ad2d2a2e916276ea5755bd4ab.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/caveatbrush/CaveatBrush-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caveatbrush/CaveatBrush-Regular.ttf",
+      "sourceBytes": 295568,
+      "sourceSri": "sha384-XJX/YctG9Rl4TSNVe5S7usFUWst+8UJFujrnP5kN5KKuDjdqWP9Vr2EDYslWx49+",
+      "bytes": 89604,
+      "sri": "sha384-aaFkWH737ONlCJUi1EcRHPGS5gYXmqlwan1Gp4B1aek1Ie8a0tKi6RYnbqV1W9Sr",
+      "axes": [],
+      "cmapCodepoints": 641,
+      "glyphs": 642
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/caveatbrush/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/caveatbrush/OFL.txt",
+    "bytes": 4444,
+    "sri": "sha384-kRXQWyys66VmZ7mAMNKBvHTFW1MrE0uoJyb137NvszEbqGoSddTamRCRhGu4m3jV"
+  }
+}

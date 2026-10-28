@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Jura",
+  "sourceRank": 313,
+  "sourcePosition": 600,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jura/METADATA.pb",
+    "sri": "sha384-bbb2VitSEzcihmgX5kZoTYOcMU07+wJivMj6WqKKPC7QR6kvqlKubcw03gtxVSee"
+  },
+  "files": [
+    {
+      "name": "font-1b08d1326fee43fe0e02ba2b9e2bd98a23a6b81e285d764744a8c9c63566cfaf2579e8a2a199c89685cf1b874eef0fd5.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/jura/Jura[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jura/Jura%5Bwght%5D.ttf",
+      "sourceBytes": 258404,
+      "sourceSri": "sha384-rDMrQAQTU/ijIfeZT3al0u45XWyPA2CKwyQdMYvz3stfOlIdNB5NqvEfaNevB3v3",
+      "bytes": 78880,
+      "sri": "sha384-GwjRMm/uQ/4OArornivZiiOmuB4oXXZHRKjJxjVmz68leeiioZnIloXPG4dO7w/V",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1052,
+      "glyphs": 1115
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/jura/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jura/OFL.txt",
+    "bytes": 4379,
+    "sri": "sha384-eDJf794LfafM62OcQY4HlPC5qq/n0QBNfPArCR3Sk24doM+g4iUkEy6dKXjJC0CR"
+  }
+}

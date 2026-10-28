@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "JetBrains Mono",
+  "sourceRank": 13,
+  "sourcePosition": 29,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jetbrainsmono/METADATA.pb",
+    "sri": "sha384-OiDT3l9jDUaH7kNQYB6SI18Si4OesdYekBm79aWSsD7dkNV7zq+Q4oX1INpckDRk"
+  },
+  "files": [
+    {
+      "name": "font-0f3c0341a2ad0928f1145344c0960b64d59581b9af4fdf1bc0774ba1f2b8219d6f661cc9e0348a40192ad5dc5fa9d228.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/jetbrainsmono/JetBrainsMono-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jetbrainsmono/JetBrainsMono-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 191556,
+      "sourceSri": "sha384-TT/CbCWMI4suZnm43/cGK+auqmwreBZ+O3gL4EfNJxcpiPsdobqJAoxcvYMhCneP",
+      "bytes": 76552,
+      "sri": "sha384-DzwDQaKtCSjxFFNEwJYLZNWVgbmvT98bwHdLofK4IZ1vZhzJ4DSKQBkq1dxfqdIo",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 976,
+      "glyphs": 1179
+    },
+    {
+      "name": "font-0a6e1e4996dde85df6777e4d97dac6f0a03f8a7c79c2d5c39dfc731d619e59824e7d209ffd6d260df18031fa2df5a637.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/jetbrainsmono/JetBrainsMono[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf",
+      "sourceBytes": 187208,
+      "sourceSri": "sha384-U1HV2HxEECMos0gfWJu1pa+v0oDb7wEXmCTRdU0uizFuaCyRFgunAZ0c6Nowh6lU",
+      "bytes": 71664,
+      "sri": "sha384-Cm4eSZbd6F32d35Nl9rG8KA/inx5wtXDnfxzHWGeWYJOfSCf/W0mDfGAMfot9aY3",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 976,
+      "glyphs": 1179
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/jetbrainsmono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jetbrainsmono/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-9dzadA/aWbPgCj0zMah6cPjYgynSdqrBw8D8KjET47pxul8nStep57PT9QFMHCBb"
+  }
+}

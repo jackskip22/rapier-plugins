@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Jost",
+  "sourceRank": 34,
+  "sourcePosition": 83,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jost/METADATA.pb",
+    "sri": "sha384-MuDxFo4g1NqHf0qb+LUw/iViV9eLlfbXh1T3E6ask9+NMzPNXr9zKbcZs1sRK7XC"
+  },
+  "files": [
+    {
+      "name": "font-ba96c87080646d1031ea1bdc6249803cc8ee29fc864047314d03d856eb60cb50f5d5f7b4ff90e46b5f9e2c3e8790c90a.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/jost/Jost-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jost/Jost-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 144388,
+      "sourceSri": "sha384-XR5Z5fcCY/66JExp89kZDVyDKLpDcDZS5wDwLi2sfWsNCSb4L+Vop6ZlvZyh7S/x",
+      "bytes": 62328,
+      "sri": "sha384-upbIcIBkbRAx6hvcYkmAPMjuKfyGQEcxTQPYVutgy1D11fe0/5Dka1+eLD6HkMkK",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 524,
+      "glyphs": 535
+    },
+    {
+      "name": "font-c512fba9324deef423f0f882299858dbc4f3a29093a0833d665d60028db7dd73d5db4cd3405a17be8897031be2fce7ad.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/jost/Jost[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jost/Jost%5Bwght%5D.ttf",
+      "sourceBytes": 134996,
+      "sourceSri": "sha384-uxUBWq3qg2uU2fxTXxXfX8QSmjZ7KNkcKF367aDEzOp5rB5NhXf/6MJwwOcbuRVr",
+      "bytes": 50620,
+      "sri": "sha384-xRL7qTJN7vQj8PiCKZhY28TzopCToIM9Zl1gAo233XPV20zTQFoXvoiXAxvi/Oet",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 524,
+      "glyphs": 535
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/jost/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jost/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-hTzxqhHD+FjoL3Yv+AP2+5RfBv9LSvTNuNTW1B5fZG2yK2x46Yb+ipLEVe5TUzBp"
+  }
+}

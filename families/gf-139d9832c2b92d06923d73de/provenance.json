@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Baloo Tamma 2",
+  "sourceRank": 235,
+  "sourcePosition": 464,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/balootamma2/METADATA.pb",
+    "sri": "sha384-W8CkdJeWxYLRFhIFZ08svLxxmW5mqvtW0UdR5pdyhCGWdAlHSoXxOOBh4vQt9ZPd"
+  },
+  "files": [
+    {
+      "name": "font-cbb211666ea459503161c0e444301795abaa21b0a8ab763c4a17f992e708547217409acf06d641778f9c66a452e75344.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/balootamma2/BalooTamma2[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/balootamma2/BalooTamma2%5Bwght%5D.ttf",
+      "sourceBytes": 475932,
+      "sourceSri": "sha384-BbkMr/rwNXt7un+um+93trZufn+YFtvOq7DEMP/7x5nJCj7fd7BLy8o5Ta5EUWDy",
+      "bytes": 139284,
+      "sri": "sha384-y7IRZm6kWVAxYcDkRDAXlauqIbCoq3Y8Shf5kucIVHIXQJrPBtZBd4+cZqRS51NE",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 816,
+      "glyphs": 1278
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/balootamma2/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/balootamma2/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-kk4uInBvWF4bPG2gCMzJLg05PIKR40js6PvVxwmumzi0+TXhGRgEzknXEqJe2PxJ"
+  }
+}

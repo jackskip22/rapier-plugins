@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Asar",
+  "sourceRank": 359,
+  "sourcePosition": 679,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/asar/METADATA.pb",
+    "sri": "sha384-M4V2K3xH6FhegAYlKATF3+CCmLBCmMzOkqUArM/ylJysMWfvF0B3qMsgO/a6KtGS"
+  },
+  "files": [
+    {
+      "name": "font-3dce554a049311cc78969b21909e6210dd6b518744f271ebe746d833aa1bd6d6c5039beb883fa03304a5a7a596a214a3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/asar/Asar-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/asar/Asar-Regular.ttf",
+      "sourceBytes": 669032,
+      "sourceSri": "sha384-Z4CSlfW6ILqEKFHSuAcMT6bHLQvtiJiv2JyUyJon/GwehwCWTC2yQO0ff62ufXW8",
+      "bytes": 198608,
+      "sri": "sha384-Pc5VSgSTEcx4lpshkJ5iEN1rUYdE8nHr50bYM6ob1tbFA5vriD+gMwSlp6WWohSj",
+      "axes": [],
+      "cmapCodepoints": 572,
+      "glyphs": 1358
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/asar/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/asar/OFL.txt",
+    "bytes": 4488,
+    "sri": "sha384-LdHt3k6T0RONwKX9Rh0H0SYSdsWvv95EUAiCKSwtgX7+6kTtyOixC7FeesljRTNa"
+  }
+}

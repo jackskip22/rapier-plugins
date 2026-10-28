@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Geologica",
+  "sourceRank": 136,
+  "sourcePosition": 277,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/geologica/METADATA.pb",
+    "sri": "sha384-ZjkIYAS0HHQnR19dYAerH6N7J7XDImdiTQ5ZzTdddUwIbnEFJMmL1OgO/ZqBnwS0"
+  },
+  "files": [
+    {
+      "name": "font-b953ca750307b8957ee0da2b9eb7ecf088acc9d41bacc00826fe4330c03cf0dadea649c375ef7e3a7eceb42ca17c17bd.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/geologica/Geologica[CRSV,SHRP,slnt,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/geologica/Geologica%5BCRSV%2CSHRP%2Cslnt%2Cwght%5D.ttf",
+      "sourceBytes": 348640,
+      "sourceSri": "sha384-5YiFglB8LgkXQXJuJh0sIcRZfN+BqRd+IDuYbcA6EQBtQaGh4tJQSMyjsbe0bE13",
+      "bytes": 120452,
+      "sri": "sha384-uVPKdQMHuJV+4Nornrfs8IisydQbrMAIJv5DMMA88NrepknDde9+On7OtCyhfBe9",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "CRSV",
+          "min": 0,
+          "default": 0,
+          "max": 1,
+          "name": "Cursive"
+        },
+        {
+          "tag": "SHRP",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Sharpness"
+        },
+        {
+          "tag": "slnt",
+          "min": -12,
+          "default": 0,
+          "max": 0,
+          "name": "Slant"
+        }
+      ],
+      "cmapCodepoints": 836,
+      "glyphs": 973
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/geologica/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/geologica/OFL.txt",
+    "bytes": 4400,
+    "sri": "sha384-NbtpVfjk6rGkLY9uEqDWxRYM7mz7sAbTV6QRqy9zgrwa7L2cfDVs8oqcdvAZRdTW"
+  }
+}

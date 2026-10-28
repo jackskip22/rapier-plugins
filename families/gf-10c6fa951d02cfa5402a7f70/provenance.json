@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Great Vibes",
+  "sourceRank": 119,
+  "sourcePosition": 242,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/greatvibes/METADATA.pb",
+    "sri": "sha384-KX5pBF4E9hTK7qOTuEL0QceiuEWcXrMMICi+/uAHfolzPUjp53U5CjbYyvsSa8ix"
+  },
+  "files": [
+    {
+      "name": "font-e0a9192c7349bc04de06c67dc710894b9fe39830689ffac5914295adc89072bb6053588d53ec2bccdd798e00c8962af5.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/greatvibes/GreatVibes-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/greatvibes/GreatVibes-Regular.ttf",
+      "sourceBytes": 457588,
+      "sourceSri": "sha384-AtrM/GGX6itUhCaWMuKUP5KrWw1ZM58Zbcv/Dj+P1bblrNqi8J5jrgTeaFF75+ac",
+      "bytes": 161972,
+      "sri": "sha384-4KkZLHNJvATeBsZ9xxCJS5/jmDBon/rFkUKVrciQcrtgU1iNU+wrzN15jgDIlir1",
+      "axes": [],
+      "cmapCodepoints": 1081,
+      "glyphs": 2025
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/greatvibes/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/greatvibes/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-Ym86JFUMd6WxOQt2bXjfHEUFqp89DdeI8g0H5jaUH1S9AKcGCIQDeFPaUAq9tFrz"
+  }
+}

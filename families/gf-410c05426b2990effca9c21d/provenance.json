@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "PT Mono",
+  "sourceRank": 108,
+  "sourcePosition": 219,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptmono/METADATA.pb",
+    "sri": "sha384-1EQaItejuRgU4swciz/L64y5qFfZ/Qmvs1/34oXhEFWMhyqHVyYd8aB2l72Q0A4p"
+  },
+  "files": [
+    {
+      "name": "font-3bf06ec6d7d700c42f0f7a239a1c997a4749d6971dc13d5a03129cdc8a5ff19c4ccd2cb91a98ffdea8ab9babae1f5f21.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/ptmono/PTM55FT.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptmono/PTM55FT.ttf",
+      "sourceBytes": 185912,
+      "sourceSri": "sha384-SVz0et+bYQPTnznUrsoWWwc/aO0jS8tZ/fNqJQE9XwSBORTowcBSW5DdpHcCnArw",
+      "bytes": 72384,
+      "sri": "sha384-O/BuxtfXAMQvD3ojmhyZekdJ1pcdwT1aAxKc3Ipf8ZxMzSy5Gpj/3qirm6uuH18h",
+      "axes": [],
+      "cmapCodepoints": 805,
+      "glyphs": 808
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ptmono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptmono/OFL.txt",
+    "bytes": 4448,
+    "sri": "sha384-EHOHfcppRNyAt2eW/ipbWGyuhczNdfDx23sQVa7/SL3ZlaAR3c9Ej/njwbZDq9KM"
+  }
+}

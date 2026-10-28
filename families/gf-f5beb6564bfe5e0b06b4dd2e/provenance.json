@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Sarala",
+  "sourceRank": 124,
+  "sourcePosition": 254,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sarala/METADATA.pb",
+    "sri": "sha384-ATdmjCtwveM0sC3uyM6E79nGcBpPQ4b1FTspnrx85aI/W9nzqNisoYSIGG62CRrg"
+  },
+  "files": [
+    {
+      "name": "font-4dad4ff588f860d5bbf0a0c7d1cd0c34445d956c33dfa67a1d6dab089808875b05dfad60e389da507f92250b8b2be312.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/sarala/Sarala-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sarala/Sarala-Bold.ttf",
+      "sourceBytes": 239072,
+      "sourceSri": "sha384-z1b1P/o7/IOmU6P57/8DkLtLCapJ62BpU3hKWT8+ZoB000jJCfKyfLTp3Ic/jBN4",
+      "bytes": 66764,
+      "sri": "sha384-Ta1P9Yj4YNW78KDH0c0MNERdlWwz36Z6HW2rCJgIh1sF361g44naUH+SJQuLK+MS",
+      "axes": [],
+      "cmapCodepoints": 555,
+      "glyphs": 870
+    },
+    {
+      "name": "font-ce16e7acaa2409453312870df044ed5f651debeaf2fb3157925642bdfd1b08d6c5347859e02633447a8bf54837a0da96.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sarala/Sarala-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sarala/Sarala-Regular.ttf",
+      "sourceBytes": 241592,
+      "sourceSri": "sha384-V0sDOAF5SgD+2SD5amnG6HilRZE0/HOeSWxmBj/IxSh1dsIo+76ap9wXJCeAi/cQ",
+      "bytes": 66048,
+      "sri": "sha384-zhbnrKokCUUzEocN8ETtX2Ud6+ry+zFXklZCvf0bCNbFNHhZ4CYzRHqL9Ug3oNqW",
+      "axes": [],
+      "cmapCodepoints": 555,
+      "glyphs": 870
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sarala/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sarala/OFL.txt",
+    "bytes": 4451,
+    "sri": "sha384-2ewpD265pT8Y/Z6OWljgV+4aWv9WJ/zfTT1jdD5348PRA6nE+jTjisD4DFD3qVH9"
+  }
+}

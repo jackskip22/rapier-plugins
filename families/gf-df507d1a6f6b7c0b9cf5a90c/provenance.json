@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Nunito",
+  "sourceRank": 9,
+  "sourcePosition": 23,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nunito/METADATA.pb",
+    "sri": "sha384-DUkYnlSjYYiEKMfqHGtKKgimK5UWcm5CICXSr7cEaBrFQbis+XujctKElLxQhG5P"
+  },
+  "files": [
+    {
+      "name": "font-9a1ddb3db0aebe848762da42dd8fd0a05fa335c2945bc7ee61bd89cbcb4856ff4f19d6acb7025b9abb12bfb691365872.woff2",
+      "variant": "200italic",
+      "sourcePath": "ofl/nunito/Nunito-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nunito/Nunito-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 281832,
+      "sourceSri": "sha384-fL/jcFt3TzOgWLhzqESyRjhcL3iGgQxYKiS0M4xnnF/+UQ+DadMEf4AvhTJcN4YD",
+      "bytes": 110712,
+      "sri": "sha384-mh3bPbCuvoSHYtpC3Y/QoF+jNcKUW8fuYb2Jy8tIVv9PGdastwJbmrsSv7aRNlhy",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 938,
+      "glyphs": 1103
+    },
+    {
+      "name": "font-17f25be517988f6f809f484e16917ecfbf12e735c468e9bcacaf05b86bafba9064b0cf74e50213b00d14cb7f2848560b.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/nunito/Nunito[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nunito/Nunito%5Bwght%5D.ttf",
+      "sourceBytes": 276932,
+      "sourceSri": "sha384-/hWzga+aR7CMVryynqDoGLGfQE9GLsbFKfaLbkkHC6EuhjPxfqCbVDJylAGGFUR2",
+      "bytes": 101068,
+      "sri": "sha384-F/Jb5ReYj2+An0hOFpF+z78S5zXEaOm8rK8FuGuvupBksM905QITsA0Uy38oSFYL",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 938,
+      "glyphs": 1103
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/nunito/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/nunito/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-5cnbtBfqozctokLgYOSnsG1o77NKHTXwxjCI+hcM27ecjlCg2xtmKlmoebTn6Wtr"
+  }
+}

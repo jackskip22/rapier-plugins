@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Galada",
+  "sourceRank": 227,
+  "sourcePosition": 451,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/galada/METADATA.pb",
+    "sri": "sha384-sTB0n33Z1yqeY51pQjT0GM/GfN1n1vhbke0tzSamBN2Yx8Ze4cAFFSvd2SJxvwFS"
+  },
+  "files": [
+    {
+      "name": "font-46d8d77ef497d52df84f3cffabeceb065526e2e5d4c30e6ae176b6df3a5e9108fb42f39f5d43e44faa6f2b63eb6af4df.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/galada/Galada-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/galada/Galada-Regular.ttf",
+      "sourceBytes": 187776,
+      "sourceSri": "sha384-A1C3lmgEkdelc8Amd0zC/cxa5AYOS86Habd9+r3gWGEwp6Vkdjnph9s2ABoazAbq",
+      "bytes": 69164,
+      "sri": "sha384-RtjXfvSX1S34Tzz/q+zrBlUm4uXUww5q4Xa23zpekQj7QvOfXUPkT6pvK2PravTf",
+      "axes": [],
+      "cmapCodepoints": 338,
+      "glyphs": 655
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/galada/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/galada/OFL.txt",
+    "bytes": 4635,
+    "sri": "sha384-XDs0hETXWor+82EiflKd2hr2Xi/MjJhZY6a0D+FffmVgQGHzZt9y8pLgypQzlcq+"
+  }
+}

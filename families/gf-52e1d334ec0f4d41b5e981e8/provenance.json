@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Instrument Sans",
+  "sourceRank": 83,
+  "sourcePosition": 170,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/instrumentsans/METADATA.pb",
+    "sri": "sha384-i3bbtfgh3hcH7pabctFojkCWfRFjqFyWSOB7M7DK0xfcQk2+2bleT+KRwi/QxWQG"
+  },
+  "files": [
+    {
+      "name": "font-5bc304d288b1d280eac6b6acdb2e1e2e8d959ff2a4aa2444fe2e86dd2ae9c38ca0fb0af9c877f8c7f1fcd992bf71a1d5.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/instrumentsans/InstrumentSans-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/instrumentsans/InstrumentSans-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 202128,
+      "sourceSri": "sha384-fjgNW89nU7DUHfC43OTDG9ORknSyuqqpPkfNhXwViy+iUIC4n29R+ndIRwnMPYpk",
+      "bytes": 95144,
+      "sri": "sha384-W8ME0oix0oDqxras2y4eLo2Vn/KkqiRE/i6G3Srpw4yg+wr5yHf4x/H82ZK/caHV",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 343,
+      "glyphs": 501
+    },
+    {
+      "name": "font-91afecdcac4e1ae360e4dacf36ae0fbca9f4c4f6ed108cc2946381ce36e6cf6370a77639fe168042905a12ea398dd326.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/instrumentsans/InstrumentSans[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/instrumentsans/InstrumentSans%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 194336,
+      "sourceSri": "sha384-kiYQhroK6fGLOqKjm/w7JVg8p4nByO/sDWk/jlWso/q5cn+lIc+l7Ep+xAgpfZSL",
+      "bytes": 88776,
+      "sri": "sha384-ka/s3KxOGuNg5NrPNq4PvKn0xPbtEIzClGOBzjbmz2Nwp3Y5/haAQpBaEuo5jdMm",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 343,
+      "glyphs": 501
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/instrumentsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/instrumentsans/OFL.txt",
+    "bytes": 4403,
+    "sri": "sha384-NGCmvIDPkcJbvyS4xZj/20ozGh1i+crhpdWKRsFkHtQvKZL21XFFHplqNNKNuaFZ"
+  }
+}

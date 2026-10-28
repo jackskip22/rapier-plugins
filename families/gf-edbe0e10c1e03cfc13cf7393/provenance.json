@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Inclusive Sans",
+  "sourceRank": 540,
+  "sourcePosition": 989,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inclusivesans/METADATA.pb",
+    "sri": "sha384-k3E3kesuF4iYEILp1KRiBpR9BgJqIZRF1CIwx1YAGQcAGJlUdPgv9tp/h9AiGtVe"
+  },
+  "files": [
+    {
+      "name": "font-cf0d08c10d00070a4e5f81917872c76f0ec62a5a1fe72ed220a3ddd288201a54826742664cd1c008800e1b0727a29274.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/inclusivesans/InclusiveSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inclusivesans/InclusiveSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 114612,
+      "sourceSri": "sha384-o1X7NRRC7FsXjIM2YdpMcZ5OKT8qGH9b8P0fUPIcjNn3U6ecwMOxBTKnlv/S1wNE",
+      "bytes": 48180,
+      "sri": "sha384-zw0IwQ0ABwpOX4GReHLHbw7GKlof5y7SIKPd0oggGlSCZ0JmTNHACIAOGwcnopJ0",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 500,
+      "glyphs": 550
+    },
+    {
+      "name": "font-7e3a03041de4518d960195185aa6ce94285ee3d6e54c8a9c43fb047767585db8a5b1a19d92ce157acf58cab73e6546dc.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/inclusivesans/InclusiveSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inclusivesans/InclusiveSans%5Bwght%5D.ttf",
+      "sourceBytes": 112280,
+      "sourceSri": "sha384-wokMmLKX0s3QI9i1Y6Y+WQJ0eq2pe7KoLogXAZ7PakmTTPiTWUQmNesROOI4DcNo",
+      "bytes": 46136,
+      "sri": "sha384-fjoDBB3kUY2WAZUYWqbOlChe49blTIqcQ/sEd2dYXbilsaGdks4Ves9Yyrc+ZUbc",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 500,
+      "glyphs": 550
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/inclusivesans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inclusivesans/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-ZTLxVHW0E48fdlu6RQ/WJZzYiPiYTKkUG0P3Gf8VOtpwVkGPXvUD/zl0bk43QUbF"
+  }
+}

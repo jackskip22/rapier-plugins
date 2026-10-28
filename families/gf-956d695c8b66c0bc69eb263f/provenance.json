@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Serif Gujarati",
+  "sourceRank": 264,
+  "sourcePosition": 517,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifgujarati/METADATA.pb",
+    "sri": "sha384-u2rPznOOczUv0U61UGBKHbpy1sx6RIMC90rF34RQq+tc8F2JAcJGj7kEAdXqhzOm"
+  },
+  "files": [
+    {
+      "name": "font-83e1e0d00ed9cf87a0c9f11aa7b81776bfa0b98452d168ee3cae6b5bac71ce592be39631e3e21e8711662d22409bfcd7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notoserifgujarati/NotoSerifGujarati[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifgujarati/NotoSerifGujarati%5Bwght%5D.ttf",
+      "sourceBytes": 378356,
+      "sourceSri": "sha384-O4Ejh7bIWwK9kNV0tEVoEI5Immbk340j9gzw6dsX5QKggDgLpn4qMGhieGBcVUg4",
+      "bytes": 162540,
+      "sri": "sha384-g+Hg0A7Zz4egyfEap7gXdr+guYRS0WjuPK5rW6xxzlkr45Yx4+IehxFmLSJAm/zX",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 443,
+      "glyphs": 737
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoserifgujarati/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifgujarati/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-5m4w9wklbPIUjU2Fx1dOwcR4o2GUIrgOWKhBt7KUKYK0bCKcmgfY0NsyFZdbbcfn"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Fira Mono",
+  "sourceRank": 117,
+  "sourcePosition": 238,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/firamono/METADATA.pb",
+    "sri": "sha384-XwizcDCzDa+17J25LPTpaC/ReBHPXiCiF7kVFtCRlsoVHUT+Dv6vjqecg5SCIX3A"
+  },
+  "files": [
+    {
+      "name": "font-f9312d14a6c74b7dd374351511aae8bfbeb8646cb38b3d1654a84bc2926acdb08e04ea76b4e5a17fdaac7999cef2aa8e.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/firamono/FiraMono-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/firamono/FiraMono-Bold.ttf",
+      "sourceBytes": 206488,
+      "sourceSri": "sha384-wYVMxRagYUYUcTVYaKsMbMwIsdjb6Ef2xrAbQjKOHFfvUSbKCMFYH53V+GegV16V",
+      "bytes": 68396,
+      "sri": "sha384-+TEtFKbHS33TdDUVEarov764ZGyziz0WVKhLwpJqzbCOBOp2tOWhf9qseZnO8qqO",
+      "axes": [],
+      "cmapCodepoints": 1350,
+      "glyphs": 1485
+    },
+    {
+      "name": "font-0eb9e9af2465450e458fcb000dabfb4ee699f80da36349c9135639d90d90bff11bcaf28cf5015c3e5d887bffed95347f.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/firamono/FiraMono-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/firamono/FiraMono-Medium.ttf",
+      "sourceBytes": 173428,
+      "sourceSri": "sha384-Kxbc85fuBM1ZP9CKWkdrYV0vzO+304mLKfP3/0ew3QFBFA68hgbfNXMZ44BmTash",
+      "bytes": 63252,
+      "sri": "sha384-DrnpryRlRQ5Fj8sADav7TuaZ+A2jY0nJE1Y52Q2Qv/EbyvKM9QFcPl2Ie//tlTR/",
+      "axes": [],
+      "cmapCodepoints": 1350,
+      "glyphs": 1485
+    },
+    {
+      "name": "font-2d9884e8928b84b6ae90e6fe782364ed3d21a20b9eb97ecdfb42fe493dcdeb223f9919141b619eaf378943f7b4801300.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/firamono/FiraMono-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/firamono/FiraMono-Regular.ttf",
+      "sourceBytes": 174596,
+      "sourceSri": "sha384-u1a3U6Y7SwmSXO3i1YvnkXqJxbV2+OMAy5ikTOCxS/uNuZnxWpOfPyvQsWD142Hj",
+      "bytes": 63748,
+      "sri": "sha384-LZiE6JKLhLaukOb+eCNk7T0hogueuX7N+0L+ST3N6yI/mRkUG2GerzeJQ/e0gBMA",
+      "axes": [],
+      "cmapCodepoints": 1350,
+      "glyphs": 1485
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/firamono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/firamono/OFL.txt",
+    "bytes": 4371,
+    "sri": "sha384-NEKcVlDEuvpTMkvqC24kYGE8HiREA4I0ZXOa7sytbjBD4crvpKo+O/yi/GiNz3Mr"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Londrina Solid",
+  "sourceRank": 379,
+  "sourcePosition": 716,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/londrinasolid/METADATA.pb",
+    "sri": "sha384-+yijOGrw5jADPBu+a7dj1tdZGjCOn/BTaXqv/L2P9+9kqviaNrihIIyxs2y8HjPA"
+  },
+  "files": [
+    {
+      "name": "font-b7cdc5618c1447272e7f0beefe43e1be5288df263fb05bd5113e0f4db168ce5bbea576c54aedcbb1bfec3fa71cc9202c.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/londrinasolid/LondrinaSolid-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/londrinasolid/LondrinaSolid-Black.ttf",
+      "sourceBytes": 93408,
+      "sourceSri": "sha384-koX+unPUMPAkMsl2fVyIhXVLT2Co9h+ODI+17m6/KzqV0AFJDGiELQ2HokUn7Rw/",
+      "bytes": 36772,
+      "sri": "sha384-t83FYYwURycufwvu/kPhvlKI3yY/sFvVET4PTbFozlu+pXbFSu3Lsb/sP6ccySAs",
+      "axes": [],
+      "cmapCodepoints": 230,
+      "glyphs": 231
+    },
+    {
+      "name": "font-12e344c3761accc7d92e3d634bfa94316f632266a4388698e4664071f4136c488535e9d8266fc61feae46bc4ea8e9d85.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/londrinasolid/LondrinaSolid-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/londrinasolid/LondrinaSolid-Light.ttf",
+      "sourceBytes": 85988,
+      "sourceSri": "sha384-ZS0dmJAZ6WeW8A+1vXaFcIsJ6pZf3RpHoSbIoU9juunPisSo0xMRezAOUFInytBV",
+      "bytes": 36432,
+      "sri": "sha384-EuNEw3YazMfZLj1jS/qUMW9jImakOIaY5GZAcfQTbEiFNenYJm/GH+rka8Tqjp2F",
+      "axes": [],
+      "cmapCodepoints": 230,
+      "glyphs": 236
+    },
+    {
+      "name": "font-ed9f610b73cf3903816c77ffd70f5d47acd325619f4173c0a187fd1c033ab4a0d31c5df2d97f382b60c20f74a755917b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/londrinasolid/LondrinaSolid-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/londrinasolid/LondrinaSolid-Regular.ttf",
+      "sourceBytes": 92132,
+      "sourceSri": "sha384-TW5c/bMmF5dDJj7MMY/p9fSi2tAVXFKxqE851kBFyaQcwL8hDBbY/7zC97jgPCuD",
+      "bytes": 34648,
+      "sri": "sha384-7Z9hC3PPOQOBbHf/1w9dR6zTJWGfQXPAoYf9HAM6tKDTHF3y2X84K2DCD3SnVZF7",
+      "axes": [],
+      "cmapCodepoints": 230,
+      "glyphs": 231
+    },
+    {
+      "name": "font-bdb62093452058dce21dac5368efcc1bc139ed09b29325fa52c6e09e4151e804b71cf36332f75a64c1b0a9bdc4ba19db.woff2",
+      "variant": "250",
+      "sourcePath": "ofl/londrinasolid/LondrinaSolid-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/londrinasolid/LondrinaSolid-Thin.ttf",
+      "sourceBytes": 80672,
+      "sourceSri": "sha384-mb8emktJkE2pkdRQeQvzgtfatRi0IYSm4c/K5PfQBE5nJ3l8oggFdj3HiYf+NJSw",
+      "bytes": 30728,
+      "sri": "sha384-vbYgk0UgWNziHaxTaO/MG8E57QmykyX6UsbgnkFR6AS3HPNjMvdaZMGwqb3Euhnb",
+      "axes": [],
+      "cmapCodepoints": 230,
+      "glyphs": 234
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/londrinasolid/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/londrinasolid/OFL.txt",
+    "bytes": 4439,
+    "sri": "sha384-CkPoOgcFbxykD+1H7hHDpWMiwwwdGSZct9ltCZ/JDwXtQph4fbMARmqwontQmnLb"
+  }
+}

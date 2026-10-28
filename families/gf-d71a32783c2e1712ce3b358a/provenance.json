@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Cherokee",
+  "sourceRank": 1197,
+  "sourcePosition": 1693,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanscherokee/METADATA.pb",
+    "sri": "sha384-pHqlGe8sKsPlywARf7j3cSTTSQEHlhgHFnz6gbllQDLlqItkL7W1qWUZgzE8CVs/"
+  },
+  "files": [
+    {
+      "name": "font-ebfff8fa09edfb0999a7d812d5184a060db677b06d3fdaf8cb2bc083f710b46a72c81f9d0b85ac97bb7b7d6f789e54f0.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosanscherokee/NotoSansCherokee[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanscherokee/NotoSansCherokee%5Bwght%5D.ttf",
+      "sourceBytes": 224360,
+      "sourceSri": "sha384-ejQbjP1Im8A/ooiU3XJhGi93jrKI/q6ieEWbWuYKPigaxhVb0pSYXay61oDEWT+N",
+      "bytes": 117924,
+      "sri": "sha384-6//4+gnt+wmZp9gS1RhKBg22d7BtP9r4yyvAg/cQtGpyyB+dC4Wsl7t7fW94nlTw",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 511,
+      "glyphs": 601
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosanscherokee/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanscherokee/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-BzPxyLtbDYylFGYRLr6upQ7+BjYxn50uGlAJVA9gqBDjp3d4zCh10d/TZgOirS+g"
+  }
+}

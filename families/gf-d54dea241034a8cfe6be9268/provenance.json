@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Crimson Pro",
+  "sourceRank": 59,
+  "sourcePosition": 132,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsonpro/METADATA.pb",
+    "sri": "sha384-sj+fVW7Nhhjd4GCJ6wbFyf3dv5L8pppUsH92RXpQHyqmhllOJDBkDyxeNUvi7+ym"
+  },
+  "files": [
+    {
+      "name": "font-785c2318ea61fb14a357783fa8716b065dca528e7ef7340f135c10a5478f866452cc3889219b546adc72585feab44768.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/crimsonpro/CrimsonPro-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsonpro/CrimsonPro-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 253176,
+      "sourceSri": "sha384-FR6inaa4KodZX/TNHiC6R0VvHm+3yLgBJ5Qtirgy+LC35F6OaoJDYI9anFCBOHZM",
+      "bytes": 90304,
+      "sri": "sha384-eFwjGOph+xSjV3g/qHFrBl3KUo5+9zQPE1wQpUePhmRSzDiJIZtUatxyWF/qtEdo",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 689,
+      "glyphs": 832
+    },
+    {
+      "name": "font-978b81210113cbd6ee5eb50f29fe99862ff99579cba34cce5d5f26b87cdef70196ca1f280aac609161c52afc766ebd95.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/crimsonpro/CrimsonPro[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsonpro/CrimsonPro%5Bwght%5D.ttf",
+      "sourceBytes": 246324,
+      "sourceSri": "sha384-TjAaA0abQvHHSF4G7sLZW0gM0zGArat9TC5+wKmi8stVh7MAoj/MmYwHLbkQGHSC",
+      "bytes": 85944,
+      "sri": "sha384-l4uBIQETy9buXrUPKf6Zhi/5lXnLo0zOXV8muHze9wGWyh8oCqxgkWHFKvx2br2V",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 689,
+      "glyphs": 832
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/crimsonpro/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsonpro/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-XrgEfkff1x3r0PS//Og1BCV2UrKkfwbak5hvt/NP+4UnNUXv93YEZyZ/0RwPxkdq"
+  }
+}

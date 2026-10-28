@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Afacad Flux",
+  "sourceRank": 314,
+  "sourcePosition": 602,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/afacadflux/METADATA.pb",
+    "sri": "sha384-/spnl+DZN5X5u3SblDXTPYOojDOsdBju90rtaV31lUy5z6n1VYQpkXhjTdJzz2Qw"
+  },
+  "files": [
+    {
+      "name": "font-c41c00051b0479b067849b931ce5150f387cf68ab5777ad0584a5d585dba4df0e4ea95678c1f6e86af951d452c2d0359.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/afacadflux/AfacadFlux[slnt,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/afacadflux/AfacadFlux%5Bslnt%2Cwght%5D.ttf",
+      "sourceBytes": 437512,
+      "sourceSri": "sha384-xOUD//O2Cv7eePVyWC6rjeQsV8bcpJeqVU4VIDHF6EbBOxGvcc4Q/62SX4Fd45tl",
+      "bytes": 176784,
+      "sri": "sha384-xBwABRsEebBnhJuTHOUVDzh89oq1d3rQWEpdWF26TfDk6pVnjB9uhq+VHUUsLQNZ",
+      "axes": [
+        {
+          "tag": "slnt",
+          "min": -14,
+          "default": 0,
+          "max": 14,
+          "name": "Slant"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 669,
+      "glyphs": 840
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/afacadflux/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/afacadflux/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-lQRSgBoDwro+vfYucPfGQqcUzaIFP3k8aN20OTZnk95Ky2CsOW/vJsj37s1d40y4"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Single Day",
+  "sourceRank": 265,
+  "sourcePosition": 521,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/singleday/METADATA.pb",
+    "sri": "sha384-Lbhvbr97pXEPuTvFh+AziFDSnbJK29IyH3LVaEnfAZ5Ls9oa4opvPBOp2h4LUR90"
+  },
+  "files": [
+    {
+      "name": "font-6d3a2d4bc2590d7d17275b84f0f63bb67ce0629c1d9c250006dc107c2e831fb64eeb94a95a8e6274f82ad19087a93ca2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/singleday/SingleDay-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/singleday/SingleDay-Regular.ttf",
+      "sourceBytes": 816524,
+      "sourceSri": "sha384-z6TWNJF3tkIebFzYj3/OMH3/MWtCZzDfs1QjWkI/r9A4BEL88AaeymZL7b+voQn0",
+      "bytes": 92920,
+      "sri": "sha384-bTotS8JZDX0XJ1uE8PY7tnzgYpwdnCUABtwQfC6DH7ZO65SpWo5idPgq0ZCHqTyi",
+      "axes": [],
+      "cmapCodepoints": 11465,
+      "glyphs": 12127
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/singleday/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/singleday/OFL.txt",
+    "bytes": 4352,
+    "sri": "sha384-hX56HunzCYv/rxSEa7y9ZUueoPYmf3vYsfUhOB+49a05IcJYxMPCP72lsyfjcQWh"
+  }
+}

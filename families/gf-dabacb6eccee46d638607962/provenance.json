@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Lalezar",
+  "sourceRank": 78,
+  "sourcePosition": 163,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lalezar/METADATA.pb",
+    "sri": "sha384-js+l3sMFjWRZ+xdXEYkxEwIW+pkjYVsUfybKapDAgxSx1T180lMaH1ge8AUW5GLI"
+  },
+  "files": [
+    {
+      "name": "font-528c5c1e7685762d89f66b88227e5bacb177a3af85e50a67d5e29cc1382bdd6bd242d9018494ecff1124905ec85ec2fc.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/lalezar/Lalezar-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lalezar/Lalezar-Regular.ttf",
+      "sourceBytes": 290016,
+      "sourceSri": "sha384-RNmV9aol6YzVbd1XpM9QqWkO0ePnQ5KMRz0J5cGCRqeuGv3x2hg2XM322hkVJ5a5",
+      "bytes": 83488,
+      "sri": "sha384-UoxcHnaFdi2J9muIIn5brLF3o6+F5Qpn1eKcwTgr3WvSQtkBhJTs/xEkkF7IXsL8",
+      "axes": [],
+      "cmapCodepoints": 908,
+      "glyphs": 1221
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/lalezar/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lalezar/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-3X7diwBnMPc8mltpd6gdMtzwmUy2ZPtB2915+8Y/GOPULIdHyO2Uq8ZlcJ1ry3Y+"
+  }
+}

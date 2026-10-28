@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Libre Bodoni",
+  "sourceRank": 106,
+  "sourcePosition": 215,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librebodoni/METADATA.pb",
+    "sri": "sha384-BNaYoXXg1b+Gpm48bhO6Vh+KAhgEGTM5vjuYI2dMRzlFBh1ICQRs7UnDUXg7ZJDC"
+  },
+  "files": [
+    {
+      "name": "font-6e3f19939686a7b3724a9375d970e7d19bb9a5cc9aca803b912914c2098b05dd1a17ec93e15fdb14d5be953d12d988c9.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/librebodoni/LibreBodoni-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librebodoni/LibreBodoni-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 112608,
+      "sourceSri": "sha384-0/Ke8fHG2NB4rZRo9pepEw4DumQSOdZk9egSMdNXMAD2fI/S0mAfnT+etftVIr/U",
+      "bytes": 45368,
+      "sri": "sha384-bj8Zk5aGp7NySpN12XDn0Zu5pcyayoA7kSkUwgmLBd0aF+yT4V/bFNW+lT0S2YjJ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 590,
+      "glyphs": 644
+    },
+    {
+      "name": "font-ec1bd9aeecbe6caaa955a9b892deab7342d3340a3388d8b8f44f9e4a64672fa8662f67e6b36e1bc1b5c5659b53ea4031.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/librebodoni/LibreBodoni[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librebodoni/LibreBodoni%5Bwght%5D.ttf",
+      "sourceBytes": 112160,
+      "sourceSri": "sha384-uPZXASe8C9PNx6LOTIpVSnLCjldo+ARHV5OmJNJ1vd7hf+ROXAmhG+R/UxHyH+kd",
+      "bytes": 42616,
+      "sri": "sha384-7BvZruy+bKqpVam4kt6rc0LTNAoziNi49E+eSmRnL6hmL2fms24bwbXFZZtT6kAx",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 590,
+      "glyphs": 644
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/librebodoni/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librebodoni/OFL.txt",
+    "bytes": 4492,
+    "sri": "sha384-PJJZR3I5dz1sEpFOma7ZCLp4eziQlrGZGfoYD9eT2c3x6xVl13dtWTChbdidYcFe"
+  }
+}

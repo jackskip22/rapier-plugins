@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Mansalva",
+  "sourceRank": 507,
+  "sourcePosition": 945,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mansalva/METADATA.pb",
+    "sri": "sha384-QReYnsk6N4u6HK+002yMtm9Y+WLzBvRqzB1A/ev8M61UueCQatWpxNl01We8tPOb"
+  },
+  "files": [
+    {
+      "name": "font-f84a1c8e82c73c3dcdfc0294b727d8720416324199503fd12e951fab32d7777b0e3cc3503ce3902b4cbfa211ebb4e2ff.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mansalva/Mansalva-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mansalva/Mansalva-Regular.ttf",
+      "sourceBytes": 355776,
+      "sourceSri": "sha384-XN2GeyfMMzug6qxxFXo4DbckGTHu91z9eKT15KFV5ge9mmDelCHvQhySIvkJ/711",
+      "bytes": 126512,
+      "sri": "sha384-+EocjoLHPD3N/AKUtyfYcgQWMkGZUD/RLpUfqzLXd3sOPMNQPOOQK0y/ohHrtOL/",
+      "axes": [],
+      "cmapCodepoints": 775,
+      "glyphs": 885
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mansalva/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mansalva/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-UeWroIz7st4wvK8TqI5VkQ7ATiK6wBTuD0N0ZqRWsF/gg5Rf/RYzWVcekSjlz7OG"
+  }
+}

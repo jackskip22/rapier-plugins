@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Comic Neue",
+  "sourceRank": 171,
+  "sourcePosition": 342,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicneue/METADATA.pb",
+    "sri": "sha384-4Joxt/Lh49i36rqn3aN8flFiH6tDq4jb512HOUxsy0uhqUc5d+eVVujFMfsHvAfW"
+  },
+  "files": [
+    {
+      "name": "font-b6e0c611af76e077b7dedbf0059da7b50367ce737c59777b1f5d304bc438622adb28f46ce78016fb348560b1a72f4b61.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/comicneue/ComicNeue-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicneue/ComicNeue-Bold.ttf",
+      "sourceBytes": 55716,
+      "sourceSri": "sha384-veizmPUqCGCeOHH8vu1kSzeyL45qQORmmpHDWrLtxnnlNPyoXcicj28SJbAt1qtP",
+      "bytes": 23648,
+      "sri": "sha384-tuDGEa924He33tvwBZ2ntQNnznN8WXd7H10wS8Q4YirbKPRs54AW+zSFYLGnL0th",
+      "axes": [],
+      "cmapCodepoints": 303,
+      "glyphs": 328
+    },
+    {
+      "name": "font-fb21c4d3e11cd01bad2d66b2e562d368aa35651e42ea81ef47ad200b52adc87e8518245c715778d5aa92c654268f6f98.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/comicneue/ComicNeue-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicneue/ComicNeue-BoldItalic.ttf",
+      "sourceBytes": 55928,
+      "sourceSri": "sha384-6TLtDNijXbB20EVQGB7hGVRQbXgw4f8a7gi4Yk1qFRaCKCYerd0eWPxyrIV6MojX",
+      "bytes": 24520,
+      "sri": "sha384-+yHE0+Ec0ButLWay5WLTaKo1ZR5C6oHvR60gC1KtyH6FGCRccVd41aqSxlQmj2+Y",
+      "axes": [],
+      "cmapCodepoints": 319,
+      "glyphs": 344
+    },
+    {
+      "name": "font-d252e635a06004124d46dda0b9c539370a569ef18485351fce3619d183fc85459f53fa950285f11e10f844b58be11029.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/comicneue/ComicNeue-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicneue/ComicNeue-Italic.ttf",
+      "sourceBytes": 54392,
+      "sourceSri": "sha384-xmDT+uJPgomoTm/rbSkDIJPT0bOgdaUKzBMAGaeljJn1+6ydvUBNTflgAtJ8XrvP",
+      "bytes": 24192,
+      "sri": "sha384-0lLmNaBgBBJNRt2gucU5NwpWnvGEhTUfzjYZ0YP8hUWfU/qVAoXxHhD4RLWL4RAp",
+      "axes": [],
+      "cmapCodepoints": 319,
+      "glyphs": 344
+    },
+    {
+      "name": "font-d70e0edb63269a676cf2fb4d4a523bf949bf8c806457c445ebccf12d0c5682c54ab173e4838c2459e27589383408b9a8.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/comicneue/ComicNeue-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicneue/ComicNeue-Light.ttf",
+      "sourceBytes": 55816,
+      "sourceSri": "sha384-qFLSTb596io9yKYLBBol9IGRsmWiNUIzXe44ytUL3wsV5WmiSFfsR8D6cpwiodHk",
+      "bytes": 24176,
+      "sri": "sha384-1w4O22Mmmmds8vtNSlI7+Um/jIBkV8RF68zxLQxWgsVKsXPkg4wkWeJ1iTg0CLmo",
+      "axes": [],
+      "cmapCodepoints": 303,
+      "glyphs": 328
+    },
+    {
+      "name": "font-03e4b8ea4ff8b3aad8a3c6972e578b04f1f46816d3f4403886844ea0f1401d004edb065a89da408743ed7311b5d0411c.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/comicneue/ComicNeue-LightItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicneue/ComicNeue-LightItalic.ttf",
+      "sourceBytes": 54120,
+      "sourceSri": "sha384-6dwhAGwareWsZHpBd3B8OUaUUBXHiOGo+wM+kz9HIchUWwunO0bH3ZryPWxe5xZq",
+      "bytes": 23872,
+      "sri": "sha384-A+S46k/4s6rYo8aXLleLBPH0aBbT9EA4hoROoPFAHQBO2wZaidpAh0PtcxG10EEc",
+      "axes": [],
+      "cmapCodepoints": 319,
+      "glyphs": 344
+    },
+    {
+      "name": "font-455537aed77973bc58e2393d1a413f9dce5cbd5a3916323048720044851ebac5b36a5f612274583c3bcff8b91bb70bf8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/comicneue/ComicNeue-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicneue/ComicNeue-Regular.ttf",
+      "sourceBytes": 57248,
+      "sourceSri": "sha384-BosCJjIdz6+LEkylMOYfwddzw3gPEnaHbUtYXYYivNZRSv+L2WLhEr9RvctQF0+y",
+      "bytes": 24192,
+      "sri": "sha384-RVU3rtd5c7xY4jk9GkE/nc5cvVo5FjIwSHIARIUeusWzal9hInRYPDvP+Lkbtwv4",
+      "axes": [],
+      "cmapCodepoints": 303,
+      "glyphs": 328
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/comicneue/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicneue/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-lJK3HqHfw0KS2ObO0oITacsLJDenQ51OFOsrLgRAkncQWURqji0Xv4RaMrBmEz9c"
+  }
+}

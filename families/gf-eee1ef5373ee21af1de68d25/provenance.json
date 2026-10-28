@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Exo 2",
+  "sourceRank": 90,
+  "sourcePosition": 184,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/exo2/METADATA.pb",
+    "sri": "sha384-dcYNyFYdeQfha2L4XSuV5FYLPC/RbrsiQOSaQQWo4E6dQE5WmLVlbeKEVjLlZb2T"
+  },
+  "files": [
+    {
+      "name": "font-bfa9771af1a97ddad861576c9b70eccc83e23e359362e8bc777a4a1dfb6c8dc0f56e1eab8f7feecf46e9550b88853299.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/exo2/Exo2-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/exo2/Exo2-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 302556,
+      "sourceSri": "sha384-Nqp1j99gHLO2q8LaLy6FXfsBC9hkzb7zi+OM7ckppIGspcQkB/mH36Ds5JCNZojG",
+      "bytes": 110196,
+      "sri": "sha384-v6l3GvGpfdrYYVdsm3DszIPiPjWTYui8d3pKHftsjcD1bh6rj3/uz0bpVQuIhTKZ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 911,
+      "glyphs": 1032
+    },
+    {
+      "name": "font-d58e108541239bada83cde56194979020a6761b5c6d1d91f772ee75f4be71a24659c04da9aeba885f238818c1136f715.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/exo2/Exo2[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/exo2/Exo2%5Bwght%5D.ttf",
+      "sourceBytes": 303940,
+      "sourceSri": "sha384-i5TuwOsqs4rdFW6or9TfUzF9vJsTNdaJXGH8odn/pGga9CfK/wcDmpSjoHpg+gjK",
+      "bytes": 106236,
+      "sri": "sha384-1Y4QhUEjm62oPN5WGUl5AgpnYbXG0dkfdy7nX0vnGiRlnATamuuohfI4gYwRNvcV",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 911,
+      "glyphs": 1033
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/exo2/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/exo2/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-R9+KlzXf5UNeLvKEcj3WLMmsPT0TCu7vkwkphAj3ZzMsXd+HFamKghruVXFi1Aw/"
+  }
+}

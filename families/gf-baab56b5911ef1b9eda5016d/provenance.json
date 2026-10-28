@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Newa",
+  "sourceRank": 462,
+  "sourcePosition": 878,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansnewa/METADATA.pb",
+    "sri": "sha384-EGjEwqeg1R8yfVPsvjQUSJKWkMC/DI6erMSooprce9AFcEEAUJGubt1hF9XMqgvp"
+  },
+  "files": [
+    {
+      "name": "font-0403a901f4d52cdcc4c0235ccd2b21793becdb331cc877d406b378220f3330fc05c8566caa7a79e8cf339798a25449ee.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansnewa/NotoSansNewa-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansnewa/NotoSansNewa-Regular.ttf",
+      "sourceBytes": 259668,
+      "sourceSri": "sha384-VEksWv8F+ebZO0VpRcl2H0V5IlfMXHRR6s+0fg/10QIrppIYoE5IprPHSHyBcyfn",
+      "bytes": 92240,
+      "sri": "sha384-BAOpAfTVLNzEwCNczSsheTvs2zMcyHfUBrN4Ig8zMPwFyFZsqnp56M8zl5iiVEnu",
+      "axes": [],
+      "cmapCodepoints": 434,
+      "glyphs": 945
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansnewa/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansnewa/OFL.txt",
+    "bytes": 4380,
+    "sri": "sha384-ZDlYvg+WdKCIgRiXS0v7JzVO/AVMI2wELs/Gy/meHWigjT9T6PpVJbbbvuRRMkKb"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Alumni Sans Inline One",
+  "sourceRank": 397,
+  "sourcePosition": 754,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alumnisansinlineone/METADATA.pb",
+    "sri": "sha384-PP44jGbfPePQOAN+NOPpKlRMNixJy/cR4doM9qOp1mhHw43RNNXsrSUV9tDdUCZU"
+  },
+  "files": [
+    {
+      "name": "font-7f42294221b3b29663595d4f8373c966f32f2db68a5b720d1d65a65ec45fa640b98d20040a484e451994c6a67e469b76.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/alumnisansinlineone/AlumniSansInlineOne-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alumnisansinlineone/AlumniSansInlineOne-Italic.ttf",
+      "sourceBytes": 134596,
+      "sourceSri": "sha384-hJuEZ4Q5L4NorrVINMUxXbIdrlioWDz+BJ/FYhIT5US7Qspce5IXCbX6iSVbsoHL",
+      "bytes": 53056,
+      "sri": "sha384-f0IpQiGzspZjWV1Pg3PJZvMvLbaKW3INHWWmXsRfpkC5jSAECkhORRmUxqZ+Rpt2",
+      "axes": [],
+      "cmapCodepoints": 593,
+      "glyphs": 669
+    },
+    {
+      "name": "font-49199c2d10382a55c3b96e975a70cc2c14023a7a3a742679fcc71b35673e04044a8c1a06a147557a5a47bfc0596bf4a0.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/alumnisansinlineone/AlumniSansInlineOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alumnisansinlineone/AlumniSansInlineOne-Regular.ttf",
+      "sourceBytes": 133088,
+      "sourceSri": "sha384-K5s+bg8tvaoDEyewh3AFnbHbYYpZp6g3t27DjtkxGLDrByBpyN42BMFvHAIi2TJH",
+      "bytes": 49968,
+      "sri": "sha384-SRmcLRA4KlXDuW6XWnDMLBQCOno6dCZ5/McbNWc+BARKjBoGoUdVelpHv8BZa/Sg",
+      "axes": [],
+      "cmapCodepoints": 593,
+      "glyphs": 669
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alumnisansinlineone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alumnisansinlineone/OFL.txt",
+    "bytes": 4410,
+    "sri": "sha384-yR+x1NaKvesIXn1n6J1Oxuq23gFRuQyWSFhLsP/ty1q1pL/Zt/K1EEPiyfiq1rTU"
+  }
+}

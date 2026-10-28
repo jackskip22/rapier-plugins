@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "REM",
+  "sourceRank": 264,
+  "sourcePosition": 518,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rem/METADATA.pb",
+    "sri": "sha384-EN+17fvhp9dL8rg9jjYEk53XIpCAYFLYUnCkN0qisjHnuk1oTZsTM8hLiH92Cr/t"
+  },
+  "files": [
+    {
+      "name": "font-19d1726b5ed7433610fc823f29a90b6d8628dad87cd004332a9ca0d30c354ec19ca8d6a4e813bd021629c1f19fd4d2bd.woff2",
+      "variant": "500italic",
+      "sourcePath": "ofl/rem/REM-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rem/REM-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 205420,
+      "sourceSri": "sha384-wdIrecPqU3Tf8DO+dYPGIuVyIg+dDfDWdCx0w2X+bKAkprnsnWGNF4rHc6SnhZas",
+      "bytes": 83664,
+      "sri": "sha384-GdFya17XQzYQ/II/KakLbYYo2th80AQzKpyg0ww1TsGcqNak6BO9AhYpwfGf1NK9",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 500,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 591,
+      "glyphs": 982
+    },
+    {
+      "name": "font-e6d4dad0eae5457956033938a5189e8c7244c4fdb0438503186b1a3dc127366328eea7e85f4d7a2a356d5f9adbbacfe6.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/rem/REM[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rem/REM%5Bwght%5D.ttf",
+      "sourceBytes": 200932,
+      "sourceSri": "sha384-o+CwJLbjH7p0F+45QJ3vB2JlgEjUKEz5Gw47ZOcwGSfyslgmHT8YCYMni9EAXzU+",
+      "bytes": 78404,
+      "sri": "sha384-5tTa0OrlRXlWAzk4pRiejHJExP2wQ4UDGGsaPcEnNmMo7qfoX016KjVtX5rbus/m",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 500,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 591,
+      "glyphs": 982
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rem/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rem/OFL.txt",
+    "bytes": 4473,
+    "sri": "sha384-n4U63OZsiAgCsPdKMP1CZBLmIkhEnI17YYgiGK+KftewSW9Z6wLIEluXwQV9wwSc"
+  }
+}

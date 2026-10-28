@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Oxygen",
+  "sourceRank": 113,
+  "sourcePosition": 232,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oxygen/METADATA.pb",
+    "sri": "sha384-uslO4MZMbvta/J788RSpLuwuJxMTSZhIs4QfJAoHe8PabZq39ZQj5CCOn+QyVxqW"
+  },
+  "files": [
+    {
+      "name": "font-f538b161bd2f2f73c7ebfb8e5a08827b50cfdc8efd0bd797e275d589cd26e4e3eb979e5610ef16a68a4d088077f5b36c.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/oxygen/Oxygen-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oxygen/Oxygen-Bold.ttf",
+      "sourceBytes": 48708,
+      "sourceSri": "sha384-OmhvbAGU68mKae5IpvmTr+BQCP425PsjUxTyDUX+ndEpNUFXuezHzxjcNcz6Uda8",
+      "bytes": 21872,
+      "sri": "sha384-9TixYb0vL3PH6/uOWgiCe1DP3I79C9eX4nXVic0m5OPrl55WEO8WpopNCIB39bNs",
+      "axes": [],
+      "cmapCodepoints": 413,
+      "glyphs": 416
+    },
+    {
+      "name": "font-b6e75fb9d09c19587c132888194909a431abab9e7b5343dba8b10d855c2f4d253e1dc6a2e9bbb01da772b83000698588.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/oxygen/Oxygen-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oxygen/Oxygen-Light.ttf",
+      "sourceBytes": 43788,
+      "sourceSri": "sha384-QFmcmPpJR6iPd7ojY4rwH6+bpp1LVAM/KRpb2UPz64UauERvHCfrsquIdRJmE3Wi",
+      "bytes": 20240,
+      "sri": "sha384-tudfudCcGVh8EyiIGUkJpDGrq557U0PbqLENhVwvTSU+Hcai6buwHadyuDAAaYWI",
+      "axes": [],
+      "cmapCodepoints": 378,
+      "glyphs": 385
+    },
+    {
+      "name": "font-07ffcd7e7167d9d0f8b28ed8d7b9f5898ef0ba9581028b680bdca9b2c086fc0900b1b050d6af97513964b8c066a90bed.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/oxygen/Oxygen-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oxygen/Oxygen-Regular.ttf",
+      "sourceBytes": 47988,
+      "sourceSri": "sha384-ACn6jFd86ADom289xC0D4DlH+R/zwqcwuKWxpdny5oxECWDW9nFScarzvHWCApd1",
+      "bytes": 21700,
+      "sri": "sha384-B//NfnFn2dD4so7Y17n1iY7wupWBAotoC9ypssCG/AkAsbBQ1q+XUTlkuMBmqQvt",
+      "axes": [],
+      "cmapCodepoints": 422,
+      "glyphs": 425
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/oxygen/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/oxygen/OFL.txt",
+    "bytes": 4398,
+    "sri": "sha384-ZqAGRmd73aivYu6cdWfr66lcYrajE4rai0gaaeXVAOe3jwwCXiXwd/sUY7T0eKBf"
+  }
+}

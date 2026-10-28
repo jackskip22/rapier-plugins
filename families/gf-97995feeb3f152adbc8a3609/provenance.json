@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Merriweather Sans",
+  "sourceRank": 70,
+  "sourcePosition": 150,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/merriweathersans/METADATA.pb",
+    "sri": "sha384-00CiEXQfv5KAqwr4xI7VjeujWO2U1Go6nOK6eYKSV2waK9as/B8UI02KMHj0IFhS"
+  },
+  "files": [
+    {
+      "name": "font-7162aa51cd93787013ea4f44f18074f3e26b57211c2c07746c366cbe6a14674480fd5121c738a96f0af24b132e05df4d.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/merriweathersans/MerriweatherSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/merriweathersans/MerriweatherSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 236768,
+      "sourceSri": "sha384-MvW3tIYGlEtTn3nenbxWzyFLfV0UyRxneb2v/YNImxgjayJKVGeH3gLykmRtsF7b",
+      "bytes": 92184,
+      "sri": "sha384-cWKqUc2TeHAT6k9E8YB08+JrVyEcLAd0bDZsvmoUZ0SA/VEhxzipbwrySxMuBd9N",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 767,
+      "glyphs": 1174
+    },
+    {
+      "name": "font-a3988e94a2b810eab44861ae8ccb6137984272217801ddc65cc1ab0d3edd0b31956076e93d11ea1defaef9a4112c10af.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/merriweathersans/MerriweatherSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/merriweathersans/MerriweatherSans%5Bwght%5D.ttf",
+      "sourceBytes": 266512,
+      "sourceSri": "sha384-2dNylg4DjgA0O5pf2JiTXWw00IB28LpDniU+zlq0a9aKSSKdYPwlPc1jHt94dViY",
+      "bytes": 93316,
+      "sri": "sha384-o5iOlKK4EOq0SGGujMthN5hCciF4Ad3GXMGrDT7dCzGVYHbpPRHqHe+u+aQRLBCv",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 767,
+      "glyphs": 1173
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/merriweathersans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/merriweathersans/OFL.txt",
+    "bytes": 4585,
+    "sri": "sha384-VxhFb2PUt7tBF0IhXBdr/zwrNM6wZTEKoX7R+U6cHCGbokYJZE52WN4eCrVAwPRI"
+  }
+}

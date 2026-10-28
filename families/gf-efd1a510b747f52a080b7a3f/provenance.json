@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Matangi",
+  "sourceRank": 473,
+  "sourcePosition": 898,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/matangi/METADATA.pb",
+    "sri": "sha384-EaG0V0y8z0OcbXT9R6dv6b5I7VdgXsViKYrPbZgGGwqfPKUXmx8wM1hG+2cJj5vg"
+  },
+  "files": [
+    {
+      "name": "font-5b274f97f80fc5f46adef3fae02e6a876fbe07fdb30170f39eab1cce5fbdab0d0c46fe4df99bf950bda0e8e007b7444e.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/matangi/Matangi[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/matangi/Matangi%5Bwght%5D.ttf",
+      "sourceBytes": 711948,
+      "sourceSri": "sha384-CSS9VrxV2FcJDb3q3B/XQkp9pGv6dtortIaHEn929vgkCqVCS/HraEO/exu6kHTE",
+      "bytes": 214776,
+      "sri": "sha384-WydPl/gPxfRq3vP64C5qh2++B/2zAXDznqsczl+9qw0MRv5N+Zv5UL2g6OAHt0RO",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 466,
+      "glyphs": 1723
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/matangi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/matangi/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-yexO5bOVTufoY+DwQVAFbQv+HWbJCDb+cUChVPay96ZZ6jvYCHNgv2GVqP0b5tQ8"
+  }
+}

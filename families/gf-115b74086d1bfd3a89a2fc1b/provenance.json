@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Gelasio",
+  "sourceRank": 255,
+  "sourcePosition": 496,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gelasio/METADATA.pb",
+    "sri": "sha384-qhO6RhyNdEW/dX1IWcer+cCUROCUoqTbn1yhB+TlnDmdioPhZqRs36R/L4q2Z4EB"
+  },
+  "files": [
+    {
+      "name": "font-0bf2a56f2957174adaaebf8a4addf0517c23a1e381e905a2771bb7cc74ad322db4cda783d58c98d6600deea5b1f71e00.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/gelasio/Gelasio-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gelasio/Gelasio-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 174212,
+      "sourceSri": "sha384-L3lCCcgKBdZFVBJ6U/hR9556U72PTJnsEb0sbkNRvEQ+q3i0bVAfkQ0IL4NQpEtD",
+      "bytes": 80100,
+      "sri": "sha384-C/KlbylXF0rarr+KSt3wUXwjoeOB6QWidxu3zHStMi20zaeD1YyY1mAN7qWx9x4A",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 918,
+      "glyphs": 1069
+    },
+    {
+      "name": "font-69fac321c2a47c57ff708cce6ac78de63919ea9a504e921ccf41ae273d39f4ad7e8bf9596dcd2b2c9bb48fbca3b3e5a4.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gelasio/Gelasio[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gelasio/Gelasio%5Bwght%5D.ttf",
+      "sourceBytes": 168556,
+      "sourceSri": "sha384-zC+5Aa7YVKqR1cgO6Zn390haapeBc0CoiSw/CnQyGzpkzKRqRbVYP+VTwktVIqnz",
+      "bytes": 72512,
+      "sri": "sha384-afrDIcKkfFf/cIzOaseN5jkZ6ppQTpIcz0GuJz059K1+i/lZbc0rLJu0j7yjs+Wk",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 918,
+      "glyphs": 1070
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gelasio/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gelasio/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-ThrUI544RIWMbS6C9Z/OJ8vdYDRf2bVd7cXPqoQQaoKlmHT6aCBta6GCidG9AgYS"
+  }
+}

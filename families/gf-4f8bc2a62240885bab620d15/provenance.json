@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Syncopate",
+  "sourceRank": 303,
+  "sourcePosition": 588,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/syncopate/METADATA.pb",
+    "sri": "sha384-aIRen+lNK5XtoAkyKCjivPjCz2ig7Kt/+CZUvrdOVmrPaVHNCASCyLThKMWfxV/I"
+  },
+  "files": [
+    {
+      "name": "font-d2843e07220bab5ae807d689bdffc4dd2fce594b5ceca5778efba0402d558940e847012b338613a670930df0f9cbc2d6.woff2",
+      "variant": "700",
+      "sourcePath": "apache/syncopate/Syncopate-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/syncopate/Syncopate-Bold.ttf",
+      "sourceBytes": 63964,
+      "sourceSri": "sha384-BeNUN+N3z14gr+Po5BNdeApOJM9wc/XFDtXyQmr72oGVTKvz88hqgWR45+uuFwOS",
+      "bytes": 22880,
+      "sri": "sha384-0oQ+ByILq1roB9aJvf/E3S/OWUtc7KV3jvugQC1ViUDoRwErM4YTpnCTDfD5y8LW",
+      "axes": [],
+      "cmapCodepoints": 369,
+      "glyphs": 370
+    },
+    {
+      "name": "font-b43180bd0f6de8cea0b21eba2b14dc50d8539b9edd5c1efacab61dfd7934f47a0f2632cc036fb0642dd916ffffff2f26.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/syncopate/Syncopate-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/syncopate/Syncopate-Regular.ttf",
+      "sourceBytes": 174132,
+      "sourceSri": "sha384-bBK5v+gHDB0uijLF7PON8GL6+gNEzvBWHGqOkptXFE2GTD3WWdtCeJ8SiXjEy9ZA",
+      "bytes": 44816,
+      "sri": "sha384-tDGAvQ9t6M6gsh66KxTcUNhTm57dXB76yrYd/Xk09HoPJjLMA2+wZC3ZFv///y8m",
+      "axes": [],
+      "cmapCodepoints": 369,
+      "glyphs": 370
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/syncopate/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/syncopate/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

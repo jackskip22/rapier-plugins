@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Lexend Giga",
+  "sourceRank": 181,
+  "sourcePosition": 367,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendgiga/METADATA.pb",
+    "sri": "sha384-pknYq4uWtaY7pQPnCDa6GwQlvxoMYPJfopZ9otW8AMuDY7VqFIBm9wCDpAXEZmYq"
+  },
+  "files": [
+    {
+      "name": "font-4ccad4fd37e4fc0faf8afba57418e25cb79f2da908d83bf4367bd48eb24ec59d39305be81aa87418159714dcd1d3a247.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/lexendgiga/LexendGiga[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendgiga/LexendGiga%5Bwght%5D.ttf",
+      "sourceBytes": 192100,
+      "sourceSri": "sha384-iW7Uxy0GdJXRUyOWtgmFQBjqzviJ7wh1AIUcQO3EAgJUrzk2Av7hkQ0xIFGKMAX6",
+      "bytes": 81448,
+      "sri": "sha384-TMrU/Tfk/A+vivuldBjiXLefLakI2Dv0NnvUjrJOxZ05MFvoGqh0GBWXFNzR06JH",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 685,
+      "glyphs": 850
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/lexendgiga/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendgiga/OFL.txt",
+    "bytes": 4436,
+    "sri": "sha384-6aJe7EFHi7aadivqHytXtg7xuFNZI7SMxeb1R4a/4fdUQOarovJUxC6K6byKG4Xn"
+  }
+}

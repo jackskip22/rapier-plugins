@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Playwrite US Modern",
+  "sourceRank": 477,
+  "sourcePosition": 905,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteusmodern/METADATA.pb",
+    "sri": "sha384-7tcenq5fnId62CroEFkkMEc7HrT6iFfyT9KwdlWstGGQU8LaF97LW6QruDtYDlRK"
+  },
+  "files": [
+    {
+      "name": "font-eb47ca3bd9fa309bdf73508f01490150a612db725dd1c7dc1b91245c785cbc11282600bc2550e91035723b890aecd57d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwriteusmodern/PlaywriteUSModern[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteusmodern/PlaywriteUSModern%5Bwght%5D.ttf",
+      "sourceBytes": 340744,
+      "sourceSri": "sha384-0md0Vn+Mpy3huftJjsaLuZv6RgMjY6UoLS3S49eOH4lMfW/6v4nEjHJyvmdLYW2o",
+      "bytes": 115756,
+      "sri": "sha384-60fKO9n6MJvfc1CPAUkBUKYS23Jd0cfcG5EkXHhcvBEoJgC8JVDpEDVyO4kK7NV9",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 400,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 486,
+      "glyphs": 1284
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwriteusmodern/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteusmodern/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

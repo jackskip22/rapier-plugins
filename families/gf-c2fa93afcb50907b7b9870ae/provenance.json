@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Yrsa",
+  "sourceRank": 420,
+  "sourcePosition": 792,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yrsa/METADATA.pb",
+    "sri": "sha384-a/ppbyQKVoGYrAaJbIwk8xJ32fBL4ROyK0umPVkjksu0/bqtqrNOY66YM1rXm63g"
+  },
+  "files": [
+    {
+      "name": "font-36b1ecb9dcf9d899c6d810b445128b177f386f374adb92924135b2f06b06e8ddb497cd2391bd94bbed25bc51b03cc4c1.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/yrsa/Yrsa-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yrsa/Yrsa-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 286060,
+      "sourceSri": "sha384-IJT7ei066ysm0lQhbTYrN3M9H21HC1tPxfue1oc5Ne4T/Rpe7P+MUEUEXsQpXO3v",
+      "bytes": 108024,
+      "sri": "sha384-NrHsudz52JnG2BC0RRKLF384bzdK25KSQTWy8GsG6N20l80jkb2Uu+0lvFGwPMTB",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 685,
+      "glyphs": 877
+    },
+    {
+      "name": "font-c16e9a29acadc2a1be7a63d930859ae8b8dceab3651254993476e6785578bfcca7fca2dc7da42b598ebcd31c9de99a86.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/yrsa/Yrsa[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yrsa/Yrsa%5Bwght%5D.ttf",
+      "sourceBytes": 225532,
+      "sourceSri": "sha384-IRkIOLWB5zgyVtMZoxq7Sj9wviAjjBUgorXYklmNW5iK2whuO87LTfef6F1i8hyh",
+      "bytes": 88752,
+      "sri": "sha384-wW6aKaytwqG+emPZMIWa6Ljc6rNlElSZNHbmeFV4v8yn/KLcfaQrWY680xyd6ZqG",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 685,
+      "glyphs": 872
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/yrsa/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yrsa/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-+Vzqxq5ZVxouP+h5TebYjslXvfoL6U064yXdQocnAsbH+x/HgkEy1fmLnUhKoEJB"
+  }
+}

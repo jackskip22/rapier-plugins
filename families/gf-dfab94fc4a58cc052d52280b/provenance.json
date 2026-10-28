@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Cabin",
+  "sourceRank": 24,
+  "sourcePosition": 54,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cabin/METADATA.pb",
+    "sri": "sha384-yyEVVWi6/P6aqoR6/5+f8rCqvUiTmpvWu6dAzvEOx3w6FGIJ8GS1NBeIDhJ6RpAa"
+  },
+  "files": [
+    {
+      "name": "font-fd21fdc1cac7124f9d385b7bb2d92f4fb005d71a43bd82b69aef988eee222a91e7771659a3048fb91e8713907cfeef67.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/cabin/Cabin-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cabin/Cabin-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 155412,
+      "sourceSri": "sha384-ScJwaESApORCBsKMXXLo8+Cl7zmyA2uweUISh/+vkqxr7+OkGjHOPkizkwH9Y7kw",
+      "bytes": 72160,
+      "sri": "sha384-/SH9wcrHEk+dOFt7stkvT7AF1xpDvYK2mu+Yju4iKpHndxZZowSPuR6HE5B8/u9n",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 668,
+      "glyphs": 747
+    },
+    {
+      "name": "font-a72e9c937fa659acaa553f3f8f2b03ff388d0ec2d4b06d72964fd8d9c320658a5870573b3ff89012df49aaa3bee7d7e9.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/cabin/Cabin[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cabin/Cabin%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 165468,
+      "sourceSri": "sha384-chb3u0fFG9FBIR2PWQGGLUqqdS+9H890mSz0U15y33DcBVa2pDkK8dQnVbHhIsIo",
+      "bytes": 68848,
+      "sri": "sha384-py6ck3+mWayqVT8/jysD/ziNDsLUsG1ylk/Y2cMgZYpYcFc7P/iQEt9JqqO+59fp",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 668,
+      "glyphs": 747
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cabin/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cabin/OFL.txt",
+    "bytes": 4477,
+    "sri": "sha384-UoP+y7R53w94WlHxJQrG8Xev3qELJZw/7roB3SdNGBUaDU9xsSOiS3rxR/7cobGb"
+  }
+}

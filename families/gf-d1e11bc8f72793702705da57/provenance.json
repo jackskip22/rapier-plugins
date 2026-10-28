@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "IM Fell English",
+  "sourceRank": 356,
+  "sourcePosition": 675,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/imfellenglish/METADATA.pb",
+    "sri": "sha384-7O6tC0CwJj8rjPnSfrmD7gfDt4b7Gj7XqLwk6yNadcDrMCW89zIxtdKJbtO31EsK"
+  },
+  "files": [
+    {
+      "name": "font-c3509d1adcf55df86a5adee65bd1e31db1f747bcc5a20b6a749f47cf0ef2cdb2eeccdfab1a480e65811cb744a6b60404.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/imfellenglish/IMFeENit28P.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/imfellenglish/IMFeENit28P.ttf",
+      "sourceBytes": 202368,
+      "sourceSri": "sha384-pVP3QFwLYYqPYorstLaBc2CyKsAj5x+JXRD0Onunh1CcVaMWNNxew4ynBltH1hID",
+      "bytes": 97056,
+      "sri": "sha384-w1CdGtz1XfhqWt7mW9HjHbH3R7zFogtqdJ9Hzw7yzbLuzN+rGkgOZYEct0SmtgQE",
+      "axes": [],
+      "cmapCodepoints": 362,
+      "glyphs": 379
+    },
+    {
+      "name": "font-01b90615312312bab2e3441d76da48760f59375edd482edff6460f93afd62f4a3adc42762fc89d4659cbda29df1723b8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/imfellenglish/IMFeENrm28P.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/imfellenglish/IMFeENrm28P.ttf",
+      "sourceBytes": 194992,
+      "sourceSri": "sha384-UHzROx9X7E0TV7f4ugPJEg0Dczhc7kZCUDMaAx2UUUzgJXQzP7KZk8rvxi4PoZT/",
+      "bytes": 93416,
+      "sri": "sha384-AbkGFTEjErqy40QddtpIdg9ZN17dSC7f9kYPk6/WL0o63EJ2L8idRlnL2infFyO4",
+      "axes": [],
+      "cmapCodepoints": 352,
+      "glyphs": 372
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/imfellenglish/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/imfellenglish/OFL.txt",
+    "bytes": 4452,
+    "sri": "sha384-yf1Ln237/n6cQZuaOzrTwLkgRjnzCpW0FbuHZGIQpgb7/8m+lULj5ffXTihtrJXn"
+  }
+}

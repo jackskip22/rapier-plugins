@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Ancizar Serif",
+  "sourceRank": 366,
+  "sourcePosition": 692,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ancizarserif/METADATA.pb",
+    "sri": "sha384-70Sk0/Gq27iPF+0aLDMKcbgJybB/fGCMG3T7lL2h3tooVs0gcj877N9CzvMG8agz"
+  },
+  "files": [
+    {
+      "name": "font-c2d40a24c75085b71f343949a7c04347534219c9c50a64de404db444bd621da1ebbe7707213f1baa625daaa0e0c8808a.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/ancizarserif/AncizarSerif-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ancizarserif/AncizarSerif-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 197960,
+      "sourceSri": "sha384-LknsASnRjW0fvIiYi5+gYX3F5pbyjcJrd9VYOrFUcF/ppuEsxa7ggZQukbjZZeLV",
+      "bytes": 86408,
+      "sri": "sha384-wtQKJMdQhbcfNDlJp8BDR1NCGcnFCmTeQE20RL1iHaHrvncHIT8bqmJdqqDgyICK",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 704,
+      "glyphs": 1091
+    },
+    {
+      "name": "font-fbaf87bc807b7d4eb95ecab14f0985b1e265a36b68c7522bfbfc9f31642bc557d04f38516fe5565ff73224e76b0ca144.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/ancizarserif/AncizarSerif[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ancizarserif/AncizarSerif%5Bwght%5D.ttf",
+      "sourceBytes": 193212,
+      "sourceSri": "sha384-YSqaXdEhJlev3mb3WZGU9X97H1cUWsMdBCG0TwDx0FmG724bO2q9jgxMOwn0LfuA",
+      "bytes": 80980,
+      "sri": "sha384-+6+HvIB7fU65XsqxTwmFseJlo2tox1Ir+/yfMWQrxVfQTzhRb+VWX/cyJOdrDKFE",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 704,
+      "glyphs": 1091
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ancizarserif/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ancizarserif/OFL.txt",
+    "bytes": 4486,
+    "sri": "sha384-fQwVVzRX9z1Z7knOTMnlkRCosyfuIBbHXOkbg3pNLoEdqh0q/vLm+sJgMQrY6Mxg"
+  }
+}

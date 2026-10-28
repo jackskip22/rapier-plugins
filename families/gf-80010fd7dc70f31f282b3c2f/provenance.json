@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sigmar",
+  "sourceRank": 29,
+  "sourcePosition": 72,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sigmar/METADATA.pb",
+    "sri": "sha384-EME+8tCmRS5GxwGbEev1XrXNygUq6F7NlCCLM8I3zjPE/KgFjGV1jKXnCPKXLx/v"
+  },
+  "files": [
+    {
+      "name": "font-309b5f876df6c8ad9c3c0ea4e7af1b26266de519bfb4d371d53e1dbe3980083463449eeb46147b22b54dadadfa2a80c7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sigmar/Sigmar-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sigmar/Sigmar-Regular.ttf",
+      "sourceBytes": 209084,
+      "sourceSri": "sha384-pk+GZ1wWw+smlTLgyDBp/DWwnNz/h3mXJmogSqEh6oAoC3nBR55cLLWgq7zuqCF3",
+      "bytes": 86072,
+      "sri": "sha384-MJtfh232yK2cPA6k568bJiZt5Rm/tNNx1T4dvjmACDRjRJ7rRhR7IrVNra36KoDH",
+      "axes": [],
+      "cmapCodepoints": 572,
+      "glyphs": 811
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sigmar/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sigmar/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-iOnIXKy0b1DIiHUZs3cBn+bOmTGzCksupKVd1nmDEa5gFhlE5CmZkP3php9emsJG"
+  }
+}

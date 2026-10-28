@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Kantumruy Pro",
+  "sourceRank": 510,
+  "sourcePosition": 947,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kantumruypro/METADATA.pb",
+    "sri": "sha384-NGa9+uRCLEEB/KZgmLEhcL84OsANnxeoJUDNkil83UMH5YHQ2coiCSn9bt97YkW/"
+  },
+  "files": [
+    {
+      "name": "font-d3085d0be6b177901624fa4a66600dce8c4af94de0a61410887d60c9d775f8a94b31d2f6e0dc23b855bdced7a10ab31b.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/kantumruypro/KantumruyPro-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kantumruypro/KantumruyPro-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 219724,
+      "sourceSri": "sha384-gg9Gr77z/uryZdUvTy4XDvI3p7r/J4PALzvUzzwWsuoZ0Fr0U+eItl+a2kXPYlTq",
+      "bytes": 87140,
+      "sri": "sha384-0whdC+axd5AWJPpKZmANzoxK+U3gphQQiH1gydd1+KlLMdL24NwjuFW9ztehCrMb",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 363,
+      "glyphs": 560
+    },
+    {
+      "name": "font-9b4a45b5687c689db992fe738f121f3f120caa53c6a2610e08bd27a5de49789c5ad099ca5d1d81854816441102697a98.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kantumruypro/KantumruyPro[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kantumruypro/KantumruyPro%5Bwght%5D.ttf",
+      "sourceBytes": 200464,
+      "sourceSri": "sha384-Aa6dtMSUcCQyI6c0FYnw0zdh58gEodalsm15oKrHsxftYzk7ScBTQpf7cfrYOuZg",
+      "bytes": 77044,
+      "sri": "sha384-m0pFtWh8aJ25kv5zjxIfPxIMqlPGomEOCL0npd5JeJxa0JnKXR2BhUgWRBECaXqY",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 363,
+      "glyphs": 560
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kantumruypro/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kantumruypro/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-dSVPVz0bUZXII/65EDN8TxBJMB1qGT3J/3zgfqwQnFUlmHDPenpdPAZAeLSAOzfn"
+  }
+}

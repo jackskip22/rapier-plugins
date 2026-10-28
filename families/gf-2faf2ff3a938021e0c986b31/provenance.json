@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Noticia Text",
+  "sourceRank": 183,
+  "sourcePosition": 371,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/noticiatext/METADATA.pb",
+    "sri": "sha384-Om6eoWOA/wYkJh9REUrclf7viDIw28UaXZMu+SWR9ddv1R/ERK+ZTK753dXVuNVK"
+  },
+  "files": [
+    {
+      "name": "font-10d0cdffbb900ba56f7ac5f125e21833ed3c176e78b5c479594ac54306ffa1e34b454db476dd014c3c62e15c2ef1a637.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/noticiatext/NoticiaText-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/noticiatext/NoticiaText-Bold.ttf",
+      "sourceBytes": 113244,
+      "sourceSri": "sha384-ynI7NfEJgfaZadI0njWyvDA/UKckSIZRQ4vJ+J4ZrEMGFqbyzmoWv1w1sXy47C50",
+      "bytes": 45588,
+      "sri": "sha384-ENDN/7uQC6VvesXxJeIYM+08F254tcR5WUrFQwb/oeNLRU20dt0BTDxi4Vwu8aY3",
+      "axes": [],
+      "cmapCodepoints": 656,
+      "glyphs": 696
+    },
+    {
+      "name": "font-9c7e25ca51386ce416ed6943f946474a483c2cde984962aa9e6c03483fcba6d4f3c03dcfaac77cf7cda49f2b69428ec3.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/noticiatext/NoticiaText-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/noticiatext/NoticiaText-BoldItalic.ttf",
+      "sourceBytes": 86044,
+      "sourceSri": "sha384-XxIfyZB88Wd4r6KJEYf4nCBgfwEvCcA3f26wW31kKXJZH3hOCbetg/eLqIH9PW0P",
+      "bytes": 33432,
+      "sri": "sha384-nH4lylE4bOQW7WlD+UZHSkg8LN6YSWKqnmwDSD/LptTzwD3Pqsd8982knytpQo7D",
+      "axes": [],
+      "cmapCodepoints": 654,
+      "glyphs": 696
+    },
+    {
+      "name": "font-2701d39e08cbd37418925289a61c5c1b9dec60993919a7e981c199f9f0d0d90592864eb1be4675c2d73eb80bf5e85ea9.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/noticiatext/NoticiaText-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/noticiatext/NoticiaText-Italic.ttf",
+      "sourceBytes": 87392,
+      "sourceSri": "sha384-hhbDatANxbvWMopy0i2RnrNSQ8gpU8roJcaJgKuDnUhQnr2doKDK0S0flmkklFSD",
+      "bytes": 33420,
+      "sri": "sha384-JwHTngjL03QYklKJphxcG53sYJk5GafpgcGZ+fDQ2QWShk6xvkZ1wtc+uAv16F6p",
+      "axes": [],
+      "cmapCodepoints": 654,
+      "glyphs": 696
+    },
+    {
+      "name": "font-b518904e61a6294664adba40c07b51f82dd8e7d759009aeb36ab4ac7bd4b8569a8eadb3ab49b8ecdfe979b2f96251942.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/noticiatext/NoticiaText-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/noticiatext/NoticiaText-Regular.ttf",
+      "sourceBytes": 115288,
+      "sourceSri": "sha384-MRJgyJ3pICLs7MU3iT7QIz6bccf4VkHOGEngQBfKgMKCv2zcnkrMxI/L6Q8KAht9",
+      "bytes": 45856,
+      "sri": "sha384-tRiQTmGmKUZkrbpAwHtR+C3Y59dZAJrrNqtKx71LhWmo6ts6tJuOzf6Xmy+WJRlC",
+      "axes": [],
+      "cmapCodepoints": 656,
+      "glyphs": 696
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/noticiatext/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/noticiatext/OFL.txt",
+    "bytes": 4407,
+    "sri": "sha384-vXCcWVpye+nYNCcOmsi32A+vHgwSo1CWEegT8hiez1EkAB01Qlii2kCLAXu/wqK/"
+  }
+}

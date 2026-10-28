@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Playwrite DE SAS Guides",
+  "sourceRank": 445,
+  "sourcePosition": 848,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritedesasguides/METADATA.pb",
+    "sri": "sha384-XL2NO1uozUuogIPmezLuaoGcqImldDP6Kq52/Rlc6hNcLYHa/D5b7VWBYqZnwpWF"
+  },
+  "files": [
+    {
+      "name": "font-c2abd5626c9c8d5f3d2238b5138f63819d9d933e3826bcfeabebecf876e22f68b5dae0cf0ae0818a9c4daf4104495cfe.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwritedesasguides/PlaywriteDESASGuides-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritedesasguides/PlaywriteDESASGuides-Regular.ttf",
+      "sourceBytes": 375100,
+      "sourceSri": "sha384-rElNp5vmOZg+xCYMG2PZCs3bphOAGJcC5oOZPirf8WAcvfqS2X+HqyNAF8EnSikP",
+      "bytes": 90892,
+      "sri": "sha384-wqvVYmycjV89Iji1E49jgZ2dkz44Jrz+q+vs+HbiL2i12uDPCuCBipxNr0EESVz+",
+      "axes": [],
+      "cmapCodepoints": 486,
+      "glyphs": 1278
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwritedesasguides/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwritedesasguides/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

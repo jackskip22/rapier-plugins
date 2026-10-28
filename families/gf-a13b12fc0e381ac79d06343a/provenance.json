@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Alata",
+  "sourceRank": 192,
+  "sourcePosition": 389,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alata/METADATA.pb",
+    "sri": "sha384-DRTgdegkW7UGD1DLJ3qCbYMGo39e9RmtCulB5tWyj4Utr/DQUHipN74RtYMs6Slk"
+  },
+  "files": [
+    {
+      "name": "font-2f60e9b54409695f1f6f9355eef969aeede95cf942d13dfd6e865978d00d46d151460e47bbd2f546298d5c9d822df188.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/alata/Alata-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alata/Alata-Regular.ttf",
+      "sourceBytes": 349132,
+      "sourceSri": "sha384-dK56J5f+pZqts3QHMXFyBR3LP9OruWESmUaVzroZGqmhF7/rD6s0k50Eth8PsmLJ",
+      "bytes": 99084,
+      "sri": "sha384-L2DptUQJaV8fb5NV7vlpru3pXPlC0T39boZZeNANRtFRRg5Hu9L1RimNXJ2CLfGI",
+      "axes": [],
+      "cmapCodepoints": 893,
+      "glyphs": 1038
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alata/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alata/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-iIi8gp5CpQyiYG9OJbJVG8DChQk5n5HeOOyoX60U2it2VYrx8PX1CqMBkO2tYuZ8"
+  }
+}

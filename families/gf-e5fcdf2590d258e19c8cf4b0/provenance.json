@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Sigmar One",
+  "sourceRank": 132,
+  "sourcePosition": 270,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sigmarone/METADATA.pb",
+    "sri": "sha384-S+XrdacXN/setwcUTv26k3J5J+ItRuCX7tphS0jRqJZAag40h0vz+hQcodQD4Mfc"
+  },
+  "files": [
+    {
+      "name": "font-236d43ca319b6c5160a31041a52f8075d330695fd328c157853d8aec4978cf688ef1d4df05671200c1b7a00b08173eef.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sigmarone/SigmarOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sigmarone/SigmarOne-Regular.ttf",
+      "sourceBytes": 172512,
+      "sourceSri": "sha384-9wKx5e8eIUfVUwUBtKYKoNpUAQTQE1pFTi3wCq5QvUVRnMr0PF2osRIbwr0jJI2K",
+      "bytes": 70012,
+      "sri": "sha384-I21DyjGbbFFgoxBBpS+AddMwaV/TKMFXhT2K7El4z2iO8dTfBWcSAMG3oAsIFz7v",
+      "axes": [],
+      "cmapCodepoints": 564,
+      "glyphs": 621
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sigmarone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sigmarone/OFL.txt",
+    "bytes": 4374,
+    "sri": "sha384-O1AAZ+DXEiKmycouGHxt1nCQtlEyhdqrY5C9wJabGwK7nd/uu+e1g3xwxN/R8F7R"
+  }
+}

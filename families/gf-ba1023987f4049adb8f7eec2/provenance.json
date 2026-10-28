@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Simonetta",
+  "sourceRank": 398,
+  "sourcePosition": 758,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/simonetta/METADATA.pb",
+    "sri": "sha384-duxN3e+FkR9wip+/yckNKlZ8Nujja5mt+aMxwNnlm3kvYMpQORn0bbxz20DJ2nD/"
+  },
+  "files": [
+    {
+      "name": "font-0a3d2871bf30d6309d37c0dfdcdb65debc99126ab12c28a178503a97efb6026f53a58af65762bfbd0141afa95f3bb3b9.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/simonetta/Simonetta-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/simonetta/Simonetta-Black.ttf",
+      "sourceBytes": 111468,
+      "sourceSri": "sha384-sUkYRcVTSnkTrtT4thvfNbzkUQ7tEKerWTBNhDa+Wkda1J1OEIVHUzetCm+UE/Gd",
+      "bytes": 44860,
+      "sri": "sha384-Cj0ocb8w1jCdN8Df3Ntl3ryZEmqxLCiheFA6l++2Am9TpYr2V2K/vQFBr6lfO7O5",
+      "axes": [],
+      "cmapCodepoints": 224,
+      "glyphs": 237
+    },
+    {
+      "name": "font-261fb0681a55f12beed3a88136ea9733754a08370a80bb2818a295950d422103b17c86fe55adc4ca4ffea378e4ce50ca.woff2",
+      "variant": "900italic",
+      "sourcePath": "ofl/simonetta/Simonetta-BlackItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/simonetta/Simonetta-BlackItalic.ttf",
+      "sourceBytes": 107044,
+      "sourceSri": "sha384-fovTC7slBTWKXXbMx2b1Xha+NIogAIgdNZ73arwqrOxrHbl1QDxJiw8YZIBaT+wn",
+      "bytes": 43408,
+      "sri": "sha384-Jh+waBpV8Svu06iBNuqXM3VKCDcKgLsoGKKVlQ1CIQOxfIb+Va3Eyk/+o3jkzlDK",
+      "axes": [],
+      "cmapCodepoints": 224,
+      "glyphs": 237
+    },
+    {
+      "name": "font-a9be8a21ef58aa77bb7e3506f118151ca3038cb719447159b9c2eb37bb8ff0f20360887f959bc6c75e3bb5ca16e6bf49.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/simonetta/Simonetta-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/simonetta/Simonetta-Italic.ttf",
+      "sourceBytes": 106264,
+      "sourceSri": "sha384-x6+j/FwEGHfrUlkP0kGlXCH4M6/tMxS9GnfeY2oaFIB65A99nbA6RWJsNUrHlxVx",
+      "bytes": 41116,
+      "sri": "sha384-qb6KIe9Yqne7fjUG8RgVHKMDjLcZRHFZucLrN7uP8PIDYIh/lZvGx147tcoW5r9J",
+      "axes": [],
+      "cmapCodepoints": 220,
+      "glyphs": 228
+    },
+    {
+      "name": "font-063b55b37cbdad5fb9f042a5896127d1a6bec7ad48aac7658f0c5368bd12bd59b21b0c56b40c82561f94ade3c23f9954.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/simonetta/Simonetta-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/simonetta/Simonetta-Regular.ttf",
+      "sourceBytes": 115060,
+      "sourceSri": "sha384-5BUoBykdkP/Xh3PUtX74w12BKbuUYl5XMRAQVCQzdLWd3uDm99kTaS+/Gw6Rl6WT",
+      "bytes": 45080,
+      "sri": "sha384-BjtVs3y9rV+58EKliWEn0aa+x61IqsdljwxTaL0SvVmyGwxWtAyCVh+UrePCP5lU",
+      "axes": [],
+      "cmapCodepoints": 220,
+      "glyphs": 228
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/simonetta/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/simonetta/OFL.txt",
+    "bytes": 4654,
+    "sri": "sha384-+zxR4hBHhte56sKv/CgVHuAvWZz3RlN7W+d4gAApyE45VeP0RZLY0S7gFIk/BPaA"
+  }
+}

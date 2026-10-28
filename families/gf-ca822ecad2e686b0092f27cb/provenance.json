@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Almarai",
+  "sourceRank": 58,
+  "sourcePosition": 127,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/almarai/METADATA.pb",
+    "sri": "sha384-yldoVU4UYIFKcibrU6/rTLnNhPFoCEzqG/K1uwREsfD9c4sumdJed/htVdBCKpvr"
+  },
+  "files": [
+    {
+      "name": "font-9472f9bc185e1fda4381dcfc7f369b7244faae58ee9787e3c3d6e6158aeeaef869d6ba14928a76332284381f136b9d04.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/almarai/Almarai-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/almarai/Almarai-Bold.ttf",
+      "sourceBytes": 156672,
+      "sourceSri": "sha384-gJ2RFsrdtQwhuahSJeHRkpWswrBKr/gA9zNAsxXZOHBjvoxHej3E5FXZgrBt9NN9",
+      "bytes": 50600,
+      "sri": "sha384-lHL5vBheH9pDgdz8fzabckT6rljul4fjw9bmFYrurvhp1roUkop2MyKEOB8Ta50E",
+      "axes": [],
+      "cmapCodepoints": 528,
+      "glyphs": 579
+    },
+    {
+      "name": "font-e19672c4e4df045f0b534735977e11740ab105c5adb7026a10bbce2036efcce71bf4544be68501ff1967340b64e0a6ce.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/almarai/Almarai-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/almarai/Almarai-ExtraBold.ttf",
+      "sourceBytes": 168292,
+      "sourceSri": "sha384-P6q6ssaISHq1WnCqCqEf3zvxUtjlUkep0aMAuXQJzDDDhh3cM3YWWucwcvMVzLI8",
+      "bytes": 52828,
+      "sri": "sha384-4ZZyxOTfBF8LU0c1l34RdAqxBcWttwJqELvOIDbvzOcb9FRL5oUB/xlnNAtk4KbO",
+      "axes": [],
+      "cmapCodepoints": 528,
+      "glyphs": 579
+    },
+    {
+      "name": "font-3c7632c21c42e5643b6b8e8dbd443720e62f1fffa948c8643b549bcdc5186ba4162ec58b0bd83cdbd75d15669ccbf94e.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/almarai/Almarai-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/almarai/Almarai-Light.ttf",
+      "sourceBytes": 149480,
+      "sourceSri": "sha384-hY0VyNRXMNgkK9s4Psc5B6Q0UODSp5+zP0JwGjHiHUk3FdWqV+CL464RDC2z9ivj",
+      "bytes": 48092,
+      "sri": "sha384-PHYywhxC5WQ7a46NvUQ3IOYvH/+pSMhkO1SbzcUYa6QWLsWLC9g829ddFWacy/lO",
+      "axes": [],
+      "cmapCodepoints": 528,
+      "glyphs": 579
+    },
+    {
+      "name": "font-e50afa0827603a5196010f27a8f356104c10b283ff788afde8023ca54a2747540e62a0dad6db0c972ca0645470892695.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/almarai/Almarai-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/almarai/Almarai-Regular.ttf",
+      "sourceBytes": 152824,
+      "sourceSri": "sha384-t2sYXDBvlwmzv6/ao9J36YzCHqrEFBXlCMQVlwci5DISkCMLKWuBD8bvDjIkTLLs",
+      "bytes": 49388,
+      "sri": "sha384-5Qr6CCdgOlGWAQ8nqPNWEEwQsoP/eIr96AI8pUonR1QOYqDa1tsMlyygZFRwiSaV",
+      "axes": [],
+      "cmapCodepoints": 528,
+      "glyphs": 579
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/almarai/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/almarai/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-pjfTEO7/55K/43F3i/Qlm00pXjMH3jzEXzkR9uPfW6zFbNo+JfuPW+XGCgGQ7AVo"
+  }
+}

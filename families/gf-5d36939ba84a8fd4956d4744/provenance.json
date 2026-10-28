@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Corben",
+  "sourceRank": 160,
+  "sourcePosition": 321,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/corben/METADATA.pb",
+    "sri": "sha384-qZiy5a4eiZ1g2LDu8T+Hm5zg0yuXAH9bjRrEoacQgH8pzfliSS5oGcSIFcCqALHp"
+  },
+  "files": [
+    {
+      "name": "font-fb66f6b9abf1960838c81f4b4db59fb9b7a550c4e677edf4cf27ef1e34ea1cca2d09dd3205231fcad960eb8c6b61b686.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/corben/Corben-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/corben/Corben-Bold.ttf",
+      "sourceBytes": 125892,
+      "sourceSri": "sha384-66C5q7rmBP9sA12EBaZ5Sex2Fh8t7/3K+RUxS9LgRSt4/WK8t+iCW/8uzJnDt6G9",
+      "bytes": 48764,
+      "sri": "sha384-+2b2uavxlgg4yB9LTbWfubelUMTmd+30zyfvHjTqHMotCd0yBSMfytlg64xrYbaG",
+      "axes": [],
+      "cmapCodepoints": 380,
+      "glyphs": 552
+    },
+    {
+      "name": "font-bd5ceec065374eb7ee75b1806f5c847be0b0c79a7d95858159da16c538e0387c1fc30c9d0caef2727d9e1f2dee5da58b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/corben/Corben-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/corben/Corben-Regular.ttf",
+      "sourceBytes": 35268,
+      "sourceSri": "sha384-Lez6CQx7YhCFFB9WiJ+xWDSDQ7vbIphxkZbnVt6OYBGN5JOv0lDxzzIpBwrZkX8F",
+      "bytes": 18556,
+      "sri": "sha384-vVzuwGU3TrfudbGAb1yEe+Cwx5p9lYWBWdoWxTjgOHwfwwydDK7ycn2eHy3uXaWL",
+      "axes": [],
+      "cmapCodepoints": 350,
+      "glyphs": 356
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/corben/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/corben/OFL.txt",
+    "bytes": 4405,
+    "sri": "sha384-bpZtdxrgluQOGSEBAl1trZ0XRw+yXuxezGsAGlFI2buID16S/KjqVmWyMTjwjLP0"
+  }
+}

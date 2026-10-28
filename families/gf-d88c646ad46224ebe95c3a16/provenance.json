@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Lexend Exa",
+  "sourceRank": 440,
+  "sourcePosition": 840,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendexa/METADATA.pb",
+    "sri": "sha384-NJgxDXniodfWPInrcdiTBoRgA9zm0RxsRI5LhHK0YRXiCGpRghYTRolGKDoYS0iv"
+  },
+  "files": [
+    {
+      "name": "font-c3cef7a277b789efeb512ae57dc6e8e57f76d099b70833032672836b8cfa1b1834c6e2af70888786274ff670c702b186.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/lexendexa/LexendExa[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendexa/LexendExa%5Bwght%5D.ttf",
+      "sourceBytes": 189908,
+      "sourceSri": "sha384-TNW8eHk4Mq9cRJgQd68zWYc+YImvdiwaDYi6s+XS7uPR1RMs+bQfjo/2i5PuFRc4",
+      "bytes": 80420,
+      "sri": "sha384-w873one3ie/rUSrlfcbo5X920Jm3CDMDJnKDa4z6Gxg0xuKvcIiHhidP9nDHArGG",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 685,
+      "glyphs": 850
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/lexendexa/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lexendexa/OFL.txt",
+    "bytes": 4436,
+    "sri": "sha384-6aJe7EFHi7aadivqHytXtg7xuFNZI7SMxeb1R4a/4fdUQOarovJUxC6K6byKG4Xn"
+  }
+}

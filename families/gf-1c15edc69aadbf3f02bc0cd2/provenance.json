@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Alumni Sans",
+  "sourceRank": 309,
+  "sourcePosition": 595,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alumnisans/METADATA.pb",
+    "sri": "sha384-WIddtSZRw1e6VJ6BaAOfLUGQFwaWPyMovf8fORD8wJh9aPOfdsUD9rZjv8/JJqS5"
+  },
+  "files": [
+    {
+      "name": "font-fc40da674e410fc3836687291ec0b00b519175a40915c495de3d984156177e34445f74f2468452b07483cd122ae64b2e.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/alumnisans/AlumniSans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alumnisans/AlumniSans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 140320,
+      "sourceSri": "sha384-GUGGup3sNUUXznoKuLvn/8h6JkKeL9r9pEY1R1fdJxewYvNyb84hGI+I0c92Gzfe",
+      "bytes": 60996,
+      "sri": "sha384-/EDaZ05BD8ODZocpHsCwC1GRdaQJFcSV3j2YQVYXfjREX3TyRoRSsHSDzRIq5ksu",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 700,
+      "glyphs": 1002
+    },
+    {
+      "name": "font-bef232e5952a566f114e79535752f2417a37066a6b2f42341f021ac6f5664425172edf4352672bafd4f94bebed0c37cd.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/alumnisans/AlumniSans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alumnisans/AlumniSans%5Bwght%5D.ttf",
+      "sourceBytes": 135884,
+      "sourceSri": "sha384-EMY1qmhsTNhsL/TnjRSljEHPS3efUtRskP3QVU8JfPzcL4+CUpYHUBracUeLtDbO",
+      "bytes": 57068,
+      "sri": "sha384-vvIy5ZUqVm8RTnlTV1LyQXo3BmprL0I0HwIaxvVmRCUXLt9DUmcrr9T5S+vtDDfN",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 700,
+      "glyphs": 999
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alumnisans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alumnisans/OFL.txt",
+    "bytes": 4483,
+    "sri": "sha384-fsaFEA5BMJS5V58DAO51Bsv2unTR/Hrq8huYF/bfwJ/t32usr2EiSfBiurx/GWKA"
+  }
+}

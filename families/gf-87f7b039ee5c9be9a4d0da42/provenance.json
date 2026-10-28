@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Moo Lah Lah",
+  "sourceRank": 423,
+  "sourcePosition": 800,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/moolahlah/METADATA.pb",
+    "sri": "sha384-YB723I00nZulffAJIGVvlVWI3dbRnxqIonBgDy8Q8+dUlpKt0Zng5tnp0s8h/jaR"
+  },
+  "files": [
+    {
+      "name": "font-f25600c03f53a5b41f0ab608ef71eec8b7369ee32d7580fda25425717c550bca7a135fd3f264cb762464a0a3d0ebefac.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/moolahlah/MooLahLah-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/moolahlah/MooLahLah-Regular.ttf",
+      "sourceBytes": 316228,
+      "sourceSri": "sha384-95o+/RBPqn27mUDzIDnxJwX5vT6MYV/9lj5iC6jEK57A7VXLtixHEZ0+I/+gwdF5",
+      "bytes": 106016,
+      "sri": "sha384-8lYAwD9TpbQfCrYI73HuyLc2nuMtdYD9olQlcXxVC8p6E1/T8mTLdiRkoKPQ6++s",
+      "axes": [],
+      "cmapCodepoints": 587,
+      "glyphs": 634
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/moolahlah/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/moolahlah/OFL.txt",
+    "bytes": 4399,
+    "sri": "sha384-ogp+JLeyVVD5+HwYiPIpHqMISm5jzLx2zzrCpjJ/FlAg6nQLJkUp0kHz1tLVjKvf"
+  }
+}

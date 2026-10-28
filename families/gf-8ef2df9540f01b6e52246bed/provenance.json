@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Exo",
+  "sourceRank": 124,
+  "sourcePosition": 253,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/exo/METADATA.pb",
+    "sri": "sha384-f2JwuX/Hk+I6Jv7K0Hq7k3dYJkJUVuNyvikRoA22awzXgbKi3rUFOO9jVuOHb5T1"
+  },
+  "files": [
+    {
+      "name": "font-e0d96f13e4b68393632f39d2f3e0139dfca22fbc409bd51bb16b885b1678bacfc0e3fd810d159df76f96474646340449.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/exo/Exo-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/exo/Exo-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 181908,
+      "sourceSri": "sha384-LOQpal81H2SN63P+dUd8zvoZdc9yuOXUoD0ixnVvBML04M7bnkoe5PlGFlJnC+cV",
+      "bytes": 70016,
+      "sri": "sha384-4NlvE+S2g5NjLznS8+ATnfyiL7xAm9UbsWuIWxZ4us/A4/2BDRWd92+WR0ZGNARJ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 679,
+      "glyphs": 1265
+    },
+    {
+      "name": "font-b68a5dc4aa1807397f35b5efcddc7f82ed6b0ffb90cac5fae1046d557bfea3d4670bad219c28e49aece4e5d619d0929b.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/exo/Exo[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/exo/Exo%5Bwght%5D.ttf",
+      "sourceBytes": 175092,
+      "sourceSri": "sha384-iOC7lSYXE3Z+I8fKemvNd5o+mAYHpn2oj9nGMSg6X2EVj4IJvzQ47PzY+33lZ3dP",
+      "bytes": 64136,
+      "sri": "sha384-topdxKoYBzl/NbXvzdx/gu1rD/uQysX64QRtVXv+o9RnC60hnCjkmuzk5dYZ0JKb",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 678,
+      "glyphs": 1265
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/exo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/exo/OFL.txt",
+    "bytes": 4381,
+    "sri": "sha384-56a+a5qJIXMJR+VlrD8pGg1q581wG7ZEywR5wLUQPKeNT079VabrLEnbcNeoUsK5"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Armenian",
+  "sourceRank": 604,
+  "sourcePosition": 1069,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansarmenian/METADATA.pb",
+    "sri": "sha384-Ihb4IWMnVrMOWI8KPALeY9KjPDOBahnYWQYwj2iLcyTHWBadne1p87E0zZLSPAGt"
+  },
+  "files": [
+    {
+      "name": "font-e016b1e12101032bf35ba59f41076e1d4c85a197173463c75e507276a0d7ac31b8e3924c364873f064483dbd0cb94e31.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansarmenian/NotoSansArmenian[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansarmenian/NotoSansArmenian%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 221936,
+      "sourceSri": "sha384-h6sCJATFro+pwY0PQHzDDv6yGtVzJTsuilSLvVnI8Lh5VYicKXkELFTJsJwq4y2x",
+      "bytes": 112816,
+      "sri": "sha384-4Bax4SEBAyvzW6WfQQduHUyFoZcXNGPHXlBydqDXrDG445JMNkhz8GRIPb0MuU4x",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 430,
+      "glyphs": 436
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansarmenian/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansarmenian/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-uRo/ruPC68b8iZQg9vvV8hfVQyJpmWt5ogSqLDvi4KKXpeOraH9qp1Iz78Usr5mS"
+  }
+}

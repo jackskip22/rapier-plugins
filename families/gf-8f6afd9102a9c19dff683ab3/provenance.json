@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Bungee Shade",
+  "sourceRank": 217,
+  "sourcePosition": 428,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bungeeshade/METADATA.pb",
+    "sri": "sha384-Ao5Nq19uQLqQNef/0qIccp3wXmKoQWCrGkUch9APo6ksh0uv0MqV1w6SP8ezap3m"
+  },
+  "files": [
+    {
+      "name": "font-403dcc99c99b79fb252e99080d09cebeb1d11655831981d69362eff4b4c714286a0ced8469ded49400b39a3bac92266f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bungeeshade/BungeeShade-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bungeeshade/BungeeShade-Regular.ttf",
+      "sourceBytes": 304936,
+      "sourceSri": "sha384-LUnBfstivB/ewd96BHzAihUPnd3+Hp4mHKcw9ysXCLuK34sGlyl53LmjC1pAMICi",
+      "bytes": 81612,
+      "sri": "sha384-QD3MmcmbefslLpkIDQnOvrHRFlWDGYHWk2Lv9LTHFChqDO2Ead7UlACzmjuskiZv",
+      "axes": [],
+      "cmapCodepoints": 1082,
+      "glyphs": 1063
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bungeeshade/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bungeeshade/OFL.txt",
+    "bytes": 4473,
+    "sri": "sha384-XGux7SXOj0EwjXyTlkqYemi3cbsRb+5tslKhN/9cYRU2BYVAnU1Qin2K9g3ABPAL"
+  }
+}

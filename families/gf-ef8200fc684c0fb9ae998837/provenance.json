@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Malayalam",
+  "sourceRank": 99,
+  "sourcePosition": 203,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansmalayalam/METADATA.pb",
+    "sri": "sha384-09k0i3Ir0IEo+Xq6b++Vws2+uuAxVaSx9htC44fWLY6McQKaD73jqVCOl915UGcf"
+  },
+  "files": [
+    {
+      "name": "font-21e56427660f7e76a379a97b58fab5d271cb61fbd0829bee9f9bb33712c6e2efcabc4fd642e25aa11c583b83b4077d4b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansmalayalam/NotoSansMalayalam[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansmalayalam/NotoSansMalayalam%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 504204,
+      "sourceSri": "sha384-i5O3UDS/XsCIbMdRsdVdK3rcSNh4I9jlA9pvzkOVcMS3HDzV25ZMBEZIERgWzcOo",
+      "bytes": 218768,
+      "sri": "sha384-IeVkJ2YPfnajeal7WPq10nHLYfvQgpvun5uzNxLG4u/KvE/WQuJaoRxYO4O0B31L",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 467,
+      "glyphs": 697
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansmalayalam/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansmalayalam/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-QlZGdrQzKd6NLYVQsa3+BaEDD5Nu/nMXost+FLBPDJwAwsMocetRyFj7Hl56pbad"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Gantari",
+  "sourceRank": 351,
+  "sourcePosition": 667,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gantari/METADATA.pb",
+    "sri": "sha384-9Sj5xhEyRN7KfbqlymsnI7ormnbLJ52hIm7he1iuvoZfHiKc1mhq07KZARZIUWM8"
+  },
+  "files": [
+    {
+      "name": "font-3f2849168b8badd6ef182b574dd161625071630a21f79f80ee5dbc838fe7f6af140821ce9ffaf619255e7564a34c0e70.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/gantari/Gantari-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gantari/Gantari-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 131240,
+      "sourceSri": "sha384-Qa2reJN8Bpee6xT950v5oz2QfFyWZqrsyJQaglMSquVZRTz+T1+IaeOyHdcWcHLd",
+      "bytes": 56128,
+      "sri": "sha384-PyhJFouLrdbvGCtXTdFhYlBxYwoh95+A7l28g4/n9q8UCCHOn/r2GSVedWSjTA5w",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 367,
+      "glyphs": 373
+    },
+    {
+      "name": "font-572fe28a49701754c5ec82676308dcd0e9a24d381302652f674fe159a3bce8ba6e3e1d5995bdc6ecf27fcda023839978.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gantari/Gantari[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gantari/Gantari%5Bwght%5D.ttf",
+      "sourceBytes": 124976,
+      "sourceSri": "sha384-/KNgGFPs6ePUWUfHH8LJH5R6S1hiMNMgXkak++HfMXbV5sXGyigxr98JfH3yuAJl",
+      "bytes": 51392,
+      "sri": "sha384-Vy/iiklwF1TF7IJnYwjc0OmiTTgTAmUvZ0/hWaO86LpuPh1Zlb3G7PJ/zaAjg5l4",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 367,
+      "glyphs": 373
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gantari/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gantari/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-HWXbZifsMiy1wRy+T7P+5UpVUVHpdz5zdc/+8F9r3z46evphzKhGTqhLnsT4xIp4"
+  }
+}

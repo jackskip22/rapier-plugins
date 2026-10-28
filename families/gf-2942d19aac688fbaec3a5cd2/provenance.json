@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Libre Caslon Text",
+  "sourceRank": 184,
+  "sourcePosition": 373,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librecaslontext/METADATA.pb",
+    "sri": "sha384-+6qFc3qhifYlOriAWGriqOQw4JH2jW16j7KKFV+7NSELWhRhV4i6gafK+Lk4Fdi1"
+  },
+  "files": [
+    {
+      "name": "font-160cc4623195fc74ff923c52c94de0ab3b65b676dbd43c68aa7831f2dd18569e3455d227d3ef8182ca6f76fbd32e657f.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/librecaslontext/LibreCaslonText-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librecaslontext/LibreCaslonText-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 176200,
+      "sourceSri": "sha384-dT6f0L9DbOm5h6pxKkBFBJxgskFpZNYAdJjm+hFT5wgdsuELVB3fh/+i+fS/jw9P",
+      "bytes": 62756,
+      "sri": "sha384-FgzEYjGV/HT/kjxSyU3gqztltnbb1Dxoqngx8t0YVp40VdIn0++BgspvdvvTLmV/",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 447,
+      "glyphs": 554
+    },
+    {
+      "name": "font-0ac389454779091a7ba3cfc285d61b2c0e905a541e713edb1a5ed94b49333d30bc828c9289b852a0619bbc78653cbffb.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/librecaslontext/LibreCaslonText[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librecaslontext/LibreCaslonText%5Bwght%5D.ttf",
+      "sourceBytes": 126876,
+      "sourceSri": "sha384-J6ZzZRY1ey1Ixnwv7flG5vTJaRZ8K89jxkVB1Lf4UN9SkrgcuuQFUj7GlD991V+b",
+      "bytes": 57500,
+      "sri": "sha384-CsOJRUd5CRp7o8/ChdYbLA6QWlQecT7bGl7ZS0kzPTC8goySibhSoGGbvHhlPL/7",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 446,
+      "glyphs": 548
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/librecaslontext/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/librecaslontext/OFL.txt",
+    "bytes": 4404,
+    "sri": "sha384-C3GOSkucl1AuiXqLagPqDxQOlaLG/dtAykvRHviUcnhgiR+a76BDHxyZYLx7J8YF"
+  }
+}

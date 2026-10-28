@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Fredericka the Great",
+  "sourceRank": 423,
+  "sourcePosition": 799,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/frederickathegreat/METADATA.pb",
+    "sri": "sha384-+B6HbBIpL2NWiKPMM8VFYP86s8at0Y1y6X/6cghBpErJpc8iJkvcahkEWjtGrmJf"
+  },
+  "files": [
+    {
+      "name": "font-b73b50dcc204c33c200cec7d8e24c6196bfbed0f09c9374a80a785f7552a4083787589989a96983561b35612636f06cb.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/frederickathegreat/FrederickatheGreat-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/frederickathegreat/FrederickatheGreat-Regular.ttf",
+      "sourceBytes": 486016,
+      "sourceSri": "sha384-TGINupCKLhUMsZov1lk5sLZiV7NYWteuJvG+QMKpIM9iPaflFYrdsj19cLx0dIFS",
+      "bytes": 209540,
+      "sri": "sha384-tztQ3MIEwzwgDOx9jiTGGWv77Q8JyTdKgKeF91UqQIN4dYmYmpaYNWGzVhJjbwbL",
+      "axes": [],
+      "cmapCodepoints": 226,
+      "glyphs": 229
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/frederickathegreat/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/frederickathegreat/OFL.txt",
+    "bytes": 4433,
+    "sri": "sha384-fGIgSpLwECCIrjNVWRbxLD1JubL1/QP+QBcWrge8j9490YY1cgt87Bvclp3vlFrN"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "B612 Mono",
+  "sourceRank": 478,
+  "sourcePosition": 906,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/b612mono/METADATA.pb",
+    "sri": "sha384-/ALChnVSJ0hQ1oQ3KfnSnUy4wR7VVA5IH8kqYp9rdQ8XAlN5ESW8N8ad8K9pbWZo"
+  },
+  "files": [
+    {
+      "name": "font-3f7a3eaac5da40cfeb98a4f6f44c4aa5b2456c7b1ebb7ec574561eedbbd209e163b617caa1aad6fc58fdcaf51a02eda6.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/b612mono/B612Mono-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/b612mono/B612Mono-Bold.ttf",
+      "sourceBytes": 139456,
+      "sourceSri": "sha384-G4OXHXNUHs5VcjU8xtUlP8+DAiXOCprOP/l6LMiD9EDYwU9Mur211YK6v/vimxTk",
+      "bytes": 44944,
+      "sri": "sha384-P3o+qsXaQM/rmKT29ExKpbJFbHseu37FdFYe7bvSCeFjthfKoarW/Fj9yvUaAu2m",
+      "axes": [],
+      "cmapCodepoints": 589,
+      "glyphs": 590
+    },
+    {
+      "name": "font-0449eaab1c21ea5ba4656d14d1e26ddefe6a51739f04bc6876907f9f30ae0ca53cdd9c203faced7e43ffd674ae2e448a.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/b612mono/B612Mono-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/b612mono/B612Mono-BoldItalic.ttf",
+      "sourceBytes": 125284,
+      "sourceSri": "sha384-JsE/FgVUkas6Lng5mNBMDkq81ppf3VOzUKPQF4pRDPtIp9v8m3QQJXbYfpOV/9Pn",
+      "bytes": 42752,
+      "sri": "sha384-BEnqqxwh6lukZW0U0eJt3v5qUXOfBLxodpB/nzCuDKU83ZwgP6ztfkP/1nSuLkSK",
+      "axes": [],
+      "cmapCodepoints": 589,
+      "glyphs": 590
+    },
+    {
+      "name": "font-4a3100b0753a625bca6c45ba40cb5e4dcf40caf3c3fecb8d9f7b7a98117eb56f5f46c28a68f29784fcecc6cd0a781419.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/b612mono/B612Mono-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/b612mono/B612Mono-Italic.ttf",
+      "sourceBytes": 122448,
+      "sourceSri": "sha384-bTseUivY9KzXUV16hf2V7EWz3lxhuD4ddM2Sw0lNUHdXEjHNsVsLlWCcOLILa6Ub",
+      "bytes": 42484,
+      "sri": "sha384-SjEAsHU6YlvKbEW6QMteTc9AyvPD/suNn3t6mBF+tW9fRsKKaPKXhPzsxs0KeBQZ",
+      "axes": [],
+      "cmapCodepoints": 589,
+      "glyphs": 590
+    },
+    {
+      "name": "font-89ec5f57b6c0b488b72bf6472aaab62afccf2b13c764eb31bff8078c09c04e8dcebc9ad0ca94ed8c9caab0e06d7df389.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/b612mono/B612Mono-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/b612mono/B612Mono-Regular.ttf",
+      "sourceBytes": 140292,
+      "sourceSri": "sha384-gCBb591bNqi1i4W3zIr/X/CLXJLZY1THAt7fFrjS4Gu6ozrgKGng6f/2E0Ec+RaR",
+      "bytes": 44280,
+      "sri": "sha384-iexfV7bAtIi3K/ZHKqq2KvzPKxPHZOsxv/gHjAnATo3OvJrQypTtjJyqsOBtffOJ",
+      "axes": [],
+      "cmapCodepoints": 589,
+      "glyphs": 590
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/b612mono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/b612mono/OFL.txt",
+    "bytes": 4470,
+    "sri": "sha384-nsH5JggEF02CX8Bj2pXpJJuvST2KVEVAWbs5QE1ZKYIYovRY1Wme62s46V/4aXZ5"
+  }
+}

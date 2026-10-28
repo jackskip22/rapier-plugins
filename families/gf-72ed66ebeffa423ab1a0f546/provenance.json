@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Baskervville",
+  "sourceRank": 162,
+  "sourcePosition": 326,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/baskervville/METADATA.pb",
+    "sri": "sha384-X1oeEkzCp8FH7Neqpilmtglslv5Ni22ZwjTiDu6kTPXkRt0jss8NLNQ18bqgwR7V"
+  },
+  "files": [
+    {
+      "name": "font-5985fead4edf3f9fedc2a281ea8e88705c94656db244be73785792496378dc767182ffe8f3f67610e5f7dff27678152d.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/baskervville/Baskervville-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/baskervville/Baskervville-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 114676,
+      "sourceSri": "sha384-P+RxvijH/WlVWrsrl6hP/rVnv5EbQtoRp7v9Oek0J7SILIyeO5FqMWk9E5zhiigl",
+      "bytes": 49720,
+      "sri": "sha384-WYX+rU7fP5/twqKB6o6IcFyUZW2yRL5zeFeSSWN43HZxgv/o8/Z2EOX33/J2eBUt",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 410,
+      "glyphs": 548
+    },
+    {
+      "name": "font-1c320da88f0050c68870736e2b72ef8e2d03dfe32bc9679e40289e0e3024273fd573e8c21033fa218710cf16cc7e8ec7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/baskervville/Baskervville[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/baskervville/Baskervville%5Bwght%5D.ttf",
+      "sourceBytes": 140076,
+      "sourceSri": "sha384-+QcML/P8XdWCFpUWpXAxF8gSK8ayXQJkljZXhvDzY7kE3480SyyqJ9wMHUcgLyBN",
+      "bytes": 57968,
+      "sri": "sha384-HDINqI8AUMaIcHNuK3Lvji0D3+MryWeeQCieDjAkJz/Vc+jCEDP6IYcQzxbMfo7H",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 411,
+      "glyphs": 707
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/baskervville/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/baskervville/OFL.txt",
+    "bytes": 4401,
+    "sri": "sha384-mtGW9/XMsjDNOYigRlEd6p2dVVvutp/lkO3Bg2EsUut6Lhy+UKkb0aANGnYra83s"
+  }
+}

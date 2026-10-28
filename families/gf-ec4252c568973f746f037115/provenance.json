@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Montagu Slab",
+  "sourceRank": 500,
+  "sourcePosition": 937,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/montaguslab/METADATA.pb",
+    "sri": "sha384-Etz+1lSG4m6QgdFm6r+XeWy79aVivxUEk+3p/rrsKAkj8a7F2PEBP0dXUeixECL1"
+  },
+  "files": [
+    {
+      "name": "font-2038991235f5748dccd7c46c09c9a0db973f735b3979d00e43f4a64fd14f6fc6d680830f3c37efad7448a8d1e104fdc1.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/montaguslab/MontaguSlab[opsz,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/montaguslab/MontaguSlab%5Bopsz%2Cwght%5D.ttf",
+      "sourceBytes": 529316,
+      "sourceSri": "sha384-20HHlD22aYKxWJLhEexNY5y1IiRwtwbS9sIG62eOqDArY8XXEt/xRidA4fbMmN+O",
+      "bytes": 150648,
+      "sri": "sha384-IDiZEjX1dI3M18RsCcmg25c/c1s5edAOQ/SmT9FPb8bWgIMPPDfvrXRIqNHhBP3B",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 700,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "opsz",
+          "min": 16,
+          "default": 144,
+          "max": 144,
+          "name": "Optical size"
+        }
+      ],
+      "cmapCodepoints": 618,
+      "glyphs": 687
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/montaguslab/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/montaguslab/OFL.txt",
+    "bytes": 4493,
+    "sri": "sha384-/81H0EQ1f9SQ6c96Vfo2KmI/RokuakVZlMaIV9m1YQiwOLmtWF1E0ABwNI0e0SL4"
+  }
+}

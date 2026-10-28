@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Kanchenjunga",
+  "sourceRank": 441,
+  "sourcePosition": 842,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kanchenjunga/METADATA.pb",
+    "sri": "sha384-vfzGByobEIVJ93crV5ObJ+JlD3MpCUXLcfbhVPo4DlT5UNLOWNAA7e7pT1wrD9hc"
+  },
+  "files": [
+    {
+      "name": "font-aea92e6da657eba437b9b74bc3a51cc1288db1464f440a46f8ae3dcf5395c47917b007b8fafe9b1edf25368903b87582.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/kanchenjunga/Kanchenjunga-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kanchenjunga/Kanchenjunga-Bold.ttf",
+      "sourceBytes": 50992,
+      "sourceSri": "sha384-aoK7s3i1catVxWmY1DbDbI2n/NsZ6tNDhc1KtybvlxqysuzJe5RcT+1w9QDr791w",
+      "bytes": 24328,
+      "sri": "sha384-rqkubaZX66Q3ubdLw6UcwSiNsUZPRApG+K49z1OVxHkXsAe4+v6bHt8lNokDuHWC",
+      "axes": [],
+      "cmapCodepoints": 360,
+      "glyphs": 365
+    },
+    {
+      "name": "font-be523189b807af78ffe532ddb0b2e3234e6d52358420d4bde2b3a7639d10c7659fced698b42b008c3893b80f66708110.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/kanchenjunga/Kanchenjunga-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kanchenjunga/Kanchenjunga-Medium.ttf",
+      "sourceBytes": 51076,
+      "sourceSri": "sha384-OKS+3v1myRW2sKXWJgsSWTzYEZjRyVp91go/2YcDPO29blFJvCdFfqMtpoNaFnrC",
+      "bytes": 24556,
+      "sri": "sha384-vlIxibgHr3j/5TLdsLLjI05tUjWEINS94rOnY50Qx2WfztaYtCsAjDiTuA9mcIEQ",
+      "axes": [],
+      "cmapCodepoints": 360,
+      "glyphs": 365
+    },
+    {
+      "name": "font-727bdd1c4e9caca01a8ff8abbbedcaa4628103b59a85fece24869587f0d01d4495d2ed78dc407c6a7d86d22975e7fb7b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kanchenjunga/Kanchenjunga-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kanchenjunga/Kanchenjunga-Regular.ttf",
+      "sourceBytes": 50976,
+      "sourceSri": "sha384-5I0lgqCs/W/mowSC090Rfp8sWa5392MmPGIuF2cTg1+yx9YBHPK/N6ZUydqhvwuS",
+      "bytes": 24032,
+      "sri": "sha384-cnvdHE6crKAaj/iru+3KpGKBA7Wahf7OJIaVh/DQHUSV0u143EB8an2G0il15/t7",
+      "axes": [],
+      "cmapCodepoints": 360,
+      "glyphs": 365
+    },
+    {
+      "name": "font-60907d0849e7881aa8a02aeda5bdfa0fba9d0a8adf7ba32e00e7194db0002ddf50304e20c3deda166d652b8b68f2b8b2.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/kanchenjunga/Kanchenjunga-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kanchenjunga/Kanchenjunga-SemiBold.ttf",
+      "sourceBytes": 51020,
+      "sourceSri": "sha384-t2k0Z34EQMBDYKvyxkM5ucES7/vt3GiOri2QzlRemioBEGnQLJOBITtwrSaHe1P5",
+      "bytes": 24576,
+      "sri": "sha384-YJB9CEnniBqooCrtpb36D7qdCorfe6MuAOcZTbAALd9QME4gw97aFm1lK4to8riy",
+      "axes": [],
+      "cmapCodepoints": 360,
+      "glyphs": 365
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kanchenjunga/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kanchenjunga/OFL.txt",
+    "bytes": 4526,
+    "sri": "sha384-uQ3frW9bjMK/zPw/ZYEH3Y9tis1kHdgsgQkwlxQar35GXwsrR3Qgz22cPn/uXpN6"
+  }
+}

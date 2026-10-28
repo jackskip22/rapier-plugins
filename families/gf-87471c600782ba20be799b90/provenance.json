@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Ramabhadra",
+  "sourceRank": 84,
+  "sourcePosition": 172,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ramabhadra/METADATA.pb",
+    "sri": "sha384-HlANqsHUgev9vExFRhIsrYbiMjDQzKYtxZDoAAY/J4W3bscFVhJLtTi2blVmOFvc"
+  },
+  "files": [
+    {
+      "name": "font-7c63c9a65261150bffa7b3f7dbdcdcf7d62af3e05b8ceab2ecebfe55187c49b2f745725c8cd8cd7be58d8bd268dc389b.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/ramabhadra/Ramabhadra-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ramabhadra/Ramabhadra-Regular.ttf",
+      "sourceBytes": 733308,
+      "sourceSri": "sha384-cxh1+VScznN3qmAuBmV6fI2AF8Uzv5EzUDOjoNxt+UZbIXuXANa8CLYpy3PkgcgK",
+      "bytes": 146908,
+      "sri": "sha384-fGPJplJhFQv/p7P329zc99Yq8+BbjOqy7Ov+VRh8SbL3RXJcjNjNe+WNi9Jo3Dib",
+      "axes": [],
+      "cmapCodepoints": 224,
+      "glyphs": 1235
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ramabhadra/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ramabhadra/OFL.txt",
+    "bytes": 4454,
+    "sri": "sha384-/UrylIQwVDRphArF41JsaCUJcil3ArzunPryRMVFzuhjAsMV7zkmemuXNwnN/q2B"
+  }
+}

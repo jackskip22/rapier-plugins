@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Alyamama",
+  "sourceRank": 361,
+  "sourcePosition": 683,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alyamama/METADATA.pb",
+    "sri": "sha384-LP5AiCu82hDik8YX6SsS4FCQjN+G8/EH7W3m+R4oultIi4PnQDKDkMPaewkk+hGf"
+  },
+  "files": [
+    {
+      "name": "font-10cd35eb7474bd364da93aab4ca5907f87d9e7136cc814303128f78f595dbc911481a21c6f9b3494f14944177689e868.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/alyamama/Alyamama[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alyamama/Alyamama%5Bwght%5D.ttf",
+      "sourceBytes": 220572,
+      "sourceSri": "sha384-cnpWUY4taOl6fg0LBF3wEf+xshnzxTLQsW3UsK6VvaVISMTdEz6owkn5aKLQeCbV",
+      "bytes": 89704,
+      "sri": "sha384-EM0163R0vTZNqTqrTKWQf4fZ5xNsyBQwMSj3j1ldvJEUgaIcb5s0lPFJRBd2ieho",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 763,
+      "glyphs": 1234
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alyamama/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alyamama/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-Lil9xPy21KBPcJwwWf38W6DzU26E4jZRXpF3iDEfRQqebDYFr2bgO6HJ3a7T+oaP"
+  }
+}

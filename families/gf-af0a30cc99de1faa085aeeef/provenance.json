@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Playwrite AU TAS Guides",
+  "sourceRank": 500,
+  "sourcePosition": 938,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteautasguides/METADATA.pb",
+    "sri": "sha384-ipW/agDFlO91wTbvKNHSF6uoLVT6ql5nRuLLGF/TuWQzn3Yu6u5s78zYKIOELHDG"
+  },
+  "files": [
+    {
+      "name": "font-62697cd905aaa4faec2f9b1d85e4dbab5d2ce10f9a3fc2c5717b89e4f59202ec97589de49c955127e5daca8c4598b0b2.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playwriteautasguides/PlaywriteAUTASGuides-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteautasguides/PlaywriteAUTASGuides-Regular.ttf",
+      "sourceBytes": 366692,
+      "sourceSri": "sha384-XuckKvLArpgh1ptciBovl7L/t5nMfhyhdbX/3JQmGO95WdFvqdUaZZtH1Me0Evvj",
+      "bytes": 88320,
+      "sri": "sha384-Yml82QWqpPrsL5sdheTbq10s4Q+aP8LFcXuJ5PWSAuyXWJ3knJVRJ+XayoxFmLCy",
+      "axes": [],
+      "cmapCodepoints": 486,
+      "glyphs": 1249
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playwriteautasguides/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playwriteautasguides/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-sUeXxmF73R33K8JGwsYa8fT+xAvuLK/XDht/aJPjjtczZFumwPzf8wtzYzEhj9rE"
+  }
+}

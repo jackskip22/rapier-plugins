@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Moon Dance",
+  "sourceRank": 218,
+  "sourcePosition": 432,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/moondance/METADATA.pb",
+    "sri": "sha384-mIrUUgsONSTZvVt67CXQOhdN9I0BktoxfHBzOOd2DOUyW4sE3ar7x+GcnP/mrISW"
+  },
+  "files": [
+    {
+      "name": "font-bb01c8c0799ede626d52181dca81dd75412cfeb5509e4b87c9fbf7b61ce404c9d4e4a0112640511ff3ff8a54ad707807.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/moondance/MoonDance-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/moondance/MoonDance-Regular.ttf",
+      "sourceBytes": 276360,
+      "sourceSri": "sha384-P7veF4gqhaUDSMQ/bUKxqOsEh50EjuUJJ8/rrg8MCMu/WhkqKoyovjZN9JD6LcUR",
+      "bytes": 93268,
+      "sri": "sha384-uwHIwHme3mJtUhgdyoHddUEs/rVQnkuHyfv3thzkBMnU5KARJkBRH/P/ilStcHgH",
+      "axes": [],
+      "cmapCodepoints": 586,
+      "glyphs": 1035
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/moondance/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/moondance/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-AJ0JFomLNesowD+5NsWXOtPzmKXflWj/oPhWDlVBpBuLzzUGNZkDfX6erDsnaaDn"
+  }
+}

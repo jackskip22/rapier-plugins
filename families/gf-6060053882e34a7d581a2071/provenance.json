@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Qwitcher Grypen",
+  "sourceRank": 453,
+  "sourcePosition": 862,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/qwitchergrypen/METADATA.pb",
+    "sri": "sha384-HwzHeEpy6ESQbvwFgbmg/2ae7yIK6gw3s+kMdkFnNTkIkZcatM4VsWQbY40x6w/S"
+  },
+  "files": [
+    {
+      "name": "font-772692f4b8c7c4a9b033473a14d3de3d9ed4445ec297294b1c83dcc58e299dc513218d7550ee3b96b184b25b9d2e98c0.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/qwitchergrypen/QwitcherGrypen-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/qwitchergrypen/QwitcherGrypen-Bold.ttf",
+      "sourceBytes": 200760,
+      "sourceSri": "sha384-EC3w1pAR53EO3we0RDdjmJK2BPLD3VmPZ1QF81XnRsSgS6LGphuNL27B3Rjb9n14",
+      "bytes": 67460,
+      "sri": "sha384-dyaS9LjHxKmwM0c6FNPePZ7URF7ClylLHIPcxY4pncUTIY11UO47lrGEsludLpjA",
+      "axes": [],
+      "cmapCodepoints": 567,
+      "glyphs": 619
+    },
+    {
+      "name": "font-aa6bac76f811f1e127cc8137f489e7ec19aef9f00c1d80b552c74c890a5d599199ca007b7f845f3206315fae4bf9c3d3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/qwitchergrypen/QwitcherGrypen-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/qwitchergrypen/QwitcherGrypen-Regular.ttf",
+      "sourceBytes": 186392,
+      "sourceSri": "sha384-HYm26TgDD3V0LG9+0YMRN6F4hIg/OYCfZkKVeLr2+SgiFoPeF7Ye/F4tKgxhH8zo",
+      "bytes": 63140,
+      "sri": "sha384-qmusdvgR8eEnzIE39Inn7Bmu+fAMHYC1UsdMiQpdWZGZygB7f4RfMgYxX65L+cPT",
+      "axes": [],
+      "cmapCodepoints": 567,
+      "glyphs": 619
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/qwitchergrypen/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/qwitchergrypen/OFL.txt",
+    "bytes": 4409,
+    "sri": "sha384-nGaV/dLo4u/Ia3ztnCGyph6Yii1QvDu6nUCgoh/LD8OZ9sEGlNtENeHn2DWdyG8d"
+  }
+}

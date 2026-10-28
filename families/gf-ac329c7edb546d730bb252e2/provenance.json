@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Fredoka",
+  "sourceRank": 79,
+  "sourcePosition": 166,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fredoka/METADATA.pb",
+    "sri": "sha384-aX+leuhGRhOjhH6COtGPuMkLF5vWnA5kTm++I10MhmxBplTcA9kCcMTp1Jo7GiNB"
+  },
+  "files": [
+    {
+      "name": "font-9100110d1a2db09ae894f6c588f396ca98ac192af422c8645a9905aae7806fefe9eaa3b5b6edf4b4f594e0e954311bb1.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/fredoka/Fredoka[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fredoka/Fredoka%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 159184,
+      "sourceSri": "sha384-A+stPDYmDcTl8dWI3pz75jagMjU+POVVBQ56hTyPGyhKSavICDhYWkvT6ebDd7kU",
+      "bytes": 86556,
+      "sri": "sha384-kQARDRotsJrolPbFiPOWypisGSr0IshkWpkFqueAb+/p6qO1tu30tPWU4OlUMRux",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 320,
+      "glyphs": 335
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/fredoka/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fredoka/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-zUpGZ4t2u/GUwB0J7bE1Zgkbf/qIKLB+iUSTXc/URbhhT8AM5EyuiXYa3HI9vzAD"
+  }
+}

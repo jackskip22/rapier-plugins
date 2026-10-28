@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Ojuju",
+  "sourceRank": 419,
+  "sourcePosition": 790,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ojuju/METADATA.pb",
+    "sri": "sha384-jTCEVUf1iUyuUZktrfCgpgdT502oiVliFfRSG5xfIuRknAsCfole+8HGvaSXsVru"
+  },
+  "files": [
+    {
+      "name": "font-ea98bb08f07ca6551a990e4b3989115ef63b4b1ee2e4823497a7f320c16360c3147c7b5db5e3f5afd5e13a3f8e676984.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/ojuju/Ojuju[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ojuju/Ojuju%5Bwght%5D.ttf",
+      "sourceBytes": 221368,
+      "sourceSri": "sha384-m1XvNVqp8eydZHlur4VuptB/uSJGq5kcFIHThnP8414HAsOSMtVXda7jHoiu/ncu",
+      "bytes": 99460,
+      "sri": "sha384-6pi7CPB8plUamQ5LOYkRXvY7Sx7i5II0l6fzIMFjYMMUfHtdteP1r9XhOj+OZ2mE",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 959,
+      "glyphs": 1022
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ojuju/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ojuju/OFL.txt",
+    "bytes": 4385,
+    "sri": "sha384-6/VZkxyPbPNq6GzzfQvPdWczDMz7DvjE5Ej+VUJgXH5Mj5945AL8Bh47Xpi661XF"
+  }
+}

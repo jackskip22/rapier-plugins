@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Winky Sans",
+  "sourceRank": 396,
+  "sourcePosition": 752,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/winkysans/METADATA.pb",
+    "sri": "sha384-kXvxr8FdEzDZyiKcm/6PHdVlatbj0rNEHmrkLjVhK2vTSadUqUB1QSTuMA4+ZGWd"
+  },
+  "files": [
+    {
+      "name": "font-543993d38bd89915fb99cdba6d2644ed98c19f5bbcfb344f4b424b5a16075f613da2d1ce0940e920ed212effc7b21ae7.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/winkysans/WinkySans-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/winkysans/WinkySans-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 108840,
+      "sourceSri": "sha384-fAF/NFq5aiIIXp/LFsIxvu9YRhntKCYqFuSFokvaejJMKrvvrn125W/AoOV8KOwg",
+      "bytes": 55016,
+      "sri": "sha384-VDmT04vYmRX7mc26bSZE7ZjBn1u8+zRPS0JLWhYHX2E9otHOCUDpIO0hLv/Hshrn",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 387,
+      "glyphs": 427
+    },
+    {
+      "name": "font-04911fe6fa0dca39e1b1e7e3eb568bb65e27e9c1672e039711fc0a2904c0352e6891f27f4d96aa45050737ad6a3baa47.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/winkysans/WinkySans[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/winkysans/WinkySans%5Bwght%5D.ttf",
+      "sourceBytes": 105280,
+      "sourceSri": "sha384-pMvkY5m74WfQELZ8lr4PTe5DUCzB+CXS/AQPXBadpZIEudtlHnomNrykWqOFfzsh",
+      "bytes": 51068,
+      "sri": "sha384-BJEf5voNyjnhsefj61aLtl4n6cFnLgOXEfwKKQTANS5okfJ/TZaqRQUHN61qO6pH",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 387,
+      "glyphs": 427
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/winkysans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/winkysans/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-zQDaRcscnwouDfGalsdoK7HtiQMXQV3p5y/4aHsEQS+GutkxNMl6n6h3K+zIKLc9"
+  }
+}

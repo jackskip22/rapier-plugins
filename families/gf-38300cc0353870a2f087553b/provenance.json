@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "name": "Tajawal",
+  "sourceRank": 92,
+  "sourcePosition": 189,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/METADATA.pb",
+    "sri": "sha384-eukdohx/06d1yzlI8xDkMbkQTSNHIzsix+R8qdVgTpvXTGEDN768Qw1batmFhifJ"
+  },
+  "files": [
+    {
+      "name": "font-2b20be988f5e71e6dec2c5f903705425637cf97902fe37f084bbf42b5a0e766902355283265a580ce8ca35bb24e89b10.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/tajawal/Tajawal-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/Tajawal-Black.ttf",
+      "sourceBytes": 59028,
+      "sourceSri": "sha384-jFd/VCzYokduVTa9fTKCo/Ei2B8oaX29a7LDHJKXw1eOBobj1ZT6fUDHenk7DXYu",
+      "bytes": 20624,
+      "sri": "sha384-KyC+mI9ecebewsX5A3BUJWN8+XkC/jfwhLv0K1oOdmkCNVKDJlpYDOjKNbsk6JsQ",
+      "axes": [],
+      "cmapCodepoints": 446,
+      "glyphs": 465
+    },
+    {
+      "name": "font-95ed904f137e14e8cc0d0f20f63476d91550b50775b4c26ebbb1b72983312b84e346d5c21d454317ec47d474de9bd635.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/tajawal/Tajawal-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/Tajawal-Bold.ttf",
+      "sourceBytes": 59988,
+      "sourceSri": "sha384-EuuIJwH83BkE/XiVKS+AyAU5SuzsmqI2ykZ0axYrrSLEzV0Eob8DHzKacHEAEd9K",
+      "bytes": 20932,
+      "sri": "sha384-le2QTxN+FOjMDQ8g9jR22RVQtQd1tMJuu7G3KYMxK4TjRtXCHUVDF+xH1HTem9Y1",
+      "axes": [],
+      "cmapCodepoints": 455,
+      "glyphs": 474
+    },
+    {
+      "name": "font-db37dbb9f2501fdaf27494f4c612ffcb358939b383cea2c5154b1a0e5dedebb8794eb3b0cc880500f77cbe540414993f.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/tajawal/Tajawal-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/Tajawal-ExtraBold.ttf",
+      "sourceBytes": 59648,
+      "sourceSri": "sha384-XbHC8BmYIrQsKfJnK4lMTlCXCD5Y3iDtNm9ZwDewxXGlKhcf8dcaAycLBRPQYAQf",
+      "bytes": 21736,
+      "sri": "sha384-2zfbufJQH9rydJT0xhL/yzWJObODzqLFFUsaDl3t67h5TrOwzIgFAPd8vlQEFJk/",
+      "axes": [],
+      "cmapCodepoints": 446,
+      "glyphs": 465
+    },
+    {
+      "name": "font-832e74c08e55361e1c5fae9956ba779e9e94ea7bffc5d8957f1c406d9ea443d2c2efa03a1268493baaa6faf290ef107d.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/tajawal/Tajawal-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/Tajawal-ExtraLight.ttf",
+      "sourceBytes": 55784,
+      "sourceSri": "sha384-SQnxfQBRnkwAxmih82uizqWPwUQWsVcZJfeoGJjb/jJ8MwNcWiO5QGr59jen2yZt",
+      "bytes": 20460,
+      "sri": "sha384-gy50wI5VNh4cX66ZVrp3np6U6nv/xdiVfxxAbZ6kQ9LC76A6EmhJO6qm+vKQ7xB9",
+      "axes": [],
+      "cmapCodepoints": 445,
+      "glyphs": 464
+    },
+    {
+      "name": "font-81c2e5cbc742102b4ace9a89772f2a25e0dc657827ec264e146e31da530b3b7aab188f0e41c61abe19645b598f4048d9.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/tajawal/Tajawal-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/Tajawal-Light.ttf",
+      "sourceBytes": 61864,
+      "sourceSri": "sha384-SEUxkD/91ma737Qmwwa7K1averhPM5sb8g+WJtXfAQG4AhjVpdsQwjes5kF+dYfD",
+      "bytes": 20168,
+      "sri": "sha384-gcLly8dCECtKzpqJdy8qJeDcZXgn7CZOFG4x2lMLO3qrGI8OQcYavhlkW1mPQEjZ",
+      "axes": [],
+      "cmapCodepoints": 454,
+      "glyphs": 473
+    },
+    {
+      "name": "font-d420fa4540770f8c156db3c8427f0b8ac50299ff274c42addcc09f144fd0508f7c69b31045df663930f86b83856e71f0.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/tajawal/Tajawal-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/Tajawal-Medium.ttf",
+      "sourceBytes": 62280,
+      "sourceSri": "sha384-pMwVEEdJy59r5DID9qfH8RuNFvYQPOLHQrH0gXTbAuMEiGYzZXyeit4yzTXXD6HI",
+      "bytes": 20808,
+      "sri": "sha384-1CD6RUB3D4wVbbPIQn8LisUCmf8nTEKt3MCfFE/QUI98abMQRd9mOTD4a4OFbnHw",
+      "axes": [],
+      "cmapCodepoints": 455,
+      "glyphs": 474
+    },
+    {
+      "name": "font-53d446398b7f40ca6033e7849eeb477683b4ad19c570713a6286fa23a6dd3bddfb3d99bd4494a5851708396f997adc6d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/tajawal/Tajawal-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/Tajawal-Regular.ttf",
+      "sourceBytes": 60364,
+      "sourceSri": "sha384-jP4P9H4F5gHxm8B1vnNgRZ2nKzaQWekIrBHcWDtXm/9mjPQoVoSp0Lbj20HkEAsZ",
+      "bytes": 20792,
+      "sri": "sha384-U9RGOYt/QMpgM+eEnutHdoO0rRnFcHE6Yob6I6bdO937PZm9RJSlhRcIOW+Zetxt",
+      "axes": [],
+      "cmapCodepoints": 446,
+      "glyphs": 465
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/tajawal/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tajawal/OFL.txt",
+    "bytes": 4464,
+    "sri": "sha384-FyFBiQyviixhzqVnq8tlooDhrNd/mnVjzc4U5RFv+7K79DDyoc1Zm0iNcchjC1sA"
+  }
+}

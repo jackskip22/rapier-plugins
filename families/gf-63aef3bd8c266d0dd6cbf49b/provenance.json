@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Spline Sans Mono",
+  "sourceRank": 433,
+  "sourcePosition": 826,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/splinesansmono/METADATA.pb",
+    "sri": "sha384-y8ThKZcY0e+nLibd9RXXu7ueE4yN6JqQpdWAiyRL9gw7ci68/acBgZMvCFNGN1/A"
+  },
+  "files": [
+    {
+      "name": "font-868995cc9310d38d72cbe53a24560a8f6d4cb8964b82863f79a84bb69d445071de9fbf917ea47ae36b5714a6a783964b.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/splinesansmono/SplineSansMono-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/splinesansmono/SplineSansMono-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 132152,
+      "sourceSri": "sha384-BYpANqyXYXvnVTMgjA7Hfjuum4yZPrnLXtul1FgQC70z20WtxUXyCRiEbFvf9HxU",
+      "bytes": 66912,
+      "sri": "sha384-homVzJMQ041yy+U6JFYKj21MuJZLgoY/eahLtp1EUHHen7+RfqR642tXFKang5ZL",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 411,
+      "glyphs": 627
+    },
+    {
+      "name": "font-a6880fa776d382fc315df6dd3476a18ca407f28696a1fd3f06e1745f703c09e78683440d25e46296567cfe9a58ed1319.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/splinesansmono/SplineSansMono[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/splinesansmono/SplineSansMono%5Bwght%5D.ttf",
+      "sourceBytes": 118744,
+      "sourceSri": "sha384-4Upw10cpjPeQRMsXXhjWKgCJ+pU0rlIo7xtAY4JFoStZPlQtJv93KVJ6m8KBG0J0",
+      "bytes": 58608,
+      "sri": "sha384-pogPp3bTgvwxXfbdNHahjKQH8oaWof0/BuF0X3A8CeeGg0QNJeRillZ8/ppY7RMZ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 411,
+      "glyphs": 555
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/splinesansmono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/splinesansmono/OFL.txt",
+    "bytes": 4403,
+    "sri": "sha384-CyjHbE06XUMx8MB7lWVQQuSEeL4tOq3i4rDGj+AjubSh3cy1IY3AE40VSWQz6Muf"
+  }
+}

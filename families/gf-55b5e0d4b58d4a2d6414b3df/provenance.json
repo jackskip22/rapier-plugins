@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "DM Mono",
+  "sourceRank": 99,
+  "sourcePosition": 202,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmmono/METADATA.pb",
+    "sri": "sha384-rywSNIgOZqNio/N9G35MhMKbCgg6moSuV9oYDwFfmRCvxwtJlxu7cOMN1Fkhy8t0"
+  },
+  "files": [
+    {
+      "name": "font-75cdf9bf4086d8875105c7b651d90a192d223436f48b20e5f6be568dc4df4b546ee01249ba89a0892eb4ce5129d062b5.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/dmmono/DMMono-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmmono/DMMono-Italic.ttf",
+      "sourceBytes": 51408,
+      "sourceSri": "sha384-ZEx/R89bw3ftWcTQTllpYBJifh7vlxgA7holfzAJUOh0ZUs0yLWXV89E+N/AbmbU",
+      "bytes": 22252,
+      "sri": "sha384-dc35v0CG2IdRBce2UdkKGS0iNDb0iyDl9r5WjcTfS1Ru4BJJuomgiS60zlEp0GK1",
+      "axes": [],
+      "cmapCodepoints": 381,
+      "glyphs": 411
+    },
+    {
+      "name": "font-185b0083396a68915a5e24313b1d567b400cd3271cc46e25023554e2442516642dec70f92ab261828375680e604ccb10.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/dmmono/DMMono-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmmono/DMMono-Light.ttf",
+      "sourceBytes": 49752,
+      "sourceSri": "sha384-HdEHl0kYy4iPoa0ivbHURjaYOJCLmacah6t3Ko2AC6j2dM2+BDy3Jj7s1pRfHH37",
+      "bytes": 20556,
+      "sri": "sha384-GFsAgzlqaJFaXiQxOx1We0AM0yccxG4lAjVU4kQlFmQt7HD5KrJhgoN1aA5gTMsQ",
+      "axes": [],
+      "cmapCodepoints": 381,
+      "glyphs": 411
+    },
+    {
+      "name": "font-9cbd8a6839cd858cbe7cc2f62326f5134a0df9740b6b0f11889f94d0b76a47b4ce0df934eed302ec43fa27de40d4059e.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/dmmono/DMMono-LightItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmmono/DMMono-LightItalic.ttf",
+      "sourceBytes": 51744,
+      "sourceSri": "sha384-X6GEunIrBbNiaPB814QBcSLwskuKKh2F420F6OsR2TwX+3cOHvjGbeyamNVUyklb",
+      "bytes": 22008,
+      "sri": "sha384-nL2KaDnNhYy+fML2Iyb1E0oN+XQLaw8RiJ+U0LdqR7TODfk07tMC7EP6J95A1AWe",
+      "axes": [],
+      "cmapCodepoints": 381,
+      "glyphs": 411
+    },
+    {
+      "name": "font-da5b04b009ab92533d97e5c15323c576f53613658f4c22875a105faf2d6dbe2c3f2691d1e839fcd629f1f0ae02913577.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/dmmono/DMMono-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmmono/DMMono-Medium.ttf",
+      "sourceBytes": 50360,
+      "sourceSri": "sha384-ebIVGcQJEX+1CRjjyMK20cYNU38ny146KHRFiPENvNTQbRKApm6CPVmz5n6YGuri",
+      "bytes": 20872,
+      "sri": "sha384-2lsEsAmrklM9l+XBUyPFdvU2E2WPTCKHWhBfry1tviw/JpHR6Dn81inx8K4CkTV3",
+      "axes": [],
+      "cmapCodepoints": 381,
+      "glyphs": 411
+    },
+    {
+      "name": "font-5e8e4f5371af91fb11423d0149b26c751093b31cc4fae09d2e1e940906ded142a0a1b2b746b7e20c1a47799b67a57ca4.woff2",
+      "variant": "500italic",
+      "sourcePath": "ofl/dmmono/DMMono-MediumItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmmono/DMMono-MediumItalic.ttf",
+      "sourceBytes": 52552,
+      "sourceSri": "sha384-qVSIKVZlw8JBsCI79BxdxndpVR8GNoNZxUStu6U/u8EwAd0mOCZcgEZkw6a4agMU",
+      "bytes": 22520,
+      "sri": "sha384-Xo5PU3GvkfsRQj0BSbJsdRCTsxzE+uCdLh6UCQbe0UKgobK3RrfiDBpHeZtnpXyk",
+      "axes": [],
+      "cmapCodepoints": 381,
+      "glyphs": 411
+    },
+    {
+      "name": "font-cb03d797f4a4572ed765c2fdbd91149ab7f7736a2c3caf1846ec72440974fe4669b19ee57a00fab0f9fa92db435c761a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/dmmono/DMMono-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmmono/DMMono-Regular.ttf",
+      "sourceBytes": 49744,
+      "sourceSri": "sha384-e2yMoFmR6elb45RTYa91hkWK3+aNKJuxTBJQYxULQmSHbFe9KDGuuCZF7S2KMcjw",
+      "bytes": 20592,
+      "sri": "sha384-ywPXl/SkVy7XZcL9vZEUmrf3c2osPK8YRuxyRAl0/kZpsZ7legD6sPn6kttDXHYa",
+      "axes": [],
+      "cmapCodepoints": 381,
+      "glyphs": 411
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/dmmono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/dmmono/OFL.txt",
+    "bytes": 4484,
+    "sri": "sha384-fZtuqUOXzJtqR9BRVONk6tfjGZZv79VK0j/YkIQdCujUw3QWWpzlwvnJadx8ygsv"
+  }
+}

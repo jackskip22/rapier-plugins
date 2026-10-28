@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Geist Mono",
+  "sourceRank": 91,
+  "sourcePosition": 185,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/geistmono/METADATA.pb",
+    "sri": "sha384-dmkteENrc28fsPJrGsIdK5ZRlJez7lGC9tFU4ykNE5xABvOgAk0E3oxUjZDbSF8Z"
+  },
+  "files": [
+    {
+      "name": "font-87d190c483d8909a3704008ddafe00ab6d782816c36f349c2667d56498877ce4b032d3fc4a31a6a8e428e545f207a15b.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/geistmono/GeistMono-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/geistmono/GeistMono-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 182656,
+      "sourceSri": "sha384-GPetbzY0im6/Py+LfAVho85syJCvS4yhC1fY+QRUBVmLrmh0EwZpeNlpXkjq2MoD",
+      "bytes": 78856,
+      "sri": "sha384-h9GQxIPYkJo3BACN2v4Aq214KBbDbzScJmfVZJiHfOSwMtP8SjGmqOQo5UXyB6Fb",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 889,
+      "glyphs": 1148
+    },
+    {
+      "name": "font-0e66c2850a76020f16d59e3c00b5c09abfb3dfdb6c202b5c28891c1860ebd25f19dfffd74802920a94b35fe85c989e5e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/geistmono/GeistMono[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/geistmono/GeistMono%5Bwght%5D.ttf",
+      "sourceBytes": 171948,
+      "sourceSri": "sha384-xKieHo16qHXSfX9TPBG2FJHg5RAVq5G2UvQvVTKuMomaUvxRI2dj7BfbOBLfnPOp",
+      "bytes": 71080,
+      "sri": "sha384-DmbChQp2Ag8W1Z48ALXAmr+z39tsICtcKIkcGGDr0l8Z3//XSAKSCpSzX+hcmJ5e",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 889,
+      "glyphs": 1159
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/geistmono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/geistmono/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-b2F3jgg1jHjVQYIy8WFd5l9kTLQmtOCVGl5xtsDbBopvbkLJz8pdLfWoTdq69MFA"
+  }
+}

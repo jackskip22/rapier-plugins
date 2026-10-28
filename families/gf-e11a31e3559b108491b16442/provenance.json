@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Gugi",
+  "sourceRank": 367,
+  "sourcePosition": 696,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gugi/METADATA.pb",
+    "sri": "sha384-AOgufYDuV8b6xja2NgkcTviv8YuZe+8CCMrNO1tFJey7VEDSyG62Vh0SCHVGyOrr"
+  },
+  "files": [
+    {
+      "name": "font-2564b0742bd048348c65125f2bcd605bd69a7a3ec71c681fd29bc140a7871560ceb945125887b8ed4ea6ee456a6f8a10.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gugi/Gugi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gugi/Gugi-Regular.ttf",
+      "sourceBytes": 990856,
+      "sourceSri": "sha384-NoBtZXe0qC6I2uCNK+t59rQik6NjDHM+Y/gzLBK+wQsZi7O9tsNkFMlL+SOPAJRb",
+      "bytes": 180920,
+      "sri": "sha384-JWSwdCvQSDSMZRJfK81gW9aaej7HHGgf0pvBQKeHFWDOuUUSWIe47U6m7kVqb4oQ",
+      "axes": [],
+      "cmapCodepoints": 2494,
+      "glyphs": 2495
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gugi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gugi/OFL.txt",
+    "bytes": 4374,
+    "sri": "sha384-C959mzCfU4faXsEiMxF5rpirc6pwZUK4Ll3BMac5jWzQToHYQblGuEwiuEQ2tMeU"
+  }
+}

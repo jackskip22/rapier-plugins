@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Gluten",
+  "sourceRank": 274,
+  "sourcePosition": 537,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gluten/METADATA.pb",
+    "sri": "sha384-aX5yYpOZ1lnB3p3WQf1gp1sr1+7BdignAm9jUXK+WrX028ogEoC86jkaM4ZufLG8"
+  },
+  "files": [
+    {
+      "name": "font-d8961e373e25b0ec293f3625cae0492579f624cf26b30d43a6a1c8d74615d167e743545a676f99ff2c99544290da5899.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/gluten/Gluten[slnt,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gluten/Gluten%5Bslnt%2Cwght%5D.ttf",
+      "sourceBytes": 349672,
+      "sourceSri": "sha384-1/rdkOFgoqOIEHwKk8Ua9+HV8+HscrSDviJE3EzPerbo5j+HdWmQdcn1Crjgovc/",
+      "bytes": 167356,
+      "sri": "sha384-2JYeNz4lsOwpPzYlyuBJJXn2JM8msw1DpqHI10YV0WfnQ1RaZ2+Z/yyZVEKQ2liZ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "slnt",
+          "min": -13,
+          "default": 0,
+          "max": 13,
+          "name": "Slant"
+        }
+      ],
+      "cmapCodepoints": 601,
+      "glyphs": 770
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gluten/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gluten/OFL.txt",
+    "bytes": 4390,
+    "sri": "sha384-VvVHdgeJaW3kTTDVY9bNj8PGOA/BDh2uvMbWFVoKIGj5i/rEWkl/0UZOuq8rpOte"
+  }
+}

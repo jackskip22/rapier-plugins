@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Inconsolata",
+  "sourceRank": 35,
+  "sourcePosition": 85,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inconsolata/METADATA.pb",
+    "sri": "sha384-oqOaaMbNuWOdMw2COUOndQCZCRJRVQ3flAlDqIU3AGV+7hQAs4IXRuysrQ5HWKD6"
+  },
+  "files": [
+    {
+      "name": "font-ebf3284aa96a019f4185d39206ba72e1bb65d9896e26cf4875471a658e2ddb7e805921431b50a4a1f179f3595c15df3c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/inconsolata/Inconsolata[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inconsolata/Inconsolata%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 347180,
+      "sourceSri": "sha384-uZuwuCeq3txvVyM4YrI5qYncczt5EEaG3ASubrCcCXEHcbeB01zi6PaMMJ8ADIk3",
+      "bytes": 151708,
+      "sri": "sha384-6/MoSqlqAZ9BhdOSBrpy4btl2YluJs9IdUcaZY4t236AWSFDG1CkofF581lcFd88",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 50,
+          "default": 100,
+          "max": 200,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 882,
+      "glyphs": 964
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/inconsolata/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/inconsolata/OFL.txt",
+    "bytes": 4350,
+    "sri": "sha384-/X1G88EI0WkfXHhZEbsjXRlSUJphBXxDEa0PeGucX4EeCRlBnIpnFC4Z+pcFY4nH"
+  }
+}

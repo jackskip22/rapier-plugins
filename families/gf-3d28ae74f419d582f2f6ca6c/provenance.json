@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Comic Relief",
+  "sourceRank": 300,
+  "sourcePosition": 582,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicrelief/METADATA.pb",
+    "sri": "sha384-Ng8fWAvr5nWBCydHxQrCYQg/6TUBCAeiZ06YSwFrDiP4XPXepD6o4O2ZmPuAHWxy"
+  },
+  "files": [
+    {
+      "name": "font-c83021a9fa34df37135685493cfc53dae349afe8ec775d343478414e63617aae8a590e6afbab4c4b20814ae7ca73f7ae.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/comicrelief/ComicRelief-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicrelief/ComicRelief-Bold.ttf",
+      "sourceBytes": 94684,
+      "sourceSri": "sha384-2RtGni6zb59v0/3LGuA+hjx0hqZG/0qwMNo1OxGJpM5m7INKBqI5EunXFvxGZV2O",
+      "bytes": 46740,
+      "sri": "sha384-yDAhqfo03zcTVoVJPPxT2uNJr+jsd100NHhBTmNheq6KWQ5q+6tMSyCBSufKc/eu",
+      "axes": [],
+      "cmapCodepoints": 599,
+      "glyphs": 607
+    },
+    {
+      "name": "font-7108415b3a17cfa327e2ca52a22511cfe4fdc37446e731cf52252475a016f08575adbca39828cf99573a5dc0f6e4d4a8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/comicrelief/ComicRelief-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicrelief/ComicRelief-Regular.ttf",
+      "sourceBytes": 80324,
+      "sourceSri": "sha384-FFjsyqZZvEkv/nh5GEzIm7mfkxxs/dEXM7curVA+2OXm/I0AaYK3mTGh1raCSmyR",
+      "bytes": 37000,
+      "sri": "sha384-cQhBWzoXz6Mn4spSoiURz+T9w3RG5zHPUiUkdaAW8IV1rbyjmCjPmVc6XcD25NSo",
+      "axes": [],
+      "cmapCodepoints": 599,
+      "glyphs": 607
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/comicrelief/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/comicrelief/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-lBDjXXSsDGOSorLrU8zqRLmP9xp6Qt07EiDlLV+Uk/4lon+YACx5FuqZkbJjhSLF"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Serif Oriya",
+  "sourceRank": 449,
+  "sourcePosition": 854,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoseriforiya/METADATA.pb",
+    "sri": "sha384-7FTlR59IwnEmiY+Ui35bZrg9Z2l6mRhpw0Glv7DfjQRkciNyycq850lXbrtluPOy"
+  },
+  "files": [
+    {
+      "name": "font-b183673dbfb81395c05e3ac385335cbdfd70f0b9f1f528d581cf8cc88b709942cabe310bafceab2c094bd69a9cc745c6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notoseriforiya/NotoSerifOriya[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoseriforiya/NotoSerifOriya%5Bwght%5D.ttf",
+      "sourceBytes": 241144,
+      "sourceSri": "sha384-Gk7LUzo6oZLq+RyNySRrLF5fBEzFJcX16PorbzStERNg+ngCj9Hfxpwx504XPExx",
+      "bytes": 90716,
+      "sri": "sha384-sYNnPb+4E5XAXjrDhTNcvf1w8Lnx9SjVgc+MyItwmULKvjELr86rLAlL1pqcx0XG",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 435,
+      "glyphs": 1025
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoseriforiya/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoseriforiya/OFL.txt",
+    "bytes": 4381,
+    "sri": "sha384-Cib8c0Ttb0l5iTw2LqcB+NkfWXN4Tr9IYtXG7TrrgRQQbprOt6vW2FCsa0ut/1oc"
+  }
+}

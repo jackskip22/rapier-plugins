@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Brygada 1918",
+  "sourceRank": 456,
+  "sourcePosition": 869,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/brygada1918/METADATA.pb",
+    "sri": "sha384-puDv/scfFTzsZ5DtbuMNgqRcTGJ3ikaKKxElgfc2VG3g0AhwdOOGpjuNuJVx0/a5"
+  },
+  "files": [
+    {
+      "name": "font-74cab2af901541635c24fc238d14d7e3d43ba37618f06a60408cbf789f0a06fa2825386582a2055d8f4f51210f04cdfb.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/brygada1918/Brygada1918-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/brygada1918/Brygada1918-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 243716,
+      "sourceSri": "sha384-YyR8UqAXjl5QoLmHPr3xH/HCbPatVD7mlbKGxp4dRe8XxmFFUR3DnqzFOZOF+/A0",
+      "bytes": 95044,
+      "sri": "sha384-dMqyr5AVQWNcJPwjjRTX49Q7o3YY8GpgQIy/eJ8KBvooJThlgqIFXY9PUSEPBM37",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1019,
+      "glyphs": 1488
+    },
+    {
+      "name": "font-bac75aaf6e40a761096db468a1043fd8d765521ad0437a1dc980467b27ea8be5253d8bfeb2aca4c21bdd185ca0940814.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/brygada1918/Brygada1918[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/brygada1918/Brygada1918%5Bwght%5D.ttf",
+      "sourceBytes": 242256,
+      "sourceSri": "sha384-NwpP0hk2G6vAsdcei7MYL06DeVbbp27uWtSXsrK6WcyuuVNzVFbk5vgWE1BMSEgN",
+      "bytes": 90836,
+      "sri": "sha384-usdar25Ap2EJbbRooQQ/2NdlUhrQQ3odyYBGeyfqi+UlPYv+sqykwhvdGFyglAgU",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1025,
+      "glyphs": 1499
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/brygada1918/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/brygada1918/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-n4T8DaQy+0xeRzRalGU3XqvOxJ68UYJFYAf2UcutICIKGsVpA2iUNT4gaodN30dt"
+  }
+}

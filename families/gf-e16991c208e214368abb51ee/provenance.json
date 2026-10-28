@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Turret Road",
+  "sourceRank": 474,
+  "sourcePosition": 900,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/turretroad/METADATA.pb",
+    "sri": "sha384-4rDVbhbYCdvzrVEikq/wiNam4hYbEjws9ZRjBOB13Z3A261sAR70QV1g2DcekgZ+"
+  },
+  "files": [
+    {
+      "name": "font-5a78576685d9558027d384f96c03c615740c69660ce934840e1a28ae80bf7211f2ed3db9ff8ebae1ce25623410d3d446.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/turretroad/TurretRoad-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/turretroad/TurretRoad-Bold.ttf",
+      "sourceBytes": 51616,
+      "sourceSri": "sha384-zBwt5G6cdtMKsTnO/CDdbJZbmw9eD4N0jY3+yPa6VguDG+O0j/h+H77/kw8NFVoW",
+      "bytes": 20480,
+      "sri": "sha384-WnhXZoXZVYAn04T5bAPGFXQMaWYM6TSEDhooroC/chHy7T25/4664c4lYjQQ09RG",
+      "axes": [],
+      "cmapCodepoints": 404,
+      "glyphs": 427
+    },
+    {
+      "name": "font-651be8314f8acb245447f29c8c7f728b2c18a51df0b7fc2982bc5d24d9f81a3d5130433e2f055627a6eb4ac0e01436cc.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/turretroad/TurretRoad-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/turretroad/TurretRoad-ExtraBold.ttf",
+      "sourceBytes": 53088,
+      "sourceSri": "sha384-D3/4FmsCfafmHFUD2Q9kEjYqsu64ePGOWgxCcM1Bk1i8Q8nuwkxBksLMQGJxwD0B",
+      "bytes": 21396,
+      "sri": "sha384-ZRvoMU+KyyRUR/KcjH9yiywYpR3wt/wpgrxdJNn4Gj1RMEM+LwVWJ6brSsDgFDbM",
+      "axes": [],
+      "cmapCodepoints": 404,
+      "glyphs": 427
+    },
+    {
+      "name": "font-a38c16555a85541e47640d42e518187975cb5102643751f4e71462d11d40b90bbf7b385cfd98a3dbfd487884f86e09bd.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/turretroad/TurretRoad-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/turretroad/TurretRoad-ExtraLight.ttf",
+      "sourceBytes": 51844,
+      "sourceSri": "sha384-cM2Um5P/e4zk1mYEx90Ws0mOg6hXDDCfCZA79C3Sf93jbxJlL1IcNVGOiMMzUkGz",
+      "bytes": 20928,
+      "sri": "sha384-o4wWVVqFVB5HZA1C5RgYeXXLUQJkN1H05xRi0R1AuQu/ezhc/Zij2/1IeIT4bgm9",
+      "axes": [],
+      "cmapCodepoints": 404,
+      "glyphs": 427
+    },
+    {
+      "name": "font-41a28323c92637e2158ffcf46f4faec8fa5c421907afe91f144a4248e433bd835b55aa3c31a92fc15db78b69fca136c0.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/turretroad/TurretRoad-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/turretroad/TurretRoad-Light.ttf",
+      "sourceBytes": 51484,
+      "sourceSri": "sha384-byiKed9jn27AV86Vg9AJpgsn7DHJF4ykf/B7Vv8kGaWNRIr3VakQESrm0JhFnNxS",
+      "bytes": 20432,
+      "sri": "sha384-QaKDI8kmN+IVj/z0b0+uyPpcQhkHr+kfFEpCSOQzvYNbVao8MakvwV23i2n8oTbA",
+      "axes": [],
+      "cmapCodepoints": 404,
+      "glyphs": 427
+    },
+    {
+      "name": "font-a68f76e798d2920212c8d0903240fd539a650c696bb8d5413a11cc028d8ad6b090f16a724f6f149f87394ac2723ac86c.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/turretroad/TurretRoad-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/turretroad/TurretRoad-Medium.ttf",
+      "sourceBytes": 52124,
+      "sourceSri": "sha384-nxNIO8sZpBKGAHohch/WZ5ondJJwWdMuEjVjB/cZDP92Kkh6zDm+Z/MPvAT3FE9W",
+      "bytes": 20976,
+      "sri": "sha384-po9255jSkgISyNCQMkD9U5plDGlruNVBOhHMAo2K1rCQ8WpyT28Un4c5SsJyOshs",
+      "axes": [],
+      "cmapCodepoints": 404,
+      "glyphs": 427
+    },
+    {
+      "name": "font-07693ed787308ec61c39f8d0e29c0ff6c2ea97ee507238f5013890760abf18028f204591a8c151e72d97f2f0d0582bce.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/turretroad/TurretRoad-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/turretroad/TurretRoad-Regular.ttf",
+      "sourceBytes": 51680,
+      "sourceSri": "sha384-poFYvgK/iaHTKgEEMkwYVwmvCkZFTM2iXKEOo/KVdPVnM2C+loQanfCGGdilL4Zv",
+      "bytes": 20820,
+      "sri": "sha384-B2k+14cwjsYcOfjQ4pwP9sLql+5Qcjj1ATiQdgq/GAKPIEWRqMFR5y2X8vDQWCvO",
+      "axes": [],
+      "cmapCodepoints": 404,
+      "glyphs": 427
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/turretroad/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/turretroad/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-cU3D1REwpxDvNfyYdMzt6bU3nYzkGK7QC4rT47lW1nz2uAc4jvPjtAhycQfnB2Cb"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Meddon",
+  "sourceRank": 239,
+  "sourcePosition": 471,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/meddon/METADATA.pb",
+    "sri": "sha384-OhqY8a9gEW+cBtLfsR8h9E8NWBY53bzFVu7Nu45bK9g4B8nETOkryYsY2XnDOBZO"
+  },
+  "files": [
+    {
+      "name": "font-3882c6c333272d711887391482e11493cb2162de8d8be8cbfd116f04571e123bde873e38c7acdc956ed6478bdbe29c55.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/meddon/Meddon.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/meddon/Meddon.ttf",
+      "sourceBytes": 128264,
+      "sourceSri": "sha384-BEJ0AwA4ym8WPBwHlPH9ib7Zr2CoKaS3z9q6NTp0Gp0nv+TJKGgo60KnNSPNO8cx",
+      "bytes": 67136,
+      "sri": "sha384-OILGwzMnLXEYhzkUguEUk8shYt6Ni+jL/RFvBFceEjvehz44x6zclW7WR4vb4pxV",
+      "axes": [],
+      "cmapCodepoints": 434,
+      "glyphs": 460
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/meddon/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/meddon/OFL.txt",
+    "bytes": 4404,
+    "sri": "sha384-UuV76HKwwEIiBCN3dS5sFDI4hufAr7CenARFqfvvhk+paOrTNjMwarpmcvG/JM84"
+  }
+}

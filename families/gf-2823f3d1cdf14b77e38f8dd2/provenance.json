@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Vazirmatn",
+  "sourceRank": 102,
+  "sourcePosition": 208,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vazirmatn/METADATA.pb",
+    "sri": "sha384-aPO/0hwjdmILbl0i6v8UoqeZlTggOatp7tqgdRMSe/RKTOnqFee7amrhfqxQF2cC"
+  },
+  "files": [
+    {
+      "name": "font-ffba76c1abbd76f4bfedd7b371965e9a35e785de738647db09b419d342d94954fa4cad5321624202ff83bde8aadc290a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/vazirmatn/Vazirmatn[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vazirmatn/Vazirmatn%5Bwght%5D.ttf",
+      "sourceBytes": 241328,
+      "sourceSri": "sha384-QglDCfUrUtEXKo73/hH+ZvD5yzndgMNIswgZgLV4jndoIMCthB0BiJgAbqf/yd6Q",
+      "bytes": 110848,
+      "sri": "sha384-/7p2wau9dvS/7dezcZZemjXnhd5zhkfbCbQZ00LZSVT6TK1TIWJCAv+Dveiq3CkK",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 811,
+      "glyphs": 1333
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/vazirmatn/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vazirmatn/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-JpokWSF4WtW0v6Mq350h0f4nzkZUWF+bTLzyA2h3r0jFSn88y+mUZnemPND5EfCz"
+  }
+}
