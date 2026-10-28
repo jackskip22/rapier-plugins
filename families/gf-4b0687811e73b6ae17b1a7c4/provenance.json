@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "BIZ UDPMincho",
+  "sourceRank": 468,
+  "sourcePosition": 890,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bizudpmincho/METADATA.pb",
+    "sri": "sha384-iyB05/WuPYRRYdTViWzAhZlVsRu3b2hoUgEolJOKQLtHR5saBWJnRgIyAb/iOJBT"
+  },
+  "files": [
+    {
+      "name": "font-0d00a89a493622c4a2caee1efa8f5cb2df7f828d7b5612c12548c5d373c5cec52fc22cd3aa13f64615a6191e4e70431a.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/bizudpmincho/BIZUDPMincho-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bizudpmincho/BIZUDPMincho-Bold.ttf",
+      "sourceBytes": 7109432,
+      "sourceSri": "sha384-kNX+hjPhXmehnpXdWKWuvOFR/RAoWXS6/Sbt9dJJ71mq6O4aa1csK6tRdRQFbRtV",
+      "bytes": 3698084,
+      "sri": "sha384-DQComkk2IsSiyu4e+o9cst9/go17VhLBJUjF03PFzsUvwizTqhP2RhWmGR5OcEMa",
+      "axes": [],
+      "cmapCodepoints": 11741,
+      "glyphs": 13932
+    },
+    {
+      "name": "font-1f8d7bc8387503efa797dc6dc9236073040f4929b1f64e5d91841bb53fa46607d5ad5500b778efcc7dc5e59217b4e112.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/bizudpmincho/BIZUDPMincho-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bizudpmincho/BIZUDPMincho-Regular.ttf",
+      "sourceBytes": 6156444,
+      "sourceSri": "sha384-/rv8RqruJl+y1TfdBShLaZxJCXB4cXB9n9pkK3f8/Iy8wYE0TRL3KferhPODlozO",
+      "bytes": 2901444,
+      "sri": "sha384-H417yDh1A++nl9xtySNgcwQPSSmx9k5dkYQbtT+kZgfVrVUAt3jvzH3F5ZIXtOES",
+      "axes": [],
+      "cmapCodepoints": 11741,
+      "glyphs": 13932
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/bizudpmincho/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/bizudpmincho/OFL.txt",
+    "bytes": 4408,
+    "sri": "sha384-T5ndntArMMtV44tlmmCzb71NG73398quL4MMmWV4olR4u2x9x/HPA4TtQPu4rw3g"
+  }
+}

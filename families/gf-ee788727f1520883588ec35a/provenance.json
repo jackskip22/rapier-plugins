@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Hind",
+  "sourceRank": 89,
+  "sourcePosition": 183,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hind/METADATA.pb",
+    "sri": "sha384-2h4JYyMZ4MlLmd1gH83iEqVn2q8tdpgiEzulpsLSGx0D3Y0xv0KiTQlXGZiXiP5C"
+  },
+  "files": [
+    {
+      "name": "font-5b49a09908445792c0950dd04b22ce19821bea81a80e7cd367d7548c55ce772ecc4e090c02908705622108a2891d5af9.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/hind/Hind-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hind/Hind-Bold.ttf",
+      "sourceBytes": 286604,
+      "sourceSri": "sha384-ZvwTL3rZYqG+HnxQQsbDEy/V6tM7u1YuWrt8CrWk9yYNH3ht7TCSsK3Qe6jXfTlE",
+      "bytes": 91404,
+      "sri": "sha384-W0mgmQhEV5LAlQ3QSyLOGYIb6oGoDnzTZ9dUjFXOdy7MTgkMApCHBWIhCKKJHVr5",
+      "axes": [],
+      "cmapCodepoints": 434,
+      "glyphs": 1006
+    },
+    {
+      "name": "font-3deb248c46b4a4fb3dedcf3ce148d750b19e560e03082be9fc4b15e4372aed153ffb97b0283392b920bff12077528552.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/hind/Hind-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hind/Hind-Light.ttf",
+      "sourceBytes": 287484,
+      "sourceSri": "sha384-3YpDXT0oYhpzUCy2nklL9Frnk5Y+PACRqkwjj2B2qCsnDoM+1j/ROCxe7vNMoFoI",
+      "bytes": 90696,
+      "sri": "sha384-PeskjEa0pPs97c884UjXULGeVg4DCCvp/EsV5Dcq7RU/+5ewKDOSuSC/8SB3UoVS",
+      "axes": [],
+      "cmapCodepoints": 434,
+      "glyphs": 1006
+    },
+    {
+      "name": "font-1e9af16225fa0f19505c3be290f1a706f69254e09c4bd6fc833a95bb260864f6cf70820e74b8e76cc08757deea94e467.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/hind/Hind-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hind/Hind-Medium.ttf",
+      "sourceBytes": 277300,
+      "sourceSri": "sha384-HNGPDOFxXGfWUzVivAFN01Cm9Lf/wlvwUrZjn4neHCFS6JFu5yax7FhGplvRKriJ",
+      "bytes": 93320,
+      "sri": "sha384-HprxYiX6DxlQXDvikPGnBvaSVOCcS9b8gzqVuyYIZPbPcIIOdLjnbMCHV97qlORn",
+      "axes": [],
+      "cmapCodepoints": 434,
+      "glyphs": 1006
+    },
+    {
+      "name": "font-cdd18ffa1c477d1d79de67b81ae03ed962be61a30d50edbc15dfe1dc06ba1a04c6c50e93421610aebc5b97cc95543b96.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/hind/Hind-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hind/Hind-Regular.ttf",
+      "sourceBytes": 299532,
+      "sourceSri": "sha384-V+czR4GCzrLMswki0GTa0OSvqldwn79FqJg4W+ze8+dwHKFPxapJmB3IeUfFJH78",
+      "bytes": 97000,
+      "sri": "sha384-zdGP+hxHfR153me4GuA+2WK+YaMNUO28Fd/h3Aa6GgTGxQ6TQhYQrrxbl8yVVDuW",
+      "axes": [],
+      "cmapCodepoints": 434,
+      "glyphs": 1006
+    },
+    {
+      "name": "font-4acb1ad2db351433c33e523266dd7d340ca42317b86139a1bfd22ba64c838996548bd0c1e890ac1741e3c236516f9446.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/hind/Hind-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hind/Hind-SemiBold.ttf",
+      "sourceBytes": 281940,
+      "sourceSri": "sha384-DrGoZil9wH6ceOVF6lXIQC52mJ4GF0IvIGR4wuIpaRvh5e0CtHiMRzpZ409OJFDy",
+      "bytes": 94480,
+      "sri": "sha384-Sssa0ts1FDPDPlIyZt19NAykIxe4YTmhv9IrpkyDiZZUi9DB6JCsF0HjwjZRb5RG",
+      "axes": [],
+      "cmapCodepoints": 434,
+      "glyphs": 1006
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hind/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hind/OFL.txt",
+    "bytes": 4373,
+    "sri": "sha384-+3wQjINRbHICMVOvmBJ+qwDqejxTITbFtpTm1TUF4DxQkZXm1nVdM1WUpnROScub"
+  }
+}

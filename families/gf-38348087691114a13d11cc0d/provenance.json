@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "name": "IBM Plex Sans JP",
+  "sourceRank": 455,
+  "sourcePosition": 866,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/METADATA.pb",
+    "sri": "sha384-H3QhcNmjMsXJElM53dmpQ6sF0tVZraTPKFziQWBKj/YmUw1MmLdU687nyFPNe02f"
+  },
+  "files": [
+    {
+      "name": "font-b7037c763da8bdb01078caa318769e730e5b0acc5fee25bbed0b7591f3238b3b05db1ecb41ab4dd1b769b13d5ed94911.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/ibmplexsansjp/IBMPlexSansJP-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/IBMPlexSansJP-Bold.ttf",
+      "sourceBytes": 2391376,
+      "sourceSri": "sha384-AWbTGoi840I6WpU1aoN9hT9pF3370ZtG10NiAJD7kVBF0qZIoee0AgqKkFm5BMCM",
+      "bytes": 1129984,
+      "sri": "sha384-twN8dj2ovbAQeMqjGHaecw5bCsxf7iW77Qt1kfMjizsF2x7LQatN0bdpsT1e2UkR",
+      "axes": [],
+      "cmapCodepoints": 8316,
+      "glyphs": 9505
+    },
+    {
+      "name": "font-e0db9e09601b25f160ce8c41c1b1771f63355a03f858c99d151a3be2cbc8214a3f4e483cc3d81c23af64afe458c415cf.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/ibmplexsansjp/IBMPlexSansJP-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/IBMPlexSansJP-ExtraLight.ttf",
+      "sourceBytes": 2412964,
+      "sourceSri": "sha384-hQdaXBrCiRfTrkZYSeefeUyGdF4JPs8oa2+zLSAR1kg79d0i8L/b+W4p91n0+5jg",
+      "bytes": 1099460,
+      "sri": "sha384-4NueCWAbJfFgzoxBwbF3H2M1WgP4WMmdFRo74svIIUo/Tkg8w9gcI69kr+RYxBXP",
+      "axes": [],
+      "cmapCodepoints": 8316,
+      "glyphs": 9505
+    },
+    {
+      "name": "font-a23b2c257fd8f16453e024ffc1356bc0d67242bc52a2d6dcf820d51eeff315469505b34ac59828afc52b7ff641e3127c.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/ibmplexsansjp/IBMPlexSansJP-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/IBMPlexSansJP-Light.ttf",
+      "sourceBytes": 2405308,
+      "sourceSri": "sha384-Sw5pae3zZFHPHJEICsbspHfTcilTCdGUM3OzssnmGLWWvkfgRZL1rD6fOZMm8h+Z",
+      "bytes": 1104892,
+      "sri": "sha384-ojssJX/Y8WRT4CT/wTVrwNZyQrxSotbc+CDVHu/zFUaVBbNKxZgor8Urf/ZB4xJ8",
+      "axes": [],
+      "cmapCodepoints": 8316,
+      "glyphs": 9505
+    },
+    {
+      "name": "font-19253a63322b7fd0685154f6be8d5ef018fd0694cff2fd0399c9a38d754d7fa049bd037b0304eaa39558423cad7441f1.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/ibmplexsansjp/IBMPlexSansJP-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/IBMPlexSansJP-Medium.ttf",
+      "sourceBytes": 2389060,
+      "sourceSri": "sha384-ByGb52Jzv5nAjSbomDrJ9WyHrFKVkeI75dU7fpkqHUnDIJBFyBfkmA/3K5/0FvBY",
+      "bytes": 1139944,
+      "sri": "sha384-GSU6YzIrf9BoUVT2vo1e8Bj9BpTP8v0DmcmjjXVNf6BJvQN7AwTqo5VYQjytdEHx",
+      "axes": [],
+      "cmapCodepoints": 8316,
+      "glyphs": 9505
+    },
+    {
+      "name": "font-75380db570953cce4cde28b714320a0bc58e8799ecc4c511a9f5fffd7729413d232e3b145b1115aa6ff9e1eb22716575.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/ibmplexsansjp/IBMPlexSansJP-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/IBMPlexSansJP-Regular.ttf",
+      "sourceBytes": 2396484,
+      "sourceSri": "sha384-kfLGeRDdT6H4u7EERalv2s2gdfGxufxLYmQxYmAaF2o4wweVOtqiSSxh74jMq0kG",
+      "bytes": 1097876,
+      "sri": "sha384-dTgNtXCVPM5M3ii3FDIKC8WOh5nsxMURqfX//XcpQT0jLjsUWxEVqm/54esicWV1",
+      "axes": [],
+      "cmapCodepoints": 8316,
+      "glyphs": 9505
+    },
+    {
+      "name": "font-f20e7d8c6594f6e635ad20566ada35d51db10d035937b2bd029802b3780f2f63348fb2fa29d02ee840cc72f460ac67d8.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/ibmplexsansjp/IBMPlexSansJP-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/IBMPlexSansJP-SemiBold.ttf",
+      "sourceBytes": 2388720,
+      "sourceSri": "sha384-r+SwCdIxjGkFy/2j6fz9i4Rx1anCEkMCbmC4RJFlhOK0mHT43qphYyzCCNblvY8E",
+      "bytes": 1152900,
+      "sri": "sha384-8g59jGWU9uY1rSBWato11R2xDQNZN7K9ApgCs3gPL2M0j7L6KdAu6EDMcvRgrGfY",
+      "axes": [],
+      "cmapCodepoints": 8316,
+      "glyphs": 9505
+    },
+    {
+      "name": "font-41989c390253b90f799422a688439d075ef35db4f8eabcbeb3afe8ab0d32d0c124604562a5114fc28a32e82b74c9dc38.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/ibmplexsansjp/IBMPlexSansJP-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/IBMPlexSansJP-Thin.ttf",
+      "sourceBytes": 2418688,
+      "sourceSri": "sha384-FoMIpF2wc2SjVkYsVVD+eQT11pzRRC+Fure8xDiFB8aYRQXc0afoCNo1Yij+LWEC",
+      "bytes": 1068436,
+      "sri": "sha384-QZicOQJTuQ95lCKmiEOdB17zXbT46ry+s6/oqw0y0MEkYEVipRFPwooy6Ct0ydw4",
+      "axes": [],
+      "cmapCodepoints": 8316,
+      "glyphs": 9505
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ibmplexsansjp/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ibmplexsansjp/OFL.txt",
+    "bytes": 4456,
+    "sri": "sha384-nJMRAEm3/jyDfD3kNrW7WQuX4T8Rgt62WYm/Dnse/hVOIYHZma62B6vzS5rnudJu"
+  }
+}
