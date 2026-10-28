@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Yomogi",
+  "sourceRank": 222,
+  "sourcePosition": 442,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yomogi/METADATA.pb",
+    "sri": "sha384-J23C5qRxteP4oyFyMgGclXN4QmLFuUnc1/h4d7pT6Q+tJi8c0yJHolfk5YOxBB4G"
+  },
+  "files": [
+    {
+      "name": "font-8f6f1d4d1161a5e711fa261f4fa58456072fad745a3100aedfd00014e32ea05ebffca12ab9ffd16f835a12070ee24088.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/yomogi/Yomogi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yomogi/Yomogi-Regular.ttf",
+      "sourceBytes": 4045904,
+      "sourceSri": "sha384-w2z7/dm0GVe4itNyTogMa5fj9lg3JAXoU1QAV08DROdqhqSQRWjeQNgpnVeSdQ6A",
+      "bytes": 1735292,
+      "sri": "sha384-j28dTRFhpecR+iYfT6WEVgcvrXRaMQCu39AAFOMuoF6//KEquf/Rb4NaEgcO4kCI",
+      "axes": [],
+      "cmapCodepoints": 8039,
+      "glyphs": 8327
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/yomogi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yomogi/OFL.txt",
+    "bytes": 4409,
+    "sri": "sha384-fANVHPwpstTbHOb1L1DDPEk7voJ3XNaaAK69XIxTX+LtyXWram4YOMTA1uH8aYV5"
+  }
+}

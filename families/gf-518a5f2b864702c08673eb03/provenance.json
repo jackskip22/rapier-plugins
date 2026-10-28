@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Noto Serif Tangut",
+  "sourceRank": 436,
+  "sourcePosition": 832,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoseriftangut/METADATA.pb",
+    "sri": "sha384-+bVIFdbz2zmN/wlHpA2Gvb3yJqJE39n5Dr5dCRsvsftECOmXxwHCvNkxOdQ4CrPV"
+  },
+  "files": [
+    {
+      "name": "font-49907b17b9f7aa11b9cf6328bb1989af7ee970daa0a5af062e0d6fc1f9bf7dd0841a6a6ddbe18944e8f85490ae26d818.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notoseriftangut/NotoSerifTangut-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoseriftangut/NotoSerifTangut-Regular.ttf",
+      "sourceBytes": 5687188,
+      "sourceSri": "sha384-TQU1OEQXAhy9GVVpTgEOZei4m2Nr02z7GeVIbJp4jFOK9V+0SReHzc6xumJhe0oP",
+      "bytes": 1956392,
+      "sri": "sha384-SZB7F7n3qhG5z2MouxmJr37pcNqgpa8GLg1vwfm/fdCEGmpt2+GJROj4VJCuJtgY",
+      "axes": [],
+      "cmapCodepoints": 7238,
+      "glyphs": 7243
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoseriftangut/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoseriftangut/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-OxOTk8UNVsgEdZdxJHkXla5d7IiV35Rqe6KJgBnM/rEUY0H9y5OL6ciUumassEDw"
+  }
+}

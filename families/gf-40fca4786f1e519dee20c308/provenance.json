@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Mochiy Pop One",
+  "sourceRank": 436,
+  "sourcePosition": 830,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mochiypopone/METADATA.pb",
+    "sri": "sha384-pRnBC0bB0F/swcoS9jpbDHWYz70r/X/wi4ToG+ZaRc6ic6ccGVAfx72RalN58CNa"
+  },
+  "files": [
+    {
+      "name": "font-bdfa15a6faae12990eb6364bb513258945b036d353425e67cc2d70c9fae75684e9aea0a72fc15ac8b08fdfa94bd4c2b3.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mochiypopone/MochiyPopOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mochiypopone/MochiyPopOne-Regular.ttf",
+      "sourceBytes": 5163948,
+      "sourceSri": "sha384-ktC8lbx9YJmbbZxMrbpvYdueJTbAZt8NfoTPbMqZFqKp2uW+/Ov/+zcGUVhsJ3I5",
+      "bytes": 2240264,
+      "sri": "sha384-vfoVpvquEpkOtjZLtRMliUWwNtNTQl5nzC1wyfrnVoTprqCnL8FayLCP36lL1MKz",
+      "axes": [],
+      "cmapCodepoints": 14293,
+      "glyphs": 16908
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mochiypopone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mochiypopone/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-VvxeMMh0Q8PTJplUEDyOtFNKtQWjqiD9BgiJo9cbGA6E/omFWtr69ERYtAeV4sQw"
+  }
+}

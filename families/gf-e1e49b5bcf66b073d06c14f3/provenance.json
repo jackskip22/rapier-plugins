@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Kosugi Maru",
+  "sourceRank": 245,
+  "sourcePosition": 480,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/kosugimaru/METADATA.pb",
+    "sri": "sha384-e6Q3fORPIPgF0cqMH0DD2YLL8ZNqsEFGRa6nhFvs76KhbTIJZ+voWssj9WzM8X5o"
+  },
+  "files": [
+    {
+      "name": "font-313ea095d2d3e5656a4ffbce42ed75a01e082c1d697d9294f6e71e6abdfc635b3d56e48d3f24a0087d02947b86802230.woff2",
+      "variant": "regular",
+      "sourcePath": "apache/kosugimaru/KosugiMaru-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/kosugimaru/KosugiMaru-Regular.ttf",
+      "sourceBytes": 3565716,
+      "sourceSri": "sha384-y7L69zU9whc7J2qb0bvLqaXawrSyg6Y2u4d1mkFv8xis5Rx34HVTaEsYhc0EiOg2",
+      "bytes": 1547584,
+      "sri": "sha384-MT6gldLT5WVqT/vOQu11oB4ILB1pfZKU9ucear38Y1s9VuSNPySgCH0ClHuGgCIw",
+      "axes": [],
+      "cmapCodepoints": 7525,
+      "glyphs": 7575
+    }
+  ],
+  "license": {
+    "sourcePath": "apache/kosugimaru/LICENSE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/apache/kosugimaru/LICENSE.txt",
+    "bytes": 11358,
+    "sri": "sha384-II9e1ieUDl5AxyiVq3/FflTua1Sr0kMJ25e6imG7rXg7SiAsA2VemsvEqVsLqM7/"
+  }
+}

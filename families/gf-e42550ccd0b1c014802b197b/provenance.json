@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Noto Sans",
+  "sourceRank": 4,
+  "sourcePosition": 9,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosans/METADATA.pb",
+    "sri": "sha384-lFW1oPItypbSIciiG46+ArDdEjykFap6xFuu+42fn0Vj1Fy6vXtShgsKwbNJ1pur"
+  },
+  "files": [
+    {
+      "name": "font-50f3fb6641604ed69168ec8ee69c9f6c01d3beda5e3206a50752b2309d152e5c010e29f44dc5ee5f3ba0f26db33ee2bd.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/notosans/NotoSans-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosans/NotoSans-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 2322640,
+      "sourceSri": "sha384-qGTI+w+TKfMMfmnLjY3sqMcwW7VE4tkl+jGnWcYT48XFxAacdRg6UzEcQa0hg0+B",
+      "bytes": 1023600,
+      "sri": "sha384-UPP7ZkFgTtaRaOyO5pyfbAHTvtpeMgalB1KyMJ0VLlwBDin0TcXuXzug8m2zPuK9",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 3091,
+      "glyphs": 4526
+    },
+    {
+      "name": "font-76779ab78a6ffb97d68f1cfff71fd6f5bef9321b8b6d9ef2ecd3f74b066727ec7171238bb64009fa23d214696937ff25.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosans/NotoSans[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosans/NotoSans%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 2049096,
+      "sourceSri": "sha384-CpeUFd8kU/dwzh84d5Ne8pknsSpiI99uMDyA0FHneotpJBpeGtjBr/JtqDro1F00",
+      "bytes": 889168,
+      "sri": "sha384-dneat4pv+5fWjxz/9x/W9b75MhuLbZ7y7NP3SwZnJ+xxcSOLtkAJ+iPSFGlpN/8l",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 3094,
+      "glyphs": 4515
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosans/OFL.txt",
+    "bytes": 4396,
+    "sri": "sha384-gqdcyeFhx8G1Iu6kyDXtfIKnNxBoAI+LYkTIe6malx7fFh9VSvzOPYJsDuRuOlhB"
+  }
+}

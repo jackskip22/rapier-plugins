@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Rampart One",
+  "sourceRank": 495,
+  "sourcePosition": 927,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rampartone/METADATA.pb",
+    "sri": "sha384-m9vZDk76CWhg6gn2dyPKaHJj4AqVn3MH+VmjndSU9b8nGLrgT2/ubUDL+CBlRHLd"
+  },
+  "files": [
+    {
+      "name": "font-f6ac79cd6ce80d66714c298aae898842ffaa818771f7b81f5af5660730b3adb376f1134d8123e20426c2f24e9af7d8da.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rampartone/RampartOne-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rampartone/RampartOne-Regular.ttf",
+      "sourceBytes": 3722352,
+      "sourceSri": "sha384-JhOdO/lEoepmG7JK3MVl6OSgo5OtnkPrjdRKlyR3icw3361OeWF8bxSMdwd/BbfY",
+      "bytes": 1922484,
+      "sri": "sha384-9qx5zWzoDWZxTCmKromIQv+qgYdx97gfWvVmBzCzrbN28RNNgSPiBCbC8k6a99ja",
+      "axes": [],
+      "cmapCodepoints": 8231,
+      "glyphs": 9360
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rampartone/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rampartone/OFL.txt",
+    "bytes": 4484,
+    "sri": "sha384-cWV+9NIffveKdDA4XRRvH35L/eaEzNv+v30c77sR9CPsaSuddFnmrdPxcAwC2Nof"
+  }
+}

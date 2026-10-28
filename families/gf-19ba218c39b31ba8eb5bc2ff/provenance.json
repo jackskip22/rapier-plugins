@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "ZCOOL XiaoWei",
+  "sourceRank": 124,
+  "sourcePosition": 255,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zcoolxiaowei/METADATA.pb",
+    "sri": "sha384-WDHZZYxCn9tijZb8Mru6NXcb99U3XYMVzyK69LDJo5QhnNMcVRaLXtDytfxZNyLb"
+  },
+  "files": [
+    {
+      "name": "font-005e0b811aac60b24e2cbd908a01e1a4412339abe2beecaa56d0fee53c7ff10a3ca17bee2ba0f96ada489c9291afb420.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zcoolxiaowei/ZCOOLXiaoWei-Regular.ttf",
+      "sourceBytes": 6313808,
+      "sourceSri": "sha384-umaGebDCOHyoq7IiIAYZyJVBHM470ZMoM+MyELtLsf6khsOwkt+xJYAPYcWQiiL3",
+      "bytes": 2632592,
+      "sri": "sha384-AF4LgRqsYLJOLL2QigHhpEEjOavivuyqVtD+5Tx/8Qo8oXvuK6D5atpInJKRr7Qg",
+      "axes": [],
+      "cmapCodepoints": 7016,
+      "glyphs": 7019
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zcoolxiaowei/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zcoolxiaowei/OFL.txt",
+    "bytes": 4400,
+    "sri": "sha384-OH1eCzJlxvHUpzyL7c5bXnarVbDifB0PrUH0oab3xcWa7UaWm/Gv+gzEcV/50uN5"
+  }
+}

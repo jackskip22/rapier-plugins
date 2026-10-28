@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Zhi Mang Xing",
+  "sourceRank": 248,
+  "sourcePosition": 485,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zhimangxing/METADATA.pb",
+    "sri": "sha384-4BugA4OyLb5Bqz02977jYhpJKt5u/33b6IrlAkiMmpmroPxUkzrQZiPYGZ4rd6hK"
+  },
+  "files": [
+    {
+      "name": "font-b76e02f6985595a44dc76b4c3c2b16e051556d5d891e7e040746764d9b1522df24c7c0f9d93e7f3c964c5d98187eef68.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zhimangxing/ZhiMangXing-Regular.ttf",
+      "sourceBytes": 4063532,
+      "sourceSri": "sha384-sHuXhwAZdQ9szDlzb7M7BJ8UTIpxubTA4GswndeMIX+timGrvvD8IuKrt5vFkQrQ",
+      "bytes": 2300332,
+      "sri": "sha384-t24C9phVlaRNx2tMPCsW4FFVbV2JHn4EB0Z2TZsVIt8kx8D52T5/PJZMXZgYfu9o",
+      "axes": [],
+      "cmapCodepoints": 7015,
+      "glyphs": 7017
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zhimangxing/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zhimangxing/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-y5yoYjR7sgAB3Y8UO17pEZWnAIgTpn5q9rgQ+AznVtSnZOjRhbkhLvC/cpLYHr2J"
+  }
+}

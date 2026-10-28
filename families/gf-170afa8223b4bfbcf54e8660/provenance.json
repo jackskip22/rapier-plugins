@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Hina Mincho",
+  "sourceRank": 506,
+  "sourcePosition": 944,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hinamincho/METADATA.pb",
+    "sri": "sha384-fOy8cNkb8naoNV7njm73zDHjcojHJLqhUtRUsokcOlm/zNqfk3uXoCZqCnblRscQ"
+  },
+  "files": [
+    {
+      "name": "font-002ce58c74613764a59cb4ba9ac5c30d0b8eab40e8e16997014d55631fb710c822bb90d152a2249e5e95b181aa3579e8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/hinamincho/HinaMincho-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hinamincho/HinaMincho-Regular.ttf",
+      "sourceBytes": 6451924,
+      "sourceSri": "sha384-kA3HUDN9F2GuNjXeVC3bMQp/uVY4k0b+xNs5Kh6c9nT+77mVOXQE6tBiUANa+vvX",
+      "bytes": 1570444,
+      "sri": "sha384-ACzljHRhN2SlnLS6msXDDQuOq0Do4WmXAU1VYx+3EMgiu5DRUqIknl6VsYGqNXno",
+      "axes": [],
+      "cmapCodepoints": 7967,
+      "glyphs": 8302
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hinamincho/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hinamincho/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-ZljosaX0jKhI4ScUFY+cAkNZIUWP4+nR+JI6JTYy0uGr57xALRRoVGPEQCXbpQPv"
+  }
+}

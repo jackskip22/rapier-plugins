@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Noto Serif Display",
+  "sourceRank": 273,
+  "sourcePosition": 535,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifdisplay/METADATA.pb",
+    "sri": "sha384-t8m3nZVxVr8srMMK8R3nbTN3IqZgCyycn14kiaAfFMmVKn60eESOrCgkk8qCXmTe"
+  },
+  "files": [
+    {
+      "name": "font-3d5d5cfa54d73af6e2fd2df76aa49f3e62fce10892464a121359358e98faccd494ef70d068f29da2d891650e55fd2c1a.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/notoserifdisplay/NotoSerifDisplay-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifdisplay/NotoSerifDisplay-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 2000744,
+      "sourceSri": "sha384-efBuV8tzYaq8MZ1o8lhWDivQPc5LGlI+i+q5eKoM9HAFkimGD/Qij3BgOCIiKXti",
+      "bytes": 875860,
+      "sri": "sha384-PV1c+lTXOvbi/S33aqSfPmL84QiSRkoSE1k1jpj6zNSU73DQaPKdotiRZQ5V/Swa",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 2840,
+      "glyphs": 3268
+    },
+    {
+      "name": "font-b691fa7593a0577155afc6e5b2afb91c1d8ba7875db8064d99b6ba62ccdf9d947d49f8a2a7662cb8c01a5b7b84dbb619.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notoserifdisplay/NotoSerifDisplay[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifdisplay/NotoSerifDisplay%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 1835176,
+      "sourceSri": "sha384-/IDSJCCiZcxtqx7Quy/IjMjYQVl0yJAXAXj3k8/Sc+fHBhrbVr3cByy7pEsDKWbD",
+      "bytes": 722580,
+      "sri": "sha384-tpH6dZOgV3FVr8blsq+5HB2Lp4dduAZNmba6YszfnZR9Sfiip2YsuMAaW3uE27YZ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 2840,
+      "glyphs": 3256
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoserifdisplay/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifdisplay/OFL.txt",
+    "bytes": 4350,
+    "sri": "sha384-EGrJLKc6gKOG5f5jLQSo8qWveI18/3hWrb22iRv6GPxtN0CpSv2IvneyqytLey7f"
+  }
+}
