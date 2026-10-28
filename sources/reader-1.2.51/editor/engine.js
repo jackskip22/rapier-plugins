@@ -16671,7 +16671,7 @@ function _rapierSyncBlockHandle() {
 
 function _rapierPickState() {
 	const host = document.getElementById('editor-blocks') || document.body;
-	return host._rapierPick || (host._rapierPick = Object.seal({ ids: [], bar: null, timer: 0, press: null, held: null, swallowUntil: 0 }));
+	return host._rapierPick || (host._rapierPick = Object.seal({ ids: [], bar: null, timer: 0, press: null, held: null, swallowUntil: 0, back: null }));
 }
 
 function _rapierPickPlanOf(blockId) {
@@ -16747,7 +16747,9 @@ function _rapierPickBlock(blockId) {
 	const pick = _rapierPickState();
 	const blocks = rapier.document.blocks || [];
 	if (!blocks.some(block => block.id === blockId)) return false;
+	const back = pick.back?.id === blockId ? pick.back : null;
 	_rapierLetGoBlock(false);
+	pick.back = back;
 	if (_activeBlockEditContext()) _leaveAllEditingBlocks();
 	const plan = _rapierPickPlanOf(blockId)(blockId);
 	if (!plan) return false;
@@ -16774,6 +16776,7 @@ function _rapierPickShownCount(wrappers) {
 function _rapierLetGoBlock(refocus) {
 	const pick = _rapierPickState();
 	const had = pick.ids.length;
+	pick.back = null;
 	document.querySelectorAll('#editor-blocks .block-wrapper[data-block-picked]').forEach(wrapper => wrapper.removeAttribute('data-block-picked'));
 	pick.ids = [];
 	if (pick.bar && !pick.bar.hidden) {
@@ -16844,7 +16847,11 @@ function _rapierPickAct(act) {
 	const pick = _rapierPickState();
 	const id = pick.ids[0];
 	if (id == null) return false;
-	if (act === 'close') return _rapierLetGoBlock(true);
+	if (act === 'close') {
+		const back = pick.back, had = _rapierLetGoBlock(!back);
+		if (back && rapier.document.blocks.some(block => block.id === back.id)) _enterBlockEditAtOffset(back.id, back.offset);
+		return had;
+	}
 	if (act === 'up' || act === 'down') {
 		const planOf = _rapierPickPlanOf(id);
 		if (!_rapierMoveSectionStep(id, act === 'down', planOf)) return false;
@@ -16947,6 +16954,17 @@ function _rapierPickPressElsewhere(event) {
 	const target = event.target instanceof Element ? event.target : null;
 	if (target && (target.closest('.rapier-block-tools') || target.closest('#editor-blocks .block-wrapper[data-block-picked]'))) return;
 	_rapierLetGoBlock(false);
+}
+
+function _rapierPickFromToolbar() {
+	const open = _activeBlockEditContext(), selection = window.getSelection?.();
+	if (!open || rapier.document.docKind !== 'markdown') return false;
+	const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
+	const offset = range && open.editDiv.contains(range.startContainer)
+		? _rapierExactEditCaretOffset(open.editDiv) ?? _charOffsetForRangePoint(open.editDiv, range.startContainer, range.startOffset) : 0;
+	if (!_rapierPickBlock(open.block.id)) return false;
+	_rapierPickState().back = { id: open.block.id, offset: offset ?? 0 };
+	return true;
 }
 
 function _rapierPickFromCaret() {
@@ -17414,14 +17432,12 @@ function _rapierWillPopoverOpen(target) {
 		plate?.setAttribute('aria-expanded', 'false');
 		if (_rapierWillPopover === session) {
 			_rapierWillPopover = null;
-			document.querySelector('[data-action="will"]')?.setAttribute('aria-expanded', 'false');
 		}
 	};
 	session.dialog = _rapierBeginEngineDialog(overlay, retire);
 	session.dialog.blocking = () => session.busy;
 	_rapierWillPopover = session;
 	plate?.setAttribute('aria-expanded', 'true');
-	document.querySelector('[data-action="will"]')?.setAttribute('aria-expanded', 'true');
 	hideFormatToolbar();
 	input.addEventListener('input', () => { draft.intent = input.value; });
 	input.addEventListener('keydown', event => {
@@ -33096,7 +33112,7 @@ const _RAPIER_COMMAND_ICONS = Object.freeze({
 	diagram: '<rect x="3" y="3" width="8" height="5" rx="1"/><rect x="13" y="16" width="8" height="5" rx="1"/><path d="M7 8v5h10v3"/>',
 });
 function _rapierCommandIconMarkup(name) {
-	const body = _RAPIER_COMMAND_ICONS[name];
+	const body = name === 'block' ? '<path d="M3 10h18v10H3zM6 5h4v5H6zm8 0h4v5h-4z"/>' : _RAPIER_COMMAND_ICONS[name];
 	return body
 		? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + body + '</svg>'
 		: '';
@@ -33326,6 +33342,8 @@ function _rapierAskChatSelectionText() {
 function _rapierCommandAvailable(command) {
 	if (!command || rapier.compare?.active) return false;
 	if (command.listItem && !_rapierCommandListItem()) return false;
+	if (command.block) return rapier.document.docKind === 'markdown' && rapier.view.mode === 'edit' && !rapier.access.readOnly &&
+		!_rapierNotesPart?.currentFile() && !!_activeBlockEditContext();
 	if (command.mutates) {
 		if (command.id.startsWith('format.') && !command.id.startsWith('format.align-') &&
 				_rapierCommandHasRawTarget()) return false;
@@ -34133,6 +34151,9 @@ function _rapierDocumentCommands() {
 		{ id: 'document.settings', label: 'Settings', group: 'document', glyph: '⋮', keyboard: true, keywords: ['settings', 'preferences', 'options', 'menu'],
 			run: () => _rapierUiSetSettingsOpen(true, 'open') },
 		{ id: 'document.spacing', label: 'Spacing', group: 'format', icon: 'align-justify', keywords: ['paragraph', 'line', 'before', 'after', 'compact', 'roomy'], run: _rapierOpenSpacing },
+		{ id: 'format.block', label: 'Block tools', group: 'format', icon: 'block', glyph: '▣', block: true,
+			keywords: ['block', 'spacing', 'space before', 'space after', 'line spacing', 'move block', 'copy block', 'cut block', 'delete block', 'select block'],
+			run: () => _rapierPickFromToolbar() },
 		{ id: 'document.source-view', label: 'Source view', group: 'document', glyph: '</>', keyboard: true, viewToggle: true,
 			keywords: ['source', 'markdown', 'raw', 'formatted', 'preview', 'toggle view'],
 			run: () => rapier.view.mode === 'source' ? _rapierUiRequestWysiwygView() : _rapierUiRequestSourceView() },
@@ -50025,7 +50046,6 @@ const _RAPIER_UI_ACTIONS = Object.freeze({
 		if (_rapierUiDialogIsOpen(_rapierUi.refs.settingsOverlay)) _rapierUiSetSettingsOpen(false);
 		rapierOpenCommandPalette();
 	},
-	will: () => rapierRunCommand('document.protection'),
 	'list-depth': control => rapierListDepth(Number(control.dataset.value)),
 	excerpt: () => rapierCopyCompleteExcerpt(),
 	'pick-style': control => {
