@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Saira",
+  "sourceRank": 20,
+  "sourcePosition": 45,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/saira/METADATA.pb",
+    "sri": "sha384-T3YjXRzfkHQQAwmkeK+vp94HMJLbuaHTBg9pCQ+nMGOFYa9F7+q8Dg1yTKKPSKH1"
+  },
+  "files": [
+    {
+      "name": "font-573ed8d4ca5fcf8a5b41037c2b7c3bc7eea94fbe6af133d280e364a34f0340bc52c5368e07084ae345f75a2f3a070bd0.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/saira/Saira-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/saira/Saira-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 534712,
+      "sourceSri": "sha384-IY149cJn3+kn6LQNqE3cu81teWum6aNfNxa5lws1RFS7VRdaa0CjIYVNqcRLqSNG",
+      "bytes": 201892,
+      "sri": "sha384-Vz7Y1Mpfz4pbQQN8K3w7x+6pT75q8TPSgONko08DQLxSxTaOBwhK40X3Wi86BwvQ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 50,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 661,
+      "glyphs": 898
+    },
+    {
+      "name": "font-af88f8793acbd2c31bd1f576170741f6e233a4cf7f1ac02f7f1bdef11765bda517841c9055bcd6ea38973aed0cbfd7b0.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/saira/Saira[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/saira/Saira%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 483700,
+      "sourceSri": "sha384-eZGytDq2+Za7Xhm4tvAzaoYROa7gPN/fPxXN0luc24ebIm314Sf2DRdfT+bNkmHX",
+      "bytes": 172672,
+      "sri": "sha384-r4j4eTrL0sMb0fV2FwdB9uIzpM9/GsAvfxve8RdlvaUXhByQVbzW6jiXOu0Mv9ew",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 50,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 661,
+      "glyphs": 897
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/saira/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/saira/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-0HtR/u0FhiRUVyndemq4GIv+quHnf6e7r64T9kyQOqMsZE3iFxk22bXXH28ar+lN"
+  }
+}

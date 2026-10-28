@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Libertinus Math",
+  "sourceRank": 514,
+  "sourcePosition": 950,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/libertinusmath/METADATA.pb",
+    "sri": "sha384-g0JYsMOvvnPKaaehsqmbS4OmRzB6DgTuok6Rp0/Y4yw7de0yi4XRaTiyUfkqRB+0"
+  },
+  "files": [
+    {
+      "name": "font-147e71ac3caa3c1a7c6cb25c6e444fb08c77da13ecd277037b0d45dec1249947eedb35a9b2c0505dc6cab3310d99bfd4.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/libertinusmath/LibertinusMath-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/libertinusmath/LibertinusMath-Regular.ttf",
+      "sourceBytes": 1259804,
+      "sourceSri": "sha384-4BwykCzcRl0/tTMsYseH26PH94BJlEIhiWMO8PWlsqireLlAhIS+VctPE/oz4Xan",
+      "bytes": 405428,
+      "sri": "sha384-FH5xrDyqPBp8bLJcbkRPsIx32hPs0ncDew1F3sEkmUfu2zWpssBQXcbKszENmb/U",
+      "axes": [],
+      "cmapCodepoints": 3652,
+      "glyphs": 4379
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/libertinusmath/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/libertinusmath/OFL.txt",
+    "bytes": 4993,
+    "sri": "sha384-mRJUmc1uRPDsNkaPR7k3pA5KfPFzPiJjBqijvb0f7VUbigDQ05b19bIxpqHF77E4"
+  }
+}

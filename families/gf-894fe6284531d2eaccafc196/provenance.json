@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "PT Sans Caption",
+  "sourceRank": 216,
+  "sourcePosition": 427,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsanscaption/METADATA.pb",
+    "sri": "sha384-RnBp5RYU1D9g6ipqwHE4bdFVJGyT+wMIJKVmAJGbAmvNF8ASI99D4tVW1ncR/9Xe"
+  },
+  "files": [
+    {
+      "name": "font-bf08568ce1c1de833991ac2afec1756ead2591ab8eb122461845d711b0fa2ce7d3af92614f573d195ed572da37aca660.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/ptsanscaption/PT_Sans-Caption-Web-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsanscaption/PT_Sans-Caption-Web-Bold.ttf",
+      "sourceBytes": 398780,
+      "sourceSri": "sha384-aiXvNpTmK7NIfT5kM0wRGGZCq+rvYLPzguGpHsoiPxlqnPDIlW7wgJkuJZtQe6J5",
+      "bytes": 106476,
+      "sri": "sha384-vwhWjOHB3oM5kawq/sF1bq0lkauOsSJGGEXXEbD6LOfTr5JhT1c9GV7Vcto3rKZg",
+      "axes": [],
+      "cmapCodepoints": 717,
+      "glyphs": 720
+    },
+    {
+      "name": "font-d935808fd2a5ed029c09e6f27d773c4d3f43ada337f2547120ef01a4173578e4f34109ca4e0732f89878616786c4f07a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/ptsanscaption/PT_Sans-Caption-Web-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsanscaption/PT_Sans-Caption-Web-Regular.ttf",
+      "sourceBytes": 387192,
+      "sourceSri": "sha384-UiUZzjbdKGdkFmEuMFpKd//BZYcqfRGHUx1C4wXojiwLKqTRqK+ImZRJ/VzlyrWI",
+      "bytes": 112560,
+      "sri": "sha384-2TWAj9Kl7QKcCebyfXc8TT9DraM38lRxIO8BpBc1eOTzQQnKTgcy+Jh4YWeGxPB6",
+      "axes": [],
+      "cmapCodepoints": 717,
+      "glyphs": 720
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ptsanscaption/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ptsanscaption/OFL.txt",
+    "bytes": 4425,
+    "sri": "sha384-ffAiZvyPNX5SBBKBPX0Jzj4HW0gsER+EXnKpi44x9HvMzM80qRxkne9jueBrH1LG"
+  }
+}

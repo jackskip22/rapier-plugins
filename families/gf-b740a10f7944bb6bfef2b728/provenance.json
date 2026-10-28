@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Alegreya",
+  "sourceRank": 178,
+  "sourcePosition": 357,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alegreya/METADATA.pb",
+    "sri": "sha384-loOhr3Z2PQGo7c7ucxUBNXcufjLJay0bOO0oyAZGtxEpE3+8oNyDANEgFvWEaMfR"
+  },
+  "files": [
+    {
+      "name": "font-cace9314e2fd14a7fca41f2e4ebbb77babd1e36fff481f1b30e6d83fa6be509e3c77dda8969eaf2dafcf000ddb268557.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/alegreya/Alegreya-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alegreya/Alegreya-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 425852,
+      "sourceSri": "sha384-9+ICbUrRr6lvNf077FV36MTy4rXhGX1QwNFVkWsGazItZdb5XnFLGHK9IY701hen",
+      "bytes": 170724,
+      "sri": "sha384-ys6TFOL9FKf8pB8uTru3e6vR42//SB8bMObYP6a+UJ48d92olp6vLa/PAA3bJoVX",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1254,
+      "glyphs": 2179
+    },
+    {
+      "name": "font-7acf52640d2c22359740d10229d29a06598fe7837555cdc113a5be3a81cd0783f7b8102f3fb2e1316dad4f44c6aeeb3e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/alegreya/Alegreya[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alegreya/Alegreya%5Bwght%5D.ttf",
+      "sourceBytes": 425288,
+      "sourceSri": "sha384-2ZNTJIRBUIPeNErK8mS/ZdfFp+gzM4mDpVB9FrhsUVfilLaj19Q9HWqakz7jJLSV",
+      "bytes": 161284,
+      "sri": "sha384-es9SZA0sIjWXQNECKdKaBlmP54N1Vc3BE6W+OoHNB4P3uBAvP7LhMW2tT0TGrus+",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1254,
+      "glyphs": 2172
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/alegreya/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/alegreya/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-l1WH/c0I3w3bx+o+naWwHOGZChaCL1F2UUdgLPMpV67YNSeNWcTSu0HZHqG+o8JV"
+  }
+}

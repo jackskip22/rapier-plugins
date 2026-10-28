@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Jua",
+  "sourceRank": 262,
+  "sourcePosition": 510,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jua/METADATA.pb",
+    "sri": "sha384-C9LUjugMS1gHh/W/691P5QYZDtnori0edTr14L0fHmZcMrDIqIbGsgq8snLxShUf"
+  },
+  "files": [
+    {
+      "name": "font-9c667b973cac0599f2d35e5f94128ff027cc079d90a614055cf48e113b06086606930ac4b688e05e22c7b1a5f3503663.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/jua/Jua-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jua/Jua-Regular.ttf",
+      "sourceBytes": 2119352,
+      "sourceSri": "sha384-VqSMP8a4TUbOAPmC2Hpdw/CFIqXg9tY22XlGuaMOSw0713eO0vBcx7/CorBVsCgE",
+      "bytes": 369096,
+      "sri": "sha384-nGZ7lzysBZny015flBKP8CfMB52QphQFXPSOETsGCGYGkwrEtojgXiLHsaXzUDZj",
+      "axes": [],
+      "cmapCodepoints": 2519,
+      "glyphs": 2520
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/jua/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jua/OFL.txt",
+    "bytes": 4342,
+    "sri": "sha384-Ply/vcrUpmqSuqmuICfDoxUlKir4GImqiZDtCz1jdiRlaN4NHjDXrH3D0st3CU70"
+  }
+}

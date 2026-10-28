@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Commissioner",
+  "sourceRank": 206,
+  "sourcePosition": 411,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/commissioner/METADATA.pb",
+    "sri": "sha384-waW9RCGi9gy7Pkv5iMvZbIcmPx2X+/mOFBdQfTKBXmI1jNrKQYvrqSeAWOMHc/AJ"
+  },
+  "files": [
+    {
+      "name": "font-7f0b4b2d8e0fb05bb7cfc8cdf36b4843eac81f15bf757bca3b7cb05a92e9d4699369f947358b813c9607da4836566659.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/commissioner/Commissioner[FLAR,VOLM,slnt,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/commissioner/Commissioner%5BFLAR%2CVOLM%2Cslnt%2Cwght%5D.ttf",
+      "sourceBytes": 742232,
+      "sourceSri": "sha384-uuhK1KAkrB4dCnaHdH3jC0HaPfhdcEJFJ9ls8MnqgnecCEvWMzo/rOpmIeNfproq",
+      "bytes": 268392,
+      "sri": "sha384-fwtLLY4PsFu3z8jN82tIQ+rIHxW/dXvKO3ywWpLp1GmTaflHNYuBPJYH2kg2VmZZ",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "slnt",
+          "min": -12,
+          "default": 0,
+          "max": 0,
+          "name": "Slant"
+        },
+        {
+          "tag": "FLAR",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Flare"
+        },
+        {
+          "tag": "VOLM",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Volume"
+        }
+      ],
+      "cmapCodepoints": 983,
+      "glyphs": 1123
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/commissioner/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/commissioner/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-Hx5wOE0DpDJJLbB118rEvF0PO5EHVTeQVpn+AsMFhiakjSeDQrtYC/Osf15ylN0v"
+  }
+}

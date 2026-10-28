@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Rubik 80s Fade",
+  "sourceRank": 425,
+  "sourcePosition": 807,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rubik80sfade/METADATA.pb",
+    "sri": "sha384-OEe9dM0fDgmM3qsU1To6uEN58h9LM9WPoVac7aTZ7lHS3xlRHs3ogJC44nxkqKaQ"
+  },
+  "files": [
+    {
+      "name": "font-fa7afa8fe6724110e6c63cc8b8d6bd3e1b7fd3083b448cdcd061ea227c87bf9fa9f67567b64f55bffe6342ea6857a796.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/rubik80sfade/Rubik80sFade-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rubik80sfade/Rubik80sFade-Regular.ttf",
+      "sourceBytes": 3448044,
+      "sourceSri": "sha384-/5XLLOx0HoJbIKlEGG5kBjWwaqIY9s0OTwwy6ypv300AUp/rHuTg6wPJKButAv/G",
+      "bytes": 243432,
+      "sri": "sha384-+nr6j+ZyQRDmxjzIuNa9Pht/0wg7RIzc0GHqInyHv5+p9nVntk9Vv/5jQupoV6eW",
+      "axes": [],
+      "cmapCodepoints": 691,
+      "glyphs": 776
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/rubik80sfade/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/rubik80sfade/OFL.txt",
+    "bytes": 4406,
+    "sri": "sha384-Xjo0EI3XcPjsflkLefd8/PsTRUxd4yjguo31WvXdJgvVVc5gyOCqTSckwvb5pbcK"
+  }
+}

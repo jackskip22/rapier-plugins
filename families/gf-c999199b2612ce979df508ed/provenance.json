@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Arsenal",
+  "sourceRank": 271,
+  "sourcePosition": 530,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arsenal/METADATA.pb",
+    "sri": "sha384-f16MSZO9GpfEaE3EocGcO4FlLw5nZ6/+D6RpRlIb3LkUcf4yZKXONLHgUigOPYks"
+  },
+  "files": [
+    {
+      "name": "font-136882621a81b280d84d1d8a8e9d920938dfed363929c2d8ec976c82810b588c00cbb4b6b37bb563c781c5c23e78869b.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/arsenal/Arsenal-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arsenal/Arsenal-Bold.ttf",
+      "sourceBytes": 200088,
+      "sourceSri": "sha384-Q3R6yNNI+XMHgGNbVfvuBGtznmF7c1b97Bc5SKAI4zEXsShGJ6/N9xfLvWrwJBe6",
+      "bytes": 59576,
+      "sri": "sha384-E2iCYhqBsoDYTR2Kjp2SCTjf7TY5KcLY7JdsgoELWIwAy7S2s3u1Y8eBxcI+eIab",
+      "axes": [],
+      "cmapCodepoints": 715,
+      "glyphs": 1041
+    },
+    {
+      "name": "font-ee0828e41a708e4c74b354a06addde932368b9f666222278f492dc39bc71993213dcf34a54a12c81030dc9a38a7ff38f.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/arsenal/Arsenal-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arsenal/Arsenal-BoldItalic.ttf",
+      "sourceBytes": 196428,
+      "sourceSri": "sha384-V8Uutct3ri506Mkela9uoP21CTmSY129TJVU9u3sHGMAQRw49WS4e6wV5z7kjWhM",
+      "bytes": 61820,
+      "sri": "sha384-7ggo5Bpwjkx0s1Sgat3ekyNoufZmIiJ49JLcObxxmTIT3PNKVKEsgQMNyaOKf/OP",
+      "axes": [],
+      "cmapCodepoints": 716,
+      "glyphs": 1031
+    },
+    {
+      "name": "font-52c06e060aa8d92d26e104cf75877acb260a7f47f4670458df2837d4a7e85275a12145b897a20b1b590a9771dc8d5aa9.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/arsenal/Arsenal-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arsenal/Arsenal-Italic.ttf",
+      "sourceBytes": 190480,
+      "sourceSri": "sha384-lFBaLaIe4auLaj/S18NV8HcU1BQcxwt9KrTkYMu52KKXePDanjljEi0fVA6mHU4i",
+      "bytes": 60120,
+      "sri": "sha384-UsBuBgqo2S0m4QTPdYd6yyYKf0f0ZwRY3yg31KfoUnWhIUW4l6ILG1kKl3HcjVqp",
+      "axes": [],
+      "cmapCodepoints": 716,
+      "glyphs": 1031
+    },
+    {
+      "name": "font-6893e9b7c059e5719a5232f19ba59c9afe36b7f3dd6993352fc81b8459f7a7fc1bf1a4a3209ed6367da309bd4990a253.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/arsenal/Arsenal-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arsenal/Arsenal-Regular.ttf",
+      "sourceBytes": 194396,
+      "sourceSri": "sha384-MUCe65DaKNT/v9MrSpu65CD5R01jg5Eb8+eXVV76fxhnsA3XCmHH/EmN4H99nt/4",
+      "bytes": 57912,
+      "sri": "sha384-aJPpt8BZ5XGaUjLxm6Wcmv42t/PdaZM1L8gbhFn3p/wb8aSjIJ7WNn2jCb1JkKJT",
+      "axes": [],
+      "cmapCodepoints": 715,
+      "glyphs": 1041
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/arsenal/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arsenal/OFL.txt",
+    "bytes": 4372,
+    "sri": "sha384-u1ZLawjM923jE5RmTvlClzGKyTcGGlbVOE0Wm+OExfQNficEFgk4kb010bTHhyrP"
+  }
+}

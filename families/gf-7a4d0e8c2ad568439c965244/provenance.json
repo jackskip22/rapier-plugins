@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "name": "Wix Madefor Text",
+  "sourceRank": 347,
+  "sourcePosition": 663,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/METADATA.pb",
+    "sri": "sha384-ll6obHlfKbDNnLeWPzJICtHgsYG8KTzyYSkFP4LbNE0xS8/cRQAMMFzu1tjSOIYi"
+  },
+  "files": [
+    {
+      "name": "font-5f6e102b5a5e56aa7d507e10db5d10aff911814f380d2f5ac82548608e9347a5d562aa85810f83c69e7911f72283b167.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-Bold.ttf",
+      "sourceBytes": 108636,
+      "sourceSri": "sha384-YawaGiy4aqaH+2serUeWbRud/fpUETwGN+vyvASw+yVbRzKdOOKrJg952Z/RSI0z",
+      "bytes": 35728,
+      "sri": "sha384-X24QK1peVqp9UH4Q210Qr/kRgU84DS9ayCVIYI6TR6XVYqqFgQ+Dxp55Efcig7Fn",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 726
+    },
+    {
+      "name": "font-289eab869ead056ae374c1a84cbe1609e93984132f29a42d6ef827cb57c1933116036b2b136f50f789f7475ad7dba40e.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-BoldItalic.ttf",
+      "sourceBytes": 66208,
+      "sourceSri": "sha384-D0QNroVaVP0UXYy/YQLfkZ0oGgChk94D8XNLrIFwoneszy58PbQA7BxqcIr0WxsW",
+      "bytes": 25284,
+      "sri": "sha384-KJ6rhp6tBWrjdMGoTL4WCek5hBMvKaQtbvgny1fBkzEWA2srE29Q94n3R1rX26QO",
+      "axes": [],
+      "cmapCodepoints": 407,
+      "glyphs": 481
+    },
+    {
+      "name": "font-86e1dd389d7570432c48b50f4fbcc37020e5e769c1b646f5eb1da96363036867491a99e46bfc3e8fbe58fe129320ca89.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-ExtraBold.ttf",
+      "sourceBytes": 109084,
+      "sourceSri": "sha384-BjW/E22hSJwmGCXP0vzSH53nI8RVGV01MhJ24QTZlHl3h0LpdbmsLWFhYD+IbqqY",
+      "bytes": 35544,
+      "sri": "sha384-huHdOJ11cEMsSLUPT7zDcCDl52nBtkb16x2pY2MDaGdJGpnka/w+j75Y/hKTIMqJ",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 726
+    },
+    {
+      "name": "font-23d48119798805ae360e4c05e01dc46771ab68fffe528352c8b156ad09c79e85ca9e14a89c483eb33d49fd13bc34d76c.woff2",
+      "variant": "800italic",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-ExtraBoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-ExtraBoldItalic.ttf",
+      "sourceBytes": 66912,
+      "sourceSri": "sha384-hnBhlvjblSDzSzTsjsBAbKWE+D3ENU9Ln5uCBPD5fnphwTSr2qen5tZe2dFTUWyf",
+      "bytes": 25392,
+      "sri": "sha384-I9SBGXmIBa42DkwF4B3EZ3GraP/+UoNSyLFWrQnHnoXKnhSonEg+sz1J/RO8NNds",
+      "axes": [],
+      "cmapCodepoints": 407,
+      "glyphs": 481
+    },
+    {
+      "name": "font-2346ef20b97265c77efef0decdb7cc64b104e49936eb956a25878f535fcb51fe50c6ec5a62a38a225a56f0019787fb31.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-Italic.ttf",
+      "sourceBytes": 64936,
+      "sourceSri": "sha384-3rU+rkYC/T+CZxLWRJ+Hhmzu2Q/aLiIpiM8M/TRFLTTQM2kpq3hz4flfzV4R85M1",
+      "bytes": 23924,
+      "sri": "sha384-I0bvILlyZcd+/vDezbfMZLEE5Jk265VqJYePU1/LUf5QxuxaYqOKIlpW8AGXh/sx",
+      "axes": [],
+      "cmapCodepoints": 407,
+      "glyphs": 481
+    },
+    {
+      "name": "font-fa0d3bac256792956d3cb3efce1d2b29ba55bc7ff45c6d76129243b6e42a202eea95f390b18db850f4e3211f0a0d45da.woff2",
+      "variant": "italic-536fb951",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 86256,
+      "sourceSri": "sha384-A/Itk+TkYPcv80nIWXijYOAreA9vZNsJ9+sJuMjha8vIBIqVYb70dnTN4lYVN75G",
+      "bytes": 29692,
+      "sri": "sha384-+g07rCVnkpVtPLPvzh0rKbpVvH/0XG12EpJDtuQqIC7qlfOQsY24UPTjIR8KDUXa",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 407,
+      "glyphs": 481
+    },
+    {
+      "name": "font-e1e328cf34277c043f3af51ddd8db299cc47700cd2d886b94a2bb955f170a405013718927d2144acafd3e3d7244a1fd2.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-Medium.ttf",
+      "sourceBytes": 109048,
+      "sourceSri": "sha384-KVxXQIqj0qVncQB4NpmaOv6bEv9UPUGRcTUXWsLejDbmLhLbl4Zx2EXkajgh+OBJ",
+      "bytes": 36048,
+      "sri": "sha384-4eMozzQnfAQ/OvUd3Y2ymcxHcAzS2Ia5Siu5VfFwpAUBNxiSfSFErK/T49ckSh/S",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 726
+    },
+    {
+      "name": "font-f7e9270f5b43e908bed59115ed132326d09c38c4d625627cd96a7534b1fc568369c31ee88592f644cb8c3a1d4ad35440.woff2",
+      "variant": "500italic",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-MediumItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-MediumItalic.ttf",
+      "sourceBytes": 68044,
+      "sourceSri": "sha384-gOmben+2XgLfrKi4nzd7tPsUM581ZDamgauDBHVHiFuLQzLOjeIQt051NqNX+yg3",
+      "bytes": 26152,
+      "sri": "sha384-9+knD1tD6Qi+1ZEV7RMjJtCcOMTWJWJ82Wp1NLH8VoNpwx7ohZL2RMuMOh1K01RA",
+      "axes": [],
+      "cmapCodepoints": 407,
+      "glyphs": 481
+    },
+    {
+      "name": "font-de11908520c787247374aa039bc5673a22c12664574ae408ad51165dc81b9b28ff88ebe9ddb40038f46f8474926b00fc.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-Regular.ttf",
+      "sourceBytes": 107700,
+      "sourceSri": "sha384-Dld2a+XA5UHAo5o1p+k+PjHaKAsMTU8lXzA9zsbN/EZerRug6eU52VVCizGCd0yY",
+      "bytes": 33596,
+      "sri": "sha384-3hGQhSDHhyRzdKoDm8VnOiLBJmRXSuQIrVEWXcgbmyj/iOvp3bQAOPRvhHSSawD8",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 726
+    },
+    {
+      "name": "font-378312f7d7ff1f650109c3e3f32cc32726ec4ee0b5c3503ccec188005749db55dec729e1bc839ea48789d3a9f2499f89.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-SemiBold.ttf",
+      "sourceBytes": 88108,
+      "sourceSri": "sha384-/pjB7oBbxilp5n6c23ByCmVOIQo49pdU5W+DkNLkt9IIMCDzPdhR+leLtitr9jhv",
+      "bytes": 26412,
+      "sri": "sha384-N4MS99f/H2UBCcPj8yzDJybsTuC1w1A8zsGIAFdJ21XexynhvIOepIeJ06nySZ+J",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 726
+    },
+    {
+      "name": "font-6a74244686938b391e9eb001c556bb0d21ca3b357e29a96fac48f655f73ea8996f571d7bdc9277b8e71930a7c00611b7.woff2",
+      "variant": "600italic",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText-SemiBoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText-SemiBoldItalic.ttf",
+      "sourceBytes": 51964,
+      "sourceSri": "sha384-rGyV6AFkVZ0rMW3gKLUTmy/ZFICWYBH6nlFbzkUrXojl/fkqHCZQ1G6rvPgWgZCJ",
+      "bytes": 18936,
+      "sri": "sha384-anQkRoaTizkenrABxVa7DSHKOzV+KalvrEj2Vfc+qJlvVx173JJ3uOcZMKfABhG3",
+      "axes": [],
+      "cmapCodepoints": 407,
+      "glyphs": 481
+    },
+    {
+      "name": "font-3f9e8cfbd5eb2fed953f9ab0bf9546eb53357dc2d098e4146e3ee7dfe35bc7b888b1a1a21f3e7abe4260c6fb180f5f65.woff2",
+      "variant": "regular-8520999b",
+      "sourcePath": "ofl/wixmadefortext/WixMadeforText[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/WixMadeforText%5Bwght%5D.ttf",
+      "sourceBytes": 158708,
+      "sourceSri": "sha384-nAWRiMHMSQTx7mJ3pG6G0fxCISaoYHEyKRF/8WLm5dwQpNbMuN+6FnaWJdMpDFrN",
+      "bytes": 44012,
+      "sri": "sha384-P56M+9XrL+2VP5qwv5VG61M1fcLQmOQUbj7n3+Nbx7iIsaGiHz56vkJgxvsYD19l",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 800,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 608,
+      "glyphs": 726
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/wixmadefortext/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/wixmadefortext/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-t/UERwMi7nulQtubIJyzyfGujECYAQGWtY0YEHNhMlptU/nhhX9YPALn5UyLSnoE"
+  }
+}

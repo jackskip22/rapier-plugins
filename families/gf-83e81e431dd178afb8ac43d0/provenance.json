@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Anek Tamil",
+  "sourceRank": 350,
+  "sourcePosition": 665,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anektamil/METADATA.pb",
+    "sri": "sha384-BEeTbNP34f9VQQtj92Unj0m1MZ6vPj0/622LR3HfDjDe5nO9IkK9hrDLGOuo9/kg"
+  },
+  "files": [
+    {
+      "name": "font-931eae289e5fcc140902267d06f69d0b15410a5b0d46e648aba2d278c8b2bdf85b903e2f31c06afb256e032282e1a820.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/anektamil/AnekTamil[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anektamil/AnekTamil%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 899668,
+      "sourceSri": "sha384-flLvmCuT3ZHC/3Jj0XXUT1WUPxsqqi6rs8/udj4x75qht5xpk5dgaJllrK+Pt1n0",
+      "bytes": 329600,
+      "sri": "sha384-kx6uKJ5fzBQJAiZ9BvadCxVBClsNRuZIq6LSeMiyvfhbkD4vMcBq+yVuAyKC4agg",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 500,
+          "max": 800,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 325,
+      "glyphs": 674
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/anektamil/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anektamil/OFL.txt",
+    "bytes": 4379,
+    "sri": "sha384-uqqoxYm5AQ6Z7akZRkYz6GZz6DgQneF8rNq4MjZp5gQVnYgbA4FBKBTOlq1DWtLU"
+  }
+}

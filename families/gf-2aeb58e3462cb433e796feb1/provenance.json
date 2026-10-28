@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Poor Story",
+  "sourceRank": 281,
+  "sourcePosition": 551,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/poorstory/METADATA.pb",
+    "sri": "sha384-PrTTqzEh/+c3IO9ewRvsj2PM67I/EWLHeQ7bOfwhbJmH3RG0cWBG+ggKJOlfrJSm"
+  },
+  "files": [
+    {
+      "name": "font-75ef07c216d0e607ee0210727ffaab6c2070d0f78c3c6a9a55cb8e9651e84905846adbb97c63c7c0c90f16da8108297a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/poorstory/PoorStory-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/poorstory/PoorStory-Regular.ttf",
+      "sourceBytes": 3966768,
+      "sourceSri": "sha384-WKZBAbB/fm9q9cRvSQgIDtTmgd5T/ZrZZZSVcaEHGhVdsF7z/xDCbcMHmsS62wAb",
+      "bytes": 420060,
+      "sri": "sha384-de8HwhbQ5gfuAhByf/qrbCBw0PeMPGqaVcuOllHoSQWEatu5fGPHwMkPFtqBCCl6",
+      "axes": [],
+      "cmapCodepoints": 11723,
+      "glyphs": 11724
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/poorstory/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/poorstory/OFL.txt",
+    "bytes": 4354,
+    "sri": "sha384-68ERqdb+BVo85cq9WhVhQpRR+lil38zPDgcZlQLfOTBv+8idAA+3rOGVNc1vHZuH"
+  }
+}

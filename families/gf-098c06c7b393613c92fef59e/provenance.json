@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "name": "Blinker",
+  "sourceRank": 281,
+  "sourcePosition": 550,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/METADATA.pb",
+    "sri": "sha384-KQzKDLZPKKIk3xOfl899aXpnd1oJhfc5u53eLs9yfpnQi8bYYEvqHFT9y9/a/VaU"
+  },
+  "files": [
+    {
+      "name": "font-30f15bbd9978153c2403302b6554e7bb33c080bbe950a1e2e334be5562eb4b2450a3d0facb3249687aeec8af1ea69a3c.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/blinker/Blinker-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/Blinker-Black.ttf",
+      "sourceBytes": 80932,
+      "sourceSri": "sha384-Xc+GW6XwSz/JGzCRCbN6HVn/cWV/hhdI9Y4ektXOL9+aINltrD0R/8Mw/yuyWUnA",
+      "bytes": 30248,
+      "sri": "sha384-MPFbvZl4FTwkAzArZVTnuzPAgLvpUKHi4zS+VWLrSyRQo9D6yzJJaHruyK8eppo8",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 459
+    },
+    {
+      "name": "font-4f0773b88aa06b707b0dc156c4bbec9389f3c32901fd1c2144c935b77b9fd09fb32ade2f947000b2a6dcf2cf2eb5b77c.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/blinker/Blinker-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/Blinker-Bold.ttf",
+      "sourceBytes": 75824,
+      "sourceSri": "sha384-ECVmtMErVMSR+scXBH5lauhWhbGBl9Z8i8qpI4UXi32M/qRtvsCA1jb9z1KF+4WI",
+      "bytes": 28248,
+      "sri": "sha384-TwdzuIqga3B7DcFWxLvsk4nzwykB/RwhRMk1t3uf0J+zKt4vlHAAsqbc8s8utbd8",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 459
+    },
+    {
+      "name": "font-8559976f00595fbdc6e93a47f8ad8134d816a88aa2a278062b4d532fbc8548a2d693a4b639cc0f403721b1c268431bef.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/blinker/Blinker-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/Blinker-ExtraBold.ttf",
+      "sourceBytes": 82624,
+      "sourceSri": "sha384-bXyr9VUFDr15A7gKqJUnBfPSetIlKBRiL/Lqdc7KKrflk3CNwChRYpaROpjtNnrP",
+      "bytes": 30996,
+      "sri": "sha384-hVmXbwBZX73G6TpH+K2BNNgWqIqiongGK01TL7yFSKLWk6S2OcwPQDchscJoQxvv",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 459
+    },
+    {
+      "name": "font-1845df238b3e7a895c6ec2b9e55f33064790fdc47b3544cf8cb68391cea60550d252c31febbdc0515f4e796df8db4d71.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/blinker/Blinker-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/Blinker-ExtraLight.ttf",
+      "sourceBytes": 74664,
+      "sourceSri": "sha384-zl36aT4DYDbVIqzRtENiS9ERn5VhHXwTYZ3jpKKUAv/Ju8J3pPrLL36t9tdt8R4j",
+      "bytes": 27860,
+      "sri": "sha384-GEXfI4s+eolcbsK55V8zBkeQ/cR7NUTPjLaDkc6mBVDSUsMf673AUV9OeW34201x",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 459
+    },
+    {
+      "name": "font-947d77db8bcbcfc38a02f08acd128460a16dc4b2062846bc146dbab0c0ac39396fd5ee5ceb2f8fc9626694fd6bd85f09.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/blinker/Blinker-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/Blinker-Light.ttf",
+      "sourceBytes": 75880,
+      "sourceSri": "sha384-kR6vQ0vV9n6n3eCljEza/8wkX3tX1KIqt5AO83YeNyRcLShFQnGPvbj2b7KtVBEB",
+      "bytes": 28196,
+      "sri": "sha384-lH1324vLz8OKAvCKzRKEYKFtxLIGKEa8FG26sMCsOTlv1e5c6y+PyWJmlP1r2F8J",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 459
+    },
+    {
+      "name": "font-899e9a49aee0ae7c99e5a16be4caec7182b88e76562cb94341e51d9cda4ac928be9454097c5451a7c7ea5f73ee871e3f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/blinker/Blinker-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/Blinker-Regular.ttf",
+      "sourceBytes": 74532,
+      "sourceSri": "sha384-LvAnmCLXDthyUGsAjErmrxD0VFSYYbsv0HLJL5oI88/VK6Wt3aC721GyCwhswnup",
+      "bytes": 27528,
+      "sri": "sha384-iZ6aSa7grnyZ5aFr5MrscYK4jnZWLLlDQeUdnNpKySi+lFQJfFRRp8fqX3Puhx4/",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 459
+    },
+    {
+      "name": "font-dbe808c09b422e90b2387e566aa82e162906286233dd337ccf1fd9ea410bf2e10d30dfa4f5c9c0f21ea114fe4e7ac799.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/blinker/Blinker-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/Blinker-SemiBold.ttf",
+      "sourceBytes": 81676,
+      "sourceSri": "sha384-eU+J5LhslR/nLCWN4GIG2fuY1ze0McoI+bvkHD9MyoKl7NZQ8uINeC3LZZDRrPnf",
+      "bytes": 30800,
+      "sri": "sha384-2+gIwJtCLpCyOH5WaqguFikGKGIz3TN8zx/Z6kEL8uENMN+k9cnA8h6hFP5OeseZ",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 459
+    },
+    {
+      "name": "font-b9366c63d1abaf7b9d6cbd69d773a1f70e69245f0e93ad53aaa66ff1ee1a0b96d1b1ee0981a816e12cf76923298e8e76.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/blinker/Blinker-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/Blinker-Thin.ttf",
+      "sourceBytes": 73024,
+      "sourceSri": "sha384-iMsUDp9yZkYdD0zjVc7Jrb4TyfLmV2lJXOaRb45SP9ETwGdXfKIAy10nxoX3zfL+",
+      "bytes": 26640,
+      "sri": "sha384-uTZsY9Grr3udbL1p13Oh9w5pJF8Ok61TqqZv8e4aC5bRse4JgagW4Sz3aSMpjo52",
+      "axes": [],
+      "cmapCodepoints": 410,
+      "glyphs": 459
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/blinker/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/blinker/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-KrK++3SQQNBwMfCmI1FTwJAKTiBH8yFrdBKi/5z+ZdOn9geZRzgSJ5mCSZQ2uk6U"
+  }
+}

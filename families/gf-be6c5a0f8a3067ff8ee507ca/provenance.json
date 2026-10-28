@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Sofia Sans Condensed",
+  "sourceRank": 230,
+  "sourcePosition": 456,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sofiasanscondensed/METADATA.pb",
+    "sri": "sha384-j6Ygwaa4bKxgU1TZjCQATKMarMaf6x4Nla4uLMru1gxwVdaaL2gXgSYE2/onrutg"
+  },
+  "files": [
+    {
+      "name": "font-a81fc9ebb4bdea00038349a87c825b74bde9a521f0c11dfd1895d3c2125b02aba7dbc60b0d5e02fceedc3c40a5bd5d5c.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/sofiasanscondensed/SofiaSansCondensed-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sofiasanscondensed/SofiaSansCondensed-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 312088,
+      "sourceSri": "sha384-maBhkmHxYkANEdzzeb2rsfrli5Ddk8dhau1NLNvGKau+Ng11PEyzC9SpQlRleDSJ",
+      "bytes": 113428,
+      "sri": "sha384-qB/J67S96gADg0mofIJbdL3ppSHwwR39GJXTwhJbAqun28YLDV4C/O7cPEClvV1c",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 1,
+          "default": 400,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 604,
+      "glyphs": 934
+    },
+    {
+      "name": "font-0750fd66a4520447eef3a8568fbc18cc828b0ac9da8c04e4fff59c39fdf7e6c1ad5578adc46ed348fa4f63dbf7c67ec7.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sofiasanscondensed/SofiaSansCondensed[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sofiasanscondensed/SofiaSansCondensed%5Bwght%5D.ttf",
+      "sourceBytes": 346828,
+      "sourceSri": "sha384-3ib1CQqJIgMJmmYimjh1/pm8r3SpPrNTrxRNSdgKv8bIIn3AMNxtZguTYtRfogxI",
+      "bytes": 112068,
+      "sri": "sha384-B1D9ZqRSBEfu86hWj7wYzIKLCsnajATk//WcOf335sGtVXitxG7TSPpPY9v3xn7H",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 1,
+          "default": 400,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 606,
+      "glyphs": 954
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sofiasanscondensed/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sofiasanscondensed/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-DQhC76rO3wbsnqnbINMeyiJf9cKx3ZNp3K24YOrsrf9rTTlPpC8z/Fe3vycCWPjc"
+  }
+}

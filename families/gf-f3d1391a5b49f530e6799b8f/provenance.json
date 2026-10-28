@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Annapurna SIL",
+  "sourceRank": 314,
+  "sourcePosition": 603,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/annapurnasil/METADATA.pb",
+    "sri": "sha384-y6tpVLZ9wk2bZgmaXTeKEfN2k322jqTQx18JxpH4cmCMZ1HlN57vzmUiqmZOXQqt"
+  },
+  "files": [
+    {
+      "name": "font-a58379d43b5531185832b0f41b1aaae7edd018340a6714e6f339d5d4084d1004df91e59be7897004edc61787123f256b.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/annapurnasil/AnnapurnaSIL-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/annapurnasil/AnnapurnaSIL-Bold.ttf",
+      "sourceBytes": 524904,
+      "sourceSri": "sha384-5VreI/vAzRVeJ4HK8WoxGrnQOS51JHHSLxYyZVgoKizxjppxByPmnlv08oH3s8Cr",
+      "bytes": 130132,
+      "sri": "sha384-pYN51DtVMRhYMrD0Gxqq5+3QGDQKZxTm8znV1AhNEATfkeWb54lwBO3GF4cSPyVr",
+      "axes": [],
+      "cmapCodepoints": 512,
+      "glyphs": 1085
+    },
+    {
+      "name": "font-911d4afe98cbd44c09bf316965b64c7fd3c19a3941f5e30e5c125dc401867d79b4fa3265574c17b7e8251298e7ecbbb1.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/annapurnasil/AnnapurnaSIL-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/annapurnasil/AnnapurnaSIL-Regular.ttf",
+      "sourceBytes": 530928,
+      "sourceSri": "sha384-3ldO1OXBgG4yeqzQlK+T/EngiHXKigKR+I1I4oUzDKYOApP1QviS8S+LE4TgEyA2",
+      "bytes": 125048,
+      "sri": "sha384-kR1K/pjL1EwJvzFpZbZMf9PBmjlB9eMOXBJdxAGGfXm0+jJlV0wXt+glEpjn7Lux",
+      "axes": [],
+      "cmapCodepoints": 512,
+      "glyphs": 1085
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/annapurnasil/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/annapurnasil/OFL.txt",
+    "bytes": 4512,
+    "sri": "sha384-rsG1YzmGfbGli8Pt0pwO8DSmkN2AdBGtm6GBNOHd8Gj6P7ETlYER1C7ajtflHwgt"
+  }
+}

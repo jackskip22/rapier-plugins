@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Hind Madurai",
+  "sourceRank": 209,
+  "sourcePosition": 415,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindmadurai/METADATA.pb",
+    "sri": "sha384-LtaEa4nd2PMbeOZSHSRnqZJmWZrd5f2JX5gXExhSv8HZ0YnVmcRbX+NpG3VaG9lj"
+  },
+  "files": [
+    {
+      "name": "font-1a759db9a7a0a2cc0b9555d6cd6593ce12c3d701963efdf43b86e906bc06de0fd064205c757acdfbdb774488019dd14a.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/hindmadurai/HindMadurai-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindmadurai/HindMadurai-Bold.ttf",
+      "sourceBytes": 142576,
+      "sourceSri": "sha384-uy/WhpRSqFCPmJ7GPeuEfY/qnxtTDchShLMUyvHwYLWW7nGdIn/qtWB8hr3STIdb",
+      "bytes": 46896,
+      "sri": "sha384-GnWduaegoswLlVXWzWWTzhLD1wGWPv30O4bpBrwG3g/QZCBcdXrN+9t3RIgBndFK",
+      "axes": [],
+      "cmapCodepoints": 405,
+      "glyphs": 520
+    },
+    {
+      "name": "font-0fea2b86ea3c4e43992464cbb102904c7e1bdd1a444560fc72e53e298650d30dc77e43cdfafca543039fd6d11b87ac44.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/hindmadurai/HindMadurai-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindmadurai/HindMadurai-Light.ttf",
+      "sourceBytes": 127664,
+      "sourceSri": "sha384-rqYNQvtOx2dwRvXCdgVZae76fjql9Rv+3B8d7qEMbmvF/zAn8ao9smQW7kS0YTSi",
+      "bytes": 43092,
+      "sri": "sha384-D+orhuo8TkOZJGTLsQKQTH4b3RpERWD8cuU+KYZQ0w3HfkPN+vylQwOf1tEbh6xE",
+      "axes": [],
+      "cmapCodepoints": 405,
+      "glyphs": 520
+    },
+    {
+      "name": "font-3c123ef3ddf40aed7229c3a1715a9d0ffef47e38ccca8900dc3c9165135a484b85578a85db255cd2e399c6cd0250aefd.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/hindmadurai/HindMadurai-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindmadurai/HindMadurai-Medium.ttf",
+      "sourceBytes": 137784,
+      "sourceSri": "sha384-JeuCPwfLWb3bWsJhh31oLLncsSWLgjF0TS8I9C2/yi78teoMCW61GyGCj6sS6BoI",
+      "bytes": 47416,
+      "sri": "sha384-PBI+8930Cu1yKcOhcVqdD/70fjjMyokA3DyRZRNaSEuFV4qF2yVc0uOZxs0CUK79",
+      "axes": [],
+      "cmapCodepoints": 405,
+      "glyphs": 520
+    },
+    {
+      "name": "font-ae2441e47e1e9faa532dce67030a9d4e6ec22ed5b40164934dedd2a9b3454cdcc38dcbcf03c063113d947d43e8692657.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/hindmadurai/HindMadurai-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindmadurai/HindMadurai-Regular.ttf",
+      "sourceBytes": 136868,
+      "sourceSri": "sha384-k6u/SGiONgpYalW5n3mwe5PejpSfBR1G8jSbfBFlBHyvXhW2Lr0Urs943/pl2UhX",
+      "bytes": 46804,
+      "sri": "sha384-riRB5H4en6pTLc5nAwqdTm7CLtW0AWSTTe3SqbNFTNzDjcvPA8BjET2UfUPoaSZX",
+      "axes": [],
+      "cmapCodepoints": 405,
+      "glyphs": 520
+    },
+    {
+      "name": "font-6abaf38ca7fd58768a8e21c43db3d1c39ede54e6992f07f2640f3fe832c317ecb580532036a4676f614041ba34e05782.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/hindmadurai/HindMadurai-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindmadurai/HindMadurai-SemiBold.ttf",
+      "sourceBytes": 139348,
+      "sourceSri": "sha384-NfxeoOCDOJk/6iWzG+Oy/nhoRHbE964OhyBmqlRsYVBk6lhMgAfwXEU7tLxs/5i3",
+      "bytes": 47900,
+      "sri": "sha384-arrzjKf9WHaKjiHEPbPRw57eVOaZLwfyZA8/6DLDF+y1gFMgNqRnb2FAQbo04FeC",
+      "axes": [],
+      "cmapCodepoints": 405,
+      "glyphs": 520
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/hindmadurai/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/hindmadurai/OFL.txt",
+    "bytes": 4371,
+    "sri": "sha384-Gs6EWE6QSRE+Bdg/S3RzlASSnVwLlR99HOjsxH7wPxMAoXKA6ECZWO/YjZeN8l6m"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Tiro Devanagari Hindi",
+  "sourceRank": 292,
+  "sourcePosition": 567,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirodevanagarihindi/METADATA.pb",
+    "sri": "sha384-BhtprcJxtc/3e2xvFRcjB2Cr7zRTDxUip7m0dSXdgRLOymq74HIH8Q/UnIjBy1s/"
+  },
+  "files": [
+    {
+      "name": "font-8235cfa2f8d457aa5eeb8053bde130ee78265f928577916d67a18299d6376e68efed58a732479889939ec1132dd93813.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/tirodevanagarihindi/TiroDevanagariHindi-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirodevanagarihindi/TiroDevanagariHindi-Italic.ttf",
+      "sourceBytes": 425636,
+      "sourceSri": "sha384-CDd4aW4lDmkK2zDiOljjKZjFWEyekh0QmGNl7BHpS1+Edob8MpDUX97pIWYv/1Vm",
+      "bytes": 146916,
+      "sri": "sha384-gjXPovjUV6pe64BTveEw7ngmX5KFd5FtZ6GCmdY3bmjv7VinMkeYiZOewRMt2TgT",
+      "axes": [],
+      "cmapCodepoints": 516,
+      "glyphs": 1416
+    },
+    {
+      "name": "font-f908d3a6cb3646d6f375fa3ecd133274dc2751f0266d45ed068e3574b71347865f4bc40dcda89f5863b9050478f350d5.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/tirodevanagarihindi/TiroDevanagariHindi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirodevanagarihindi/TiroDevanagariHindi-Regular.ttf",
+      "sourceBytes": 423224,
+      "sourceSri": "sha384-WTDRtTiJgPLm5cJW4rLd5VnUAP01Nj+lvjZZmioh4eSG9UjMyWbbT/9XxWRNXLu/",
+      "bytes": 141460,
+      "sri": "sha384-+QjTpss2Rtbzdfo+zRMydNwnUfAmbUXtBo41dLcTR4ZfS8QNzaifWGO5BQR481DV",
+      "axes": [],
+      "cmapCodepoints": 516,
+      "glyphs": 1416
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/tirodevanagarihindi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirodevanagarihindi/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-mjCz0lzdq30nRdJ2PGxxr5T2leHKqqR73MSCrCIHk+FbpTLwAmJZj8JisJucGHeU"
+  }
+}

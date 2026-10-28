@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Konkhmer Sleokchher",
+  "sourceRank": 200,
+  "sourcePosition": 403,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/konkhmersleokchher/METADATA.pb",
+    "sri": "sha384-aBNSbb/T4Ne+W2kcspIBg8oiUcWAKoDnq/d/RWzWMPQ8IunfOWKMAnYfqW4x9sJX"
+  },
+  "files": [
+    {
+      "name": "font-b7070ad7580559b95e660ed43c6ee07b80ba7b55ba6237929638a4ce9c105e909aaddaa87edc3ca83f4cad24f70b8187.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/konkhmersleokchher/KonkhmerSleokchher-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/konkhmersleokchher/KonkhmerSleokchher-Regular.ttf",
+      "sourceBytes": 1834832,
+      "sourceSri": "sha384-EUze9r1ezsAN4zyAgK0oNiidebLSUXKxj2xV/XO/0ETlZbBB3M8nE1UcTDNdPDMz",
+      "bytes": 436628,
+      "sri": "sha384-twcK11gFWbleZg7UPG7ge4C6e1W6YjeSljikzpwQXpCardqoftw8qD9MrST3C4GH",
+      "axes": [],
+      "cmapCodepoints": 449,
+      "glyphs": 534
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/konkhmersleokchher/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/konkhmersleokchher/OFL.txt",
+    "bytes": 4418,
+    "sri": "sha384-tyq/6jfNbwW+FTG8khqzwRhOzGaF88cfd3fDXHRrl0JDLow3zqUmJUulHSH3w9OS"
+  }
+}

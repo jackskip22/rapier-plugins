@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Pragati Narrow",
+  "sourceRank": 331,
+  "sourcePosition": 632,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pragatinarrow/METADATA.pb",
+    "sri": "sha384-o9/ab1dN2r2SpoO7Pe1CntCtgyhazpVD9RAMSIfljCRNieoGqh1A+k9Wevwmn5ba"
+  },
+  "files": [
+    {
+      "name": "font-44c157bb02c947b801313163399f02b2bdaf9d5b60737475434c4f663fb3d536c6e959767a791d74576e78814cec1a18.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/pragatinarrow/PragatiNarrow-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pragatinarrow/PragatiNarrow-Bold.ttf",
+      "sourceBytes": 419792,
+      "sourceSri": "sha384-jva4euYKjhtAHHH9AStxP4JekX13bpB2z0kDeY+RbWqEVVbGI1sgczMNa+vQQj1u",
+      "bytes": 115200,
+      "sri": "sha384-RMFXuwLJR7gBMTFjOZ8Csr2vnVtgc3R1Q0xPZj+z1TbG6Vl2enkddFdueIFM7BoY",
+      "axes": [],
+      "cmapCodepoints": 601,
+      "glyphs": 1180
+    },
+    {
+      "name": "font-9b0360b87122f47a5d6da18cfc291e8fa092676de7c11cf126a85c63242863c22957b9e4a9e044ea1581bd34daab2af6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/pragatinarrow/PragatiNarrow-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pragatinarrow/PragatiNarrow-Regular.ttf",
+      "sourceBytes": 377784,
+      "sourceSri": "sha384-gPfnL5sqKfpwtH3DuPsgRT0lyM3ZWfwIOqDFLXEkL507rWSGZTLXxWXhQ+82sjGx",
+      "bytes": 109764,
+      "sri": "sha384-mwNguHEi9HpdbaGM/Ckej6CSZ23nwRzxJqhcYyQoY8IpV7nkqeBE6hWBvTTaqyr2",
+      "axes": [],
+      "cmapCodepoints": 601,
+      "glyphs": 1180
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/pragatinarrow/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pragatinarrow/OFL.txt",
+    "bytes": 4482,
+    "sri": "sha384-xVa3Qj6Mthlk6lvlf6k3aDv33rV+lE5v9+G5dksfuLGKzn3FkGp1FRAAz68Rxy/n"
+  }
+}

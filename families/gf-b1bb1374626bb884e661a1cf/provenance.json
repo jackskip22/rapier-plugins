@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Jomolhari",
+  "sourceRank": 315,
+  "sourcePosition": 605,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jomolhari/METADATA.pb",
+    "sri": "sha384-Dqb29S85etU7PVaxKADRJnrmghLVCTAY+ysPlxJCSsbnEaVM3dZyFibwJAfSY8+2"
+  },
+  "files": [
+    {
+      "name": "font-08e687ec70b6a8487e7c7535c0986aeae4c30e0235196725a7fe3f271fbbfa6a4b3cc5f08233e6fb0cbb29fea12046be.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/jomolhari/Jomolhari-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jomolhari/Jomolhari-Regular.ttf",
+      "sourceBytes": 2260860,
+      "sourceSri": "sha384-xOOTArDy4VNsBl5mS/waQDStn1Bi/2tDITCHLhDNIU4oEl28UBjJx912YYx1fYiG",
+      "bytes": 429652,
+      "sri": "sha384-COaH7HC2qEh+fHU1wJhq6uTDDgI1GWclp/4/Jx+7+mpLPMXwgjPm+wy7Kf6hIEa+",
+      "axes": [],
+      "cmapCodepoints": 2752,
+      "glyphs": 3333
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/jomolhari/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/jomolhari/OFL.txt",
+    "bytes": 4443,
+    "sri": "sha384-8smIURxIPxL6BLvatj11ABfLIH7ND/cejx2RRnBd/O2jgUYzlnc7jVqMFno2aI13"
+  }
+}

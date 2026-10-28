@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Arabic",
+  "sourceRank": 105,
+  "sourcePosition": 214,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansarabic/METADATA.pb",
+    "sri": "sha384-V/0+2XdBU14WwRDTIWdP53nWCZyXDyyHO0aHn5OE8+oMpgEuhx3RdeeG3Jx4skGb"
+  },
+  "files": [
+    {
+      "name": "font-23f174d8525270046174d8115750d2a6ccae7fd6290044e7146c92b770884b9ea121a0664e792416ea31bc7b3a1de330.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansarabic/NotoSansArabic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansarabic/NotoSansArabic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 844676,
+      "sourceSri": "sha384-96m+ZNZFrigXUXIYk5Iec9YLUQ0UPRyBQrvrh7/sGmdp493N/tHf3rvcwv1lTEg4",
+      "bytes": 361772,
+      "sri": "sha384-I/F02FJScARhdNgRV1DSpsyuf9YpAETnFGySt3CIS56hIaBmTnkkFuoxvHs6HeMw",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 1561,
+      "glyphs": 1711
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansarabic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansarabic/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-MzhPK5CpYumNtdfqearMqEOhR5SP1IUbtMI+9OuwTlqwhxZlP1H0CYib1aNDahzJ"
+  }
+}

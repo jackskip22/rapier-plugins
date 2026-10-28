@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Playfair Display SC",
+  "sourceRank": 235,
+  "sourcePosition": 465,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfairdisplaysc/METADATA.pb",
+    "sri": "sha384-da81UsgcVEoNzhKXds8hhmxJzuFWzMhKxEu8QEiq5MxiRUte6O1yJa3XDUzj3PBO"
+  },
+  "files": [
+    {
+      "name": "font-8361291de75a632a80389d6bd5144e50c5858907f76f6dff608c97efcd1bf59cc99bdf4030e579af2413439d1d130b8e.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/playfairdisplaysc/PlayfairDisplaySC-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfairdisplaysc/PlayfairDisplaySC-Black.ttf",
+      "sourceBytes": 202412,
+      "sourceSri": "sha384-YII1Ov1lw71tnWD68G5h7BDhMfAIUitlMOcI8fipXAamD5ZRu+Tlho8bX4hW1WQi",
+      "bytes": 69888,
+      "sri": "sha384-g2EpHedaYyqAOJ1r1RROUMWFiQf3b23/YIyX780b9ZzJm99AMOV5ryQTQ50dEwuO",
+      "axes": [],
+      "cmapCodepoints": 657,
+      "glyphs": 1076
+    },
+    {
+      "name": "font-93d595602333e06ca4feddb825757f88df49283f34565f734d4209ff372f5e8329449e8198217729d2ec9065316ecb62.woff2",
+      "variant": "900italic",
+      "sourcePath": "ofl/playfairdisplaysc/PlayfairDisplaySC-BlackItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfairdisplaysc/PlayfairDisplaySC-BlackItalic.ttf",
+      "sourceBytes": 199512,
+      "sourceSri": "sha384-xMlSaJ6guFGUQ+da7P0wjCnqrZUak13igTXji2v1pI/zqOlrIbI9duULZ8xU0C+i",
+      "bytes": 72140,
+      "sri": "sha384-k9WVYCMz4Gyk/t24JXV/iN9JKD80Vl9zTUIJ/zcvXoMpRJ6BmCF3KdLskGUxbsti",
+      "axes": [],
+      "cmapCodepoints": 657,
+      "glyphs": 1074
+    },
+    {
+      "name": "font-ceb0318cf10f83306e1d5dab80f34cfdc9f6cf7f70a67fe50e0256f59f377711392dcb1ddfe097f22e8c45b2a86af6b8.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/playfairdisplaysc/PlayfairDisplaySC-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfairdisplaysc/PlayfairDisplaySC-Bold.ttf",
+      "sourceBytes": 204568,
+      "sourceSri": "sha384-UIuWlGjjAxnWgQ4RDUsQPGlmQhoZ82zUsSyNCVnJmbNah9KrJEdi2TGKUt91aUHu",
+      "bytes": 72716,
+      "sri": "sha384-zrAxjPEPgzBuHV2rgPNM/cn2z39wpn/lDgJW9Z83dxE5Lcsd3+CX8i6MRbKoava4",
+      "axes": [],
+      "cmapCodepoints": 657,
+      "glyphs": 1076
+    },
+    {
+      "name": "font-a4662ccbbf09eed67f1c0a7de861ee51622fdb1ec25ff4b9fb3e038f07530954607a10b8228e7b2b345fe40c0ac60fc6.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/playfairdisplaysc/PlayfairDisplaySC-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfairdisplaysc/PlayfairDisplaySC-BoldItalic.ttf",
+      "sourceBytes": 206016,
+      "sourceSri": "sha384-gayLnkk23m/0g/Zs12QWIgZC6ys9rbXuD9FaSsFgSIhEzET9V9/tEsGwpx2j97ZZ",
+      "bytes": 75856,
+      "sri": "sha384-pGYsy78J7tZ/HAp96GHuUWIv2x7CX/S5+z4DjwdTCVRgehC4Io57KzRf5AwKxg/G",
+      "axes": [],
+      "cmapCodepoints": 657,
+      "glyphs": 1074
+    },
+    {
+      "name": "font-4b500536c436b97561fd4ed626ccb0f4f45b6620a5e4faac8f656272705773b6e6fea697fd9a2f6770ef7d47ff6b206b.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/playfairdisplaysc/PlayfairDisplaySC-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfairdisplaysc/PlayfairDisplaySC-Italic.ttf",
+      "sourceBytes": 202092,
+      "sourceSri": "sha384-3ixOH6vKlHuhEcRf/5y/Vn2B3r0DDjianzbP0kyIW+XFIMbRVO24fVXTub/6Ih5U",
+      "bytes": 71980,
+      "sri": "sha384-S1AFNsQ2uXVh/U7WJsyw9PRbZiCl5Pqsj2VicnBXc7bm/qaX/ZovZ3DvfUf/ayBr",
+      "axes": [],
+      "cmapCodepoints": 657,
+      "glyphs": 1074
+    },
+    {
+      "name": "font-c0d8bb1e85e88e3203355747e6f83d98e80297ed19642e363fe3d3f771f5e11d967fbf9b1e71b73a3ad2003deb6517e6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/playfairdisplaysc/PlayfairDisplaySC-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfairdisplaysc/PlayfairDisplaySC-Regular.ttf",
+      "sourceBytes": 201772,
+      "sourceSri": "sha384-nDJvZhKz+Cyip+8VGEsXQ/qJbEsUKfowM0tVJxwLWC0yagmm6QM7nlJO9K4+KZa/",
+      "bytes": 67988,
+      "sri": "sha384-wNi7HoXojjIDNVdH5vg9mOgCl+0ZZC42P+PT93H14R2Wf7+bHnG3OjrSAD3rZRfm",
+      "axes": [],
+      "cmapCodepoints": 657,
+      "glyphs": 1076
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/playfairdisplaysc/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/playfairdisplaysc/OFL.txt",
+    "bytes": 4542,
+    "sri": "sha384-wJuF77woVGiPMrspVjrzf3OANdOC4ntOCm+8f/7MatGjcuspkbrsdNnZRkv+U5PI"
+  }
+}

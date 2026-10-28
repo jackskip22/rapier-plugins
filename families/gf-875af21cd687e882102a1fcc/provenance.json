@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Sunflower",
+  "sourceRank": 192,
+  "sourcePosition": 390,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sunflower/METADATA.pb",
+    "sri": "sha384-cM4XKFHDrd/XymRSdUW5vUce3Cr4aZcdQ6hU1h9lVkLoupMYnI+nDA/YBCmRpuvd"
+  },
+  "files": [
+    {
+      "name": "font-27505c8004bdd59767dc3ea67c02c5b8b2be24732e00621cc5ef7e9f223fa15a1f2b742047f478da148ef16c3e00aad1.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/sunflower/Sunflower-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sunflower/Sunflower-Bold.ttf",
+      "sourceBytes": 746300,
+      "sourceSri": "sha384-kAxsGFvf9P1D+08cMXz3wVtc8BC3fMpRpPyBhz+21bWyRMXUay+Uq3PYn20TK3R9",
+      "bytes": 136672,
+      "sri": "sha384-J1BcgAS91Zdn3D6mfALFuLK+JHMuAGIcxe9+nyI/oVofK3QgR/R42hSO8Ww+AKrR",
+      "axes": [],
+      "cmapCodepoints": 2504,
+      "glyphs": 2505
+    },
+    {
+      "name": "font-1291e2e0635107e37af939c2496bbaeaaabbc79415198dbaee86bec1b16c5dfe4dc6ba2d25ff6383261ad8b24655b088.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/sunflower/Sunflower-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sunflower/Sunflower-Light.ttf",
+      "sourceBytes": 758332,
+      "sourceSri": "sha384-PPCGHxIj3dm4DM6aRWoKBodpdklQqyfLXz61/kKsBn3ObEXjsCx86/LVrwpDQ2kj",
+      "bytes": 129300,
+      "sri": "sha384-EpHi4GNRB+N6+TnCSWu66qq7x5QVGY267oa+wbFsXf5NxrotJf9jgyYa2LJGVbCI",
+      "axes": [],
+      "cmapCodepoints": 2504,
+      "glyphs": 2505
+    },
+    {
+      "name": "font-a5e07f19bf13e102dbc33a1b6f042ac852b0ed81f3068f00c37a3b14f0dceefe31aab387fc272800ca7d73237d764969.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/sunflower/Sunflower-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sunflower/Sunflower-Medium.ttf",
+      "sourceBytes": 770536,
+      "sourceSri": "sha384-i0QtnunTIVzC527uxabZCspCNxRNMmHz2LT7/IPKA01kXUkjVM0Xy2iTtiOW828X",
+      "bytes": 123480,
+      "sri": "sha384-peB/Gb8T4QLbwzobbwQqyFKw7YHzBo8Aw3o7FPDc7v4xqrOH/CcoAMp9cyN9dklp",
+      "axes": [],
+      "cmapCodepoints": 2504,
+      "glyphs": 2505
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sunflower/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sunflower/OFL.txt",
+    "bytes": 4348,
+    "sri": "sha384-K54S+EmpuuYkX4iWjdieFbpV+wwaBBIQ378InUERe/fQeopvQMMkbP3eVPzrQXkV"
+  }
+}

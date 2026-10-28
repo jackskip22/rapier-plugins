@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Zalando Sans",
+  "sourceRank": 361,
+  "sourcePosition": 684,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zalandosans/METADATA.pb",
+    "sri": "sha384-FU3k8QT+YUIo4f0G4ERx4m1uQ7n9xM9OJEVFFmZabwBlqe7lGQ8Ltaff+JYqpANy"
+  },
+  "files": [
+    {
+      "name": "font-80571baf28dbc99abcfb01391427722830d38e1818536d042674e575946dbaf354a18e5d450e83eb5afaede11b740779.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/zalandosans/ZalandoSans-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zalandosans/ZalandoSans-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 289792,
+      "sourceSri": "sha384-Pg7xgc7Ga/FHeh8O9JVp5VY6RRjtMfI04d+pLQUYW99TivHrqtnO9pqnXIaC0y+D",
+      "bytes": 132392,
+      "sri": "sha384-gFcbryjbyZq8+wE5FCdyKDDTjhgYU20EJnTldZRtuvNUoY5dRQ6D61r67eEbdAd5",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 531,
+      "glyphs": 606
+    },
+    {
+      "name": "font-0dc89541a007aef5c43e7f33226f90d1e88ea9cc6255720dedadae29dd789cc6d354ebe6e00147182fd71b421e22158f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/zalandosans/ZalandoSans[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zalandosans/ZalandoSans%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 281728,
+      "sourceSri": "sha384-CntPYgRC6lv3lMKUmJk8ELtyvNVQAHX2Ngg2e8ZNMjE6VJt7Xf6fiSdJQexDffhF",
+      "bytes": 126048,
+      "sri": "sha384-DciVQaAHrvXEPn8zIm+Q0eiOqcxiVXIN7a2uKd14nMbTVOvm4AFHGC/XG0IeIhWP",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 531,
+      "glyphs": 606
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/zalandosans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/zalandosans/OFL.txt",
+    "bytes": 4425,
+    "sri": "sha384-wiEvc6Yg+smoG8VYNWgTbFo1InVk2vQJvZUqq2gJ8rT7ilS/lwCCTJjcH+FXMK91"
+  }
+}

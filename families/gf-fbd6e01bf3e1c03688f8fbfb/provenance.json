@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Georama",
+  "sourceRank": 288,
+  "sourcePosition": 559,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/georama/METADATA.pb",
+    "sri": "sha384-nKSiP+mvmzdgokert2jSIsyVpWAAwjl9FC1Toumivi6X0DHHiU15niUDrriSv0tJ"
+  },
+  "files": [
+    {
+      "name": "font-c544869a759ce5eeb28e1c125eef767d9dadf400a73eedbcc9ebd556daeea052b031f071c745e1117bd250eb900f9b3f.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/georama/Georama-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/georama/Georama-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 456152,
+      "sourceSri": "sha384-Cbz+8cuLmtJZtsHih4hO6XNQzJLWxkQL5VrRffHyA6dvOVdOzspCLg6lU4MSWqBg",
+      "bytes": 194036,
+      "sri": "sha384-xUSGmnWc5e6yjhwSXu92fZ2t9ACnPu28yevVVtruoFKwMfBxx0XhEXvSUOuQD5s/",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 62.5,
+          "max": 150,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 655,
+      "glyphs": 1090
+    },
+    {
+      "name": "font-65bc96a0e26420cbca983d51d639802630a5ca394bedf6f952ceefa84ae33e7391862d34ec78cfba3ab924c8ca0809e4.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/georama/Georama[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/georama/Georama%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 443524,
+      "sourceSri": "sha384-RjX/Tpv5+iZSY34edTCikZMzjHiyQaC1togMKOXh7uKWfCJMx8dzXoWwDSxxRrAo",
+      "bytes": 179496,
+      "sri": "sha384-ZbyWoOJkIMvKmD1R1jmAJjClyjlL7fb5Us7vqErjPnORhi007HjPujq5JMjKCAnk",
+      "axes": [
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 62.5,
+          "max": 150,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 655,
+      "glyphs": 1091
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/georama/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/georama/OFL.txt",
+    "bytes": 4389,
+    "sri": "sha384-HF5re+w7qgXYaP2NUc5UEyV4vMSur72J44K/y4Hm2I42vFNInk6ScEJZTd4QMnm/"
+  }
+}

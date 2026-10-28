@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Yantramanav",
+  "sourceRank": 211,
+  "sourcePosition": 417,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yantramanav/METADATA.pb",
+    "sri": "sha384-9t8LaW5olictCztWuyrhR8OfBUNLB7XHLnUGcUGnmfCSN5ymN42Ip4/titHfNQo5"
+  },
+  "files": [
+    {
+      "name": "font-c67183667de23f59da4af5e40df32470fdd62f3e8ce05e806d3426515813367b525dcb17d4926bff74a3f0187b739232.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/yantramanav/Yantramanav-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yantramanav/Yantramanav-Black.ttf",
+      "sourceBytes": 159196,
+      "sourceSri": "sha384-Jk2VUf5CbgwvQSeT0+hrwQHV+EZfB5bv9AxNo9OlgQG+XXF5u4mSkZDlERMsuqSc",
+      "bytes": 55916,
+      "sri": "sha384-xnGDZn3iP1naSvXkDfMkcP3WLz6M4F6AbTQmUVgTNntSXcsX1JJr/3Sj8Bh7c5Iy",
+      "axes": [],
+      "cmapCodepoints": 686,
+      "glyphs": 687
+    },
+    {
+      "name": "font-5acf3292e704ca76482fcdbf2029df2ff6b63f8ec04606bea3cd74a91d3429a1abda5349e9504d505764a9570c1f710f.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/yantramanav/Yantramanav-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yantramanav/Yantramanav-Bold.ttf",
+      "sourceBytes": 158048,
+      "sourceSri": "sha384-gh+hCPp+OaRyPNh9v0Bfu/Acgv6S1Ck5dsbsTCC8j6kVsdPQum9EA0nWYL3Sk4cI",
+      "bytes": 55940,
+      "sri": "sha384-Ws8ykucEynZIL82/ICnfL/a2P47ARga+o810qR00KaGr2lNJ6VBNUFdkqVcMH3EP",
+      "axes": [],
+      "cmapCodepoints": 686,
+      "glyphs": 687
+    },
+    {
+      "name": "font-9ed37e71e03bc170703505d84184b5f425ae2f21127cafbb7eae7dbc61e93cdacc2f3d632f669024f4852234a52a59ad.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/yantramanav/Yantramanav-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yantramanav/Yantramanav-Light.ttf",
+      "sourceBytes": 160820,
+      "sourceSri": "sha384-Hg7sVpkOf7hzRs52IDhPThMRBYZ8PqSmjZNfhr+MvWwUQoYHGA/GId6ZHHymgRVk",
+      "bytes": 55760,
+      "sri": "sha384-ntN+ceA7wXBwNQXYQYS19CWuLyESfK+7fq59vGHpPNrMLz1jL2aQJPSFIjSlKlmt",
+      "axes": [],
+      "cmapCodepoints": 686,
+      "glyphs": 687
+    },
+    {
+      "name": "font-307d4650fbc4b2786975b4bfac09aa066630ef183a3809bbca297e810acf0062461d77af436be939ef65c42f13bb3745.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/yantramanav/Yantramanav-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yantramanav/Yantramanav-Medium.ttf",
+      "sourceBytes": 154352,
+      "sourceSri": "sha384-cvibccP0jk7/ID22GJzmHEDPwANglPjH/74k/agRvLr+6VahXaXoFOLI3iIVGq6n",
+      "bytes": 54980,
+      "sri": "sha384-MH1GUPvEsnhpdbS/rAmqBmYw7xg6OAm7yil+gQrPAGJGHXevQ2vpOe9lxC8TuzdF",
+      "axes": [],
+      "cmapCodepoints": 686,
+      "glyphs": 687
+    },
+    {
+      "name": "font-ecc8bfb7e2bfd6115050250f743e806d3d373d53eff33584045062d6d6ae5df02099c2e85f3a30d67c9f9245cdfad818.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/yantramanav/Yantramanav-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yantramanav/Yantramanav-Regular.ttf",
+      "sourceBytes": 153872,
+      "sourceSri": "sha384-AbAANrROfYmMzRHDjDNE3jGgK1ZxpMc2zQ1s1weMH6GhF0wUFrKdAAg8XPInvsno",
+      "bytes": 54272,
+      "sri": "sha384-7Mi/t+K/1hFQUCUPdD6AbT03PVPv8zWEBFBi1tauXfAgmcLoXzow1nyfkkXN+tgY",
+      "axes": [],
+      "cmapCodepoints": 686,
+      "glyphs": 687
+    },
+    {
+      "name": "font-90dfe89f13fc989b5ff772d6353dbd4e0d6d19aeef025f6b449c98754f1021b7eba60430348d7108fdfcefc87ff99eac.woff2",
+      "variant": "250",
+      "sourcePath": "ofl/yantramanav/Yantramanav-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yantramanav/Yantramanav-Thin.ttf",
+      "sourceBytes": 160744,
+      "sourceSri": "sha384-/6W9AGJw9Lq2gnIyH9ZGVqs16kjVzVkXzeFDFUfXGf78Luu4T40p9+xm9G7m9+nk",
+      "bytes": 54700,
+      "sri": "sha384-kN/onxP8mJtf93LWNT29Tg1tGa7vAl9rRJyYdU8QIbfrpgQwNI1xCP3878h/+Z6s",
+      "axes": [],
+      "cmapCodepoints": 686,
+      "glyphs": 687
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/yantramanav/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/yantramanav/OFL.txt",
+    "bytes": 4412,
+    "sri": "sha384-jA44ZYcLaurfDl5pymnMTYJPGKEdXcNxgqqfzXBgnqpPKgUtQsQHRoNQQHPRHwQG"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Athiti",
+  "sourceRank": 464,
+  "sourcePosition": 885,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/athiti/METADATA.pb",
+    "sri": "sha384-XsT9rSLwjYqFikf1ZNpTyxlt9jHQO9CapXUkgZ1XhwOXX6IDkipKk3qsxYEJi56X"
+  },
+  "files": [
+    {
+      "name": "font-ba0bc350d303ab92e02a1b3e04cf274688a459a5a96a0693adc5ca48d4aa5d53bdb443a5de1eff50172851bf09830110.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/athiti/Athiti-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/athiti/Athiti-Bold.ttf",
+      "sourceBytes": 186308,
+      "sourceSri": "sha384-e8kH6OXReGsx6gZ2G8uybzhId5GXW9uIgsHnbPwO1va93FKIuuZzD++aojnZ2Uqa",
+      "bytes": 54804,
+      "sri": "sha384-ugvDUNMDq5LgKhs+BM8nRoikWaWpagaTrcXKSNSqXVO9tEOl3h7/UBcoUb8JgwEQ",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 773
+    },
+    {
+      "name": "font-d939da2ed69cfc8293d69fee0a6034aeaff2041e6de07e3415997259c0e540740185cc807b6b6c2c8ae334fe145f5431.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/athiti/Athiti-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/athiti/Athiti-ExtraLight.ttf",
+      "sourceBytes": 174592,
+      "sourceSri": "sha384-f/r/ar8PogufqEyEnbgiHoDjq2CDqKBDFehggViUTD29nPjvlUgpu3OLv3XzPC6B",
+      "bytes": 52824,
+      "sri": "sha384-2TnaLtac/IKT1p/uCmA0rq/yBB5t4H40FZlyWcDlQHQBhcyAe2tsLIrjNP4UX1Qx",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 773
+    },
+    {
+      "name": "font-862cae262bebfb291d084762c93d40d7fbd16408acfe054f2d21a4d4ae8a06159dd67ba08b627595e6a690af9120c5d5.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/athiti/Athiti-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/athiti/Athiti-Light.ttf",
+      "sourceBytes": 177692,
+      "sourceSri": "sha384-6uXkISPts+jGN3FJzm7tg36W671JAf8uAew+xDUZbrfOah4Hbi2OlBJSkrpvnIJS",
+      "bytes": 55304,
+      "sri": "sha384-hiyuJivr+ykdCEdiyT1A1/vRZAis/gVPLSGk1K6KBhWd1nugi2J1leamkK+RIMXV",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 773
+    },
+    {
+      "name": "font-8f8a7dd40e9bdf29a832a3e70a4c75b46b9c015e155e1024a081cf92c6a6bb30febe7f50b9cbde719d196ec20f559388.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/athiti/Athiti-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/athiti/Athiti-Medium.ttf",
+      "sourceBytes": 182400,
+      "sourceSri": "sha384-NE+vD3/hE1J7UvaHBQw12pZhN/RbLLyLYumbCvfXhKj6RPC8dwwJ0qhbQqz6TyTi",
+      "bytes": 54540,
+      "sri": "sha384-j4p91A6b3ymoMqPnCkx1tGucAV4VXhAkoIHPksamuzD+vn9QucvecZ0ZbsIPVZOI",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 773
+    },
+    {
+      "name": "font-8f18389cbb446559719930718cff25954509170b67bb390dc2d140d12927ad7278aa3b9864b46634d316fab8dbabf76a.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/athiti/Athiti-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/athiti/Athiti-Regular.ttf",
+      "sourceBytes": 186712,
+      "sourceSri": "sha384-UfFok2BTN3iCIslRlUh6P3QSBUAZ4bgYGRSW7YFiPdT0KmzZYxwKljEIIM4R1cHT",
+      "bytes": 56896,
+      "sri": "sha384-jxg4nLtEZVlxmTBxjP8llUUJFwtnuzkNwtFA0SknrXJ4qjuYZLRmNNMW+rjbq/dq",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 773
+    },
+    {
+      "name": "font-34f37b2113e84e17444b07fdaea82fb6a71bcbafd75283f1f4eb7ce73f3832c607c47fae79226d4949e03749e5fd5c62.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/athiti/Athiti-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/athiti/Athiti-SemiBold.ttf",
+      "sourceBytes": 185036,
+      "sourceSri": "sha384-BkAEK2IvnO2L7B6yu25/+oedhhYxc2jg/3rW8vNeHQ6HN1dkfTtkVlumgUXSTxcU",
+      "bytes": 56788,
+      "sri": "sha384-NPN7IRPoThdESwf9rqgvtqcby6/XUoPx9Ot85z84MsYHxH+ueSJtSUngN0nl/Vxi",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 773
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/athiti/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/athiti/OFL.txt",
+    "bytes": 4452,
+    "sri": "sha384-1Vm0sTb9/vHUkBfrgfPyKf4h4PwvfpSGVy4xGAo4SraKGXpWyWn9K4XmUBDjEhFH"
+  }
+}

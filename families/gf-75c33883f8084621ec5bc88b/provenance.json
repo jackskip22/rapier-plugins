@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Ethiopic",
+  "sourceRank": 658,
+  "sourcePosition": 1134,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansethiopic/METADATA.pb",
+    "sri": "sha384-MNjI7yvXM0rWzzfEtIRErahKlNucJ4ECVUlnKBb5QxfgiCOcHNC9+kuya/lqiMs2"
+  },
+  "files": [
+    {
+      "name": "font-3decc56f409fcc0f9de9537bb84120836f82a9e5ee53a3e8c00485ca6936b937a188b65067272c84a526bbd8bc513617.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansethiopic/NotoSansEthiopic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansethiopic/NotoSansEthiopic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 1143168,
+      "sourceSri": "sha384-4pMgZWXAgW7wXo0VG0HW3UZSaslQnsf7bJprcq/KoIL6gKiNWLMPiliNshdOBwgo",
+      "bytes": 397332,
+      "sri": "sha384-PezFb0CfzA+d6VN7uEEgg2+CqeXuU6PowASFymk2uTehiLZQZycshKUmu9i8UTYX",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 860,
+      "glyphs": 925
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansethiopic/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansethiopic/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-UPC+0evNASVRZO5lGhwV9qfByu4kCEoFYtFJjOSooxyls/Qs6vjaBfVnYHg3b8pV"
+  }
+}

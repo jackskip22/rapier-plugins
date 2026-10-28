@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Lobster Two",
+  "sourceRank": 5,
+  "sourcePosition": 11,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lobstertwo/METADATA.pb",
+    "sri": "sha384-OggGWPxUF4uofT8v5DJSLi6DgqyEWv4AgFcqRtqfkkcZFllVoxQkNh1R6dDJEuSq"
+  },
+  "files": [
+    {
+      "name": "font-13692f6d84acc21056e77db5ad048a95c5e201ed4aa91854d83f484f1bf5f902944cdceaba7e9ff8af06ad84cd04ad86.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/lobstertwo/LobsterTwo-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lobstertwo/LobsterTwo-Bold.ttf",
+      "sourceBytes": 241104,
+      "sourceSri": "sha384-EgGYLYQGkoLVX3v6RR78ovnD9Bonse5YGBwR0iH5YaoLdqUAELxdShdSUQdZBXAO",
+      "bytes": 58400,
+      "sri": "sha384-E2kvbYSswhBW5321rQSKlcXiAe1KqRhU2D9ITxv1+QKUTNzqun6f+K8GrYTNBK2G",
+      "axes": [],
+      "cmapCodepoints": 257,
+      "glyphs": 357
+    },
+    {
+      "name": "font-22272259f8602b4646c64b16d42c66fd59d0ba8337833ad5e48bca9f8160fde4d45894fad9bba1249c78ade131ca409d.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/lobstertwo/LobsterTwo-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lobstertwo/LobsterTwo-BoldItalic.ttf",
+      "sourceBytes": 235632,
+      "sourceSri": "sha384-2j85QksuFsZtLam4pJ6GsWIZZFNCpWBCPpvOa6jJ9MLNSrLKgYFfXoeLsSgYkxoi",
+      "bytes": 56180,
+      "sri": "sha384-IiciWfhgK0ZGxksW1Cxm/VnQuoM3gzrV5IvKn4Fg/eTUWJT62buhJJx4reExykCd",
+      "axes": [],
+      "cmapCodepoints": 257,
+      "glyphs": 357
+    },
+    {
+      "name": "font-0590bc1c0c0e42a249d92db003471e479bce7675585ada9a83ee7aaf13e26d2ddfb6d7577100ae05a6a2a303e1f81c79.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/lobstertwo/LobsterTwo-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lobstertwo/LobsterTwo-Italic.ttf",
+      "sourceBytes": 249896,
+      "sourceSri": "sha384-pRqlZhaMgE3dAPcQgMSCRdH2aKajrOmHz/fx04s2vDaBdvvWgF6eWD0RBjGp7cwQ",
+      "bytes": 56176,
+      "sri": "sha384-BZC8HAwOQqJJ2S2wA0ceR5vOdnVYWtqag+56rxPibS3fttdXcQCuBaaiowPh+Bx5",
+      "axes": [],
+      "cmapCodepoints": 257,
+      "glyphs": 357
+    },
+    {
+      "name": "font-259116397c963c409b271e1cce61d697fbb098a7edafb5d34026c7a4d17d7277617b6cf865f84eb5c7e3561ad5743e95.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/lobstertwo/LobsterTwo-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lobstertwo/LobsterTwo-Regular.ttf",
+      "sourceBytes": 254332,
+      "sourceSri": "sha384-qpptv7FvaOFK+NYC05LoHS0/fBpVRW1XwXMM6XhZwY7uMSJIHFWmeP5Vkmdsz0EA",
+      "bytes": 57940,
+      "sri": "sha384-JZEWOXyWPECbJx4czmHWl/uwmKftr7XTQCbHpNF9cndhe2z4ZfhOtcfjVhrVdD6V",
+      "axes": [],
+      "cmapCodepoints": 257,
+      "glyphs": 357
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/lobstertwo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/lobstertwo/OFL.txt",
+    "bytes": 4506,
+    "sri": "sha384-3r0B2fwle8EO2PqaDaWYwmaRQh9rqFKevyJlJYYxKdnTSUhce7qoYsr6iVZF53zZ"
+  }
+}

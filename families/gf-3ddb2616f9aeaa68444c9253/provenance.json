@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Roboto Condensed",
+  "sourceRank": 9,
+  "sourcePosition": 24,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotocondensed/METADATA.pb",
+    "sri": "sha384-Qx6Dm9rwrYW6SObQUNyIOF8BqFCVk8f5Lvh4criSAfOgU5LDrF0esJVGvuxhC+rd"
+  },
+  "files": [
+    {
+      "name": "font-8f3ebf143abfead2a6b055b413b2266667b92c951dcb88c2afa756e4c9deefdd0f80303889737ecd89588c3fdaf73464.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/robotocondensed/RobotoCondensed-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotocondensed/RobotoCondensed-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 388124,
+      "sourceSri": "sha384-goFUdRRgOhGbSD+CYQfr8W9anpz3LDrDL/UWfRE/HpcF8JhlvNbIFMuF67WIhyId",
+      "bytes": 191772,
+      "sri": "sha384-jz6/FDq/6tKmsFW0E7ImZme5LJUdy4jCr6dW5Mne790PgDA4iXN+zYlYjD/a9zRk",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 922,
+      "glyphs": 1321
+    },
+    {
+      "name": "font-a706e5e9cbc7d30dcd0de36db2bee8ba313c56060e00c7666dc67611928d55fb56de1f35d92468c34eac5f6601474411.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/robotocondensed/RobotoCondensed[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotocondensed/RobotoCondensed%5Bwght%5D.ttf",
+      "sourceBytes": 371616,
+      "sourceSri": "sha384-fGlMiD0v4kTGpjayyHhXhFYzfuYd096v3zeXjs9hugRPqoBhhpTmDTY84uky3AUH",
+      "bytes": 169424,
+      "sri": "sha384-pwbl6cvH0w3NDeNtsr7oujE8VgYOAMdmbcZ2EZKNVftW3h812SRow06sX2YBR0QR",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 922,
+      "glyphs": 1321
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/robotocondensed/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotocondensed/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-NxhF5w9assKavycW35Qx5toqfuYlmKtyc4nCvNNa/6KyLxRkPhSpIt/ustputfSj"
+  }
+}

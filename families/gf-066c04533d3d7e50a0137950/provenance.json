@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Serif Hentaigana",
+  "sourceRank": 38,
+  "sourcePosition": 93,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifhentaigana/METADATA.pb",
+    "sri": "sha384-pNR7duvAlWyREjtG0yCTDMatvdV8kneAOKNL/XnmmyQjOe5kTXF+UMlEcqmbbvg4"
+  },
+  "files": [
+    {
+      "name": "font-f71648c49114084dbfd8f3efea2876c8e23cf52f993283af191d4f3aa4eec76e23ed097f187afb642adfe75c6b705dc3.woff2",
+      "variant": "200",
+      "sourcePath": "ofl/notoserifhentaigana/NotoSerifHentaigana[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifhentaigana/NotoSerifHentaigana%5Bwght%5D.ttf",
+      "sourceBytes": 454624,
+      "sourceSri": "sha384-uRqCd9Aj66U65tSGxQ/z6QFUSQ49qczf53fmHESeVD/ZLeMIRk9TxrJkrzDOs842",
+      "bytes": 257240,
+      "sri": "sha384-9xZIxJEUCE2/2PPv6ih2yOI89S+ZMoOvGR1POqTux24j7Ql/GHr7ZCrf51xrcF3D",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200,
+          "default": 200,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 621,
+      "glyphs": 799
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoserifhentaigana/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifhentaigana/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-5DV/qXO4LEoxN+Lg0EBDLImHDj/0IolmO/G9o7uAKILGAzRlxQOQlAqNrziopisr"
+  }
+}

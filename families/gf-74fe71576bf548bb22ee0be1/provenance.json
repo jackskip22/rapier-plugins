@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Vollkorn",
+  "sourceRank": 152,
+  "sourcePosition": 310,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vollkorn/METADATA.pb",
+    "sri": "sha384-mgMOHj9SRxFjjMwBffF06l5Wjkd/UWjzfud7avr9KrL+oCJTVGzhMQiis3XDxJeY"
+  },
+  "files": [
+    {
+      "name": "font-e9b986c541589550fa2f81dd12929c3cc55ae92fd195f376b6b2bb70c66b47205b8ffb0877308566dcc2ea451dd9cf22.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/vollkorn/Vollkorn-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vollkorn/Vollkorn-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 441264,
+      "sourceSri": "sha384-qd6TUP1ZY4uuKNWLljXwjkal19y5xrjc7PZ4V/Mp5uiZ2BAm210CeF5FbTKjB6Vl",
+      "bytes": 166420,
+      "sri": "sha384-6bmGxUFYlVD6L4HdEpKcPMVa6S/RlfN2trK7cMZrRyBbj/sIdzCFZtzC6kUd2c8i",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1242,
+      "glyphs": 1835
+    },
+    {
+      "name": "font-41104c889f1f4b6fa306b7f8cf8850d13e7b2bdc396af3e7d2e8d48f6b2a95c0207f3a6895ad41fb36194a921b21bb2e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/vollkorn/Vollkorn[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vollkorn/Vollkorn%5Bwght%5D.ttf",
+      "sourceBytes": 577864,
+      "sourceSri": "sha384-2rJCZZgXE/d3nzMgTDVc4hiyY6LPobal/X/+j5/S6meVkSp81wd+vzrG9wYxaSs2",
+      "bytes": 198308,
+      "sri": "sha384-QRBMiJ8fS2+jBrf4z4hQ0T57K9w5avPn0ujUj2sqlcAgfzpola1B+zYZSpIbIbsu",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1242,
+      "glyphs": 2303
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/vollkorn/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/vollkorn/OFL.txt",
+    "bytes": 4489,
+    "sri": "sha384-lk3LHTGz+t6UlnO/xdz+QVWUlPtoGoql9qzMn12EhKHJPmR+9e3IKy1seCaV4+vB"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Serif Sinhala",
+  "sourceRank": 335,
+  "sourcePosition": 641,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifsinhala/METADATA.pb",
+    "sri": "sha384-chy/vFNMNJ1DUS6PP5lKH2PKTRh4VXPnh2RBupUjE+GkUmvNvoQsxEu0BZkssAWK"
+  },
+  "files": [
+    {
+      "name": "font-983c264bfdbef3fd393226018094b44df4cd265212a1427ec01bd182d6c1b1ee52687f018aae00b9a9535c00f28a9f62.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notoserifsinhala/NotoSerifSinhala[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifsinhala/NotoSerifSinhala%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 1026928,
+      "sourceSri": "sha384-dwb6Chingf7yl23Zxpy1usetqyJXKEbKJT4CYYhDLg8OouGEdEngPP+CFPTL8Srl",
+      "bytes": 243172,
+      "sri": "sha384-mDwmS/2+8/05MiYBgJS0TfTNJlISoUJ+wBvRgtbBse5SaH8Biq4AualTXADyip9i",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 451,
+      "glyphs": 976
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notoserifsinhala/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notoserifsinhala/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-Z0h4yVp/fgDEZmiwtPhKrAPYBJJXvBAJq4l9SJA0lpxAka1l9FeN11EgF6NnB+1s"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Birthstone Bounce",
+  "sourceRank": 19,
+  "sourcePosition": 41,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/birthstonebounce/METADATA.pb",
+    "sri": "sha384-e94nYbVRUabLtrBlAWDQFFInPD52OmUlhwmo3CcdPXBOCK3jKUXjlUp6jSMuA36A"
+  },
+  "files": [
+    {
+      "name": "font-27245cfce7a203d9503199afe491a428f3691415b91b44c24cfebea6f52f990a2f60cbc8c04dfc9bd07526a9b97a5307.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/birthstonebounce/BirthstoneBounce-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/birthstonebounce/BirthstoneBounce-Medium.ttf",
+      "sourceBytes": 322404,
+      "sourceSri": "sha384-bdFw/ASGwBV9nz9IANsUnlUY2mADleOxUO6r+7X+Ol0QLF//cBUd1ERwyDlcdpW1",
+      "bytes": 117972,
+      "sri": "sha384-JyRc/OeiA9lQMZmv5JGkKPNpFBW5G0TCTP6+pvUvmQovYMvIwE38m9B1Jqm5elMH",
+      "axes": [],
+      "cmapCodepoints": 586,
+      "glyphs": 1466
+    },
+    {
+      "name": "font-def691e1e6fc585e372e8b44278f062eb5ca2d7fbbd960ca5306f5db379da5e613f562af41ea7a302db7be0b998fc557.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/birthstonebounce/BirthstoneBounce-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/birthstonebounce/BirthstoneBounce-Regular.ttf",
+      "sourceBytes": 326712,
+      "sourceSri": "sha384-wBLn6bAaigJ3ecE9Qm/Olf30O7gXu2p6e4fWhtFpUaYgTKamRGm2GDM0DHLGIcfn",
+      "bytes": 116812,
+      "sri": "sha384-3vaR4eb8WF43LotEJ48GLrXKLX+72WDKUwb12zedpeYT9WKvQep6MC23vguZj8VX",
+      "axes": [],
+      "cmapCodepoints": 586,
+      "glyphs": 1466
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/birthstonebounce/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/birthstonebounce/OFL.txt",
+    "bytes": 4500,
+    "sri": "sha384-hLOBGHPeanG9snPvS1hR84Y/r7WEmYsqcGGJfluA/V9zjrVwnZamAGnajftwBlYk"
+  }
+}

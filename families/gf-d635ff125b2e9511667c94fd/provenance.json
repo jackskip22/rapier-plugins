@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Ysabeau Office",
+  "sourceRank": 525,
+  "sourcePosition": 967,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ysabeauoffice/METADATA.pb",
+    "sri": "sha384-744A6WdokhqeMTnt3KaXFDXmhmXzN8z0GzMQyxoV7oEdhPvk8oBy9VTrd2/63F5X"
+  },
+  "files": [
+    {
+      "name": "font-7b3ac40b55317bdc163976772536a5e79d3c84c85a3b8825d0781e3b2219d52740adedc946f98a94b138d1a2e65f9368.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/ysabeauoffice/YsabeauOffice-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ysabeauoffice/YsabeauOffice-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 302256,
+      "sourceSri": "sha384-UEUZdnrGbVzj1172UUQL5w6DILfhli171rLk2c21CNPsbsGTv9jeDe7nA0VbATOO",
+      "bytes": 134728,
+      "sri": "sha384-ezrEC1Uxe9wWOXZ3JTal5508hMhaO4gl0HgeOyIZ1SdAre3JRvmKlLE40aLmX5No",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 1,
+          "default": 700,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1010,
+      "glyphs": 1393
+    },
+    {
+      "name": "font-97f58a73424a40fbaaae90f4d47c9b4ee500d9c8da859d0101577d05eafb7bd057fb809f1daee9c6748d0680f86eea0e.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/ysabeauoffice/YsabeauOffice[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ysabeauoffice/YsabeauOffice%5Bwght%5D.ttf",
+      "sourceBytes": 401964,
+      "sourceSri": "sha384-4VlOi47DQBFHDGo77zmVVmWCSna4tiEEHtYdjtABxIJXBsHZK9d5AsbiKuWDCV0j",
+      "bytes": 166632,
+      "sri": "sha384-l/WKc0JKQPuqrpD01HybTuUA2cjahZ0BAVd9Ber7e9BX+4CfHa7pxnSNBoD4buoO",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 1,
+          "default": 700,
+          "max": 1000,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1012,
+      "glyphs": 1971
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/ysabeauoffice/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/ysabeauoffice/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-9K/wpBQ1ZB3+gDbN++GfMmpHC4H1lc1Hu3LITa4LE8lL3sdrzbDbARH7GKX1nz9/"
+  }
+}

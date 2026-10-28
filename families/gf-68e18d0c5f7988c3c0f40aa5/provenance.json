@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Chathura",
+  "sourceRank": 424,
+  "sourcePosition": 803,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chathura/METADATA.pb",
+    "sri": "sha384-UygJd8gDGov1h54UdlSCZSQEp15hpBS/6yI102UoNFTicXmgT0FtRAPOODb2teVc"
+  },
+  "files": [
+    {
+      "name": "font-3945a0fa78d6a196347005c3f0c8261488659709a2b1713fec1a768518bf2f0f3af3d528fa28a785a82a3b4b55988b9c.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/chathura/Chathura-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chathura/Chathura-Bold.ttf",
+      "sourceBytes": 330252,
+      "sourceSri": "sha384-GedUAkwtBVyoBfCRnFOQdGj7Hse5NqVv1QE3fXonEy2nxL76dTLtzY/MuJgjXyMg",
+      "bytes": 60000,
+      "sri": "sha384-OUWg+njWoZY0cAXD8MgmFIhllwmisXE/7Bp2hRi/Lw8689Uo+iinhagqO0tVmIuc",
+      "axes": [],
+      "cmapCodepoints": 222,
+      "glyphs": 1252
+    },
+    {
+      "name": "font-5c5679c94c50dcf0f11cfc820ed3ee788ba0a4fd3e32c8eeee3a3c4378b1ea0b188d6c4438bedda27dbe81b294fd67a2.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/chathura/Chathura-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chathura/Chathura-ExtraBold.ttf",
+      "sourceBytes": 330304,
+      "sourceSri": "sha384-q3YJy9jayasecZZhCnbH3U0vl847W+wW5Ejrn+3HdlLP0SzN7yGQBwC+VEwsu6oX",
+      "bytes": 42780,
+      "sri": "sha384-XFZ5yUxQ3PDxHPyCDtPueIugpP0+Msju7jo8Q3ix6gsYjWxEOL7don2+gbKU/Wei",
+      "axes": [],
+      "cmapCodepoints": 222,
+      "glyphs": 1252
+    },
+    {
+      "name": "font-e607607afc7c4eb499caa6b456328f54536fe6fed9a6d07cc14860d1524eb04ac32842d8cfd96d3ef375af2119119d25.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/chathura/Chathura-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chathura/Chathura-Light.ttf",
+      "sourceBytes": 342512,
+      "sourceSri": "sha384-WKGEqE4KqQjGqAjvGH/ssJY5Zqahz/3JURr3fD4FaAmrsVvV+ZG/vLBAZisVdF2X",
+      "bytes": 72416,
+      "sri": "sha384-5gdgevx8TrSZyqa0VjKPVFNv5v7ZptB8wUhg0VJOsErDKELYz9ltPvN1ryEZEZ0l",
+      "axes": [],
+      "cmapCodepoints": 222,
+      "glyphs": 1252
+    },
+    {
+      "name": "font-bb698e824fe2ab45f63539e178b1f53fe84e9466577b3df12cee7e3ec612586020a11064c99f2f9deb8aed4bf19e9e6d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/chathura/Chathura-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chathura/Chathura-Regular.ttf",
+      "sourceBytes": 332324,
+      "sourceSri": "sha384-Dc+k6frClzvnR2pjjb3R+Ms6zL66nGfIXCCy8olQxuYsE3lsgL1PSv98O4meq2TG",
+      "bytes": 70864,
+      "sri": "sha384-u2mOgk/iq0X2NTnheLH1P+hOlGZXez3xLO5+PsYSWGAgoRBkyZ8vneuK7Uvxnp5t",
+      "axes": [],
+      "cmapCodepoints": 222,
+      "glyphs": 1252
+    },
+    {
+      "name": "font-0ba3c1b74adc3ba20ee50945f6e0ec3e23c1a33abfbe4780464d47e0d1cf078fa059ced45b26ab539574f54591711a99.woff2",
+      "variant": "250",
+      "sourcePath": "ofl/chathura/Chathura-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chathura/Chathura-Thin.ttf",
+      "sourceBytes": 346360,
+      "sourceSri": "sha384-H56ofrE2CrfHeif8slcmegqLH5a+bfHXBheyxfGzbg0UardDtD837qWxb55K+tMJ",
+      "bytes": 59744,
+      "sri": "sha384-C6PBt0rcO6IO5QlF9uDsPiPBozq/vkeARk1H4NHPB4+gWc7UWyarU5V09UWRcRqZ",
+      "axes": [],
+      "cmapCodepoints": 222,
+      "glyphs": 1252
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/chathura/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/chathura/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-jnjykSUisqS3bipKd9EEIwUX09V8FrgSxFLATiSnyot7LUmW1rA/GAlY3epQYhZj"
+  }
+}

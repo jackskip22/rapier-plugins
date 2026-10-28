@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "name": "Cardo",
+  "sourceRank": 163,
+  "sourcePosition": 329,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cardo/METADATA.pb",
+    "sri": "sha384-2xELCAv3wib89L46l4qr4/uLAQl7pGeIteHvorcJMfRcafMZFDb/ZKif2k/r5KEb"
+  },
+  "files": [
+    {
+      "name": "font-c40904718a6dad45f60e2aeb460859402fe1718e03e1adda8753fe52c1b7c3557d36cb56fc8175e26f7e32efc09ec858.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/cardo/Cardo-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cardo/Cardo-Bold.ttf",
+      "sourceBytes": 348320,
+      "sourceSri": "sha384-yJgjei3G56RZ9IvJPErQm+OaI6J+4WFufgV7kQFpIY+Nb7L86DWCuihbM8QJj3T2",
+      "bytes": 134492,
+      "sri": "sha384-xAkEcYptrUX2DirrRghZQC/hcY4D4a3ah1P+UsG3w1V9NstW/IF14m9+Mu/AnshY",
+      "axes": [],
+      "cmapCodepoints": 2992,
+      "glyphs": 2993
+    },
+    {
+      "name": "font-e4e4f1c96a0bb0cb9bd316c2d5008645a8f027dd2d703ec9a4282902ef7f99235695bcc93749e80b4bdfcec3abdeb359.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/cardo/Cardo-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cardo/Cardo-Italic.ttf",
+      "sourceBytes": 262388,
+      "sourceSri": "sha384-hOwql6rZqlbR3iaF7pC6aEC0KIlBrI/wda7JQFO9HlXd5rjWLwXQScd+bHohcqX3",
+      "bytes": 106924,
+      "sri": "sha384-5OTxyWoLsMub0xbC1QCGRajwJ90tcD7JpCgpAu9/mSNWlbzJN0noC0vfzsOr3rNZ",
+      "axes": [],
+      "cmapCodepoints": 2412,
+      "glyphs": 2387
+    },
+    {
+      "name": "font-e269650a3d5814875fe84508fb1fc132798a7ef5a9ac3b72139803eeaf074c986fb3a4ef0461aaf1c8b59dbebcd416ff.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/cardo/Cardo-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cardo/Cardo-Regular.ttf",
+      "sourceBytes": 400468,
+      "sourceSri": "sha384-iZFikxCc2xdPWFr5sWtIvodN4M6XE+eS8b4Lt61AbnQ1kKOggt4BfCmrkH89i/4B",
+      "bytes": 147740,
+      "sri": "sha384-4mllCj1YFIdf6EUI+x/BMnmKfvWprDtyE5gD7q8HTJhvs6TvBGGq8ci1nb681Bb/",
+      "axes": [],
+      "cmapCodepoints": 3830,
+      "glyphs": 3845
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cardo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cardo/OFL.txt",
+    "bytes": 4372,
+    "sri": "sha384-ssrPrUFVbURM72DApxBx6RhHGmSnd0dHKb0+IliEp86TuPTxw23b+krPml08wEyH"
+  }
+}

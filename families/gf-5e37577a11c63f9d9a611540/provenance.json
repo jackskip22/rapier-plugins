@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Cormorant Infant",
+  "sourceRank": 115,
+  "sourcePosition": 234,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantinfant/METADATA.pb",
+    "sri": "sha384-KeCAeINant3shNZDPJF3yr1Q9hMVvzrelttRWA4NFLvQVz1rOduXW5sStH9zJ6AF"
+  },
+  "files": [
+    {
+      "name": "font-fa840208e48f4b46cfb5844861f79454b3d68f4a454b8fe1b8ebbfae53352c1cf003606d8ae53fc488cf51da0f33bf44.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/cormorantinfant/CormorantInfant-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantinfant/CormorantInfant-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 717948,
+      "sourceSri": "sha384-EIFoutKznlvX/SWg0GZ0zNrljl1HsI5E3zW37EJ+uKQidbW7RC6WNLHCgM6XaZdt",
+      "bytes": 143796,
+      "sri": "sha384-+oQCCOSPS0bPtYRIYfeUVLPWj0pFS4/huOu/rlM1LBzwA2BtiuU/xIjPUdoPM79E",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 979,
+      "glyphs": 1895
+    },
+    {
+      "name": "font-0feb91ed986355f3ce4ecde8c9e608b85a8fc2fe65e891dbfecca96d71c861385d12ae2badf8f03446317a0424335669.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/cormorantinfant/CormorantInfant[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantinfant/CormorantInfant%5Bwght%5D.ttf",
+      "sourceBytes": 1174156,
+      "sourceSri": "sha384-kvh3/CvzwcW2KzPTw4dMEfjliUZE5BQLBPqC8IUO6LJNNuNEGRU7ErAq20gZXRuQ",
+      "bytes": 207916,
+      "sri": "sha384-D+uR7ZhjVfPOTs3oyeYIuFqPwv5l6JHb/sypbXHIYThdEq4rrfjwNEYxegQkM1Zp",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 974,
+      "glyphs": 3183
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/cormorantinfant/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/cormorantinfant/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-l/KEESRVy52+1sODIxk+zVPWBrlMwDIt6KxWzIV/yXvKF3UzL2foX6eVQca4MFL1"
+  }
+}

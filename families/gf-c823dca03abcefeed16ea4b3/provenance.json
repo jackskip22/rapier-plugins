@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "name": "Gulzar",
+  "sourceRank": 195,
+  "sourcePosition": 393,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gulzar/METADATA.pb",
+    "sri": "sha384-WugRoptdZev2b26Yo1LqOeBGBJow+uQWRvogOvM1lg98X02ya9p1356IjPnQU3Ou"
+  },
+  "files": [
+    {
+      "name": "font-fb1ad1b5411d173f1e3b513e3f9fb69f643bfd84df001ba2ae8006e432fb18a6071eeff0e34fb234f0fd842f22243cde.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/gulzar/Gulzar-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gulzar/Gulzar-Regular.ttf",
+      "sourceBytes": 963496,
+      "sourceSri": "sha384-xNMwX2LxN3ByJ9rr3i1Sw7SSLhoT5qsW/gjRDOPItdmSe+x2pNJ/koDqXB1F/eqH",
+      "bytes": 236668,
+      "sri": "sha384-+xrRtUEdFz8eO1E+P5+2n2Q7/YTfABuiroAG5DL7GKYHHu/w40+yNPD9hC8iJDze",
+      "axes": [],
+      "cmapCodepoints": 414,
+      "glyphs": 1161
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/gulzar/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/gulzar/OFL.txt",
+    "bytes": 4386,
+    "sri": "sha384-/fmv3t9uK4jqpIFXY1GkGbr24qtLnhjU7s8IdQ7wF9ZHVMFpb7pWmxZReWHwL7qH"
+  }
+}

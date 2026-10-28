@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Istok Web",
+  "sourceRank": 319,
+  "sourcePosition": 611,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/istokweb/METADATA.pb",
+    "sri": "sha384-cA8janJqPKa5/dNddWiq4ngjbcow4xL3euyEhZY/nQFROWr/b1N/gKIQRiuTPevA"
+  },
+  "files": [
+    {
+      "name": "font-4dd904d21ca56e06ed5365f488a6b3f2a4088442a43cca76dd7c42136185ce73d599b765bef936dd73d97798768af735.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/istokweb/IstokWeb-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/istokweb/IstokWeb-Bold.ttf",
+      "sourceBytes": 224440,
+      "sourceSri": "sha384-24wBdI/BfDbLBIbWdfyZulmpubXeQm2fJHUrfFXkAegZO06jUBiRWvbDYZScZbJi",
+      "bytes": 61076,
+      "sri": "sha384-TdkE0hylbgbtU2X0iKaz8qQIhEKkPMp23XxCE2GFznPVmbdlvvk23XPZd5h2ivc1",
+      "axes": [],
+      "cmapCodepoints": 1002,
+      "glyphs": 1034
+    },
+    {
+      "name": "font-970d130d0e2747b170b2d262d3411ce2a8a140b64287b286ebd699cf433076d490c8b32c3cc5ab5ce3b12461cac768cb.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/istokweb/IstokWeb-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/istokweb/IstokWeb-BoldItalic.ttf",
+      "sourceBytes": 218164,
+      "sourceSri": "sha384-6JBwT/iIF0evcXKvHNa3YwgvuuA82gvl3/S9BT7ZMXE4g2tjFL5f4vu6sFC39su+",
+      "bytes": 60668,
+      "sri": "sha384-lw0TDQ4nR7FwstJi00Ec4qihQLZCh7KG69aZz0MwdtSQyLMsPMWrXOOxJGHKx2jL",
+      "axes": [],
+      "cmapCodepoints": 950,
+      "glyphs": 991
+    },
+    {
+      "name": "font-4991a090304d018e48bcaeb0bef2a340ececdb73ce732eadc7b06535acbac8b88fcf3c7835cb1ac5ae3422d88d8bdd8e.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/istokweb/IstokWeb-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/istokweb/IstokWeb-Italic.ttf",
+      "sourceBytes": 218124,
+      "sourceSri": "sha384-29NelV6UdW3F4zcsi9NOfpxRlNd/hKLLWUu/5Slu7TvjvfTNSoYTQC+OGlUc9hxb",
+      "bytes": 60592,
+      "sri": "sha384-SZGgkDBNAY5IvK6wvvKjQOzs23POcy6tx7BlNay6yLiPzzx4Ncsaxa40ItiNi92O",
+      "axes": [],
+      "cmapCodepoints": 950,
+      "glyphs": 991
+    },
+    {
+      "name": "font-68b2b4c807e26470e374f88ef7012924c59d445e97afc3abb3a8d108e716922b6b17b583a7801a1289631ea9fa4ed361.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/istokweb/IstokWeb-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/istokweb/IstokWeb-Regular.ttf",
+      "sourceBytes": 315392,
+      "sourceSri": "sha384-Tg7YVFM7SKUQ0LD7OZZ0RZMDLSS4va66RF8gYWEwnZv+d1T0+MMlytVyMeLzeu9U",
+      "bytes": 82100,
+      "sri": "sha384-aLK0yAfiZHDjdPiO9wEpJMWdRF6Xr8Ors6jRCOcWkitrF7WDp4AaEoljHqn6TtNh",
+      "axes": [],
+      "cmapCodepoints": 1332,
+      "glyphs": 1379
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/istokweb/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/istokweb/OFL.txt",
+    "bytes": 4410,
+    "sri": "sha384-0V4iUVwavAmolHUs7/0klDd/IlXZ608Zg8XzrASb2KSdQjMjlEsOK644WgOLgO10"
+  }
+}

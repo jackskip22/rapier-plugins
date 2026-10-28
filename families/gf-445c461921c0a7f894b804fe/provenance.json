@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Tiro Bangla",
+  "sourceRank": 399,
+  "sourcePosition": 759,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirobangla/METADATA.pb",
+    "sri": "sha384-U+fj0NiGCqSQ7S7/8IS0DRx9lvPdKw86p+GgumXLi/+h9UA26nh41qBFMs890UQh"
+  },
+  "files": [
+    {
+      "name": "font-48793ea731724db01f5d44a5ed800e9a3133d8bf556b4240c64530cb4a3891567758393360407d93fb2cfb6a3e5c91e4.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/tirobangla/TiroBangla-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirobangla/TiroBangla-Italic.ttf",
+      "sourceBytes": 329576,
+      "sourceSri": "sha384-UFQSUUPdzmyHgMzeaD59wPxI7qBN9+jPVAZ/NsEcHgQeQdrkTpx6YpCxQ+JTS0aU",
+      "bytes": 127464,
+      "sri": "sha384-SHk+pzFyTbAfXUSl7YAOmjEz2L9Va0JAxkUwy0o4kVZ3WDkzYEB9k/ss+2o+XJHk",
+      "axes": [],
+      "cmapCodepoints": 485,
+      "glyphs": 1193
+    },
+    {
+      "name": "font-3a518d84afd515c07aa91592236dfa41755d70900a30edc934fe931fa0630be45312016745fcd88d2f69c6db9eb98000.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/tirobangla/TiroBangla-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirobangla/TiroBangla-Regular.ttf",
+      "sourceBytes": 323776,
+      "sourceSri": "sha384-xBbbEqjo//bii9pFBerSycsuUT5Tk5g7vCTm2t4ZIh9Vl5HAv2UV/01iq4CJJKgh",
+      "bytes": 121812,
+      "sri": "sha384-OlGNhK/VFcB6qRWSI236QXVdcJAKMO3JNP6TH6BjC+RTEgFnRfzYjS9pxtueuYAA",
+      "axes": [],
+      "cmapCodepoints": 485,
+      "glyphs": 1193
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/tirobangla/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirobangla/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-mjCz0lzdq30nRdJ2PGxxr5T2leHKqqR73MSCrCIHk+FbpTLwAmJZj8JisJucGHeU"
+  }
+}

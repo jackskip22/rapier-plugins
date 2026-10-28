@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Ubuntu Mono",
+  "sourceRank": 258,
+  "sourcePosition": 506,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntumono/METADATA.pb",
+    "sri": "sha384-ycIIjfwuvkPf4R5aaPrgnjCcudz7+ZNwnGaZ+WVbLIKuwGR3cSPpMi8S8tLtAtWP"
+  },
+  "files": [
+    {
+      "name": "font-ae638f64bd4ec97820c0c80704519d3bc39df428661f513895ae13f57e47f20eddedba1aba3cccde87e2b82ce9356c6d.woff2",
+      "variant": "700",
+      "sourcePath": "ufl/ubuntumono/UbuntuMono-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntumono/UbuntuMono-Bold.ttf",
+      "sourceBytes": 191400,
+      "sourceSri": "sha384-K6xPSYE0Ma4Dkp7LCTb6vPVmgwm3yqrqBk3HKo+efdx8+AL31/yGmDwoDbMeDGWk",
+      "bytes": 80280,
+      "sri": "sha384-rmOPZL1OyXggwMgHBFGdO8Od9ChmH1E4la4T9X5H8g7d7boaujzM3ofiuCzpNWxt",
+      "axes": [],
+      "cmapCodepoints": 1224,
+      "glyphs": 1296
+    },
+    {
+      "name": "font-15aaa95dff49604f7b2a4b018e06322f2e4f8bd492b8672e4014eb81bf6f124d5d6c8ba603b5fbc2dc063b5742fee3ff.woff2",
+      "variant": "700italic",
+      "sourcePath": "ufl/ubuntumono/UbuntuMono-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntumono/UbuntuMono-BoldItalic.ttf",
+      "sourceBytes": 216208,
+      "sourceSri": "sha384-ZnWX+CgAKi6lfS1sE40xnGfZesUiimB3Rvvz5JOaYCtD5lLltSWUk6UzMk7BgpkZ",
+      "bytes": 98444,
+      "sri": "sha384-FaqpXf9JYE97KksBjgYyLy5Pi9SSuGcuQBTrgb9vEk1dbIumA7X7wtwGO1dC/uP/",
+      "axes": [],
+      "cmapCodepoints": 1224,
+      "glyphs": 1301
+    },
+    {
+      "name": "font-6f03e771869cd08410f228b487cfa7eb1b55b2ba57ea7c0ba02f30da9c82e6dca96f8f6d71e0ff297401ba2cfe738556.woff2",
+      "variant": "italic",
+      "sourcePath": "ufl/ubuntumono/UbuntuMono-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntumono/UbuntuMono-Italic.ttf",
+      "sourceBytes": 210216,
+      "sourceSri": "sha384-Q9gEAt3CPyGfEVz4oWoIdHjj9LkU2gME2BBj4vhNnMiRbrQiffp+Al6+oly0UkRe",
+      "bytes": 84228,
+      "sri": "sha384-bwPncYac0IQQ8ii0h8+n6xtVsrpX6nwLoC8w2pyC5typb49tceD/KXQBuiz+c4VW",
+      "axes": [],
+      "cmapCodepoints": 1224,
+      "glyphs": 1301
+    },
+    {
+      "name": "font-e64bb2141714a07638144a2e12d5d7164abba29fb5c53fb6f3c162978943ec90b819e31a03bd0b8b0688e57924b99e67.woff2",
+      "variant": "regular",
+      "sourcePath": "ufl/ubuntumono/UbuntuMono-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntumono/UbuntuMono-Regular.ttf",
+      "sourceBytes": 205748,
+      "sourceSri": "sha384-70UJmsmPZzCn4YKVEZS8ZZSn7yYWDXDZvSc9N1HP72bvcQ/AILPur68pMsmpJrPd",
+      "bytes": 82452,
+      "sri": "sha384-5kuyFBcUoHY4FEouEtXXFkq7op+1xT+288Fil4lD7JC4GeMaA70LiwaI5XkkuZ5n",
+      "axes": [],
+      "cmapCodepoints": 1224,
+      "glyphs": 1296
+    }
+  ],
+  "license": {
+    "sourcePath": "ufl/ubuntumono/LICENCE.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ufl/ubuntumono/LICENCE.txt",
+    "bytes": 4673,
+    "sri": "sha384-2Yo/N8bsSRjOUxtfDeF/zpf5b8q4WBaDhnimESDLsszFdVLHcmJqttJEXFLNufBn"
+  }
+}

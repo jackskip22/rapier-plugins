@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Overpass",
+  "sourceRank": 28,
+  "sourcePosition": 67,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/overpass/METADATA.pb",
+    "sri": "sha384-Gk7dZFLrlEZMPk2MIRm5fT37MeEAr7+hG+wX0avJNWSlZeQKfqfcfx88E8hQZ/Fh"
+  },
+  "files": [
+    {
+      "name": "font-aba8ffd9247bcf2b5c9a5107ee0809a783019bac8f2f24bf8b3e5f256f389ec68e02a3a97e32ef7ff3f5741971d981b7.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/overpass/Overpass-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/overpass/Overpass-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 289328,
+      "sourceSri": "sha384-hR6JiT95Y0k31YpBWMCUbtpvkWqj4dCRgujwcwNVjAYl0DHhGXJ8rLU658XzzDSt",
+      "bytes": 128104,
+      "sri": "sha384-q6j/2SR7zytcmlEH7ggJp4MBm6yPLyS/iz5fJW84nsaOAqOpfjLvf/P1dBlx2YG3",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1182,
+      "glyphs": 1351
+    },
+    {
+      "name": "font-1f3bdb3a88e5df6417dd873c0ea8c39b2dcf197e12a5b9821b713045ec97b46172d034e1ae87d936e8d0f2cdeece191e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/overpass/Overpass[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/overpass/Overpass%5Bwght%5D.ttf",
+      "sourceBytes": 318700,
+      "sourceSri": "sha384-i0sIxF5+6QpBhO7aZe0REjwX0V+gE4K6oSRt6mKGRS/01Ii/CHCpxzEjrW1OG4SX",
+      "bytes": 129808,
+      "sri": "sha384-HzvbOojl32QX3Yc8DqjDmy3PGX4SpbmCG3EwReyXtGFy0DThrofZNujQ8s3uzhke",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1182,
+      "glyphs": 1351
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/overpass/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/overpass/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-UyGZChywrz5/oadE0caSRuUGj/1ZzaZnb88iPsuDmcL4xm0ONuUWN2oDPvEKk85K"
+  }
+}

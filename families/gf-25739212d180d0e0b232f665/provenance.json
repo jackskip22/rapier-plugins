@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Mitr",
+  "sourceRank": 105,
+  "sourcePosition": 213,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mitr/METADATA.pb",
+    "sri": "sha384-skBUCOgbT2pMF+8FwMU5aC2pCbuK/5q4jwe+lfovFlIGFaVYeDkdlBZCXykBuV6r"
+  },
+  "files": [
+    {
+      "name": "font-f1ee45157d4d2aac22a854c8d98fb378e45333124e8cf376f695ff09101348ed8f2b4069a0468af9ccfd1ac8d6fe6c81.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/mitr/Mitr-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mitr/Mitr-Bold.ttf",
+      "sourceBytes": 224432,
+      "sourceSri": "sha384-1IZDiXudGvmbkwxDd0KqSrByV/3jcgPEKtAeIyDOabgiRTjPBLNLetiJr8EV8Koq",
+      "bytes": 56640,
+      "sri": "sha384-8e5FFX1NKqwiqFTI2Y+zeORTMxJOjPN29pX/CRATSO2PK0BpoEaK+cz9GsjW/myB",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 774
+    },
+    {
+      "name": "font-deaf2939716b5d3e844523a8206ab9990dba8764591d0ecb52f0915ecda73b9c7cf4e6d4b022f49d0a2a023350f410b3.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/mitr/Mitr-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mitr/Mitr-ExtraLight.ttf",
+      "sourceBytes": 200760,
+      "sourceSri": "sha384-YKpHgQ+Nv57+Asq8KRtWBaqxUQobQNs8rk8XToirUZ6AwxUMuIP1j363hLOkMGa9",
+      "bytes": 51284,
+      "sri": "sha384-3q8pOXFrXT6ERSOoIGq5mQ26h2RZHQ7LUvCRXs2nO5x89ObUsCL0nQoqAjNQ9BCz",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 774
+    },
+    {
+      "name": "font-1a9d88f0ff5d43db69b05a276dc445504dbd2b8480a5d0155f2a8d8584121ad84a45b03566408a0de094922d533a4a37.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/mitr/Mitr-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mitr/Mitr-Light.ttf",
+      "sourceBytes": 211080,
+      "sourceSri": "sha384-Xk0CxV2YPgD9e2GW99CLtBSQa76R3VbhXDrGMpbBQi6lrUTW5MxuaGbBkxsQMk2F",
+      "bytes": 56192,
+      "sri": "sha384-Gp2I8P9dQ9tpsFonbcRFUE29K4SApdAVXyqNhYQSGthKRbA1ZkCKDeCUki1TOko3",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 774
+    },
+    {
+      "name": "font-1c077519861ca5aec35734d3fbe88c96670f2b66751cc264921d420e6347e95691ce6f94a63fef36b3a7602776afbad6.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/mitr/Mitr-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mitr/Mitr-Medium.ttf",
+      "sourceBytes": 222116,
+      "sourceSri": "sha384-SQK59i5D1Q1VjFEPQqDVuQbtKCAbnFEPbjsy4WSJvG1jiaQn46MldxVdulOXkknc",
+      "bytes": 58504,
+      "sri": "sha384-HAd1GYYcpa7DVzTT++iMlmcPK2Z1HMJkkh1CDmNH6VaRzm+Upj/vNrOnYCd2r7rW",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 775
+    },
+    {
+      "name": "font-31dfb5ee2222d1cff2f43dc08efc28ea750fef164a5c8ce71c55a98b998864bfc4999820cd19bd7d6b0af627918aa5ed.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/mitr/Mitr-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mitr/Mitr-Regular.ttf",
+      "sourceBytes": 222416,
+      "sourceSri": "sha384-e1z8VbcD/xaiXbdSEIrE33z7xdvJdN+2csgjExqOfg7nvt7DPqmvTxWUZrXf3XU/",
+      "bytes": 58880,
+      "sri": "sha384-Md+17iIi0c/y9D3Ajvwo6nUP7xZKXIznHFWpi5mIZL/EmZggzRm9fWsK9ieRiqXt",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 774
+    },
+    {
+      "name": "font-da61bd9953d1ba11fc8ff9d1828dc9662581a4842d7ee284a09a05db1d768fa2a99333586494f8916513d2447959f617.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/mitr/Mitr-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mitr/Mitr-SemiBold.ttf",
+      "sourceBytes": 225796,
+      "sourceSri": "sha384-WY/pGJDw38jdl92KEuopCRZ2kkOhG2G4Cdnm7j5RIcy4E0nkbHa6Ob6+7yFwDfMz",
+      "bytes": 59824,
+      "sri": "sha384-2mG9mVPRuhH8j/nRgo3JZiWBpIQtfuKEoJoF2x12j6KpkzNYZJT4kWUT0kR5WfYX",
+      "axes": [],
+      "cmapCodepoints": 726,
+      "glyphs": 774
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/mitr/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/mitr/OFL.txt",
+    "bytes": 4382,
+    "sri": "sha384-SCnTky41DHPYKNHrPnYMpCnBZuRKtYAnSYt9sNk6zzWCWBzaSplExK42VTFRoYwd"
+  }
+}

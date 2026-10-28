@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "name": "Martel Sans",
+  "sourceRank": 381,
+  "sourcePosition": 722,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/METADATA.pb",
+    "sri": "sha384-lqlcIbXw5s//3FiWkgy/ZU/6Ik7HKTPdOZ4bm3inzbREVj66QpxPdUP63JAvWRLF"
+  },
+  "files": [
+    {
+      "name": "font-1c0f4f11878a230ede88defee7efd22589ca14ea1c431f1f50185f5910deadf9a6fa5d050afe44a261a993598853eb9f.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/martelsans/MartelSans-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/MartelSans-Black.ttf",
+      "sourceBytes": 152156,
+      "sourceSri": "sha384-EoZfwTRjROfSKfce61WEPfyYZrBwsICpLg63U27+7wjO0FU1sH66idRcggLgh1SO",
+      "bytes": 56600,
+      "sri": "sha384-HA9PEYeKIw7eiN7+5+/SJYnKFOocQx8fUBhfWRDerfmm+l0FCv5EomGpk1mIU+uf",
+      "axes": [],
+      "cmapCodepoints": 474,
+      "glyphs": 721
+    },
+    {
+      "name": "font-d054f381a6b8953b053738bad26b1a8c41544126a12aa2b54f064c49547626fa0365eba2c156534eb4e23292f85bee11.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/martelsans/MartelSans-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/MartelSans-Bold.ttf",
+      "sourceBytes": 152352,
+      "sourceSri": "sha384-yec/H3ujChg2QcjXJ0IeIT3PSJT4nYR7T17lnWduJ+4cxnCzmqC8eQP6Q8bUxn1a",
+      "bytes": 58332,
+      "sri": "sha384-0FTzgaa4lTsFNzi60msajEFUQSahKqK1TwZMSVR2JvoDZeuiwVZTTrTiMpL4W+4R",
+      "axes": [],
+      "cmapCodepoints": 474,
+      "glyphs": 721
+    },
+    {
+      "name": "font-d7d38f8022eab48be8c254b29e7dcc6a5f0d50a19efa8b23b7f882181856001ee611c189b9a617148e130dd538b42484.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/martelsans/MartelSans-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/MartelSans-ExtraBold.ttf",
+      "sourceBytes": 152748,
+      "sourceSri": "sha384-BQwmC3m+jnjumTxQGL4KXjMxk27gH8rIa6Oox843PVkMBd7YBkvDP5yc+GZqJGf+",
+      "bytes": 58600,
+      "sri": "sha384-19OPgCLqtIvowlSynn3Mal8NUKGe+osjt/iCGBhWAB7mEcGJuaYXFI4TDdU4tCSE",
+      "axes": [],
+      "cmapCodepoints": 474,
+      "glyphs": 721
+    },
+    {
+      "name": "font-0b89063dd03bda1ff5e3bd8438df7f0044230b0f7199122039e175d79ee34f767c9a032c679ec3c6c915f2e3da2c826d.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/martelsans/MartelSans-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/MartelSans-ExtraLight.ttf",
+      "sourceBytes": 153652,
+      "sourceSri": "sha384-1f9+lmQpX3744jXa32UF6p6QGVH7a2BqjOwynYUxL4hGkT9FNrSgJzYAm6FqUzQi",
+      "bytes": 56444,
+      "sri": "sha384-C4kGPdA72h/1472EON9/AEQjCw9xmRIgOeF1157jT3Z8mgMsZ57DxskV8uPaLIJt",
+      "axes": [],
+      "cmapCodepoints": 474,
+      "glyphs": 721
+    },
+    {
+      "name": "font-98c948a581d939be9b6fdbbe36e9f9e160ff84e6b2899754adb328d83854972e5b0cbc48a8542095f7aebb374f764697.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/martelsans/MartelSans-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/MartelSans-Light.ttf",
+      "sourceBytes": 153172,
+      "sourceSri": "sha384-mf3tiGYcLJFmNqcznE9xKy1HUxUaNYsYjix2mjn0A/q2pHxsryVPMqTE45OKzZ93",
+      "bytes": 58380,
+      "sri": "sha384-mMlIpYHZOb6bb9u+Nun54WD/hOayiZdUrbMo2DhUly5bDLxIqFQglfeuuzdPdkaX",
+      "axes": [],
+      "cmapCodepoints": 474,
+      "glyphs": 721
+    },
+    {
+      "name": "font-2991684a4ff69d3cc5a2424d42fbaf6cf334f62e3deee8a2261c67447235bf1fc602f50e8028d7ff9355670692d5634e.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/martelsans/MartelSans-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/MartelSans-Regular.ttf",
+      "sourceBytes": 153396,
+      "sourceSri": "sha384-CS0JzR+WCnaqZt1Nebh9KpRUI76M8eKV+R5jg5oi9ktvV6xkNgGEXYvyP60Nr5Ch",
+      "bytes": 58360,
+      "sri": "sha384-KZFoSk/2nTzFokJNQvuvbPM09i497uiiJhxnRHI1vx/GAvUOgCjX/5NVZwaS1WNO",
+      "axes": [],
+      "cmapCodepoints": 474,
+      "glyphs": 721
+    },
+    {
+      "name": "font-dabf69f33e14dbca797bb3ffb49150e50b4342d661b132c30ac0251e4784b521cb7013f10432305098893abed83e85d7.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/martelsans/MartelSans-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/MartelSans-SemiBold.ttf",
+      "sourceBytes": 152724,
+      "sourceSri": "sha384-QPP7B+jBtP2qJyETFWlJ2IuEKojcxc3bq/SYD+0qW8JLKGUyPlxT9LLQ4VYC1wUQ",
+      "bytes": 58688,
+      "sri": "sha384-2r9p8z4U28p5e7P/tJFQ5QtDQtZhsTLDCsAlHkeEtSHLcBPxBDIwUJiJOr7YPoXX",
+      "axes": [],
+      "cmapCodepoints": 474,
+      "glyphs": 721
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/martelsans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/martelsans/OFL.txt",
+    "bytes": 4372,
+    "sri": "sha384-5oFApjejIqlG3Srapc4a3NKQsITDUCJk0GZXr19cju/jyXjgqyGjmICY44rDsVTf"
+  }
+}

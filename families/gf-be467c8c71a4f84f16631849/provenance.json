@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Averia Libre",
+  "sourceRank": 426,
+  "sourcePosition": 808,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/averialibre/METADATA.pb",
+    "sri": "sha384-df7oARr+kTiqn15ENRg8xXBA3ZCA/u/mTDqO0jWuM0DB14cMVhtNvxaSJwA0P6JO"
+  },
+  "files": [
+    {
+      "name": "font-c1ad88d7e83dfeb22c9d475bda6a49edfc95d23606d88250fe8b72bb9c4d4bb792cb292c00c6c7f0f6bfae0f61fe09d3.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/averialibre/AveriaLibre-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/averialibre/AveriaLibre-Bold.ttf",
+      "sourceBytes": 112184,
+      "sourceSri": "sha384-Fy8yRzsOTxDT+CVE3qOvTzwIng5HcgSEcFtkLmpV2hcTwKWvx7RS0skF9gVKsSUL",
+      "bytes": 40736,
+      "sri": "sha384-wa2I1+g9/rIsnUdb2mpJ7fyV0jYG2IJQ/otyu5xNS7eSyyksAMbH8Pa/rg9h/gnT",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 234
+    },
+    {
+      "name": "font-77eab70da966ab61d0dc41cd0742d0796bd35502c8c3154a6b3bdc39aa1af4ed9c106f4b6f05aefd93181799fe4dcfcb.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/averialibre/AveriaLibre-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/averialibre/AveriaLibre-BoldItalic.ttf",
+      "sourceBytes": 135624,
+      "sourceSri": "sha384-rZJGfsHfsGPjxRp6SIdzj9tr9Mw8NTYKiQEPkYihlE9vGiV9JYFkL9BcETrBb90y",
+      "bytes": 44288,
+      "sri": "sha384-d+q3Dalmq2HQ3EHNB0LQeWvTVQLIwxVKazvcOaoa9O2cEG9LbwWu/ZMYF5n+Tc/L",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 234
+    },
+    {
+      "name": "font-5f949ee19ec567c7697faebaa82d8d3ed5ba6d115108235441a38111038eab71e4de3791b76848aebc78b00ca3a712c3.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/averialibre/AveriaLibre-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/averialibre/AveriaLibre-Italic.ttf",
+      "sourceBytes": 128804,
+      "sourceSri": "sha384-lZxzssvH/x+BzMyX326TlmYIQyYyqRiFEGyr6xGcViB/c6TBQNn3eDd/VEOTMvbQ",
+      "bytes": 43308,
+      "sri": "sha384-X5Se4Z7FZ8dpf666qC2NPtW6bRFRCCNUQaOBEQOOq3Hk3jeRt2hIrrx4sAyjpxLD",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 234
+    },
+    {
+      "name": "font-8826ce96557fd8856f34a58bca7ec35aff0a34070ad83c884ab7d952e87cf72e2bf6e5ab4b2629d74d11dc62c3fdbc73.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/averialibre/AveriaLibre-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/averialibre/AveriaLibre-Light.ttf",
+      "sourceBytes": 108188,
+      "sourceSri": "sha384-eKpFuuKUabeg/eov+TfGs+Dkr3VhmMZPEh9sb7syZxVr29tohQzKXe+/7yHmdnM1",
+      "bytes": 40192,
+      "sri": "sha384-iCbOllV/2IVvNKWLyn7DWv8KNAcK2DyISrfZUuh89y4r9uWrSyYp100R3GLD/bxz",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 234
+    },
+    {
+      "name": "font-59f7e1ae7954d1d90afee499df8fb80d10d9d5767d1b56e5ce9516f97634322191d1175401487f8de4e72c149b376465.woff2",
+      "variant": "300italic",
+      "sourcePath": "ofl/averialibre/AveriaLibre-LightItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/averialibre/AveriaLibre-LightItalic.ttf",
+      "sourceBytes": 133576,
+      "sourceSri": "sha384-Hzp+QRiMvF7ZGiESWeviwlIvXX4n7fHOy2YlyJHhWemqAF8zaqXShNAsWoH13lge",
+      "bytes": 44744,
+      "sri": "sha384-WffhrnlU0dkK/uSZ34+4DRDZ1XZ9G1blzpUW+XY0MiGR0RdUAUh/jeTnLBSbN2Rl",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 234
+    },
+    {
+      "name": "font-4c4f9a580f7142e772aaac32cf2c3e3a6d39ea78a2173f8366d893ce53628140a2e160ebe0adf31425c720a70eda50ab.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/averialibre/AveriaLibre-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/averialibre/AveriaLibre-Regular.ttf",
+      "sourceBytes": 108424,
+      "sourceSri": "sha384-1KubqjGuBK/DdSYEC0QHINqM6097R3NPuxW8O/A0yNDAK2RdUx+gVRXxWb8BfNOT",
+      "bytes": 39972,
+      "sri": "sha384-TE+aWA9xQudyqqwyzyw+Om056niiFz+DZtiTzlNigUCi4WDr4K3zFCXHIKcO2lCr",
+      "axes": [],
+      "cmapCodepoints": 231,
+      "glyphs": 234
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/averialibre/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/averialibre/OFL.txt",
+    "bytes": 4402,
+    "sri": "sha384-eKMuAtEe3y94x+KQAj5LZMbnmVxLlbA2n6IVNm3jwLRVqp/04oLLzzz0r2zmbx9Z"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Aref Ruqaa Ink",
+  "sourceRank": 439,
+  "sourcePosition": 838,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arefruqaaink/METADATA.pb",
+    "sri": "sha384-UWTiHMjnFaX/7CntmCarHO9qatbZ2KRKWCEMupuIdl0P80tnVInM4E/oQuZhkpzU"
+  },
+  "files": [
+    {
+      "name": "font-a7de5d6dc0f9833694e8e76b4f8a64c02358dca7b8365e5c59c6a790c180f017889dee0858fd982fb74956fcfae80552.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/arefruqaaink/ArefRuqaaInk-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arefruqaaink/ArefRuqaaInk-Bold.ttf",
+      "sourceBytes": 631016,
+      "sourceSri": "sha384-bmnOw5cAAWVvWhX8xeU9Js4s+0276uYVGhqzgdC0mmjt560JyCalQo6MJGHBeOPF",
+      "bytes": 176832,
+      "sri": "sha384-p95dbcD5gzaU6OdrT4pkwCNY3Ke4Nl5cWcankMGA8BeIne4IWP2YL7dJVvz66AVS",
+      "axes": [],
+      "cmapCodepoints": 343,
+      "glyphs": 1189
+    },
+    {
+      "name": "font-15603ab0d3a59664a46349fb9a9aca2c5798ab7359f076bd62bceb09ce8c25ac83670db2363e25e67818c49dac2341b8.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/arefruqaaink/ArefRuqaaInk-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arefruqaaink/ArefRuqaaInk-Regular.ttf",
+      "sourceBytes": 568056,
+      "sourceSri": "sha384-1+/FNz2XE4nFCKeQvHnfV1Y9xCClyI0/EwoKHSYbK3OvpBUM9yf8gVS1EKBnKBcr",
+      "bytes": 155632,
+      "sri": "sha384-FWA6sNOllmSkY0n7mprKLFeYq3NZ8Ha9YrzrCc6MJayDZw2yNj4l5ngYxJ2sI0G4",
+      "axes": [],
+      "cmapCodepoints": 343,
+      "glyphs": 1192
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/arefruqaaink/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/arefruqaaink/OFL.txt",
+    "bytes": 4463,
+    "sri": "sha384-fsSgKp7IZsj68e0F3L0euL25vSm+cKMMb7b004KJRmyjAgyHfKGgumAyOgRTpDdF"
+  }
+}

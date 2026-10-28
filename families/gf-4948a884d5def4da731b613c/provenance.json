@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "name": "Saira Extra Condensed",
+  "sourceRank": 228,
+  "sourcePosition": 453,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/METADATA.pb",
+    "sri": "sha384-4l9OBLaP4rMhU5DmDPidD98bacD7QTe7AYJH9IrYVc2pPYj4CsDUmLgQs1Skvrta"
+  },
+  "files": [
+    {
+      "name": "font-7164bd6e5b9a1ef281a98c74fe647025a7770a919e7ffca3f50b47784afddcd0c00b70423d9511e56d1494be751de596.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-Black.ttf",
+      "sourceBytes": 96448,
+      "sourceSri": "sha384-nFWa1EHc5rgeczRgZtexcPlWQlCPSM5kwAB+1lJ43OxHDBOzJVzVeQpd3TlJsgJT",
+      "bytes": 34052,
+      "sri": "sha384-cWS9bluaHvKBqYx0/mRwJad3CpGef/yj9QtHeEr93NDAC3BCPZUR5W0UlL51HeWW",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 791
+    },
+    {
+      "name": "font-0f28e4aafb514ea157d0f035be066e0b63b5708296cafd1b8dbc5dc089c5a002a75fed83b86eff43a26ecdbde4b1c92f.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-Bold.ttf",
+      "sourceBytes": 96064,
+      "sourceSri": "sha384-5rHlfFqB2fLVryepVg6dev8aCDKt1rahTW631Hqhqa1E0jVxpSujQb2DgqKmkh9Z",
+      "bytes": 34716,
+      "sri": "sha384-DyjkqvtRTqFX0PA1vgZuC2O1cIKWyv0bjbxdwInFoAKnX+2DuG7/Q6Juzb3ksckv",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 791
+    },
+    {
+      "name": "font-a3fb2e1b2169e5fdc548598438078f9f5cfb17322d49896b3fef6bc80f6888f8219f747562aa5e8185d61dff7a19cfc4.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-ExtraBold.ttf",
+      "sourceBytes": 96816,
+      "sourceSri": "sha384-7P6y7QKOgVra2gCVo4cQvHDEI2KSGd3Cj1peN6GekZ3jmIqot4b4BuZ50NzpsRu+",
+      "bytes": 34904,
+      "sri": "sha384-o/suGyFp5f3FSFmEOAePn1z7FzItSYlrP+9ryA9oiPghn3R1YqpegYXWHf96Gc/E",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 791
+    },
+    {
+      "name": "font-7bac10767ddbdefc437603f38ed3f01eb48dd48626a9bbe3e804ce837c8330222356808f98e217b08c6c90d38723c3a6.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-ExtraLight.ttf",
+      "sourceBytes": 92816,
+      "sourceSri": "sha384-F0/NQh0TrRDU5B+dUE7MmDYUBwZTxM9Yb29GHBdU6sZPDszYrC+KUG9BYBfbyE+C",
+      "bytes": 33772,
+      "sri": "sha384-e6wQdn3b3vxDdgPzjtPwHrSN1IYmqbvj6ATOg3yDMCIjVoCPmOIXsIxskNOHI8Om",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 784
+    },
+    {
+      "name": "font-dca01583d987bdfbb6b5eb9db0dfb653aaa7ddeec3648e4a716379d0f5de7069eaa07488a928a5fe3cb57eb4f8acaf0f.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-Light.ttf",
+      "sourceBytes": 95116,
+      "sourceSri": "sha384-3ocVXSrd+bm3B7XeAyvTgGDIMuppOC/V1+HGgnEq2/jd7+3zs1zprRn5sbfN7y3F",
+      "bytes": 34112,
+      "sri": "sha384-3KAVg9mHvfu2teudsN+2U6qn3e7DZI5KcWN50PXecGnqoHSIqSil/jy1frT4rK8P",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 784
+    },
+    {
+      "name": "font-b5edd1fc2fdb327c00474c83873733a5718a2e4f87d71c1036ec6e5828d720c8b1c152cc98774fba572d711ba4735f5a.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-Medium.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-Medium.ttf",
+      "sourceBytes": 95804,
+      "sourceSri": "sha384-Fbkz+xt0zb3sOwaUYnNDnuuIpE18TrZIKNsRdZqTP2+dp8Id8IHKs+dxJY0lu6Sz",
+      "bytes": 34596,
+      "sri": "sha384-te3R/C/bMnwAR0yDhzczpXGKLk+H1xwQNuxuWCjXIMixwVLMmHdPulctcRukc19a",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 791
+    },
+    {
+      "name": "font-adb52c3935d18bbb9c43b3e76a725b23855cfba83d74aa710cad5328f8ddda2c127aabc51dbd2eb32f2c4b55b26c416c.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-Regular.ttf",
+      "sourceBytes": 95428,
+      "sourceSri": "sha384-9/2BGpS1QUgvR9hpl3xSh9UX3jVsvGwKRv8B36tLv2tPc2g6NxGnr+xvHAQ+rgkG",
+      "bytes": 34320,
+      "sri": "sha384-rbUsOTXRi7ucQ7PnanJbI4Vc+6g9dKpxDK1TKPjd2iwSeqvFHb0usy8sS1WybEFs",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 791
+    },
+    {
+      "name": "font-d81f265db792caff3c5bd7c8a32e5690010889b8f9e4830d23e708099f9336dd82a8329e98388d4e2e51b05c4758b37e.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-SemiBold.ttf",
+      "sourceBytes": 96072,
+      "sourceSri": "sha384-/9UsFC2/dSQDg0O5lVvoryh0wM8FY9aoUEq1zpIoTHprhtqVitRQDipOlSNiCTa5",
+      "bytes": 34676,
+      "sri": "sha384-2B8mXbeSyv88W9fIoy5WkAEIibj55IMNI+cICZ+TNt2CqDKemDiNTi5RsFxHWLN+",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 791
+    },
+    {
+      "name": "font-2c86407417e42c1503d2cb674fcd9f0fa4dea5c042ae3ca360f83b5f03f6abf4a03b16dd8d29cef0a2c65041c6ac1460.woff2",
+      "variant": "250",
+      "sourcePath": "ofl/sairaextracondensed/SairaExtraCondensed-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/SairaExtraCondensed-Thin.ttf",
+      "sourceBytes": 92040,
+      "sourceSri": "sha384-BeGxFv7IouNx49F1qQl8apr6XmaaW5oKvhLYiIlTNysVgIGKLJAChbaoTCwes8Dr",
+      "bytes": 32824,
+      "sri": "sha384-LIZAdBfkLBUD0stnT82fD6TepcBCrjyjYPg7XwP2q/SgOxbdjSnO8KLGUEHGrBRg",
+      "axes": [],
+      "cmapCodepoints": 608,
+      "glyphs": 784
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sairaextracondensed/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sairaextracondensed/OFL.txt",
+    "bytes": 4403,
+    "sri": "sha384-87asfiNHVY6UEKJ0mJ9SDL2J2v6KNwLscS2A7P7AuuUeaACBYjTqqjL8LEp08y9P"
+  }
+}

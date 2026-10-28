@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "name": "Pathway Extreme",
+  "sourceRank": 129,
+  "sourcePosition": 264,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pathwayextreme/METADATA.pb",
+    "sri": "sha384-xmoUdTn9OKklb+gjW6/O9YonClosbVZicpMQgL82Y1m0fkyj06o9b1OkK+xofH2Y"
+  },
+  "files": [
+    {
+      "name": "font-af49fb36335145b77390b98d14537561c7bed33080288947ff70aa9800caee9f780a8497cc5b4527f808010bebc9c0ae.woff2",
+      "variant": "100italic",
+      "sourcePath": "ofl/pathwayextreme/PathwayExtreme-Italic[opsz,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pathwayextreme/PathwayExtreme-Italic%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 225420,
+      "sourceSri": "sha384-p0jPzrfTXNnqciAbKWdbwR/L3o9LCoT5X0fGbwbu2xmtRu9PASQ+KnLQuoEM6PMR",
+      "bytes": 110036,
+      "sri": "sha384-r0n7NjNRRbdzkLmNFFN1Yce+0zCAKIlH/3CqmADK7p94CoSXzFtFJ/gIAQvrycCu",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        },
+        {
+          "tag": "opsz",
+          "min": 8,
+          "default": 8,
+          "max": 144,
+          "name": "Optical Size"
+        }
+      ],
+      "cmapCodepoints": 619,
+      "glyphs": 725
+    },
+    {
+      "name": "font-5166b500abfcef75be8c1ddce59da335c96df58599d4ba53c3a7d4787e0af61e5b255c2be5be798bf05226a090ef726b.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/pathwayextreme/PathwayExtreme[opsz,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pathwayextreme/PathwayExtreme%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 305108,
+      "sourceSri": "sha384-peknTGFZYwhLnFRqNtOD0i0Hb4mq0zY364aE/woY8XURUu/j0MdaNlihNnFCOJU+",
+      "bytes": 145560,
+      "sri": "sha384-UWa1AKv873W+jB3c5Z2jNclt9YWZ1LpTw6fUeH4K9h5bJVwr5b55i/BSJqCQ73Jr",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 100,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        },
+        {
+          "tag": "opsz",
+          "min": 8,
+          "default": 8,
+          "max": 144,
+          "name": "Optical Size"
+        }
+      ],
+      "cmapCodepoints": 619,
+      "glyphs": 723
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/pathwayextreme/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/pathwayextreme/OFL.txt",
+    "bytes": 4405,
+    "sri": "sha384-tmSwWOCgs3tFYo3i/vRh1C77vQDq9nSn7o+9cQ/XvDYllBfgL7JNwyTh0Gl9+aM9"
+  }
+}

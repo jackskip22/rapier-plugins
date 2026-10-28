@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "STIX Two Text",
+  "sourceRank": 191,
+  "sourcePosition": 388,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stixtwotext/METADATA.pb",
+    "sri": "sha384-0U75g3bqtinPd7KSoIJDC9Wc8d0tA0lDWEocgifqATyjHUHsI2cdZWBa2KPJlbid"
+  },
+  "files": [
+    {
+      "name": "font-3b17e06a37b0f4128e1785ede449a88cc3e8ef067f11f7914692bc58f801596b904a3d7ec637e948b389d267193b68cd.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/stixtwotext/STIXTwoText-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stixtwotext/STIXTwoText-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 454368,
+      "sourceSri": "sha384-L27NPpeUVZA3SEveg5o2dCq7Trp4GRVTVhgz5yzRCiaGhE3P6CsRb0q7cbVXU7sc",
+      "bytes": 174260,
+      "sri": "sha384-Oxfgajew9BKOF4Xt5EmojMPo7wZ/EfeRRpK8WPgBWWuQSj1+xjfpSLOJ0mcZO2jN",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1281,
+      "glyphs": 2238
+    },
+    {
+      "name": "font-46e0f9a59d5e23ca16db8d830f60ad5a7f708c1b282274ab958726ad4cb8e95fb959d1f67b023b4261b6dec744cca9ff.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/stixtwotext/STIXTwoText[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stixtwotext/STIXTwoText%5Bwght%5D.ttf",
+      "sourceBytes": 418956,
+      "sourceSri": "sha384-xZoekJzf6DMIMcuTgo0uQP+DFDT4nxp7+0mWtWZZKKM2sVFBggYkq4KGDcZiKwOT",
+      "bytes": 158428,
+      "sri": "sha384-RuD5pZ1eI8oW242DD2CtWn9wjBsoInSrlYcmrUy46V+5WdH2ewI7QmG23sdEzKn/",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 1281,
+      "glyphs": 2221
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/stixtwotext/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/stixtwotext/OFL.txt",
+    "bytes": 4520,
+    "sri": "sha384-jYGGVy2GmfOVfDlVYS3QjES2nC7vPeocBiHcftieVR/SNioiafz1Yrqy5oQ5Bs1c"
+  }
+}

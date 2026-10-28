@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "name": "Crimson Text",
+  "sourceRank": 94,
+  "sourcePosition": 191,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsontext/METADATA.pb",
+    "sri": "sha384-fG5SHON5qNqv1qPFcrC0Lk6yZM6JfvQR2jzVsCPsyMHrxcYU1JJ1o7y2I4Our7R4"
+  },
+  "files": [
+    {
+      "name": "font-4e9706210fbaa438f30ee13a66e9b6314b0ef3a32800c1c32a82121ac87915ac9eafa58ccdb2738841385d20aafdba55.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/crimsontext/CrimsonText-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsontext/CrimsonText-Bold.ttf",
+      "sourceBytes": 112796,
+      "sourceSri": "sha384-nchhOfPOd3uyrT7ArZ0hL5a4XEqRer5dprAbjQcA6VmFHuCIpQ5iaz5Qs2jyIXJQ",
+      "bytes": 43524,
+      "sri": "sha384-TpcGIQ+6pDjzDuE6Zum2MUsO86MoAMHDKoISGsh5Fayer6WMzbJziEE4XSCq/bpV",
+      "axes": [],
+      "cmapCodepoints": 675,
+      "glyphs": 718
+    },
+    {
+      "name": "font-2fb432a08fd4cd88ec35ac271dc80201f2306cbcb4c357deff8f108fae68e9ecd057d567f4217619fe7798a48ffffeb0.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/crimsontext/CrimsonText-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsontext/CrimsonText-BoldItalic.ttf",
+      "sourceBytes": 115112,
+      "sourceSri": "sha384-19NXA6N/JjjbO59iypFMKBaiL23VegeoJJA2tpRCtCt3I7uwavknzW/VFSjJ+prD",
+      "bytes": 45876,
+      "sri": "sha384-L7QyoI/UzYjsNawnHcgCAfIwbLy0w1fe/48Qj65o6ezQV9Vn9CF2Gf53mKSP//6w",
+      "axes": [],
+      "cmapCodepoints": 675,
+      "glyphs": 720
+    },
+    {
+      "name": "font-51700f251baac81ea94d304f8a0656365fea49269d43ca11e455e66139d111756de23f034969384b99ae989d3328bdd6.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/crimsontext/CrimsonText-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsontext/CrimsonText-Italic.ttf",
+      "sourceBytes": 110216,
+      "sourceSri": "sha384-DpB7baxQa7E+kzq/dOd1sUAxZEWhRsSt9PjQLJpc5Db2WkefeRNRYEBhPpUOGMu5",
+      "bytes": 45020,
+      "sri": "sha384-UXAPJRuqyB6pTTBPigZWNl/qSSadQ8oR5FXmYTnREXVt4j8DSWk4S5mumJ0zKL3W",
+      "axes": [],
+      "cmapCodepoints": 675,
+      "glyphs": 720
+    },
+    {
+      "name": "font-1a4b9a2a66a95c445961c4279c8a6dea67db88f96e24c80decfc6ef5ba7254d4a5ee1472cc4a736ad8fe7d6cc414b848.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/crimsontext/CrimsonText-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsontext/CrimsonText-Regular.ttf",
+      "sourceBytes": 107200,
+      "sourceSri": "sha384-bi7gkn19BmsUG1vzSQB/faBt5hA618739OrRg2L3i69Ww5iots978onrRa0hfVzT",
+      "bytes": 42912,
+      "sri": "sha384-GkuaKmapXERZYcQnnIpt6mfbiPluJMgN7Pxu9bpyVNSl7hRyzEpzatj+fWzEFLhI",
+      "axes": [],
+      "cmapCodepoints": 675,
+      "glyphs": 718
+    },
+    {
+      "name": "font-9cd8aaa9d520a1fb6b201e794fc40290b83d05de1eea637da82eb15b667892f3682efe241164d4c9fcaeda541e04cf20.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/crimsontext/CrimsonText-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsontext/CrimsonText-SemiBold.ttf",
+      "sourceBytes": 111176,
+      "sourceSri": "sha384-1OfjjEvy4JtmLvGmnlnedfg+ol1V2n4nvcmKYU863GRuDJEfx1Fc+WsXNczBIHvB",
+      "bytes": 44312,
+      "sri": "sha384-nNiqqdUgoftrIB55T8QCkLg9Bd4e6mN9qC6xW2Z4kvNoLv4kEWTUyfyu2lQeBM8g",
+      "axes": [],
+      "cmapCodepoints": 675,
+      "glyphs": 718
+    },
+    {
+      "name": "font-f35d4123411fa19710cab132804ed57b0620f9774a9f2be3165e2077da20e2d515f41a0f9b310e658959d734636fd297.woff2",
+      "variant": "600italic",
+      "sourcePath": "ofl/crimsontext/CrimsonText-SemiBoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsontext/CrimsonText-SemiBoldItalic.ttf",
+      "sourceBytes": 112120,
+      "sourceSri": "sha384-XpIsp1kSYM2/8kShEtpri3BDrxvYC3a9pEIgMUJBo/GU+9cRvczCDx/r6WmOm5Yv",
+      "bytes": 45116,
+      "sri": "sha384-811BI0EfoZcQyrEygE7VewYg+XdKnyvjFl4gd9og4tUV9BoPmzEOZYlZ1zRjb9KX",
+      "axes": [],
+      "cmapCodepoints": 675,
+      "glyphs": 720
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/crimsontext/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/crimsontext/OFL.txt",
+    "bytes": 4393,
+    "sri": "sha384-KLjd5voJW9pJEl4GDeL/5SU+jKuIiKUKe1TNo3JuPpDtIZ/u3EF6H2u8AUt8YF7A"
+  }
+}

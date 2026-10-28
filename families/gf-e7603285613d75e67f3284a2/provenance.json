@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Roboto Mono",
+  "sourceRank": 11,
+  "sourcePosition": 27,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotomono/METADATA.pb",
+    "sri": "sha384-Ro8OBiPFeWbFuU0NxVYe5w2wwYr/lZ5ehsewr1lWiPWlqffUFNuS1NTjRmpX8Pjm"
+  },
+  "files": [
+    {
+      "name": "font-0ea4f16a72a54896513f0b76da31f7b24f35b6840ec5c05a135e108b08583b082202032e1b30f5cbd988d368ff724b76.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/robotomono/RobotoMono-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotomono/RobotoMono-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 196792,
+      "sourceSri": "sha384-oNJKF9GlacgGgbeRQiZrjSLdbbb4BCRVj9pvMZ4wHtom1iHbloOocqByBBHX4VWE",
+      "bytes": 113644,
+      "sri": "sha384-DqTxanKlSJZRPwt22jH3sk81toQOxcBaE14QiwhYOwgiAgMuGzD1y9mI02j/ckt2",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 874,
+      "glyphs": 1006
+    },
+    {
+      "name": "font-33fab40cdc9236c101975ff5a0069261f72d77fecd817e68a9dff2fbce6a9fe97f0ccf79702976e03207756202f0a171.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/robotomono/RobotoMono[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotomono/RobotoMono%5Bwght%5D.ttf",
+      "sourceBytes": 183700,
+      "sourceSri": "sha384-3F/IxYGgY0ZGLPLxj+eOTrLi0mBsyAbGMTw2SRsr5qGQn0O70ZrnPf3Q1twgLlH9",
+      "bytes": 105240,
+      "sri": "sha384-M/q0DNySNsEBl1/1oAaSYfctd/7NgX5oqd/y+85qn+l/DM95cCl24DIHdWIC8KFx",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 876,
+      "glyphs": 1006
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/robotomono/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/robotomono/OFL.txt",
+    "bytes": 4395,
+    "sri": "sha384-c+eHpuHyF4bZaYa3zU5pxeFl5ruH3c+RdDWHR2tASGwoKVg0K9g80PWCOdVqk3qU"
+  }
+}

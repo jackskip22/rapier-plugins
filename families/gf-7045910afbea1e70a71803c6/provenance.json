@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Noto Sans Bengali",
+  "sourceRank": 215,
+  "sourcePosition": 423,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansbengali/METADATA.pb",
+    "sri": "sha384-1tjF30ooU8rW60qmVIj074DkQswJdn0i8MzLEqHtpoRCvgrAuiSfBAJJAwDTcM3J"
+  },
+  "files": [
+    {
+      "name": "font-40defaec19f8b5d53b653237c3b0a407c638606f9f5806f340e7555f7a73bcb414fb8416a2902980d57bc8bc54c4cdea.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notosansbengali/NotoSansBengali[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansbengali/NotoSansBengali%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 463668,
+      "sourceSri": "sha384-oKQmyXc+7Uj2LyrB29wSB4Hhtxv7Vi8skg3o9gpmDbYl+mytMpY4PKQWBNezozYV",
+      "bytes": 244176,
+      "sri": "sha384-QN767Bn4tdU7ZTI3w7CkB8Y4YG+fWAbzQOdVX3pzvLQU+4QWopApgNV7yLxUxM3q",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 400,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62.5,
+          "default": 100,
+          "max": 100,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 444,
+      "glyphs": 730
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notosansbengali/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosansbengali/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-QovvTrWnozKkVBzMAzgX2DGtVHfi21+TQEaqVqlfxqfyIbfpVN8c+sz7IHzGznu6"
+  }
+}

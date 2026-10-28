@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "name": "Signika",
+  "sourceRank": 67,
+  "sourcePosition": 144,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/signika/METADATA.pb",
+    "sri": "sha384-BeLmHFYmSESu437jsWsiKYDWKkfz0BT3TLdcpA7/X3ficwz64QFCEIxmgZ55ZhVh"
+  },
+  "files": [
+    {
+      "name": "font-2adb36cf1c6876b78201a33e7fb7966a329d290d390a42229bd409ecf9087c3edd7bde8768f6e44f2bf97121eeddd1e5.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/signika/Signika[GRAD,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/signika/Signika%5BGRAD%2Cwght%5D.ttf",
+      "sourceBytes": 637392,
+      "sourceSri": "sha384-skntZcascVqZiC3na4Or2SHWgYuOTWQlEkXYV9XVyD1oO6jLlRYe4TIzj/OWdj8S",
+      "bytes": 260452,
+      "sri": "sha384-Kts2zxxodreCAaM+f7eWajKdKQ05CkIim9QJ7PkIfD7de96HaPbkTyv5cSHu3dHl",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 700,
+          "name": "Weight"
+        },
+        {
+          "tag": "GRAD",
+          "min": -30,
+          "default": 0,
+          "max": 0,
+          "name": "GRAD"
+        }
+      ],
+      "cmapCodepoints": 950,
+      "glyphs": 1414
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/signika/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/signika/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-lz9yRmyOLA+PBJ7UW14mQ+aTDLRLfYEEHYREpFJpDTh37smgPV+am7ZCNEwvz52W"
+  }
+}

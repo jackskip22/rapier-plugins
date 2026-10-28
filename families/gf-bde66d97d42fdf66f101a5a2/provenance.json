@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "name": "Sansita",
+  "sourceRank": 162,
+  "sourcePosition": 327,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/METADATA.pb",
+    "sri": "sha384-82auLENtJBWgu2+BAC1SDU3RNIEX8e0NuuWSNo7ozRpgUxW4HYbpaaW6gVqYJHzd"
+  },
+  "files": [
+    {
+      "name": "font-4d5b0879a085c0c33ca91c57d7bb46612aa832222e2a860d85ad7de652b6d2134f7d9fb7446ff18727babc29ea5a45ce.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/sansita/Sansita-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/Sansita-Black.ttf",
+      "sourceBytes": 122904,
+      "sourceSri": "sha384-JiA/bDf5C7YOWxh34WAhmZRIypQVzXx6fVDjVqxjmpBz3Cy+TiKDMCvM7liZhtoD",
+      "bytes": 39904,
+      "sri": "sha384-TVsIeaCFwMM8qRxX17tGYSqoMiIuKoYNha195lK20hNPfZ+3RG/xhye6vCnqWkXO",
+      "axes": [],
+      "cmapCodepoints": 456,
+      "glyphs": 504
+    },
+    {
+      "name": "font-a0fe42a974bd67cdb893ac5d37160f1acdba022870cf9446075f5bdab267296d076f5d4e02af811d9b5303cac629cb98.woff2",
+      "variant": "900italic",
+      "sourcePath": "ofl/sansita/Sansita-BlackItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/Sansita-BlackItalic.ttf",
+      "sourceBytes": 111576,
+      "sourceSri": "sha384-A3UVB/WAvIhVAK1nE1fEMwnpXWPacA4pWE7D8FObw/R/DnIyn0+sMarOtNrP+qG9",
+      "bytes": 39940,
+      "sri": "sha384-oP5CqXS9Z824k6xdNxYPGs26Aihwz5RGB19b2rJnKW0Hb11OAq+BHZtTA8rGKcuY",
+      "axes": [],
+      "cmapCodepoints": 457,
+      "glyphs": 504
+    },
+    {
+      "name": "font-6e8bea51dae3388436cec4c6742278390260aa21c9527dbce79ff0f990ca39c89ed72898625c25d87899341d6f741536.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/sansita/Sansita-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/Sansita-Bold.ttf",
+      "sourceBytes": 117456,
+      "sourceSri": "sha384-Wq+z/r+qvIa1dsUvPc2Zm/E6gMlV9Xa4vDIaneMry3jN9iTtKrfxppjSBzDu5dXz",
+      "bytes": 38012,
+      "sri": "sha384-bovqUdrjOIQ2zsTGdCJ4OQJgqiHJUn2855/w+ZDKOcie1yiYYlwl2HiZNB1vdBU2",
+      "axes": [],
+      "cmapCodepoints": 458,
+      "glyphs": 504
+    },
+    {
+      "name": "font-6956ebdc7f23368017cc61ff7395d8888a7cb34b2b7e9f2775e62af12f2904abddd4fa8966aed4dcfbfd4499640fd3c5.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/sansita/Sansita-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/Sansita-BoldItalic.ttf",
+      "sourceBytes": 109484,
+      "sourceSri": "sha384-ZmjveQx2BT6PSvbHRBw3CO9u96UpEWzEAOyKr0fUiUmsSJo5P83OpqePVg0DPjgd",
+      "bytes": 38808,
+      "sri": "sha384-aVbr3H8jNoAXzGH/c5XYiIp8s0srfp8ndeYq8S8pBKvd1PqJZq7U3Pv9RJlkD9PF",
+      "axes": [],
+      "cmapCodepoints": 458,
+      "glyphs": 504
+    },
+    {
+      "name": "font-d21cdbe1d2d2c600b8cb33463be64d2c18147629412d4873ad6a0814f22c42862ac4441894091391f87a4c059eca19cd.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/sansita/Sansita-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/Sansita-ExtraBold.ttf",
+      "sourceBytes": 119988,
+      "sourceSri": "sha384-DTilxrrjCUUPI3EFQGOacAE7XhFWnhCp9al3FyDjbYeJY0HU88xu7GsjgiKoYVnY",
+      "bytes": 38612,
+      "sri": "sha384-0hzb4dLSxgC4yzNGO+ZNLBgUdilBLUhzrWoIFPIsQoYqxEQYlAkTkfh6TAWeyhnN",
+      "axes": [],
+      "cmapCodepoints": 458,
+      "glyphs": 504
+    },
+    {
+      "name": "font-96a133074d49e9fdfe0952d7e330b4c0b4ea1c90ce9d54018820cf5279620c9d96e267de7dd75d1e3a199d984acaa1a9.woff2",
+      "variant": "800italic",
+      "sourcePath": "ofl/sansita/Sansita-ExtraBoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/Sansita-ExtraBoldItalic.ttf",
+      "sourceBytes": 107376,
+      "sourceSri": "sha384-OsaOkQQsZIVHJqZT0gPkA+S4NsW7aHmudZRR/CFUYcm4N6oFlgSEoJI3akXjIGgL",
+      "bytes": 38196,
+      "sri": "sha384-lqEzB01J6f3+CVLX4zC0wLTqHJDOnVQBiCDPUnliDJ2W4mfefdddHjoZnZhKyqGp",
+      "axes": [],
+      "cmapCodepoints": 458,
+      "glyphs": 504
+    },
+    {
+      "name": "font-697471afdcde0c9c2188f39b74e680b88f95a40aa27b156b8bdec83ba9f02f3434a9bda259db29fda4123f7dbde11b4d.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/sansita/Sansita-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/Sansita-Italic.ttf",
+      "sourceBytes": 108372,
+      "sourceSri": "sha384-Is617+er3F1j8sjKdrql3wzDTDds071F5QutG0IXqaoKTTuALyfBoxyFuvbQYJ4c",
+      "bytes": 37552,
+      "sri": "sha384-aXRxr9zeDJwhiPObdOaAuI+VpAqiexVri97IO6nwLzQ0qb2iWdsp/aQSP3294RtN",
+      "axes": [],
+      "cmapCodepoints": 458,
+      "glyphs": 504
+    },
+    {
+      "name": "font-51c795b4d49e78b28e411780233b7a71223b2fccf8d63e8de558d0da9d9014ebf77e3f840c37420cf8415537cc929fa6.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/sansita/Sansita-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/Sansita-Regular.ttf",
+      "sourceBytes": 116092,
+      "sourceSri": "sha384-U1LNDT7Hkhw7dyb9d6gzrjXDMBwnsk7U8vcf7zzpyM6uw8LjXrwG7rQbarpW0+Ki",
+      "bytes": 36404,
+      "sri": "sha384-UceVtNSeeLKOQReAIzt6cSI7L8z41j6N5VjQ2p2QFOv3fj+EDDdCDPhBVTfMkp+m",
+      "axes": [],
+      "cmapCodepoints": 458,
+      "glyphs": 504
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/sansita/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/sansita/OFL.txt",
+    "bytes": 4464,
+    "sri": "sha384-eAgXn0rVUTO+cswEeM/FrcH2DBzZE7i+UUvsHxxwbUKHSGQykNgS8MdTO+mYHPCv"
+  }
+}

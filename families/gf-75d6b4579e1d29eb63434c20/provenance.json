@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "Archivo",
+  "sourceRank": 29,
+  "sourcePosition": 69,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivo/METADATA.pb",
+    "sri": "sha384-7WjZIk2LnAhQpPjewNVXbXH13Y6StohIh1R1h4mKTozdQGbHpEedaJECtlY7jKQQ"
+  },
+  "files": [
+    {
+      "name": "font-6e0528a988e6d75fcaea356163c22422645bedf67c6989e4d2a5b1ba326707dfbde0750822019cd3e4b78b15ef4c9754.woff2",
+      "variant": "600italic",
+      "sourcePath": "ofl/archivo/Archivo-Italic[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivo/Archivo-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 741368,
+      "sourceSri": "sha384-cII8dD1wbO4+KdfwcEUk9hP5dh2J2R+TDGGfnc8XD9UEqrhsGG+qiYaE8mSsay8k",
+      "bytes": 213836,
+      "sri": "sha384-bgUoqYjm11/K6jVhY8IkImRb7fZ8aYnk0qWxujJnB9+94HUIIgGc0+S3ixXvTJdU",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 600,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 653,
+      "glyphs": 832
+    },
+    {
+      "name": "font-2f07b504ff455ae5ca4bbab4a20be8afd49f940c72110e5688c89ee011bcf3e2bf5e657c30fd965c7874eb758addd3e6.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/archivo/Archivo[wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivo/Archivo%5Bwdth%2Cwght%5D.ttf",
+      "sourceBytes": 658596,
+      "sourceSri": "sha384-0kbvsk58PcKwCk1Qjp6309nUvfZSLc93R462UeP+gc/+i1bCllqKc6x3aY11eVVF",
+      "bytes": 189340,
+      "sri": "sha384-Lwe1BP9FWuXKS7q0ogvor9SflAxyEQ5WiMie4BG88+K/XmV8MP2WXHh063WK3dPm",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 600,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "wdth",
+          "min": 62,
+          "default": 100,
+          "max": 125,
+          "name": "Width"
+        }
+      ],
+      "cmapCodepoints": 653,
+      "glyphs": 834
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/archivo/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/archivo/OFL.txt",
+    "bytes": 4388,
+    "sri": "sha384-JDueP/QU9ImV2rUC9IGkSva16HPLkuHQsy+93iRyngDGV8eBTd0HQXz6XpKL+UMI"
+  }
+}

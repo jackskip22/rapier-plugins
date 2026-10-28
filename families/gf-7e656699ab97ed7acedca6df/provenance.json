@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Finlandica Text",
+  "sourceRank": 371,
+  "sourcePosition": 703,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/finlandicatext/METADATA.pb",
+    "sri": "sha384-E5gXhfpGaGXujTtH6VEvDdzW0EsEvQ3RN0tO/B9pfXAAMOb/q+inQsXknUPZrxTY"
+  },
+  "files": [
+    {
+      "name": "font-fc03bd9a7d16ff4c0c818d22e862c0e59356e177554cd68ade2da87faf598375947123eb1e3c934734989b48e027b797.woff2",
+      "variant": "500italic",
+      "sourcePath": "ofl/finlandicatext/FinlandicaText-Italic[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/finlandicatext/FinlandicaText-Italic%5Bwght%5D.ttf",
+      "sourceBytes": 299416,
+      "sourceSri": "sha384-7LBtaSZOaQL2KHY7OvpstMsOYITCvfGf0J66vTi49SQp/09R5XekpgqirUj6MGGB",
+      "bytes": 125892,
+      "sri": "sha384-/AO9mn0W/0wMgY0i6GLA5ZNW4XdVTNaK3i2of69Zg3WUcSPrHjyTRzSYm0jgJ7eX",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 500,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 964,
+      "glyphs": 1163
+    },
+    {
+      "name": "font-1a4671dbe4ae84d520f43516403a80a087f36544be658c166bb909ffaf559d4d516771e6fb341a8198c65710f611af6d.woff2",
+      "variant": "500",
+      "sourcePath": "ofl/finlandicatext/FinlandicaText[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/finlandicatext/FinlandicaText%5Bwght%5D.ttf",
+      "sourceBytes": 288868,
+      "sourceSri": "sha384-eqx7RSsi7sMgX5av/Br79U2mnbByk15EdTDWOlKrhKXQJZIbKRI8yzbMw17KtTqc",
+      "bytes": 118308,
+      "sri": "sha384-GkZx2+SuhNUg9DUWQDqAoIfzZUS+ZYwWa7kJ/69VnU1RZ3Hm+zQagZjGVxD2Ea9t",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 500,
+          "max": 900,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 964,
+      "glyphs": 1161
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/finlandicatext/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/finlandicatext/OFL.txt",
+    "bytes": 4404,
+    "sri": "sha384-Yo5nQARmaME6PDIdAVL6PtBhj9N1hOM03mfMHLbAlg2dDbHn4sDe1Wiqy76VAjp9"
+  }
+}

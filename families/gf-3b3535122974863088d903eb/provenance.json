@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "Koh Santepheap",
+  "sourceRank": 242,
+  "sourcePosition": 476,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kohsantepheap/METADATA.pb",
+    "sri": "sha384-Og1AwTPb5W61xjFy0e8g3KD5hULYRZjVn0qO6mn3NA+Db46zwUt0JWMAOmXl6dtv"
+  },
+  "files": [
+    {
+      "name": "font-d3bd12df447d6f762749319a3b026ca89577275770baf126ec3a4979c4d5051395e9a86c759a22dbf4f2791b2551c3ed.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/kohsantepheap/KohSantepheap-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kohsantepheap/KohSantepheap-Black.ttf",
+      "sourceBytes": 148268,
+      "sourceSri": "sha384-AI1qW9m+kbXKNQFl7y35nqQmPrfJ+sh+Y1eHgSt+I1dc7Z5tFpJOW+g8DgeLuH8+",
+      "bytes": 48444,
+      "sri": "sha384-070S30R9b3YnSTGaOwJsqJV3J1dwuvEm7DpJecTVBROV6ahsdZoi2/TyeRslUcPt",
+      "axes": [],
+      "cmapCodepoints": 247,
+      "glyphs": 522
+    },
+    {
+      "name": "font-77b2a559258002bef5120145e990e4baeae53782050b1054bdb58e9baf66df0b5f3467357c3276727750c64ccbc28b51.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/kohsantepheap/KohSantepheap-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kohsantepheap/KohSantepheap-Bold.ttf",
+      "sourceBytes": 161040,
+      "sourceSri": "sha384-1guf1m45xSG9ZQW2DE4mXUGCWOxHh7FCXdWU4J0f8b/n6ld6WScP3h0fS0zfKfiX",
+      "bytes": 48748,
+      "sri": "sha384-d7KlWSWAAr71EgFF6ZDkuurlN4IFCxBUvbWOm69m3wtfNGc1fDJ2cndQxkzLwotR",
+      "axes": [],
+      "cmapCodepoints": 247,
+      "glyphs": 522
+    },
+    {
+      "name": "font-a002e7dfb1a692fbccc337616b1ad2f27b861dcd9bac9fac80bd4f344387967f9c5fedacf397b1c97bb3443d6d5907d6.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/kohsantepheap/KohSantepheap-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kohsantepheap/KohSantepheap-Light.ttf",
+      "sourceBytes": 164220,
+      "sourceSri": "sha384-2mchTeMbtXuSeJ2l5HEnxBYqd3oC8m7zOMkDe8zsyG0IdBzTpEdywLNtoMj9AL0W",
+      "bytes": 49940,
+      "sri": "sha384-oALn37GmkvvMwzdhaxrS8nuGHc2brJ+sgL1PNEOHln+cX+2s85exyXuzRD1tWQfW",
+      "axes": [],
+      "cmapCodepoints": 247,
+      "glyphs": 522
+    },
+    {
+      "name": "font-7e1dda3b0cbd788ffc598fdf4e1c13c6762c118f42ded48d75accc5baf1feb75ad22466de9854b6bbfa133f74dfa3de4.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/kohsantepheap/KohSantepheap-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kohsantepheap/KohSantepheap-Regular.ttf",
+      "sourceBytes": 171268,
+      "sourceSri": "sha384-P5Du44vSeCQcEJyfPNVA5DM91yWd0Zzt2T3xYCooC9yqg+bjSQEapTMUArwlayoT",
+      "bytes": 49836,
+      "sri": "sha384-fh3aOwy9eI/8WY/fThwTxnYsEY9C3tSNdazMW68f63WtIkZt6YVLa7+hM/dN+j3k",
+      "axes": [],
+      "cmapCodepoints": 247,
+      "glyphs": 522
+    },
+    {
+      "name": "font-daa8aa14bf28f0ff6cea86256930e20a0986bb8cc096121fae12b37b57b038018a6e3616003b1f2e8e8455b82bf2ba8b.woff2",
+      "variant": "100",
+      "sourcePath": "ofl/kohsantepheap/KohSantepheap-Thin.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kohsantepheap/KohSantepheap-Thin.ttf",
+      "sourceBytes": 168692,
+      "sourceSri": "sha384-4SVziuAl56ZHWiHIn5gnPfQ5QcykSsh3Fu6rMAZpymR6HVB/Io2bkVUO/wVrixRD",
+      "bytes": 50052,
+      "sri": "sha384-2qiqFL8o8P9s6oYlaTDiCgmGu4zAlhIfrhKze1ewOAGKbjYWADsfLo6EVbgr8rqL",
+      "axes": [],
+      "cmapCodepoints": 247,
+      "glyphs": 522
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/kohsantepheap/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/kohsantepheap/OFL.txt",
+    "bytes": 4397,
+    "sri": "sha384-X4ufxoK5Lg8iDKQuN5/DnPlUvgG4GxXtPFNkKU1f/KoAkxkmQGI2D6rWfJnVaVV4"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Noto Nastaliq Urdu",
+  "sourceRank": 186,
+  "sourcePosition": 376,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notonastaliqurdu/METADATA.pb",
+    "sri": "sha384-lRr8/3J74OLLs6m+ZlGqMm6Br+kvxkr8YhoAR97Ynm3UvFTuWY3NNqgeaW1IndAm"
+  },
+  "files": [
+    {
+      "name": "font-d41f50ff11522d22974cdeedf3332e9fe09ddfaa07084cf89469b88333292571c1812fbdc6c44fe0f30a7b42b3e0216d.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/notonastaliqurdu/NotoNastaliqUrdu[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notonastaliqurdu/NotoNastaliqUrdu%5Bwght%5D.ttf",
+      "sourceBytes": 690304,
+      "sourceSri": "sha384-Ty8ZTq2b88qBQwRUNkJkmID2JGHeiOqweFa6IGW8yTsMPP9hRvvC6M67zQCDYO6V",
+      "bytes": 267160,
+      "sri": "sha384-1B9Q/xFSLSKXTN7t8zMun+Cd36oHCEz4lGm4gzMpJXHBgS+9xsRP4PMKe0Kz4CFt",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 692,
+      "glyphs": 1723
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/notonastaliqurdu/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notonastaliqurdu/OFL.txt",
+    "bytes": 4384,
+    "sri": "sha384-rhbOjwn5+cv0qY/2LXi3mlWWeqNz5SSmWwho8mJQu8nM47ocpoDq1I23gQ3VnFEL"
+  }
+}

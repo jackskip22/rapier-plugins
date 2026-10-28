@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "TikTok Sans",
+  "sourceRank": 384,
+  "sourcePosition": 727,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tiktoksans/METADATA.pb",
+    "sri": "sha384-UmTVn5kyw6XhaAnKaDyGWd+fNJiOhSnPcLQSVofHIJwNwemb3d8PqD+apsSB8Muc"
+  },
+  "files": [
+    {
+      "name": "font-6ce07e9aa41cf985b89188f18e97b8a6e76d776651a38587b39ae31763ee1f2012d0c47b8e4b0113b90f306454053953.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/tiktoksans/TikTokSans[opsz,slnt,wdth,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tiktoksans/TikTokSans%5Bopsz%2Cslnt%2Cwdth%2Cwght%5D.ttf",
+      "sourceBytes": 761964,
+      "sourceSri": "sha384-caZ/5SeOrOhe9Kt7vBz7cwtaFpy2MMrj0mC8SEzxbNeJlpvzYICUXZmyetPZCbVc",
+      "bytes": 349020,
+      "sri": "sha384-bOB+mqQc+YW4kYjxjpe4pudtd2ZRo4WHs5rjF2PuHyAS0MR7jksBE7kPMGRUBTlT",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 12,
+          "default": 36,
+          "max": 36,
+          "name": "Optical size"
+        },
+        {
+          "tag": "wdth",
+          "min": 75,
+          "default": 100,
+          "max": 150,
+          "name": "Width"
+        },
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 300,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "slnt",
+          "min": -6,
+          "default": 0,
+          "max": 0,
+          "name": "Slant"
+        }
+      ],
+      "cmapCodepoints": 910,
+      "glyphs": 1181
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/tiktoksans/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tiktoksans/OFL.txt",
+    "bytes": 4370,
+    "sri": "sha384-gx/xu6NFri4JaoUlpbe/UJsVzlLT2Q3FgZUj6P7c7BrZBg7F/Q/DMtoWMVBIiB6I"
+  }
+}

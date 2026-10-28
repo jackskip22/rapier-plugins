@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "name": "Biryani",
+  "sourceRank": 252,
+  "sourcePosition": 491,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/METADATA.pb",
+    "sri": "sha384-iEri/3F3D5UYqpR654zv6dIDIIP5gXKB5mgrlXTRkhzml0tmhv31Dvat8JiwtLSN"
+  },
+  "files": [
+    {
+      "name": "font-27c94a5846de28ec65bebe1db9b2a9bb3ecf101fcfd71ac95544663f0575b5e4b8eb26928233c7555a439e57393c4993.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/biryani/Biryani-Black.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/Biryani-Black.ttf",
+      "sourceBytes": 178060,
+      "sourceSri": "sha384-LYIR8+nuV8oCvTVVWSC3JU8lUXEPWe0xYqHym6j5UEd1oIVhKqX/HPwFev4BMWjT",
+      "bytes": 57560,
+      "sri": "sha384-J8lKWEbeKOxlvr4dubKpuz7PEB/P1xrJVURmPwV1teS46yaSgjPHVVpDnlc5PEmT",
+      "axes": [],
+      "cmapCodepoints": 475,
+      "glyphs": 878
+    },
+    {
+      "name": "font-d1560c66c3dde640fc9498d3119d4b316a5243b8bf2a510ecc372564f720da2102d837e914a60a11b52bf47fd616429d.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/biryani/Biryani-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/Biryani-Bold.ttf",
+      "sourceBytes": 178968,
+      "sourceSri": "sha384-9M51vC5PEfG6v+6TgMEx8/5r67bY36vzI9NJxPVW84nLM+VGlIrrb3yk8OHdpEQY",
+      "bytes": 59608,
+      "sri": "sha384-0VYMZsPd5kD8lJjTEZ1LMWpSQ7i/KlEOzDclZPcg2iEC2DfpFKYKEbUr9H/WFkKd",
+      "axes": [],
+      "cmapCodepoints": 475,
+      "glyphs": 878
+    },
+    {
+      "name": "font-4ee32a7265a7fa269bf03614cc217cb15014b8352aae04bcc35d39e7de734f58a4d3aa402653eb358488dd2b9723a63f.woff2",
+      "variant": "800",
+      "sourcePath": "ofl/biryani/Biryani-ExtraBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/Biryani-ExtraBold.ttf",
+      "sourceBytes": 178960,
+      "sourceSri": "sha384-7gXX8nKJVsb24lQVGILpHcvAaYXy/dnTwRUEOxyDKQ1XWN7HU7W52LxNjp/8TSEf",
+      "bytes": 59444,
+      "sri": "sha384-TuMqcmWn+iab8DYUzCF8sVAUuDUqrgS8w105595zT1ik06pAJlPrNYSI3SuXI6Y/",
+      "axes": [],
+      "cmapCodepoints": 475,
+      "glyphs": 878
+    },
+    {
+      "name": "font-d0077035de78d5330a261ec2fbeb52ad1f2dfbe838657dacd92bd1ee388deabc2ae2953b6ddca791779ed53e28b30192.woff2",
+      "variant": "275",
+      "sourcePath": "ofl/biryani/Biryani-ExtraLight.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/Biryani-ExtraLight.ttf",
+      "sourceBytes": 177264,
+      "sourceSri": "sha384-42msdGDay5+lza0EG3h5rp/E83SDXlJ3NI7Va8HUWPamnbBWHNyBiioP3zwaq71L",
+      "bytes": 55880,
+      "sri": "sha384-0AdwNd541TMKJh7C++tSrR8t++g4ZX2s2SvR7jiN6rwq4pU7bdynkXee1T4oswGS",
+      "axes": [],
+      "cmapCodepoints": 475,
+      "glyphs": 868
+    },
+    {
+      "name": "font-85131113d2a6bbf541892c15cdc4a5c37642335b861cba9d364151c23aa1d98d72e50b41e217f5c3f36a58b6812962ff.woff2",
+      "variant": "300",
+      "sourcePath": "ofl/biryani/Biryani-Light.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/Biryani-Light.ttf",
+      "sourceBytes": 180716,
+      "sourceSri": "sha384-/QyM1lNHyHCmToMGBaUBgjGJc99tAAuAI74kbQV8svVsTcLf2N5H/lSxrzfRAAxS",
+      "bytes": 59588,
+      "sri": "sha384-hRMRE9Kmu/VBiSwVzcSlw3ZCM1uGHLqdNkFRwjqh2Y1y5QtB4hf1w/NqWLaBKWL/",
+      "axes": [],
+      "cmapCodepoints": 475,
+      "glyphs": 878
+    },
+    {
+      "name": "font-8c1eedb377058fe1b5023461943a8ac97bd0b9843424a5f14ee02947a1420868465b5e3a44a737aca6b5143e9bba1501.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/biryani/Biryani-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/Biryani-Regular.ttf",
+      "sourceBytes": 179936,
+      "sourceSri": "sha384-lspyJ/uoIYFyJ4Ah8qSfCrs11OpwheaIRN+hkPCF/C9kcG8LmTiK37+/u9jmYwt8",
+      "bytes": 59408,
+      "sri": "sha384-jB7ts3cFj+G1AjRhlDqKyXvQuYQ0JKXxTuApR6FCCGhGW146RKc3rKa1FD6buhUB",
+      "axes": [],
+      "cmapCodepoints": 475,
+      "glyphs": 878
+    },
+    {
+      "name": "font-8969bd5db19ab37ca13faab367e35fbf3630ff551f9eaec3fb0f273bef716d10fbc28368302f5dbd590d79c51d0c74cd.woff2",
+      "variant": "600",
+      "sourcePath": "ofl/biryani/Biryani-SemiBold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/Biryani-SemiBold.ttf",
+      "sourceBytes": 179216,
+      "sourceSri": "sha384-N9j3QdJzVlnAckkYLVGn0OUkNKSeLMVYLxzs6iGSNWJvl8xGOPJ6CrU3HDhTRTz8",
+      "bytes": 58772,
+      "sri": "sha384-iWm9XbGas3yhP6qzZ+NfvzYw/1Ufnq7D+w8nO+9xbRD7woNoMC9dvVkNecUdDHTN",
+      "axes": [],
+      "cmapCodepoints": 475,
+      "glyphs": 878
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/biryani/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/biryani/OFL.txt",
+    "bytes": 4372,
+    "sri": "sha384-QppFVqenwRDFhqLYvfr8oRM/qfUZ3cT3fCMmZrgVELB00eE25XtzDDETi+V4pI5W"
+  }
+}

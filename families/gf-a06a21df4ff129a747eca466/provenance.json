@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "name": "Capriola",
+  "sourceRank": 258,
+  "sourcePosition": 503,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/capriola/METADATA.pb",
+    "sri": "sha384-jKarHCU9DTVjpliml/oa+/qPCK4ViEjZ+fYABIKRvPifWP5X/MLaTnxjIRM3h+Dy"
+  },
+  "files": [
+    {
+      "name": "font-3e90e15c5badae51d88b2b1048f12027698bd1000e37e4e0d43232614a49ed197a2ba5855655c026c4a5210d2416f888.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/capriola/Capriola[wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/capriola/Capriola%5Bwght%5D.ttf",
+      "sourceBytes": 507360,
+      "sourceSri": "sha384-kXIBaxacLbrHYP5YE01HorghfGpREC+baNz91OvMPYTF41kgJg5KwnQw/957xYW3",
+      "bytes": 233512,
+      "sri": "sha384-PpDhXFutrlHYiysQSPEgJ2mL0QAON+Tg1DIyYUpJ7Rl6K6WFVlXAJsSlIQ0kFviI",
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300,
+          "default": 400,
+          "max": 700,
+          "name": "Weight"
+        }
+      ],
+      "cmapCodepoints": 533,
+      "glyphs": 579
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/capriola/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/capriola/OFL.txt",
+    "bytes": 4392,
+    "sri": "sha384-CwJUpGuPmz1t6of2i8DkvqcFISoG6BLefhfVK0BHr7/wBSvT2qjpnuT7glO4VCOV"
+  }
+}

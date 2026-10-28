@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "name": "Tiro Devanagari Marathi",
+  "sourceRank": 421,
+  "sourcePosition": 795,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirodevanagarimarathi/METADATA.pb",
+    "sri": "sha384-wA+DoHdjB8UCn1+n25Ob3XuJQNE6pODkkaqFAST1uG51Ok6EXBUe8QJi+tf4XqTl"
+  },
+  "files": [
+    {
+      "name": "font-d4546bd2db6b6f6659c9ac6a5f0305554d5d61cc0596b0e1461351db1c2719626e82c34492796b0c69ca33870940047d.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Italic.ttf",
+      "sourceBytes": 441728,
+      "sourceSri": "sha384-uvNTp9kAkxgZFuzhPTtBZ/Wk0HbV0tXe+qogsa5ovCN/XheQyBsTmTd1FSUoy7d/",
+      "bytes": 143044,
+      "sri": "sha384-1FRr0ttrb2ZZyaxqXwMFVU1dYcwFlrDhRhNR2xwnGWJugsNEknlrDGnKM4cJQAR9",
+      "axes": [],
+      "cmapCodepoints": 481,
+      "glyphs": 1395
+    },
+    {
+      "name": "font-7f2896b83294f9365927c1804884260145c60b0ff9d8788937376a456c97c2ce8f16d83dd15f9ec2ada16cff6bb14eef.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirodevanagarimarathi/TiroDevanagariMarathi-Regular.ttf",
+      "sourceBytes": 439712,
+      "sourceSri": "sha384-uGpl9IbySSklPNUBXWfri8xMWSMAhoXehHIga0ini2134ZC9h7IT5x+r4fUEpaQY",
+      "bytes": 138028,
+      "sri": "sha384-fyiWuDKU+TZZJ8GASIQmAUXGCw/52HiJNzdqRWyXws6PFtg90V+ewq2hbP9rsU7v",
+      "axes": [],
+      "cmapCodepoints": 481,
+      "glyphs": 1395
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/tirodevanagarimarathi/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/tirodevanagarimarathi/OFL.txt",
+    "bytes": 4387,
+    "sri": "sha384-mjCz0lzdq30nRdJ2PGxxr5T2leHKqqR73MSCrCIHk+FbpTLwAmJZj8JisJucGHeU"
+  }
+}

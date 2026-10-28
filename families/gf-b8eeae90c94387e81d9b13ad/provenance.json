@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "name": "Fraunces",
+  "sourceRank": 54,
+  "sourcePosition": 120,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/METADATA.pb",
+    "sri": "sha384-GPauy5XMgVysqKiEsqP25WEIXhRAr+Xh+8NGcw8jVdwZ8zGFt2lh0BtyH1e/JAUf"
+  },
+  "files": [
+    {
+      "name": "font-138ff06deb8dbd62752ae629ad093666d5c81e829ee38111b573749d74eb9d3f1af74b0f48f054961264b6a3be12a097.woff2",
+      "variant": "900italic",
+      "sourcePath": "ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces-Italic%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+      "sourceBytes": 414904,
+      "sourceSri": "sha384-zxpveSqh2Ab8fajb+UgRWTzKDkoxPfpYqyEM6M4/7qNWoDlmp4zvrdMjjK4q5BHs",
+      "bytes": 235816,
+      "sri": "sha384-E4/wbeuNvWJ1KuYprQk2ZtXIHoKe44ERtXN0nXTrnT8a90sPSPBUlhJktqO+EqCX",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 9,
+          "default": 9,
+          "max": 144,
+          "name": "Optical Size"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 900,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "SOFT",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Softness"
+        },
+        {
+          "tag": "WONK",
+          "min": 0,
+          "default": 1,
+          "max": 1,
+          "name": "Wonky"
+        }
+      ],
+      "cmapCodepoints": 624,
+      "glyphs": 698
+    },
+    {
+      "name": "font-cbfae3e3f57e82ee9c20e64125b0680e52ebb88045ec9d58fabb849c5ec862c3c76c6b96de41567408ee2f2ce974926f.woff2",
+      "variant": "900",
+      "sourcePath": "ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+      "sourceBytes": 360440,
+      "sourceSri": "sha384-a1alN3S0X9MlYmRLlokXEwWyLqOgSu0ycs41HDJlnWb6lcuu9gCXpufoUHYjhGB9",
+      "bytes": 194740,
+      "sri": "sha384-y/rj4/V+gu6cIOZBJbBoDlLruIBF7J1Y+ruEnF7IYsPHbGuW3kFWdAjuLyzpdJJv",
+      "axes": [
+        {
+          "tag": "opsz",
+          "min": 9,
+          "default": 9,
+          "max": 144,
+          "name": "Optical Size"
+        },
+        {
+          "tag": "wght",
+          "min": 100,
+          "default": 900,
+          "max": 900,
+          "name": "Weight"
+        },
+        {
+          "tag": "SOFT",
+          "min": 0,
+          "default": 0,
+          "max": 100,
+          "name": "Softness"
+        },
+        {
+          "tag": "WONK",
+          "min": 0,
+          "default": 1,
+          "max": 1,
+          "name": "Wonky"
+        }
+      ],
+      "cmapCodepoints": 624,
+      "glyphs": 698
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/fraunces/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/fraunces/OFL.txt",
+    "bytes": 4391,
+    "sri": "sha384-4H7F7stLRBR6DpFCjrAI/NbIE1Ne7b5AU3sw3I2wWZCO4bG3XpRRXopd0xkI2RLV"
+  }
+}

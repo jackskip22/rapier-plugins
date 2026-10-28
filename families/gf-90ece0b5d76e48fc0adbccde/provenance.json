@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "name": "Anonymous Pro",
+  "sourceRank": 282,
+  "sourcePosition": 552,
+  "revision": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "metadata": {
+    "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anonymouspro/METADATA.pb",
+    "sri": "sha384-t0irQCKvItnMCw/9eID9SD+ah8MarHNGUDyJgXvfCmMrAToCu+qM6c0rg/+xgZKJ"
+  },
+  "files": [
+    {
+      "name": "font-bf29f0365d58bdbb4763a875d0085ae5c9c67cb3280a2468db507ccce1994a047956749b28a513f3139d9f05f22e16cc.woff2",
+      "variant": "700",
+      "sourcePath": "ofl/anonymouspro/AnonymousPro-Bold.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anonymouspro/AnonymousPro-Bold.ttf",
+      "sourceBytes": 153616,
+      "sourceSri": "sha384-bzeqOJLJ9Mxs0eZrfaDA5RJG1U5yFmj1QPMexFeIKpSjZXe0m/9C2Ctuxkzyt6EB",
+      "bytes": 50196,
+      "sri": "sha384-vynwNl1YvbtHY6h10Aha5cnGfLMoCiRo21B8zOGZSgR5VnSbKKUT8xOdnwXyLhbM",
+      "axes": [],
+      "cmapCodepoints": 623,
+      "glyphs": 624
+    },
+    {
+      "name": "font-61376bdb5c632a6eb7b7da8d112ea7cc2cd53824c4011911610cd9a5df6885b97634ca28bbbf46aa5a739536417db6f7.woff2",
+      "variant": "700italic",
+      "sourcePath": "ofl/anonymouspro/AnonymousPro-BoldItalic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anonymouspro/AnonymousPro-BoldItalic.ttf",
+      "sourceBytes": 141924,
+      "sourceSri": "sha384-X7SnbZpJcwhiybOtNPGRpeGiBA37VDOpYk5+mMGAlwSjPeWMQ5SiYbsEiYQ4k7vd",
+      "bytes": 46416,
+      "sri": "sha384-YTdr21xjKm63t9qNES6nzCzVOCTEARkRYQzZpd9ohbl2NMoou79GqlpzlTZBfbb3",
+      "axes": [],
+      "cmapCodepoints": 623,
+      "glyphs": 624
+    },
+    {
+      "name": "font-71b0af29d3878a1756391e442abf5a402bd3100a2473fb274cafa99301759bfe865998b15d3636809fc49f4f5a967227.woff2",
+      "variant": "italic",
+      "sourcePath": "ofl/anonymouspro/AnonymousPro-Italic.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anonymouspro/AnonymousPro-Italic.ttf",
+      "sourceBytes": 144424,
+      "sourceSri": "sha384-ZxrWy+uVOTqrgWthuQwAeqDFCNBtjClOBG9JX+5wzGaDQwZvxv3fwNMaJIIsbPP6",
+      "bytes": 47384,
+      "sri": "sha384-cbCvKdOHihdWOR5EKr9aQCvTEAokc/snTK+pkwF1m/6GWZixXTY2gJ/En09alnIn",
+      "axes": [],
+      "cmapCodepoints": 623,
+      "glyphs": 624
+    },
+    {
+      "name": "font-b3231ac9a112a9bdd0219a3c87f3b13ebce73d27cc20483152146ecb4c867c8d3b09e5adbcebb6839fb387be2e796c8f.woff2",
+      "variant": "regular",
+      "sourcePath": "ofl/anonymouspro/AnonymousPro-Regular.ttf",
+      "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anonymouspro/AnonymousPro-Regular.ttf",
+      "sourceBytes": 158100,
+      "sourceSri": "sha384-BdWhsQed+pNf+GerUpPlENaaCeSKOmQHwg2yPfsb1v4yt11ARnBEH4f/N8UH9YQe",
+      "bytes": 51848,
+      "sri": "sha384-syMayaESqb3QIZo8h/OxPrznPSfMIEgxUhRuy0yGfI07CeWtvOu2g5+zh74ueWyP",
+      "axes": [],
+      "cmapCodepoints": 623,
+      "glyphs": 624
+    }
+  ],
+  "license": {
+    "sourcePath": "ofl/anonymouspro/OFL.txt",
+    "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/anonymouspro/OFL.txt",
+    "bytes": 4521,
+    "sri": "sha384-l2MhK2BAb9lIHot+j8eQTGlFENi9YkiMWE/NGCkekqAvPgbb1MT9w7jrzfd2U8Ja"
+  }
+}
