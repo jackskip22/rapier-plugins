@@ -264,6 +264,6 @@ export function pictureBase(value) {
   return Object.assign(src => {
     const text = String(src || '').trim();
     if (!text || /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(text)) return null;
-    try { const href = new URL(text, base).href; vouched.add(href); return href; } catch (_) { return null; }
+    try { const url = new URL(text, base); if (url.origin !== base.origin) return null; vouched.add(url.href); return url.href; } catch (_) { return null; }
   }, {vouched});
 }
