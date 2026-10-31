@@ -4,7 +4,7 @@ Rapier is a Markdown editor with art built in. With this plugin your agent write
 one page you both edit, draws diagrams whose boxes you move by hand, and paints watercolors that spread, mix and dry.
 Keep the result as Markdown, or as one offline HTML file that is the whole editor with your document inside.
 
-Version 1.2.52. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
+Version 1.2.53. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
 ## Write together
 
@@ -14,10 +14,6 @@ The agent opens a document and gives you its link. Open it, and you both edit th
 passage before each edit, so it never writes over your typing, and each change it makes is marked. Drag a box in the
 diagram or rewrite a line, and the agent reads your change back. Say "Undo that" to reverse the agent's change while
 keeping yours. Then: "Give me this as one offline HTML file I can keep editing."
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/write-390-dark.png"><img src="assets/write-390-light.png" width="300" alt="Rapier on a phone: the agent has added a diagram and rewritten a line in the person's plan; its notice says Finished, 1 change, with Undo"></picture> <picture><source media="(prefers-color-scheme: dark)" srcset="assets/diagram-390-dark.png"><img src="assets/diagram-390-light.png" width="300" alt="Rapier's Draw on a phone: the person drags the last box of the diagram and the arrow follows"></picture>
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/write-1280-dark.png"><img src="assets/write-1280-light.png" width="640" alt="Rapier on a computer: the same plan, with the agent's notice beside the page"></picture>
 
 ## Paint together
 
