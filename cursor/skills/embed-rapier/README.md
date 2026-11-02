@@ -2,11 +2,6 @@
 
 Put Rapier's Markdown editor or reader in your web app, each one offline HTML file.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jackskip22/rapier-plugins/main/assets/write-1280-dark.png">
-  <img src="https://raw.githubusercontent.com/jackskip22/rapier-plugins/main/assets/write-1280-light.png" alt="The Rapier editor on a computer: a launch plan with an agent's change marked" width="960">
-</picture>
-
 Try the editor at [rapier.website](https://rapier.website).
 Install: `npm install rapier-embed`.
 
@@ -172,7 +167,7 @@ length and SHA-384 before it runs it, and keeps on the device. A file that fails
 | `elements` | The Elements sheet's traced ornaments: 3,155 pieces from the ornament book. | 16.2 MB (51 files) | `rapier.html` |
 | `lettersets` | The Gallery's letter sets: 31 sets of ornamental capitals. | 2.82 MB (31 files) | `rapier.html` |
 
-Totals: the reader, 9.32 MB (31.0 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.52.
+Totals: the reader, 9.32 MB (31.0 MB with `ocr`); `rapier.html`, 57.2 MB. Release 1.2.54.
 <!-- PLUGIN_TABLE_END -->
 
 The manifest lists every plug-in file and, in `builds`, the pages that use it. `rapier.html` has flowcharts and Word import
