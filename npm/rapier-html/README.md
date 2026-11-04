@@ -2,11 +2,6 @@
 
 Turn Markdown into one offline HTML file that contains the full Rapier editor.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jackskip22/rapier-plugins/main/assets/write-390-dark.png">
-  <img src="https://raw.githubusercontent.com/jackskip22/rapier-plugins/main/assets/write-390-light.png" alt="The Rapier editor on a phone: a launch plan with an agent's change marked" width="320">
-</picture>
-
 Try it: `npx rapier-html@1.2.52 notes.md`, then open `notes.rapier.html` in any browser.
 Install: `npm install rapier-html@1.2.52`.
 

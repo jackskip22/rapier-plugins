@@ -15,7 +15,6 @@ Connect to `https://mcp.rapier.website/door/mcp` over streamable HTTP, then call
 
 ## Reference
 
-- [Plugins and packages](https://github.com/jackskip22/rapier-plugins/blob/main/README.md): installation, npm packages and local plug-in files.
 - [Tool catalog](https://rapier.website/AGENT-TOOLS.json): current tool names, inputs and effects.
 - [MCP registry entry](https://github.com/jackskip22/rapier-plugins/blob/main/server.json): streamable HTTP endpoint and registry metadata.
 - [Rapier](https://github.com/jackskip22/rapier): full app, document editor and reader builds.
