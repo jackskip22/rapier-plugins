@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "name": "Geist Serif",
+  "owner": true,
+  "source": {
+    "path": "fonts/additions/geist-serif/GeistSerif[ELSH].ttf",
+    "url": "https://github.com/vercel/geist-font/tree/a2357c1398c81d88ff84823a2f50af3152ee8733",
+    "bytes": 155752,
+    "sri": "sha384-x1VZxrDhWQGkuWMjnSAeNNz3eC5v2Y5tkLa/j/hIomczfOwdzv45v/brGJJPwrkZ",
+    "axes": [
+      {
+        "tag": "ELSH",
+        "min": 0,
+        "default": 0,
+        "max": 100,
+        "name": "Element Shape"
+      }
+    ]
+  },
+  "license": {
+    "path": "fonts/additions/geist-serif/OFL.txt",
+    "url": "https://raw.githubusercontent.com/vercel/geist-font/a2357c1398c81d88ff84823a2f50af3152ee8733/OFL.txt",
+    "bytes": 4383,
+    "sri": "sha384-iNqi40dRpcrtDDIhSTLL46J1XQlsUsFwsHqKBT9Rvw4Dq1V1jVNrwEH6D2XBUV84"
+  },
+  "files": [
+    {
+      "name": "font-00c96b5d0826ea8f36d774adfde6f9d884887cec46a928247bc44bd30ae966105e9e216337bcd57635ac791764762867.woff2",
+      "variant": "regular",
+      "bytes": 40500,
+      "sri": "sha384-AMlrXQgm6o8213St/eb52ISIfOxGqSgke8RL0wrpZhBeniFjN7zVdjWseRdkdihn"
+    }
+  ],
+  "converter": {
+    "repository": "https://github.com/google/woff2",
+    "revision": "fb9c3379f2605b10f3e8f1d9636664ab5576775c",
+    "sri": "sha384-M2pdbyg+uNKbjKXvE8xBo5noxWgRNi/CkoRyLw9FLdBJ+xmovpuiQNRta05APGne",
+    "brotliVersion": "1.1.0",
+    "reproduces": {
+      "sourceSri": "sha384-5s8mFeLylPlA1y/mnAw+rc5Ji0BQ9NYVlt8CejnuapxqxfKCCabIuoH7on8XMzqH",
+      "outputSri": "sha384-f4joteMdPP0FCG2PzPzrG/pu6Twf6eDcp5RuUai9JOgxvG2SssE+u0vMpTGsgd/A"
+    }
+  }
+}

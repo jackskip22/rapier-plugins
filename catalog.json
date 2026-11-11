@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-25T03:43:10.146Z",
+  "generatedAt": "2026-11-11T14:56:07.851Z",
   "source": {
     "provider": "google-fonts",
     "metadata": {
@@ -58147,6 +58147,50 @@
         "sourceUrl": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/notosanscanadianaboriginal/OFL.txt",
         "id": "OFL-1.1"
       }
+    },
+    {
+      "id": "ra-dcd3ffdc67d21c86a3e6a7e0",
+      "name": "Geist Serif",
+      "category": "serif",
+      "variants": [
+        "regular"
+      ],
+      "axes": [
+        {
+          "tag": "ELSH",
+          "start": 0,
+          "end": 100
+        }
+      ],
+      "subsets": [
+        "latin",
+        "latin-ext"
+      ],
+      "popularity": 1009,
+      "sourceRank": 0,
+      "sourcePosition": 1009,
+      "version": "6457043c8a2101f8cf74b344fe72e5a0c85c856cd6057f4b6c989f83bc7cc697b13bd02dba77295194aa70467fa61c73",
+      "lastModified": "2026-10-30",
+      "files": [
+        {
+          "name": "font-00c96b5d0826ea8f36d774adfde6f9d884887cec46a928247bc44bd30ae966105e9e216337bcd57635ac791764762867.woff2",
+          "url": "families/ra-dcd3ffdc67d21c86a3e6a7e0/font-00c96b5d0826ea8f36d774adfde6f9d884887cec46a928247bc44bd30ae966105e9e216337bcd57635ac791764762867.woff2",
+          "bytes": 40500,
+          "sri": "sha384-AMlrXQgm6o8213St/eb52ISIfOxGqSgke8RL0wrpZhBeniFjN7zVdjWseRdkdihn",
+          "sourceUrl": "https://github.com/vercel/geist-font/tree/a2357c1398c81d88ff84823a2f50af3152ee8733",
+          "variants": [
+            "regular"
+          ]
+        }
+      ],
+      "license": {
+        "name": "OFL-88daa2e34751a5caed0c32214932cbe3a2755d096c52c170b07a8a053f51bf0e03ab55758d536bc041fa0f65c1515f38.txt",
+        "url": "families/ra-dcd3ffdc67d21c86a3e6a7e0/OFL-88daa2e34751a5caed0c32214932cbe3a2755d096c52c170b07a8a053f51bf0e03ab55758d536bc041fa0f65c1515f38.txt",
+        "bytes": 4383,
+        "sri": "sha384-iNqi40dRpcrtDDIhSTLL46J1XQlsUsFwsHqKBT9Rvw4Dq1V1jVNrwEH6D2XBUV84",
+        "sourceUrl": "https://raw.githubusercontent.com/vercel/geist-font/a2357c1398c81d88ff84823a2f50af3152ee8733/OFL.txt",
+        "id": "OFL-1.1"
+      }
     }
   ],
   "additions": [
@@ -58199,6 +58243,12 @@
       "sourcePosition": 1503
     }
   ],
+  "owner": [
+    {
+      "id": "ra-dcd3ffdc67d21c86a3e6a7e0",
+      "name": "Geist Serif"
+    }
+  ],
   "groups": [
     {
       "id": "clean",
@@ -58228,6 +58278,6 @@
   "previews": {
     "url": "previews/manifest.json",
     "bytes": 2923,
-    "sri": "sha384-WfQ3HBh4f4DGjGqvVsY349M8JdSdXHUAaKk3H1klqJq2j+R6VvpL1ww8OajJwqQE"
+    "sri": "sha384-WA5llwUcr1P9U1QgHPW7wGXcElOfxWTfWgjxUrDNktWXrp8Ep2NqW2Tz61wdJa3b"
   }
 }
