@@ -2,13 +2,16 @@
 # attached to the Release whose tag is that version, bare (no "v"). A push to main whose root manifest.json names a version
 # with no Release yet tests and builds the plug-in, then creates the tag and the Release. Its notes are the plug-in's changelog
 # section, which the newest release commit at or before this one carries under "## JPEG XL for Obsidian <version>". The Release is
-# never marked Latest: that stays Rapier's. RELEASES: held makes no tag and no Release.
+# never marked Latest: that stays Rapier's. RELEASES: held makes no tag and no Release. The three files carry GitHub's build
+# provenance (gh attestation verify <file> --repo <this repository>): id-token and attestations are what that step needs.
 name: obsidian
 on:
   push:
     branches: [main]
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 concurrency:
   group: obsidian
   cancel-in-progress: false
@@ -57,6 +60,14 @@ jobs:
       - if: steps.version.outputs.release == '1'
         working-directory: obsidian
         run: npm run build
+      - name: build provenance for the three files
+        if: steps.version.outputs.release == '1'
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: |
+            obsidian/main.js
+            manifest.json
+            obsidian/styles.css
       - name: the tag (the bare version) and a Release with the three files Obsidian installs
         if: steps.version.outputs.release == '1'
         env:

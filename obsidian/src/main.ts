@@ -1,7 +1,7 @@
 // The only file that imports Obsidian. Everything it decides comes from ./core (plain functions over bytes and strings);
 // this file maps Obsidian's API onto that core. If Obsidian's plugin API changes, rewrite this file and nothing else.
 import {
-  App, Editor, FileView, MarkdownFileInfo, MarkdownView, Modal, Notice, Platform, Plugin, PluginSettingTab, Setting, TFile, WorkspaceLeaf, normalizePath,
+  App, Editor, FileView, MarkdownFileInfo, MarkdownView, Modal, Notice, Platform, Plugin, PluginSettingTab, Setting, SettingDefinitionItem, TFile, WorkspaceLeaf, normalizePath,
 } from 'obsidian';
 import {Engine} from './core/client.js';
 import {maxPixelsFor, type Mode} from './core/engine.js';
@@ -346,14 +346,10 @@ export default class JxlPlugin extends Plugin {
   startRun(kind: 'jxl' | 'png' | 'jpg', planned: ReturnType<typeof plan>) {
     const controller = new AbortController();
     this.running = controller;
-    const box = activeDocument.createDocumentFragment();
-    const text = activeDocument.createElement('span');
-    const cancel = activeDocument.createElement('button');
-    cancel.textContent = 'Cancel';
-    cancel.className = 'jxl-cancel';
+    const box = createFragment();
+    const text = box.createSpan({text: `Converting 1 of ${planned.length}`});
+    const cancel = box.createEl('button', {text: 'Cancel', cls: 'jxl-cancel'});
     cancel.addEventListener('click', e => { e.stopPropagation(); controller.abort(); text.textContent = 'Canceling…'; });
-    box.append(text, cancel);
-    text.textContent = `Converting 1 of ${planned.length}`;
     const notice = new Notice(box, 0);
     void (async () => {
       let results: Outcome[];
@@ -505,6 +501,24 @@ class ConvertModal extends Modal {
 class JxlSettingTab extends PluginSettingTab {
   constructor(app: App, private plugin: JxlPlugin) { super(app, plugin); }
 
+  getSettingDefinitions(): SettingDefinitionItem[] {
+    const s = this.plugin.settings;
+    return [
+      {name: 'Convert pasted and dropped pictures', desc: 'PNG, JPEG, WebP and GIF are saved as JPEG XL.',
+        render: st => { st.addToggle(t => t.setValue(s.convertOnImport).onChange(async v => { s.convertOnImport = v; await this.plugin.saveSettings(); })); }},
+      {name: 'Photo quality', desc: 'Screenshots and diagrams always keep every pixel. JPEG files are kept exactly and can be restored.',
+        render: st => { st.addSlider(sl => sl.setLimits(50, 100, 1).setValue(s.quality).onChange(async v => { s.quality = v; await this.plugin.saveSettings(); })); }},
+      {name: 'Treat pictures as', desc: 'Automatic looks at the colors in each picture.',
+        render: st => { st.addDropdown(d => d.addOptions({auto: 'Automatic', screenshot: 'Screenshots', photo: 'Photographs'}).setValue(s.look).onChange(async v => { s.look = v as Mode; await this.plugin.saveSettings(); })); }},
+      {name: 'Remove originals', desc: 'After a picture is converted, checked and its links updated, move the original to the trash. Off: originals stay.',
+        render: st => { st.addToggle(t => t.setValue(s.removeOriginals).onChange(async v => { s.removeOriginals = v; await this.plugin.saveSettings(); })); }},
+      {type: 'group', heading: 'Other devices', items: [
+        {name: '', desc: 'A converted vault opens on another device only where this plugin is installed.', searchable: false, render: () => {}},
+      ]},
+    ];
+  }
+
+  // Obsidian before 1.13.0 draws the tab from display().
   display(): void {
     const {containerEl} = this;
     const s = this.plugin.settings;
