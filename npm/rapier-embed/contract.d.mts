@@ -88,7 +88,8 @@ export function assetURL(value: string): string;
 export function assetBytes(value: Uint8Array, limit?: number): Uint8Array;
 /** Lowercase hex SHA-256. */
 export function bytesHash(bytes: BufferSource): Promise<string>;
-export function externalImage(raw: string, asset: {label: string; title?: string}, url: string | null | undefined): string;
+/** The picture's Markdown with the host's address; an address in the folder of `base` (the load's baseUrl) is written relative to it. */
+export function externalImage(raw: string, asset: {label: string; title?: string}, url: string | null | undefined, base?: string): string;
 export interface BrokerAsset {
   bytes: Uint8Array;
   codec: AssetType;
@@ -119,4 +120,4 @@ export interface AssetBroker {
 export function createAssetBroker(ports: AssetBrokerPorts): Readonly<AssetBroker>;
 /** Not a mount option: the option is `baseUrl` on `load`. The host's picture base: returns a function that turns a relative picture address into an address under `baseUrl` (or null), with
  * `vouched`, the addresses it produced. Null when no base is given; throws `invalid_base_url` for anything but an absolute https address (or http on localhost). Used by the page itself. */
-export function pictureBase(value: string | null | undefined): (((src: string) => string | null) & {vouched: Set<string>}) | null;
+export function pictureBase(value: string | null | undefined): (((src: string) => string | null) & {vouched: Set<string>; base: string}) | null;
