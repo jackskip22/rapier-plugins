@@ -3,4 +3,4 @@
 export {IMAGE_LIMITS, configureParser, normalizeLabel, assetTitle, installMarkdownImages, markdownParser, markdownBodyOffset,
   dataImage, parseAssets, documentAssets, packAssetIndex, restoreAssetIndex, projectImageDefinitions, blockwiseAssets,
   imageEnvironment, referenceOccurs, mayRetireImageDefinitions, retireDeletedImageDefinitions, assetOmissions, isAssetBlock,
-  escapeImageAlt, serializeAsset, appendAssetText, appendAsset} from '../spec/md-assets.mjs';
+  escapeImageAlt, serializeAsset, appendAssetText, appendAsset, svgDataURL} from '../spec/md-assets.mjs';

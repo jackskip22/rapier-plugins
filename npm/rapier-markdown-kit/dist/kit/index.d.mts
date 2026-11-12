@@ -134,7 +134,8 @@ export {
   referenceOccurs,
   restoreAssetIndex,
   retireDeletedImageDefinitions,
-  serializeAsset
+  serializeAsset,
+  svgDataURL
 } from './assets.mjs';
 export {
   createMarkdownRenderer,

@@ -104,3 +104,5 @@ export function serializeAsset(asset: AssetInput): string;
 /** Appends or reuses an exact image definition; throws on conflicting labels or limits. */
 export function appendAssetText(source: string, asset: AddressedAsset, lineEnding?: '\n' | '\r\n' | '\r', options?: {preserveLabel?: boolean}): AssetAppend;
 export function appendAsset(source: string, asset: AddressedAsset): Promise<AssetAppend>;
+/** An SVG picture's data URL in the percent spelling Rapier writes; Base64 inside stays as it is. Throws on invalid UTF-8. */
+export function svgDataURL(bytes: Uint8Array): string;

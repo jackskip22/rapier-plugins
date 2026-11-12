@@ -1,0 +1,66 @@
+# The JPEG XL plug-in for Obsidian (obsidian/). Obsidian reads manifest.json at the root of main and installs the three files
+# attached to the Release whose tag is that version, bare (no "v"). A push to main whose root manifest.json names a version
+# with no Release yet tests and builds the plug-in, then creates the tag and the Release. Its notes are the plug-in's changelog
+# section, which the newest release commit at or before this one carries under "## JPEG XL for Obsidian <version>". The Release is
+# never marked Latest: that stays Rapier's. RELEASES: held makes no tag and no Release.
+name: obsidian
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+concurrency:
+  group: obsidian
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASES: 'on'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 50
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22.23.4'
+      - name: the version manifest.json names, unless it is already released
+        id: version
+        run: |
+          set -eu
+          version=$(node -p "require('./manifest.json').version")
+          printf '%s\n' "$version" | grep -Eqx '[0-9]+\.[0-9]+\.[0-9]+'
+          cmp manifest.json obsidian/manifest.json
+          cmp versions.json obsidian/versions.json
+          test "$(node -p "require('./obsidian/package.json').version")" = "$version"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          if [ "$RELEASES" != on ]; then echo "plug-in releases are held: no tag, no Release"; exit 0; fi
+          if gh release view "$version" >/dev/null 2>&1; then echo "$version is already released"; else echo "release=1" >> "$GITHUB_OUTPUT"; fi
+      - name: the notes, without their heading
+        if: steps.version.outputs.release == '1'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -eu
+          heading="## JPEG XL for Obsidian $VERSION"
+          release=$(git log -1 --format=%H -F --grep="$heading" "$GITHUB_SHA")
+          if [ -z "$release" ]; then echo "::error::no commit at or before $GITHUB_SHA carries $heading"; exit 1; fi
+          git log -1 --format=%B "$release" | awk -v h="$heading" 'f && /^## /{exit} f{print} $0 == h || index($0, h " ") == 1 {f=1}' | sed -e '/./,$!d' > "$RUNNER_TEMP/notes.md"
+          if ! grep -q '[^[:space:]]' "$RUNNER_TEMP/notes.md"; then echo "::error::the $VERSION notes are empty"; exit 1; fi
+      - if: steps.version.outputs.release == '1'
+        working-directory: obsidian
+        run: npm ci
+      - if: steps.version.outputs.release == '1'
+        working-directory: obsidian
+        run: npm test
+      - if: steps.version.outputs.release == '1'
+        working-directory: obsidian
+        run: npm run build
+      - name: the tag (the bare version) and a Release with the three files Obsidian installs
+        if: steps.version.outputs.release == '1'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -eu
+          gh release create "$VERSION" obsidian/main.js manifest.json obsidian/styles.css --target "$GITHUB_SHA" --title "$VERSION" --notes-file "$RUNNER_TEMP/notes.md" --latest=false

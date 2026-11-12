@@ -1,0 +1,9 @@
+.jxl-view { display: flex; align-items: center; justify-content: center; overflow: auto; }
+.jxl-view-image { max-width: 100%; max-height: 100%; object-fit: contain; }
+.jxl-error { color: var(--text-error); }
+.jxl-list { max-height: 40vh; overflow-y: auto; margin-bottom: var(--size-4-3); }
+.jxl-row { display: flex; justify-content: space-between; gap: var(--size-4-3); padding: var(--size-2-1) 0; font-size: var(--font-ui-small); }
+.jxl-row-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jxl-row-size { color: var(--text-muted); white-space: nowrap; }
+.jxl-progress { width: 100%; }
+.jxl-cancel { margin-left: var(--size-4-3); }

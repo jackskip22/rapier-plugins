@@ -1,0 +1,10 @@
+{
+  "id": "jpeg-xl",
+  "name": "JPEG XL",
+  "version": "1.0.0",
+  "minAppVersion": "1.6.6",
+  "description": "View JPEG XL pictures and convert PNG, JPEG, WebP and GIF files to smaller JPEG XL files.",
+  "author": "rapier.website",
+  "isDesktopOnly": false,
+  "authorUrl": "https://rapier.website"
+}
