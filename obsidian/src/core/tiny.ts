@@ -1,1 +1,0 @@
-export const TINY_JXL = '/woIAAKASAgGAQCAAEsYm3zjIcCDGgHg5OQksi7zLA8QkGdn1nB4yP6h0UBc';
