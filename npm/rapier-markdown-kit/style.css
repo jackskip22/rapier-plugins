@@ -357,9 +357,15 @@
 	text-indent: calc(-16px - var(--md-space-1) - var(--md-task-space));
 }
 /* The hang is the line's alone: nothing inside it (a formula, a code chip) or after it takes the indent, and a tight item's
-   later blocks (a nested list, a paragraph) keep their own place. */
-.md-render .task-list-item > p:has(> input[type="checkbox"]:first-child) *,
-.md-render .task-list-item:has(> input[type="checkbox"]:first-child) * { text-indent: 0; }
+   later blocks (a nested list, a paragraph) keep their own place.
+   Everything inside the line is its leading box, a later sibling of the box, or inside one; said that way, not with :has()
+   before a universal subject, which made every element added anywhere on the page restyle the whole page. */
+.md-render .task-list-item > p > input[type="checkbox"]:first-child,
+.md-render .task-list-item > p > input[type="checkbox"]:first-child ~ *,
+.md-render .task-list-item > p > input[type="checkbox"]:first-child ~ * *,
+.md-render .task-list-item > input[type="checkbox"]:first-child,
+.md-render .task-list-item > input[type="checkbox"]:first-child ~ *,
+.md-render .task-list-item > input[type="checkbox"]:first-child ~ * * { text-indent: 0; }
 .md-render .task-list-item:has(> input[type="checkbox"]:first-child) > :is(p, ul, ol, pre, blockquote, table, div, dl, details, figure, hr) {
 	margin-inline-start: calc(-16px - var(--md-space-1) - var(--md-task-space));
 }
