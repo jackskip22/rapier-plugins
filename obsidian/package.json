@@ -1,6 +1,6 @@
 {
   "name": "obsidian-jpeg-xl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "View JPEG XL pictures and convert PNG, JPEG, WebP and GIF files to smaller JPEG XL files.",
   "license": "MIT",
   "private": true,

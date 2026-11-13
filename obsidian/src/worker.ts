@@ -4,7 +4,7 @@ type Call = {id: number; op: string; args: unknown[]};
 type Op = (...a: never[]) => unknown;
 const ops: Record<string, Op> = {
   convert: engine.convert, analyze: engine.analyze, toPng: engine.toPng, toJpeg: engine.toJpeg,
-  canRestoreJpeg: engine.canRestoreJpeg, verifyJxl: engine.verifyJxl, verifyPng: engine.verifyPng, verifyJpeg: engine.verifyJpeg, display: engine.display, size: engine.size, remake: engine.remake,
+  canRestoreJpeg: engine.canRestoreJpeg, verifyJxl: engine.verifyJxl, verifyPng: engine.verifyPng, verifyJpeg: engine.verifyJpeg, display: engine.display, size: engine.size, remake: engine.remake, checkRemade: engine.checkRemade,
 };
 const scope = self as unknown as {postMessage(m: unknown, t?: Transferable[]): void; onmessage: ((e: MessageEvent<Call>) => void) | null};
 async function handle(e: MessageEvent<Call>) {

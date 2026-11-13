@@ -4,7 +4,7 @@ import {
   App, Editor, FileView, MarkdownFileInfo, MarkdownView, Modal, Notice, Platform, Plugin, PluginSettingTab, Setting, SettingDefinitionItem, TFile, WorkspaceLeaf, normalizePath,
 } from 'obsidian';
 import {Engine} from './core/client.js';
-import {maxPixelsFor, type Mode} from './core/engine.js';
+import {maxPixelsFor, type JxlRecord, type Mode} from './core/engine.js';
 import {embedSizeInNote, embedSizeNow, embedsInText, type EmbedAttrs, type Size} from './core/text.js';
 import {bytes as fmt, IMAGE_EXTENSIONS, pictures} from './core/format.js';
 import {KEEPS} from './core/estimate.js';
@@ -72,6 +72,11 @@ class VaultPort implements BatchPort {
   nameIsUnique(name: string) { return this.app.vault.getFiles().filter(f => f.name === name).length <= 1; }
   // The person's own trash setting, never a permanent delete chosen by this plugin.
   async trash(path: string) { await this.app.fileManager.trashFile(this.file(path)); }
+  // A move, never over a file: the vault's own rename refuses a path that is taken, and links are not rewritten.
+  async rename(from: string, to: string) {
+    if (this.app.vault.getAbstractFileByPath(to)) throw new Error('A file is there.');
+    await this.app.vault.rename(this.file(from), to);
+  }
 }
 
 class JxlView extends FileView {
@@ -309,9 +314,9 @@ export default class JxlPlugin extends Plugin {
       destExt: 'jxl', removeOriginals,
       transform: async (b, ext, signal) => {
         const r = await this.engine.convert(b, ext, {mode: look, quality, maxPixels: maxPixels()}, signal);
-        return r.bytes ? {bytes: r.bytes, kept: r.kept} : {bytes: null, reason: r.reason ?? 'Not converted.'};
+        return r.bytes ? {bytes: r.bytes, kept: r.kept, record: r.record} : {bytes: null, reason: r.reason ?? 'Not converted.'};
       },
-      verify: (src, ext, out, kept) => this.engine.verifyJxl(src, ext, out, (kept ?? 'lossy') as 'pixels'),
+      verify: (src, ext, out, kept, record) => this.engine.verifyJxl(src, ext, out, (kept ?? 'lossy') as 'pixels', record as JxlRecord),
     };
   }
 
@@ -380,7 +385,8 @@ export default class JxlPlugin extends Plugin {
   private async undo() {
     if (this.busy()) return;
     const journal = this.settings.lastRun;
-    const out = await undoRun(this.port, journal, async e => this.engine.remake(split(e.src).ext, await this.port.read(e.dest), e.kept));
+    const out = await undoRun(this.port, journal, async e => this.engine.remake(split(e.src).ext, await this.port.read(e.dest), e.kept),
+      async (e, made) => this.engine.checkRemade(split(e.src).ext, await this.port.read(e.dest), made));
     this.settings.lastRun = [];
     await this.saveSettings();
     new Notice(out.left.length ? `Undid ${pictures(out.undone)}. ${out.left.length} left as they are: ${out.left[0].reason}` : `Undid ${pictures(out.undone)}.`, 10000);
@@ -422,7 +428,7 @@ export default class JxlPlugin extends Plugin {
     // The pasted picture is the only copy: the converted file is used only after it is read back and checked against it.
     let bytes: Uint8Array = input, outExt = ext, note = '';
     if (out.bytes) {
-      const check = await this.engine.verifyJxl(input, ext, out.bytes, out.kept ?? 'lossy');
+      const check = await this.engine.verifyJxl(input, ext, out.bytes, out.kept ?? 'lossy', out.record);
       if (check.ok) { bytes = out.bytes; outExt = 'jxl'; note = `Saved as JPEG XL, ${fmt(input.length)} to ${fmt(bytes.length)}.`; }
       else note = `Saved as ${ext.toUpperCase()}. ${check.reason}`;
     } else if (out.reason !== 'No smaller.') note = `Saved as ${ext.toUpperCase()}. ${out.reason ?? ''}`;
@@ -463,7 +469,7 @@ class ConvertModal extends Modal {
           const a = await engine.analyze(await port.read(it.src.path), split(it.src.path).ext, this.controller.signal).catch(() => null);
           if (!a) continue;
           look = a.kind === 'still' ? a.look : a.kind;
-          guess = a.kind === 'jpeg' ? KEEPS.jpeg : a.kind === 'gif' ? KEEPS.gif : a.kind === 'lossy-webp' ? 1 : a.look === 'photo' ? KEEPS['png-photo'] : KEEPS['png-screenshot'];
+          guess = a.kind === 'jpeg' ? KEEPS.jpeg : a.kind === 'gif' ? KEEPS.gif : a.kind === 'lossy-webp' || a.kind === 'animated' ? 1 : a.look === 'photo' ? KEEPS['png-photo'] : KEEPS['png-screenshot'];
         }
         before += it.src.size; after += it.src.size * Math.min(1, guess);
         rows.push({src: it.src.path, dest: it.dest, size: it.src.size, look});

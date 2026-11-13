@@ -27,5 +27,13 @@ export class FakeVault implements BatchPort {
   async readNote(n: string) { return this.notes.get(n)!; }
   refersTo(_note: string, target: string, file: string) { return target === file || target === file.split('/').pop(); }
   nameIsUnique(name: string) { return [...this.files.keys()].filter(k => k.split('/').pop() === name).length <= 1; }
+  hooksRename?: (from: string, to: string) => void;
+  async rename(from: string, to: string) {
+    this.hooksRename?.(from, to);
+    const f = this.files.get(from);
+    if (!f) throw new Error('missing ' + from);
+    if (this.exists(to)) throw new Error('exists');
+    this.files.delete(from); this.files.set(to, f);
+  }
   async trash(p: string) { if (this.failTrash) throw new Error('trash failed'); this.files.delete(p); this.trashed.push(p); }
 }

@@ -21,7 +21,7 @@ function screenshot(w = 300, h = 160): Raster {
   }
   return {data, width: w, height: h};
 }
-const same = (a: Uint8Array, b: Uint8Array) => a.length === b.length && a.every((v, i) => v === b[i]);
+const same = (a: ArrayLike<number>, b: ArrayLike<number>) => a.length === b.length && Array.prototype.every.call(a, (v: number, i: number) => v === b[i]);
 
 test('PNG writer and reader keep every sample, alpha and profile', async () => {
   const r = screenshot(40, 30);
@@ -38,9 +38,9 @@ test('PNG reader declines what it does not handle', async () => {
 });
 
 test('screenshots are told from photographs', async () => {
-  assert.equal(classify(screenshot().data, 300, 160).look, 'screenshot');
+  assert.equal(classify(screenshot().data as Uint8Array, 300, 160).look, 'screenshot');
   const photo = (await decodePng(fx('photo.png')))!;
-  assert.equal(classify(photo.data, photo.width, photo.height).look, 'photo');
+  assert.equal(classify(photo.data as Uint8Array, photo.width, photo.height).look, 'photo');
 });
 
 test('a screenshot becomes JPEG XL with every sample kept, and is smaller than its PNG', async () => {

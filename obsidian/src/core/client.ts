@@ -1,4 +1,4 @@
-import type {Check, ConvertOptions, Converted, Kept} from './engine.js';
+import type {Check, ConvertOptions, Converted, JxlRecord, Kept} from './engine.js';
 import type {Look} from './classify.js';
 
 declare const __WORKER_SOURCE__: string;
@@ -69,7 +69,7 @@ export class Engine {
   }
   analyze(bytes: Uint8Array, ext: string, signal?: AbortSignal) {
     const b = this.copy(bytes);
-    return this.call<{look: Look; width: number; height: number; kind: 'jpeg' | 'gif' | 'still' | 'lossy-webp'}>('analyze', [b, ext], [b.buffer], signal);
+    return this.call<{look: Look; width: number; height: number; kind: 'jpeg' | 'gif' | 'still' | 'lossy-webp' | 'animated'}>('analyze', [b, ext], [b.buffer], signal);
   }
   toPng(bytes: Uint8Array) { const b = this.copy(bytes); return this.call<{bytes: Uint8Array}>('toPng', [b], [b.buffer]); }
   toJpeg(bytes: Uint8Array) { const b = this.copy(bytes); return this.call<Uint8Array>('toJpeg', [b], [b.buffer]); }
@@ -79,13 +79,19 @@ export class Engine {
     const b = this.copy(bytes);
     return this.call<{png: Uint8Array; width: number; height: number; frames: number}>('display', [b, maxPixels], [b.buffer]);
   }
-  verifyJxl(source: Uint8Array, ext: string, jxl: Uint8Array, kept: Kept) {
+  verifyJxl(source: Uint8Array, ext: string, jxl: Uint8Array, kept: Kept, record?: JxlRecord) {
     const a = this.copy(source), b = this.copy(jxl);
-    return this.call<Check>('verifyJxl', [a, ext, b, kept], [a.buffer, b.buffer]);
+    // The record goes without its file: the check is given the file read back.
+    const r = record && {...record, bytes: null};
+    return this.call<Check>('verifyJxl', [a, ext, b, kept, r], [a.buffer, b.buffer]);
   }
   verifyPng(jxl: Uint8Array, png: Uint8Array) {
     const a = this.copy(jxl), b = this.copy(png);
     return this.call<Check>('verifyPng', [a, b], [a.buffer, b.buffer]);
+  }
+  checkRemade(ext: string, jxl: Uint8Array, made: Uint8Array) {
+    const a = this.copy(jxl), b = this.copy(made);
+    return this.call<boolean>('checkRemade', [ext, a, b], [a.buffer, b.buffer]);
   }
   verifyJpeg(jpeg: Uint8Array) { const b = this.copy(jpeg); return this.call<Check>('verifyJpeg', [b], [b.buffer]); }
 }
