@@ -1,10 +1,10 @@
 {
   "package": "rapier-html",
-  "version": "1.2.69",
+  "version": "1.2.70",
   "path": "dist/rapier.html",
-  "bytes": 7128691,
-  "sha256": "33697564f2196bdf66ec43d3030cd2beff64890eb716a84309da2fcc90504e14",
-  "builtAt": "2026-11-13T11:22:36.645Z",
+  "bytes": 7132268,
+  "sha256": "4ccf037cc90b064a73b8d8a0fc906241e61f55d32b97237a0903b6aa89486fb3",
+  "builtAt": "2026-11-14T14:00:12.692Z",
   "node": "v22.23.4",
   "canonical": true,
   "packing": "zopfli",
@@ -145,15 +145,15 @@
       "delivery": "built-in",
       "kind": "files",
       "element": "rapier-plugin-font-subset",
-      "bytes": 1207570,
-      "packedBytes": 439575,
+      "bytes": 1196706,
+      "packedBytes": 434976,
       "files": [
         {
           "id": "rapier-font-subset",
           "name": "rapier-font-subset-3.js",
           "version": "3",
-          "bytes": 1207570,
-          "sri": "eyBreJCziFoHQdGSPtvd0S2IRcHna191kq83/ps/rafZwWWd6reInBALyPdLQmdL"
+          "bytes": 1196706,
+          "sri": "CqKlkKzz1fl27HKzJ+M4/0nl/jPbfpLhOZEPx6CveV1Y5MXxjJ/o3Bz+ygRWlB90"
         }
       ]
     }

@@ -4,7 +4,7 @@ Rapier is a Markdown editor with art built in. With this plugin your agent write
 one page you both edit, draws diagrams whose boxes you move by hand, and paints watercolors that spread, mix and dry.
 Keep the result as Markdown, or as one offline HTML file that is the whole editor with your document inside.
 
-Version 1.2.69. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
+Version 1.2.70. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
 ## Write together
 
@@ -19,9 +19,9 @@ keeping yours. Then: "Give me this as one offline HTML file I can keep editing."
 
 Ask: "Paint a small watercolor sunset over the sea in Rapier and leave room for me to add a boat."
 
-Keep the editor link open while it paints: painting runs in your open editor, and watercolor needs WebGPU. The
-painting is finished when the agent reports it committed; then pick up the brush yourself. Without WebGPU the agent
-offers regular brushes or an editable diagram.
+Keep the editor open while it paints: in a chat that shows Rapier, the chat's view paints; elsewhere, open the editor
+link. Watercolor needs WebGPU. The painting is finished when the agent reports it committed; then pick up the brush
+yourself. Without WebGPU the agent gives you the editor link to open in a browser that has it.
 
 Every picture here was made in Rapier: the agent's words and diagram, and the person's moves in Draw.
 
@@ -62,8 +62,8 @@ directory. An installed marketplace copy with the same name takes precedence. No
 ## Requirements and limits
 
 - Live work needs an internet connection and a browser; downloaded files stay editable offline.
-- Painting needs the editor open. Water needs WebGPU; without it the agent offers regular
-  brushes or an editable diagram.
+- Painting needs the editor open. Water needs WebGPU; without it the agent gives you the editor link to open in a
+  browser that has it.
 - Notes use the store you configured on your own device. The hosted workspace cannot read encrypted Notes and
   reports them as locked or unavailable, not empty. Sync runs only when you ask and can replace files.
 - Word, PDF and rendered-page exports need an available editor or renderer. Hosted workspaces expire after 30 idle days; export links last
