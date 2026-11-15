@@ -587,7 +587,7 @@ On its own line, blank lines around it. PDF and Word break the page.
 
 ## Reference style
 
-[`spec/markdown-style.css`](repo/spec/markdown-style.css), MIT, is the one sheet for Rapier, its pages and the
+[`spec/markdown-style.css`](https://github.com/jackskip22/rapier/blob/main/spec/markdown-style.css), MIT, is the one sheet for Rapier, its pages and the
 kit's `style.css`. It parses nothing and downloads nothing.
 
 ```html
@@ -719,6 +719,6 @@ opens the source; otherwise it reads the pages.
 The release run opens CommonMark/GFM, Bear, Obsidian, Pandoc-copy and RTL files (CRLF, BOM, trailing-space breaks, no
 final newline), makes one edit, saves and compares bytes. A rewrite not named here or in markdown-profile.md fails.
 
-The [layout](repo/spec/md-layout.mjs), [typography and marks](repo/spec/md-marks.mjs) and
-[style](repo/spec/markdown-style.css) references are MIT (`LICENSE-MIT`). Application limits:
+The [layout](https://github.com/jackskip22/rapier/blob/main/spec/md-layout.mjs), [typography and marks](https://github.com/jackskip22/rapier/blob/main/spec/md-marks.mjs) and
+[style](https://github.com/jackskip22/rapier/blob/main/spec/markdown-style.css) references are MIT (`LICENSE-MIT`). Application limits:
 [standard-adoption](standard-adoption.md).
