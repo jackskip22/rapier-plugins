@@ -18,7 +18,7 @@ Open source. Works offline with no install. No account, no tracking, no ads.
 
 ## Install
 
-Add the plugin, open its **Connectors** tab, and add or connect **Rapier** at `https://mcp.rapier.website/door/mcp`. No Rapier account or login is needed. The skills alone do not connect the tools.
+Add the plugin, open its **Connectors** tab, and add or connect **Rapier** at `https://mcp.rapier.website/door/mcp`. Rapier needs no account. The skills alone do not connect the tools.
 
 Command line: `claude plugin marketplace add jackskip22/rapier-plugins && claude plugin install rapier@rapier`
 
