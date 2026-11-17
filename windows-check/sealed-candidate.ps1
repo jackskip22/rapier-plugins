@@ -75,6 +75,13 @@ try {
       if ($receipt.paintCode -cin @('TRANSPORT_TIMEOUT','STAGE_FAILED')) {
         Write-Host ("Candidate paint diagnostic: {0}" -f $receipt.paintCode)
       }
+      $paintAdmission = @('READY','MARKER_MISMATCH','BOOT_FAILED','BOOT_PENDING','PART_PENDING','PART_FAILED','CLIENT_PENDING','DOOR_YIELDED','SURFACE_PENDING','STATE_INCOMPLETE','DIRTY_SHAPES','DIRTY_HISTORY','SURFACE_BUSY','ALREADY_ATTEMPTED','MENU_MISSING','MENU_DISABLED','MENU_NOT_VISIBLE','MENU_OCCLUDED','EVAL_EXCEPTION','TRANSPORT_TIMEOUT','ADMISSION_TIMEOUT','SESSION_CHANGED')
+      if ($receipt.paintAdmission -cin $paintAdmission) {
+        Write-Host ("Candidate paint admission: {0}" -f $receipt.paintAdmission)
+      }
+      if ($receipt.paintAdmission -ceq 'ADMISSION_TIMEOUT' -and $receipt.paintAdmissionLast -cin $paintAdmission) {
+        Write-Host ("Candidate paint last readiness: {0}" -f $receipt.paintAdmissionLast)
+      }
       Write-Host ("Candidate Watercolor Paint-tool stroke: {0}" -f $stroke)
       Write-Host ("Candidate Painted-layer in-app JPEG XL round-trip: {0}" -f $jxl)
       @("- Paint-tool stroke: $stroke", "- Painted-layer in-app JPEG XL round-trip: $jxl", '- Native Save/picker and full-canvas export: UNRUN') | Out-File $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
