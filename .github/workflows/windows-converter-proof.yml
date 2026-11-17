@@ -1,5 +1,5 @@
 name: Windows Converter candidate diagnostic
-# Run 3: build diagnostics (codes, constructor, call site).
+# Run 4: the vendor digest hashes names with / on Windows too.
 on:
   push:
     branches: [ci/windows-converter-proof-20261117]
