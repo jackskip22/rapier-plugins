@@ -1,5 +1,5 @@
 name: Windows Converter candidate diagnostic
-# Run: 20261117T0912Z-barry-msvc-converter
+# Run: 20261117T0942Z-barry-header-converter
 # Run 2: the candidate as a UTF-8 zip.
 on:
   push:
