@@ -87,6 +87,8 @@ try {
       if ($receipt.strokeCode -ceq 'STROKE_TIMEOUT' -and $receipt.lastStrokeCode -cin $strokeCodes) { Write-Host ("Candidate paint last stroke reason: {0}" -f $receipt.lastStrokeCode) }
       if ($receipt.paintPointerDelivery -cin @('cancelled','trusted-paint-observed','trusted-receipt','mismatch','incomplete')) { Write-Host ("Candidate paint pointer delivery: {0}" -f $receipt.paintPointerDelivery) }
       if ($receipt.paintObserverCleanup -ceq 'UNCONFIRMED') { Write-Host 'Candidate paint observer cleanup: UNCONFIRMED' }
+      if ($receipt.paintTiming -cin @('blit','seat','brush','layer','pre-layer','not-started')) { Write-Host ("Candidate paint timing milestone: {0}" -f $receipt.paintTiming) }
+      if ($receipt.paintRetention -cin @('raster-history','raster-only','history-only','none')) { Write-Host ("Candidate paint retained evidence: {0}" -f $receipt.paintRetention) }
       Write-Host ("Candidate Watercolor Paint-tool stroke: {0}" -f $stroke)
       Write-Host ("Candidate Painted-layer in-app JPEG XL round-trip: {0}" -f $jxl)
       @("- Paint-tool stroke: $stroke", "- Painted-layer in-app JPEG XL round-trip: $jxl", '- Native Save/picker and full-canvas export: UNRUN') | Out-File $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8

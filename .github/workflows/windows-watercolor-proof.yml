@@ -1,5 +1,5 @@
 name: Windows Watercolor candidate diagnostic
-# Run: 20261117T2049Z-barry-watercolor-stroke-receipt
+# Run: 20261117T2146Z-barry-watercolor-pen-cpu
 # Proposed Watercolor proof: exact pinned candidate as a UTF-8 zip.
 on:
   push:
