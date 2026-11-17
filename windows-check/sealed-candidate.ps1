@@ -82,6 +82,11 @@ try {
       if ($receipt.paintAdmission -ceq 'ADMISSION_TIMEOUT' -and $receipt.paintAdmissionLast -cin $paintAdmission) {
         Write-Host ("Candidate paint last readiness: {0}" -f $receipt.paintAdmissionLast)
       }
+      $strokeCodes = @('READY','SESSION_CHANGED','TOOL_CHANGED','POINTER_CANCELLED','UNTRUSTED_INPUT','DELIVERY_INCOMPLETE','DELIVERY_MISMATCH','SURFACE_FAILED','COMMIT_FAILED','HELD_PRESS','TOOL_TRANSITION','GESTURE_ACTIVE','FINISHING','LAYER_ABSENT','SURFACE_ABSENT','SURFACE_GONE','LIFT_PENDING','COMMIT_PENDING','SURFACE_PENDING','MENU_OPEN','TARGET_OBSCURED','TARGET_UNAVAILABLE','STROKE_TIMEOUT','EVAL_EXCEPTION','TRANSPORT_TIMEOUT')
+      if ($receipt.strokeCode -cin $strokeCodes) { Write-Host ("Candidate paint stroke diagnostic: {0}" -f $receipt.strokeCode) }
+      if ($receipt.strokeCode -ceq 'STROKE_TIMEOUT' -and $receipt.lastStrokeCode -cin $strokeCodes) { Write-Host ("Candidate paint last stroke reason: {0}" -f $receipt.lastStrokeCode) }
+      if ($receipt.paintPointerDelivery -cin @('cancelled','trusted-paint-observed','trusted-receipt','mismatch','incomplete')) { Write-Host ("Candidate paint pointer delivery: {0}" -f $receipt.paintPointerDelivery) }
+      if ($receipt.paintObserverCleanup -ceq 'UNCONFIRMED') { Write-Host 'Candidate paint observer cleanup: UNCONFIRMED' }
       Write-Host ("Candidate Watercolor Paint-tool stroke: {0}" -f $stroke)
       Write-Host ("Candidate Painted-layer in-app JPEG XL round-trip: {0}" -f $jxl)
       @("- Paint-tool stroke: $stroke", "- Painted-layer in-app JPEG XL round-trip: $jxl", '- Native Save/picker and full-canvas export: UNRUN') | Out-File $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
