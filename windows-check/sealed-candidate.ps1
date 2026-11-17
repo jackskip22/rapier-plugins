@@ -69,6 +69,12 @@ try {
       $stroke = if ($receipt.paintStroke -ceq 'PASS' -and $probe -eq 'PASS') { 'PASS' } elseif ($receipt.paintStroke -ceq 'FAIL') { 'FAIL' } else { 'UNRUN' }
       $jxl = if ($receipt.paintedLayerJxl -ceq 'PASS' -and $stroke -eq 'PASS') { 'PASS' } elseif ($receipt.paintedLayerJxl -ceq 'FAIL') { 'FAIL' } else { 'UNRUN' }
       if ($stroke -ne 'PASS' -or $jxl -ne 'PASS') { $result = $false }
+      if ($receipt.paintStage -cin @('admission','tool-menu','paint-select','brush-select','stroke-input','stroke-settle','observe','encode','decode','complete')) {
+        Write-Host ("Candidate paint substage: {0}" -f $receipt.paintStage)
+      }
+      if ($receipt.paintCode -cin @('TRANSPORT_TIMEOUT','STAGE_FAILED')) {
+        Write-Host ("Candidate paint diagnostic: {0}" -f $receipt.paintCode)
+      }
       Write-Host ("Candidate Watercolor Paint-tool stroke: {0}" -f $stroke)
       Write-Host ("Candidate Painted-layer in-app JPEG XL round-trip: {0}" -f $jxl)
       @("- Paint-tool stroke: $stroke", "- Painted-layer in-app JPEG XL round-trip: $jxl", '- Native Save/picker and full-canvas export: UNRUN') | Out-File $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
