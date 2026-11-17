@@ -2,7 +2,7 @@ param([Parameter(Mandatory)][ValidateSet('watercolor','converter')][string]$App)
 $ErrorActionPreference = 'Stop'
 $workspace = (Resolve-Path '.').Path
 $runnerDir = Join-Path $env:RUNNER_TEMP ('sealed-' + [Guid]::NewGuid().ToString('N'))
-$archive = Join-Path $runnerDir 'candidate.tar.gz'
+$archive = Join-Path $runnerDir 'candidate.zip'
 $result = $false
 $started = $false
 $outerStage = 'authenticate snapshot'
@@ -15,8 +15,8 @@ try {
   if ($LASTEXITCODE -ne 0) { throw 'No authenticated build input.' }
   Remove-Item Env:WINDOWS_CANDIDATE_KEY -ErrorAction SilentlyContinue
   $outerStage = 'extract snapshot'
-  & tar.exe -xzf $archive -C $runnerDir *> (Join-Path $runnerDir 'tar.log')
-  if ($LASTEXITCODE -ne 0) { throw 'Snapshot extraction failed.' }
+  # A zip with UTF-8 names: Windows' tar misreads the fixtures' non-ASCII names; Expand-Archive keeps them.
+  try { Expand-Archive -LiteralPath $archive -DestinationPath $runnerDir -Force -ErrorAction Stop } catch { throw 'Snapshot extraction failed.' }
   & tar.exe -xzf $guide -C $runnerDir *> (Join-Path $runnerDir 'guide.log')
   if ($LASTEXITCODE -ne 0) { throw 'Build input extraction failed.' }
   if (!(Test-Path -LiteralPath (Join-Path $runnerDir 'source/docs/agents.md') -PathType Leaf)) { throw 'Build input missing.' }

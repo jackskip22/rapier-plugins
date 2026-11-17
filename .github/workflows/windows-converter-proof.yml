@@ -1,4 +1,5 @@
 name: Windows Converter candidate diagnostic
+# Run 2: the candidate as a UTF-8 zip.
 on:
   push:
     branches: [ci/windows-converter-proof-20261117]
