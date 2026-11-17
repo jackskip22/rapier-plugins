@@ -33,7 +33,7 @@ try {
     $result = $proc.ExitCode -eq 0
     $receiptFile = Join-Path $source '.windows-candidate/receipt.json'
     $receipt = if (Test-Path -LiteralPath $receiptFile) { Get-Content -LiteralPath $receiptFile -Raw | ConvertFrom-Json } else { $null }
-    $known = @('source tree', 'snapshot verification', 'Converter offline checks', 'source version and pin', 'web page assembly', 'WebView2 SDK setup', 'MSVC compile', 'native self-test', 'unsigned MSIX', 'unpackaged WebView2', 'complete')
+    $known = @('source tree', 'snapshot verification', 'Converter offline checks', 'source version and pin', 'web page assembly', 'WebView2 SDK setup', 'MSVC compile', 'native self-test', 'unsigned MSIX', 'unpackaged WebView2', 'native Converter save', 'complete')
     $stage = if ($known -contains $receipt.stage) { $receipt.stage } else { 'child receipt unavailable' }
     $outcome = if ($result) { 'PASS' } else { 'FAIL' }
     Write-Host ("Candidate phase: {0}; {1}" -f $stage, $outcome)
@@ -70,6 +70,9 @@ try {
     $native = if ($receipt.nativeSelfTest -eq 'PASS') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     $pack = if ($receipt.package -eq 'PASS unsigned test MSIX') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     $probe = if ($receipt.webviewStartup -eq 'PASS unpackaged WebView2') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
+    $save = if ($App -ne 'converter') { 'n/a' } elseif ($receipt.nativeConvertSave -eq 'PASS') { 'PASS' } elseif ($receipt.nativeConvertSave -eq 'FAIL') { 'FAIL' } else { 'UNRUN' }
+    if ($App -eq 'converter') { Write-Host ("Candidate native Converter save: {0}" -f $save) }
+    if ($App -eq 'converter' -and $save -ne 'PASS') { $result = $false }
     if ($native -ne 'PASS' -or $pack -ne 'PASS' -or $probe -ne 'PASS') { $result = $false }
     @(
       "### $App"
