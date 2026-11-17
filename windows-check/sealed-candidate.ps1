@@ -63,6 +63,10 @@ try {
         Write-Host ("Candidate compiler error: {0}" -f $compilerError)
       }
     }
+    $webviewCode = $receipt.webviewCode
+    if ($webviewCode -is [string] -and $webviewCode -cmatch '^(endpoint|target|socket-policy|socket-connect|page-evaluate|app-identity|platform|document-ready|converter-tabs|archive-ready|proof-write|screenshot|screenshot-write|pass|process-exited|launch-failed|probe-unreported)$') {
+      Write-Host ("Candidate WebView2 code: {0}" -f $webviewCode)
+    }
     $native = if ($receipt.nativeSelfTest -eq 'PASS') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     $pack = if ($receipt.package -eq 'PASS unsigned test MSIX') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     $probe = if ($receipt.webviewStartup -eq 'PASS unpackaged WebView2') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
