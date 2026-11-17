@@ -72,6 +72,8 @@ try {
     $probe = if ($receipt.webviewStartup -eq 'PASS unpackaged WebView2') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     $save = if ($App -ne 'converter') { 'n/a' } elseif ($receipt.nativeConvertSave -eq 'PASS') { 'PASS' } elseif ($receipt.nativeConvertSave -eq 'FAIL') { 'FAIL' } else { 'UNRUN' }
     if ($App -eq 'converter') { Write-Host ("Candidate native Converter save: {0}" -f $save) }
+    $saveStage = $receipt.nativeConvertSaveStage
+    if ($App -eq 'converter' -and $saveStage -is [string] -and $saveStage -cmatch '^(exe-identity|window-class|cdp-target|convert-tab|queue-empty|observer|handover|receipt-wait|receipt-normal|receipt-collision|disk|decode|done)$') { Write-Host ("Candidate native Converter stage: {0}" -f $saveStage) }
     if ($App -eq 'converter' -and $save -ne 'PASS') { $result = $false }
     if ($native -ne 'PASS' -or $pack -ne 'PASS' -or $probe -ne 'PASS') { $result = $false }
     @(
