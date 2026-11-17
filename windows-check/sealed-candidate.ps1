@@ -73,7 +73,7 @@ try {
     $save = if ($App -ne 'converter') { 'n/a' } elseif ($receipt.nativeConvertSave -eq 'PASS') { 'PASS' } elseif ($receipt.nativeConvertSave -eq 'FAIL') { 'FAIL' } else { 'UNRUN' }
     if ($App -eq 'converter') { Write-Host ("Candidate native Converter save: {0}" -f $save) }
     $saveStage = $receipt.nativeConvertSaveStage
-    if ($App -eq 'converter' -and $saveStage -is [string] -and $saveStage -cmatch '^(exe-identity|identity-child|identity-native|identity-process|identity-window|identity-path|identity-hash|identity-json|cdp-target|convert-tab|queue-empty|observer|handover|receipt-wait|receipt-normal|receipt-collision|disk|decode|done)$') { Write-Host ("Candidate native Converter stage: {0}" -f $saveStage) }
+    if ($App -eq 'converter' -and $saveStage -is [string] -and $saveStage -cmatch '^(exe-identity|identity-child|identity-native|identity-process|identity-window|identity-path|identity-json|identity-hash-read|identity-hash-mismatch|cdp-target|convert-tab|queue-empty|observer|handover|receipt-wait|receipt-normal|receipt-collision|disk|decode|done)$') { Write-Host ("Candidate native Converter stage: {0}" -f $saveStage) }
     if ($App -eq 'converter' -and $save -ne 'PASS') { $result = $false }
     if ($native -ne 'PASS' -or $pack -ne 'PASS' -or $probe -ne 'PASS') { $result = $false }
     @(
