@@ -64,7 +64,7 @@ try {
       }
     }
     $webviewCode = $receipt.webviewCode
-    if ($webviewCode -is [string] -and $webviewCode -cmatch '^(endpoint|target|socket-policy|socket-connect|page-evaluate|app-identity|platform|document-ready|converter-tabs|archive-ready|proof-write|screenshot|screenshot-write|pass|process-exited|launch-failed|probe-unreported)$') {
+    if ($webviewCode -is [string] -and $webviewCode -cmatch '^(endpoint|target|socket-policy|socket-connect|page-evaluate|app-identity|platform|document-ready|converter-tabs|viewer-ready|viewer-init-failed|archive-ready|archive-init-failed|proof-write|screenshot|screenshot-write|pass|process-exited|launch-failed|probe-unreported)$') {
       Write-Host ("Candidate WebView2 code: {0}" -f $webviewCode)
     }
     $native = if ($receipt.nativeSelfTest -eq 'PASS') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
