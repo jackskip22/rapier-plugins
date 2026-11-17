@@ -38,8 +38,16 @@ try {
     $outcome = if ($result) { 'PASS' } else { 'FAIL' }
     Write-Host ("Candidate phase: {0}; {1}" -f $stage, $outcome)
     $code = $receipt.buildCode
-    if ($code -is [string] -and $code -cmatch '^(module-url|module-not-found|memory|resource-pin|resource-network|toolchain|source-gate|page-budget|guide-not-found|file-not-found|file-access|file-system|syntax|unclassified|node-no-code|html-hash-failed|pass|not-run)$') {
+    if ($code -is [string] -and $code -cmatch '^(separator|file-url|case-collision|line-ending|module-url|module-not-found|memory|resource-pin|resource-network|toolchain|source-gate|page-budget|guide-not-found|file-not-found|file-access|file-system|syntax|unclassified|node-no-code|html-hash-failed|pass|not-run)$') {
       Write-Host ("Candidate build code: {0}" -f $code)
+    }
+    $constructor = $receipt.buildConstructor
+    if ($constructor -is [string] -and $constructor -cmatch '^(Error|TypeError|RangeError|SyntaxError|ReferenceError|URIError|EvalError|AggregateError|unknown)$') {
+      Write-Host ("Candidate build constructor: {0}" -f $constructor)
+    }
+    $site = $receipt.buildSite
+    if ($site -is [string] -and $site -cmatch '^(build|reuse|builtin|packed):[1-9][0-9]{0,5}:[1-9][0-9]{0,5}$') {
+      Write-Host ("Candidate build site: {0}" -f $site)
     }
     $buildPhase = $receipt.buildPhase
     if ($buildPhase -is [string] -and $buildPhase -cmatch '^(imports|prepare|gates|assembly|outputs|receipt)$') {
