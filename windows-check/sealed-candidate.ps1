@@ -33,10 +33,8 @@ try {
     $result = $proc.ExitCode -eq 0
     $receiptFile = Join-Path $source '.windows-candidate/receipt.json'
     $receipt = if (Test-Path -LiteralPath $receiptFile) { Get-Content -LiteralPath $receiptFile -Raw | ConvertFrom-Json } else { $null }
-    $known = @('source tree', 'snapshot verification', 'Converter offline checks', 'source version and pin', 'web page assembly', 'WebView2 SDK setup', 'MSVC compile', 'native self-test', 'unsigned MSIX', 'unpackaged WebView2', 'complete')
+    $known = @('source tree', 'snapshot verification', 'Converter offline checks', 'source version and pin', 'web page assembly', 'WebView2 SDK setup', 'MSVC compile', 'native self-test', 'unsigned MSIX', 'unpackaged WebView2', 'Watercolor in-app paint and JXL', 'complete')
     $stage = if ($known -contains $receipt.stage) { $receipt.stage } else { 'child receipt unavailable' }
-    $outcome = if ($result) { 'PASS' } else { 'FAIL' }
-    Write-Host ("Candidate phase: {0}; {1}" -f $stage, $outcome)
     $code = $receipt.buildCode
     if ($code -is [string] -and $code -cmatch '^(separator|file-url|case-collision|line-ending|module-url|module-not-found|memory|resource-pin|resource-network|toolchain|source-gate|page-budget|guide-not-found|file-not-found|file-access|file-system|syntax|unclassified|node-no-code|html-hash-failed|pass|not-run)$') {
       Write-Host ("Candidate build code: {0}" -f $code)
@@ -67,6 +65,16 @@ try {
     $pack = if ($receipt.package -eq 'PASS unsigned test MSIX') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     $probe = if ($receipt.webviewStartup -eq 'PASS unpackaged WebView2') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     if ($native -ne 'PASS' -or $pack -ne 'PASS' -or $probe -ne 'PASS') { $result = $false }
+    if ($App -eq 'watercolor') {
+      $stroke = if ($receipt.paintStroke -ceq 'PASS' -and $probe -eq 'PASS') { 'PASS' } elseif ($receipt.paintStroke -ceq 'FAIL') { 'FAIL' } else { 'UNRUN' }
+      $jxl = if ($receipt.paintedLayerJxl -ceq 'PASS' -and $stroke -eq 'PASS') { 'PASS' } elseif ($receipt.paintedLayerJxl -ceq 'FAIL') { 'FAIL' } else { 'UNRUN' }
+      if ($stroke -ne 'PASS' -or $jxl -ne 'PASS') { $result = $false }
+      Write-Host ("Candidate Watercolor Paint-tool stroke: {0}" -f $stroke)
+      Write-Host ("Candidate Painted-layer in-app JPEG XL round-trip: {0}" -f $jxl)
+      @("- Paint-tool stroke: $stroke", "- Painted-layer in-app JPEG XL round-trip: $jxl", '- Native Save/picker and full-canvas export: UNRUN') | Out-File $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
+    }
+    $outcome = if ($result) { 'PASS' } else { 'FAIL' }
+    Write-Host ("Candidate phase: {0}; {1}" -f $stage, $outcome)
     @(
       "### $App"
       "- Native executable self-test: $native"

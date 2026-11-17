@@ -1,5 +1,5 @@
 name: Windows Watercolor candidate diagnostic
-# Run: 20261117T1010Z-barry-header-watercolor
+# Run: 20261117T1047Z-barry-paint-watercolor
 # Proposed Watercolor proof: exact pinned candidate as a UTF-8 zip.
 on:
   push:
