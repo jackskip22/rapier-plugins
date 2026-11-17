@@ -1,5 +1,6 @@
 name: Windows Converter candidate diagnostic
-# Run 4: the vendor digest hashes names with / on Windows too.
+# Run: 20261117T0912Z-barry-msvc-converter
+# Run 2: the candidate as a UTF-8 zip.
 on:
   push:
     branches: [ci/windows-converter-proof-20261117]

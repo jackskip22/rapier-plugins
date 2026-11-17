@@ -53,6 +53,16 @@ try {
     if ($buildPhase -is [string] -and $buildPhase -cmatch '^(imports|prepare|gates|assembly|outputs|receipt)$') {
       Write-Host ("Candidate build substage: {0}" -f $buildPhase)
     }
+    $compileCode = $receipt.compileCode
+    if ($compileCode -is [string] -and $compileCode -cmatch '^(vswhere-unavailable|vswhere-return|msbuild-unavailable|invalid-sdk|invalid-toolset|start-failed|build-return|linked-output-missing|pass)$') {
+      Write-Host ("Candidate compile code: {0}" -f $compileCode)
+    }
+    if ($receipt.compileContext -ceq 'resource-stage-command') { Write-Host 'Candidate compile context: resource-stage-command' }
+    foreach ($compilerError in @($receipt.compilerErrors | Select-Object -First 16)) {
+      if ($compilerError -is [string] -and $compilerError -cmatch '^(C|LNK|MSB|RC)[0-9]{4}$') {
+        Write-Host ("Candidate compiler error: {0}" -f $compilerError)
+      }
+    }
     $native = if ($receipt.nativeSelfTest -eq 'PASS') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     $pack = if ($receipt.package -eq 'PASS unsigned test MSIX') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
     $probe = if ($receipt.webviewStartup -eq 'PASS unpackaged WebView2') { 'PASS' } elseif ($result) { 'FAIL' } else { 'UNRUN or failed' }
