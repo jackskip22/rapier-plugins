@@ -4,7 +4,7 @@ Rapier is a Markdown editor with art built in. With this plugin your agent write
 one page you both edit, draws diagrams whose boxes you move by hand, and paints watercolors that spread, mix and dry.
 Keep the result as Markdown, or as one offline HTML file that is the whole editor with your document inside.
 
-Version 1.2.74. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
+Version 1.2.75. MCP server: `https://mcp.rapier.website/door/mcp`. No Rapier account, key or sign-in is needed.
 
 ## Write together
 
@@ -19,8 +19,8 @@ keeping yours. Then: "Give me this as one offline HTML file I can keep editing."
 
 Ask: "Paint a small watercolor sunset over the sea in Rapier and leave room for me to add a boat."
 
-Keep the editor open while it paints: in a chat that shows Rapier, the chat's view paints; elsewhere, open the editor
-link. Watercolor needs WebGPU. The painting is finished when the agent reports it committed; then pick up the brush
+Keep the editor open while it paints: in a chat that shows Rapier, the chat's view paints. Elsewhere, open the editor
+link. Watercolor needs WebGPU. The painting is finished when the agent reports it committed. Then pick up the brush
 yourself. Without WebGPU the agent gives you the editor link to open in a browser that has it.
 
 Every picture here was made in Rapier: the agent's words and diagram, and the person's moves in Draw.
@@ -61,20 +61,20 @@ directory. An installed marketplace copy with the same name takes precedence. No
 
 ## Requirements and limits
 
-- Live work needs an internet connection and a browser; downloaded files stay editable offline.
-- Painting needs the editor open. Water needs WebGPU; without it the agent gives you the editor link to open in a
+- Live work needs an internet connection and a browser. Downloaded files stay editable offline.
+- Painting needs the editor open. Water needs WebGPU. Without it the agent gives you the editor link to open in a
   browser that has it.
 - Notes use the store you configured on your own device. The hosted workspace cannot read encrypted Notes and
   reports them as locked or unavailable, not empty. Sync runs only when you ask and can replace files.
-- Word, PDF and rendered-page exports need an available editor or renderer. Hosted workspaces expire after 30 idle days; export links last
+- Word, PDF and rendered-page exports need an available editor or renderer. Hosted workspaces expire after 30 idle days. Export links last
   up to 24 hours. Download your work to keep it.
-- The rapier-html and rapier-markdown skills' local helpers need Node and npm; with the MCP server alone, the agent
+- The rapier-html and rapier-markdown skills' local helpers need Node and npm. With the MCP server alone, the agent
   exports the file instead.
 
 ## Pair another browser
 
 If the editor link shows a four-letter code, tell the agent the code within a minute. It calls `show` with
-`target: "pair"` and the code; then press **Allow** in that browser. Each code works once.
+`target: "pair"` and the code. Then press **Allow** in that browser. Each code works once.
 
 ## Other hosts
 
@@ -86,12 +86,12 @@ Install one Rapier package in each client.
 ## Troubleshooting
 
 - Rapier tools missing: check **Customize** lists the `rapier` MCP server and that it is enabled, then start a new chat.
-- `editor_not_present`: open the editor link and keep it visible; to pair a browser, use its code as above.
-- `OPEN_ARGUMENTS_CONFLICT` on `open` with `title`: name ordinary documents with `filename`; `title` is for a new Note.
+- `editor_not_present`: open the editor link and keep it visible. To pair a browser, use its code as above.
+- `OPEN_ARGUMENTS_CONFLICT` on `open` with `title`: name ordinary documents with `filename`. `title` is for a new Note.
 
 ## Privacy, terms and support
 
 The agent sends only the document you share to the hosted workspace. Rapier reaches only that document or the Notes
-store you connect; it cannot search other files on your computer, send email or make purchases. No account, no tracking, no ads.
+store you connect. It cannot search other files on your computer, send email or make purchases. No account, no tracking, no ads.
 Read [Privacy and terms](PRIVACY.md) (also at https://rapier.website/privacy). License: AGPL-3.0-only.
 Questions and problems: https://github.com/jackskip22/rapier-plugins/issues or hello@rapier.website. More for agents: [agent guide](https://rapier.website/agents).

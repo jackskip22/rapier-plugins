@@ -24,24 +24,24 @@ Existing destinations, changed or missing sources, changed output identities, no
 or development modes are refused. A failed run is not a release. Never give different bytes an existing release filename.
 
 Generation runs with the build cache disabled and a boundary that rejects undeclared file reads, network access,
-subprocesses and filesystem writes. This boundary catches accidental build dependencies; it is not a sandbox for
+subprocesses and filesystem writes. This boundary catches accidental build dependencies. It is not a sandbox for
 untrusted source code. The receipt records the actual source reads and the source manifest's SHA-256. The manifest
 itself is excluded from its file list to avoid a circular hash. `reader-build.mjs` is supplied to show and test the
-normal reader's shared-generator call; building the complete reader requires the full application's additional sources.
+normal reader's shared-generator call. Building the complete reader requires the full application's additional sources.
 
-The generator uses `version.mjs`. Each release writes its own offer and manifest; never use one release's manifest
+The generator uses `version.mjs`. Each release writes its own offer and manifest. Never use one release's manifest
 to certify another release's source.
 
 ## Licenses and preferred sources
 
-Rapier's source and generated plug-ins are AGPL-3.0-only; see `LICENSE` and the source headers. The generated Word and
+Rapier's source and generated plug-ins are AGPL-3.0-only. See `LICENSE` and the source headers. The generated Word and
 PDF files retain Turndown and collapse-whitespace notices from `editor/engine.js`. Additional notices and provenance
 are supplied in `agent/vendor/NOTICE.txt`, `agent/vendor/pretext/`, `agent/vendor/hyphen-en-us/`,
 `shell/vendor/PROVENANCE.json`, `shell/fonts/PROVENANCE.json`, and `tools/vendor/terser/`.
 `editor/ui.html` preserves the font and other component license text. The original and instanced font inputs,
 `shell/fonts/docx-fonts.mjs`, `tools/build-docx-fonts.py`, the hyphenation source text and `tools/compile-hyphens.mjs`
 are included as preferred sources and derivation tools. Rebuilding those vendored inputs is separate from reproducing
-these plug-in payloads; their provenance files record the upstream versions and derivation requirements.
+these plug-in payloads. Their provenance files record the upstream versions and derivation requirements.
 
 The PDF reader's separately fetched pdf.js assets and the other optional Rapier resources are not produced here.
 Their source, licenses and pinned distributions remain separate from these three generated files.

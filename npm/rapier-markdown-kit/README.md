@@ -14,9 +14,9 @@ The kit works in browsers and Node: pictures, editable SVG drawings, layout and 
 may edit, append to or preserve. MIT, no dependencies.
 
 - Typography uses ordinary inline HTML spans with validated size, color and family. Comments and references
-  carry other optional facts; each reader chooses its HTML, style, extension and resource support.
+  carry other optional facts. Each reader chooses its HTML, style, extension and resource support.
 - One stylesheet renders the document as the editor and its exported page do.
-- The line planner flows text around a picture's real shape; a conformance suite of thirteen documents runs
+- The line planner flows text around a picture's real shape. A conformance suite of thirteen documents runs
   any implementation against it.
 - Node 22 or newer.
 
@@ -50,7 +50,7 @@ const edited = replaceLedgerText(base, 'Draft, revised\n', {actor: {kind: 'human
 console.log(merge(edited, base).text, authorship(edited).runs);
 ```
 
-TypeScript declarations ship for the root and every JavaScript subpath. NodeNext and bundler resolution use the same public exports. DOM host APIs use TypeScript’s `DOM` library; pure history and Will consumers can import their own subpaths. The Markdown rendering examples install `markdown-it` explicitly; the kit itself has no npm dependencies.
+TypeScript declarations ship for the root and every JavaScript subpath. NodeNext and bundler resolution use the same public exports. DOM host APIs use TypeScript’s `DOM` library. Pure history and Will consumers can import their own subpaths. The Markdown rendering examples install `markdown-it` explicitly. The kit itself has no npm dependencies.
 
 ```js
 import {parseLayout} from 'rapier-markdown-kit/layout';   // the md-layout comment a picture carries
@@ -67,7 +67,7 @@ as one HTML file on Android, Web, Windows and Linux.
 
 1. **Work together live.** Connect to `https://mcp.rapier.website/door/mcp`, then call `open` to share one document with the person.
 2. **Deliver an offline editor.** Run `npx rapier-html notes.md` to put the document and editor in one HTML file ([rapier-html](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-html)).
-3. **Embed in your app.** Install [rapier-embed](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-embed); mount the editor or reader, with your app's agent over WebMCP in the editor.
+3. **Embed in your app.** Install [rapier-embed](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-embed). Mount the editor or reader, with your app's agent over WebMCP in the editor.
 4. **Keep portable Markdown.** Use [rapier-markdown-kit](https://github.com/jackskip22/rapier-plugins/tree/main/npm/rapier-markdown-kit) for pictures, editable SVG drawings and layout in one `.md` file. Respect [Will/1](https://github.com/jackskip22/will) `keep`, `append` and `edit` regions.
 5. **Encode JPEG XL.** Install [rapier-jxl](https://github.com/jackskip22/rapier-jxl) to encode pixels, photographs and existing JPEGs in JavaScript.
 6. **Host the door.** Run [rapier-server](https://github.com/jackskip22/rapier/tree/main/server) over your own folder or S3-compatible bucket.
@@ -101,16 +101,16 @@ const {html, filename} = await writer.render(source, {filename: 'report.md'});
 `{html, equations}` using the ready host math provider's `renderWithMathML` operation.
 The provider must also support the existing `renderToString` operation.
 Each equation is parsed once for its SVG and MathML. The HTML stays identical to
-ordinary SVG rendering; `equations` follows render order and carries `source`
+ordinary SVG rendering. `equations` follows render order and carries `source`
 (the admitted token spelling, including its delimiters), `tex`, `displayMode`, `semantics`, and SVG
 `errors`. Pass `{docKind: 'markdown'}` as metadata for Markdown documents.
-The existing Markdown grammar may normalize display-block indentation; the original
+The existing Markdown grammar may normalize display-block indentation. The original
 document remains the source of untouched document bytes.
 Inspect both `errors` and `semantics.status`: a rendered SVG can have refused or
 partial semantic output. The method throws if the combined provider is unavailable
 or fails, rather than returning an empty semantic success. It does not return an AST.
 
-This explicit method makes structured output available to consuming applications;
+This explicit method makes structured output available to consuming applications.
 Rapier's live editor and ordinary HTML/DOCX/print exports still use the current
 engine's Latin Modern SVG path. They do not insert hidden MathML, synthesize speech,
 or claim screen-reader qualification. A consumer that inserts MathML must preserve
@@ -121,7 +121,7 @@ sanitizer is not a MathML composition API.
 The page writer's `render` returns `{html, filename}` asynchronously and preserves the
 original source, including BOM and line endings, in the SHA-256-verified source carrier.
 Every existing lower-level method is also returned for hosts that compose the stages.
-Create a new bound instance when its parser or host state changes; do not share mutable
+Create a new bound instance when its parser or host state changes. Do not share mutable
 DOM objects between document realms.
 
 This **DOM-hosted library** requires a DOM and sanitizer, the Rapier grammar,
@@ -137,7 +137,7 @@ tests also check the exported HTTP response through a browser DOM.
 
 ### A complete prose host
 
-For a small browser integration, save the following as `prose-host.mjs` and bundle it with your application. Install its explicit host dependencies with `npm install markdown-it@15.0.3 dompurify@3.4.16`. This host handles prose, headings, lists, tables and fenced code. It refuses front matter, media and diagram providers that it does not supply; the factories’ larger host contracts remain available in their declarations.
+For a small browser integration, save the following as `prose-host.mjs` and bundle it with your application. Install its explicit host dependencies with `npm install markdown-it@15.0.3 dompurify@3.4.16`. This host handles prose, headings, lists, tables and fenced code. It refuses front matter, media and diagram providers that it does not supply. The factories’ larger host contracts remain available in their declarations.
 
 <details>
 <summary>Browser host source</summary>
@@ -237,7 +237,7 @@ export function createProseHost({contentCss, validateFont, materializeDocumentFo
 
 </details>
 
-Use your bundler or static server to load the installed `style.css` text as `contentCss`, then call `createProseHost({contentCss})`. Its `markdown.render(source, {docKind: 'markdown'})` produces a fragment; `await writer.render(source, {filename: 'report.md'})` produces a complete offline page carrying the exact source. Keep one bound host per document realm: the Markdown factory registers an original-file listener and currently has no disposal method. The font and print operations have their own cleanup contracts.
+Use your bundler or static server to load the installed `style.css` text as `contentCss`, then call `createProseHost({contentCss})`. Its `markdown.render(source, {docKind: 'markdown'})` produces a fragment. `await writer.render(source, {filename: 'report.md'})` produces a complete offline page carrying the exact source. Keep one bound host per document realm: the Markdown factory registers an original-file listener and currently has no disposal method. The font and print operations have their own cleanup contracts.
 
 The example is MIT. The host dependencies keep their licenses: markdown-it is MIT, and DOMPurify is Apache-2.0 OR MPL-2.0. Neither is an implicit dependency of the kit.
 
@@ -245,28 +245,28 @@ The example is MIT. The host dependencies keep their licenses: markdown-it is MI
 
 Settings HTML and Share pages use the same offline font policy. The writer reads custom font
 definitions from the captured Markdown and carries their exact bytes and face metadata. A used
-custom family must have valid embedded data; otherwise export stops without changing the document.
+custom family must have valid embedded data. Otherwise export stops without changing the document.
 Font preparation and binary validation are explicit host capabilities:
 
 | Host port | Contract |
 | --- | --- |
-| `materializeDocumentFonts(source, {parser})` | Optional at `render()` entry; returns the prepared Markdown string or a promise for it. Without this port, the caller supplies already portable, captured Markdown. Materialization must preserve explicit font authority and return source for this request. |
+| `materializeDocumentFonts(source, {parser})` | Optional at `render()` entry. Returns the prepared Markdown string or a promise for it. Without this port, the caller supplies already portable, captured Markdown. Materialization must preserve explicit font authority and return source for this request. |
 | `validateFont(bytes, {family, format})` | Validates a `Uint8Array` and returns exactly `true`, synchronously or asynchronously, only on admission. Required used custom fonts refuse with `export_font_unavailable` if the port is absent and `export_font_invalid` if it returns another value. Host errors and cancellation propagate. |
 
 Browser hosts additionally check the exact captured container with an uninstalled `FontFace`.
-Without `FontFace`, only the host validator's admission is established; it does not establish
+Without `FontFace`, only the host validator's admission is established. It does not establish
 browser container support. The HTML font helpers do not bundle the application's font importer,
 container codecs or subsetter. Rapier binds its existing materializer and shared importer at `editor/render-host.js` through
-`editor/export-fonts.mjs`; those implementations retain their application license.
+`editor/export-fonts.mjs`. Those implementations retain their application license.
 An embedded family named Geist or Geist Mono remains custom data and takes precedence over the
 factory family. Custom fonts have no optional factory size limit.
 
 Factory typography may add a genuine subset of Geist Sans for the page's actual text, using the
-host's subsetter. `exportFontCss` accepts `subset` and `validateFont` ports; with `portableFactory:true`,
+host's subsetter. `exportFontCss` accepts `subset` and `validateFont` ports. With `portableFactory:true`,
 missing or unsuccessful validation omits this optional CSS. The complete set of used factory faces must fit both 8 KiB of font payload and
 12 KiB of emitted font CSS, including base64. If subsetting is unavailable, unsafe, unchanged or too
-large, the page uses the existing local/system fallback. HTML never carries factory Geist Mono;
-code and native diagram labels retain their existing monospace fallbacks. No font is downloaded
+large, the page uses the existing local/system fallback. HTML never carries factory Geist Mono.
+Code and native diagram labels retain their existing monospace fallbacks. No font is downloaded
 when the saved file is opened, and optional factory fonts never enter the carried Markdown.
 
 Publishing HTML remains a fragment: it carries only its custom font declarations and local
@@ -281,26 +281,26 @@ family name share the host's font namespace. Print retains its existing factory 
 | `rapier-markdown-kit/markdown-it` | `md.use(rapierMarkdown)`: the reference style's markup in markdown-it, in one line, with rung 1 of `md-layout:v1` (align, indents, list markers, picture width, lines and opacity, paragraph typography). |
 | `rapier-markdown-kit/parsed` | A frozen, serializable view of completed Markdown tokens, bound to source, revision and grammar. |
 | `rapier-markdown-kit/layout` | The `md-layout:v1` comment a picture carries: parse it, validate it, write it back. |
-| `rapier-markdown-kit/marks` | Unified typography values, span writer and parser installer; preserved color/font comments, ink and page breaks. |
+| `rapier-markdown-kit/marks` | Unified typography values, span writer and parser installer. Preserved color/font comments, ink and page breaks. |
 | `rapier-markdown-kit/model` | Occupancy profiles and the line planner: the wrapping itself. |
 | `rapier-markdown-kit/typography` | Source-preserving paragraph refinement through `createTypography()`. |
 | `rapier-markdown-kit/will` | The Will/1 grammar (a separate, optional standard): the markers around an agent's intent regions. |
 | `rapier-markdown-kit/assets` | The picture appendix: the reference definitions a document's pictures live in. It never decodes a picture. |
 | `rapier-markdown-kit/style.css` | The reference style: type, lists, tables, tasks, pictures and the document's other markup, scoped to `.md-render`. |
 | `rapier-markdown-kit/rapier-ledger` | The MIT edit ledger: `openLedger`, replay, authorship, selective Undo, offline `merge`, three-way `mergeText`, and the carried parts. |
-| `rapier-markdown-kit/pdf` | `attachPdfSource`: attach the exact source to a PDF without rewriting its pages; `readPdfPageCount`. |
+| `rapier-markdown-kit/pdf` | `attachPdfSource`: attach the exact source to a PDF without rewriting its pages. `readPdfPageCount`. |
 | `rapier-markdown-kit/ledger/carried` | Checked optional parts for pages and saved Markdown. |
-| `rapier-markdown-kit` | Named exports from layout, marks, model, Will, assets and render, plus the `ledger` namespace. Import `createTypography` from `/typography`; the root does not export that ambiguous name. |
+| `rapier-markdown-kit` | Named exports from layout, marks, model, Will, assets and render, plus the `ledger` namespace. Import `createTypography` from `/typography`. The root does not export that ambiguous name. |
 
-The canonical inline form is ordinary HTML inside Markdown. CSS support varies; the host's font metrics still
+The canonical inline form is ordinary HTML inside Markdown. CSS support varies. The host's font metrics still
 determine line layout (below).
 
 ## Read a parsed document
 
 `projectMarkdown` copies the tokens from your completed parse into JSON data. Pass the exact source and revision
 captured for that parse, and a grammar identity that includes its parser, plugins and options. The function does not
-parse again. Project before renderer hooks mutate the tokens; the resulting snapshot is detached from those later
-changes. Import this optional subpath only where you need it; the package's main entry does not import it.
+parse again. Project before renderer hooks mutate the tokens. The resulting snapshot is detached from those later
+changes. Import this optional subpath only where you need it. The package's main entry does not import it.
 
 ```js
 import MarkdownIt from 'markdown-it';
@@ -319,25 +319,25 @@ const json = JSON.stringify(parsed);
 console.log(projectionMatches(parsed, {source, revision, grammar})); // true
 ```
 
-Change the grammar identity when its implementation changes. Grammar options must be JSON data; describe a custom
+Change the grammar identity when its implementation changes. Grammar options must be JSON data. Describe a custom
 rule or renderer by its identity, not by a function. If your parse excludes opening front matter, pass `bodyOffset`
 from that split and keep `source` as the full original document. Token line maps must remain relative to the parsed body.
 
 The source binding uses SHA-256 over its UTF-16LE code units, including BOM, original line endings and isolated
 surrogates. `span` ranges are half-open UTF-16 offsets into that source. A span with `scope: 'lines'` covers the token's
 source lines, including container prefixes and the final line ending. Inline delimiters and generated tokens without
-recorded ranges have `span: null`; `coverage` and `omissions` report these missing ranges. Never infer an exact inline
+recorded ranges have `span: null`. `coverage` and `omissions` report these missing ranges. Never infer an exact inline
 edit boundary from a containing line span.
 
 Recorded `meta.mdLayoutSource` positions are translated from the parser's normalized body into the same original
 UTF-16 source coordinates and labeled `unit: 'utf16'`. Their marker text and any reason for an unmapped target remain
-with the layout record. Other JSON metadata retains the grammar's values; internal probe identities are not exported.
+with the layout record. Other JSON metadata retains the grammar's values. Internal probe identities are not exported.
 
 The projection includes canonical token content, attributes, JSON metadata and reference, abbreviation and footnote
 definitions. It omits original source gaps, interpreted front matter, rendered HTML and geometry, decoded pictures,
 final heading IDs, and evaluated Will permissions. Non-JSON token metadata becomes `null` with a counted omission.
-Token strings remain document data for your existing renderer and sanitizer. `projectionMatches` checks currentness;
-it does not authenticate a projection received from another party or authorize an edit. Source transactions, Will,
+Token strings remain document data for your existing renderer and sanitizer. `projectionMatches` checks currentness.
+It does not authenticate a projection received from another party or authorize an edit. Source transactions, Will,
 Undo and Save stay with their existing owners.
 
 ## Refined paragraphs
@@ -351,21 +351,21 @@ Words stay in their original source. <!--md-layout:v1 align=justify hyphens=auto
 `align=justify` alone keeps native justification. With `hyphens=auto`, the browser adapter chooses a paragraph-wide
 plan using the same pinned Pretext analysis, shaping and actual-font authority as picture wrapping. It prefers
 whole words, bounds ordinary spaces to 60–180% of their natural advance, permits at most two consecutive
-discretionary endings, and starts the final line with a whole word. A short final line costs more; the final line
+discretionary endings, and starts the final line with a whole word. A short final line costs more. The final line
 is never stretched. Authored compound hyphens are ordinary break opportunities, distinct from discretionary ones.
 In very narrow measures, bounded spaces can leave some ragged edges. There is no paragraph-length switch.
 
 Automatic cuts keep at least three graphemes on each side, with at most one automatic split per word. ASCII words
 under `en` and `en-US` use the included Kuiken/Plain TeX pattern data and exceptions. Other English regions,
 non-ASCII words and other admitted languages ask the browser's offline hyphenator for legal positions. That path
-requires native `hyphenate-limit-chars` support; otherwise the paragraph stays native. Available dictionaries and
+requires native `hyphenate-limit-chars` support. Otherwise the paragraph stays native. Available dictionaries and
 their divisions depend on the host. The included American patterns are a deliberate alternative to native data,
 not a promise of identical opportunities in every browser. No language or font data is downloaded.
 
 The projection displays a hyphen-minus from the affected text face, measured by Pretext as part of the whole
 prefix. It never adds a source hyphen. Explicit authored `hyphenate-character` stays native. With `hanging=on`,
 measured punctuation extends only into available unclipped margins, by at most half an em. Refinement adds no
-letter tracking; authored supported letter spacing remains part of its shaping contract.
+letter tracking. Authored supported letter spacing remains part of its shaping contract.
 
 Here `root` is your rendered document element in a browser. Keep the event handlers and scheduled work with that element’s lifetime.
 
@@ -397,26 +397,26 @@ refinement.retire(root);
 ```
 
 `apply()` works on visible paragraphs and yields at completed preparation phases or word batches after an 8 ms
-allowance. A single native shaping call can exceed that allowance; it is not a hard execution deadline. Pending
+allowance. A single native shaping call can exceed that allowance. It is not a hard execution deadline. Pending
 paragraphs remain native and readable. Each continuation revalidates source, style and font authority, and chooses
 lines at the current width only after all required metrics finish. `{all:true}` performs the same complete work
 synchronously for explicit capture or a print host with an established content width. Width changes reuse current measured geometry, and unchanged break
 topology reuses projection nodes. Bind font loading, completion and failure to `invalidateFonts(document)` and
-schedule `apply()`; a changed font generation removes stale projections before new preparation.
+schedule `apply()`. A changed font generation removes stale projections before new preparation.
 
 The adapter retains original text, semantic elements and listeners, backward selections, hard breaks, protected
 code/nowrap atoms, NBSP, SHY and Unicode source coordinates. `clearSelection()` restores selected inline trees
-before native clipboard capture; schedule refinement afterward as above. The editor and complete exported pages
+before native clipboard capture. Schedule refinement afterward as above. The editor and complete exported pages
 bind this lifecycle themselves. Active editing/composition stays native. Unsupported
 scripts, direction, shaping controls, initials and picture-flow paragraphs also stay native. The current adapter
-admits horizontal LTR Latin, Greek, Cyrillic and common/inherited characters on Chrome/Chromium; native font
+admits horizontal LTR Latin, Greek, Cyrillic and common/inherited characters on Chrome/Chromium. Native font
 coverage and language support still apply. A font-family name is never a substitute for a loaded actual face.
 
 Complete exported pages carry the same single module graph, CSP nonce, offline language data and font lifecycle.
-Their readiness promise completes after the visible refinement queue; scrolling refines newly visible paragraphs.
+Their readiness promise completes after the visible refinement queue. Scrolling refines newly visible paragraphs.
 Before print, an authored paper size supplies the fixed content width and all paragraphs finish synchronously.
 Automatic-paper browser printing clears the projection and uses native CSS: `beforeprint` may still report the
-screen viewport rather than the selected paper. Scoped fragments and `scripts:false` output also retain native CSS. The American data's separate permissive notice and exact provenance accompany the kit;
+screen viewport rather than the selected paper. Scoped fragments and `scripts:false` output also retain native CSS. The American data's separate permissive notice and exact provenance accompany the kit.
 Pretext retains its own complete notices. These vendor notices are not replaced by the kit's MIT grant.
 
 ## One inline typography form
@@ -433,35 +433,35 @@ A <span style="font-size:13.5pt;color:#175dc4">precise **phrase**</span>.
 [font:Coastal Text]: data:font/woff2;base64,<font-bytes> '{"family":"Coastal Text","sourceId":"f0123456789abcdef01234567"}'
 ```
 
-The font bytes and identity in that last example are placeholders; a host derives identity from admitted bytes.
+The font bytes and identity in that last example are placeholders. A host derives identity from admitted bytes.
 A family name alone is not a portable font. Default prose needs no font reference. Custom faces keep the existing
 font-data authority, including a name that collides with a factory face.
 
 `typography.normalize({size, color, family})` validates a style. `typography.wrap(style, inlineMarkdown)` writes one
-inline span; split block selections and keep their `#`, list markers and separators outside. `typography.parseStyle`
+inline span. Split block selections and keep their `#`, list markers and separators outside. `typography.parseStyle`
 returns only admitted facts. `typography.install(md)` installs that interpretation on the caller's markdown-it
 parser, and `typographySourceRanges(source, md)` reports original UTF-16 wrapper ranges through that parser.
 These calls neither mutate the source nor load resources. The installer also reads already-authored color and
-font comments into the same facts; an ordinary open/save must preserve their bytes, not rewrite them as spans.
+font comments into the same facts. An ordinary open/save must preserve their bytes, not rewrite them as spans.
 
-Sizes accept positive decimal `pt`/`px`, at most 12 fractional digits, up to 1638pt/2184px; 96px = 72pt. New values
-use lowercase units and omit insignificant zeros. Colors become lowercase six-digit RGB hex; opaque integer
+Sizes accept positive decimal `pt`/`px`, at most 12 fractional digits, up to 1638pt/2184px. 96px = 72pt. New values
+use lowercase units and omit insignificant zeros. Colors become lowercase six-digit RGB hex. Opaque integer
 RGB CSSOM values are also read. Families are one validated name, an unquoted CSS generic, or an existing preset
 stack. `sans`, `serif`, `mono`, `system`, `hand` are reserved choice aliases, not quoted custom identities. Styles
 are bounded to 4096 characters, 32 declarations and 64 paired levels. Invalid declarations and unknown properties
-are ignored; invalid/unclosed style strings admit no facts. Inner spans override individual properties. An editor
+are ignored. Invalid/unclosed style strings admit no facts. Inner spans override individual properties. An editor
 clearing a selection removes that property's overrides and preserves the surrounding words' styles.
 
-Keep each opener with its first words and each closer with its last words. Soft/hard breaks may stay inside one paragraph; blank lines cannot. An opener alone on a line can become a raw HTML block.
+Keep each opener with its first words and each closer with its last words. Soft/hard breaks may stay inside one paragraph. Blank lines cannot. An opener alone on a line can become a raw HTML block.
 With inline HTML enabled, the new form preserves words, emphasis,
-links and heading rank; GitHub strips the styles, and HTML-disabled readers may show the tags. Rapier's **Copy
+links and heading rank. GitHub strips the styles, and HTML-disabled readers may show the tags. Rapier's **Copy
 markdown without typography** removes recognized wrappers while retaining semantic Markdown and literal code.
-Its separate Pandoc/Quarto copy option writes bracketed spans deliberately; Pandoc HTML carries the CSS, but
+Its separate Pandoc/Quarto copy option writes bracketed spans deliberately. Pandoc HTML carries the CSS, but
 ordinary LaTeX and native DOCX styling do not follow automatically.
 
 Rapier's own Word adapter writes native run properties, rounding to the nearest half-point with positive ties up
-and refusing results outside 1–3276 half-points. The unchanged DOCX source carrier keeps original decimals and units;
-native import reports represented direct-run/character-style sizes without repeating document or paragraph defaults
+and refusing results outside 1–3276 half-points. The unchanged DOCX source carrier keeps original decimals and units.
+Native import reports represented direct-run/character-style sizes without repeating document or paragraph defaults
 as inline marks. It does not reproduce an arbitrary Word style sheet. HTML and print/PDF retain the same admitted facts at the default reference
 unit, independent of editor zoom. No mapping claims identical glyphs or line breaks across applications.
 
@@ -474,14 +474,14 @@ Those specifications retain their own licenses.
 
 Import `rapier-markdown-kit/style.css` in a CSS-aware bundler, or copy that file beside your HTML and
 link it with `<link rel="stylesheet" href="style.css">`. Put rendered content inside
-`<main class="md-render">`. The sheet follows the system theme; `data-md-theme="light"` or `"dark"`
+`<main class="md-render">`. The sheet follows the system theme. `data-md-theme="light"` or `"dark"`
 on that root chooses one. Its `--md-*` properties are defined by the sheet itself. Geist and Geist Mono
-are named font families with system fallbacks; no font or external asset is fetched by the sheet.
+are named font families with system fallbacks. No font or external asset is fetched by the sheet.
 
 The example below renders trusted Markdown with `markdown-it` and the kit's readers: run
 `npm install rapier-markdown-kit markdown-it@15`, save it as `render.mjs`, run `node render.mjs` and open
 `styled.html`, which uses only `style.css`. It shows core Markdown, GFM tables, an aligned paragraph, a sized
-picture, a precise combined run, a semantic heading and a page break; tasks, footnotes and diagrams are the caller's plugins. The full markup
+picture, a precise combined run, a semantic heading and a page break. Tasks, footnotes and diagrams are the caller's plugins. The full markup
 contract is [Reference style](https://github.com/jackskip22/rapier/blob/main/docs/markdown-standard.md#reference-style).
 
 <!-- reference-style-example -->
@@ -594,28 +594,28 @@ The block's `text-align` is the ninth argument (`'start'` by default). Native ba
 wrapping: the current rich line-range API does not identify every legal balancing candidate. A picture moves a
 block's words only where its outline meets them: when no line of the
 block, laid and aligned in the whole column as with no picture, meets an obstacle, the plan is that layout (`x` 0, the
-column's width); otherwise every line flows around the obstacles.
+column's width). Otherwise every line flows around the obstacles.
 
 ## What the host supplies
 
 Rich preparation measures text through one pinned Pretext graph. It needs a global
 `OffscreenCanvas` (or a DOM `document`) whose `getContext('2d')` has a settable `font` and a
-`measureText(text)` returning `{width}`. A browser has one already; in Node, put those two members
+`measureText(text)` returning `{width}`. A browser has one already. In Node, put those two members
 in front of the host's actual shaper and admit its fonts before preparation. The example replays historical
-measurements instead; an unrecorded query falls back to summing single characters. That fallback demonstrates API
+measurements instead. An unrecorded query falls back to summing single characters. That fallback demonstrates API
 execution only and does not qualify kerning, ligatures, complex scripts or actual browser line selection.
 
 Create one `createPreparationScope(document)` for a host document in the same measurement realm. Call
 `scope.prepare(owner, items, {whiteSpace, wordBreak, language})` with a stable paragraph owner and original rich
-items; omitted document support is available for declared Node measurement hosts. Text items accept
-`{text, font, letterSpacing?, break?: 'normal' | 'never', extraWidth?}`; box items accept `{width}`. Paragraph
+items. Omitted document support is available for declared Node measurement hosts. Text items accept
+`{text, font, letterSpacing?, break?: 'normal' | 'never', extraWidth?}`. Box items accept `{width}`. Paragraph
 `whiteSpace` is `normal` or `pre-wrap`, and `wordBreak` is `normal` or `keep-all`. `language` is the content language,
 not the interface locale. Mixed run languages require native fallback. The scope retains owners weakly and reuses
 preparation across widths. Changes to exact text, item shaping settings or language require a new preparation.
 
 The returned handle is opaque. Pass it to `flowLines`, or retain the original ranges from
 `layoutNextRichInlineLineRange` for `materializeRichInlineLineRange`. Materialized fragments give `itemIndex`,
-`sourceStart` and `sourceEnd` in UTF-16 offsets of that item's **original** text; `mapFragment(originalText, fragment)`
+`sourceStart` and `sourceEnd` in UTF-16 offsets of that item's **original** text. `mapFragment(originalText, fragment)`
 provides the shared display-to-source mapping. `gapItemIndex` names the source style for a collapsed gap. Never decode
 range cursors as old segment/grapheme fields, resegment text to interpret them, JSON-serialize or deep-freeze the
 handle. Storage segments and emergency overflow advances are not a list of legal breaks.
@@ -624,7 +624,7 @@ handle. Storage segments and emergency overflow advances are not a list of legal
 failure to `scope.invalidateFonts()` and schedule reflow. Actual face identity, descriptors and status detect
 same-name replacement and invalidate the vendor's metric cache as well as prepared handles. Width changes do
 neither. Call `scope.forget(owner)` when a block stops participating. One imported graph owns the realm's vendor
-metrics; another bundle or copied vendor tree cannot share that authority. Call `scope.retire()` when replacing or
+metrics. Another bundle or copied vendor tree cannot share that authority. Call `scope.retire()` when replacing or
 retiring a projection scope, so both its handles and the shared vendor metrics are retired. This retains the
 document's known custom-family history, allowing a missing previously declared face to be refused instead of
 silently measured through a fallback. Only the owner replacing the whole document calls
@@ -632,23 +632,23 @@ silently measured through a fallback. Only the owner replacing the whole documen
 
 The browser adapter calls `supportsRichStyle(style, language)` and refuses settings the pinned API cannot represent.
 The API has no independent controls for kerning, OpenType features, variation settings, optical sizing, word spacing
-or mixed item language; a matching font-family string alone is not proof of matching actual font data. Unsupported
+or mixed item language. A matching font-family string alone is not proof of matching actual font data. Unsupported
 settings, unavailable or failed faces, complex objects, authored `br`, preserved-whitespace DOM paragraphs and
 balanced headings keep selectable native DOM. Direct prepared-text hosts can use `pre-wrap` with original CRLF and
 hard breaks. The reference combines browser-derived break tables and Canvas metrics with JavaScript flow. The DOM
-adapter admits Chrome/Chromium profiles; Firefox, WebKit and Chrome on iOS retain native DOM. It does not invoke live
+adapter admits Chrome/Chromium profiles. Firefox, WebKit and Chrome on iOS retain native DOM. It does not invoke live
 DOM line selection or promise identical pixels in other engines.
 Editor soft-break source tokens and generated-content shells stay native. The semantic export resolves verified
-soft-break tokens to ordinary rendered spaces through its existing owner before wrapping; its source carrier keeps
+soft-break tokens to ordinary rendered spaces through its existing owner before wrapping. Its source carrier keeps
 the original Markdown unchanged.
-Ordinary picture flow keeps its greedy policy instead of the reference sheet's generic `pretty` preference;
-explicit authored inline `text-wrap:pretty` retains native wrapping. No native pretty optimization is claimed.
+Ordinary picture flow keeps its greedy policy instead of the reference sheet's generic `pretty` preference.
+Explicit authored inline `text-wrap:pretty` retains native wrapping. No native pretty optimization is claimed.
 A lone Latin, Greek or Cyrillic word prefix, including an authored no-break-space group, may defer to a later
 wider picture-side slot on the same row when the public engine output fits the entire group there. Decorated
 atoms, mixed-item words, punctuation, discretionary breaks and next-row placement retain the engine policy.
 
 `md-layout:v1` remains semantic and engine-independent. No plan or font-dependent pixel carrier is saved. Offline
-complete pages load their admitted embedded faces before enhanced wrapping; fragments and `scripts:false` pages
+complete pages load their admitted embedded faces before enhanced wrapping. Fragments and `scripts:false` pages
 retain native wrapping. Fonts and codecs remain explicit host capabilities as described above.
 
 `alphaProfile(image)` samples a decoded `<img>` through a canvas, so it needs a browser. Without
@@ -671,31 +671,31 @@ Thirteen small documents, each with the line boxes Rapier's own export produced 
 layout comment round-trips exactly (12 of 12 that carry one). **Presentation** compares the plan with historical
 measurements and reports real-trace hits separately from character-sum misses (`dist/kit/conformance/README.md`).
 Its historical line counts are not a current-engine or font-shaping acceptance gate.
-`--impl path/to/module.mjs` runs another implementation against the same documents; `--tolerance 2` sets the pixel
+`--impl path/to/module.mjs` runs another implementation against the same documents. `--tolerance 2` sets the pixel
 tolerance.
 
 ## License
 
-MIT, the full text in `LICENSE`; Rapier-owned modules and the stylesheet keep their MIT line. Pretext's complete license,
+MIT, the full text in `LICENSE`. Rapier-owned modules and the stylesheet keep their MIT line. Pretext's complete license,
 notice and pinned source inventory are in `dist/agent/vendor/pretext/`. The selected upstream is main
 `0d102a5cd933611e86a7e60bda7b4baa5995c6b0`: Pretext 1.0.0 plus the commits of main through pull request #525. Its upstream license includes
-Chromium/WebKit BSD, Unicode and ICU notices for derived code and generated data; those notices travel with the kit
+Chromium/WebKit BSD, Unicode and ICU notices for derived code and generated data. Those notices travel with the kit
 and the exported wrapping runtime. The pinned Markdown parser and its plugins retain their original MIT, ISC and BSD-2-Clause notices in
-`dist/agent/vendor/NOTICE.txt` and `dist/agent/vendor/markdown-licenses/`; the package adds no npm dependencies.
-The history projection uses the MIT diff core;
-its full grant is in `dist/packages/rapier-diff/LICENSE`. The Rapier editor is AGPL-3.0-only and
+`dist/agent/vendor/NOTICE.txt` and `dist/agent/vendor/markdown-licenses/`. The package adds no npm dependencies.
+The history projection uses the MIT diff core.
+Its full grant is in `dist/packages/rapier-diff/LICENSE`. The Rapier editor is AGPL-3.0-only and
 none of it is in this package. The kit carries Rapier's release number, written from the one
 value the editor's release reads.
 
 ## Where the modules live
 
-Each module has one home in the Rapier source (`spec/`, `layout/`, `agent/`, `kit/`), where Rapier itself reads it; `dist/`
+Each module has one home in the Rapier source (`spec/`, `layout/`, `agent/`, `kit/`), where Rapier itself reads it. `dist/`
 is an exact copy of that closure, and `style.css` is the same `spec/markdown-style.css` Rapier bundles.
 
 
 ## rapier-ledger
 
-The edit ledger and its carried parts. MIT, no dependencies; part of
+The edit ledger and its carried parts. MIT, no dependencies. Part of
 `rapier-markdown-kit`. The editor and this module use the **same** record validator,
 splice replayer, root transition and interval transport. This is not a second history store.
 
@@ -731,24 +731,24 @@ transaction: {id, documentAuthority, baseRevision, revision, actor: {kind, id},
 
 `format` is `rapier-ledger/2`. `start.text` is the exact text before the first
 retained record. Every outgoing record carries its own splices, including Undo and
-Redo. Offsets and ranges count UTF-16 code units; no boundary may cut a surrogate
+Redo. Offsets and ranges count UTF-16 code units. No boundary may cut a surrogate
 pair. Splices execute in their recorded order. UTF-8 checksums preserve CRLF, tabs,
-NUL and non-ASCII text. The canonical text limit is 64 MiB; each record has at most
-64 splices. Metadata is {filename, docKind}; a record may carry filename or docKind pairs {before, after}. Metadata-only acts keep equal source roots and an empty splice list. Inverses reference retained act IDs, so later metadata choices survive selective Undo. File handles and save permissions are never portable. The existing record validator remains authoritative for field bounds.
+NUL and non-ASCII text. The canonical text limit is 64 MiB. Each record has at most
+64 splices. Metadata is {filename, docKind}. A record may carry filename or docKind pairs {before, after}. Metadata-only acts keep equal source roots and an empty splice list. Inverses reference retained act IDs, so later metadata choices survive selective Undo. File handles and save permissions are never portable. The existing record validator remains authoritative for field bounds.
 
 An optional `authored: {basis, source, splices}` preserves an act's original placement
 when concurrent transport changes its physical `record.splices`. `basis` is the sorted,
-minimal frontier of canonical act IDs observed at authoring; its causal closure is
+minimal frontier of canonical act IDs observed at authoring. Its causal closure is
 reconstructed from these same records, including metadata-only acts and inverse
 dependencies. `source` is the SHA-256 of the exact UTF-8 source before the original
-sequential `splices`. An ordinary untransported record omits this field; its retained
+sequential `splices`. An ordinary untransported record omits this field. Its retained
 prefix supplies the same evidence. Transport preserves the evidence and the original
 act ID, author, time, turn, label, metadata choices and inverse targets. It neither
 copies the growing prefix into each record nor creates another journal.
 
 Use `readLedger` or `exportLedger` to validate retained history and `merge` or
 `transposeAuthored` to transport it. Validation proves the causal closure, source
-hash and exact original-to-physical placement; field shape or equal final text alone
+hash and exact original-to-physical placement. Field shape or equal final text alone
 is insufficient. Do not attach new authored evidence to an arbitrary physical copy.
 Selective Undo uses this evidence to preserve concurrent insertions at their original
 gaps, even when a replacement split into several physical splices.
@@ -761,21 +761,21 @@ Readers reject unknown envelope/start/head fields, bad checksums, invalid record
 invalid source boundaries, a replay/root mismatch, or a head different from the
 actual document. `historyEnvelope` additionally proves the editor's Undo/Redo branch.
 Its optional third and fourth arguments are the expected text and metadata, as in
-`readLedger`; installing history can prove both source and navigation in one pass.
+`readLedger`. Installing history can prove both source and navigation in one pass.
 
 **Roots are path-dependent.** `textRoot(text)` mints the existing
 `chars:fnv-base36:adler-base36` initial root. Each splice advances it with
 `rootAfter(priorRoot, splice)`, matching the source store. A later root is **not**
 a fresh hash of the whole current text. SHA-256 of the exact checkpoint text is
-separate. A nonzero start names a retained checkpoint; it does not
+separate. A nonzero start names a retained checkpoint. It does not
 claim to reconstruct discarded events. `complete: false` also permits a stated
-revision gap in a partial ledger; each retained splice must still replay exactly. An incomplete ledger never
+revision gap in a partial ledger. Each retained splice must still replay exactly. An incomplete ledger never
 claims to reconstruct events it does not contain.
 
 `actor.kind` is `human`, `agent` or `system`. Canonical doors mint an opaque provenance
 `actor.id` independent of the private principal and retain a supplied display name
 separately as `actor.name` (host names at most 96 characters). The private principal-to-author
-mapping stays in the existing private owner; neither raw nor hashed access credentials
+mapping stays in the existing private owner. Neither raw nor hashed access credentials
 belong in portable authorship. The name is a **host-supplied claim**, not a verified identity. Timestamps are supplied record times, not independently attested.
 Checksums detect inconsistency/corruption, **not forgery**: anyone able to rewrite a
 file can rewrite its checksums and labels. Importing a label never grants a live
@@ -803,7 +803,7 @@ to `system/unattributed`, time zero. Insertions take the inserting record's acto
 and time, except text an Undo or Redo puts back: a splice inserting exactly the text
 that a splice of the referenced act removed keeps the runs that text had. Deleted
 runs disappear. Thus the projection contains **no removed text**.
-An authorship-only import becomes a clearly incomplete insertion ledger; future
+An authorship-only import becomes a clearly incomplete insertion ledger. Future
 attribution is again derived from that one ledger, never a mutable blame database.
 
 A Markdown file carries the same optional JSON at EOF, outside its exact source:
@@ -817,8 +817,8 @@ A Markdown file carries the same optional JSON at EOF, outside its exact source:
 
 ```
 
-The writer escapes `<` and `>` in that JSON. This versioned EOF marker is reserved;
-an unfinished marker is refused, not silently imported as prose. The reader strips
+The writer escapes `<` and `>` in that JSON. This versioned EOF marker is reserved.
+An unfinished marker is refused, not silently imported as prose. The reader strips
 only that exact suffix, validates it against the remaining exact text, and treats a
 leading BOM as file metadata. Other Markdown readers ignore the comment. Plain
 saves without a choice are unchanged. For executable code, use a web
@@ -832,7 +832,7 @@ replaces current source. `rapier-html --compare original.md revised.md` packages
 A comparison may also carry `data-fonts`, an HTML-attribute-escaped JSON string of
 canonical embedded `[font:]` reference definitions. The admitted base record exposes
 this as `fonts`. These resources belong to the exact comparison, outside its text,
-digest and revision; they never become a source edit or ledger record. Font preparation
+digest and revision. They never become a source edit or ledger record. Font preparation
 validates their actual bytes and reads font usage only from the original comparison.
 Existing source-owned assets remain authoritative. A missing personal-library font is
 embedded here when available, otherwise export refuses. Reopening and resaving need
@@ -845,7 +845,7 @@ text**, then transports the second copy's record splices over the first's throug
 the shared interval transport. It preserves the first's ancestry and incoming
 actors/times, minting local revision/root links. Both the public reader and the
 editor's restore reader can replay the result. Both merge orders yield the same
-text for independently edited nonoverlapping ranges; their ordered ledgers need
+text for independently edited nonoverlapping ranges. Their ordered ledgers need
 not be identical. Full and conflict receipts make repeated imports idempotent.
 
 An identical replacement converges with both original acts retained and one physical
@@ -857,11 +857,11 @@ witness with `ledger_invalid` and does not mutate the ledger. Mixed-version sync
 The older participant's store snapshot and remote object count stay unchanged. That
 throw is not a per-note `held` or `caughtUp` result. The same format string is not
 interoperability, and the ledger is not rewritten into the older shape. Reactivating
-any author of that replacement checks the shared text again; undoing that author
+any author of that replacement checks the shared text again. Undoing that author
 withdraws it once no author remains. A different overlap returns `text_overlap_unpreserved` and the caller's exact
 ledger, including the text merge's alternatives for review, and does not mint a synthetic
 act. Different Will `keep` regions require conflict review even when one copy was
-unchanged. `review.required` names an unresolved result; a UI must not auto-accept
+unchanged. `review.required` names an unresolved result. A UI must not auto-accept
 it. Rapier offers carried-copy imports from Compare through its existing review,
 checks the live document again at commit, and installs the proven ledger before
 publishing its receipt or opening the durable-save barrier. A rejected or stale
@@ -870,14 +870,14 @@ Copies without a proven common checkpoint are refused by this API.
 
 ## Host integration and retention
 
-The embed helper accepts `agentName`; the checked `rapier-connect` message carries
+The embed helper accepts `agentName`. The checked `rapier-connect` message carries
 `agent: {name}`. WebMCP uses the registration owner's supplied client name. Modern
-MCP uses the request's client metadata, outside tool arguments; a request without a supplied name stays unnamed. MCP editor snapshots include the
+MCP uses the request's client metadata, outside tool arguments. A request without a supplied name stays unnamed. MCP editor snapshots include the
 server's retained journal only in editor metadata, not in model-facing tool results.
 The browser proves a replay suffix before preserving remote writers under local
-revision links; missing remote events never become an invented complete history.
+revision links. Missing remote events never become an invented complete history.
 
 Rapier's live history supports before previews and Undo for individual acts or turns, preserving later edits.
 A carried ledger preserves the history included in that file and explicitly identifies an incomplete start.
-Full history includes removed text and can be much larger than the current document; choose it separately for
+Full history includes removed text and can be much larger than the current document. Choose it separately for
 each outgoing file. Authorship is also optional. Neither part verifies identities or synchronizes copies.

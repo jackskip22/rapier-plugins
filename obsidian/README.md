@@ -26,7 +26,7 @@ A picture is replaced only if the new file is smaller.
 
 ## Your files
 
-- Everything runs on your device. No network, no telemetry; no file leaves your vault.
+- Everything runs on your device. No network, no telemetry. No file leaves your vault.
 - Nothing is overwritten. Each new picture is read back and checked against the original before any link changes. Originals stay unless you turn on **Remove originals**, and then they go to Obsidian's trash.
 - **Undo the last conversion** puts the links back.
 - A converted vault opens on another device only where this plugin is installed.

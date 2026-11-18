@@ -2,34 +2,34 @@
 
 Turn Markdown into one offline HTML file that contains the full Rapier editor.
 
-Try it: `npx rapier-html@1.2.73 notes.md`, then open `notes.rapier.html` in any browser.
-Install: `npm install rapier-html@1.2.73`.
+Try it: `npx rapier-html@1.2.74 notes.md`, then open `notes.rapier.html` in any browser.
+Install: `npm install rapier-html@1.2.74`.
 
-It opens on a phone or computer, with no account. People read, edit, draw and paint; agents hand over documents, show
+It opens on a phone or computer, with no account. People read, edit, draw and paint. Agents hand over documents, show
 what changed and get the edited copy back.
 
 The file needs no hosted workspace.
 
 - The page writes, saves Markdown, exports Word, PDF and a web page, and prints. It needs no account and fetches
   nothing to open, edit or save. It is the base editor (about 1.7 MB) with the plug-ins the document displays with
-  (Math, Mermaid, and page layout for a template page); `--include draw` adds drawing and painting. Notes never travel.
+  (Math, Mermaid, and page layout for a template page). `--include draw` adds drawing and painting. Notes never travel.
 - Where scripts don't run (a mail preview, a strict viewer), the file shows the document's words.
 - `--return` adds a one-use Send back address from the agent door.
-- `--view draw` opens on Draw. `--compare original.md` opens the edit with its diff; `--by <name>` attributes it.
+- `--view draw` opens on Draw. `--compare original.md` opens the edit with its diff. `--by <name>` attributes it.
 - `--editor page.html` uses another Rapier page as the editor, such as one the agent door exported.
-- `writePage(text, name)` makes the page in one call; `unwrap` gives the document back, exactly.
+- `writePage(text, name)` makes the page in one call. `unwrap` gives the document back, exactly.
 
 Needs Node 22 or newer.
 
 ```sh
-npx -- rapier-html@1.2.73 notes.md                          # the editor, notes.md inside it, written beside the file
-npx -- rapier-html@1.2.73 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
-npx -- rapier-html@1.2.73 notes.md --include draw,math     # carries Draw and Math (default: what the document needs)
-npx -- rapier-html@1.2.73 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
-npx -- rapier-html@1.2.73 revised.md --compare original.md # opens showing what changed
-npx -- rapier-html@1.2.73 notes.md --return <return_url> --return-expires-at <return_expires_at> # Send back
-npx -- rapier-html@1.2.73 notes.md out.html                 # a named output
-npm install rapier-html@1.2.73                              # as a library: writePage, unwrap
+npx -- rapier-html@1.2.74 notes.md                          # the editor, notes.md inside it, written beside the file
+npx -- rapier-html@1.2.74 notes.md --view draw              # opens on Draw: sketch and paint, the document behind it
+npx -- rapier-html@1.2.74 notes.md --include draw,math     # carries Draw and Math (default: what the document needs)
+npx -- rapier-html@1.2.74 notes.md --drawing sketch.svg     # carries a drawing, opened on Draw over the document
+npx -- rapier-html@1.2.74 revised.md --compare original.md # opens showing what changed
+npx -- rapier-html@1.2.74 notes.md --return <return_url> --return-expires-at <return_expires_at> # Send back
+npx -- rapier-html@1.2.74 notes.md out.html                 # a named output
+npm install rapier-html@1.2.74                              # as a library: writePage, unwrap
 ```
 
 The first `--` is for npm, so `--help` reaches the command. It never overwrites a file.
@@ -50,15 +50,15 @@ Will markers in the Markdown (`keep`, `append`, `edit`) control what agents may 
 1. Call `show {target:"return"}` on the Rapier agent door for the document's workspace.
 2. Pass its `return_url` and `return_expires_at` as `--return <return_url> --return-expires-at <return_expires_at>`,
    or `wrap(..., {return: return_url, return_expires_at})`. Only `https://mcp.rapier.website/return/…` is accepted.
-   Share then shows Send back; a page without an address doesn't.
-3. The person edits offline and taps Send back. The source and filename go once; the page shows acceptance or
+   Share then shows Send back. A page without an address doesn't.
+3. The person edits offline and taps Send back. The source and filename go once. The page shows acceptance or
    refusal and never sends again.
 4. `show {target:"ask",wait:"message"}` returns a `returned` receipt with the `return_id`, name and time, and
    `read {state:true}` lists receipts. Read the source with `read {return_id}`, then `cursor` alone until complete.
 
 A return lasts up to one day and takes one document of up to 64 MiB of decoded source, within the workspace's
 remaining storage. It grants no access to the workspace, and the returned copy stays separate from the workspace's
-current document. After expiry or a refusal, Share offers Save instead; bring that file back for a fresh return.
+current document. After expiry or a refusal, Share offers Save instead. Bring that file back for a fresh return.
 
 ## As a library
 
@@ -76,7 +76,7 @@ await writeFile('hello.rapier.html', page, {flag: 'wx'});        // 'wx': never 
 
 - `writePage(text, name, {include, view, drawing, drawingName, base, baseName, by, at, return: returnURL, return_expires_at})`
   carries the editor with what the document displays with (`include` names the parts: `drawing`, `math`, `mermaid`).
-- `wrap(rapierHtml, text, name, options)` does the same into a page you supply; `carry(rapierHtml, parts)` cuts one.
+- `wrap(rapierHtml, text, name, options)` does the same into a page you supply. `carry(rapierHtml, parts)` cuts one.
 - `unwrap(pageHtml)` returns the same fields, plus the validated `comparisonBase` record, with `null` for anything the
   page doesn't carry.
 - Also exported: `portableNeeds`, `encodeCarried`, `decodeCarried` and `main`. TypeScript declarations ship in `dist/page.d.mts`.
@@ -90,7 +90,7 @@ await writeFile('hello.rapier.html', page, {flag: 'wx'});        // 'wx': never 
 - The block holds no `<` before `/` or `!`, no carriage return and no NUL: `\\`, `\/`, `\!`, `\r` and `\0` stand for
   them, one reversible pass each way. A byte-order mark is kept and written back on Save.
 - `comparisonBase` holds the original `text`, `sha256`, `revision`, `name`, `by` and `at`. Rewrapping keeps the
-  original text, hash and revision; a baseline equal to the current text is left out. It is for display only, never a
+  original text, hash and revision. A baseline equal to the current text is left out. It is for display only, never a
   write grant or history. Save and Send back use the edited document.
 
 ## Safety
@@ -98,7 +98,7 @@ await writeFile('hello.rapier.html', page, {flag: 'wx'});        // 'wx': never 
 - It never overwrites: an existing output, including the document itself, is refused. So are unknown options, a
   `--view` other than `draw` or `notes`, `--drawing` or `--compare` without a file, a return without its expiry, an
   invalid expiry, an unsafe return URL and a third filename.
-- The page opens and renders from what it carries; it can't fetch pictures, media, fonts or plugins. The editor
+- The page opens and renders from what it carries. It can't fetch pictures, media, fonts or plugins. The editor
   includes verified math, Mermaid and lettering resources. Embed any document pictures.
 - Send back connects only to the return origin it was given. Credentials, query strings and fragments in the return
   URL are refused.
@@ -108,7 +108,7 @@ await writeFile('hello.rapier.html', page, {flag: 'wx'});        // 'wx': never 
 `wrap(page, text, filename, {ledger, authorship})` accepts the kit's `rapier-ledger/2` and `rapier-authorship/1`
 objects, and `unwrap(page)` returns the checked parts beside the text. Both are off by default.
 
-- An authorship projection holds only who wrote the current characters; a full ledger also holds deleted text.
+- An authorship projection holds only who wrote the current characters. A full ledger also holds deleted text.
 - A part that doesn't match the text, or is malformed, duplicated or inconsistent, throws instead of attaching false
   history.
 - Markdown saved with the kit's `ledger/carried.writeDocument` is read automatically when wrapping. Rewrapping a page

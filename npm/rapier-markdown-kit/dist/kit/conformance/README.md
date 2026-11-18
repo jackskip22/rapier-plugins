@@ -7,10 +7,10 @@ SVG "drawing" already turned in its own bytes, a ring drawing whose unfilled int
 text, both-sides wrapping around a centred picture, the neighbour search skipping a second, unrelated
 picture, a rule after a picture (a barrier, so the paragraph before it anchors), and RTL (Arabic) text.
 
-The fixtures were captured at a 30.8 px line (`measurer.lineHeight`, 1.75 × the 17.6 px body); the reference
+The fixtures were captured at a 30.8 px line (`measurer.lineHeight`, 1.75 × the 17.6 px body). The reference
 scale's line is now 28 px at M. The line height is an input to the comparison, so the recorded lines stay
 self-consistent. In `01-inline` and `12-rule-barrier` the sentence "another image paragraph, or a heading" is
-measured anchor text and stays as recorded; headings do anchor pictures.
+measured anchor text and stays as recorded. Headings do anchor pictures.
 
 ## What each document's JSON carries
 
@@ -28,7 +28,7 @@ measured anchor text and stays as recorded; headings do anchor pictures.
   descriptor}` for `parseProfile`, `{kind: "polygon", corners}` for `polygonProfile`, `{kind:
   "rasterTilt", width, height, radiusDeg}` for `rasterTiltProfile`, or `null` for the plain
   conservative-rectangle fallback (`pictureSlices(null, …)`) — an opaque raster's own alpha profile
-  is `null` too (`alphaProfile` refuses a fully opaque image on purpose; `wrap=box` with no drawing
+  is `null` too (`alphaProfile` refuses a fully opaque image on purpose. `wrap=box` with no drawing
   recipe and no rotation is the same fallback). The `bands`/`polygon` fixtures' hints are the exact
   alpha shape of the fixture's own picture, computed independently in Node from how the picture was
   built (see the generation notes at the foot of this file) — not read back from Rapier — since these
@@ -42,7 +42,7 @@ measured anchor text and stays as recorded; headings do anchor pictures.
   *is* the glyphs' own tight extent).
 - `glyphWidths` — every character the anchor's text uses, with its own measured width in that exact
   font, from this browser's `measureText`, called in isolation on one character at a time. Always
-  present; the fallback `measurer.mjs` reaches for when a query is not in `measurements` below.
+  present. The fallback `measurer.mjs` reaches for when a query is not in `measurements` below.
 - `measurements` — every `(font, text)` pair Pretext's own `getMeasureContext()` was actually
   asked to measure while *this fixture's own export* ran its real reflow script, each with the exact
   width the browser gave it — captured from the exported page's own reflow as it ran.
@@ -61,7 +61,7 @@ measured anchor text and stays as recorded; headings do anchor pictures.
 
 ## The expectations
 
-`<name>.expected.json` is compared against the exported page's own reflow within 1.5 px; a missing one is a failure.
+`<name>.expected.json` is compared against the exported page's own reflow within 1.5 px. A missing one is a failure.
 Rows 5–13 of `09-drawing-ring-interior` come from the kit's own planner with the recorded measurer: the word-deferral
 rule moves "ordinary" whole into the ring's wide slot, and the exported page wraps with a native `shape-outside` float,
 which exposes no per-slot line boxes to record. `profileHint` is hand-computed from how each fixture's picture bytes were built ("Generation notes" below) and is restored by hand if a file is regenerated.
@@ -78,7 +78,7 @@ Prints two separate tables (preservation and presentation are different claims):
 - **Preservation** — does each fixture's own layout comment round-trip exactly through
   `parseLayout`/`formatLayout`. No measurer, no font: either exactly right, or a real bug. 12/12.
 - **Presentation** — does the planned line count, each flowed line's row (its top) and each line's left/right
-  agree with the recorded fact, within `--tolerance` pixels (default 2). A wrong row is DIFFERS. This depends entirely on the measurer supplied;
+  agree with the recorded fact, within `--tolerance` pixels (default 2). A wrong row is DIFFERS. This depends entirely on the measurer supplied.
   `run.mjs`'s own default (`measurer.mjs`) replays Rapier's real Pretext trace wherever one was
   captured, falling back to the character-glyph sum only where none exists. Result: **3/13
 AGREE outright** (`04-wrap-box`, `10-both-sides`, `12-rule-barrier`, each a case where the compared edge is
@@ -95,4 +95,4 @@ picture-obstacle geometry fact: their `profileHint` is a hand-computed, quantize
 hand-built PNGs (no canvas library — a raw RGBA buffer through `zlib.deflateSync`, wrapped in
 IHDR/IDAT/IEND chunks). `ring.svg` (a 200×200 stroked circle, `fill="none"`, leaving a real transparent
 hole) and `rotated.svg` (a 140×100 rectangle already rotated 20° in its own `transform`) are hand-written
-SVG. None of this is shipped; it only explains where each fixture's bytes and `profileHint` came from.
+SVG. None of this is shipped. It only explains where each fixture's bytes and `profileHint` came from.
