@@ -1,6 +1,6 @@
 # JPEG XL for Obsidian
 
-Open `.jxl` pictures in your notes, and convert PNG, JPEG, WebP and GIF files to smaller JPEG XL files, as you paste or across the vault.
+Open `.jxl` pictures in your notes, and convert PNG, JPEG, WebP and GIF files to smaller JPEG XL files, as you paste or across the vault. Animated JPEG XL plays, including the files made from GIFs.
 
 ![A .jxl picture embedded in a note](docs/embed.png)
 ![Convert all pictures: the plan, before anything changes](docs/convert.png)
@@ -22,7 +22,7 @@ One file each, converted by this plugin at its defaults (photo quality 90). WebP
 | Phone photo, 12.5 MP JPEG | 5.44 MB | 1.83 MB, re-encoded with loss | **4.85 MB**, the JPEG restores exactly |
 | Animated GIF, 24 frames, 360 × 160 | 77 KB | 66 KB | **37 KB**, every pixel kept |
 
-A picture is replaced only if the new file is smaller.
+Animated GIFs, animated PNGs and lossless animated WebPs become animated JPEG XL, with every frame, its time and the loop count. A picture already saved with loss (a lossy WebP) is left as it is. A picture is replaced only if the new file is smaller.
 
 ## Your files
 
@@ -36,3 +36,5 @@ A picture is replaced only if the new file is smaller.
 Convert this picture · Convert all pictures in this note · Convert all pictures in the vault · Convert this picture back to PNG · Restore the original JPEG · Undo the last conversion
 
 Made with [rapier-jxl](https://github.com/jackskip22/rapier-jxl). MIT license.
+
+Convert pictures online at [rapier.website/jxl](https://rapier.website/jxl). For EmDash sites: the [EmDash JPEG XL Image Optimizer plugin](https://plugins.emdashcms.com/plugins/@rapier.website/jxl).

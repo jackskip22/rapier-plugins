@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {convert, verifyJxl, toJpeg, toPng, remake, checkRemade, type Check} from '../src/core/engine.js';
+import {convert, verifyJxl, toJpeg, toPng, remake, type Check} from '../src/core/engine.js';
 import {encodePng} from '../src/core/png.js';
 import {pending, plan, runBatch, journalOf, undoRun, type Job} from '../src/core/batch.js';
 import {rewriteLinks, countLinks} from '../src/core/links.js';
@@ -10,20 +10,17 @@ import {FakeVault} from './fake.js';
 const fx = (n: string) => new Uint8Array(readFileSync('test/fixtures/' + n));
 const noBrowser = async () => { throw new Error('no browser decoder in tests'); };
 const never = new AbortController().signal;
-const checked = (v: FakeVault) => async (e: {src: string; dest: string}, made: Uint8Array) => checkRemade(e.src.split('.').pop()!, v.files.get(e.dest)!.bytes, made);
 
 const job = (removeOriginals = false, verify?: Job['verify']): Job => ({
   destExt: 'jxl', removeOriginals,
-  transform: async (b, ext) => { const r = await convert(b, ext, {mode: 'auto', quality: 90}, noBrowser); return r.bytes ? {bytes: r.bytes, kept: r.kept, record: r.record} : {bytes: null, reason: r.reason ?? 'no'}; },
-  verify: verify ?? (async (src, ext, out, kept, record) => verifyJxl(src, ext, out, kept as never, record as never)),
+  transform: async (b, ext) => { const r = await convert(b, ext, {mode: 'auto', quality: 90}, noBrowser); return r.bytes ? {bytes: r.bytes, kept: r.kept} : {bytes: null, reason: r.reason ?? 'no'}; },
+  verify: verify ?? (async (src, ext, out, kept) => verifyJxl(src, ext, out, kept as never, noBrowser)),
 });
 async function screenshot(w = 200, h = 120) {
   const data = new Uint8Array(w * h * 4);
   for (let i = 0; i < w * h; i++) { const ink = ((i % w) >> 3) % 4 === 0; data.set([ink ? 20 : 250, ink ? 20 : 250, ink ? 20 : 246, 255], i * 4); }
   return encodePng({data, width: w, height: h});
 }
-const PART = /^pics\/a\.[0-9a-f]{12}\.jxl\.part$/;
-const onlyPart = (xs: string[]) => xs.length === 1 && PART.test(xs[0]);
 const cand = (v: FakeVault, path: string) => { const s = v.stat(path)!; return {path, size: s.size, mtime: s.mtime}; };
 
 async function setup() {
@@ -70,13 +67,13 @@ test('removing originals sends them to the trash only after the links are proved
 
 test('a file that appears at the destination fails that one picture and is not overwritten', async () => {
   const v = await setup();
-  v.hooks.beforeCreate = p => { if (PART.test(p)) v.add('pics/a.jxl', new Uint8Array([7, 7, 7])); };
+  v.hooks.beforeCreate = p => { if (p === 'pics/a.jxl') v.add(p, new Uint8Array([7, 7, 7])); };
   const res = await runBatch(v, job(true), plan(v, [cand(v, 'pics/a.png')], 'jxl'), never);
   assert.equal(res[0].status, 'skipped');
   assert.match((res[0] as {reason: string}).reason, /appeared/);
   assert.deepEqual([...v.files.get('pics/a.jxl')!.bytes], [7, 7, 7]);
   assert.ok(v.files.has('pics/a.png'));
-  assert.ok(onlyPart(v.trashed), 'only this run\'s own .part file is trashed');
+  assert.deepEqual(v.trashed, []);
 });
 
 test('an original changed during conversion stays, and the new file is trashed', async () => {
@@ -85,7 +82,7 @@ test('an original changed during conversion stays, and the new file is trashed',
   const res = await runBatch(v, job(true), plan(v, [cand(v, 'pics/a.png')], 'jxl'), never);
   assert.equal(res[0].status, 'skipped');
   assert.deepEqual([...v.files.get('pics/a.png')!.bytes], [1, 2, 3]);
-  assert.ok(onlyPart(v.trashed));
+  assert.deepEqual(v.trashed, ['pics/a.jxl']);
   assert.ok(v.notes.get('n.md')!.includes('a.png'));
 });
 
@@ -104,7 +101,7 @@ test('a failed read-back check keeps the original and trashes the new file', asy
   const res = await runBatch(v, job(true, async () => bad), plan(v, [cand(v, 'pics/a.png')], 'jxl'), never);
   assert.equal(res[0].status, 'skipped');
   assert.ok(v.files.has('pics/a.png'));
-  assert.ok(onlyPart(v.trashed));
+  assert.deepEqual(v.trashed, ['pics/a.jxl']);
 });
 
 test('a note edited during the run keeps the edit, and every link is rewritten', async () => {
@@ -152,7 +149,7 @@ test('undo puts links back, and remakes a removed JPEG exactly', async () => {
   const v = await setup();
   const res = await runBatch(v, job(true), plan(v, [cand(v, 'pics/a.png'), cand(v, 'pics/b.jpg')], 'jxl'), never);
   const journal = journalOf(res);
-  const out = await undoRun(v, journal, async e => (e.src.endsWith('.jpg') ? toJpeg(v.files.get(e.dest)!.bytes) : null), checked(v));
+  const out = await undoRun(v, journal, async e => (e.src.endsWith('.jpg') ? toJpeg(v.files.get(e.dest)!.bytes) : null));
   assert.equal(out.undone, 1);
   assert.deepEqual(out.left.map(l => l.path), ['pics/a.png']);
   assert.ok(Buffer.from(v.files.get('pics/b.jpg')!.bytes).equals(Buffer.from(fx('photo.jpg'))));
@@ -183,7 +180,7 @@ const nothing = async () => null;
 test('undo: a destination changed since is left and reported', async () => {
   const {v, journal} = await converted();
   v.touch('pics/a.jxl', new Uint8Array([5, 5, 5]));
-  const out = await undoRun(v, journal, nothing, checked(v));
+  const out = await undoRun(v, journal, nothing);
   assert.equal(out.undone, 0);
   assert.match(out.left[0].reason, /changed/);
   assert.ok(v.files.has('pics/a.jxl') && v.notes.get('n.md')!.includes('a.jxl'));
@@ -193,7 +190,7 @@ test('undo: a destination changed since is left and reported', async () => {
 test('undo: an original replaced since is left and reported, links stay', async () => {
   const {v, journal} = await converted();
   v.touch('pics/a.png', new Uint8Array([9, 9, 9, 9]));
-  const out = await undoRun(v, journal, nothing, checked(v));
+  const out = await undoRun(v, journal, nothing);
   assert.equal(out.undone, 0);
   assert.match(out.left[0].reason, /original/i);
   assert.ok(v.notes.get('n.md')!.includes('a.jxl'));
@@ -203,7 +200,7 @@ test('undo: an original replaced since is left and reported, links stay', async 
 test('undo: a Canvas or base that now uses the new file keeps it', async () => {
   const {v, journal} = await converted();
   v.others.set('pics/a.jxl', ['board.canvas']);
-  const out = await undoRun(v, journal, nothing, checked(v));
+  const out = await undoRun(v, journal, nothing);
   assert.equal(out.undone, 0);
   assert.match(out.left[0].reason, /board\.canvas/);
   assert.ok(v.files.has('pics/a.jxl'));
@@ -212,7 +209,7 @@ test('undo: a Canvas or base that now uses the new file keeps it', async () => {
 test('undo: a failed trash is not counted as undone', async () => {
   const {v, journal} = await converted();
   v.failTrash = true;
-  const out = await undoRun(v, journal, nothing, checked(v));
+  const out = await undoRun(v, journal, nothing);
   assert.equal(out.undone, 0);
   assert.match(out.left[0].reason, /trash/);
 });
@@ -220,7 +217,7 @@ test('undo: a failed trash is not counted as undone', async () => {
 test('undo: a removed original comes back only from an exact remake', async () => {
   const {v, journal} = await converted(true);
   assert.ok(!v.files.has('pics/a.png'));
-  const out = await undoRun(v, journal, nothing, checked(v));
+  const out = await undoRun(v, journal, nothing);
   assert.equal(out.undone, 0);
   assert.ok(v.files.has('pics/a.jxl') && v.notes.get('n.md')!.includes('a.jxl'));
 });
@@ -228,7 +225,7 @@ test('undo: a removed original comes back only from an exact remake', async () =
 test('a destination changed by another writer is not trashed by cleanup', async () => {
   const v = await setup();
   const bad: Check = {ok: false, reason: 'The pixels did not read back the same.'};
-  const bumped = job(true, async () => { v.touch([...v.files.keys()].find(p => PART.test(p))!, new Uint8Array([4, 4])); return bad; });
+  const bumped = job(true, async () => { v.touch('pics/a.jxl', new Uint8Array([4, 4])); return bad; });
   const res = await runBatch(v, bumped, plan(v, [cand(v, 'pics/a.png')], 'jxl'), never);
   assert.equal(res[0].status, 'skipped');
   assert.match((res[0] as {reason: string}).reason, /left/);
@@ -245,7 +242,7 @@ test('a conversion whose read-back fails leaves the note, the original and the v
   assert.equal(v.notes.get('n.md'), before.note);
   assert.deepEqual([...v.files.get('pics/a.png')!.bytes], before.bytes);
   assert.deepEqual([...v.files.keys()].sort(), before.files);
-  assert.ok(onlyPart(v.trashed));
+  assert.deepEqual(v.trashed, ['pics/a.jxl']);
 });
 
 test('undo through the plug-in\'s own remake: a removed JPEG comes back exactly, a photograph PNG says it was saved with loss', async () => {
@@ -253,7 +250,7 @@ test('undo through the plug-in\'s own remake: a removed JPEG comes back exactly,
   const res = await runBatch(v, job(true), plan(v, [cand(v, 'pics/a.png'), cand(v, 'pics/b.jpg')], 'jxl'), never);
   const journal = journalOf(res);
   assert.ok(!v.files.has('pics/a.png') && !v.files.has('pics/b.jpg'));
-  const out = await undoRun(v, journal, async e => remake(e.src.split('.').pop()!, v.files.get(e.dest)!.bytes, e.kept), checked(v));
+  const out = await undoRun(v, journal, async e => remake(e.src.split('.').pop()!, v.files.get(e.dest)!.bytes, e.kept));
   // The screenshot was kept exactly: sample for sample. The JPEG: byte for byte.
   assert.equal(out.undone, 2, JSON.stringify(out.left));
   assert.ok(Buffer.from(v.files.get('pics/b.jpg')!.bytes).equals(Buffer.from(fx('photo.jpg'))));
@@ -276,7 +273,7 @@ test('converting back to PNG leaves the JPEG XL file, so Undo can put the links 
   const res = await runBatch(v, back, plan(v, [cand(v, 'pics/a.jxl')], 'png'), never);
   assert.equal(res[0].status, 'done');
   assert.ok(v.files.has('pics/a.jxl') && v.files.has('pics/a.png'));
-  const out = await undoRun(v, journalOf(res), async () => null, checked(v));
+  const out = await undoRun(v, journalOf(res), async () => null);
   assert.equal(out.undone, 1, JSON.stringify(out.left));
   assert.ok(v.notes.get('n.md')!.includes('a.jxl'));
 });
@@ -293,4 +290,43 @@ test('cancel: honored before anything is written, the canceled picture is not re
   assert.equal(v.exists('pics/a.jxl'), false);
   assert.equal(v.exists('pics/b.jxl'), false);
   assert.equal(v.notes.get('n.md'), 'one ![[a.png|300]] two ![x](pics/a.png) three ![[b.jpg]]');
+});
+
+// Animation custody: an APNG whose default picture is not a frame never loses its original, even with Remove originals on.
+import {deflateSync} from 'node:zlib';
+test('Remove originals keeps an animated PNG with a separate first picture, and undo has nothing to do', async () => {
+  const crcT = Array.from({length: 256}, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ c >>> 1 : c >>> 1; return c >>> 0; });
+  const crc = (b: Uint8Array) => { let c = ~0; for (const x of b) c = crcT[(c ^ x) & 255] ^ c >>> 8; return ~c >>> 0; };
+  const ch = (name: string, body: Uint8Array) => { const o = Buffer.alloc(12 + body.length); o.writeUInt32BE(body.length); o.write(name, 4, 'latin1'); Buffer.from(body).copy(o, 8); o.writeUInt32BE(crc(o.subarray(4, 8 + body.length)), 8 + body.length); return o; };
+  const rows = (n: number) => deflateSync(Uint8Array.from({length: 4 * 17}, (_, i) => i % 17 === 0 ? 0 : n));
+  const fc = (seq: number) => { const b = Buffer.alloc(26); b.writeUInt32BE(seq); b.writeUInt32BE(4, 4); b.writeUInt32BE(4, 8); b.writeUInt16BE(100, 20); b.writeUInt16BE(1000, 22); return b; };
+  const ihdr = Buffer.alloc(13); ihdr.writeUInt32BE(4); ihdr.writeUInt32BE(4, 4); ihdr[8] = 8; ihdr[9] = 6;
+  const sq = (n: number) => { const b = Buffer.alloc(4); b.writeUInt32BE(n); return b; };
+  const apng = new Uint8Array(Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), ch('IHDR', ihdr), ch('acTL', Buffer.from([0, 0, 0, 2, 0, 0, 0, 0])),
+    ch('IDAT', rows(9)), ch('fcTL', fc(0)), ch('fdAT', Buffer.concat([sq(1), rows(100)])), ch('fcTL', fc(2)), ch('fdAT', Buffer.concat([sq(3), rows(200)])), ch('IEND', new Uint8Array(0))]));
+  const v = new FakeVault();
+  v.add('pics/c.png', apng);
+  v.notes.set('n.md', '![[c.png]]');
+  const res = await runBatch(v, job(true), plan(v, [cand(v, 'pics/c.png')], 'jxl'), never);
+  assert.notEqual(res[0].status, 'done');
+  assert.deepEqual([...v.files.get('pics/c.png')!.bytes], [...apng]);
+  assert.equal(v.notes.get('n.md'), '![[c.png]]');
+  assert.deepEqual(v.trashed, []);
+  const out = await undoRun(v, journalOf(res), async () => null);
+  assert.equal(out.undone, 0);
+  assert.deepEqual([...v.files.get('pics/c.png')!.bytes], [...apng]);
+});
+
+test('Remove originals keeps a one-frame animated PNG with a separate default picture, writing and relinking nothing', async () => {
+  const one = Uint8Array.from(Buffer.from('89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c489000000086163544c00000001000000025a23888c00000010494441547801010500faff00ff0000ff050001fffa5c88d10000001a6663544c0000000000000001000000010000000000000000006403e80000b37e63cd0000001466644154000000017801010500faff0000ff00ff040101ffc6d71c510000000049454e44ae426082', 'hex'));
+  const v = new FakeVault();
+  v.add('pics/d.png', one);
+  v.notes.set('n.md', '![[d.png]]');
+  const files = new Set(v.files.keys());
+  const res = await runBatch(v, job(true), plan(v, [cand(v, 'pics/d.png')], 'jxl'), never);
+  assert.notEqual(res[0].status, 'done');
+  assert.deepEqual([...v.files.keys()], [...files]);
+  assert.deepEqual([...v.files.get('pics/d.png')!.bytes], [...one]);
+  assert.equal(v.notes.get('n.md'), '![[d.png]]');
+  assert.deepEqual(v.trashed, []);
 });

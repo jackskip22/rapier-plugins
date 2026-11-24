@@ -1,8 +1,9 @@
 import {build} from 'esbuild';
+import {workerCore} from './worker-core.mjs';
 import {readFileSync, writeFileSync, mkdirSync} from 'node:fs';
 
 const common = {bundle: true, minify: true, target: 'es2022', legalComments: 'none', logLevel: 'warning'};
-const worker = await build({...common, entryPoints: ['src/worker.ts'], format: 'iife', platform: 'browser', write: false});
+const worker = await build({...common, entryPoints: ['src/worker.ts'], format: 'iife', platform: 'browser', write: false, plugins: [workerCore]});
 const workerSource = worker.outputFiles[0].text;
 await build({
   ...common, entryPoints: ['src/main.ts'], outfile: 'main.js', format: 'cjs', platform: 'browser', external: ['obsidian'],

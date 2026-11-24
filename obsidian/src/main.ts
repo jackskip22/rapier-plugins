@@ -1,14 +1,15 @@
 // The only file that imports Obsidian. Everything it decides comes from ./core (plain functions over bytes and strings);
 // this file maps Obsidian's API onto that core. If Obsidian's plugin API changes, rewrite this file and nothing else.
 import {
-  App, Editor, FileView, MarkdownFileInfo, MarkdownView, Modal, Notice, Platform, Plugin, PluginSettingTab, Setting, SettingDefinitionItem, TFile, WorkspaceLeaf, normalizePath,
+  App, Editor, FileView, MarkdownFileInfo, MarkdownView, Modal, Notice, Platform, Plugin, PluginSettingTab, Setting, TFile, WorkspaceLeaf, normalizePath,
 } from 'obsidian';
 import {Engine} from './core/client.js';
-import {maxPixelsFor, type JxlRecord, type Mode} from './core/engine.js';
+import {ANIMATION_BAND_BYTES, ANIMATION_BAND_BYTES_MOBILE, ANIMATION_KEEP_BYTES, ANIMATION_KEEP_BYTES_MOBILE, maxPixelsFor, type Mode, type Part} from './core/engine.js';
+import {LiveFrames, type Show} from './live.js';
 import {embedSizeInNote, embedSizeNow, embedsInText, type EmbedAttrs, type Size} from './core/text.js';
 import {bytes as fmt, IMAGE_EXTENSIONS, pictures} from './core/format.js';
 import {KEEPS} from './core/estimate.js';
-import {TINY_JXL} from './core/tiny.js';
+import {ANIMATED_JXL, TINY_JXL} from './core/tiny.js';
 import {journalOf, pending, plan, runBatch, undoRun, type BatchPort, type Job, type JournalEntry, type Outcome} from './core/batch.js';
 import {split} from './core/plan.js';
 
@@ -72,42 +73,47 @@ class VaultPort implements BatchPort {
   nameIsUnique(name: string) { return this.app.vault.getFiles().filter(f => f.name === name).length <= 1; }
   // The person's own trash setting, never a permanent delete chosen by this plugin.
   async trash(path: string) { await this.app.fileManager.trashFile(this.file(path)); }
-  // A move, never over a file: the vault's own rename refuses a path that is taken, and links are not rewritten.
-  async rename(from: string, to: string) {
-    if (this.app.vault.getAbstractFileByPath(to)) throw new Error('A file is there.');
-    await this.app.vault.rename(this.file(from), to);
-  }
 }
 
 class JxlView extends FileView {
   navigation = true;
+  private fileGeneration = 0;
   constructor(leaf: WorkspaceLeaf, private plugin: JxlPlugin) { super(leaf); }
   getViewType() { return VIEW_TYPE; }
   getIcon() { return 'image'; }
   async onLoadFile(file: TFile) {
+    const generation = ++this.fileGeneration, current = () => this.plugin.active && generation === this.fileGeneration;
+    if (!current()) return;
     this.contentEl.empty();
     this.contentEl.addClass('jxl-view');
+    const failed = (e: unknown) => { if (current()) this.contentEl.createEl('p', {text: failureText(e), cls: 'jxl-error'}); };
     try {
       const img = this.contentEl.createEl('img', {cls: 'jxl-view-image'});
-      img.onerror = () => { img.onerror = null; void this.plugin.decodedUrl(file).then(u => { img.src = u; }, e => this.contentEl.createEl('p', {text: failureText(e), cls: 'jxl-error'})); };
-      img.src = await this.plugin.url(file);
-    } catch (e) {
-      this.contentEl.createEl('p', {text: failureText(e), cls: 'jxl-error'});
-    }
+      img.onerror = () => { if (!current()) return; img.onerror = null; void this.plugin.decodedUrl(file, u => { if (current()) img.src = u; return current(); }).then(u => { if (current()) img.src = u; }, failed); };
+      const show: Show = u => { if (current()) img.src = u; return current(); };
+      const url = await this.plugin.url(file, show);
+      if (current()) img.src = url;
+    } catch (e) { failed(e); }
   }
-  async onUnloadFile() { this.contentEl.empty(); }
+  async onUnloadFile() { this.fileGeneration++; this.contentEl.empty(); }
 }
 
 export default class JxlPlugin extends Plugin {
   settings: Settings = {...DEFAULTS};
-  engine = new Engine();
+  // One terminal lifetime owns deferred reads, display callbacks and the restartable worker.
+  private readonly lifetime = new AbortController();
+  engine = new Engine(this.lifetime.signal);
+  get active() { return !this.lifetime.signal.aborted; }
   port!: VaultPort;
   private nativeSupport: Promise<boolean> | null = null;
   private cache = new Map<string, string>();
   private observer?: MutationObserver;
 
   async onload() {
-    this.settings = {...DEFAULTS, ...((await this.loadData()) as Partial<Settings> | null)};
+    if (!this.active) return;
+    const settings = (await this.loadData()) as Partial<Settings> | null;
+    if (!this.active) return;
+    this.settings = {...DEFAULTS, ...settings};
     this.port = new VaultPort(this.app);
     this.addSettingTab(new JxlSettingTab(this.app, this));
 
@@ -160,9 +166,12 @@ export default class JxlPlugin extends Plugin {
   }
 
   onunload() {
+    this.lifetime.abort(new Error('The converter stopped.'));
     this.running?.abort();
     this.engine.stop();
     this.observer?.disconnect();
+    this.observer = undefined;
+    if (this.frame !== undefined) { window.cancelAnimationFrame(this.frame); this.frame = undefined; }
     for (const url of this.cache.values()) URL.revokeObjectURL(url);
     this.cache.clear();
   }
@@ -185,16 +194,102 @@ export default class JxlPlugin extends Plugin {
   }
 
   /** The app's own decoder where it has one. */
-  async url(file: TFile): Promise<string> {
-    return (await this.hasNative()) ? this.app.vault.getResourcePath(file) : this.decodedUrl(file);
+  async url(file: TFile, show?: Show): Promise<string> {
+    this.lifetime.signal.throwIfAborted();
+    const native = await this.hasNative();
+    this.lifetime.signal.throwIfAborted();
+    if (!native) return this.decodedUrl(file, show);
+    // The app's own decoder plays an animation where it animates (checked once). Where it shows only the first frame, an
+    // animation plays through the package's decoder as an animated PNG.
+    if (await this.hasNativeAnimation()) return this.app.vault.getResourcePath(file);
+    this.lifetime.signal.throwIfAborted();
+    return (await this.animated(file)) ? this.decodedUrl(file, show) : this.app.vault.getResourcePath(file);
+  }
+
+  private nativeAnimation: Promise<boolean> | null = null;
+  /** Whether this app's decoder animates JPEG XL, read once: ImageDecoder must report two frames for a two-frame probe. */
+  private hasNativeAnimation(): Promise<boolean> {
+    this.nativeAnimation ??= (async () => {
+      try {
+        if (typeof ImageDecoder !== 'undefined') {
+          if (!(await ImageDecoder.isTypeSupported('image/jxl'))) return false;
+          const decoder = new ImageDecoder({data: Uint8Array.from(atob(ANIMATED_JXL), c => c.charCodeAt(0)), type: 'image/jxl'});
+          try { await decoder.tracks.ready; return (decoder.tracks.selectedTrack?.frameCount ?? 1) > 1; } finally { decoder.close(); }
+        }
+        // No ImageDecoder (an older Safari): not known to animate, so an animation plays as an animated PNG.
+        return false;
+      } catch { return false; }
+    })();
+    return this.nativeAnimation;
+  }
+
+  // A picture that takes a moment to open says so, with Obsidian's own notice. One notice serves every picture opening at once.
+  private opening = 0;
+  private openingNotice: Notice | null = null;
+  private slowNotice(): () => void {
+    const timer = window.setTimeout(() => {
+      if (this.active && !this.openingNotice) this.openingNotice = new Notice('Opening picture…', 0);
+    }, 700);
+    this.opening++;
+    return () => {
+      window.clearTimeout(timer);
+      if (--this.opening <= 0) { this.openingNotice?.hide(); this.openingNotice = null; }
+    };
+  }
+
+  private animatedKnown = new Map<string, boolean>();
+  private async animated(file: TFile): Promise<boolean> {
+    const key = `${file.path}:${file.stat.mtime}:${file.stat.size}`;
+    const known = this.animatedKnown.get(key);
+    if (known !== undefined) return known;
+    const yes = await this.engine.isAnimated(new Uint8Array(await this.app.vault.readBinary(file))).catch(() => false);
+    this.lifetime.signal.throwIfAborted();
+    if (this.animatedKnown.size > 200) this.animatedKnown.clear();
+    this.animatedKnown.set(key, yes);
+    return yes;
+  }
+
+  /** An animation too long to keep: the loops after the first (all of them where it plays once, as the first showed none), each
+   *  decoded again as it plays. Returns the last frame where the animation ends, '' where the picture went first. */
+  private async stream(input: ArrayBuffer, live: LiveFrames, loops: number, band: number): Promise<string> {
+    live.streaming = true;
+    const passes = loops === 1 ? 1 : loops === 0 ? Infinity : loops - 1;
+    try {
+      for (let pass = 0; pass < passes && !live.over && this.active; pass++)
+        await this.engine.display(new Uint8Array(input), MOBILE_PIXELS, band, p => live.add(p).then(() => live.over ? false : undefined), 0)
+          .catch(e => { if (!live.over) throw e; });
+      if (!live.over) await live.finish();
+    } catch (e) { live.stop(); throw e; }
+    return live.keep() ?? '';
   }
 
   /** The package's decoder, always available. */
-  async decodedUrl(file: TFile): Promise<string> {
+  async decodedUrl(file: TFile, show?: Show): Promise<string> {
+    this.lifetime.signal.throwIfAborted();
     const key = `${file.path}:${file.stat.mtime}:${file.stat.size}`;
     const hit = this.cache.get(key);
     if (hit) { this.cache.delete(key); this.cache.set(key, hit); return hit; }
-    const shown = await this.engine.display(new Uint8Array(await this.app.vault.readBinary(file)), MOBILE_PIXELS);
+    const input = await this.app.vault.readBinary(file);
+    this.lifetime.signal.throwIfAborted();
+    const done = this.slowNotice();
+    let released = false;
+    const release = () => { if (!released) { released = true; done(); } };
+    const live = show ? new LiveFrames(show, () => this.active) : null;
+    const band = Platform.isMobile ? ANIMATION_BAND_BYTES_MOBILE : ANIMATION_BAND_BYTES;
+    // A frame is taken only when the one before it has been; false once nothing shows the picture, which ends the decode.
+    const take = (p: Part) => { release(); loops = p.loops; return live ? live.add(p).then(() => live.over ? false : undefined) : undefined; };
+    let shown, loops = 0;
+    try {
+      shown = await this.engine.display(new Uint8Array(input), MOBILE_PIXELS, band, take, Platform.isMobile ? ANIMATION_KEEP_BYTES_MOBILE : ANIMATION_KEEP_BYTES)
+        .catch(e => { if (live?.over) return null; throw e; });
+      release();
+      // Too long to keep as one animated PNG: it plays frame by frame, each loop decoded again, and nothing is held but a few frames.
+      if (live && shown?.streamed) return await this.stream(input, live, loops, band);
+      // The first time round plays as the frames arrive. The whole animation then takes over where the last frame ends.
+      await live?.finish();
+    } finally { release(); live?.stop(); }
+    if (!shown) return '';
+    this.lifetime.signal.throwIfAborted();
     const url = URL.createObjectURL(new Blob([shown.png as BlobPart], {type: 'image/png'}));
     this.cache.set(key, url);
     while (this.cache.size > 24) {
@@ -210,15 +305,17 @@ export default class JxlPlugin extends Plugin {
    * does not know, so this watches the page for the placeholder Obsidian draws (`.internal-embed[src]`, its `alt` holding the width).
    * Missing (no MutationObserver, or the markup changed): embeds show Obsidian's own placeholder, and the file still opens in its own view.
    */
-  private queued = false;
+  private frame?: number;
   private schedule() {
-    if (this.queued) return;
-    this.queued = true;
-    window.requestAnimationFrame(() => { this.queued = false; this.hydrate(activeDocument.body, this.app.workspace.getActiveFile()?.path ?? ''); });
+    if (!this.active || this.frame !== undefined) return;
+    this.frame = window.requestAnimationFrame(() => {
+      this.frame = undefined;
+      if (this.active) this.hydrate(activeDocument.body, this.app.workspace.getActiveFile()?.path ?? '');
+    });
   }
 
   private installEmbedFallback() {
-    if (typeof MutationObserver === 'undefined') return;
+    if (!this.active || typeof MutationObserver === 'undefined') return;
     this.observer = new MutationObserver(() => this.schedule());
     // Live preview may set an embed's size after it draws the embed: watch those attributes too.
     this.observer.observe(activeDocument.body, {childList: true, subtree: true, attributes: true, attributeFilter: ['alt', 'width', 'height']});
@@ -253,6 +350,7 @@ export default class JxlPlugin extends Plugin {
   }
 
   private hydrate(root: HTMLElement, fallbackPath: string) {
+    if (!this.active) return;
     root.querySelectorAll<HTMLElement>('.internal-embed[src]').forEach(el => {
       const src = (el.getAttribute('src') ?? '').split('#')[0];
       if (!/\.jxl$/i.test(src)) return;
@@ -282,13 +380,18 @@ export default class JxlPlugin extends Plugin {
       place(img);
       const shown = img;
       shown.alt = file.basename;
-      const decoded = () => this.decodedUrl(file).then(u => { shown.src = u; }, e => { el.empty(); el.createSpan({text: failureText(e), cls: 'jxl-error'}); });
-      shown.onerror = () => { shown.onerror = null; void decoded(); };
-      this.url(file).then(u => { shown.src = u; }, () => void decoded());
+      const current = () => this.active && el.contains(shown);
+      const decoded = () => {
+        if (!current()) return;
+        return this.decodedUrl(file, u => { if (current()) shown.src = u; return current(); }).then(u => { if (current()) shown.src = u; }, e => { if (current()) { el.empty(); el.createSpan({text: failureText(e), cls: 'jxl-error'}); } });
+      };
+      shown.onerror = () => { if (!current()) return; shown.onerror = null; void decoded(); };
+      this.url(file, u => { if (current()) shown.src = u; return current(); }).then(u => { if (current()) shown.src = u; }, () => void decoded());
     });
   }
 
   private imageFailed(e: Event) {
+    if (!this.active) return;
     const img = e.target;
     if (!(img instanceof HTMLImageElement) || img.dataset.jxlTried || !/\.jxl(\?|$)/i.test(img.src)) return;
     img.dataset.jxlTried = '1';
@@ -296,7 +399,7 @@ export default class JxlPlugin extends Plugin {
     const prefix = this.app.vault.adapter.getResourcePath('').split('?')[0];
     const clean = img.src.split('?')[0];
     const file = clean.startsWith(prefix) ? this.app.vault.getFileByPath(decodeURIComponent(clean.slice(prefix.length))) : null;
-    if (file) this.decodedUrl(file).then(u => { img.src = u; }, () => undefined);
+    if (file) this.decodedUrl(file, u => { if (this.active) img.src = u; return this.active; }).then(u => { if (this.active) img.src = u; }, () => undefined);
   }
 
   // ---- converting what is there ----
@@ -314,9 +417,9 @@ export default class JxlPlugin extends Plugin {
       destExt: 'jxl', removeOriginals,
       transform: async (b, ext, signal) => {
         const r = await this.engine.convert(b, ext, {mode: look, quality, maxPixels: maxPixels()}, signal);
-        return r.bytes ? {bytes: r.bytes, kept: r.kept, record: r.record} : {bytes: null, reason: r.reason ?? 'Not converted.'};
+        return r.bytes ? {bytes: r.bytes, kept: r.kept} : {bytes: null, reason: r.reason ?? 'Not converted.'};
       },
-      verify: (src, ext, out, kept, record) => this.engine.verifyJxl(src, ext, out, (kept ?? 'lossy') as 'pixels', record as JxlRecord),
+      verify: (src, ext, out, kept) => this.engine.verifyJxl(src, ext, out, (kept ?? 'lossy') as 'pixels'),
     };
   }
 
@@ -338,8 +441,8 @@ export default class JxlPlugin extends Plugin {
     if (this.running) new Notice('A conversion is already running.');
     return !!this.running;
   }
-  private convert(files: TFile[], title: string) { if (!this.busy()) new ConvertModal(this.app, this, files, title, 'jxl').open(); }
-  private back(files: TFile[], ext: 'png' | 'jpg') { if (!this.busy()) new ConvertModal(this.app, this, files, ext === 'png' ? 'Convert back to PNG' : 'Restore the original JPEG', ext).open(); }
+  private convert(files: TFile[], title: string) { if (this.active && !this.busy()) new ConvertModal(this.app, this, files, title, 'jxl').open(); }
+  private back(files: TFile[], ext: 'png' | 'jpg') { if (this.active && !this.busy()) new ConvertModal(this.app, this, files, ext === 'png' ? 'Convert back to PNG' : 'Restore the original JPEG', ext).open(); }
 
   private running: AbortController | null = null;
 
@@ -349,12 +452,17 @@ export default class JxlPlugin extends Plugin {
    * Clicking a notice dismisses it in Obsidian; the run goes on, and the "Cancel the conversion" command still reaches it.
    */
   startRun(kind: 'jxl' | 'png' | 'jpg', planned: ReturnType<typeof plan>) {
+    if (!this.active) return;
     const controller = new AbortController();
     this.running = controller;
-    const box = createFragment();
-    const text = box.createSpan({text: `Converting 1 of ${planned.length}`});
-    const cancel = box.createEl('button', {text: 'Cancel', cls: 'jxl-cancel'});
-    cancel.addEventListener('click', e => { e.stopPropagation(); controller.abort(); text.textContent = 'Canceling…'; });
+    const box = activeDocument.createDocumentFragment();
+    const text = activeDocument.createElement('span');
+    const cancel = activeDocument.createElement('button');
+    cancel.textContent = 'Cancel';
+    cancel.className = 'jxl-cancel';
+    cancel.addEventListener('click', e => { e.stopPropagation(); controller.abort(); if (this.active) text.textContent = 'Canceling…'; });
+    box.append(text, cancel);
+    text.textContent = `Converting 1 of ${planned.length}`;
     const notice = new Notice(box, 0);
     void (async () => {
       let results: Outcome[];
@@ -379,16 +487,17 @@ export default class JxlPlugin extends Plugin {
       ? `${pictures(done.length)}, ${fmt(done.reduce((s, r) => s + r.before, 0))} to ${fmt(done.reduce((s, r) => s + r.after, 0))}`
       : results.length ? 'Nothing was converted.' : 'No pictures to convert.';
     const why = results.find(r => r.status === 'skipped');
+    if (!this.active) return;
     new Notice(canceled ? `Canceled. ${text}` : left ? `${text}. ${left} left as they were.${done.length === 0 && why?.status === 'skipped' ? ' ' + why.reason : ''}` : text, 8000);
   }
 
   private async undo() {
     if (this.busy()) return;
     const journal = this.settings.lastRun;
-    const out = await undoRun(this.port, journal, async e => this.engine.remake(split(e.src).ext, await this.port.read(e.dest), e.kept),
-      async (e, made) => this.engine.checkRemade(split(e.src).ext, await this.port.read(e.dest), made));
+    const out = await undoRun(this.port, journal, async e => this.engine.remake(split(e.src).ext, await this.port.read(e.dest), e.kept));
     this.settings.lastRun = [];
     await this.saveSettings();
+    if (!this.active) return;
     new Notice(out.left.length ? `Undid ${pictures(out.undone)}. ${out.left.length} left as they are: ${out.left[0].reason}` : `Undid ${pictures(out.undone)}.`, 10000);
   }
 
@@ -397,7 +506,7 @@ export default class JxlPlugin extends Plugin {
   // Drops: this listens to Obsidian's `editor-drop`, which carries `dataTransfer.files`. A file dragged from a Linux file manager (Thunar, seen in
   // Obsidian 1.15.0) never reached it: the host did not deliver the drop to plug-ins, so only paste and drops from inside Obsidian work there.
   private paste(evt: ClipboardEvent | DragEvent, list: FileList | null | undefined, editor: Editor, info: MarkdownView | MarkdownFileInfo) {
-    if (!this.settings.convertOnImport || evt.defaultPrevented || !list?.length) return;
+    if (!this.active || !this.settings.convertOnImport || evt.defaultPrevented || !list?.length) return;
     // A file dragged from the file manager can arrive without a type: its name says what it is.
     const files = [...list].filter(f => imageKind(f) !== null);
     if (!files.length || files.length !== list.length) return;
@@ -406,34 +515,41 @@ export default class JxlPlugin extends Plugin {
   }
 
   private async importAll(files: File[], editor: Editor, at: {line: number; ch: number}, sourcePath: string) {
+    if (!this.active) return;
     const links: string[] = [];
     const notes: string[] = [];
     // A large picture takes a while: say so, and take the notice away when it is done.
     const working = new Notice(files.length > 1 ? `Converting ${files.length} pictures…` : 'Converting…', 0);
     try {
     for (const f of files) {
+      if (!this.active) break;
       try { const r = await this.importOne(f, sourcePath); links.push(r.link); if (r.note) notes.push(r.note); }
-      catch (e) { new Notice(`Not saved. ${message(e)}`); }
+      catch (e) { if (this.active) new Notice(`Not saved. ${message(e)}`); }
     }
     } finally { working.hide(); }
+    if (!this.active) return;
     if (links.length) editor.replaceRange(links.join('\n'), at);
     if (notes.length) new Notice(notes.join(' '), 8000);
   }
 
   private async importOne(f: File, sourcePath: string): Promise<{link: string; note: string}> {
     const input = new Uint8Array(await f.arrayBuffer());
+    this.lifetime.signal.throwIfAborted();
     const ext = imageKind(f)!;
     const base = f.name && !/^image\.\w+$/.test(f.name) ? split(f.name).base : `Pasted image ${new Date().toISOString().replace(/\D/g, '').slice(0, 14)}`;
     const out = await this.engine.convert(input, ext, {mode: this.settings.look, quality: this.settings.quality, maxPixels: maxPixels()});
     // The pasted picture is the only copy: the converted file is used only after it is read back and checked against it.
     let bytes: Uint8Array = input, outExt = ext, note = '';
     if (out.bytes) {
-      const check = await this.engine.verifyJxl(input, ext, out.bytes, out.kept ?? 'lossy', out.record);
+      const check = await this.engine.verifyJxl(input, ext, out.bytes, out.kept ?? 'lossy');
       if (check.ok) { bytes = out.bytes; outExt = 'jxl'; note = `Saved as JPEG XL, ${fmt(input.length)} to ${fmt(bytes.length)}.`; }
       else note = `Saved as ${ext.toUpperCase()}. ${check.reason}`;
     } else if (out.reason !== 'No smaller.') note = `Saved as ${ext.toUpperCase()}. ${out.reason ?? ''}`;
+    this.lifetime.signal.throwIfAborted();
     const path = await this.app.fileManager.getAvailablePathForAttachment(`${base}.${outExt}`, sourcePath);
+    this.lifetime.signal.throwIfAborted();
     const file = await this.app.vault.createBinary(path, toBuffer(bytes));
+    this.lifetime.signal.throwIfAborted();
     let link = this.app.fileManager.generateMarkdownLink(file, sourcePath);
     if (!link.startsWith('!')) link = '!' + link;
     return {link, note};
@@ -447,6 +563,7 @@ class ConvertModal extends Modal {
   constructor(app: App, private plugin: JxlPlugin, private files: TFile[], private title: string, private kind: 'jxl' | 'png' | 'jpg') { super(app); }
 
   onOpen() {
+    if (!this.plugin.active) return;
     this.setTitle(this.title);
     this.contentEl.createEl('p', {text: 'Checking…'});
     void this.dry();
@@ -454,6 +571,7 @@ class ConvertModal extends Modal {
 
   private async dry() {
     const {contentEl} = this;
+    if (!this.plugin.active || this.controller.signal.aborted) return;
     const {port, engine} = this.plugin;
     const all = this.files.map(f => ({path: f.path, size: f.stat.size, mtime: f.stat.mtime}));
     // Many pictures: one that already has its converted file beside it is not converted again under a new name.
@@ -463,18 +581,20 @@ class ConvertModal extends Modal {
     const rows: {src: string; dest: string; size: number; look: string}[] = [];
     try {
       for (const it of items) {
-        if (this.controller.signal.aborted) return;
+        if (!this.plugin.active || this.controller.signal.aborted) return;
         let look = this.kind === 'jxl' ? '' : '', guess = 1;
         if (this.kind === 'jxl') {
           const a = await engine.analyze(await port.read(it.src.path), split(it.src.path).ext, this.controller.signal).catch(() => null);
+          if (!this.plugin.active || this.controller.signal.aborted) return;
           if (!a) continue;
           look = a.kind === 'still' ? a.look : a.kind;
-          guess = a.kind === 'jpeg' ? KEEPS.jpeg : a.kind === 'gif' ? KEEPS.gif : a.kind === 'lossy-webp' || a.kind === 'animated' ? 1 : a.look === 'photo' ? KEEPS['png-photo'] : KEEPS['png-screenshot'];
+          guess = a.kind === 'jpeg' ? KEEPS.jpeg : a.kind === 'gif' ? KEEPS.gif : a.kind === 'lossy-webp' ? 1 : a.look === 'photo' ? KEEPS['png-photo'] : KEEPS['png-screenshot'];
         }
         before += it.src.size; after += it.src.size * Math.min(1, guess);
         rows.push({src: it.src.path, dest: it.dest, size: it.src.size, look});
       }
     } catch { return; }
+    if (!this.plugin.active || this.controller.signal.aborted) return;
     contentEl.empty();
     contentEl.createEl('p', {text: (rows.length ? `${pictures(rows.length)}${this.kind === 'jxl' ? `, about ${fmt(before)} to ${fmt(after)}` : ''}.` : 'No pictures to convert.') + (done ? ` ${done} already converted.` : '')});
     const list = contentEl.createDiv({cls: 'jxl-list'});
@@ -496,6 +616,7 @@ class ConvertModal extends Modal {
   }
 
   private run(planned: ReturnType<typeof plan>) {
+    if (!this.plugin.active || this.controller.signal.aborted) return;
     this.started = true;
     this.close();
     this.plugin.startRun(this.kind, planned);
@@ -507,24 +628,6 @@ class ConvertModal extends Modal {
 class JxlSettingTab extends PluginSettingTab {
   constructor(app: App, private plugin: JxlPlugin) { super(app, plugin); }
 
-  getSettingDefinitions(): SettingDefinitionItem[] {
-    const s = this.plugin.settings;
-    return [
-      {name: 'Convert pasted and dropped pictures', desc: 'PNG, JPEG, WebP and GIF are saved as JPEG XL.',
-        render: st => { st.addToggle(t => t.setValue(s.convertOnImport).onChange(async v => { s.convertOnImport = v; await this.plugin.saveSettings(); })); }},
-      {name: 'Photo quality', desc: 'Screenshots and diagrams always keep every pixel. JPEG files are kept exactly and can be restored.',
-        render: st => { st.addSlider(sl => sl.setLimits(50, 100, 1).setValue(s.quality).onChange(async v => { s.quality = v; await this.plugin.saveSettings(); })); }},
-      {name: 'Treat pictures as', desc: 'Automatic looks at the colors in each picture.',
-        render: st => { st.addDropdown(d => d.addOptions({auto: 'Automatic', screenshot: 'Screenshots', photo: 'Photographs'}).setValue(s.look).onChange(async v => { s.look = v as Mode; await this.plugin.saveSettings(); })); }},
-      {name: 'Remove originals', desc: 'After a picture is converted, checked and its links updated, move the original to the trash. Off: originals stay.',
-        render: st => { st.addToggle(t => t.setValue(s.removeOriginals).onChange(async v => { s.removeOriginals = v; await this.plugin.saveSettings(); })); }},
-      {type: 'group', heading: 'Other devices', items: [
-        {name: '', desc: 'A converted vault opens on another device only where this plugin is installed.', searchable: false, render: () => {}},
-      ]},
-    ];
-  }
-
-  // Obsidian before 1.13.0 draws the tab from display().
   display(): void {
     const {containerEl} = this;
     const s = this.plugin.settings;
@@ -534,6 +637,10 @@ class JxlSettingTab extends PluginSettingTab {
       .setDesc('PNG, JPEG, WebP and GIF are saved as JPEG XL.')
       .addToggle(t => t.setValue(s.convertOnImport).onChange(async v => { s.convertOnImport = v; await this.plugin.saveSettings(); }));
     new Setting(containerEl)
+      .setName('Remove originals')
+      .setDesc('After a picture is converted, checked and its links updated, move the original to the trash. Off: originals stay.')
+      .addToggle(t => t.setValue(s.removeOriginals).onChange(async v => { s.removeOriginals = v; await this.plugin.saveSettings(); }));
+    new Setting(containerEl)
       .setName('Photo quality')
       .setDesc('Screenshots and diagrams always keep every pixel. JPEG files are kept exactly and can be restored.')
       .addSlider(sl => sl.setLimits(50, 100, 1).setValue(s.quality).onChange(async v => { s.quality = v; await this.plugin.saveSettings(); }));
@@ -542,10 +649,6 @@ class JxlSettingTab extends PluginSettingTab {
       .setDesc('Automatic looks at the colors in each picture.')
       .addDropdown(d => d.addOptions({auto: 'Automatic', screenshot: 'Screenshots', photo: 'Photographs'}).setValue(s.look)
         .onChange(async v => { s.look = v as Mode; await this.plugin.saveSettings(); }));
-    new Setting(containerEl)
-      .setName('Remove originals')
-      .setDesc('After a picture is converted, checked and its links updated, move the original to the trash. Off: originals stay.')
-      .addToggle(t => t.setValue(s.removeOriginals).onChange(async v => { s.removeOriginals = v; await this.plugin.saveSettings(); }));
     new Setting(containerEl).setName('Other devices').setHeading();
     containerEl.createEl('p', {text: 'A converted vault opens on another device only where this plugin is installed.', cls: 'setting-item-description'});
   }
