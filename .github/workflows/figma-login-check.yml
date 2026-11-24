@@ -1,0 +1,48 @@
+name: Figma sign-in check
+on:
+  push:
+    branches: [figma-check]
+permissions:
+  contents: read
+jobs:
+  sign-in:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Sign in to Figma in Chromium with the burner account
+        shell: bash
+        env:
+          FIGMA_EMAIL: ${{ secrets.FIGMA_EMAIL }}
+          FIGMA_PASSWORD: ${{ secrets.FIGMA_PASSWORD }}
+        run: |
+          set -e
+          test -n "$FIGMA_EMAIL" && echo "FIGMA_EMAIL is set" || { echo "FIGMA_EMAIL is missing"; exit 1; }
+          test -n "$FIGMA_PASSWORD" && echo "FIGMA_PASSWORD is set" || { echo "FIGMA_PASSWORD is missing"; exit 1; }
+          mkdir check && cd check
+          npm init -y > /dev/null
+          npm i playwright@1.49.1 > /dev/null
+          npx playwright install chromium > /dev/null
+          cat > login.mjs <<'EOF'
+          import {chromium} from 'playwright';
+          const browser = await chromium.launch();
+          const page = await (await browser.newContext()).newPage();
+          await page.goto('https://www.figma.com/login', {waitUntil: 'domcontentloaded'});
+          await page.waitForTimeout(3000);
+          console.log('login page:', page.url(), '|', await page.title());
+          const email = page.locator('input[type=email], input[name=email]').first();
+          await email.fill(process.env.FIGMA_EMAIL);
+          const password = page.locator('input[type=password]').first();
+          if (!(await password.isVisible().catch(() => false))) { await page.keyboard.press('Enter'); await page.waitForTimeout(3000); }
+          await page.locator('input[type=password]').first().fill(process.env.FIGMA_PASSWORD);
+          await page.keyboard.press('Enter');
+          await page.waitForTimeout(15000);
+          const url = page.url(), title = await page.title();
+          const text = (await page.locator('body').innerText().catch(() => '')).replace(/\s+/g, ' ').slice(0, 300);
+          console.log('after sign-in:', url, '|', title);
+          console.log('page says:', text.replace(process.env.FIGMA_EMAIL, '<email>'));
+          const signedIn = /figma\.com\/(files|recent|drafts|design|@)/.test(url) && !/login|signin/.test(url);
+          console.log(signedIn ? 'SIGNED IN' : 'NOT SIGNED IN');
+          await browser.close();
+          process.exit(signedIn ? 0 : 1);
+          EOF
+          node login.mjs
