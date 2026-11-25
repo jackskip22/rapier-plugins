@@ -40,8 +40,7 @@ jobs:
           await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
           const call=(method,params)=>new Promise((resolve,reject)=>{const id=++next;waiting.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
           const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description??r.exceptionDetails.text);return r.result.value;};
-          const root=execFileSync('xwininfo',['-root'],{encoding:'utf8'});
-          const width=Number(root.match(/Width:\s+(\d+)/)[1]), height=Number(root.match(/Height:\s+(\d+)/)[1]);
+          const width=1280, height=900;
           function screenSample(){const b=execFileSync('import',['-window','root','-depth','8','rgb:-'],{maxBuffer:32*1024*1024,timeout:5000});if(b.length!==width*height*3)throw Error('Unexpected X11 screenshot byte count '+b.length);let loX=width,hiX=-1,loY=height,hiY=-1,hits=0;for(let i=0,p=0;i<b.length;i+=3,p++){if(b[i]===13&&b[i+1]===231&&b[i+2]===79){const x=p%width,y=Math.floor(p/width);loX=Math.min(loX,x);hiX=Math.max(hiX,x);loY=Math.min(loY,y);hiY=Math.max(hiY,y);hits++;}}if(hits<100||hiX-loX<100||hiX-loX>150||hiY-loY<100||hiY-loY>150)return {color:null,outline:[hits,loX,loY,hiX,hiY]};const i=3*(Math.floor((loY+hiY)/2)*width+Math.floor((loX+hiX)/2));return {color:[...b.subarray(i,i+3)],outline:[hits,loX,loY,hiX,hiY]};}
           try{
           const prepared=await retry(()=>ev("(()=>{const a=window.app,p=a?.plugins;return p?.manifests?.['jpeg-xl'] ? {name:a.vault.getName(),version:p.manifests['jpeg-xl'].version} : null;})()"));
