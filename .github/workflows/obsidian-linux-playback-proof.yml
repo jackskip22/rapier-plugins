@@ -41,6 +41,9 @@ jobs:
           const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description??r.exceptionDetails.text);return r.result.value;};
           function rgb(png){const b=Buffer.from(png,'base64'), parts=[];if(b[24]!==8||![2,6].includes(b[25]))throw Error('unexpected screenshot format');for(let n=8;n<b.length;){const len=b.readUInt32BE(n);if(b.toString('ascii',n+4,n+8)==='IDAT')parts.push(b.subarray(n+8,n+8+len));n+=len+12;}return [...inflateSync(Buffer.concat(parts)).subarray(1,4)];}
           try{
+          const prepared=await retry(()=>ev("(()=>{const a=window.app,p=a?.plugins;return p?.manifests?.['jpeg-xl'] ? {name:a.vault.getName(),version:p.manifests['jpeg-xl'].version} : null;})()"));
+          if(prepared.name!=='vault'||prepared.version!=='1.2.0')throw Error('Unexpected disposable vault or manifest: '+JSON.stringify(prepared));
+          await ev("(async()=>{const p=window.app.plugins;if(!p.isEnabled())await p.setEnable(true);return Boolean(p.plugins['jpeg-xl']);})()");
           const version=await retry(()=>ev("window.app?.workspace?.layoutReady && window.app?.plugins?.plugins?.['jpeg-xl']?.manifest?.version"));
           if(version!=='1.2.0')throw Error('Wrong plugin: '+version);
           console.log('Installed plugin '+version+'; '+await ev("navigator.userAgent"));
