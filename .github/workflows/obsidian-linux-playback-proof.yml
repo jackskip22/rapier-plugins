@@ -43,7 +43,7 @@ jobs:
           try{
           const prepared=await retry(()=>ev("(()=>{const a=window.app,p=a?.plugins;return p?.manifests?.['jpeg-xl'] ? {name:a.vault.getName(),version:p.manifests['jpeg-xl'].version} : null;})()"));
           if(prepared.name!=='vault'||prepared.version!=='1.2.0')throw Error('Unexpected disposable vault or manifest: '+JSON.stringify(prepared));
-          await ev("(async()=>{const p=window.app.plugins;if(!p.isEnabled())await p.setEnable(true);return Boolean(p.plugins['jpeg-xl']);})()");
+          await ev("(async()=>{const p=window.app.plugins;if(!p.isEnabled())await p.setEnable(true);document.querySelector('.modal.mod-trust-folder .modal-close-button')?.click();return Boolean(p.plugins['jpeg-xl']);})()");
           const version=await retry(()=>ev("window.app?.workspace?.layoutReady && window.app?.plugins?.plugins?.['jpeg-xl']?.manifest?.version"));
           if(version!=='1.2.0')throw Error('Wrong plugin: '+version);
           console.log('Installed plugin '+version+'; '+await ev("navigator.userAgent"));
@@ -51,9 +51,9 @@ jobs:
           for(const [view,file,selector] of [['Reading','Probe.md','.markdown-preview-view .jxl-embed img'],['Direct file','probe.jxl','.jxl-view-image']]){
              try{
              await ev("(async()=>{const a=window.app;const f=a.vault.getAbstractFileByPath("+JSON.stringify(file)+");if(!f)throw Error('Missing fixture');const l=a.workspace.getLeaf(false);await l.openFile(f,"+(view==='Reading'?"{state:{mode:'preview',source:false}}":"{}")+");a.workspace.setActiveLeaf(l,{focus:true});return l.view.getViewType();})()");
-             const coords=await retry(()=>ev("(()=>{const i=document.querySelector("+JSON.stringify(selector)+"); if(!i?.complete||i.naturalWidth!==4||i.naturalHeight!==4)return false;const r=i.getBoundingClientRect();return {x:Math.floor(r.x+r.width/2),y:Math.floor(r.y+r.height/2),width:1,height:1,scale:1};})()"));
+             const coords=await retry(()=>ev("(()=>{const i=document.querySelector("+JSON.stringify(selector)+"); if(!i?.complete||i.naturalWidth!==4||i.naturalHeight!==4)return false;const r=i.getBoundingClientRect(),x=Math.floor(r.x+r.width/2),y=Math.floor(r.y+r.height/2),top=document.elementFromPoint(x,y);if(top!==i)throw Error('Image covered by '+top?.outerHTML?.slice(0,160));return {x:x+scrollX,y:y+scrollY,width:1,height:1,scale:1};})()"));
              const colors=[];let blue=false;
-             for(let i=0;i<18;i++){const c=rgb((await call('Page.captureScreenshot',{format:'png',clip:coords,captureBeyondViewport:true})).data);colors.push(c);if(c[2]>190&&c[0]<65&&c[1]<65){blue=true;break;}await sleep(120);}
+             for(let i=0;i<6;i++){const c=rgb((await call('Page.captureScreenshot',{format:'png',clip:coords,captureBeyondViewport:false})).data);colors.push(c);if(c[2]>190&&c[0]<65&&c[1]<65){blue=true;break;}await sleep(120);}
              evidence.push({view,advancedToBlue:blue,samples:colors});
              }catch(e){evidence.push({view,advancedToBlue:false,error:e.message});}
           }
