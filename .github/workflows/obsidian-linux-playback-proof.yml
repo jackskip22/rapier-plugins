@@ -31,6 +31,7 @@ jobs:
           printf '%s' '/woYAAYISgBATAgGAQBAAEs4aQjJDQjg/kQJ2AUI4gAIBrMEAAAEAEAASzhpCMkN9ycARAnYBQjiAA==' | base64 -d > "$d/vault/probe.jxl"
           cat > "$d/check.mjs" <<'JS'
           import {inflateSync} from 'node:zlib';
+          import {execFileSync} from 'node:child_process';
           const sleep=ms=>new Promise(r=>setTimeout(r,ms));
           async function retry(f,n=80){let last;for(let i=0;i<n;i++){try{const v=await f();if(v)return v;}catch(e){last=e;}await sleep(250);}throw Error(last?.message??'Timed out waiting for Obsidian');}
           const page=await retry(async()=>{const list=await(await fetch('http://127.0.0.1:9222/json/list')).json();return list.find(x=>x.type==='page'&&x.url.startsWith('app://obsidian.md/'));});
@@ -39,7 +40,9 @@ jobs:
           await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
           const call=(method,params)=>new Promise((resolve,reject)=>{const id=++next;waiting.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
           const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description??r.exceptionDetails.text);return r.result.value;};
-          function rgb(png){const b=Buffer.from(png,'base64'), parts=[];if(b[24]!==8||![2,6].includes(b[25]))throw Error('unexpected screenshot format');for(let n=8;n<b.length;){const len=b.readUInt32BE(n);if(b.toString('ascii',n+4,n+8)==='IDAT')parts.push(b.subarray(n+8,n+8+len));n+=len+12;}return [...inflateSync(Buffer.concat(parts)).subarray(1,4)];}
+          const root=execFileSync('xwininfo',['-root'],{encoding:'utf8'});
+          const width=Number(root.match(/Width:\s+(\d+)/)[1]), height=Number(root.match(/Height:\s+(\d+)/)[1]);
+          function screenSample(){const b=execFileSync('import',['-window','root','-depth','8','rgb:-'],{maxBuffer:32*1024*1024,timeout:5000});if(b.length!==width*height*3)throw Error('Unexpected X11 screenshot byte count '+b.length);let loX=width,hiX=-1,loY=height,hiY=-1,hits=0;for(let i=0,p=0;i<b.length;i+=3,p++){if(b[i]===13&&b[i+1]===231&&b[i+2]===79){const x=p%width,y=Math.floor(p/width);loX=Math.min(loX,x);hiX=Math.max(hiX,x);loY=Math.min(loY,y);hiY=Math.max(hiY,y);hits++;}}if(hits<100||hiX-loX<100||hiX-loX>150||hiY-loY<100||hiY-loY>150)return {color:null,outline:[hits,loX,loY,hiX,hiY]};const i=3*(Math.floor((loY+hiY)/2)*width+Math.floor((loX+hiX)/2));return {color:[...b.subarray(i,i+3)],outline:[hits,loX,loY,hiX,hiY]};}
           try{
           const prepared=await retry(()=>ev("(()=>{const a=window.app,p=a?.plugins;return p?.manifests?.['jpeg-xl'] ? {name:a.vault.getName(),version:p.manifests['jpeg-xl'].version} : null;})()"));
           if(prepared.name!=='vault'||prepared.version!=='1.2.0')throw Error('Unexpected disposable vault or manifest: '+JSON.stringify(prepared));
@@ -51,9 +54,10 @@ jobs:
           for(const [view,file,selector] of [['Reading','Probe.md','.markdown-preview-view .jxl-embed img'],['Direct file','probe.jxl','.jxl-view-image']]){
              try{
              await ev("(async()=>{const a=window.app;const f=a.vault.getAbstractFileByPath("+JSON.stringify(file)+");if(!f)throw Error('Missing fixture');const l=a.workspace.getLeaf(false);await l.openFile(f,"+(view==='Reading'?"{state:{mode:'preview',source:false}}":"{}")+");a.workspace.setActiveLeaf(l,{focus:true});return l.view.getViewType();})()");
-             const coords=await retry(()=>ev("(()=>{const i=document.querySelector("+JSON.stringify(selector)+"); if(!i?.complete||i.naturalWidth!==4||i.naturalHeight!==4)return false;const r=i.getBoundingClientRect(),x=Math.floor(r.x+r.width/2),y=Math.floor(r.y+r.height/2),top=document.elementFromPoint(x,y);if(top!==i)throw Error('Image covered by '+top?.outerHTML?.slice(0,160));return {x:x+scrollX,y:y+scrollY,width:1,height:1,scale:1};})()"));
+             const info=await retry(()=>ev("(()=>{const i=document.querySelector("+JSON.stringify(selector)+"); if(!i?.complete||i.naturalWidth!==4||i.naturalHeight!==4)return false;const r=i.getBoundingClientRect();if(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)!==i)throw Error('Image not unobscured');Object.assign(i.style,{outline:'4px solid rgb(13, 231, 79)',width:'120px',height:'120px',maxWidth:'none',maxHeight:'none'});return i.src.startsWith('blob:')?'blob':'native';})()"),32);
+             console.log(view+' candidate source: '+info);
              const colors=[];let blue=false;
-             for(let i=0;i<6;i++){const c=rgb((await call('Page.captureScreenshot',{format:'png',clip:coords,captureBeyondViewport:false})).data);colors.push(c);if(c[2]>190&&c[0]<65&&c[1]<65){blue=true;break;}await sleep(120);}
+             for(let i=0;i<10;i++){const c=screenSample();colors.push(c);if(c.color&&c.color[2]>190&&c.color[0]<65&&c.color[1]<65){blue=true;break;}await sleep(140);}
              evidence.push({view,advancedToBlue:blue,samples:colors});
              }catch(e){evidence.push({view,advancedToBlue:false,error:e.message});}
           }
@@ -62,6 +66,10 @@ jobs:
           }finally{ws.close();}
           JS
           binary="$(find "$d/app/opt" -type f -name obsidian -print -quit)"; test -n "$binary"
-          XDG_CONFIG_HOME="$d/config" xvfb-run -a "$binary" --no-sandbox --disable-gpu --remote-debugging-address=127.0.0.1 --remote-debugging-port=9222 --user-data-dir="$d/config/obsidian" > "$d/app.log" 2>&1 &
-          pid=$!; trap 'kill "$pid" 2>/dev/null || true; tail -25 "$d/app.log"' EXIT
-          timeout 90s node "$d/check.mjs"
+          if ! command -v import >/dev/null; then sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick; fi
+          export OB_TEST_DIR="$d" OB_TEST_BINARY="$binary"
+          timeout 90s xvfb-run -a -s '-screen 0 1280x900x24' bash -c '
+            XDG_CONFIG_HOME="$OB_TEST_DIR/config" "$OB_TEST_BINARY" --no-sandbox --disable-gpu --remote-debugging-address=127.0.0.1 --remote-debugging-port=9222 --user-data-dir="$OB_TEST_DIR/config/obsidian" > "$OB_TEST_DIR/app.log" 2>&1 &
+            pid=$!; trap '\''kill "$pid" 2>/dev/null || true; tail -25 "$OB_TEST_DIR/app.log"'\'' EXIT
+            node "$OB_TEST_DIR/check.mjs"
+          '
