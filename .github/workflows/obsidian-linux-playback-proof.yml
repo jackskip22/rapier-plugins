@@ -1,0 +1,64 @@
+name: Obsidian 1.2.0 Linux playback proof
+on:
+  push:
+    branches: [test/obsidian-120-linux-playback]
+permissions: {}
+jobs:
+  playback:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Check published plugin in disposable vault
+        shell: bash
+        run: |
+          set -euo pipefail
+          d="$RUNNER_TEMP/obsidian-proof"; mkdir -p "$d"; cd "$d"
+          p="$d/vault/.obsidian/plugins/jpeg-xl"; mkdir -p "$p" "$d/config/obsidian"
+          curl -fLsS --retry 3 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.1/obsidian_1.15.1_amd64.deb -o app.deb
+          echo 'f77b6dfc8c040214f2febad2b1b9b051b6a838a47b0f4fb90a31cfcb79b8fcec  app.deb' | sha256sum -c
+          dpkg-deb -x app.deb app
+          for f in main.js manifest.json styles.css; do curl -fLsS --retry 3 "https://github.com/jackskip22/rapier-plugins/releases/download/1.2.0/$f" -o "$p/$f"; done
+          (cd "$p"; sha256sum -c <<'HASH'
+          0c778b10461db893f6456e3c4a445e2dab9d7ff335a3582c3d8fc10e2be5bafa  main.js
+          f5c74bae3988f4a675e43d4ff74d32c7e1991ae9d865d30b64c87d387eb9e12b  manifest.json
+          37d85201640f1c659fe307dfc8e0686222db445ddf78a91f5a0c05a785b7a97f  styles.css
+          HASH
+          )
+          printf '["jpeg-xl"]\n' > "$d/vault/.obsidian/community-plugins.json"
+          printf '{"defaultViewMode":"preview"}\n' > "$d/vault/.obsidian/app.json"
+          printf '{"vaults":{"3f120113ef55ee22":{"path":"%s","ts":1795555800000,"open":true}},"disableUpdate":true}\n' "$d/vault" > "$d/config/obsidian/obsidian.json"
+          printf '# Animation proof\n\n![[probe.jxl|120]]\n' > "$d/vault/Probe.md"
+          printf '%s' '/woYAAYISgBATAgGAQBAAEs4aQjJDQjg/kQJ2AUI4gAIBrMEAAAEAEAASzhpCMkN9ycARAnYBQjiAA==' | base64 -d > "$d/vault/probe.jxl"
+          cat > "$d/check.mjs" <<'JS'
+          import {inflateSync} from 'node:zlib';
+          const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+          async function retry(f,n=80){let last;for(let i=0;i<n;i++){try{const v=await f();if(v)return v;}catch(e){last=e;}await sleep(250);}throw Error(last?.message??'Timed out waiting for Obsidian');}
+          const page=await retry(async()=>{const list=await(await fetch('http://127.0.0.1:9222/json/list')).json();return list.find(x=>x.type==='page'&&x.url.startsWith('app://obsidian.md/'));});
+          const ws=new WebSocket(page.webSocketDebuggerUrl), waiting=new Map();let next=0;
+          ws.onmessage=e=>{const x=JSON.parse(e.data);const p=waiting.get(x.id);if(p){waiting.delete(x.id);x.error?p.reject(Error(JSON.stringify(x.error))):p.resolve(x.result);}};
+          await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject;});
+          const call=(method,params)=>new Promise((resolve,reject)=>{const id=++next;waiting.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
+          const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description??r.exceptionDetails.text);return r.result.value;};
+          function rgb(png){const b=Buffer.from(png,'base64'), parts=[];if(b[24]!==8||![2,6].includes(b[25]))throw Error('unexpected screenshot format');for(let n=8;n<b.length;){const len=b.readUInt32BE(n);if(b.toString('ascii',n+4,n+8)==='IDAT')parts.push(b.subarray(n+8,n+8+len));n+=len+12;}return [...inflateSync(Buffer.concat(parts)).subarray(1,4)];}
+          try{
+          const version=await retry(()=>ev("window.app?.workspace?.layoutReady && window.app?.plugins?.plugins?.['jpeg-xl']?.manifest?.version"));
+          if(version!=='1.2.0')throw Error('Wrong plugin: '+version);
+          console.log('Installed plugin '+version+'; '+await ev("navigator.userAgent"));
+          const evidence=[];
+          for(const [view,file,selector] of [['Reading','Probe.md','.markdown-preview-view .jxl-embed img'],['Direct file','probe.jxl','.jxl-view-image']]){
+             try{
+             await ev("(async()=>{const a=window.app;const f=a.vault.getAbstractFileByPath("+JSON.stringify(file)+");if(!f)throw Error('Missing fixture');const l=a.workspace.getLeaf(false);await l.openFile(f,"+(view==='Reading'?"{state:{mode:'preview',source:false}}":"{}")+");a.workspace.setActiveLeaf(l,{focus:true});return l.view.getViewType();})()");
+             const coords=await retry(()=>ev("(()=>{const i=document.querySelector("+JSON.stringify(selector)+"); if(!i?.complete||i.naturalWidth!==4||i.naturalHeight!==4)return false;const r=i.getBoundingClientRect();return {x:Math.floor(r.x+r.width/2),y:Math.floor(r.y+r.height/2),width:1,height:1,scale:1};})()"));
+             const colors=[];let blue=false;
+             for(let i=0;i<18;i++){const c=rgb((await call('Page.captureScreenshot',{format:'png',clip:coords,captureBeyondViewport:true})).data);colors.push(c);if(c[2]>190&&c[0]<65&&c[1]<65){blue=true;break;}await sleep(120);}
+             evidence.push({view,advancedToBlue:blue,samples:colors});
+             }catch(e){evidence.push({view,advancedToBlue:false,error:e.message});}
+          }
+          console.log(JSON.stringify(evidence));
+          if(evidence.some(e=>!e.advancedToBlue))process.exitCode=1;
+          }finally{ws.close();}
+          JS
+          binary="$(find "$d/app/opt" -type f -name obsidian -print -quit)"; test -n "$binary"
+          XDG_CONFIG_HOME="$d/config" xvfb-run -a "$binary" --no-sandbox --disable-gpu --remote-debugging-address=127.0.0.1 --remote-debugging-port=9222 --user-data-dir="$d/config/obsidian" > "$d/app.log" 2>&1 &
+          pid=$!; trap 'kill "$pid" 2>/dev/null || true; tail -25 "$d/app.log"' EXIT
+          timeout 90s node "$d/check.mjs"
