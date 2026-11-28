@@ -75,7 +75,7 @@ export interface AssetSourceStore {
   readSlice(start: number, end: number): string;
   read(): string;
 }
-export const IMAGE_LIMITS: Readonly<{bytes: number; sourceChars: number; dimension: number; pixels: number; assets: number}>;
+export const IMAGE_LIMITS: Readonly<{bytes: number; sourceChars: number; dimension: number; pixels: number}>;
 /** Sets the default parser and opening-front-matter splitter for this module instance. */
 export function configureParser(parser: ParserFactory | null, split?: ((source: string) => {bodyOffset: number}) | null): void;
 export function normalizeLabel(label: unknown): string;
